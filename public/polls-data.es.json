@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-09-27",
+  "lastUpdate": "2026-09-28",
   "institutes": [
     {
       "name": "Datafolha",
@@ -147,6 +147,138 @@
     }
   ],
   "polls": [
+    {
+      "institute": "[Quaest](/es/glossary#quaest)/Globo",
+      "date": "2026-09-28",
+      "scope": "national",
+      "sample": 2004,
+      "margin": 2,
+      "register": "BR-06520/2026",
+      "reliability": 4,
+      "method": "Presencial",
+      "fieldDates": "2026-09-24 a 2026-09-27",
+      "note": "[Quaest](/es/glossary#quaest) nacional divulgada el 28/Sep, registro BR-06520/2026 en el [TSE](/es/glossary#tse), 2.004 electores entrevistados de forma presencial de jueves a domingo, del 24 al 27/Sep, margen de 2,0pp con 95% de confianza, contratada por el Grupo Globo (O Globo, G1, CartaCapital y CNN Brasil). Parte del campo se hizo después del anuncio de la prohibición de las casas de apuestas, en la noche del 25/Sep, como registra la propia cobertura. ⭐ EN LA [PRIMERA VUELTA](/es/glossary#primeiro-turno) LULA TIENE 39% Y FLÁVIO BOLSONARO 34%, con Ronaldo Caiado y Augusto Cury en 4% cada uno, Renan Santos en 3% y Romeu Zema en 1%. Frente a la ronda del 21/Sep, Lula oscila de 37% a 39% y Flávio Bolsonaro de 33% a 34%. ⚖️ EN LA [SEGUNDA VUELTA](/es/glossary#segundo-turno) LOS DOS EMPATAN EN 42%, con 13% de blanco o nulo y 3% de indecisos, después de que Flávio Bolsonaro estuviera 1 punto adelante el 21/Sep; la oscilación está dentro del margen. 🔄 LA CASA MIDIÓ LA TRANSFERENCIA DE VOTO: de los electores de Romeu Zema en la primera vuelta, 81% irían hacia Flávio Bolsonaro en la segunda y 9% hacia Lula; de los de Renan Santos, 48% y 23%; de los de Ronaldo Caiado, 42% y 30%; de los de Augusto Cury, 34% y 27%, con 38% en blanco, nulo o abstención (O Globo). En la espontánea Lula tiene 31% y Flávio Bolsonaro 27%, y 76% dicen que el voto es definitivo. Aprobación del gobierno: 46% contra 49%, después de 44% contra 50% el 21/Sep.",
+      "scenarios": [
+        {
+          "name": "Escenario principal (primera vuelta, estimulado)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 39
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 34
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 4
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 4
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 42,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 42
+        }
+      ]
+    },
+    {
+      "institute": "BTG/Nexus",
+      "date": "2026-09-28",
+      "scope": "national",
+      "sample": 2000,
+      "margin": 2,
+      "register": "BR-07557/2026",
+      "reliability": 4,
+      "method": "Teléfono (CATI)",
+      "fieldDates": "2026-09-25 a 2026-09-27",
+      "note": "BTG/Nexus nacional divulgada el 28/Sep, 16ª ronda de la serie de la casa, registro BR-07557/2026, 2.000 electores por teléfono entre el 25 y el 27/Sep, margen de 2,0pp con 95% de confianza, encargada por el banco BTG Pactual (CNN Brasil, Correio Braziliense, Folha de S.Paulo y Estadão). ⭐ EN LA [PRIMERA VUELTA](/es/glossary#primeiro-turno) LULA TIENE 42% Y FLÁVIO BOLSONARO 37%, con Augusto Cury y Ronaldo Caiado en 5% cada uno, Renan Santos en 4%, Romeu Zema y Samara Martins en 1% cada uno, 3% de blanco, nulo o ninguno y 2% sin respuesta. Frente a la ronda del 21/Sep, Lula oscila de 40% a 42% y Flávio Bolsonaro queda en 37%. ⚖️ LA CASA PROBÓ CINCO PARES DE [SEGUNDA VUELTA](/es/glossary#segundo-turno) Y LULA LIDERA LOS CINCO: 46% a 44% contra Flávio Bolsonaro, 46% a 42% contra Ronaldo Caiado, 46% a 41% contra Augusto Cury, 48% a 39% contra Romeu Zema y 48% a 37% contra Renan Santos. Contra Flávio Bolsonaro la distancia está dentro del margen. 🚫 Rechazo: 51% no votarían por Flávio Bolsonaro de ninguna manera y 48% por Lula, frente a 50% y 49% el 21/Sep; 7% rechazan a los dos (Correio Braziliense). Aprobación del gobierno: 46% contra 49%.",
+      "scenarios": [
+        {
+          "name": "Escenario principal (primera vuelta, estimulado)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 42
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 37
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 5
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 5
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 4
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 44
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 42
+        },
+        {
+          "matchup": "Lula vs Cury",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Augusto Cury",
+          "percent2": 41
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 48,
+          "candidate2": "Romeu Zema",
+          "percent2": 39
+        },
+        {
+          "matchup": "Lula vs Renan",
+          "candidate1": "Lula",
+          "percent1": 48,
+          "candidate2": "Renan Santos",
+          "percent2": 37
+        }
+      ]
+    },
     {
       "institute": "Palver",
       "date": "2026-09-24",
@@ -3048,15 +3180,15 @@
     }
   ],
   "approvalData": {
-    "note": "🏷️ LOS NÚMEROS ESTRUCTURADOS DE APROBACIÓN DE ESTE BLOQUE SON LOS DE LA [QUAEST](/es/glossary#quaest) DEL 21/Sep, registro BR-06004/2026: 44% de aprobación contra 50% de desaprobación, con 6% sin respuesta. El panel mantiene UNA casa por bloque a propósito, para que la serie interna no mezcle metodologías, y entre el 24 y el 27/Sep no hubo ronda nacional nueva de la Quaest. ⚠️ DENTRO DE LA PROPIA QUAEST LA CAÍDA SE DETUVO Y DEVOLVIÓ UN PUNTO: eran 48% contra 47% el 05/Ago, 46% contra 48% el 14/Ago, 45% contra 48% el 02/Sep, 43% contra 50% el 07/Sep, 43% contra 50% el 14/Sep y ahora 44% contra 50%. El punto de alza está dentro del margen de 2,0pp y la desaprobación no se movió. ⭐ Y LA REFERENCIA DE LA EVALUACIÓN SE MOVIÓ EN LA DIRECCIÓN OPUESTA EN LA MISMA RONDA: la negativa subió de 38% a 42%, la positiva de 32% a 33% y la regular cayó de 27% a 23%. Las dos preguntas miden cosas diferentes y no se suman: aprobar el trabajo del presidente no es lo mismo que evaluar la gestión como positiva. 🔴 LA APROBACIÓN TAMBIÉN FUE MEDIDA EL 24/Sep POR DATAFOLHA, ALFA/TMC, FUTURA/100% CIDADES, PALVER Y PODERDATA/AYA, Y LA DISTANCIA ENTRE ELLAS ES MAYOR EN LA APROBACIÓN QUE EN LA DESAPROBACIÓN: Datafolha con 47% contra 50%, Alfa/TMC con 46% contra 50%, Futura/100% Cidades con 44,2% contra 53,3%, Palver con 44% contra 55% y PoderData/Aya con 41% contra 50% en la pregunta sobre el desempeño de Lula. Son 6 puntos de distancia en la aprobación y 5 en la desaprobación, entre casas que escucharon al mismo electorado en la misma semana. Sumando las lecturas anteriores de la ventana, Datafolha del 17/Sep con 48% contra 50%, Quaest del 21/Sep con 44% contra 50% y AtlasIntel del 23/Sep con 45,4% contra 53%, la aprobación medida en ocho lecturas de siete casas, entre el 17 y el 24/Sep, va de 41% a 48%. 📌 Alfa también pregunta si Lula merece ser reelegido, y allí 55% dicen que no contra 43% que apoyan un nuevo mandato, que es otra pregunta y no entra en esta serie.",
-    "source": "Aprobación, desaprobación y evaluación de la gestión: [Quaest](/es/glossary#quaest) del 21/Sep/2026 (campo del 17 al 20/Sep, n=2.004 electores de 16 años o más, presencial, margen de 2,0pp, 95% de confianza, registro [TSE](/es/glossary#tse) BR-06004/2026, contratada por el Grupo Globo), divulgada por CNN Brasil, CartaCapital, Poder360 y CBN. La evaluación de la gestión de este bloque, 33% positiva, 23% regular y 42% negativa, es de la misma ronda, y el bloque entero tiene una sola fecha. Serie de la propia casa: rondas del 05/Ago, 14/Ago, 02/Sep, 07/Sep y 14/Sep, ya registradas en el panel.",
-    "date": "2026-09-21",
+    "note": "🏷️ LOS NÚMEROS ESTRUCTURADOS DE APROBACIÓN DE ESTE BLOQUE SON LOS DE LA [QUAEST](/es/glossary#quaest) DEL 28/Sep, registro BR-06520/2026: 46% de aprobación contra 49% de desaprobación. El panel mantiene UNA casa por bloque a propósito, para que la serie interna no mezcle metodologías. ⭐ DENTRO DE LA PROPIA QUAEST LA APROBACIÓN SUBE POR SEGUNDA RONDA SEGUIDA: eran 48% contra 47% el 05/Ago, 46% contra 48% el 14/Ago, 45% contra 48% el 02/Sep, 43% contra 50% el 07/Sep, 43% contra 50% el 14/Sep, 44% contra 50% el 21/Sep y ahora 46% contra 49%. Las dos alzas están dentro del margen de 2,0pp. La evaluación anduvo poco en la misma ronda: la negativa pasó de 42% a 41%, la positiva de 33% a 34% y la regular quedó en 23%. 📌 La BTG/Nexus divulgada el mismo día mide los mismos 46% contra 49%, y en las cinco nacionales del 24/Sep la aprobación iba de 41% a 47%. Las preguntas de las casas difieren y no se suman.",
+    "source": "Aprobación, desaprobación y evaluación de la gestión: [Quaest](/es/glossary#quaest) del 28/Sep/2026 (campo del 24 al 27/Sep, n=2.004 electores, presencial, margen de 2,0pp, 95% de confianza, registro [TSE](/es/glossary#tse) BR-06520/2026, contratada por el Grupo Globo), divulgada por O Globo, G1, CNN Brasil e InfoMoney. La evaluación de la gestión de este bloque, 34% positiva, 23% regular y 41% negativa, es de la misma ronda (O Globo), y el bloque entero tiene una sola fecha. Serie de la propia casa: rondas del 05/Ago, 14/Ago, 02/Sep, 07/Sep, 14/Sep y 21/Sep, ya registradas en el panel.",
+    "date": "2026-09-28",
     "results": {
-      "aprovacao": 44,
-      "desaprovacao": 50,
-      "naoSabe": 6,
-      "otimoBom": 33,
-      "ruimPessimo": 42,
+      "aprovacao": 46,
+      "desaprovacao": 49,
+      "naoSabe": 5,
+      "otimoBom": 34,
+      "ruimPessimo": 41,
       "regular": 23
     },
     "historicalComparison": [
@@ -3086,66 +3218,66 @@
         "disapproval6m": 50
       }
     ],
-    "lastUpdate": "24/09/2026, 22:45"
+    "lastUpdate": "28/09/2026, 13:49"
   },
   "polymarketComparison": {
-    "note": "Precios de Polymarket en la lectura confirmada del 27/Sep, 12:47 BRT, con el libro presidencial sumando USD 155,76M acumulados en 19 contratos. EN EL CONTRATO DE GANADOR LA BRECHA SE ABRE POR SEGUNDA LECTURA CONFIRMADA SEGUIDA, de 13,65pp a 14,75pp: Flávio Bolsonaro sube 1,10pp, a 57,25%, y Lula queda en 42,50%. Como la suma del par subió de 98,65 a 99,75, el normalizado es de 0,48pp para cada lado. 🗳️ Ninguna encuesta nacional de intención de voto salió del 25 al 27/Sep, y el lado encuesta de este gráfico sigue siendo la Palver del 24/Sep. 🥉 En el libro de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno) el liderazgo cambió de manos: Augusto Cury sube 3,05pp, a 44,40%, y Renan Santos cae 4,00pp, a 41,50%, con 3,37pp y 3,51pp en el normalizado.",
-    "sources": "Precios de Polymarket vía proxy AFOS, y el panel solo publica precio que dos lecturas independientes, tomadas con ocho minutos de intervalo, confirmen dentro de 0,20pp. La confirmación se hace contrato por contrato, y los precios de esta página son todos de la lectura confirmada del 27/Sep, 12:47 BRT. Al lado del movimiento crudo va el normalizado por la suma del par binario, o del libro entero cuando tiene más de dos nombres relevantes. Encuestas registradas en el [TSE](/es/glossary#tse), con protocolo, casa, campo, muestra y método declarados en cada entrada. 🗳️ El lado ENCUESTA del gráfico de divergencia usa UNA nacional, no el promedio: la regla del panel es la nacional más reciente con desempate por la mayor muestra, lo que sigue dando la Palver del 24/Sep, n=5.000, entre las seis divulgadas ese día. La elección va declarada en el gráfico, con casa y fecha, y la alternativa más cercana era la PoderData, n=3.000.",
+    "note": "Precios de Polymarket en la lectura confirmada del 28/Sep, 13:49 BRT, con el libro presidencial sumando USD 156,21M acumulados en 19 contratos. EN EL CONTRATO DE GANADOR LA BRECHA SE ABRE POR TERCERA LECTURA CONFIRMADA SEGUIDA, de 14,75pp a 16,55pp: Flávio Bolsonaro sube 0,80pp, a 58,05%, y Lula cae 1,00pp, a 41,50%, con 0,92pp para cada lado en el normalizado. 🗳️ El lado encuesta de este gráfico pasa a ser la [Quaest](/es/glossary#quaest) del 28/Sep, que da a Lula 39% a 34% en la [primera vuelta](/es/glossary#primeiro-turno) y 42% a 42% en la segunda; la BTG/Nexus del mismo día da 42% a 37% y 46% a 44%. ⚖️ Las dos miden a Lula mejor que en la ronda anterior de la misma casa, y el precio anduvo hacia el otro lado entre las lecturas confirmadas del 27 y el 28/Sep. 🥉 En el libro de tercer lugar de la primera vuelta Augusto Cury sigue adelante de Renan Santos, 45,10% a 43,00%.",
+    "sources": "Precios de Polymarket vía proxy AFOS, y el panel solo publica precio que dos lecturas independientes, tomadas con ocho minutos de intervalo, confirmen dentro de 0,20pp. La confirmación se hace contrato por contrato, y los precios de esta página son todos de la lectura confirmada del 28/Sep, 13:49 BRT. Al lado del movimiento crudo va el normalizado por la suma del par binario, o del libro entero cuando tiene más de dos nombres relevantes. Encuestas registradas en el [TSE](/es/glossary#tse), con protocolo, casa, campo, muestra y método declarados en cada entrada. 🗳️ El lado ENCUESTA del gráfico de divergencia usa UNA nacional, no el promedio: la regla del panel es la nacional más reciente con desempate por la mayor muestra, lo que da la [Quaest](/es/glossary#quaest) del 28/Sep, n=2.004, entre las dos divulgadas ese día. La elección va declarada en el gráfico, con casa y fecha, y la alternativa era la BTG/Nexus, n=2.000.",
     "candidates": [
       {
         "name": "Lula",
-        "percentage": 43,
-        "odds": 42.5,
-        "value": 42.5,
-        "polymarket": "42,50%",
+        "percentage": 39,
+        "odds": 41.5,
+        "value": 41.5,
+        "polymarket": "41,50%",
         "pesquisaRange": "34% a 45,8%",
-        "lastUpdate": "27/09/2026, 12:47",
-        "tendenciaPesquisa": "EMPATA EN 43% CON FLÁVIO BOLSONARO EN LA [PRIMERA VUELTA](/es/glossary#primeiro-turno) DE LA PALVER DEL 24/Sep, trabajo de campo del 20 al 23/Sep y n=5.000, que es la fuente del lado encuesta de este gráfico. ⭐ Y LAS SEIS NACIONALES DEL 24/Sep, QUE SIGUEN SIENDO LAS MÁS RECIENTES, NO COINCIDEN SOBRE ÉL: en la primera vuelta va de 7 puntos adelante en Alfa/TMC a 2 puntos atrás en Futura, pasando por 4 en Datafolha y en Real Time y 2 en PoderData. En la [segunda vuelta](/es/glossary#segundo-turno) contra Flávio Bolsonaro va de 47% a 45% en Datafolha, la única que lo pone adelante, a 43,7% contra 49,4% en Futura, donde la desventaja queda fuera del margen. 🔑 Midiendo cada casa contra su propia ronda anterior, ganó terreno en tres (Datafolha, Palver y PoderData) y perdió en tres (Real Time, Futura y Alfa).",
-        "tendenciaPolymarket": "ESTANCADO EN 42,50% EN EL CONTRATO DE GANADOR (vol USD 12,40M acumulado), lectura confirmada del 27/Sep, 12:47 BRT, y con caída de 0,48pp en el normalizado, porque la suma del par subió de 98,65 a 99,75. La brecha frente a Flávio Bolsonaro se abre de 13,65pp a 14,75pp. ⚠️ No es un extremo: en la serie grabada desde el 14 de abril su precio está a 25,00pp del techo, 67,50% del 16/Ago, y a 8,00pp del piso, 34,50% del 25/Abr. En el contrato de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) sube 1,00pp en crudo y 0,75pp en el normalizado, a 25,45%."
+        "lastUpdate": "28/09/2026, 13:49",
+        "tendenciaPesquisa": "TIENE 39% EN LA [PRIMERA VUELTA](/es/glossary#primeiro-turno) EN LA [QUAEST](/es/glossary#quaest) DEL 28/Sep, campo del 24 al 27/Sep y n=2.004, que es la fuente del lado encuesta de este gráfico, 5 puntos adelante de Flávio Bolsonaro, y 42% en la [segunda vuelta](/es/glossary#segundo-turno), empatado, después de estar 1 punto atrás en la ronda de la casa del 21/Sep. ⭐ La BTG/Nexus del mismo día lo mide con 42% a 37% en la primera vuelta y 46% a 44% en la segunda, y él lidera los cinco pares que ella probó. 🔑 En las dos casas la ronda del 28/Sep lo mide mejor que la del 21/Sep: en la Quaest de 37% a 39% en la primera vuelta y de 41% a 42% en la segunda, y en la BTG/Nexus de 40% a 42% en la primera vuelta, con la segunda estancada en 46%. Las oscilaciones están dentro del margen de 2pp.",
+        "tendenciaPolymarket": "CAE 1,00pp EN EL CONTRATO DE GANADOR, a 41,50% (vol USD 12,52M acumulado), lectura confirmada del 28/Sep, 13:49 BRT, y 0,92pp en el normalizado. La brecha frente a Flávio Bolsonaro se abre de 14,75pp a 16,55pp. ⚠️ No es un extremo: en la serie grabada desde el 14 de abril su precio está a 26,00pp del techo, 67,50% del 16/Ago, y a 7,00pp del piso, 34,50% del 25/Abr. En el contrato de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) cae 0,90pp, a 24,55%. ⚖️ Las dos nacionales del 28/Sep, divulgadas antes de esta lectura, lo miden mejor que en la semana anterior."
       },
       {
         "name": "Flávio Bolsonaro",
-        "percentage": 43,
-        "odds": 57.25,
-        "value": 57.25,
-        "polymarket": "57,25%",
+        "percentage": 34,
+        "odds": 58.05,
+        "value": 58.05,
+        "polymarket": "58,05%",
         "pesquisaRange": "29% a 43,4%",
-        "lastUpdate": "27/09/2026, 12:47",
-        "tendenciaPesquisa": "EMPATA EN 43% CON LULA EN LA [PRIMERA VUELTA](/es/glossary#primeiro-turno) DE LA PALVER DEL 24/Sep, trabajo de campo del 20 al 23/Sep y n=5.000, fuente del lado encuesta de este gráfico, después de liderar por 42% a 41% en la ronda de la casa del 21/Sep. ⭐ EN LAS SEIS NACIONALES DEL 24/Sep LIDERA LA PRIMERA VUELTA EN UNA, Futura, por 40,4% a 38,4%, y en la [segunda vuelta](/es/glossary#segundo-turno) lidera en cuatro de las seis: 49,4% a 43,7% en Futura, 48% a 45% en Palver, 46% a 45% en PoderData y 45% a 44% en Real Time, con empate en 43% en Alfa y derrota por 45% a 47% en Datafolha. 📌 La ventaja de Futura, de 5,7 puntos, es la única de las seis que queda fuera del margen de esa encuesta, y no es la primera vez en la base: de las 34 lecturas de segunda vuelta entre los dos ya registradas, 11 quedaron fuera del margen y 8 de ellas lo favorecían.",
-        "tendenciaPolymarket": "SUBE 1,10pp EN EL CONTRATO DE GANADOR, a 57,25% (vol USD 11,96M acumulado), lectura confirmada del 27/Sep, 12:47 BRT, y 0,48pp en el normalizado: más de la mitad del alza cruda es sobreprecio del par. La brecha sobre Lula se abre de 13,65pp a 14,75pp, la segunda apertura seguida entre lecturas confirmadas. En la serie grabada desde el 14 de abril su precio está a 4,45pp del techo, 61,70% del 21/Sep, y a 35,25pp del piso, 22,00% del 03/Jul. En el contrato de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) sigue en 74,50%, en un contrato que acumula USD 1,19M, con caída de 0,75pp en el normalizado porque la suma de ese par subió de 98,95 a 99,95."
+        "lastUpdate": "28/09/2026, 13:49",
+        "tendenciaPesquisa": "TIENE 34% EN LA [PRIMERA VUELTA](/es/glossary#primeiro-turno) EN LA [QUAEST](/es/glossary#quaest) DEL 28/Sep, campo del 24 al 27/Sep y n=2.004, que es la fuente del lado encuesta de este gráfico, y 42% en la [segunda vuelta](/es/glossary#segundo-turno), empatado con Lula, después de liderar por 42% a 41% en la ronda de la casa del 21/Sep. En la BTG/Nexus del mismo día tiene 37% en la primera vuelta y 44% en la segunda, contra 46% de Lula. ⭐ La Quaest midió la transferencia de voto y esta lo favorece: de los electores de Romeu Zema en la primera vuelta, 81% irían hacia él en la segunda; de los de Renan Santos, 48%; de los de Ronaldo Caiado, 42%; y de los de Augusto Cury, 34%, contra 9%, 23%, 30% y 27% hacia Lula (O Globo).",
+        "tendenciaPolymarket": "SUBE 0,80pp EN EL CONTRATO DE GANADOR, a 58,05% (vol USD 12,14M acumulado), lectura confirmada del 28/Sep, 13:49 BRT, y 0,92pp en el normalizado. La brecha sobre Lula se abre de 14,75pp a 16,55pp, la tercera apertura seguida entre lecturas confirmadas. En la serie grabada desde el 14 de abril su precio está a 3,65pp del techo, 61,70% del 21/Sep, y a 36,05pp del piso, 22,00% del 03/Jul. En el contrato de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) sigue en 74,50%, en un contrato que acumula USD 1,25M, con alza de 0,68pp en el normalizado."
       },
       {
         "name": "Augusto Cury",
-        "percentage": 2,
+        "percentage": 4,
         "odds": 0.05,
         "value": 0.05,
         "polymarket": "0,05%",
-        "pesquisaRange": "1% a 12,2%",
-        "lastUpdate": "27/09/2026, 12:47",
-        "tendenciaPesquisa": "TIENE 2% EN LA [PRIMERA VUELTA](/es/glossary#primeiro-turno) DE LA PALVER DEL 24/Sep, fuente del lado encuesta de este gráfico, y las seis nacionales del 24/Sep lo miden de 2% a 6%: 6% en Alfa, PoderData y Real Time, 5,6% en Futura, 5% en Datafolha y 2% en Palver. 🔑 Y PODERDATA LO PONE A PRUEBA EN UN PAR QUE CONTRADICE EL ORDEN DE LA PRIMERA VUELTA: le gana a Lula por 45% a 42%, el mismo marcador de la ronda de la casa del 17/Sep.",
-        "tendenciaPolymarket": "SUBE 3,05pp EN CRUDO EN EL CONTRATO DE TERCER LUGAR DE LA [PRIMERA VUELTA](/es/glossary#primeiro-turno), a 44,40%, en un contrato que acumula USD 0,29M, y 3,37pp en el normalizado, porque la suma de ese libro cayó de 102,85 a 101,90. Con eso pasa adelante de Renan Santos en ese libro, por 2,90pp. En el contrato de ganador sigue en el piso del libro, 0,05%."
+        "pesquisaRange": "2% a 12,2%",
+        "lastUpdate": "28/09/2026, 13:49",
+        "tendenciaPesquisa": "TIENE 4% EN LA [PRIMERA VUELTA](/es/glossary#primeiro-turno) EN LA [QUAEST](/es/glossary#quaest) DEL 28/Sep, campo del 24 al 27/Sep y n=2.004, que es la fuente del lado encuesta de este gráfico, después de 6% el 21/Sep, empatado con Ronaldo Caiado. En la BTG/Nexus del mismo día tiene 5%, y en el par de [segunda vuelta](/es/glossary#segundo-turno) de esa casa pierde ante Lula por 46% a 41%. En la Quaest, 34% de sus electores irían hacia Flávio Bolsonaro en la segunda vuelta, 27% hacia Lula y 38% votarían en blanco, nulo o no votarían.",
+        "tendenciaPolymarket": "SUBE 0,70pp EN CRUDO EN EL CONTRATO DE TERCER LUGAR DE LA [PRIMERA VUELTA](/es/glossary#primeiro-turno), a 45,10%, en un contrato que acumula USD 0,29M, y 0,17pp en el normalizado, porque la suma de aquel libro subió de 101,90 a 103,10. Sigue adelante de Renan Santos en aquel libro, ahora por 2,10pp. En el contrato de ganador sigue en el piso del libro, 0,05%. En las dos nacionales del 28/Sep tiene 4% en la [Quaest](/es/glossary#quaest) y 5% en la BTG/Nexus."
       },
       {
         "name": "Renan Santos",
-        "percentage": 8,
-        "odds": 0.45,
-        "value": 0.45,
-        "polymarket": "0,45%",
+        "percentage": 3,
+        "odds": 0.35,
+        "value": 0.35,
+        "polymarket": "0,35%",
         "pesquisaRange": "2% a 11%",
-        "lastUpdate": "27/09/2026, 12:47",
-        "tendenciaPesquisa": "TIENE 8% EN LA [PRIMERA VUELTA](/es/glossary#primeiro-turno) DE LA PALVER DEL 24/Sep, la fuente del lado encuesta de este gráfico, y cede 3 puntos contra la ronda de la casa del 21/Sep, que medía 11%. ⚠️ LAS SEIS NACIONALES DEL MISMO DÍA 24/Sep LO MIDEN DE 8% EN PALVER A 2,4% EN FUTURA, con 6% en Real Time y 3% en Datafolha y en PoderData: el 8% de Palver es más de tres veces el 2,4% de Futura, y como las seis salieron el mismo día esa distancia no puede atribuirse al calendario.",
-        "tendenciaPolymarket": "CAE 4,00pp EN CRUDO EN EL CONTRATO DE TERCER LUGAR DE LA [PRIMERA VUELTA](/es/glossary#primeiro-turno), a 41,50%, en un contrato que acumula USD 0,43M, y 3,51pp en el normalizado, y queda atrás de Augusto Cury en ese libro por 2,90pp, después de estar 4,15pp adelante en la lectura confirmada del 26/Sep. En el de ganador sigue en 0,45%. 🏆 Su contrato en el libro de ganador sigue siendo el de MAYOR volumen acumulado del presidencial, USD 14,52M contra USD 14,10M del de Tarcísio de Freitas, y en el libro de segundo lugar ocurre lo mismo: USD 1,37M acumulados, por encima de los USD 1,19M del de Flávio Bolsonaro, que paga 74,50% allí."
+        "lastUpdate": "28/09/2026, 13:49",
+        "tendenciaPesquisa": "TIENE 3% EN LA [PRIMERA VUELTA](/es/glossary#primeiro-turno) EN LA [QUAEST](/es/glossary#quaest) DEL 28/Sep, campo del 24 al 27/Sep y n=2.004, que es la fuente del lado encuesta de este gráfico, lo mismo que en la ronda del 21/Sep, y 4% en la BTG/Nexus del mismo día. En el par de [segunda vuelta](/es/glossary#segundo-turno) de la BTG/Nexus pierde ante Lula por 48% a 37%. ⚠️ En la Quaest 60% de sus electores dicen que todavía pueden cambiar de voto, la mayor volatilidad entre los nombres después de los de Ronaldo Caiado, y 48% de ellos irían hacia Flávio Bolsonaro en la segunda vuelta.",
+        "tendenciaPolymarket": "SUBE 1,50pp EN CRUDO EN EL CONTRATO DE TERCER LUGAR DE LA [PRIMERA VUELTA](/es/glossary#primeiro-turno), a 43,00%, en un contrato que acumula USD 0,45M, y 0,98pp en el normalizado, y la distancia frente a Augusto Cury en aquel libro se cierra de 2,90pp a 2,10pp. En el de ganador cae a 0,35%. 🏆 Su contrato en el libro de ganador sigue siendo el de MAYOR volumen acumulado del presidencial, USD 14,61M contra USD 14,10M del de Tarcísio de Freitas, y en el libro de segundo lugar ocurre lo mismo: USD 1,38M acumulados, por encima de los USD 1,25M del de Flávio Bolsonaro, que paga 74,50% allí."
       },
       {
         "name": "Ronaldo Caiado",
-        "percentage": 1,
+        "percentage": 4,
         "odds": 0.05,
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "1% a 5,7%",
-        "lastUpdate": "27/09/2026, 12:47",
-        "tendenciaPesquisa": "TIENE 1% EN LA [PRIMERA VUELTA](/es/glossary#primeiro-turno) DE LA PALVER DEL 24/Sep, fuente del lado encuesta de este gráfico, y en las seis nacionales del 24/Sep va de 1% a 5,7%. ⭐ EN FUTURA SUBIÓ DE 4,5% A 5,7% Y PASÓ A AUGUSTO CURY, y en los pares de [segunda vuelta](/es/glossary#segundo-turno) de esa casa le gana a Lula por 46,5% a 42,4%. En Alfa y en Palver queda a 1 y 2 puntos de Lula en el mano a mano.",
-        "tendenciaPolymarket": "SIGUE EN 14,50% EN CRUDO EN EL CONTRATO DE TERCER LUGAR DE LA [PRIMERA VUELTA](/es/glossary#primeiro-turno), en un contrato que acumula USD 0,17M, y sube 0,13pp en el normalizado, porque la suma de ese libro cayó de 102,85 a 101,90. Mantiene la tercera posición del libro. En el contrato de ganador sigue en 0,05%."
+        "lastUpdate": "28/09/2026, 13:49",
+        "tendenciaPesquisa": "TIENE 4% EN LA [PRIMERA VUELTA](/es/glossary#primeiro-turno) EN LA [QUAEST](/es/glossary#quaest) DEL 28/Sep, campo del 24 al 27/Sep y n=2.004, que es la fuente del lado encuesta de este gráfico, lo mismo que el 21/Sep, empatado con Augusto Cury, y 5% en la BTG/Nexus del mismo día. En el par de [segunda vuelta](/es/glossary#segundo-turno) de la BTG/Nexus pierde ante Lula por 46% a 42%. En la Quaest 63% de sus electores dicen que todavía pueden cambiar de voto, la mayor volatilidad entre los nombres probados.",
+        "tendenciaPolymarket": "CAE 1,00pp EN CRUDO EN EL CONTRATO DE TERCER LUGAR DE LA [PRIMERA VUELTA](/es/glossary#primeiro-turno), a 13,50%, en un contrato que acumula USD 0,18M, y 1,14pp en el normalizado. Mantiene la tercera posición del libro. En el contrato de ganador sigue en 0,05%. En las dos nacionales del 28/Sep tiene 4% en la [Quaest](/es/glossary#quaest) y 5% en la BTG/Nexus, y pierde ante Lula por 46% a 42% en el par de [segunda vuelta](/es/glossary#segundo-turno) de la BTG/Nexus."
       },
       {
         "name": "Pablo Marçal",
@@ -3153,9 +3285,9 @@
         "odds": 0.05,
         "value": 0.05,
         "polymarket": "0,05%",
-        "pesquisaRange": "1% a 4%",
-        "lastUpdate": "27/09/2026, 12:47",
-        "tendenciaPesquisa": "Fuera de los escenarios estimulados de las seis nacionales del 24/Sep, después del rechazo del registro de candidatura el 11/Sep.",
+        "pesquisaRange": "1% a 3%",
+        "lastUpdate": "28/09/2026, 13:49",
+        "tendenciaPesquisa": "Fuera de los escenarios estimulados de las nacionales del 28/Sep, después del rechazo del registro de candidatura el 11/Sep.",
         "tendenciaPolymarket": "Sigue en 0,05% en el contrato de ganador. Su registro de candidatura fue denegado por el Tribunal Superior Electoral el 11/Sep."
       },
       {
@@ -3165,9 +3297,9 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "0,3% a 2,8%",
-        "lastUpdate": "27/09/2026, 12:47",
-        "tendenciaPesquisa": "TIENE 1% EN LA [PRIMERA VUELTA](/es/glossary#primeiro-turno) DE LA PALVER DEL 24/Sep, fuente del lado encuesta de este gráfico, y en las seis nacionales del 24/Sep va de 0,9% a 1%. ⭐ Y SU PAR DE [SEGUNDA VUELTA](/es/glossary#segundo-turno) QUEDÓ AJUSTADO EN DOS CASAS: Futura lo pone por delante de Lula por 43,8% a 43,3% y Palver lo pone atrás por 43% a 45%, las dos dentro del margen.",
-        "tendenciaPolymarket": "SIGUE EN 0,65% EN EL CONTRATO DE TERCER LUGAR DE LA [PRIMERA VUELTA](/es/glossary#primeiro-turno), en un contrato que acumula USD 0,09M. En el de ganador está en 0,05%."
+        "lastUpdate": "28/09/2026, 13:49",
+        "tendenciaPesquisa": "TIENE 1% EN LA [PRIMERA VUELTA](/es/glossary#primeiro-turno) EN LA [QUAEST](/es/glossary#quaest) DEL 28/Sep, campo del 24 al 27/Sep y n=2.004, que es la fuente del lado encuesta de este gráfico, y 1% en la BTG/Nexus del mismo día, que lo pone detrás de Lula por 48% a 39% en el par de [segunda vuelta](/es/glossary#segundo-turno). ⭐ En la Quaest, 81% de sus electores irían hacia Flávio Bolsonaro en la segunda vuelta, la mayor transferencia entre los nombres medidos.",
+        "tendenciaPolymarket": "SIGUE EN 0,65% EN EL CONTRATO DE TERCER LUGAR DE LA [PRIMERA VUELTA](/es/glossary#primeiro-turno), en un contrato que acumula USD 0,09M. En el de ganador está en 0,05%. En la [Quaest](/es/glossary#quaest) del 28/Sep, 81% de sus electores en la primera vuelta irían hacia Flávio Bolsonaro en la segunda."
       },
       {
         "name": "Tarcísio",
@@ -3176,9 +3308,9 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "no medido",
-        "lastUpdate": "27/09/2026, 12:47",
-        "tendenciaPesquisa": "Las seis nacionales divulgadas el 24/Sep no lo incluyen en escenario presidencial de [primera vuelta](/es/glossary#primeiro-turno) ni en par de [segunda vuelta](/es/glossary#segundo-turno).",
-        "tendenciaPolymarket": "Sigue en 0,05% en el contrato de ganador, con USD 14,10M acumulados, y su contrato continúa detrás del de Renan Santos en volumen acumulado en el libro presidencial, que tiene USD 14,52M."
+        "lastUpdate": "28/09/2026, 13:49",
+        "tendenciaPesquisa": "Las nacionales divulgadas el 28/Sep no lo incluyen en escenario presidencial de [primera vuelta](/es/glossary#primeiro-turno) ni en par de [segunda vuelta](/es/glossary#segundo-turno).",
+        "tendenciaPolymarket": "Sigue en 0,05% en el contrato de ganador, con USD 14,10M acumulados, y su contrato continúa detrás del de Renan Santos en volumen acumulado en el libro presidencial, que tiene USD 14,61M."
       },
       {
         "name": "Fernando Haddad",
@@ -3187,12 +3319,12 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "no medido",
-        "lastUpdate": "27/09/2026, 12:47",
-        "tendenciaPesquisa": "Las seis nacionales divulgadas el 24/Sep no lo incluyen en escenario presidencial de [primera vuelta](/es/glossary#primeiro-turno) ni en par de [segunda vuelta](/es/glossary#segundo-turno).",
+        "lastUpdate": "28/09/2026, 13:49",
+        "tendenciaPesquisa": "Las nacionales divulgadas el 28/Sep no lo incluyen en escenario presidencial de [primera vuelta](/es/glossary#primeiro-turno) ni en par de [segunda vuelta](/es/glossary#segundo-turno).",
         "tendenciaPolymarket": "Sigue en 0,05% en el contrato de ganador, con USD 7,55M acumulados."
       }
     ],
-    "updatedAt": "27/09/2026, 12:47",
+    "updatedAt": "28/09/2026, 13:49",
     "lastUpdate": "25/09/2026, 17:08",
     "pollSource": {
       "pollster": "Palver",
