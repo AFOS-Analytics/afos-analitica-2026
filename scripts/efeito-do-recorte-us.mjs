@@ -104,7 +104,35 @@ const dentro = media.incluidas.map((i) => {
 
 const soma = dentro.reduce((s, d) => s + (d.i.dem - d.i.rep), 0)
 const n = dentro.length
-console.log(`\n   📊 MÉDIA SERVIDA: D+${(soma / n).toFixed(2)} sobre ${n} rodadas`)
+
+/**
+ * 🔴 A MÉDIA SERVIDA se LÊ do arquivo, não se recomputa aqui, e a razão é um
+ *    centésimo que apareceu em 28/Set/2026 DENTRO DA MESMA PASSADA.
+ *
+ * A `media()` de produção (`collect.mjs`) arredonda `dem` e `rep` a duas casas
+ * e SÓ ENTÃO subtrai: 49.29 menos 41.71 dá 7.58. Este script fazia a média das
+ * DIFERENÇAS e arredondava uma vez só: 7.588235 dá 7.59. O passo 9 imprimia
+ * D+7.59 enquanto o arquivo, o portão e o passo 8 diziam D+7.58.
+ *
+ * ⭐ A escolha da produção é a certa e NÃO se mexe nela: o trio publicado fica
+ *    internamente coerente, e quem subtrair os dois números publicados chega ao
+ *    terceiro. Mudar o arredondamento quebraria a comparabilidade da série.
+ *
+ * ⛔ O defeito era só aqui: segunda cópia de uma conta que já existe, nascida
+ *    sem ninguém escrever uma regra nova. É a mesma família do conserto da
+ *    projeção em 26/Set, quando duas colunas da mesma tabela falavam de médias
+ *    diferentes porque uma não recebia os registros.
+ */
+const servida = dados && dados.mediaAfos ? dados.mediaAfos.vantagemDem : null
+const bruta = soma / n
+if (servida == null) {
+  console.log(`\n   \u26a0\ufe0f o arquivo nao declara mediaAfos.vantagemDem: a media servida nao foi lida.`)
+} else {
+  console.log(`\n   \ud83d\udcca M\u00c9DIA SERVIDA: D+${Number(servida).toFixed(2)} sobre ${n} rodadas`)
+  if (Math.abs(Number(servida) - bruta) >= 0.005) {
+    console.log(`      (bruta sem arredondar ${bruta.toFixed(4)}; a producao arredonda dem e rep ANTES de subtrair)`)
+  }
+}
 
 const comAlternativa = dentro.filter((d) => d.alternativas.length > 0)
 if (comAlternativa.length === 0) {
