@@ -281,6 +281,31 @@ async function main() {
   //        documento traz D 42 x R 32 na base cheia e D 45 x R 34 com leaners.
   //      · Clarity Campaign 11-16/Set. Esta sim é rodada nossa que falta.
   //
+  // 📒 A CLARITY FOI ATRÁS NA FONTE em 29/Set, e o beco fica gravado para
+  //    ninguém repetir a caçada, no mesmo padrão da CNN/SSRS:
+  //
+  //      página : https://www.claritycampaigns.com/clarity-omnibus-2026-september
+  //      PDF    : go.claritycampaigns.com/hubfs/Omnibus Surveys/
+  //               Clarity Omnibus Overview - Sept 2026 - public.pdf   (HTTP 200)
+  //
+  //    ✅ O documento CONFIRMA três dos quatro campos: campo de **11 a 16 de
+  //       setembro**, **1.046 respondentes** casados com o cadastro eleitoral, e
+  //       o recorte **LV**, porque ele diz que os pesos vão para "a national
+  //       universe of likely 2026 General election voters". Ainda traz a margem
+  //       de **±3,03%**, que o agregador não dá.
+  //
+  //    🔴 E ele NÃO TRAZ O TOPLINE. As palavras `ballot`, `vote for`, `congress`
+  //       e `midterm` não aparecem UMA vez no documento: ele é o overview público
+  //       de metodologia e de inventário de modelos. Os percentuais que existem
+  //       ali são dos modelos (partidarismo, ansiedade econômica), não de
+  //       intenção de voto.
+  //
+  //    ⛔ Portanto o D 50 x R 43 existe SÓ no agregador, e não foi promovido a
+  //       conferido. É a mesma dívida da Emerson/RealClear: o topline que a casa
+  //       não publica. Ingerir por aqui trocaria a procedência de "índice mais
+  //       curadoria conferida na fonte" por "agregador", e isso é decisão do
+  //       André, declarada, e não efeito colateral de uma passada.
+  //
   // 📊 O PREÇO de tratar as três como buraco: a média iria de D+7.58 a D+8.00,
   //    e a única que é mesmo generic ballot leva a D+7.57. Ou seja, TODO o
   //    movimento vinha de instrumento e NENHUM do eleitorado.
