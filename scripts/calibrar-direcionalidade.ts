@@ -23,7 +23,22 @@ const JANELA = 24 * 3600 * 1000
 
 async function main() {
   const { getPrisma } = await import('../lib/db')
-  const prisma = await getPrisma()
+  // ⛔ `getPrisma()` e SINCRONO e devolve `PrismaClient | null`. Sem esta guarda
+  //    o `npm run build` reprova com TS18047, porque ele faz type-check de
+  //    `scripts/` tambem, e ai NENHUM deploy sai, de faixa nenhuma.
+  //
+  // 🔴 Isto passou em 29/Set/2026 porque eu rodei o script com `tsx`, que APAGA
+  //    os tipos sem conferi-los: a execucao deu certo e me deu confianca falsa.
+  //    Script rodar no tsx nao e o mesmo que o projeto compilar.
+  //
+  // 📌 E a mensagem segue a da casa: sem banco NAO quer dizer que esta tudo em
+  //    ordem, quer dizer que nao deu para olhar.
+  const prisma = getPrisma()
+  if (!prisma) {
+    console.error('\n   ⚠️ SEM BANCO: DATABASE_URL ausente ou invalida.')
+    console.error('      Isto NAO calibra nada e NAO confirma o limiar. Quer dizer que nao deu para medir.')
+    process.exit(1)
+  }
 
   console.log('\n📐 DIRECIONALIDADE das janelas de 24h · |deriva| / variacao total\n')
 
