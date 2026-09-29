@@ -330,6 +330,7 @@ Ele importa a hierarquia do coletor em vez de redigitá-la, e lê `mediaAfos.inc
 - **Wikipédia é ÍNDICE, o instituto é FONTE.** A página agrega e dá o caminho; o número citado é o do instituto, com link para a fonte primária. Pesquisa sem fonte primária entra na contagem de qualidade e é declarada, não some.
 - **Agregador não entra.** Média de agregador não é pesquisa, e misturar as duas coisas produziria uma média de médias. Os ignorados estão declarados no próprio arquivo, em `procedencia.agregadoresIgnorados`.
 - **A média da casa é simples, não ponderada**, e isso é declarado na tela. Não trocar o método sem decisão do André: mudar a régua no meio da série quebra a comparabilidade de tudo que já foi publicado.
+- 🔢 **A convenção de arredondamento tem UMA casa, `vantagemDeProducao` em `lib/us-polls/collect.mjs`** (29/Set/2026). Ela arredonda `dem` e `rep` a duas casas e **só então subtrai**, para quem subtrair os dois números da tela chegar ao terceiro. ⛔ **Nenhum medidor recomputa a média: importa essa função.** Ela estava inline dentro de `media()`, o passo 9 reescreveu, e a cópia divergiu em **um centésimo**, que é o tamanho exato que não dispara portão nenhum: em 28/Set o cabeçalho dizia D+7.59 contra D+7.58 do arquivo, e em 29/Set, já com o cabeçalho lendo o arquivo, sobraram os 18 contrafactuais na conta bruta e a saída passou a dizer `D+7.59 (+0.00pp)` abaixo de `MÉDIA SERVIDA: D+7.58`. 🧪 `node scripts/testar-vantagem-de-producao.mjs`, 18 asserções e 10 de 10 mutações reprovadas, no CI.
 - Se commitar o arquivo, **`/dashboard/us` precisa de deploy** para o piso novo valer. O Neon não precisa.
 
 Ver também `/atualizar-usa`, que roda isto dentro de uma passada completa do painel.
@@ -405,6 +406,30 @@ Ver também `/atualizar-usa`, que roda isto dentro de uma passada completa do pa
 | o `metodo` publicado diz isso | promessa que a página faz sobre si mesma não pode ficar falsa em silêncio |
 
 ⛔ **E a atribuição ganhou `EXCLUIDA_POR_INSTRUMENTO`**, porque sem ela o portão diria `COMPOSICAO`, cuja leitura prescrita é "saiu gente pela borda". Falso: a rodada **continua na janela** e deixou de ser elegível. Quem mexeu foi a **régua**, não o eleitorado nem a borda.
+
+### 🎯 E o CONFERIDOR DE COBERTURA contava como buraco NOSSO o que essa régua recusa (29/Set/2026)
+
+🔴 O passo 7.5 imprimiu **3 rodadas faltando** e **6 dias de atraso na ponta**. Abertas na fonte primária, **duas não eram buraco**:
+
+| rodada | o agregador publicou | o documento diz |
+|---|---|---|
+| **The Economist/YouGov** 25-28/Set | `1003 LV`, D 53 x R 38 | é a **pergunta 46** do tab report, com a nota *"Asked using the names of candidates running in the respondent's district of residence"*. **Cédula com NOMES**, que é justamente o que esta seção recusa desde 04/Set |
+| **Angus Reid** 19-25/Set | `1041 RV`, D 56 x R 40 | é o recorte **"Registered AND decided"**, **n=919** e não 1.041. O mesmo documento traz **D 42 x R 32** na base cheia e **D 45 x R 34** com leaners |
+| **Clarity Campaign** 11-16/Set | `1046 LV`, D 50 x R 43 | **buraco de verdade**, e o único |
+
+📊 **O PREÇO:** ingerir as três levaria a média de **D+7.58 a D+8.00**; só a Clarity leva a **D+7.57**. Todo o movimento vinha de **instrumento** e nenhum do eleitorado.
+
+🔑 **A `deveRodada` já existia, já era chamada pela cadência, e o conferidor de cobertura não a chamava.** É o 13º caso de ferramenta pronta que nenhum comando chama.
+
+| conserto | por quê |
+|---|---|
+| `lerRotulo` devolve **`campoInicio`** | a régua data a onda pelo **INÍCIO**; sem o campo a chamada cairia no fim **em silêncio** e repetiria o defeito que esta seção declara ter corrigido em 22/Set |
+| a lista se parte em **buraco** e **rodada que a régua recusa** | com o motivo impresso, para ninguém sair caçando no instituto o que não devemos ter |
+| a ponta ganha a leitura **ALCANÇÁVEL** | sem o que sai por desenho e sem o que a régua recusa: **3 dias**, não 6 |
+
+⚠️ **A primeira versão da linha da ponta estava errada** e devolveu 26/Set com 4 dias: a rodada de 26/Set era a **Morning Consult**, tracker pago que sai por desenho. **Ponta que inclui o que nunca ingerimos é atraso que não fecha nem com a base perfeita.**
+
+📌 **A régua para ler o passo 7.5 daqui em diante:** margem muito acima da janela é assinatura de **outro instrumento**, não de eleitorado que se moveu. Antes de chamar de buraco, **abrir o documento**. → `memory/feedback_o_conferidor_de_cobertura_conta_buraco_do_que_a_propria_regua_recusa.md`
 
 ## 🧬 O índice renomeou DUAS casas em 24 horas (26/Set/2026)
 
