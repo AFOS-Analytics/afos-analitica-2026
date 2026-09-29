@@ -441,3 +441,27 @@ BR-07557/2026,BR075572026,BTG/Nexus,2026-09-28,2026-09-26,8,"Cenário Principal 
 BR-07557/2026,BR075572026,BTG/Nexus,2026-09-28,2026-09-26,8,"Cenário Principal (1º turno, estimulado)",Caiado,5,0.05,2026-09-26,-4.95,naive_winprob_minus_voteshare
 BR-07557/2026,BR075572026,BTG/Nexus,2026-09-28,2026-09-26,8,"Cenário Principal (1º turno, estimulado)",Renan,4,0.45,2026-09-26,-3.55,naive_winprob_minus_voteshare
 BR-07557/2026,BR075572026,BTG/Nexus,2026-09-28,2026-09-26,8,"Cenário Principal (1º turno, estimulado)",Zema,1,0.05,2026-09-26,-0.95,naive_winprob_minus_voteshare
+BR-04391/2026,BR043912026,AtlasIntel/Bloomberg,2026-09-29,2026-09-25,9,"Cenário Principal (1º turno, estimulado)",Lula,45.3,43.5,2026-09-25,-1.8,naive_winprob_minus_voteshare
+BR-04391/2026,BR043912026,AtlasIntel/Bloomberg,2026-09-29,2026-09-25,9,"Cenário Principal (1º turno, estimulado)",Flávio,42.2,55.55,2026-09-25,13.35,naive_winprob_minus_voteshare
+BR-04391/2026,BR043912026,AtlasIntel/Bloomberg,2026-09-29,2026-09-25,9,"Cenário Principal (1º turno, estimulado)",Renan,5.2,0.7,2026-09-25,-4.5,naive_winprob_minus_voteshare
+BR-04391/2026,BR043912026,AtlasIntel/Bloomberg,2026-09-29,2026-09-25,9,"Cenário Principal (1º turno, estimulado)",Augusto Cury,2,0.05,2026-09-25,-1.95,naive_winprob_minus_voteshare
+BR-04391/2026,BR043912026,AtlasIntel/Bloomberg,2026-09-29,2026-09-25,9,"Cenário Principal (1º turno, estimulado)",Caiado,1.8,0.05,2026-09-25,-1.75,naive_winprob_minus_voteshare
+BR-04391/2026,BR043912026,AtlasIntel/Bloomberg,2026-09-29,2026-09-25,9,"Cenário Principal (1º turno, estimulado)",Zema,0.9,0.05,2026-09-25,-0.85,naive_winprob_minus_voteshare
+BR-02990/2026,BR029902026,Palver,2026-09-29,2026-09-26,8,"Cenário Principal (1º turno, estimulado)",Lula,44,42.5,2026-09-26,-1.5,naive_winprob_minus_voteshare
+BR-02990/2026,BR029902026,Palver,2026-09-29,2026-09-26,8,"Cenário Principal (1º turno, estimulado)",Flávio,44,56.15,2026-09-26,12.15,naive_winprob_minus_voteshare
+BR-02990/2026,BR029902026,Palver,2026-09-29,2026-09-26,8,"Cenário Principal (1º turno, estimulado)",Renan,8,0.45,2026-09-26,-7.55,naive_winprob_minus_voteshare
+BR-02990/2026,BR029902026,Palver,2026-09-29,2026-09-26,8,"Cenário Principal (1º turno, estimulado)",Augusto Cury,1,0.05,2026-09-26,-0.95,naive_winprob_minus_voteshare
+BR-02990/2026,BR029902026,Palver,2026-09-29,2026-09-26,8,"Cenário Principal (1º turno, estimulado)",Caiado,1,0.05,2026-09-26,-0.95,naive_winprob_minus_voteshare
+BR-02990/2026,BR029902026,Palver,2026-09-29,2026-09-26,8,"Cenário Principal (1º turno, estimulado)",Zema,1,0.05,2026-09-26,-0.95,naive_winprob_minus_voteshare
+BR-03929/2026,BR039292026,Gerp,2026-09-29,2026-09-24,10,"Cenário Principal (1º turno, estimulado)",Flávio,42,55.55,2026-09-24,13.55,naive_winprob_minus_voteshare
+BR-03929/2026,BR039292026,Gerp,2026-09-29,2026-09-24,10,"Cenário Principal (1º turno, estimulado)",Lula,40,43.5,2026-09-24,3.5,naive_winprob_minus_voteshare
+BR-03929/2026,BR039292026,Gerp,2026-09-29,2026-09-24,10,"Cenário Principal (1º turno, estimulado)",Augusto Cury,5,0.05,2026-09-24,-4.95,naive_winprob_minus_voteshare
+BR-03929/2026,BR039292026,Gerp,2026-09-29,2026-09-24,10,"Cenário Principal (1º turno, estimulado)",Caiado,3,0.05,2026-09-24,-2.95,naive_winprob_minus_voteshare
+BR-03929/2026,BR039292026,Gerp,2026-09-29,2026-09-24,10,"Cenário Principal (1º turno, estimulado)",Renan,3,0.55,2026-09-24,-2.45,naive_winprob_minus_voteshare
+BR-03929/2026,BR039292026,Gerp,2026-09-29,2026-09-24,10,"Cenário Principal (1º turno, estimulado)",Zema,1,0.05,2026-09-24,-0.95,naive_winprob_minus_voteshare
+BR-00895/2026,BR008952026,Vox Brasil,2026-09-29,2026-09-27,7,"Cenário Principal (1º turno, estimulado)",Lula,41.1,42.5,2026-09-27,1.4,naive_winprob_minus_voteshare
+BR-00895/2026,BR008952026,Vox Brasil,2026-09-29,2026-09-27,7,"Cenário Principal (1º turno, estimulado)",Flávio,37.8,57.25,2026-09-27,19.45,naive_winprob_minus_voteshare
+BR-00895/2026,BR008952026,Vox Brasil,2026-09-29,2026-09-27,7,"Cenário Principal (1º turno, estimulado)",Caiado,3.8,0.05,2026-09-27,-3.75,naive_winprob_minus_voteshare
+BR-00895/2026,BR008952026,Vox Brasil,2026-09-29,2026-09-27,7,"Cenário Principal (1º turno, estimulado)",Renan,2.7,0.45,2026-09-27,-2.25,naive_winprob_minus_voteshare
+BR-00895/2026,BR008952026,Vox Brasil,2026-09-29,2026-09-27,7,"Cenário Principal (1º turno, estimulado)",Augusto Cury,2.2,0.05,2026-09-27,-2.15,naive_winprob_minus_voteshare
+BR-00895/2026,BR008952026,Vox Brasil,2026-09-29,2026-09-27,7,"Cenário Principal (1º turno, estimulado)",Zema,1.8,0.05,2026-09-27,-1.75,naive_winprob_minus_voteshare
