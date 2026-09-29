@@ -29,7 +29,7 @@
  *   node scripts/efeito-do-recorte-us.mjs --arquivo=public/us-polls-data.json
  */
 import { readFileSync } from 'fs'
-import { ORDEM_RECORTE } from '../lib/us-polls/collect.mjs'
+import { ORDEM_RECORTE, vantagemDeProducao } from '../lib/us-polls/collect.mjs'
 import { serieDaCasa } from '../lib/us-polls/casas.mjs'
 
 const arg = (n) => process.argv.find((a) => a.startsWith(`--${n}=`))?.slice(n.length + 3)
@@ -125,12 +125,28 @@ const n = dentro.length
  */
 const servida = dados && dados.mediaAfos ? dados.mediaAfos.vantagemDem : null
 const bruta = soma / n
+
+// \ud83d\udd22 A \u00e2ncora dos contrafactuais \u00e9 a conta da PRODU\u00c7\u00c3O, importada, e n\u00e3o a m\u00e9dia
+//    das diferen\u00e7as. Sem isto o cabe\u00e7alho l\u00ea 7.58 do arquivo e as linhas de baixo
+//    dizem "D+7.59 (+0.00pp)": duas verdades na mesma tela, e o leitor que fizer a
+//    subtra\u00e7\u00e3o \u00e0 m\u00e3o acha 0.01 onde est\u00e1 escrito 0.00. Ver o bloco de
+//    `vantagemDeProducao` em lib/us-polls/collect.mjs.
+const contaBase = vantagemDeProducao(dentro.map((d) => d.i))
+
 if (servida == null) {
   console.log(`\n   \u26a0\ufe0f o arquivo nao declara mediaAfos.vantagemDem: a media servida nao foi lida.`)
 } else {
   console.log(`\n   \ud83d\udcca M\u00c9DIA SERVIDA: D+${Number(servida).toFixed(2)} sobre ${n} rodadas`)
   if (Math.abs(Number(servida) - bruta) >= 0.005) {
     console.log(`      (bruta sem arredondar ${bruta.toFixed(4)}; a producao arredonda dem e rep ANTES de subtrair)`)
+  }
+  // \ud83d\udd34 Trava anti-sil\u00eancio: se a conta importada N\u00c3O reproduz o arquivo, quem
+  //    mudou foi a base de `incluidas` ou a regra, e os contrafactuais de baixo
+  //    passam a medir um terceiro mundo. Declarar em vez de imprimir 18 linhas.
+  if (contaBase && Math.abs(contaBase.vantagemDem - Number(servida)) >= 0.005) {
+    console.log(
+      `      \ud83d\udd34 a conta da producao reaplicada as ${n} incluidas da D+${contaBase.vantagemDem.toFixed(2)} e o arquivo diz D+${Number(servida).toFixed(2)}: os contrafactuais abaixo NAO estao ancorados no numero servido.`
+    )
   }
 }
 
@@ -140,10 +156,15 @@ if (comAlternativa.length === 0) {
 } else {
   console.log(`      ${comAlternativa.length} de ${n} rodadas da janela têm recorte alternativo`)
   let pior = { desloc: 0 }
+  const ancora = contaBase ? contaBase.vantagemDem : soma / n
   for (const d of comAlternativa) {
     for (const alt of d.alternativas) {
-      const nova = (soma - (d.i.dem - d.i.rep) + vant(alt)) / n
-      const desloc = nova - soma / n
+      // A troca é de RODADA: sai a incluída, entra a alternativa, e a média é
+      // recomputada pela conta da produção sobre a lista inteira.
+      const trocada = dentro.map((x) => (x === d ? { dem: alt.dem, rep: alt.rep } : x.i))
+      const contaAlt = vantagemDeProducao(trocada)
+      const nova = contaAlt ? contaAlt.vantagemDem : (soma - (d.i.dem - d.i.rep) + vant(alt)) / n
+      const desloc = Number((nova - ancora).toFixed(2))
       const linha = `         ${d.i.instituto} ${d.i.campoFim}: trocar ${d.escolhido.amostraTipo} por ${alt.amostraTipo} levaria a média a D+${nova.toFixed(2)} (${desloc >= 0 ? '+' : ''}${desloc.toFixed(2)}pp)`
       console.log(linha)
       if (Math.abs(desloc) > Math.abs(pior.desloc)) pior = { desloc, linha }

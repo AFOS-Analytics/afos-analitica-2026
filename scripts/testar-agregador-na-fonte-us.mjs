@@ -181,5 +181,35 @@ eq(
 )
 eq(apelidar('Wave Polling (Verasight)'), 'Wave Polling (Verasight)', 'Wave Polling passa intacta, sem apelido')
 
+// ── 29/Set/2026 · o INÍCIO do campo, e a casa de nome curto ───────────────
+//
+// 🔴 Os dois casos nasceram na mesma passada. O conferidor imprimiu 3 buracos e
+//    6 dias de atraso na ponta, e na fonte primária: uma era cédula com NOMES,
+//    que a nossa régua recusa com prova desde 04/Set; outra era a Clarity, com
+//    CINCO rodadas nossas, rotulada como "a casa NAO tem UMA linha no arquivo".
+//    Preço medido: tratar as três como buraco levaria a média de D+7.58 a D+8.00,
+//    e a única que é mesmo generic ballot leva a D+7.57.
+console.log('\n🧪 inicio do campo e nome curto da casa\n')
+
+// O início existe porque `deveRodada` data a onda pelo INÍCIO, nunca pelo fim.
+eq(lerRotulo('Sep 25 - 28: YouGov (Economist) (B+), 1003 LV').campoInicio, '2026-09-25', 'campoInicio sai do rotulo de intervalo')
+eq(lerRotulo('Sep 25 - 28: YouGov (Economist) (B+), 1003 LV').campoFim, '2026-09-28', 'campoFim segue o mesmo')
+
+// Onda que ATRAVESSA meses: o mês do início é o primeiro, não o do fim.
+const cruza = lerRotulo('Aug 30 - Sep 2: Casa X (B), 900 LV')
+eq(cruza.campoInicio, '2026-08-30', 'onda que cruza o mes: inicio fica em agosto')
+eq(cruza.campoFim, '2026-09-02', 'onda que cruza o mes: fim fica em setembro')
+
+// Rótulo de UM dia só: início e fim coincidem, e o campo não pode vir nulo.
+const umDia = lerRotulo('Sep 21: Casa Y (A), 1000 RV')
+eq(umDia.campoInicio, '2026-09-21', 'rotulo de um dia: inicio igual ao fim')
+eq(umDia.campoFim, '2026-09-21', 'rotulo de um dia: fim')
+
+// 📌 Anti-excesso: o apelido novo não pode capturar casa que só compartilha a
+//    primeira palavra. "Clarity" sozinha não é a Clarity Campaign Labs.
+eq(apelidar('Clarity Campaign'), 'Clarity Campaign Labs (D)', 'o nome CURTO do agregador acha o nome longo do indice')
+eq(apelidar('Clarity Campaign Labs (D)'), 'Clarity Campaign Labs (D)', 'o nome longo passa por ele mesmo')
+eq(apelidar('Clarity Research'), 'Clarity Research', 'Clarity Research NAO e capturada pelo apelido')
+
 console.log(`\n${falhas === 0 ? '✅' : '❌'} ${ok} asserção(ões) passaram, ${falhas} falharam\n`)
 process.exit(falhas === 0 ? 0 : 1)

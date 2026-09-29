@@ -33,6 +33,7 @@
 import { readFileSync } from 'fs'
 import { pathToFileURL } from 'url'
 import { serieDaCasa } from '../lib/us-polls/casas.mjs'
+import { deveRodada } from '../lib/us-polls/instrumento-medido.mjs'
 
 export const CHAVE_GENERIC_BALLOT = '79287655-1e6e-4a3a-9ca3-13883c9a7496'
 export const BASE_LIVE = 'https://live-data.jifo.co/'
@@ -113,7 +114,15 @@ export function lerRotulo(txt) {
   // Sem amostra no rótulo não há âncora, e aí a varredura solta é o que sobra:
   // ela vale menos, e por isso só roda nesse caso.
   const recorte = (comAmostra?.[2] ?? (semNota.match(/\b(LV|RV|A)\b/i) || [])[1])?.toUpperCase() ?? null
+  // 🔑 O INÍCIO do campo sai do mesmo rótulo ("Sep 25 - 28") e existe porque a
+  //    régua de instrumento data a onda pelo INÍCIO, nunca pelo fim. Datar pelo
+  //    fim cobra a casa por uma onda que ela publicou com outro instrumento, e é
+  //    o defeito que `instrumento-medido.mjs` declara ter corrigido em 22/Set.
+  //    Sem este campo, a chamada a `deveRodada` cairia no `campoFim` em silêncio
+  //    e repetiria o erro para toda onda que atravessa a data de corte.
+  const diaIni = Number(m[2])
   return {
+    campoInicio: Number.isFinite(diaIni) ? `2026-${String(mesIni).padStart(2, '0')}-${String(diaIni).padStart(2, '0')}` : null,
     campoFim: `2026-${String(mesFim).padStart(2, '0')}-${String(diaFim).padStart(2, '0')}`,
     casa,
     amostra: amostra ? Number(amostra) : null,
@@ -164,6 +173,13 @@ export const APELIDOS = [
   [/siena|nyt/i, 'NYT/Siena'],
   [/fox news|beacon/i, 'Fox News/Beacon'],
   [/marquette/i, 'Marquette'],
+  // 🔴 29/Set/2026. O agregador escreve o nome CURTO, "Clarity Campaign", e o
+  //    índice escreve "Clarity Campaign Labs (D)". O conferidor imprimiu
+  //    "🔴 a casa NAO tem UMA linha no arquivo" sobre uma casa que tem CINCO
+  //    rodadas nossas, a mais recente de 22/Jul. O rótulo errado é mais caro que
+  //    o buraco: "buraco de rodada" manda conferir uma onda, e "casa inteira
+  //    ausente" manda abrir cobertura nova para uma casa que já está coberta.
+  [/clarity campaign/i, 'Clarity Campaign Labs (D)'],
   // 🔴 As três de 25/Set/2026. Elas entraram no índice na mesma semana e o
   //    conferidor as imprimia como buraco porque o NOME difere entre os dois
   //    lados, não porque a rodada falte. Remover a nota resolveu Emerson,
@@ -247,8 +263,48 @@ async function main() {
   console.log(`   janela de ${DIAS} dias, desde ${corte}`)
   console.log(`\n   nossa base: ${nossas.length} linha(s) · agregador: ${deles.length} rodada(s) na mesma janela`)
 
-  const faltando = deles.filter((x) => !x.temos && !FORA_POR_DESENHO.some((re) => re.test(x.casa)))
+  const ausentes = deles.filter((x) => !x.temos && !FORA_POR_DESENHO.some((re) => re.test(x.casa)))
   const excluidas = deles.filter((x) => !x.temos && FORA_POR_DESENHO.some((re) => re.test(x.casa)))
+
+  // 🎯 A RODADA QUE A NOSSA RÉGUA RECUSA NÃO É BURACO NOSSO, régua de 29/Set/2026.
+  //
+  // 🔴 O caso. O conferidor imprimiu "3 rodada(s) que o agregador tem e a nossa
+  //    base NAO" e SEIS dias de atraso na ponta, e as três, abertas na fonte
+  //    primária, eram:
+  //
+  //      · The Economist/YouGov 25-28/Set, 1003 LV, D 53 x R 38. É a pergunta 46
+  //        do tab report, com a nota "Asked using the names of candidates running
+  //        in the respondent's district of residence". CÉDULA COM NOMES, que é o
+  //        instrumento que este registro recusa desde 04/Set, com prova e data.
+  //      · Angus Reid 19-25/Set, D 56 x R 40. É o recorte "Registered AND
+  //        decided", n=919 e não os 1.041 que o agregador etiquetou, e o mesmo
+  //        documento traz D 42 x R 32 na base cheia e D 45 x R 34 com leaners.
+  //      · Clarity Campaign 11-16/Set. Esta sim é rodada nossa que falta.
+  //
+  // 📊 O PREÇO de tratar as três como buraco: a média iria de D+7.58 a D+8.00,
+  //    e a única que é mesmo generic ballot leva a D+7.57. Ou seja, TODO o
+  //    movimento vinha de instrumento e NENHUM do eleitorado.
+  //
+  // 🔑 `deveRodada` já existia, já é chamada pela cadência e declara isto com
+  //    prova. Este conferidor não a chamava. É a mesma família de "ferramenta
+  //    pronta e nenhum comando a chama": a resposta estava na casa e a decisão
+  //    não a lia.
+  //
+  // ⛔ Isto NÃO julga o que o agregador faz: ele pode incluir o que quiser na
+  //    média dele, e a nossa mede outra coisa, declarada. O que muda aqui é só
+  //    quem entra na CONTAGEM de buraco NOSSO.
+  const recusadas = []
+  const faltando = []
+  for (const x of ausentes) {
+    // Pelo INÍCIO do campo. Sem ele, declarar em vez de cair no fim calado.
+    if (!x.campoInicio) {
+      faltando.push({ ...x, semInicio: true })
+      continue
+    }
+    const d = deveRodada(x.casaNorm, x.campoInicio)
+    if (d.deve) faltando.push(x)
+    else recusadas.push({ ...x, motivo: d.motivo })
+  }
 
   if (faltando.length) {
     console.log(`\n🔴 ${faltando.length} rodada(s) que o agregador tem e a nossa base NAO:`)
@@ -259,6 +315,15 @@ async function main() {
     }
   } else {
     console.log(`\n✅ nenhuma rodada do agregador falta na nossa base, nesta janela.`)
+  }
+
+  if (recusadas.length) {
+    console.log(`\n   🎯 ${recusadas.length} rodada(s) do agregador que a NOSSA RÉGUA recusa, e que por isso NÃO são buraco:`)
+    for (const r of recusadas) {
+      console.log(`      ${r.campoFim}  ${r.casaNorm.padEnd(28)} ${String(r.amostra ?? '?').padStart(5)} ${r.recorte ?? '??'}`)
+      console.log(`                 ${r.motivo}`)
+    }
+    console.log(`      ⛔ Ingerir uma destas trocaria o instrumento da média sem trocar o nome dela.`)
   }
 
   if (excluidas.length) {
@@ -293,6 +358,27 @@ async function main() {
       console.log(`      🔴 o agregador esta ${dias} dia(s) A FRENTE da nossa base NA PONTA.`)
       console.log(`         ⚠️ Se o agregadores-us-polls disser EM COMPASSO nesta mesma rodada, ele`)
       console.log(`            mediu contra a tabela da Wikipedia, que e COPIA e envelhece. Vale esta.`)
+      // 🎯 A PONTA PODE SER DE UMA RODADA QUE A NOSSA RÉGUA RECUSA, 29/Set/2026.
+      //    Naquele dia a ponta do agregador era a onda NOMINAL da Economist/YouGov
+      //    e o atraso saía como 6 dias. Pela ponta que a nossa régua aceita, era 3.
+      //    Atraso que só existe contra instrumento que não medimos manda correr
+      //    atrás de rodada que não deveríamos ter.
+      //    ⚠️ E o filtro tem de tirar TAMBÉM o que sai por DESENHO. Na primeira
+      //       versão desta linha, no mesmo dia, ela devolveu 26/Set e 4 dias de
+      //       atraso, e a rodada de 26/Set era a Morning Consult, tracker pago que
+      //       a nossa base nunca vai ter. Ponta que inclui o que nunca ingerimos é
+      //       atraso que não fecha nem com a base perfeita.
+      const pontaAceita = deles
+        .filter((x) => !FORA_POR_DESENHO.some((re) => re.test(x.casa)))
+        .filter((x) => !x.campoInicio || deveRodada(x.casaNorm, x.campoInicio).deve)
+        .map((x) => x.campoFim)
+        .sort()
+        .at(-1)
+      if (pontaAceita && pontaAceita !== pontaDeles) {
+        const d2 = Math.round((Date.parse(pontaAceita) - Date.parse(pontaNossa)) / 86400000)
+        console.log(`         🎯 pela ponta ALCANCAVEL, sem o que sai por desenho e sem o que a regua recusa,`)
+        console.log(`            ela e ${pontaAceita} e o atraso e ${d2} dia(s), contra os ${dias} da linha acima.`)
+      }
     } else if (dias < 0) {
       console.log(`      ✅ a nossa base esta ${-dias} dia(s) a frente do agregador na ponta.`)
     } else {
