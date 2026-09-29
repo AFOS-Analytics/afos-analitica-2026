@@ -135,7 +135,22 @@ npx tsx scripts/estado-dos-portoes.ts --soma=governors:94.20  # conferir uma som
 
 🔑 **`TRAVESSIA NAO CONFIRMADA` é a régua da trava de captura aplicada às faixas, e ela nasceu de um caso real no mesmo dia.** Às 16:11Z o `governors` leu **94,20%** e reprovou, com as 14 capturas gravadas da janela **todas acima** do corte; meia hora depois a leitura ao vivo deu **95,50%** e passou. A travessia existiu num instante que a grade de 30 minutos nunca gravou. **Uma leitura não é um preço, e também não é um estado de portão.**
 
-📐 **E a deriva vence a borda:** valor perto do corte com a série parada é `NA BORDA`, mas se o livro andou mais do que o dobro da faixa de borda em 24h, a travessia é movimento e não sobrepreço. O `governors` veio de 101,30% e caiu 7pp numa direção só. ⚠️ A distância do corte **não some** nesse caso: ela vira ressalva na frase, porque uma travessia que parou a 0,80pp do corte pode voltar amanhã.
+📐 **E a deriva vence a borda:** valor perto do corte com a série parada é `NA BORDA`, mas se o livro andou mais do que o dobro da faixa de borda em 24h **E andou numa direção só**, a travessia é movimento e não sobrepreço. O `governors` veio de 101,30% e caiu 7pp numa direção só. ⚠️ A distância do corte **não some** nesse caso: ela vira ressalva na frase, porque uma travessia que parou a 0,80pp do corte pode voltar amanhã.
+
+🧭 **O "E andou numa direção só" é de 29/Set/2026, e antes dele a cláusula era o PADRÃO.** `derivaPp` é **última menos primeira**, então ela é **cega à troca de direção**: um livro que oscila o dia inteiro e por acaso termina mais alto tem a mesma deriva de um que desceu em linha reta. O comentário do código sempre falou em *"quase monótona"* e *"sete pontos numa direção só"*, e **nada media isso**.
+
+🔴 **O caso.** O `turnout` saiu `EVENTO` com *"a serie andou 5.1pp em 24h, o que e movimento do livro e nao ruido de sobrepreco"*. Ele não atravessou nada (0 viradas, 18 de 18 reprovando, 13,4pp do corte) e percorreu **47,70pp de caminho** para uma deriva de 5,10pp: **direcionalidade 0,11**, que é a **mediana do próprio livro**. Quarenta minutos depois a leitura ao vivo caiu de 118,40% a 109,80%, confirmando o vaivém.
+
+📊 **A calibração, sobre 2.747 janelas** (`npx tsx scripts/calibrar-direcionalidade.ts`):
+
+| | houseSeats | senateSeats | governors | turnout | popularVote |
+|---|---|---|---|---|---|
+| só `\|deriva\| > 2pp` | 48,8% | 26,5% | 52,8% | **66,6%** | 15,6% |
+| **+ direcionalidade ≥ 0,5** | 4,5% | 12,7% | 4,7% | **4,0%** | 4,0% |
+
+⚠️ **Uma cláusula que dispara em dois terços dos dias não discrimina, ela é o padrão.** O limiar de 0,5 é o decil superior: entre janelas com deriva, a direcionalidade tem mediana 0,22 e p90 0,52, e o caso fundador está em **0,69**.
+
+📌 **Como LER a saída agora:** quando a deriva for grande mas o caminho for vaivém, o portão diz *"a soma andou Xpp mas em VAIVEM (caminho de Ypp, direcionalidade Z), entao o nivel de sobrepreco mexeu e isso NAO diz que o livro se moveu"*. **Essa frase não é ressalva, é o achado:** o que mexeu foi o nível de sobrepreço, e nada sobre a disputa. → `memory/feedback_a_deriva_e_cega_a_troca_de_direcao_e_andar_nao_e_passear.md`
 
 🧪 `npx tsx scripts/testar-estado-do-portao.ts`, 65 casos e no CI, com 12 de 12 mutações reprovadas. A regra mora em `lib/us-market/estado-do-portao.ts` e importa 95 e 105 do `portao.ts`, que é o dono da régua desde 10/Ago.
 
