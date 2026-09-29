@@ -74,6 +74,14 @@ export interface EstadoDoPortao {
     viradas: number
     /** soma da última menos a da primeira, na janela. null com menos de 2 capturas */
     derivaPp: number | null
+    /** o CAMINHO percorrido: soma dos módulos dos passos. null com menos de 2 capturas */
+    variacaoTotalPp: number | null
+    /**
+     * `|derivaPp| / variacaoTotalPp`, de 0 a 1. 1 é monótona, 0 voltou ao começo.
+     * null com menos de 2 capturas ou com caminho zero (série totalmente parada,
+     * onde não existe direção a medir e chamar de 0 ou de 1 seria inventar).
+     */
+    direcionalidade: number | null
   }
   historico: { n: number; passou: number; taxaPassagem: number } | null
   leitura: LeituraDoPortao
@@ -123,8 +131,70 @@ export const BORDA_PP = 1
  */
 export const DERIVA_QUE_DOMINA_A_BORDA = 2 * BORDA_PP
 
+/**
+ * 🧭 A DIRECIONALIDADE, porque "andou 5pp" não distingue ANDAR de PASSEAR.
+ *    Régua de 29/Set/2026.
+ *
+ * `derivaPp` é **última menos primeira**, e por isso é cega a troca de direção.
+ * O comentário acima descreve o caso fundador como *"quase monótona, com UMA
+ * travessia"* e *"sete pontos numa direção só"*, que é a coisa certa. **O código
+ * nunca mediu isso.** Um livro que oscila o dia inteiro e por acaso termina mais
+ * alto tem a mesma deriva de um livro que desceu em linha reta.
+ *
+ * 📐 `direcionalidade = |deriva| / caminho`, onde caminho é a soma dos módulos
+ *    dos passos. 1.00 é monótona; 0.00 voltou ao ponto de partida.
+ *
+ * 🔴 O CASO, medido em 29/Set/2026. O `turnout` saiu `EVENTO` com a frase *"a
+ *    serie andou 5.1pp em 24h, o que e movimento do livro e nao ruido de
+ *    sobrepreco"*. Ele não atravessou nada: 0 viradas, 18 de 18 reprovando e
+ *    13,4pp de distância do corte. E o caminho dele foi **47,70pp** para uma
+ *    deriva de 5,10pp, com direcionalidade **0,11**, que é a MEDIANA do próprio
+ *    livro. O dia não teve nada de direcional.
+ *
+ * 📊 CALIBRAÇÃO, sobre 2.747 janelas dos cinco livros (`calibrar-direcionalidade.ts`):
+ *
+ *    | limiar | houseSeats | senateSeats | governors | turnout | popularVote |
+ *    |--------|-----------|-------------|-----------|---------|-------------|
+ *    | só `|deriva| > 2pp` |  48,8% |  26,5% |  52,8% |  **66,6%** |  15,6% |
+ *    | + dir >= 0,5        |   4,5% |  12,7% |   4,7% |    4,0% |   4,0% |
+ *
+ *    ⚠️ **Uma cláusula que dispara em dois terços dos dias não discrimina, ela é
+ *    o padrão.** Entre as janelas com deriva acima de 2pp, a direcionalidade tem
+ *    mediana 0,22 e p90 **0,52**, e o caso fundador está em **0,69**. O limiar
+ *    de 0,5 é, portanto, aproximadamente o decil superior: raro por construção,
+ *    e com o caso que criou a regra confortavelmente dentro.
+ *
+ * ⛔ Isto NÃO troca a régua da deriva, ACRESCENTA a segunda condição. Deriva
+ *    grande segue necessária; ela deixa de ser suficiente.
+ */
+export const DIRECIONALIDADE_QUE_CONFIRMA_DERIVA = 0.5
+
 const HORAS_DA_JANELA = 24
 const HORA_MS = 3_600_000
+
+/** O CAMINHO que a série percorreu: soma dos módulos dos passos. */
+export function caminhoDaJanela(naJanela: readonly CapturaDaSoma[]): number | null {
+  if (naJanela.length < 2) return null
+  let total = 0
+  for (let i = 1; i < naJanela.length; i++) total += Math.abs(naJanela[i].soma - naJanela[i - 1].soma)
+  return Number(total.toFixed(2))
+}
+
+/**
+ * `|deriva| / caminho`. Ver `DIRECIONALIDADE_QUE_CONFIRMA_DERIVA`.
+ *
+ * ⛔ Caminho ZERO devolve `null` e não 0 nem 1: uma série totalmente parada não
+ *    tem direção, e escolher qualquer um dos dois extremos seria inventar. `null`
+ *    faz a cláusula da deriva NÃO disparar, que é o certo, porque deriva zero
+ *    também não passa no limiar de magnitude.
+ */
+export function direcionalidadeDaJanela(naJanela: readonly CapturaDaSoma[]): number | null {
+  if (naJanela.length < 2) return null
+  const caminho = caminhoDaJanela(naJanela)
+  if (caminho == null || caminho === 0) return null
+  const deriva = naJanela[naJanela.length - 1].soma - naJanela[0].soma
+  return Number((Math.abs(deriva) / caminho).toFixed(2))
+}
 
 /**
  * @param soma       a soma de AGORA, que vem da leitura ao vivo e ainda não
@@ -166,6 +236,8 @@ export function classificarPortao(
       naJanela.length >= 2
         ? Number((naJanela[naJanela.length - 1].soma - naJanela[0].soma).toFixed(2))
         : null,
+    variacaoTotalPp: caminhoDaJanela(naJanela),
+    direcionalidade: direcionalidadeDaJanela(naJanela),
   }
 
   const passouNoTodo = todas.filter((c) => fechaOPortao(c.soma)).length
@@ -226,12 +298,25 @@ export function classificarPortao(
       motivo: `o portao virou ${viradas}x em ${horasDaJanela}h: o corte esta DENTRO do ruido do livro, nao publicar troca de estado como movimento`,
     }
   }
-  const derivaDomina = janela.derivaPp != null && Math.abs(janela.derivaPp) > DERIVA_QUE_DOMINA_A_BORDA
+  // 🧭 DUAS condições, não uma: andar bastante E andar numa direção. Ver o bloco
+  //    de `DIRECIONALIDADE_QUE_CONFIRMA_DERIVA` para o caso e a calibração.
+  const derivaGrande = janela.derivaPp != null && Math.abs(janela.derivaPp) > DERIVA_QUE_DOMINA_A_BORDA
+  const direcional = janela.direcionalidade != null && janela.direcionalidade >= DIRECIONALIDADE_QUE_CONFIRMA_DERIVA
+  const derivaDomina = derivaGrande && direcional
+  // Quando a deriva é grande mas o caminho foi vaivém, isso é PARTE da frase, e
+  // não silêncio: "andou 5pp" sozinho mandaria o leitor supor direção.
+  const comoAndou =
+    janela.direcionalidade != null && janela.variacaoTotalPp != null
+      ? ` (caminho de ${janela.variacaoTotalPp}pp, direcionalidade ${String(janela.direcionalidade).replace('.', ',')})`
+      : ''
   if (naBorda && !derivaDomina) {
+    const porQue = derivaGrande
+      ? `a serie andou ${janela.derivaPp}pp em ${horasDaJanela}h mas em VAIVEM${comoAndou}, entao a deriva nao tira a borda de cena`
+      : `a serie andou ${janela.derivaPp ?? 0}pp em ${horasDaJanela}h`
     return {
       ...base,
       leitura: 'NA BORDA',
-      motivo: `a ${base.distanciaDaBorda}pp do corte e a serie andou ${janela.derivaPp ?? 0}pp em ${horasDaJanela}h: a proxima leitura pode virar por sobrepreco, entao a troca de estado nao e fato sobre a disputa`,
+      motivo: `a ${base.distanciaDaBorda}pp do corte e ${porQue}: a proxima leitura pode virar por sobrepreco, entao a troca de estado nao e fato sobre a disputa`,
     }
   }
 
@@ -251,9 +336,13 @@ export function classificarPortao(
       motivo: `este book ${maioria === 'PASSOU' ? 'fecha' : 'reprova'} na maioria das capturas (passa em ${pct}% de ${historico.n}): hoje ele fez o de sempre${ressalvaDaBorda}`,
     }
   }
+  // 🧭 A afirmação "movimento e nao ruido" exige as DUAS condições. Sem elas, o
+  //    que se diz é o que foi medido: andou tanto, em vaivém, e nada além disso.
   const comoAtravessou = derivaDomina
-    ? `, e a serie andou ${janela.derivaPp}pp em ${horasDaJanela}h, o que e movimento do livro e nao ruido de sobrepreco`
-    : ''
+    ? `, e a serie andou ${janela.derivaPp}pp em ${horasDaJanela}h numa direcao so${comoAndou}, o que e movimento do livro e nao ruido de sobrepreco`
+    : derivaGrande
+      ? `, e a soma andou ${janela.derivaPp}pp em ${horasDaJanela}h mas em VAIVEM${comoAndou}, entao o nivel de sobrepreco mexeu e isso NAO diz que o livro se moveu`
+      : ''
   return {
     ...base,
     leitura: 'EVENTO',

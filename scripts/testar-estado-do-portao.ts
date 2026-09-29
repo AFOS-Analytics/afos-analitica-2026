@@ -15,6 +15,9 @@ import {
   BORDA_PP,
   MINIMO_NA_JANELA,
   MINIMO_NO_HISTORICO,
+  DIRECIONALIDADE_QUE_CONFIRMA_DERIVA,
+  caminhoDaJanela,
+  direcionalidadeDaJanela,
   type CapturaDaSoma,
 } from '../lib/us-market/estado-do-portao'
 
@@ -188,6 +191,86 @@ const HIST_GOVERNORS = antigas([...Array(433).fill(99), ...Array(103).fill(107)]
   const r = classificarPortao(94.2, [...HIST_GOVERNORS, ...serie([96.2, 95.5, 95.0, 94.2])], { agora: AGORA })
   eq('deriva de exatamente 2pp nao vence a borda', r.leitura, 'NA BORDA')
   eq('e a deriva sai medida', r.janela.derivaPp, -2)
+}
+
+// ─── 3c. ANDAR nao e PASSEAR: a DIRECIONALIDADE, regra de 29/Set/2026 ───────
+//
+// 🔴 `derivaPp` e ultima menos primeira, e por isso e CEGA a troca de direcao.
+//    O caso de 15/Set e descrito como "quase monotona" e "sete pontos numa
+//    direcao so", que e a coisa certa, mas o codigo nunca mediu isso. Em
+//    29/Set o `turnout` saiu EVENTO com a frase "movimento do livro e nao
+//    ruido de sobrepreco" tendo percorrido 47,70pp de caminho para uma deriva
+//    de 5,10pp, com direcionalidade 0,11, que e a MEDIANA do proprio livro.
+//
+// 📊 A clausula antiga disparava em 48,8% a 66,6% das janelas dos cinco livros.
+//    Com o limiar de 0,5 ela cai para 4,0% a 12,7%, e o caso fundador esta em
+//    0,69 contra p90 de 0,52 entre as janelas com deriva.
+
+// A aritmetica, medida direto nas duas funcoes exportadas.
+{
+  const s = serie([100, 104.5, 103, 103])
+  eq('caminho e a soma dos modulos dos passos', caminhoDaJanela(s), 6)
+  eq('deriva de 3 sobre caminho de 6 da direcionalidade 0,5', direcionalidadeDaJanela(s), 0.5)
+  eq('serie monotona da direcionalidade 1', direcionalidadeDaJanela(serie([100, 101, 102, 103])), 1)
+  eq('serie que volta ao comeco da direcionalidade 0', direcionalidadeDaJanela(serie([100, 104, 96, 100])), 0)
+  // ⛔ Caminho ZERO nao e direcionalidade 0 nem 1: nao existe direcao a medir.
+  eq('serie totalmente parada da direcionalidade null', direcionalidadeDaJanela(serie([99, 99, 99, 99])), null)
+  eq('e o caminho dela e 0, que e medido', caminhoDaJanela(serie([99, 99, 99, 99])), 0)
+  eq('com uma captura so o caminho e null', caminhoDaJanela(serie([99])), null)
+  eq('e a direcionalidade tambem', direcionalidadeDaJanela(serie([99])), null)
+  ok('a direcionalidade nunca passa de 1', [[100, 103, 106], [100, 97, 94], [100, 105, 99, 103]].every((x) => (direcionalidadeDaJanela(serie(x)) ?? 0) <= 1))
+}
+
+{
+  // 🔴 ANTI-SILENCIO · O CASO REAL DO TURNOUT DE 29/Set/2026, numeros do Neon.
+  //    Deriva +3,90pp sobre caminho de 35,50pp: vaivem, nao movimento.
+  const TURNOUT_29SET = [114.5, 118.5, 111.3, 118.2, 113.8, 110.5, 109.6, 110.1, 111.7, 111.7, 115.2, 118.4]
+  // turnout fecha em 57,87% das capturas
+  const histTurnout = antigas([...Array(419).fill(99), ...Array(305).fill(112)])
+  const r = classificarPortao(118.4, [...histTurnout, ...serie(TURNOUT_29SET)], { agora: AGORA })
+  eq('o turnout de 29/Set segue EVENTO pela taxa historica', r.leitura, 'EVENTO')
+  eq('e a deriva segue medida', r.janela.derivaPp, 3.9)
+  eq('o caminho sai medido', r.janela.variacaoTotalPp, 35.5)
+  eq('e a direcionalidade e 0,11', r.janela.direcionalidade, 0.11)
+  ok(
+    'o motivo NAO afirma movimento do livro',
+    !/movimento do livro e nao ruido de sobrepreco/.test(r.motivo),
+    r.motivo
+  )
+  ok('e diz VAIVEM com todas as letras', /VAIVEM/.test(r.motivo), r.motivo)
+  ok('e diz que isso NAO prova que o livro se moveu', /NAO diz que o livro se moveu/.test(r.motivo), r.motivo)
+}
+
+{
+  // 🔴 ANTI-SILENCIO · deriva grande em VAIVEM na borda volta a ser NA BORDA.
+  //    Antes desta regra ela caia direto para EVENTO, porque so a magnitude era
+  //    conferida. Todas as capturas do mesmo lado do corte: zero travessia.
+  const vaivem = [92.0, 94.5, 91.0, 94.8, 91.5, 94.7]
+  const r = classificarPortao(94.2, [...HIST_GOVERNORS, ...serie(vaivem)], { agora: AGORA })
+  eq('deriva grande em vaivem na borda NAO vence a borda', r.leitura, 'NA BORDA')
+  eq('a deriva e mesmo maior que o limiar', r.janela.derivaPp, 2.7)
+  ok('e a direcionalidade e baixa', (r.janela.direcionalidade ?? 1) < DIRECIONALIDADE_QUE_CONFIRMA_DERIVA)
+  ok('o motivo explica que foi vaivem', /VAIVEM/.test(r.motivo), r.motivo)
+}
+
+{
+  // 🚫 ANTI-EXCESSO · o CASO FUNDADOR nao pode parar de funcionar. Ele e
+  //    quase monotono e tem de seguir tirando a borda de cena.
+  const confirmada = serie([...GOVERNORS_15SET, 94.5, 94.3])
+  const r = classificarPortao(94.2, [...HIST_GOVERNORS, ...confirmada], { agora: AGORA })
+  eq('o caso de 15/Set segue EVENTO', r.leitura, 'EVENTO')
+  ok('e a direcionalidade dele esta ACIMA do limiar', (r.janela.direcionalidade ?? 0) >= DIRECIONALIDADE_QUE_CONFIRMA_DERIVA, String(r.janela.direcionalidade))
+  ok('o motivo segue afirmando movimento do livro', /movimento do livro e nao ruido de sobrepreco/.test(r.motivo), r.motivo)
+  ok('e diz numa direcao so', /numa direcao so/.test(r.motivo), r.motivo)
+}
+
+{
+  // 🚫 ANTI-EXCESSO · direcionalidade ALTA com deriva PEQUENA nao dispara:
+  //    a magnitude segue necessaria, a direcao so deixou de ser dispensavel.
+  const r = classificarPortao(94.2, [...HIST_GOVERNORS, ...serie([95.9, 95.4, 95.0, 94.4])], { agora: AGORA })
+  eq('monotona de 1,5pp nao vence a borda', r.leitura, 'NA BORDA')
+  eq('a direcionalidade e 1', r.janela.direcionalidade, 1)
+  ok('e o motivo NAO fala em vaivem, porque nao houve', !/VAIVEM/.test(r.motivo), r.motivo)
 }
 
 // ─── 4. EVENTO x ESTADO NORMAL, com as taxas medidas em 15/Set/2026 ─────────
