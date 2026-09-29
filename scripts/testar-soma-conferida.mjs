@@ -65,6 +65,46 @@ let lancou = false
 try { separarPorConferencia(null, REG) } catch { lancou = true }
 eq('array obrigatorio', lancou, true)
 
+// ——— 29/Set/2026 · FONTE_NAO_SUSTENTA, o terceiro veredito
+//
+// 🔴 Abri o topline da Reuters/Ipsos de 13-16/Fev, que a propria linha declara
+//    como fontePrimaria. Onda certa, datas certas, HTTP 200, e o documento e de
+//    ADULTOS 18+ com D 36 x R 32, enquanto a linha diz RV 846 com D 41 x R 37.
+//    Nao da para CONFIRMAR (seria promover numero que o documento nao mostra) nem
+//    para acusar o indice (a casa pode publicar o RV num crosstabs que nao achei).
+{
+  const NS = [
+    ...REG,
+    { instituto: 'Z', campoInicio: '2026-02-13', campoFim: '2026-02-16', dem: 41, rep: 37, outros: 14, veredito: 'FONTE_NAO_SUSTENTA', conferidoEm: '2026-09-29', url: 'https://exemplo/topline.pdf' },
+  ]
+  const alvo = linha({ instituto: 'Z', campoInicio: '2026-02-13', campoFim: '2026-02-16', dem: 41, rep: 37, outros: 14 })
+  const r = separarPorConferencia([{ p: alvo, s: 92 }], NS)
+  eq('fonte que nao sustenta tem balde PROPRIO', r.fonteNaoSustenta.length, 1)
+  eq('e carrega a entrada', r.fonteNaoSustenta[0].entrada.veredito, 'FONTE_NAO_SUSTENTA')
+  // 🔴 O destino errado seria este, e era o que o `else` pega-tudo fazia:
+  eq('NAO cai no balde de recorte CONFERIDO', r.recorteConferido.length, 0)
+  // sai do contador do "ninguem abriu ainda", porque alguem abriu
+  eq('NAO conta como nao conferida', r.naoConferidas.length, 0)
+  eq('e nao se mistura com erro do indice', r.erroDoIndice.length, 0)
+}
+
+// 🧨 ANTI-SILENCIO · veredito desconhecido LANCA em vez de virar "conferido".
+//    Sem isto, quem acrescentar um veredito novo e esquecer o ramo tem a linha
+//    tratada como confirmada e legitima, que e o pior destino possivel.
+{
+  const BAD = [{ instituto: 'W', campoInicio: '2026-01-01', campoFim: '2026-01-02', dem: 40, rep: 40, outros: 5, veredito: 'INVENTADO', conferidoEm: '2026-09-29', url: 'https://exemplo/x.pdf' }]
+  const alvo = linha({ instituto: 'W', campoInicio: '2026-01-01', campoFim: '2026-01-02', dem: 40, rep: 40, outros: 5 })
+  let lancouV = false
+  try { separarPorConferencia([{ p: alvo, s: 85 }], BAD) } catch { lancouV = true }
+  eq('veredito desconhecido LANCA no balde', lancouV, true)
+  eq('e a validacao tambem o recusa', validarRegistro(BAD).length, 1)
+}
+
+// 🚫 ANTI-EXCESSO · os tres vereditos legitimos seguem passando na validacao.
+for (const v of ['RECORTE_DO_INSTITUTO', 'ERRO_DO_INDICE', 'FONTE_NAO_SUSTENTA']) {
+  eq(`veredito ${v} e aceito`, validarRegistro([{ instituto: 'A', campoInicio: '2026-01-01', campoFim: '2026-01-02', dem: 1, rep: 2, veredito: v, conferidoEm: '2026-09-29', url: 'https://x/y.pdf' }]).length, 0)
+}
+
 // ——— validacao: conferencia sem prova nao desarma portao
 eq('registro real e valido', validarRegistro(), [])
 eq('sem url reprova', validarRegistro([{ instituto: 'A', campoInicio: '2026-01-01', campoFim: '2026-01-02', dem: 1, rep: 2, veredito: 'RECORTE_DO_INSTITUTO', conferidoEm: '2026-09-23' }]).length, 1)
@@ -74,7 +114,11 @@ eq('url nao-http reprova', validarRegistro([{ instituto: 'A', campoInicio: '2026
 eq('data mal formada reprova', validarRegistro([{ instituto: 'A', campoInicio: '2026-01-01', campoFim: '2026-01-02', dem: 1, rep: 2, veredito: 'RECORTE_DO_INSTITUTO', conferidoEm: '23/09/2026', url: 'https://x.org' }]).length, 1)
 
 // ——— o registro REAL, conferido contra o que foi aberto em 23/Set
-eq('registro real tem 4 entradas', SOMAS_CONFERIDAS.length, 4)
+// 📌 O tamanho é travado de propósito: registro que cresce sem ninguém notar vira
+//    gaveta. 4 até 23/Set; a 5ª é a Reuters/Ipsos de Fev com FONTE_NAO_SUSTENTA,
+//    aberta em 29/Set. Ao mexer aqui, dizer QUAL entrada entrou e por quê.
+eq('registro real tem 5 entradas', SOMAS_CONFERIDAS.length, 5)
+eq('e uma delas e FONTE_NAO_SUSTENTA', SOMAS_CONFERIDAS.filter((e) => e.veredito === 'FONTE_NAO_SUSTENTA').length, 1)
 eq('uma delas e erro do indice', SOMAS_CONFERIDAS.filter((e) => e.veredito === 'ERRO_DO_INDICE').length, 1)
 eq('o erro do indice e a Marquette', SOMAS_CONFERIDAS.find((e) => e.veredito === 'ERRO_DO_INDICE').instituto, 'Marquette University Law School')
 eq('toda entrada real tem decomposicao', SOMAS_CONFERIDAS.every((e) => typeof e.decomposicao === 'string' && e.decomposicao.length > 40), true)

@@ -210,6 +210,15 @@ for (const x of aqui.erroDoIndice) {
       `D ${x.p.dem} R ${x.p.rep} outros ${x.p.outros} = ${x.s}\n            ${x.entrada.decomposicao}`
   )
 }
+// 🔎 Aberta na fonte e a fonte NÃO SUSTENTA nem refuta. Sai do contador porque
+//    alguém abriu, e aparece em toda passada porque continua sem prova.
+for (const x of aqui.fonteNaoSustenta) {
+  console.log(
+    `          ${cor.mau}FONTE NÃO SUSTENTA${cor.fim}, aberta em ${x.entrada.conferidoEm}: ${x.p.instituto} ${x.p.campoInicio}→${x.p.campoFim} · ` +
+      `D ${x.p.dem} R ${x.p.rep} outros ${x.p.outros} = ${x.s}\n            ${x.entrada.decomposicao}` +
+      `\n            ⛔ o número NÃO está confirmado e o índice NÃO está refutado: falta documento.`
+  )
+}
 for (const p of problemasDoRegistro) console.log(`          ${cor.mau}REGISTRO INVÁLIDO${cor.fim}: ${p}`)
 console.log(
   `        descartadas por valor ${num(qb?.descartadasPorValor)} → ${num(q.descartadasPorValor)}` +
