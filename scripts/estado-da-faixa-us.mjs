@@ -203,6 +203,36 @@ async function comBanco() {
     linha(bate ? '✅' : '🔴', 'neon x piso', `Neon D+${m.vantagemDem} sobre ${m.nPesquisas} (${reg.slug}) · piso D+${local.mediaAfos?.vantagemDem} sobre ${local.mediaAfos?.nPesquisas}`)
     if (!bate) anota('o piso versionado das pesquisas DIVERGE do registro do Neon')
   }
+  // 🔴 E O PISO PUBLICADO, que é o terceiro lugar e o que esta ferramenta QUASE
+  //    deixou passar na estreia. Em 01/Out ela imprimiu "✅ pesquisas" com o piso
+  //    de PRODUÇÃO dois dias atrás (lastUpdate 2026-09-29, D+7.58 sobre 34),
+  //    porque comparava vivo contra LOCAL e nunca local contra PUBLICADO.
+  //
+  // ⚠️ São TRÊS cópias e não duas: Neon (vivo), disco (versionado) e o que o
+  //    deploy levou (publicado). O piso só serve para quando o Neon não responde,
+  //    e é exatamente aí que ninguém vai estar olhando.
+  for (const [rotulo, caminho, ler] of [
+    ['piso pesquisas', '/us-polls-data.json', (a) => `lastUpdate ${a.lastUpdate} · D+${a.mediaAfos?.vantagemDem} sobre ${a.mediaAfos?.nPesquisas}`],
+    ['piso imprensa', '/us-press-data.json', (a) => `${a.data ?? a.lastUpdate ?? '?'} · ${(a.itens ?? []).length} itens`],
+  ]) {
+    try {
+      const base = process.env.AFOS_BASE || 'https://www.afos-analytics.com'
+      const r = await fetch(base + caminho, { signal: AbortSignal.timeout(30000) })
+      const pub = await r.json()
+      const local = JSON.parse(readFileSync(join(ROOT, 'public', caminho.slice(1)), 'utf-8'))
+      const dataPub = pub.lastUpdate ?? pub.data ?? null
+      const dataLoc = local.lastUpdate ?? local.data ?? null
+      const atraso = dataPub && dataLoc ? diasEntre(dataPub, dataLoc) : null
+      linha(atraso === 0 ? '✅' : '🔴', rotulo, `publicado ${ler(pub)}`)
+      if (atraso !== 0) {
+        console.log(`        local ${ler(local)} · ${atraso} dia(s) à frente do publicado`)
+        anota(`${rotulo} em PRODUÇÃO está ${atraso} dia(s) atrás: se o Neon cair, o painel serve isso. Falta deploy`)
+      }
+    } catch (e) {
+      linha('⚠️', rotulo, `não deu para ler o publicado: ${String(e.message).slice(0, 60)}`)
+    }
+  }
+
   // mercado: o último ponto gravado
   const ultimo = await prisma.marketPrice.findFirst({ orderBy: { snapshotAt: 'desc' }, select: { snapshotAt: true } })
   if (ultimo) {
