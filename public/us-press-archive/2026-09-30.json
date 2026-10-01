@@ -1,0 +1,225 @@
+{
+  "lastUpdate": "2026-09-30",
+  "fetchedAt": "2026-09-30T19:20:13.446Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal",
+      "feed": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal",
+      "feed": "https://feeds.washingtonpost.com/rss/politics"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal",
+      "feed": "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada",
+      "feed": "https://rss.politico.com/politics-news.xml"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada",
+      "feed": "https://thehill.com/homenews/feed/"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada",
+      "feed": "https://rollcall.com/feed/"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada",
+      "feed": "https://api.axios.com/feed/"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.npr.org/1014/rss.xml"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio",
+      "feed": "https://abcnews.go.com/abcnews/politicsheadlines"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio",
+      "feed": "https://www.cbsnews.com/latest/rss/politics"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.nbcnews.com/nbcnews/public/politics"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio",
+      "feed": "http://rss.cnn.com/rss/cnn_allpolitics.rss"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio",
+      "feed": "https://moxie.foxnews.com/google-publisher/politics.xml"
+    },
+    {
+      "casa": "NewsNation",
+      "tipo": "tv/rádio",
+      "feed": "https://www.newsnationnow.com/politics/feed/"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião",
+      "feed": "https://www.nationalreview.com/feed/"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião",
+      "feed": "https://www.theguardian.com/us-news/us-politics/rss"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 185,
+    "naLista": 61,
+    "foraDaLista": 124,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 3,
+    "veiculosRepresentados": 6,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": [
+      "feed:Politico: HTTP 404"
+    ],
+    "feedsProprios": 16,
+    "lidosEmFeedProprio": 30,
+    "publicadosComLinkCanonico": 7,
+    "publicadosViaGoogleNews": 3,
+    "publicadosPorDisputa": 10,
+    "publicadosPorMetodo": 0
+  },
+  "itens": [
+    {
+      "titulo": "Analysis | Can you trust the polls?",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5NaVA3aUt4WXdIVUJsellINEFYQ1hmVm53TGxlUzN4SkxkQjRNcEhacF9FR1lPdC1lcGo0WVk5X1hCdzBoY3pzRlJlSHU5b200WmJaV1NJUUN1eFpObERlendyRXk2aEI0VGNhTzBYcFNrbXd6WXEyMkRHUQ?oc=5",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-09-30T18:59:49.000Z",
+      "consulta": "generic-ballot",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Here are the Republicans backing Democratic candidates in the midterms",
+      "url": "https://thehill.com/homenews/campaign/6120527-republicans-endorse-democrats-midterms/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-09-30T18:58:26.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Send us your questions about how the Iran war will affect the US midterms",
+      "url": "https://www.theguardian.com/us-news/2026/sep/30/send-us-your-questions-us-iran-war-midterms",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-09-30T18:46:25.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Lara Trump says Iran war could cost Trump the midterms",
+      "url": "https://thehill.com/homenews/campaign/6120920-lara-trump-iran-war-midterms/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-09-30T18:34:18.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Democrats Block Stock-Trading Bill, Denying the G.O.P. a Pre-Midterm Win",
+      "url": "https://www.nytimes.com/2026/09/30/us/politics/democrats-block-stock-trading-bill.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-30T18:33:00.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Congress Set to Leave Washington for the Midterms With No A.I. Progress",
+      "url": "https://www.nytimes.com/2026/09/30/us/politics/congress-ai-safety.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-30T18:31:26.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Opinion | How many House seats will the Democrats win? The polls may already know.",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQNmdETjU0emktTTNRaHJ0ZDRlNjA0anR3TndVSkw1NWJWMlBoVndwX2xkZGxiRllfdWVwd1M4TENYRlZHQTlHYkIxVjdldERmTVFqXzhKU3BNdUlCSjVkMXMxRGlEVkYtLWxaUVZMbFdqbTU4cG9FNU5kWHJLSGw2UjNfOHA5MDhEOFZUZWYySjVvRzFscjcwaWxWb25uOUhxTE5PaWZOUGIwMzFJajJoYlBnRXg?oc=5",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-09-30T18:26:51.000Z",
+      "consulta": "generic-ballot",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Lawmakers’ stock trading bill falls short in Senate",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPMEhVaHVSQmxoVlFCcUhEeWg5YlNtWkdBM3VyZWVST3JoVVN1ZFg4NUp0aEMwLTctMnNfTjZtdmVpZmlWQ2N0SDNVdlV6b1ptWXBfNW1jTTE1U0otNUZmSVowUXExbVVXNGtvSXctZHV3VDdhRHhwWWRMU3BNRkdWNE96dTVMaUkzRkE4?oc=5",
+      "casa": "Roll Call",
+      "publicadoEm": "2026-09-30T17:55:32.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Republican glee erupts as White House boasts sharp decline in immigration from Muslim-majority nations",
+      "url": "https://www.foxnews.com/politics/republican-glee-erupts-white-house-boasts-sharp-decline-immigration-muslim-majority-nations",
+      "casa": "Fox News",
+      "publicadoEm": "2026-09-30T17:47:59.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Schumer tanks popular insider trading ban in Dem effort to derail Republican's agenda ahead of midterms",
+      "url": "https://www.foxnews.com/politics/schumer-tanks-popular-insider-trading-ban-dem-effort-derail-gops-voter-id-push",
+      "casa": "Fox News",
+      "publicadoEm": "2026-09-30T16:52:20.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "lastUpdate": "2026-09-29",
+  "fetchedAt": "2026-09-29T19:20:13.478Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal",
+      "feed": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal",
+      "feed": "https://feeds.washingtonpost.com/rss/politics"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal",
+      "feed": "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada",
+      "feed": "https://rss.politico.com/politics-news.xml"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada",
+      "feed": "https://thehill.com/homenews/feed/"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada",
+      "feed": "https://rollcall.com/feed/"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada",
+      "feed": "https://api.axios.com/feed/"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.npr.org/1014/rss.xml"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio",
+      "feed": "https://abcnews.go.com/abcnews/politicsheadlines"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio",
+      "feed": "https://www.cbsnews.com/latest/rss/politics"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.nbcnews.com/nbcnews/public/politics"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio",
+      "feed": "http://rss.cnn.com/rss/cnn_allpolitics.rss"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio",
+      "feed": "https://moxie.foxnews.com/google-publisher/politics.xml"
+    },
+    {
+      "casa": "NewsNation",
+      "tipo": "tv/rádio",
+      "feed": "https://www.newsnationnow.com/politics/feed/"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião",
+      "feed": "https://www.nationalreview.com/feed/"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião",
+      "feed": "https://www.theguardian.com/us-news/us-politics/rss"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 188,
+    "naLista": 71,
+    "foraDaLista": 117,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 8,
+    "veiculosRepresentados": 7,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": [],
+    "feedsProprios": 16,
+    "lidosEmFeedProprio": 29,
+    "publicadosComLinkCanonico": 8,
+    "publicadosViaGoogleNews": 2,
+    "publicadosPorDisputa": 10,
+    "publicadosPorMetodo": 0
+  },
+  "itens": [
+    {
+      "titulo": "Thune to ramp up midterm campaign stops as GOP defends Senate majority",
+      "url": "https://www.cbsnews.com/news/john-thune-midterm-elections-campaign-senate-republicans/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-09-29T19:09:43.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Just how bad are midterm polls for Republicans?",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNeS1CckdnQmQ1ZXdGT2xJMXN1Mk42YkFKYU9pbHJaeHlFVkRBc1I0bGFnMzNlOUh0REJTS2pEZXI0TU5PSFBmMm9JeVk3T0JVX1dTQ3gyUTc3Z0xOd0JIOEhWNEdsZzNWc3otdkhrYnAtZkw4V0Z3T3AzUmFKVS1nZkYtc3ljVmw3T18zMHIzVU5rd9IBlwFBVV95cUxPTHkzbzdGaXN2T0Z0T1V4STZ1amczaThSazNtZ0xrcUtqeC1vdXUxSjlhT1lpNVc5cVg1UjVOSEd3VUVpbngwZm1UVXNBdXpBdTFpQzNmOTE1SmJlemZWUElVMkV2TFJTbmx2ZnRZMTJBUTl2c0t1QkIwTEZQdi12ZjRpZUhYZHJxSllTNVBwVDFnZVNSUC00?oc=5",
+      "casa": "The Hill",
+      "publicadoEm": "2026-09-29T18:59:00.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "The Senate races that could surprise everyone in November",
+      "url": "https://www.washingtonpost.com/politics/2026/09/29/senate-races-that-could-surprise-everyone-november/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-09-29T17:54:27.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "In Nine Key Senate Races, Five Republicans Won’t Commit to Campaigning With Trump",
+      "url": "https://www.nytimes.com/2026/09/29/us/politics/republicans-senate-midterms-trump-campaign.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-29T17:40:59.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "How Georgia's gas tax suspension may affect the midterm election",
+      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/georgia-gas-tax-suspension-affect-election/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-09-29T17:07:39.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Khanna: Epstein files should be one of Democrats' 'highest priorities' if congressional control changes",
+      "url": "https://thehill.com/homenews/house/6117891-khanna-massie-epstein-transparency-act/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-09-29T16:52:19.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "GOP pollster highlights 'dangerous' Trump midterm strategy",
+      "url": "https://www.newsnationnow.com/politics/gop-pollster-highlights-dangerous-trump-midterm-strategy/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-09-29T16:23:57.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "A Tough Ad Reminds Nebraska Voters About a Brutal Crime and a Pardon",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOeTBOb0lrRDYyZmhiSUw4RkFrRVphOExrTTJaWDVJMi1JT2JwU0ZORENES1dEU2dxZzBWQTRQTFhBRVh6bXprWXd3WHdXU0phSUZDZ2gtT1l6N2pHTHpKWFFYU0t1NnFqaFVxdnhsQXktY0JfQ01vb2lJd3Q5QzRybGNNc09xcXB4?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-29T14:43:57.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Democrats eye Wisconsin Republican incumbent as congressional map expands in hopes of a blue wave",
+      "url": "https://abcnews.com/Politics/wireStory/democrats-eye-wisconsin-republican-incumbent-congressional-map-expands-136851591",
+      "casa": "ABC News",
+      "publicadoEm": "2026-09-29T14:31:33.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Republicans fear they ‘haven’t done a damn thing’ to lower prices ahead of midterm reckoning",
+      "url": "https://www.foxnews.com/politics/republicans-fear-havent-done-damn-thing-lower-prices-ahead-midterm-reckoning",
+      "casa": "Fox News",
+      "publicadoEm": "2026-09-29T14:30:35.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    }
+  ]
+}
