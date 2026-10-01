@@ -30,6 +30,7 @@
     "check:locale": "tsx scripts/check-locale-json.ts",
     "check:content": "tsx scripts/validate-polls-data.ts && tsx scripts/check-json-structure.ts && tsx scripts/check-hardcoded-ptbr.ts && tsx scripts/test-json-number-gate.ts && tsx scripts/check-locale-json.ts",
     "check:frescor": "tsx scripts/check-frescor-editorial.ts",
+    "estado:usa": "node scripts/estado-da-faixa-us.mjs",
     "polls:usa": "node scripts/rodada-us-polls.mjs",
     "rodada:brz": "node scripts/rodada-brz.mjs",
     "glossario:brz": "node scripts/religar-glossario-brz.mjs",
