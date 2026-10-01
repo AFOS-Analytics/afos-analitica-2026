@@ -64,6 +64,7 @@ import { bandeira } from './build-og-cards-us.mjs'
  */
 export const EDICOES = {
   6: {
+    contrato: 'US House control contract',
     semana: 'week of September 3 to September 10, 2026',
     big: '14.50%',
     bigSub: (q) => `the highest reading the Republican${q ? ' ' : '<br>'}House series holds, above the${q ? ' ' : '<br>'}13.50% of July 29`,
@@ -76,6 +77,7 @@ export const EDICOES = {
         : 'The clearest news ran the other way, on the Missouri map.<br>Both facts are measured. The link between them is not.',
   },
   7: {
+    contrato: 'US House control contract',
     semana: 'week of September 10 to September 17, 2026',
     big: '89.50%',
     bigSub: (q) => `where the Democratic side closed,${q ? ' ' : '<br>'}matching the top its House series${q ? ' ' : '<br>'}had held since August 30`,
@@ -85,6 +87,7 @@ export const EDICOES = {
     tese: (q) => `The House crossed between the same two values five times in six days,${q ? ' ' : '<br>'}then broke out. The price is measured. What moved it is not.`,
   },
   8: {
+    contrato: 'US House control contract',
     semana: 'week of September 17 to September 24, 2026',
     big: '92.50%',
     bigSub: (q) => `where the Democratic side closed,${q ? ' ' : '<br>'}1.00pp under the 93.50% it${q ? ' ' : '<br>'}touched on September 20`,
@@ -92,6 +95,17 @@ export const EDICOES = {
     cardL: (q) => `where the Republican side closed,${q ? ' ' : '<br>'}down 3.00pp on the week`,
     cardS: '1.00pp above the series floor of 6.50%, from September 20',
     tese: (q) => `The House set the top of its series on September 20, then closed${q ? ' ' : '<br>'}five days at 92.50%. The net is 3.00pp. The path was larger.`,
+  },
+  9: {
+    contrato: 'US Senate control contract',
+    semana: 'week of September 24 to October 1, 2026',
+    big: '36.50%',
+    bigSub: (q) => `where Senate Republicans closed,${q ? ' ' : '<br>'}down 1.00pp and the only one${q ? ' ' : '<br>'}of the five prices that moved`,
+    cardN: '92.50%',
+    cardL: (q) => `where House Democrats closed,${q ? ' ' : '<br>'}the same number on all eight days`,
+    cardS: 'high and low identical across 45 readings',
+    tese: (q) =>
+      `Three pollsters asked the same question this week and came back${q ? ' ' : '<br>'}twelve points apart. The market closed where it opened.`,
   },
 }
 
@@ -179,7 +193,7 @@ const corpo = (quadrado, n, e) => `
     </div>
   </div>
   <div class="thesis">${e.tese(quadrado)}</div>
-  <div class="meta">US House control contract &middot; ${e.semana}</div>`
+  <div class="meta">${e.contrato} &middot; ${e.semana}</div>`
 
 const html = (f, n, e) => `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${css(f)}</style></head>
 <body><div class="og">
@@ -200,6 +214,23 @@ if (!N || !EDICOES[N]) {
   process.exit(1)
 }
 const E = EDICOES[N]
+
+// 🏷️ O RÓTULO DO CONTRATO É DECLARADO, e esta guarda é de 01/Out/2026.
+//
+// 🔴 Ele era a constante "US House control contract" soldada no rodapé, e
+//    acertava por ACASO: as edições 6, 7 e 8 lideravam com um preço da Câmara.
+//    A nº 9 lidera com o Senado em 36,50%, e o cartão saiu dizendo que aquele
+//    número era da CÂMARA. Valor certo, etiqueta errada, e nenhum portão vê:
+//    o cartão é o artefato mais compartilhado da edição.
+//
+// 📌 Mesma filosofia do `--edicao`, logo acima: aqui não existe padrão de
+//    propósito. Herdar o rótulo da edição anterior é exatamente o defeito.
+if (!E.contrato) {
+  console.error(`Edicao ${N} nao declara "contrato". O rotulo do rodape diz DE QUE o numero grande e,`)
+  console.error('   e herdar isso de outra edicao ja produziu um cartao com a casa errada.')
+  process.exit(1)
+}
+
 const browser = await chromium.launch()
 const DEST = process.argv.slice(2).find((a) => !a.startsWith('--')) || 'public/brand'
 console.log(`AFOS Weekly US, edicao no ${N} - ${E.semana}`)
