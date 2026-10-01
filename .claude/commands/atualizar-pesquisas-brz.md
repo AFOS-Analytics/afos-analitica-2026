@@ -26,6 +26,8 @@ O TSE instalou proteção anti-robô na borda Akamai em toda a propriedade. O co
 
 Chamar a rota mesmo assim não é erro grave, ela **falha fechada** e nada é gravado, mas é uma chamada desperdiçada e um 500 no log. Confirme o estado se quiser, e siga para o Passo 1.
 
+⚠️ **"Morta" é quase sempre, não sempre (medido em 01/Out/2026).** O cron agendado (`0 6,12,18 * * *`) passou **uma vez**: em 29/Set às 18:00:10Z gravou a `BR098702026`, municipal, das 734 linhas ingeridas desde 18/Ago a única em minuto de cron. Gravação do cron **não anota** o `historico-arquivo.jsonl`, então a subtração da rodada seguinte sobra exatamente essas linhas e o aviso `📓 N linha(s) entraram no banco SEM rodada registrada` aparece. **Esse aviso pede NOME, não descarte:** consultar `researchFinding` com `createdAt` depois da última rodada e conferir se o minuto é 06, 12 ou 18 UTC. → `memory/project_state_01out_brz_pesquisas.md`
+
 ⛔ **Não forjar user-agent** para escapar do 403, e **não insistir**. Se um dia o modo `--rede` também apanhar, a resposta é o modo ARQUIVO, nunca a insistência. → `memory/reference_tse_bloqueio_antirrobo_2026.md`
 
 ## 🚀 O atalho, criado em 09/Set/2026
