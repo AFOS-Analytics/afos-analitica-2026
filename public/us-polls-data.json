@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-29",
-  "fetchedAt": "2026-09-29T14:21:43.766Z",
+  "lastUpdate": "2026-10-01",
+  "fetchedAt": "2026-10-01T21:36:22.847Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,9 +47,30 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-08-30",
-    "nPesquisas": 34,
+    "desde": "2026-09-01",
+    "nPesquisas": 36,
     "incluidas": [
+      {
+        "instituto": "Harvard/Harris Poll/HarrisX",
+        "campoFim": "2026-09-28",
+        "amostraTipo": "LV",
+        "dem": 51,
+        "rep": 49
+      },
+      {
+        "instituto": "Quinnipiac University",
+        "campoFim": "2026-09-27",
+        "amostraTipo": "RV",
+        "dem": 51,
+        "rep": 39
+      },
+      {
+        "instituto": "Angus Reid Global",
+        "campoFim": "2026-09-25",
+        "amostraTipo": "RV",
+        "dem": 49,
+        "rep": 35
+      },
       {
         "instituto": "Emerson College",
         "campoFim": "2026-09-22",
@@ -77,6 +98,13 @@
         "amostraTipo": "LV",
         "dem": 51,
         "rep": 43
+      },
+      {
+        "instituto": "Impact Research (D)/National Research Inc. (R)",
+        "campoFim": "2026-09-21",
+        "amostraTipo": "RV",
+        "dem": 50,
+        "rep": 42
       },
       {
         "instituto": "Strength In Numbers/Verasight",
@@ -119,6 +147,13 @@
         "amostraTipo": "LV",
         "dem": 46,
         "rep": 40
+      },
+      {
+        "instituto": "Clarity Campaign Labs (D)",
+        "campoFim": "2026-09-16",
+        "amostraTipo": "LV",
+        "dem": 50,
+        "rep": 43
       },
       {
         "instituto": "Big Data Poll",
@@ -269,30 +304,21 @@
         "amostraTipo": "LV",
         "dem": 52,
         "rep": 41
-      },
-      {
-        "instituto": "Reuters/Ipsos",
-        "campoFim": "2026-08-31",
-        "amostraTipo": "RV",
-        "dem": 43,
-        "rep": 38
-      },
-      {
-        "instituto": "The Economist/YouGov",
-        "campoFim": "2026-08-31",
-        "amostraTipo": "RV",
-        "dem": 46,
-        "rep": 40
-      },
-      {
-        "instituto": "Harvard/Harris Poll/HarrisX",
-        "campoFim": "2026-08-30",
-        "amostraTipo": "LV",
-        "dem": 49,
-        "rep": 51
       }
     ],
     "excluidasPorInstrumento": [
+      {
+        "instituto": "The Economist/YouGov",
+        "campoInicio": "2026-09-25",
+        "campoFim": "2026-09-28",
+        "amostraTipo": "LV",
+        "dem": 53,
+        "rep": 38,
+        "desde": "2026-09-04",
+        "medidoEm": "2026-09-22",
+        "ressalva": "Asked using the names of candidates running in the respondent’s district of residence",
+        "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
+      },
       {
         "instituto": "The Economist/YouGov",
         "campoInicio": "2026-09-18",
@@ -330,25 +356,28 @@
         "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
       }
     ],
-    "nInstitutos": 27,
-    "dem": 49.29,
-    "rep": 41.71,
-    "vantagemDem": 7.58,
+    "nInstitutos": 29,
+    "dem": 49.69,
+    "rep": 41.58,
+    "vantagemDem": 8.11,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
+      "Angus Reid Global",
       "BGSU/YouGov",
       "Beacon Research (D)/ Shaw & Co. Research (R)",
       "Big Data Poll",
       "CBS News/YouGov",
       "CNN/SSRS",
       "Catawba College/YouGov",
+      "Clarity Campaign Labs (D)",
       "Cygnal (R)",
       "Echelon Insights",
       "Emerson College",
       "Focaldata",
       "Hart Research Associates (D)/ Public Opinion Strategies (R)",
       "Harvard/Harris Poll/HarrisX",
+      "Impact Research (D)/National Research Inc. (R)",
       "John Zogby Strategies",
       "Marist University",
       "Marquette University Law School",
@@ -360,24 +389,143 @@
       "RMG Research",
       "Reuters/Ipsos",
       "Strength In Numbers/Verasight",
-      "The Economist/YouGov",
       "The Honest Poll",
       "The Rainey Center"
     ]
   },
   "qualidade": {
-    "linhasLidas": 440,
-    "publicadas": 453,
+    "linhasLidas": 450,
+    "publicadas": 463,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 440,
+    "doIndice": 450,
     "curadas": 13,
     "curadasDescartadasPorDuplicidade": 17
   },
   "polls": [
+    {
+      "instituto": "Harvard/Harris Poll/HarrisX",
+      "campoInicio": "2026-09-26",
+      "campoFim": "2026-09-28",
+      "amostra": 2200,
+      "amostraTipo": "RV",
+      "margemErro": 2.1,
+      "dem": 50,
+      "rep": 50,
+      "outros": null,
+      "vantagemDem": 0,
+      "fontePrimaria": "https://harvardharrispoll.com/assets/uploads/2026/09/HHP_Sep2026_KeyResults.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Harvard/Harris Poll/HarrisX",
+      "campoInicio": "2026-09-26",
+      "campoFim": "2026-09-28",
+      "amostra": null,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 51,
+      "rep": 49,
+      "outros": null,
+      "vantagemDem": 2,
+      "fontePrimaria": "https://harvardharrispoll.com/assets/uploads/2026/09/HHP_Sep2026_KeyResults.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "The Economist/YouGov",
+      "campoInicio": "2026-09-25",
+      "campoFim": "2026-09-28",
+      "amostra": 1003,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 53,
+      "rep": 38,
+      "outros": 9,
+      "vantagemDem": 15,
+      "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_3BbPNx2.pdf#page=65",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "The Economist/YouGov",
+      "campoInicio": "2026-09-25",
+      "campoFim": "2026-09-28",
+      "amostra": 1423,
+      "amostraTipo": "RV",
+      "margemErro": 3.4,
+      "dem": 45,
+      "rep": 37,
+      "outros": 18,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_3BbPNx2.pdf#page=65",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Quinnipiac University",
+      "campoInicio": "2026-09-24",
+      "campoFim": "2026-09-27",
+      "amostra": 1032,
+      "amostraTipo": "RV",
+      "margemErro": 3.8,
+      "dem": 51,
+      "rep": 39,
+      "outros": 10,
+      "vantagemDem": 12,
+      "fontePrimaria": "https://poll.qu.edu/poll-release?releaseid=3968",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Angus Reid Global",
+      "campoInicio": "2026-09-19",
+      "campoFim": "2026-09-25",
+      "amostra": 919,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 56,
+      "rep": 40,
+      "outros": 4,
+      "vantagemDem": 16,
+      "fontePrimaria": "https://angusreid.us/wp-content/uploads/2026/09/2026.09.28_Trump_Midterms.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Angus Reid Global",
+      "campoInicio": "2026-09-19",
+      "campoFim": "2026-09-25",
+      "amostra": 1041,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 49,
+      "rep": 35,
+      "outros": 16,
+      "vantagemDem": 14,
+      "fontePrimaria": "https://angusreid.us/wp-content/uploads/2026/09/2026.09.28_Trump_Midterms.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Angus Reid Global",
+      "campoInicio": "2026-09-19",
+      "campoFim": "2026-09-25",
+      "amostra": 1205,
+      "amostraTipo": "A",
+      "margemErro": 2.5,
+      "dem": 45,
+      "rep": 34,
+      "outros": 21,
+      "vantagemDem": 11,
+      "fontePrimaria": "https://angusreid.us/wp-content/uploads/2026/09/2026.09.28_Trump_Midterms.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
     {
       "instituto": "Emerson College",
       "campoInicio": "2026-09-21",
@@ -499,6 +647,21 @@
       "origem": "indice-wikipedia"
     },
     {
+      "instituto": "Impact Research (D)/National Research Inc. (R)",
+      "campoInicio": "2026-09-16",
+      "campoFim": "2026-09-21",
+      "amostra": 1500,
+      "amostraTipo": "RV",
+      "margemErro": 2.5,
+      "dem": 50,
+      "rep": 42,
+      "outros": null,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://www.wsj.com/politics/policy/americans-want-populist-policies-that-defy-traditional-political-labels-119b29b9",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
       "instituto": "ActiVote",
       "campoInicio": "2026-09-11",
       "campoFim": "2026-09-21",
@@ -616,6 +779,21 @@
       "vantagemDem": 6,
       "fontePrimaria": "https://johnzogbystrategies.com/democratic-party-leads-republican-party-48-to-42-in-congressional-generic-ballot-as-race-heats-up/",
       "comLeaners": true,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Clarity Campaign Labs (D)",
+      "campoInicio": "2026-09-11",
+      "campoFim": "2026-09-16",
+      "amostra": 1046,
+      "amostraTipo": "LV",
+      "margemErro": 3.03,
+      "dem": 50,
+      "rep": 43,
+      "outros": 8,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://www.claritycampaigns.com/clarity-omnibus-2026-september",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {

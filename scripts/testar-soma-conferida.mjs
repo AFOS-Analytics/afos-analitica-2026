@@ -117,8 +117,8 @@ eq('data mal formada reprova', validarRegistro([{ instituto: 'A', campoInicio: '
 // 📌 O tamanho é travado de propósito: registro que cresce sem ninguém notar vira
 //    gaveta. 4 até 23/Set; a 5ª é a Reuters/Ipsos de Fev com FONTE_NAO_SUSTENTA,
 //    as duas abertas em 29/Set. Ao mexer aqui, dizer QUAL entrada entrou e por quê.
-eq('registro real tem 6 entradas', SOMAS_CONFERIDAS.length, 6)
-eq('e uma delas e FONTE_NAO_SUSTENTA', SOMAS_CONFERIDAS.filter((e) => e.veredito === 'FONTE_NAO_SUSTENTA').length, 1)
+eq('registro real tem 7 entradas', SOMAS_CONFERIDAS.length, 7)
+eq('e duas sao FONTE_NAO_SUSTENTA', SOMAS_CONFERIDAS.filter((e) => e.veredito === 'FONTE_NAO_SUSTENTA').length, 2)
 eq('uma delas e erro do indice', SOMAS_CONFERIDAS.filter((e) => e.veredito === 'ERRO_DO_INDICE').length, 1)
 eq('o erro do indice e a Marquette', SOMAS_CONFERIDAS.find((e) => e.veredito === 'ERRO_DO_INDICE').instituto, 'Marquette University Law School')
 eq('toda entrada real tem decomposicao', SOMAS_CONFERIDAS.every((e) => typeof e.decomposicao === 'string' && e.decomposicao.length > 40), true)
