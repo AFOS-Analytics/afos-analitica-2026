@@ -1,117 +1,118 @@
 {
-  "updatedAt": "29/09/2026, 11:58",
-  "subtitle": "Cross-check of 29/Sep/2026: Polymarket at the confirmed reading of 29/Sep, 11:58 BRT, the four national polls released on 29/Sep, AtlasIntel BR-04391/2026, Palver BR-02990/2026, Gerp BR-03929/2026 and Vox Brasil BR-00895/2026, the two from 28/Sep, [Quaest](/en/glossary#quaest) BR-06520/2026 and BTG/Nexus BR-07557/2026, and the press flow of 28 and 29/Sep.",
+  "updatedAt": "01/10/2026, 19:29",
+  "subtitle": "Cross-check of 01/Oct/2026: Polymarket at the confirmed reading of 01/Oct, 19:29 BRT, the two national polls released on 01/Oct, Datafolha BR-08039/2026 and Real Time Big Data BR-09503/2026, the three from 30/Sep, Futura/100% Cidades BR-01122/2026, Ideia BR-08706/2026 and Indexa BR-00698/2026, and the press flow of 30/Sep and 01/Oct.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PRICE: 39.50% (vol USD 12.59M cumulative) in the winner contract, down 2.00pp raw and 1.91pp normalized, confirmed reading of 29/Sep, 11:58 BRT. In the second-place contract of the [first round](/en/glossary#primeiro-turno) he falls 0.95pp, to 23.60% (vol USD 1.09M). POLL: 45.3% to 42.2% in the first round and 47.6% to 47.7% in the second in AtlasIntel of 29/Sep; he leads the first round in four of the six national polls of 28 and 29/Sep and the second in one.",
+      "header": "PRICE: 37.50% (vol USD 13.00M cumulative) in the winner contract, down 2.00pp raw and 1.73pp normalized, confirmed reading of 01/Oct, 19:29 BRT. In the second-place contract of the [first round](/en/glossary#primeiro-turno) he rises 4.65pp, to 28.25% (vol USD 1.20M). POLL: 42% to 38% in the first round and 48% to 45% in the second in Datafolha of 01/Oct; he leads the first round in four of the five national polls of 30/Sep and 01/Oct and the second in three.",
       "fortes": [
-        "Leads the [first round](/en/glossary#primeiro-turno) in four of the six national polls of 28 and 29/Sep: 39% to 34% in [Quaest](/en/glossary#quaest), 42% to 37% in BTG/Nexus, 45.3% to 42.2% in AtlasIntel and 41.1% to 37.8% in Vox Brasil.",
-        "In AtlasIntel of 29/Sep his [first-round](/en/glossary#primeiro-turno) lead widens from 2.4 to 3.1 points against the 23/Sep round, with a margin of 1pp.",
-        "In Vox Brasil of 29/Sep he wins the three second-round pairings other than the one with Flávio Bolsonaro: 45.3% to 41.1% against Ronaldo Caiado, 44.8% to 35.1% against Augusto Cury and 46.1% to 30.3% against Romeu Zema.",
-        "In BTG/Nexus of 28/Sep he leads the five second-round pairings the pollster tested: 46% to 44% against Flávio Bolsonaro, 46% to 42% against Ronaldo Caiado, 46% to 41% against Augusto Cury, 48% to 39% against Romeu Zema and 48% to 37% against Renan Santos."
+        "Leads the [first round](/en/glossary#primeiro-turno) in four of the five national polls of 30/Sep and 01/Oct: 42% to 38% in Datafolha, 43% to 39% in Real Time Big Data, 39% to 34% in Indexa and 39.4% to 38.4% in Ideia.",
+        "In Datafolha of 01/Oct he rises from 40% to 42% in the [first round](/en/glossary#primeiro-turno) and from 47% to 48% in the second against the 24/Sep round, and wins the other four pairings tested: 48% to 42% against Ronaldo Caiado, 47% to 42% against Augusto Cury, 49% to 40% against Romeu Zema and 48% to 39% against Renan Santos.",
+        "Leads the [second round](/en/glossary#segundo-turno) in three of the five: 48% to 45% in Datafolha, 43% to 42% in Indexa and 48.5% to 48% in Ideia."
       ],
       "fracos": [
-        "Falls 2.00pp in the winner contract, to 39.50%, and the gap widens from 16.55pp to 20.30pp, the fourth straight widening between confirmed readings. Normalized by the pair's sum, which fell from 99.55 to 99.30, the loss is 1.91pp.",
-        "In the series recorded since April 14 his price is 28.00pp from the high, 67.50% on 16/Aug, and 5.00pp from the low, 34.50% on 25/Apr.",
-        "Trails in the [second round](/en/glossary#segundo-turno) in four of the six national polls of 28 and 29/Sep, with the widest distance in Gerp, 43% to 50%, the only one outside the poll's own margin.",
-        "In the national polls of 29/Sep his approval falls below the [Quaest](/en/glossary#quaest) benchmark: 45.2% against 53.6% disapproval in AtlasIntel and 44% against 51% in Gerp.",
-        "📺 Folha de S.Paulo, Valor and CBN report that allies believe he should skip the TV Globo debate of 01/Oct, with no decision announced."
+        "Falls 2.00pp in the winner contract, to 37.50%, and the gap widens from 20.30pp to 23.55pp, the fifth straight widening between confirmed readings. Normalized by the pair's sum, which fell from 99.30 to 98.55, the loss is 1.73pp.",
+        "In the series recorded since April 14 his price is 30.00pp from the high, 67.50% on 16/Aug, and 3.00pp from the low, 34.50% on 25/Apr.",
+        "Trails in the [second round](/en/glossary#segundo-turno) in Real Time Big Data, by 45% to 46%, and in Futura, by 43.5% to 49%, the only distance outside the margin among the five national polls of 30/Sep and 01/Oct.",
+        "In Futura he also loses to Ronaldo Caiado, by 42.4% to 45.6%, and to Augusto Cury, by 42% to 45.1%.",
+        "📺 Lula announced he will not attend the TV Globo debate of 01/Oct, and on the afternoon of the same day Justice Estela Aranha, of the [TSE](/en/glossary#tse), issued an injunction barring the broadcaster from showing his empty podium and from directing questions to the absent candidate, and sent the case to the TSE full court (Gazeta do Povo, O Globo and Folha de S.Paulo)."
       ],
-      "analise": "Lula fell 2.00pp in the winner contract, to 39.50% (vol USD 12.59M cumulative), at the confirmed reading of 29/Sep, 11:58 BRT, and 1.91pp normalized, because the pair's sum fell from 99.55 to 99.30; with that the gap widens from 16.55pp to 20.30pp, the fourth straight widening between confirmed readings. In the second-place contract of the [first round](/en/glossary#primeiro-turno) he falls 0.95pp, to 23.60%. 🗳️ In the six national polls of 28 and 29/Sep he leads the first round in four, ties in Palver and trails in Gerp, and in the [second round](/en/glossary#segundo-turno) he leads only in BTG/Nexus, ties in [Quaest](/en/glossary#quaest) and trails in the other four, three of them within the margin. AtlasIntel, which is the chart's benchmark, puts him 3.1 points ahead in the first round and 0.1 behind in the second. ⛔ The panel does not attribute the price to the polls or to the news flow: it measures both sides with each one's timestamp."
+      "analise": "Lula fell 2.00pp in the winner contract, to 37.50% (vol USD 13.00M cumulative), in the confirmed reading of 01/Oct, 19:29 BRT, and 1.73pp normalized, because the pair's sum fell from 99.30 to 98.55; with that the gap widens from 20.30pp to 23.55pp, the fifth straight widening between confirmed readings. In the second-place contract of the [first round](/en/glossary#primeiro-turno) he rises 4.65pp, to 28.25%. 🗳️ In the five national polls of 30/Sep and 01/Oct he leads the first round in four and trails in Futura, and in the [second round](/en/glossary#segundo-turno) he leads in three and trails in Real Time Big Data and Futura. Datafolha, which is the chart's benchmark, puts him 4 points ahead in the first round and 3 in the second. 📺 He announced he will not attend the TV Globo debate of 01/Oct. ⛔ The panel does not attribute the price to the polls or to the news flow: it measures both sides with each one's timestamp."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PRICE: 59.80% (vol USD 12.27M cumulative) in the winner contract, up 1.75pp raw and 1.91pp normalized, confirmed reading of 29/Sep, 11:58 BRT. In the second-place contract of the [first round](/en/glossary#primeiro-turno) he rises 2.00pp, to 76.50% (vol USD 1.27M). POLL: 42.2% in the first round and 47.7% in the second in AtlasIntel of 29/Sep; he leads the [second round](/en/glossary#segundo-turno) in four of the six national polls of 28 and 29/Sep.",
+      "header": "PRICE: 61.05% (vol USD 12.79M cumulative) in the winner contract, up 1.25pp raw and 1.73pp normalized, confirmed reading of 01/Oct, 19:29 BRT. In the second-place contract of the [first round](/en/glossary#primeiro-turno) he falls 5.00pp, to 71.50% (vol USD 1.42M). POLL: 38% in the first round and 45% in the second in Datafolha of 01/Oct; he leads the [second round](/en/glossary#segundo-turno) in two of the five national polls of 30/Sep and 01/Oct.",
       "fortes": [
-        "Rises 1.75pp in the winner contract, to 59.80%, and the gap widens from 16.55pp to 20.30pp, the fourth straight widening between confirmed readings.",
-        "His price is 1.90pp from the series high, 61.70% recorded on 21/Sep.",
-        "Leads the [second round](/en/glossary#segundo-turno) in four of the six national polls of 28 and 29/Sep: 50% to 43% in Gerp, 47% to 45% in Palver, 45.2% to 44.7% in Vox Brasil and 47.7% to 47.6% in AtlasIntel.",
-        "In Gerp of 29/Sep he also leads the [first round](/en/glossary#primeiro-turno), by 42% to 40%, and in Palver he ties at 44%.",
+        "Rises 1.25pp in the winner contract, to 61.05%, and the gap widens from 20.30pp to 23.55pp, the fifth straight widening between confirmed readings.",
+        "In the points recorded on 01/Oct his price ranged from 61.05% to 63.30%, and that 63.30% is the high of the series recorded since April 14.",
+        "In the second-place contract of the [first round](/en/glossary#primeiro-turno) he falls 5.00pp, to 71.50%: the market pays less for the chance that he finishes the first round in second place.",
+        "Leads both rounds in Futura of 30/Sep, 42.2% to 39.4% and 49% to 43.5%, and the [second round](/en/glossary#segundo-turno) in Real Time Big Data of 01/Oct, 46% to 45%.",
         "⭐ In [Quaest](/en/glossary#quaest) of 28/Sep the second-round vote transfer from the other names favours him: 81% of Romeu Zema's voters, 48% of Renan Santos's, 42% of Ronaldo Caiado's and 34% of Augusto Cury's would go to him (O Globo)."
       ],
       "fracos": [
-        "Trails in the [first round](/en/glossary#primeiro-turno) in four of the six national polls of 28 and 29/Sep, with the widest distance in [Quaest](/en/glossary#quaest) and BTG/Nexus, 5 points in each.",
-        "Of his four second-round leads on 28 and 29/Sep, three fall within the poll's own margin; only Gerp's, of 7 points, falls outside it.",
-        "⚖️ On the night of 28/Sep Luiz Fux, of the Supreme Court, suspended Flávio Dino's decision that had released the posts about Our Lady of Aparecida and reinstated, pending full-court review, André Mendonça's order at the [TSE](/en/glossary#tse) to take them down (G1 and Folha de S.Paulo). The decision was requested by his campaign and stands until the full Supreme Court reviews the case.",
+        "Trails in the [first round](/en/glossary#primeiro-turno) in four of the five national polls of 30/Sep and 01/Oct, with the widest distance in Indexa, 34% to 39%.",
+        "In Datafolha of 01/Oct he is 3 points behind in the [second round](/en/glossary#segundo-turno), 45% to 48%, within the 2pp margin.",
+        "⚖️ On the night of 30/Sep the [TSE](/en/glossary#tse) full court upheld the removal of the posts that attributed to Flávio Bolsonaro a plan to strip Our Lady of Aparecida of the title of patron saint, and released the post by comedian Antonio Tabet and the cases of reasonable doubt, after André Mendonça adjusted his vote (Gazeta do Povo and G1).",
         "📰 Messages extracted from Daniel Vorcaro phone and published by Estadão on 24/Sep show four attempts by him to contact the banker between 13 and 16 November 2025, in the days before Vorcaro arrest, on 17 November 2025. Gazeta do Povo confirmed the authenticity of the exchanges with its own sources close to the investigation. Part of the conversations concerns the financing of the film Dark Horse, and he confirmed an exchange from September 2025 about it, citing a private financing contract that was not made public."
       ],
-      "analise": "Flávio Bolsonaro rose 1.75pp in the winner contract, to 59.80% (vol USD 12.27M cumulative), at the confirmed reading of 29/Sep, 11:58 BRT, and 1.91pp normalized. With that the gap widens from 16.55pp to 20.30pp, the fourth straight widening between confirmed readings, and his price is 1.90pp from the series high, 61.70% on 21/Sep. In the second-place contract of the [first round](/en/glossary#primeiro-turno) he rises 2.00pp, to 76.50%. 🗳️ In the six national polls of 28 and 29/Sep he leads the [second round](/en/glossary#segundo-turno) in four and the first round in one, Gerp; the four national polls released on 29/Sep, AtlasIntel (BR-04391/2026, n=5,005), Palver (BR-02990/2026, n=5,000), Gerp (BR-03929/2026, n=2,400) and Vox Brasil (BR-00895/2026, n=2,100), measure him from 37.8% to 44% in the first round and from 45.2% to 50% in the second. ⚖️ On the night of 28/Sep Luiz Fux, of the Supreme Court, suspended Flávio Dino's decision that had released the posts about Our Lady of Aparecida and reinstated, pending full-court review, André Mendonça's order at the [TSE](/en/glossary#tse) to take them down (G1 and Folha de S.Paulo). ⛔ The panel does not attribute the price to the polls or to the news flow: it measures both sides with each one's timestamp."
+      "analise": "Flávio Bolsonaro rose 1.25pp in the winner contract, to 61.05% (vol USD 12.79M cumulative), in the confirmed reading of 01/Oct, 19:29 BRT, and 1.73pp normalized. With that the gap widens from 20.30pp to 23.55pp, the fifth straight widening between confirmed readings. In the points recorded on 01/Oct his price ranged from 61.05% to 63.30%, the high of the series recorded since April 14. In the second-place contract of the [first round](/en/glossary#primeiro-turno) he falls 5.00pp, to 71.50%. 🗳️ In the five national polls of 30/Sep and 01/Oct he leads the [second round](/en/glossary#segundo-turno) in two and the first round in one, Futura; the five national polls released on 30/Sep and 01/Oct, Datafolha (BR-08039/2026, n=2,506), Real Time Big Data (BR-09503/2026, n=2,000), Futura/100% Cidades (BR-01122/2026, n=2,000), Ideia (BR-08706/2026, n=2,000) and Indexa (BR-00698/2026, n=2,000), measure him from 34% to 42.2% in the first round and from 42% to 49% in the second. ⚖️ On the night of 30/Sep the [TSE](/en/glossary#tse) full court upheld the removal of the posts that attributed to Flávio Bolsonaro a plan to strip Our Lady of Aparecida of the title of patron saint, and released the post by comedian Antonio Tabet and the cases of reasonable doubt, after André Mendonça adjusted his vote (Gazeta do Povo and G1), and on 01/Oct Flávio Dino declared the case moot and closed his action at the Supreme Court on the matter (Gazeta do Povo and Valor), and Edson Fachin denied Flávio Bolsonaro's request to remove Dino from the cases linked to him, to Lula and to the elections (G1, CartaCapital and Folha de S.Paulo). ⛔ The panel does not attribute the price to the polls or to the news flow: it measures both sides with each one's timestamp."
     },
     {
       "rank": "3",
       "name": "Augusto Cury",
       "party": "Avante",
       "color": "#0891B2",
-      "header": "PRICE: 0.05% in the winner contract (vol USD 5.17M cumulative) and 35.85% (vol USD 0.30M cumulative) in the third-place contract of the [first round](/en/glossary#primeiro-turno), down 9.25pp raw and 8.55pp normalized by the book's sum, at the confirmed reading of 29/Sep, 11:58 BRT. POLL: 2.0% in AtlasIntel of 29/Sep and 5% in Gerp of the same day.",
+      "header": "PRICE: 0.05% in the winner contract (vol USD 5.19M cumulative) and 36.70% (vol USD 0.34M cumulative) in the third-place contract of the [first round](/en/glossary#primeiro-turno), up 0.85pp raw and 0.69pp normalized by the book's sum, in the confirmed reading of 01/Oct, 19:29 BRT. POLL: 4% in Datafolha of 01/Oct and 6.7% in Ideia of 30/Sep, third in both.",
       "fortes": [
-        "He is third in the [first round](/en/glossary#primeiro-turno) in Gerp of 29/Sep, with 5%, ahead of Ronaldo Caiado and Renan Santos, with 3% each.",
-        "📺 He is one of the four invited to the TV Globo debate of 01/Oct, from which Renan Santos was left out under the legal criterion of congressional representation (Folha de S.Paulo)."
+        "He is third in the [first round](/en/glossary#primeiro-turno) in Datafolha of 01/Oct, with 4%, and in Ideia of 30/Sep, with 6.7%, his highest reading among the national polls of 30/Sep and 01/Oct.",
+        "In Futura of 30/Sep he beats Lula in the second-round pairing, by 45.1% to 42%, and in Real Time Big Data he is 1 point behind, 44% to 45%.",
+        "Rises 0.85pp in the third-place book of the [first round](/en/glossary#primeiro-turno), to 36.70%, and the distance to Renan Santos narrows from 15.65pp to 11.80pp.",
+        "📺 He is one of the guests of the TV Globo debate of 01/Oct."
       ],
       "fracos": [
-        "🔴 Loses the lead of the third-place book of the [first round](/en/glossary#primeiro-turno) to Renan Santos: falls 9.25pp raw and 8.55pp normalized, to 35.85%, and is 15.65pp behind, after being 2.10pp ahead at the confirmed reading of 28/Sep.",
-        "Has 2.0% in AtlasIntel and 1% in Palver of 29/Sep, behind Renan Santos in both.",
-        "Loses to Lula by 44.8% to 35.1% in the Vox Brasil second-round pairing of 29/Sep.",
+        "Remains behind Renan Santos in the third-place book of the [first round](/en/glossary#primeiro-turno), by 11.80pp.",
+        "Has 3% in Real Time Big Data of 01/Oct, behind Renan Santos.",
         "In the winner contract he remains at the floor of the book, 0.05%, and is priced below what his cumulative volume would suggest, USD 5.02M."
       ],
-      "analise": "Augusto Cury fell 9.25pp raw in the third-place book of the [first round](/en/glossary#primeiro-turno), to 35.85% (vol USD 0.30M cumulative), at the confirmed reading of 29/Sep, 11:58 BRT, and 8.55pp normalized, because the book's sum fell from 103.10 to 101.85, and he lost the lead of that book to Renan Santos, who ended 15.65pp ahead. In the series of confirmed readings the distance was 4.15pp with Renan Santos ahead on 26/Sep, 2.90pp and 2.10pp with Augusto Cury ahead on 27 and 28/Sep, and now 15.65pp with Renan Santos ahead. 🗳️ In the national polls of 29/Sep he ranges from 1% in Palver to 5% in Gerp, where he is third. 📺 He is one of the four invited to the TV Globo debate of 01/Oct."
+      "analise": "Augusto Cury rose 0.85pp raw in the third-place book of the [first round](/en/glossary#primeiro-turno), to 36.70% (vol USD 0.34M cumulative), in the confirmed reading of 01/Oct, 19:29 BRT, and 0.69pp normalized, because the book's sum rose from 101.85 to 102.25, and the distance to Renan Santos narrowed from 15.65pp to 11.80pp. In the series of confirmed readings the distance was 4.15pp with Renan Santos ahead on 26/Sep, 2.90pp and 2.10pp with Augusto Cury ahead on 27 and 28/Sep, 15.65pp with Renan Santos ahead on 29/Sep and now 11.80pp. 🗳️ In the five national polls of 30/Sep and 01/Oct third place changes from pollster to pollster: Augusto Cury in Datafolha, with 4%, and in Ideia, with 6.7%; Renan Santos in Real Time Big Data, with 4%; Ronaldo Caiado in Futura, with 4%; and Caiado and Cury tied at 4% in Indexa. 📺 He is one of the guests of the TV Globo debate of 01/Oct."
     },
     {
       "rank": "4",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PRICE: 0.25% (vol USD 14.68M cumulative) in the winner contract and 51.50% (vol USD 0.46M cumulative) in the third-place contract of the [first round](/en/glossary#primeiro-turno), up 8.50pp raw and 8.86pp normalized by the book's sum, at the confirmed reading of 29/Sep, 11:58 BRT. POLL: 5.2% in AtlasIntel and 8% in Palver of 29/Sep, third in both.",
+      "header": "PRICE: 0.25% (vol USD 15.12M cumulative) in the winner contract and 48.50% (vol USD 0.52M cumulative) in the third-place contract of the [first round](/en/glossary#primeiro-turno), down 3.00pp raw and 3.13pp normalized by the book's sum, in the confirmed reading of 01/Oct, 19:29 BRT. POLL: 4% in Real Time Big Data of 01/Oct, in third place, and 3% in Datafolha of the same day.",
       "fortes": [
-        "⭐ Back in front in the third-place book of the [first round](/en/glossary#primeiro-turno): rises 8.50pp raw and 8.86pp normalized, to 51.50%, and is 15.65pp ahead of Augusto Cury, after being 2.10pp behind at the confirmed reading of 28/Sep.",
-        "He is third in the [first round](/en/glossary#primeiro-turno) in AtlasIntel of 29/Sep, with 5.2%, more than Augusto Cury, Ronaldo Caiado and Romeu Zema combined, and in Palver of the same day, with 8%.",
-        "🏆 His contract in the winner book remains the one with the HIGHEST cumulative volume in the presidential book, USD 14.68M against USD 14.10M for Tarcísio de Freitas's, and in the second-place book of the [first round](/en/glossary#primeiro-turno) too, USD 1.38M against USD 1.27M for Flávio Bolsonaro's, which pays 76.50% there."
+        "Stays ahead in the third-place book of the [first round](/en/glossary#primeiro-turno), with 48.50%, 11.80pp above Augusto Cury.",
+        "He is third in the [first round](/en/glossary#primeiro-turno) in Real Time Big Data of 01/Oct, with 4%, and has 4.5% in Ideia of 30/Sep.",
+        "🏆 His contract in the winner book remains the one with the HIGHEST cumulative volume in the presidential book, USD 15.12M against USD 14.36M for Tarcísio de Freitas's."
       ],
       "fracos": [
-        "📺 Was left out of the TV Globo debate of 01/Oct under the legal criterion of congressional representation (Folha de S.Paulo).",
-        "In Vox Brasil and Gerp of 29/Sep he trails Ronaldo Caiado and Augusto Cury, with 2.7% and 3%.",
-        "Against Lula in the AtlasIntel [second round](/en/glossary#segundo-turno) he has 28.9%."
+        "Falls 3.00pp raw and 3.13pp normalized in the third-place book, and his lead over Augusto Cury narrows from 15.65pp to 11.80pp.",
+        "In the second-place book of the [first round](/en/glossary#primeiro-turno) his contract is no longer the one with the highest cumulative volume: USD 1.40M against USD 1.42M for Flávio Bolsonaro's.",
+        "📺 Kassio Nunes Marques denied at the [TSE](/en/glossary#tse) Renan Santos's request to join the TV Globo debate of 01/Oct, and Cármen Lúcia rejected his action at the Supreme Court (Valor and Folha de S.Paulo).",
+        "Against Lula in the [second round](/en/glossary#segundo-turno) he loses by 39% to 48% in Datafolha of 01/Oct and by 40.7% to 44.6% in Futura of 30/Sep."
       ],
-      "analise": "Renan Santos rose 8.50pp raw in the third-place book of the [first round](/en/glossary#primeiro-turno), to 51.50% (vol USD 0.46M cumulative), at the confirmed reading of 29/Sep, 11:58 BRT, and 8.86pp normalized, and moved back ahead of Augusto Cury in that book, by 15.65pp. In the winner contract he is at 0.25%. 🏆 His contract in the winner book remains the one with the highest cumulative volume in the presidential book, USD 14.68M against USD 14.10M for Tarcísio de Freitas's. 🗳️ In the national polls of 29/Sep he is third in AtlasIntel, with 5.2%, and in Palver, with 8%, and trails in Vox Brasil and Gerp, with 2.7% and 3%. 📺 Was left out of the TV Globo debate of 01/Oct."
+      "analise": "Renan Santos fell 3.00pp raw in the third-place book of the [first round](/en/glossary#primeiro-turno), to 48.50% (vol USD 0.52M cumulative), in the confirmed reading of 01/Oct, 19:29 BRT, and 3.13pp normalized, and stays ahead of Augusto Cury in that book, by 11.80pp. In the winner book he is at 0.25%. 🏆 His contract in the winner book remains the one with the highest cumulative volume in the presidential book, USD 15.12M against USD 14.36M for Tarcísio de Freitas's. 🗳️ In the national polls of 30/Sep and 01/Oct he ranges from 3% to 4.5%, and he is third in Real Time Big Data, with 4%. 📺 Kassio Nunes Marques denied at the [TSE](/en/glossary#tse) Renan Santos's request to join the TV Globo debate of 01/Oct, and Cármen Lúcia rejected his action at the Supreme Court (Valor and Folha de S.Paulo)."
     },
     {
       "rank": "5",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PRICE: Ronaldo Caiado at 13.50% (vol USD 0.19M cumulative) in the third-place book of the [first round](/en/glossary#primeiro-turno), flat raw and up 0.16pp normalized, and Romeu Zema at 0.25%, at the confirmed reading of 29/Sep, 11:58 BRT. Fernando Haddad remains at the floor of the winner book, 0.05%. POLL: Caiado ranges from 1% in Palver to 3.8% in Vox Brasil in the national polls of 29/Sep, and Zema from 0.9% to 1.8%.",
-      "subtitle": "The three names outside the leading pack, at the confirmed reading of 29/Sep, 11:58 BRT. The national polls of 29/Sep test Ronaldo Caiado and Romeu Zema, and Vox Brasil and AtlasIntel put them against Lula in second-round pairings.",
+      "header": "PRICE: Ronaldo Caiado at 16.00% (vol USD 0.21M cumulative) in the third-place book of the [first round](/en/glossary#primeiro-turno), up 2.50pp raw and 2.39pp normalized, and Romeu Zema at 0.15%, in the confirmed reading of 01/Oct, 19:29 BRT. Fernando Haddad remains at the floor of the winner book, 0.05%. POLL: Caiado ranges from 3% to 4.4% in the national polls of 30/Sep and 01/Oct, and Zema from 1% to 3.5%.",
+      "subtitle": "The three names outside the front pack, in the confirmed reading of 01/Oct, 19:29 BRT. The national polls of 30/Sep and 01/Oct test Ronaldo Caiado and Romeu Zema, and Datafolha, Real Time Big Data and Futura put them against Lula in second-round pairings.",
       "caiado": {
-        "label": "CAIADO (PSD), 0.05% in the WINNER contract, confirmed reading of 29/Sep, 11:58 BRT, below the 0.5% floor of the double reading, with USD 7.79M cumulative. In the [first-round](/en/glossary#primeiro-turno) 3rd PLACE contract he remains at 13.50%, in a USD 0.19M book. In the national polls of 29/Sep he ranges from 1% in Palver to 3.8% in Vox Brasil.",
-        "fortes": "He is third in the [first round](/en/glossary#primeiro-turno) in Vox Brasil of 29/Sep, with 3.8%. In the second-round pairings he is Lula's closest opponent after Flávio Bolsonaro, 41.1% to 45.3% in Vox Brasil and 43.4% to 45.9% in AtlasIntel. 📺 He is one of the four invited to the TV Globo debate of 01/Oct.",
-        "fracos": "Flat raw in the third-place book of the [first round](/en/glossary#primeiro-turno), while Renan Santos and Augusto Cury swapped positions ahead of him. Has 1.8% in AtlasIntel and 1% in Palver of 29/Sep."
+        "label": "CAIADO (PSD), 0.05% in the WINNER contract, confirmed reading of 01/Oct, 19:29 BRT, below the 0.5% floor of the double reading, with USD 7.81M cumulative. In the THIRD-PLACE contract of the [first round](/en/glossary#primeiro-turno) he rises to 16.00%, in a book of USD 0.21M. In the national polls of 30/Sep and 01/Oct he ranges from 3% to 4.4%.",
+        "fortes": "He is third in the [first round](/en/glossary#primeiro-turno) in Futura of 30/Sep, with 4%, and there he beats Lula in the second-round pairing, by 45.6% to 42.4%. In Real Time Big Data of 01/Oct he loses by 43% to 45%. 📺 He is one of the guests of the TV Globo debate of 01/Oct.",
+        "fracos": "In Datafolha of 01/Oct he has 3% and loses to Lula in the [second round](/en/glossary#segundo-turno) by 42% to 48%. In the third-place book he remains third, behind Renan Santos and Augusto Cury."
       },
       "haddad": {
-        "label": "HADDAD (PT), 0.05% in the WINNER contract, confirmed reading of 29/Sep, 11:58 BRT, at the book's floor, with USD 7.71M cumulative. He is not a presidential candidate: he is running for governor of São Paulo, and none of the national polls of 29/Sep tests him in a presidential scenario.",
+        "label": "HADDAD (PT), 0.05% in the WINNER contract, confirmed reading of 01/Oct, 19:29 BRT, at the book's floor, with USD 7.73M cumulative. He is not a presidential candidate: he is running for governor of São Paulo, and none of the national polls of 30/Sep and 01/Oct tests him in a presidential scenario.",
         "fortes": "His contract did not move in this reading, so there is no move to explain, and his series high in the winner contract is 7.60%, on 26/May, measured in the database backup.",
         "fracos": "He is not measured in the [first round](/en/glossary#primeiro-turno) by any of the six national polls of the day nor tested in a [second round](/en/glossary#segundo-turno) pairing, so the comparison between price and poll does not exist for him in this round. His winner contract has accumulated USD 7.55M, a larger volume than that of Augusto Cury, who is tested by the six houses and has USD 5.02M."
       },
       "zema": {
-        "label": "ZEMA (Novo), 0.05% in the WINNER contract, confirmed reading of 29/Sep, 11:58 BRT, below the 0.5% floor of the double reading, with USD 7.71M cumulative. In the [first-round](/en/glossary#primeiro-turno) 3rd PLACE contract he falls to 0.25%. In the national polls of 29/Sep he ranges from 0.9% to 1.8%.",
-        "fortes": "⭐ In [Quaest](/en/glossary#quaest) of 28/Sep, 81% of his voters would go to Flávio Bolsonaro in the [second round](/en/glossary#segundo-turno), the largest transfer among the names measured. In Vox Brasil of 29/Sep he has 1.8%, his highest reading in the day's national polls.",
-        "fracos": "Remains at the floor of the winner book, 0.05%, and falls to 0.25% in the third-place book. In Vox Brasil of 29/Sep he loses to Lula by 46.1% to 30.3% in the second-round pairing."
+        "label": "ZEMA (Novo), 0.05% in the WINNER contract, confirmed reading of 01/Oct, 19:29 BRT, below the 0.5% floor of the double reading, with USD 7.72M cumulative. In the THIRD-PLACE contract of the [first round](/en/glossary#primeiro-turno) he is at 0.15%. In the national polls of 30/Sep and 01/Oct he ranges from 1% to 3.5%.",
+        "fortes": "⭐ In [Quaest](/en/glossary#quaest) of 28/Sep, 81% of his voters would go to Flávio Bolsonaro in the [second round](/en/glossary#segundo-turno), the largest transfer among the names measured. In Ideia of 30/Sep he has 3.5%, his highest reading in the national polls of 30/Sep and 01/Oct.",
+        "fracos": "Remains at the floor of the winner book, 0.05%, and is at 0.15% in the third-place book. In Datafolha of 01/Oct he loses to Lula by 40% to 49% in the second-round pairing."
       },
-      "analise": "Ronaldo Caiado stayed at 13.50% in the third-place book of the [first round](/en/glossary#primeiro-turno) (vol USD 0.19M cumulative), flat raw at the confirmed reading of 29/Sep, 11:58 BRT, and rises 0.16pp normalized, because that book's sum fell from 103.10 to 101.85, while Renan Santos moved back ahead of Augusto Cury. Romeu Zema falls to 0.25%. 🗳️ In the national polls of 29/Sep, Caiado is third in Vox Brasil, with 3.8%, and loses to Lula in the [second round](/en/glossary#segundo-turno) by 41.1% to 45.3% there and by 43.4% to 45.9% in AtlasIntel; Zema ranges from 0.9% to 1.8%. Fernando Haddad remains outside the presidential scenarios and at the floor of the winner book, with USD 7.71M cumulative.",
+      "analise": "Ronaldo Caiado rose 2.50pp in the third-place book of the [first round](/en/glossary#primeiro-turno), to 16.00% (vol USD 0.21M cumulative), in the confirmed reading of 01/Oct, 19:29 BRT, and 2.39pp normalized, because that book's sum rose from 101.85 to 102.25, and he remains third in that book. Romeu Zema is at 0.15%. 🗳️ In the national polls of 30/Sep and 01/Oct, Caiado is third in Futura, with 4%, and beats Lula in the [second round](/en/glossary#segundo-turno) there, by 45.6% to 42.4%, but loses by 42% to 48% in Datafolha and by 43% to 45% in Real Time Big Data; Zema ranges from 1% to 3.5%. Fernando Haddad remains outside the presidential scenarios and at the floor of the winner book, with USD 7.73M cumulative.",
       "fortes": [
         "⭐ At Futura on 24/Sep both appear ahead of Lula in a [second round](/en/glossary#segundo-turno) pairing: Ronaldo Caiado by 46.5% to 42.4% and Romeu Zema by 43.8% to 43.3%.",
         "Ronaldo Caiado rose from 4.5% to 5.7% in the [first round](/en/glossary#primeiro-turno) of the Futura poll of 24/Sep and passed Augusto Cury.",
         "In the Datafolha state breakdown of 25/Sep, Ronaldo Caiado has 9% in the Federal District and Romeu Zema 4% in Minas Gerais (G1)."
       ],
       "fracos": [
-        "Ronaldo Caiado stayed flat raw in the third-place book and has 1.8% in AtlasIntel and 1% in Palver of 29/Sep.",
-        "Romeu Zema falls to 0.25% in the third-place book and loses to Lula by 46.1% to 30.3% in the Vox Brasil second-round pairing.",
-        "Fernando Haddad is not tested by any of the national polls of 29/Sep in a presidential scenario and remains at the floor of the winner book, 0.05%, with USD 7.71M cumulative."
+        "Ronaldo Caiado has 3% in Datafolha and in Real Time Big Data of 01/Oct.",
+        "Romeu Zema is at 0.15% in the third-place book and loses to Lula by 40% to 49% in the Datafolha second-round pairing.",
+        "Fernando Haddad is not tested by any of the national polls of 30/Sep and 01/Oct in a presidential scenario and remains at the floor of the winner book, 0.05%, with USD 7.73M cumulative."
       ]
     }
   ],
@@ -119,57 +120,57 @@
     {
       "n": "Lula (PT)",
       "p": "The six national polls of 24/Sep measure him from 43% at Palver, tied with Flávio Bolsonaro, to 38.4% at Futura, 2 points behind, with 41% at Real Time and at PoderData and 40% at Datafolha and at Alfa. In the [second round](/en/glossary#segundo-turno) he leads in one of the six, Datafolha, by 47% to 45%, ties at Alfa on 43% and loses in the other four.",
-      "m": "39.50% (vol USD 12.59M cumulative) in the winner contract, confirmed reading of 29/Sep, 11:58 BRT, down 2.00pp",
-      "t": "falls 2.00pp raw and 1.91pp normalized, and the gap against Flávio Bolsonaro widens from 16.55pp to 20.30pp",
-      "s": "⚖️ Leads the [first round](/en/glossary#primeiro-turno) in four of the six national polls of 28 and 29/Sep and the second in one, and his price falls for the fourth straight confirmed reading.",
+      "m": "37.50% (vol USD 13.00M cumulative) in the winner contract, confirmed reading of 01/Oct, 19:29 BRT, down 2.00pp",
+      "t": "falls 2.00pp raw and 1.73pp normalized, and the gap against Flávio Bolsonaro widens from 20.30pp to 23.55pp",
+      "s": "⚖️ Leads the [first round](/en/glossary#primeiro-turno) in four of the five national polls of 30/Sep and 01/Oct and the second in three, and his price falls for the fifth straight confirmed reading.",
       "pc": "#DC2626",
       "mc": ""
     },
     {
       "n": "Flávio Bolsonaro (PL)",
       "p": "The six national polls of 24/Sep measure him from 40.4% at Futura, where he leads the [first round](/en/glossary#primeiro-turno), to 33% at Alfa/TMC, with 39% at PoderData, 37% at Real Time, 36% at Datafolha and 43% at Palver, in a tie. In the [second round](/en/glossary#segundo-turno) he leads in four of the six.",
-      "m": "59.80% (vol USD 12.27M cumulative) in the winner contract, confirmed reading of 29/Sep, 11:58 BRT, up 1.75pp",
-      "t": "rises 1.75pp raw and 1.91pp normalized, 1.90pp from the series high, 61.70% on 21/Sep",
-      "s": "📌 Leads the [second round](/en/glossary#segundo-turno) in four of the six national polls of 28 and 29/Sep, three of them within the margin, and Gerp puts him 7 points ahead, the only lead outside the margin.",
+      "m": "61.05% (vol USD 12.79M cumulative) in the winner contract, confirmed reading of 01/Oct, 19:29 BRT, up 1.25pp",
+      "t": "rises 1.25pp raw and 1.73pp normalized; in the points recorded on 01/Oct it touched 63.30%, the series high",
+      "s": "📌 Leads the [second round](/en/glossary#segundo-turno) in two of the five national polls of 30/Sep and 01/Oct, and Futura puts him 5.5 points ahead, the only distance outside the margin.",
       "pc": "#2563EB",
       "mc": ""
     },
     {
       "n": "Augusto Cury (Avante)",
       "p": "The six national polls of 24/Sep measure him from 2% at Palver to 6% at Alfa, at PoderData and at Real Time, with 5.6% at Futura and 5% at Datafolha. PoderData puts him beating Lula in the [second round](/en/glossary#segundo-turno), by 45% to 42%.",
-      "m": "0.05% in the winner contract and 35.85% (vol USD 0.30M cumulative) in the third-place contract, down 9.25pp raw, confirmed reading of 29/Sep, 11:58 BRT",
-      "t": "falls 9.25pp raw and 8.55pp normalized, and loses the lead of the third-place book to Renan Santos",
-      "s": "📺 Invited to the TV Globo debate of 01/Oct. 🗳️ In the national polls of 29/Sep he ranges from 1% in Palver to 5% in Gerp, where he is third.",
+      "m": "0.05% in the winner contract and 36.70% (vol USD 0.34M cumulative) in the third-place contract, up 0.85pp raw, confirmed reading of 01/Oct, 19:29 BRT",
+      "t": "rises 0.85pp raw and 0.69pp normalized, and the distance to Renan Santos narrows to 11.80pp",
+      "s": "📺 Guest at the TV Globo debate of 01/Oct. 🗳️ Third in Datafolha of 01/Oct, with 4%, and in Ideia of 30/Sep, with 6.7%.",
       "pc": "#0891B2",
       "mc": ""
     },
     {
       "n": "Renan Santos (Missão)",
       "p": "The six national polls of 24/Sep measure him from 2.4% at Futura to 8% at Palver, with 6% at Real Time and 3% at Datafolha and at PoderData. At Palver he fell from 11% to 8% against the house wave of 21/Sep.",
-      "m": "0.25% (vol USD 14.68M cumulative) in the winner contract and 51.50% (vol USD 0.46M cumulative) in the third-place contract, up 8.50pp raw, confirmed reading of 29/Sep, 11:58 BRT",
-      "t": "rises 8.50pp raw and 8.86pp normalized in the third-place book, and moves back ahead of Augusto Cury by 15.65pp",
-      "s": "🏆 His contract in the winner book remains the one with the highest cumulative volume in the presidential book, USD 14.68M against USD 14.10M for Tarcísio de Freitas's. 🗳️ He is third in AtlasIntel and Palver of 29/Sep.",
+      "m": "0.25% (vol USD 15.12M cumulative) in the winner contract and 48.50% (vol USD 0.52M cumulative) in the third-place contract, down 3.00pp raw, confirmed reading of 01/Oct, 19:29 BRT",
+      "t": "falls 3.00pp raw and 3.13pp normalized in the third-place book, and stays ahead of Augusto Cury by 11.80pp",
+      "s": "🏆 His contract in the winner book remains the one with the highest cumulative volume in the presidential book, USD 15.12M against USD 14.36M for Tarcísio de Freitas's. 🗳️ Third in Real Time Big Data of 01/Oct, with 4%.",
       "pc": "#7C3AED",
       "mc": ""
     },
     {
       "n": "Caiado (PSD)",
       "p": "The six national polls of 24/Sep measure him from 1% at Palver to 5.7% at Futura, where he rose from 4.5% and passed Augusto Cury. In the Futura [second round](/en/glossary#segundo-turno) pairing he beats Lula by 46.5% to 42.4%.",
-      "m": "0.05% in the winner contract and 13.50% (vol USD 0.19M cumulative) in the third-place contract, flat raw, confirmed reading of 29/Sep, 11:58 BRT",
-      "t": "flat raw and up 0.16pp normalized, and keeps third position in the third-place book",
-      "s": "🗳️ He is third in the [first round](/en/glossary#primeiro-turno) in Vox Brasil of 29/Sep, with 3.8%, and loses to Lula in the [second round](/en/glossary#segundo-turno) by 41.1% to 45.3%. 📺 Invited to the TV Globo debate of 01/Oct.",
+      "m": "0.05% in the winner contract and 16.00% (vol USD 0.21M cumulative) in the third-place contract, up 2.50pp raw, confirmed reading of 01/Oct, 19:29 BRT",
+      "t": "rises 2.50pp raw and 2.39pp normalized, and keeps the third position in the third-place book",
+      "s": "🗳️ Third in the [first round](/en/glossary#primeiro-turno) in Futura of 30/Sep, with 4%, and beats Lula in the [second round](/en/glossary#segundo-turno) there by 45.6% to 42.4%. 📺 Guest at the TV Globo debate of 01/Oct.",
       "pc": "#059669",
       "mc": ""
     },
     {
       "n": "Romeu Zema (Novo)",
       "p": "The six national polls of 24/Sep measure him at 1% in five of them and 0.9% at Futura. ⭐ And Futura puts him AHEAD of Lula in the [second round](/en/glossary#segundo-turno) pairing, by 43.8% to 43.3%, within the 2.2pp margin.",
-      "m": "0.05% in the winner contract and 0.25% (vol USD 0.09M cumulative) in the third-place contract, confirmed reading of 29/Sep, 11:58 BRT",
-      "t": "falls to 0.25% in the third-place book",
-      "s": "⭐ In [Quaest](/en/glossary#quaest) of 28/Sep, 81% of his voters would go to Flávio Bolsonaro in the [second round](/en/glossary#segundo-turno). In the national polls of 29/Sep he has from 0.9% to 1.8%.",
+      "m": "0.05% in the winner contract and 0.15% (vol USD 0.11M cumulative) in the third-place contract, confirmed reading of 01/Oct, 19:29 BRT",
+      "t": "is at 0.15% in the third-place book",
+      "s": "⭐ In [Quaest](/en/glossary#quaest) of 28/Sep, 81% of his voters would go to Flávio Bolsonaro in the [second round](/en/glossary#segundo-turno). In the national polls of 30/Sep and 01/Oct he has from 1% to 3.5%.",
       "pc": "#EA580C",
       "mc": ""
     }
   ],
-  "cruzamento": "Four national polls came out on 29/Sep and three of them put Flávio Bolsonaro ahead in the [second round](/en/glossary#segundo-turno) within the margin, while the winner contract widened the gap for the fourth straight confirmed reading. 🗳️ The four national polls released on 29/Sep, AtlasIntel (BR-04391/2026, n=5,005), Palver (BR-02990/2026, n=5,000), Gerp (BR-03929/2026, n=2,400) and Vox Brasil (BR-00895/2026, n=2,100), give Flávio Bolsonaro in the second round 47.7% to 47.6%, 47% to 45%, 50% to 43% and 45.2% to 44.7%, and in the [first round](/en/glossary#primeiro-turno) Lula 45.3% to 42.2%, a tie at 44%, Flávio Bolsonaro 42% to 40% and Lula 41.1% to 37.8%. Adding the two from 28/Sep, Lula leads the first round in four of the six and Flávio Bolsonaro the second in four of the six. 💹 At the confirmed reading of 29/Sep, 11:58 BRT, Flávio Bolsonaro rises 1.75pp, to 59.80%, and Lula falls 2.00pp, to 39.50%, with 1.91pp for each side normalized, and the gap widens from 16.55pp to 20.30pp, the fourth straight widening between confirmed readings. 🥉 In the third-place book of the first round Renan Santos moves back ahead, 51.50% to Augusto Cury's 35.85%, after two days behind. 📰 In the news, on the night of 28/Sep Luiz Fux, of the Supreme Court, suspended Flávio Dino's decision that had released the posts about Our Lady of Aparecida and reinstated, pending full-court review, André Mendonça's order at the [TSE](/en/glossary#tse) to take them down (G1 and Folha de S.Paulo). ⛔ The panel does not attribute price moves to polls or to acts: it measures both sides with each one's timestamps."
+  "cruzamento": "Five national polls came out on 30/Sep and 01/Oct and Lula leads the [first round](/en/glossary#primeiro-turno) in four, while the winner contract widened the gap for the fifth straight confirmed reading. 🗳️ On 01/Oct, Datafolha (BR-08039/2026, n=2,506, fieldwork from 28/Sep to 01/Oct) gives Lula 42% to 38% in the first round and 48% to 45% in the second, and Real Time Big Data (BR-09503/2026, n=2,000, fieldwork from 26 to 30/Sep) gives Lula 43% to 39% in the first and Flávio Bolsonaro 46% to 45% in the second. On 30/Sep came Futura/100% Cidades (BR-01122/2026, n=2,000), with Flávio Bolsonaro 42.2% to 39.4% in the first round and 49% to 43.5% in the second, Ideia for Canal Meio (BR-08706/2026, n=2,000), with Lula 39.4% to 38.4% and 48.5% to 48%, and Indexa for Broadcast (BR-00698/2026, n=2,000), with Lula 39% to 34% and 43% to 42%. In the five national polls released on 30/Sep and 01/Oct, Lula leads the first round in four (Datafolha, Real Time Big Data, Indexa and Ideia) and trails in one (Futura), and in the [second round](/en/glossary#segundo-turno) he leads in three (Datafolha, Indexa and Ideia) and trails in two (Real Time Big Data and Futura); only Futura falls outside the margin in the second round. 🏷️ On the night of 30/Sep Veritá released the consolidation of 27 state polls, with 40.5 thousand interviews from 20 to 25/Sep, in valid votes only: Flávio Bolsonaro 45.14% and Lula 44.65%. It does not enter the panel's poll chart because it measures valid votes, not total voting intention, and because each state has its own [TSE](/en/glossary#tse) registration, with no single national registration. 💹 In the confirmed reading of 01/Oct, 19:29 BRT, Flávio Bolsonaro rises 1.25pp, to 61.05%, and Lula falls 2.00pp, to 37.50%, with 1.73pp for each side normalized, and the gap widens from 20.30pp to 23.55pp, the fifth straight widening between confirmed readings. 🥉 In the third-place book of the first round Renan Santos stays ahead, 48.50% to Augusto Cury's 36.70%. 📰 In the news flow, on the night of 30/Sep the TSE full court upheld the removal of the posts that attributed to Flávio Bolsonaro a plan to strip Our Lady of Aparecida of the title of patron saint, and released the post by comedian Antonio Tabet and the cases of reasonable doubt, after André Mendonça adjusted his vote (Gazeta do Povo and G1), and on 01/Oct Flávio Dino declared the case moot and closed his action at the Supreme Court on the matter (Gazeta do Povo and Valor), and Edson Fachin denied Flávio Bolsonaro's request to remove Dino from the cases linked to him, to Lula and to the elections (G1, CartaCapital and Folha de S.Paulo). 📺 Lula announced he will not attend the TV Globo debate of 01/Oct, and on the afternoon of the same day Justice Estela Aranha, of the TSE, issued an injunction barring the broadcaster from showing his empty podium and from directing questions to the absent candidate, and sent the case to the TSE full court (Gazeta do Povo, O Globo and Folha de S.Paulo). ⛔ The panel does not attribute price moves to a poll or to an act: it measures both sides with each one's timestamps."
 }
