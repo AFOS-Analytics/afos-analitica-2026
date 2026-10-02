@@ -79,7 +79,16 @@ console.log(`   vivo x versionado, artefato por artefato. Leitura pura: nada é 
   // 📌 `wayback` entrou em 02/Out: ele roda ANTES da daily, que é do Brasil, e
   //    na estreia saía rotulado como EUA. O rótulo errado aqui é barato mas
   //    engana sobre de quem é a árvore, que é o que decide se dá para publicar.
-  const outros = arquivos.filter((l) => /tse|brz|analysis-|afos-daily|wayback|polls-data\.json|polls-data\.(en|es)/.test(l))
+  // 🔴 O PADRÃO DO BRASIL TEM DE SER ANCORADO, régua de 02/Out/2026.
+  //
+  // `polls-data\.json` casa DENTRO de `us-polls-data.json`, então o piso das
+  // pesquisas dos EUA, que é o artefato central desta faixa, saía rotulado como
+  // "outra faixa". Eu vi isso na estreia em 29/Set, achei pequeno e deixei
+  // passar; o rótulo decide de quem é a árvore, que é o que libera ou trava uma
+  // publicação, então pequeno ele não é.
+  //
+  // 📌 `wayback` entrou junto: ele roda ANTES da daily, que é do Brasil.
+  const outros = arquivos.filter((l) => /tse|brz|analysis-|afos-daily|wayback|public\/polls-data\.(json|en\.json|es\.json)/.test(l))
   const meus = arquivos.filter((l) => !outros.includes(l))
   if (!arquivos.length) linha('✅', 'árvore', 'limpa')
   else {
