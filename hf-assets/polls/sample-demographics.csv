@@ -537,3 +537,24 @@ BR-03929/2026,BR039292026,Gerp,2026-09-29,2026-09-24,age,"(declared, no % in reg
 BR-03929/2026,BR039292026,Gerp,2026-09-29,2026-09-24,income,"(declared, no % in registry)",,mentioned_no_pct
 BR-00895/2026,BR008952026,Vox Brasil,2026-09-29,2026-09-27,sex,male,47.18,full_percentages
 BR-00895/2026,BR008952026,Vox Brasil,2026-09-29,2026-09-27,sex,female,52.82,full_percentages
+BR-01122/2026,BR011222026,Futura/100% Cidades,2026-09-30,2026-09-26,sex,male,47.2,full_percentages
+BR-01122/2026,BR011222026,Futura/100% Cidades,2026-09-30,2026-09-26,sex,female,52.8,full_percentages
+BR-08706/2026,BR087062026,Ideia/Canal Meio,2026-09-30,2026-09-26,sex,male,47,full_percentages
+BR-08706/2026,BR087062026,Ideia/Canal Meio,2026-09-30,2026-09-26,sex,female,53,full_percentages
+BR-08706/2026,BR087062026,Ideia/Canal Meio,2026-09-30,2026-09-26,education,Fundamental,38,full_percentages
+BR-08706/2026,BR087062026,Ideia/Canal Meio,2026-09-30,2026-09-26,education,Médio,40,full_percentages
+BR-08706/2026,BR087062026,Ideia/Canal Meio,2026-09-30,2026-09-26,income,Economicamente Ativo,62,full_percentages
+BR-00698/2026,BR006982026,Indexa/Broadcast,2026-09-30,2026-09-28,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-00698/2026,BR006982026,Indexa/Broadcast,2026-09-30,2026-09-28,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-00698/2026,BR006982026,Indexa/Broadcast,2026-09-30,2026-09-28,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-00698/2026,BR006982026,Indexa/Broadcast,2026-09-30,2026-09-28,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-00698/2026,BR006982026,Indexa/Broadcast,2026-09-30,2026-09-28,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-08039/2026,BR080392026,Datafolha,2026-10-01,2026-09-29,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-08039/2026,BR080392026,Datafolha,2026-10-01,2026-09-29,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-08039/2026,BR080392026,Datafolha,2026-10-01,2026-09-29,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-08039/2026,BR080392026,Datafolha,2026-10-01,2026-09-29,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-08039/2026,BR080392026,Datafolha,2026-10-01,2026-09-29,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-09503/2026,BR095032026,Real Time Big Data,2026-10-01,2026-09-28,sex,male,47.18,full_percentages
+BR-09503/2026,BR095032026,Real Time Big Data,2026-10-01,2026-09-28,sex,female,52.82,full_percentages
+BR-09503/2026,BR095032026,Real Time Big Data,2026-10-01,2026-09-28,age,16 anos,0.38,full_percentages
+BR-09503/2026,BR095032026,Real Time Big Data,2026-10-01,2026-09-28,education,Analfabeto,3.5,full_percentages
