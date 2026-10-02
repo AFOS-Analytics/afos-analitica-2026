@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-10-01",
+  "lastUpdate": "2026-10-02",
   "institutes": [
     {
       "name": "Datafolha",
@@ -147,6 +147,72 @@
     }
   ],
   "polls": [
+    {
+      "institute": "Vox Brasil",
+      "date": "2026-10-02",
+      "scope": "national",
+      "sample": 2100,
+      "margin": 2.15,
+      "register": "BR-00148/2026",
+      "reliability": 3,
+      "method": "Presencial",
+      "fieldDates": "2026-09-29 a 2026-10-01",
+      "note": "Vox Brasil nacional divulgada em 02/Out, registro BR-00148/2026, 2.100 eleitores em abordagem presencial entre 29/Set e 01/Out, margem de 2,15pp com 95% de confiança, feita com recursos do próprio instituto (BNews SP, OCP News e GP1). ⭐ NO 1º TURNO FLÁVIO BOLSONARO TEM 41,2% E LULA 40,4%, dentro da margem, depois de Lula estar à frente por 41,1% a 37,8% na rodada da casa divulgada em 29/Set, com Ronaldo Caiado em 3,3%, Renan Santos em 2,2%, Romeu Zema em 1,3% e Augusto Cury em 1,2%; brancos, nulos e nenhum somam 3,2% e 7% não souberam. ⚖️ NO 2º TURNO FLÁVIO BOLSONARO TEM 48,2% E LULA 45,2%, dentro da margem, depois de 45,2% a 44,7% para ele em 29/Set. Lula vence os outros dois pares testados: 46,3% a 42,1% contra Ronaldo Caiado e 46,8% a 33,1% contra Augusto Cury.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 41.2
+            },
+            {
+              "candidate": "Lula (PT)",
+              "percent": 40.4
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 3.3
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 2.2
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 1.3
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 1.2
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 45.2,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 48.2
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 46.3,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 42.1
+        },
+        {
+          "matchup": "Lula vs Cury",
+          "candidate1": "Lula",
+          "percent1": 46.8,
+          "candidate2": "Augusto Cury",
+          "percent2": 33.1
+        }
+      ]
+    },
     {
       "institute": "Datafolha",
       "date": "2026-10-01",
@@ -3462,108 +3528,6 @@
         }
       ],
       "source": "Genial/Quaest, divulgada em 02/Set/2026 (campo 30/Ago a 01/Set, n=2.004, margem de 2pp, 95% de confiança, contratante Editora Globo, registro TSE BR-07065/2026). Tabela completa dos três cenários de 1º turno e dos cinco de 2º turno conferida na Gazeta do Povo; rejeição dos treze nomes e avaliação do governo conferidas no Poder360; números do 1º e do 2º turno conferidos também em G1, Folha de S.Paulo, Estadão, Valor Econômico e CartaCapital."
-    },
-    {
-      "institute": "Real Time Big Data",
-      "date": "2026-09-01",
-      "scope": "national",
-      "sample": 2000,
-      "margin": 2,
-      "register": "BR-03490/2026",
-      "reliability": 3,
-      "method": "Telefônica",
-      "fieldDates": "2026-08-27 a 2026-08-31",
-      "note": "Real Time Big Data, divulgada em 01/Set (Gazeta do Povo, CNN Brasil, Poder360, Money Times, R7, CartaCapital, VEJA, Brasil 247). ⚠️ A CASA PUBLICOU DOIS CENÁRIOS DE 1º TURNO E ELES DÃO NÚMEROS DIFERENTES PARA O SEGUNDO E O TERCEIRO COLOCADOS. Com Pablo Marçal na lista, Lula 38%, Flávio Bolsonaro 29% e Augusto Cury 10%. Sem Marçal, Lula 38%, Flávio 30% e Cury 11%. As manchetes do dia circularam o segundo cenário sem dizer que era o cenário sem Marçal, e é por isso que o painel traz os dois rotulados. No 2º turno, Lula 44% x Flávio 44%, empate. ⭐ NO CENÁRIO CONTRA RONALDO CAIADO, LULA PERDE POR 45% A 43%. Nas 41 simulações de 2º turno da base do painel, Lula já ficou atrás em quatro, e as quatro eram contra Flávio Bolsonaro. É a primeira vez na base que um nome fora dele aparece à frente. Nos demais, Lula 43% x Romeu Zema 40%, Lula 44% x Renan Santos 37% e Lula 44% x Pablo Marçal 40%. Na rejeição, Lula e Flávio empatam em 50%, Marçal tem 48%, Renan 40%, Caiado 39%, Zema 36% e Augusto Cury 24%, a menor entre os sete nomes testados nesta pesquisa. Campo 27 a 31/Ago, n=2.000, margem de 2pp, 95% de confiança, registro BR-03490/2026. ⭐ É A PRIMEIRA NACIONAL DO PAINEL COM CAMPO QUE ALCANÇA 31/Ago, e portanto a primeira que cobre a semana inteira depois da estreia do horário eleitoral em 28/Ago. 🏷️ O ESCOPO NACIONAL DESTE REGISTRO É DERIVADO POR NÓS, e a evidência que o sustenta é fraca. Ele vem do plano amostral, e o plano amostral desta casa declara universo nacional em 23 de 23 pesquisas ESTADUAIS dela na janela de 30 dias, com a metodologia calada sobre o universo. Campo que diz nacional em todos os casos não separa nada, então dizer nacional aqui não é evidência. Isso não afirma que a pesquisa seja estadual: afirma que o registro não sustenta o rótulo, e a página declara a dúvida em vez de escondê-la.",
-      "scenarios": [
-        {
-          "name": "Cenário estimulado com Pablo Marçal (1º turno)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 38
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 29
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 10
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 6
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 4
-            },
-            {
-              "candidate": "Pablo Marçal (PRTB)",
-              "percent": 3
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 2
-            }
-          ]
-        },
-        {
-          "name": "Cenário estimulado sem Pablo Marçal (1º turno)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 38
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 30
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 11
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 44,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 44
-        },
-        {
-          "matchup": "Caiado vs Lula",
-          "candidate1": "Ronaldo Caiado",
-          "percent1": 45,
-          "candidate2": "Lula",
-          "percent2": 43
-        },
-        {
-          "matchup": "Lula vs Zema",
-          "candidate1": "Lula",
-          "percent1": 43,
-          "candidate2": "Romeu Zema",
-          "percent2": 40
-        },
-        {
-          "matchup": "Lula vs Renan",
-          "candidate1": "Lula",
-          "percent1": 44,
-          "candidate2": "Renan Santos",
-          "percent2": 37
-        },
-        {
-          "matchup": "Lula vs Marçal",
-          "candidate1": "Lula",
-          "percent1": 44,
-          "candidate2": "Pablo Marçal",
-          "percent2": 40
-        }
-      ],
-      "source": "Real Time Big Data, divulgada em 01/Set/2026 (campo 27 a 31/Ago, n=2.000, margem de 2pp, 95% de confiança, registro TSE BR-03490/2026). Tabela completa dos dois cenários de 1º turno, dos cinco cenários de 2º turno e da rejeição conferida na Gazeta do Povo, com os números do 1º e do 2º turno conferidos também em CNN Brasil, Poder360, Money Times e R7."
     }
   ],
   "approvalData": {
@@ -3605,66 +3569,66 @@
         "disapproval6m": 50
       }
     ],
-    "lastUpdate": "01/10/2026, 19:29"
+    "lastUpdate": "02/10/2026, 16:07"
   },
   "polymarketComparison": {
-    "note": "Preços do Polymarket na leitura confirmada de 01/Out, 19:29 BRT, com o livro presidencial somando USD 159,29M acumulados em 19 contratos. NO CONTRATO DE VENCEDOR O VÃO ABRE PELA QUINTA LEITURA CONFIRMADA SEGUIDA, de 20,30pp para 23,55pp: Flávio Bolsonaro sobe 1,25pp, para 61,05%, e Lula cai 2,00pp, para 37,50%, com 1,73pp para cada lado no normalizado. 🗳️ O lado pesquisa deste grafo passa a ser a Datafolha de 01/Out, que dá Lula 42% a 38% no 1º turno e 48% a 45% no 2º. Nas cinco nacionais divulgadas em 30/Set e 01/Out, Lula fica à frente no 1º turno em quatro (Datafolha, Real Time Big Data, Indexa e Ideia) e atrás em uma (Futura), e no 2º turno fica à frente em três (Datafolha, Indexa e Ideia) e atrás em duas (Real Time Big Data e Futura). 🥉 No livro de 3º lugar do 1º turno Renan Santos segue à frente, 48,50% a 36,70% de Augusto Cury.",
-    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. A confirmação é feita contrato a contrato, e os preços desta página são todos da leitura confirmada de 01/Out, 19:29 BRT. Ao lado do movimento cru vai o normalizado pela soma do par binário, ou do livro inteiro quando ele tem mais de dois nomes relevantes. Pesquisas registradas no TSE, com protocolo, casa, campo, amostra e método declarados em cada entrada. 🗳️ O lado PESQUISA do grafo de divergência usa UMA nacional, não a média: a régua do painel é a nacional mais recente com desempate pela maior amostra, o que dá a Datafolha de 01/Out, n=2.506, entre as duas divulgadas naquele dia. A escolha vai declarada no grafo, com casa e data, e a alternativa era a Real Time Big Data, n=2.000.",
+    "note": "Preços do Polymarket na leitura confirmada de 02/Out, 16:07 BRT, com o livro presidencial somando USD 161,84M acumulados em 19 contratos. NO CONTRATO DE VENCEDOR O VÃO FECHA DE 23,55pp PARA 15,25pp, depois de cinco aberturas seguidas entre leituras confirmadas: Lula sobe 5,00pp, para 42,50%, e Flávio Bolsonaro cai 3,30pp, para 57,75%, com 4,34pp para cada lado no normalizado. 🗳️ O lado pesquisa deste grafo passa a ser a Vox Brasil de 02/Out, que dá Flávio Bolsonaro 41,2% a 40,4% no 1º turno e 48,2% a 45,2% no 2º. Nas seis nacionais divulgadas de 30/Set a 02/Out, Lula fica à frente no 1º turno em quatro (Datafolha, Real Time Big Data, Indexa e Ideia) e atrás em duas (Futura e Vox Brasil), e no 2º turno elas se dividem em três para cada lado: Lula na Datafolha, na Indexa e na Ideia, e Flávio Bolsonaro na Real Time Big Data, na Futura e na Vox Brasil. 🥉 No livro de 3º lugar do 1º turno Renan Santos abre, 62,50% a 27,30% de Augusto Cury.",
+    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. A confirmação é feita contrato a contrato, e os preços desta página são todos da leitura confirmada de 02/Out, 16:07 BRT. Ao lado do movimento cru vai o normalizado pela soma do par binário, ou do livro inteiro quando ele tem mais de dois nomes relevantes. Pesquisas registradas no TSE, com protocolo, casa, campo, amostra e método declarados em cada entrada. 🗳️ O lado PESQUISA do grafo de divergência usa UMA nacional, não a média: a régua do painel é a nacional mais recente com desempate pela maior amostra, o que dá a Vox Brasil de 02/Out, n=2.100, única nacional divulgada naquele dia. A escolha vai declarada no grafo, com casa e data.",
     "candidates": [
       {
         "name": "Lula",
-        "percentage": 42,
-        "odds": 37.5,
-        "value": 37.5,
-        "polymarket": "37,50%",
+        "percentage": 40.4,
+        "odds": 42.5,
+        "value": 42.5,
+        "polymarket": "42,50%",
         "pesquisaRange": "34% a 45,8%",
-        "lastUpdate": "01/10/2026, 19:29",
-        "tendenciaPesquisa": "TEM 42% NO 1º TURNO NA DATAFOLHA DE 01/Out, campo de 28/Set a 01/Out e n=2.506, que é a fonte do lado pesquisa deste grafo, 4 pontos à frente de Flávio Bolsonaro, e 48% no 2º, 3 pontos à frente, depois de 40% a 36% e 47% a 45% na rodada da casa de 24/Set. ⭐ Nas cinco nacionais de 30/Set e 01/Out ele lidera o 1º turno em quatro e o 2º em três; fica atrás no 2º turno na Real Time Big Data, por 45% a 46%, e na Futura, por 43,5% a 49%, a única distância fora da margem.",
-        "tendenciaPolymarket": "CAI 2,00pp NO CONTRATO DE VENCEDOR, para 37,50% (vol USD 13,00M acumulado), leitura confirmada de 01/Out, 19:29 BRT, e 1,73pp no normalizado. O vão contra Flávio Bolsonaro abre de 20,30pp para 23,55pp. ⚠️ Não é extremo: na série gravada desde 14 de abril o preço dele está a 30,00pp do topo, 67,50% de 16/Ago, e a 3,00pp do piso, 34,50% de 25/Abr. No contrato de 2º lugar do 1º turno sobe 4,65pp, para 28,25%."
+        "lastUpdate": "02/10/2026, 16:07",
+        "tendenciaPesquisa": "TEM 40,4% NO 1º TURNO NA VOX BRASIL DE 02/Out, campo de 29/Set a 01/Out e n=2.100, que é a fonte do lado pesquisa deste grafo, 0,8 ponto atrás de Flávio Bolsonaro, e 45,2% no 2º, 3 pontos atrás, depois de liderar o 1º turno por 41,1% a 37,8% na rodada da casa de 29/Set. ⭐ Nas seis nacionais de 30/Set a 02/Out ele lidera o 1º turno em quatro e o 2º em três: 48% a 45% na Datafolha, 43% a 42% na Indexa e 48,5% a 48% na Ideia.",
+        "tendenciaPolymarket": "SOBE 5,00pp NO CONTRATO DE VENCEDOR, para 42,50% (vol USD 13,76M acumulado), leitura confirmada de 02/Out, 16:07 BRT, e 4,34pp no normalizado. O vão contra Flávio Bolsonaro fecha de 23,55pp para 15,25pp. ⚠️ Não é extremo: na série gravada desde 14 de abril o preço dele está a 25,00pp do topo, 67,50% de 16/Ago, e a 8,00pp do piso, 34,50% de 25/Abr. No contrato de 2º lugar do 1º turno cai 4,55pp, para 23,70%."
       },
       {
         "name": "Flávio Bolsonaro",
-        "percentage": 38,
-        "odds": 61.05,
-        "value": 61.05,
-        "polymarket": "61,05%",
+        "percentage": 41.2,
+        "odds": 57.75,
+        "value": 57.75,
+        "polymarket": "57,75%",
         "pesquisaRange": "29% a 44%",
-        "lastUpdate": "01/10/2026, 19:29",
-        "tendenciaPesquisa": "TEM 38% NO 1º TURNO NA DATAFOLHA DE 01/Out, campo de 28/Set a 01/Out e n=2.506, que é a fonte do lado pesquisa deste grafo, e 45% no 2º, contra 48% de Lula, dentro da margem de 2pp. ⭐ Nas cinco nacionais de 30/Set e 01/Out lidera o 1º turno só na Futura, por 42,2% a 39,4%, e o 2º turno na Futura, por 49% a 43,5%, e na Real Time Big Data, por 46% a 45%. Na Ideia fica 0,5 ponto atrás no 2º turno, 48% a 48,5%, e na Indexa 1 ponto, 42% a 43%.",
-        "tendenciaPolymarket": "SOBE 1,25pp NO CONTRATO DE VENCEDOR, para 61,05% (vol USD 12,79M acumulado), leitura confirmada de 01/Out, 19:29 BRT, e 1,73pp no normalizado. O vão sobre Lula abre de 20,30pp para 23,55pp, a quinta abertura seguida entre leituras confirmadas. Nos pontos gravados de 01/Out o preço dele variou de 61,05% a 63,30%, e esse 63,30% é o topo da série gravada desde 14 de abril; o piso é 22,00% de 03/Jul. No contrato de 2º lugar do 1º turno cai 5,00pp, para 71,50%, num contrato que acumula USD 1,42M."
+        "lastUpdate": "02/10/2026, 16:07",
+        "tendenciaPesquisa": "TEM 41,2% NO 1º TURNO NA VOX BRASIL DE 02/Out, campo de 29/Set a 01/Out e n=2.100, que é a fonte do lado pesquisa deste grafo, e 48,2% no 2º, contra 45,2% de Lula, as duas distâncias dentro da margem de 2,15pp. ⭐ Nas seis nacionais de 30/Set a 02/Out lidera o 1º turno na Vox Brasil e na Futura, e o 2º turno nelas e na Real Time Big Data, por 46% a 45%; a da Futura, 49% a 43,5%, é a única fora da margem.",
+        "tendenciaPolymarket": "CAI 3,30pp NO CONTRATO DE VENCEDOR, para 57,75% (vol USD 13,49M acumulado), leitura confirmada de 02/Out, 16:07 BRT, e 4,34pp no normalizado. O vão sobre Lula fecha de 23,55pp para 15,25pp, depois de cinco aberturas seguidas entre leituras confirmadas. Na série gravada desde 14 de abril o preço dele está a 5,55pp do topo gravado, 63,30% de 01/Out, e a 35,75pp do piso, 22,00% de 03/Jul. No contrato de 2º lugar do 1º turno sobe 5,00pp, para 76,50%, num contrato que acumula USD 1,51M."
       },
       {
         "name": "Augusto Cury",
-        "percentage": 4,
+        "percentage": 1.2,
         "odds": 0.05,
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "1% a 12,2%",
-        "lastUpdate": "01/10/2026, 19:29",
-        "tendenciaPesquisa": "TEM 4% NO 1º TURNO NA DATAFOLHA DE 01/Out, campo de 28/Set a 01/Out e n=2.506, que é a fonte do lado pesquisa deste grafo, e é o terceiro colocado ali. Nas nacionais de 30/Set e 01/Out vai de 3% na Real Time Big Data a 6,7% na Ideia, onde também é o terceiro. Contra Lula no 2º turno fica 1 ponto atrás na Real Time Big Data, 44% a 45%, e à frente na Futura, 45,1% a 42%.",
-        "tendenciaPolymarket": "SOBE 0,85pp NO CRU NO CONTRATO DE 3º LUGAR DO 1º TURNO, para 36,70%, num contrato que acumula USD 0,34M, e 0,69pp no normalizado, porque a soma daquele livro subiu de 101,85 para 102,25. Segue atrás de Renan Santos naquele livro, agora por 11,80pp. No contrato de vencedor segue no piso do livro, 0,05%."
+        "lastUpdate": "02/10/2026, 16:07",
+        "tendenciaPesquisa": "TEM 1,2% NO 1º TURNO NA VOX BRASIL DE 02/Out, campo de 29/Set a 01/Out e n=2.100, que é a fonte do lado pesquisa deste grafo. Nas nacionais de 30/Set a 02/Out vai de 1,2% na Vox Brasil a 6,7% na Ideia, onde é o terceiro, e perde para Lula no 2º turno por 33,1% a 46,8% na Vox Brasil.",
+        "tendenciaPolymarket": "CAI 9,40pp NO CRU NO CONTRATO DE 3º LUGAR DO 1º TURNO, para 27,30%, num contrato que acumula USD 0,35M, e 9,23pp no normalizado, porque a soma daquele livro subiu de 102,25 para 102,40. Fica 35,20pp atrás de Renan Santos naquele livro. No contrato de vencedor segue no piso do livro, 0,05%."
       },
       {
         "name": "Renan Santos",
-        "percentage": 3,
-        "odds": 0.25,
-        "value": 0.25,
-        "polymarket": "0,25%",
+        "percentage": 2.2,
+        "odds": 0.15,
+        "value": 0.15,
+        "polymarket": "0,15%",
         "pesquisaRange": "2% a 11%",
-        "lastUpdate": "01/10/2026, 19:29",
-        "tendenciaPesquisa": "TEM 3% NO 1º TURNO NA DATAFOLHA DE 01/Out, campo de 28/Set a 01/Out e n=2.506, que é a fonte do lado pesquisa deste grafo. Nas nacionais de 30/Set e 01/Out vai de 3% a 4,5%, e é o terceiro colocado na Real Time Big Data, com 4%. Contra Lula no 2º turno perde por 39% a 48% na Datafolha e por 40,7% a 44,6% na Futura.",
-        "tendenciaPolymarket": "CAI 3,00pp NO CRU NO CONTRATO DE 3º LUGAR DO 1º TURNO, para 48,50%, num contrato que acumula USD 0,52M, e 3,13pp no normalizado, e segue à frente de Augusto Cury naquele livro, por 11,80pp. No de vencedor está em 0,25%. 🏆 O contrato dele no livro de vencedor segue sendo o de MAIOR volume acumulado do presidencial, USD 15,12M contra USD 14,36M do de Tarcísio de Freitas; no livro de 2º lugar o maior agora é o de Flávio Bolsonaro, USD 1,42M contra USD 1,40M do dele."
+        "lastUpdate": "02/10/2026, 16:07",
+        "tendenciaPesquisa": "TEM 2,2% NO 1º TURNO NA VOX BRASIL DE 02/Out, campo de 29/Set a 01/Out e n=2.100, que é a fonte do lado pesquisa deste grafo. Nas nacionais de 30/Set a 02/Out vai de 2,2% a 4,5%, e é o terceiro colocado na Real Time Big Data, com 4%.",
+        "tendenciaPolymarket": "SOBE 14,00pp NO CRU NO CONTRATO DE 3º LUGAR DO 1º TURNO, para 62,50%, num contrato que acumula USD 0,62M, e 13,60pp no normalizado, e abre 35,20pp sobre Augusto Cury naquele livro. No de vencedor está em 0,15%. 🏆 O contrato dele no livro de vencedor segue sendo o de MAIOR volume acumulado do presidencial, USD 15,80M contra USD 14,56M do de Tarcísio de Freitas; no livro de 2º lugar o maior é o de Flávio Bolsonaro, USD 1,51M contra USD 1,42M do dele."
       },
       {
         "name": "Ronaldo Caiado",
-        "percentage": 3,
+        "percentage": 3.3,
         "odds": 0.05,
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "1% a 5,7%",
-        "lastUpdate": "01/10/2026, 19:29",
-        "tendenciaPesquisa": "TEM 3% NO 1º TURNO NA DATAFOLHA DE 01/Out, campo de 28/Set a 01/Out e n=2.506, que é a fonte do lado pesquisa deste grafo. Nas nacionais de 30/Set e 01/Out vai de 3% a 4,4%, e é o terceiro na Futura, com 4%. Contra Lula no 2º turno perde por 42% a 48% na Datafolha e por 43% a 45% na Real Time Big Data, e vence por 45,6% a 42,4% na Futura.",
-        "tendenciaPolymarket": "SOBE 2,50pp NO CRU NO CONTRATO DE 3º LUGAR DO 1º TURNO, para 16,00%, num contrato que acumula USD 0,21M, e 2,39pp no normalizado. Mantém a terceira posição do livro. No contrato de vencedor segue em 0,05%. Na Futura de 30/Set é o terceiro colocado do 1º turno, com 4%."
+        "lastUpdate": "02/10/2026, 16:07",
+        "tendenciaPesquisa": "TEM 3,3% NO 1º TURNO NA VOX BRASIL DE 02/Out, campo de 29/Set a 01/Out e n=2.100, que é a fonte do lado pesquisa deste grafo, e é o terceiro colocado ali, como na Futura. Contra Lula no 2º turno perde por 42,1% a 46,3% na Vox Brasil e vence por 45,6% a 42,4% na Futura.",
+        "tendenciaPolymarket": "CAI 4,50pp NO CRU NO CONTRATO DE 3º LUGAR DO 1º TURNO, para 11,50%, num contrato que acumula USD 0,22M, e 4,42pp no normalizado. Segue em terceiro naquele livro. No contrato de vencedor segue em 0,05%. Na Vox Brasil de 02/Out é o terceiro colocado do 1º turno, com 3,3%."
       },
       {
         "name": "Pablo Marçal",
@@ -3672,21 +3636,21 @@
         "odds": 0.05,
         "value": 0.05,
         "polymarket": "0,05%",
-        "pesquisaRange": "1% a 3%",
-        "lastUpdate": "01/10/2026, 19:29",
-        "tendenciaPesquisa": "Fora dos cenários estimulados das nacionais de 30/Set e 01/Out, depois do indeferimento do registro de candidatura em 11/Set.",
+        "pesquisaRange": "1% a 2%",
+        "lastUpdate": "02/10/2026, 16:07",
+        "tendenciaPesquisa": "Fora dos cenários estimulados das nacionais de 30/Set a 02/Out, depois do indeferimento do registro de candidatura em 11/Set.",
         "tendenciaPolymarket": "Segue em 0,05% no contrato de vencedor. O registro de candidatura dele foi indeferido pelo Tribunal Superior Eleitoral em 11/Set."
       },
       {
         "name": "Romeu Zema",
-        "percentage": 1,
+        "percentage": 1.3,
         "odds": 0.05,
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "0,3% a 3,5%",
-        "lastUpdate": "01/10/2026, 19:29",
-        "tendenciaPesquisa": "TEM 1% NO 1º TURNO NA DATAFOLHA DE 01/Out, campo de 28/Set a 01/Out e n=2.506, que é a fonte do lado pesquisa deste grafo. Nas nacionais de 30/Set e 01/Out vai de 1% a 3,5%, a maior leitura na Ideia. Contra Lula no 2º turno perde por 40% a 49% na Datafolha e por 40% a 45% na Real Time Big Data.",
-        "tendenciaPolymarket": "ESTÁ EM 0,15% NO CONTRATO DE 3º LUGAR DO 1º TURNO, num contrato que acumula USD 0,11M. No de vencedor está em 0,05%."
+        "lastUpdate": "02/10/2026, 16:07",
+        "tendenciaPesquisa": "TEM 1,3% NO 1º TURNO NA VOX BRASIL DE 02/Out, campo de 29/Set a 01/Out e n=2.100, que é a fonte do lado pesquisa deste grafo. Nas nacionais de 30/Set a 02/Out vai de 1% a 3,5%, a maior leitura na Ideia.",
+        "tendenciaPolymarket": "ESTÁ EM 0,20% NO CONTRATO DE 3º LUGAR DO 1º TURNO, num contrato que acumula USD 0,12M. No de vencedor está em 0,05%."
       },
       {
         "name": "Tarcísio",
@@ -3695,9 +3659,9 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "não testado",
-        "lastUpdate": "01/10/2026, 19:29",
-        "tendenciaPesquisa": "As nacionais divulgadas em 30/Set e 01/Out não o incluem em cenário presidencial de 1º turno nem em par de 2º turno.",
-        "tendenciaPolymarket": "Segue em 0,05% no contrato de vencedor, com USD 14,36M acumulados, e o contrato dele continua atrás do de Renan Santos em volume acumulado no livro presidencial, que tem USD 15,12M."
+        "lastUpdate": "02/10/2026, 16:07",
+        "tendenciaPesquisa": "As nacionais divulgadas de 30/Set a 02/Out não o incluem em cenário presidencial de 1º turno nem em par de 2º turno.",
+        "tendenciaPolymarket": "Segue em 0,05% no contrato de vencedor, com USD 14,56M acumulados, e o contrato dele continua atrás do de Renan Santos em volume acumulado no livro presidencial, que tem USD 15,80M."
       },
       {
         "name": "Fernando Haddad",
@@ -3706,12 +3670,12 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "não testado",
-        "lastUpdate": "01/10/2026, 19:29",
-        "tendenciaPesquisa": "As nacionais divulgadas em 30/Set e 01/Out não o incluem em cenário presidencial de 1º turno nem em par de 2º turno.",
+        "lastUpdate": "02/10/2026, 16:07",
+        "tendenciaPesquisa": "As nacionais divulgadas de 30/Set a 02/Out não o incluem em cenário presidencial de 1º turno nem em par de 2º turno.",
         "tendenciaPolymarket": "Segue em 0,05% no contrato de vencedor, com USD 7,55M acumulados."
       }
     ],
-    "updatedAt": "01/10/2026, 19:29",
+    "updatedAt": "02/10/2026, 16:07",
     "lastUpdate": "25/09/2026, 17:08",
     "pollSource": {
       "pollster": "Palver",
