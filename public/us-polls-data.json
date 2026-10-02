@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-01",
-  "fetchedAt": "2026-10-01T21:36:22.847Z",
+  "lastUpdate": "2026-10-02",
+  "fetchedAt": "2026-10-02T18:32:18.115Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,8 +47,8 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-01",
-    "nPesquisas": 36,
+    "desde": "2026-09-02",
+    "nPesquisas": 35,
     "incluidas": [
       {
         "instituto": "Harvard/Harris Poll/HarrisX",
@@ -186,6 +186,13 @@
         "rep": 41
       },
       {
+        "instituto": "Morning Consult",
+        "campoFim": "2026-09-15",
+        "amostraTipo": "RV",
+        "dem": 46,
+        "rep": 43
+      },
+      {
         "instituto": "RMG Research",
         "campoFim": "2026-09-15",
         "amostraTipo": "RV",
@@ -290,20 +297,6 @@
         "amostraTipo": "LV",
         "dem": 52,
         "rep": 45
-      },
-      {
-        "instituto": "BGSU/YouGov",
-        "campoFim": "2026-09-01",
-        "amostraTipo": "LV",
-        "dem": 51,
-        "rep": 44
-      },
-      {
-        "instituto": "The Honest Poll",
-        "campoFim": "2026-09-01",
-        "amostraTipo": "LV",
-        "dem": 52,
-        "rep": 41
       }
     ],
     "excluidasPorInstrumento": [
@@ -356,15 +349,14 @@
         "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
       }
     ],
-    "nInstitutos": 29,
-    "dem": 49.69,
-    "rep": 41.58,
-    "vantagemDem": 8.11,
+    "nInstitutos": 28,
+    "dem": 49.49,
+    "rep": 41.57,
+    "vantagemDem": 7.92,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
       "Angus Reid Global",
-      "BGSU/YouGov",
       "Beacon Research (D)/ Shaw & Co. Research (R)",
       "Big Data Poll",
       "CBS News/YouGov",
@@ -394,14 +386,14 @@
     ]
   },
   "qualidade": {
-    "linhasLidas": 450,
-    "publicadas": 463,
+    "linhasLidas": 451,
+    "publicadas": 464,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 450,
+    "doIndice": 451,
     "curadas": 13,
     "curadasDescartadasPorDuplicidade": 17
   },
@@ -868,6 +860,21 @@
       "outros": 5,
       "vantagemDem": 5,
       "fontePrimaria": "https://www.nbcnews.com/politics/2026-election/poll-voters-say-trump-hurt-economy-competitive-midterm-election-looms-rcna597868",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-09-10",
+      "campoFim": "2026-09-15",
+      "amostra": 2102,
+      "amostraTipo": "RV",
+      "margemErro": 2,
+      "dem": 46,
+      "rep": 43,
+      "outros": 11,
+      "vantagemDem": 3,
+      "fontePrimaria": "https://www.deseret.com/politics/2026/09/29/voters-in-utah-and-nationally-say-economy-and-inflation-are-top-issues-in-november-midterm-elections/",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },

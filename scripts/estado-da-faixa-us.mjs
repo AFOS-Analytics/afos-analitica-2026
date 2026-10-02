@@ -76,7 +76,10 @@ console.log(`   vivo x versionado, artefato por artefato. Leitura pura: nada é 
   const arquivos = sujo.split('\n').filter(Boolean)
   // ⚠️ Arquivo de OUTRA faixa na árvore não é problema meu, mas muda o que eu
   //    posso publicar: o `vercel --prod` leva o diretório inteiro.
-  const outros = arquivos.filter((l) => /tse|brz|analysis-|afos-daily|polls-data\.json|polls-data\.(en|es)/.test(l))
+  // 📌 `wayback` entrou em 02/Out: ele roda ANTES da daily, que é do Brasil, e
+  //    na estreia saía rotulado como EUA. O rótulo errado aqui é barato mas
+  //    engana sobre de quem é a árvore, que é o que decide se dá para publicar.
+  const outros = arquivos.filter((l) => /tse|brz|analysis-|afos-daily|wayback|polls-data\.json|polls-data\.(en|es)/.test(l))
   const meus = arquivos.filter((l) => !outros.includes(l))
   if (!arquivos.length) linha('✅', 'árvore', 'limpa')
   else {
