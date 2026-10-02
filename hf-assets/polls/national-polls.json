@@ -1,7 +1,7 @@
 {
   "description": "National electoral polls (Brazil 2026) with published results, reconstructed from the AFOS dashboard history. Each poll carries its TSE registration number. — Each poll is enriched with its full public TSE registration (methodology, sampling/weighting design, responsible statistician, CONRE, CNPJ, internal control system) via field `tse_registration`, matched by TSE protocol or institute+date.",
   "generated_from": "public/polls-data.json git history",
-  "count": 112,
+  "count": 113,
   "polls": [
     {
       "institute": "Real Time Big Data/Record",
@@ -12410,6 +12410,112 @@
       "dating_source": "field_midpoint",
       "days_to_first_round": 6,
       "days_to_runoff": 27
+    },
+    {
+      "institute": "Vox Brasil",
+      "date": "2026-10-02",
+      "scope": "national",
+      "sample": 2100,
+      "margin": 2.15,
+      "register": "BR-00148/2026",
+      "reliability": 3,
+      "method": "Presencial",
+      "fieldDates": "2026-09-29 a 2026-10-01",
+      "note": "Vox Brasil nacional divulgada em 02/Out, registro BR-00148/2026, 2.100 eleitores em abordagem presencial entre 29/Set e 01/Out, margem de 2,15pp com 95% de confiança, feita com recursos do próprio instituto (BNews SP, OCP News e GP1). ⭐ NO 1º TURNO FLÁVIO BOLSONARO TEM 41,2% E LULA 40,4%, dentro da margem, depois de Lula estar à frente por 41,1% a 37,8% na rodada da casa divulgada em 29/Set, com Ronaldo Caiado em 3,3%, Renan Santos em 2,2%, Romeu Zema em 1,3% e Augusto Cury em 1,2%; brancos, nulos e nenhum somam 3,2% e 7% não souberam. ⚖️ NO 2º TURNO FLÁVIO BOLSONARO TEM 48,2% E LULA 45,2%, dentro da margem, depois de 45,2% a 44,7% para ele em 29/Set. Lula vence os outros dois pares testados: 46,3% a 42,1% contra Ronaldo Caiado e 46,8% a 33,1% contra Augusto Cury.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 41.2
+            },
+            {
+              "candidate": "Lula (PT)",
+              "percent": 40.4
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 3.3
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 2.2
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 1.3
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 1.2
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 45.2,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 48.2
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 46.3,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 42.1
+        },
+        {
+          "matchup": "Lula vs Cury",
+          "candidate1": "Lula",
+          "percent1": 46.8,
+          "candidate2": "Augusto Cury",
+          "percent2": 33.1
+        }
+      ],
+      "tse_registration": {
+        "register_tse": "BR001482026",
+        "cnpj": "45613076000120",
+        "institute_full": "INSTITUTO VOX BRASIL OPINIAO E PESQUISAS LTDA",
+        "statistician": "GUILHERME COELHO NEVES",
+        "conre": "9907",
+        "cost_brl": 50000,
+        "own_poll": true,
+        "methodology": "Pesquisa do tipo quantitativo, por amostragem, com aplicação de questionário estruturado e abordagem pessoal em domicílios particulares permanentemente ocupados (de acordo com a definição do IBGE - Instituto Brasileiro de Geografia e Estatística). O conjunto do eleitorado do BRASIL com 16 anos ou mais foi tomado como universo da pesquisa.",
+        "sampling_plan": "Tamanho da amostra: A amostra prevista é de 2100 entrevistas. Técnica de amostragem: A amostra é aleatória, com base na estimativa da média populacional. Utilizamos a amostragem em mais de um estágio. No primeiro estágio dividimos o município em bairros/setores censitários (conglomerados), sendo os mesmos listados, onde foram sorteados aleatoriamente. No segundo estágio, foram sorteadas as ruas (dispondo de um mapa da região), no terceiro estágio fizemos o sorteio das casas (via amostragem sistemática). O próximo estágio é a seleção do entrevistado dentro da casa, onde o critério foi abordar um morador apto a votar no município que atendesse à equipe de campo, observados os controles amostrais posteriormente aplicados, sendo este obrigatoriamente morador da residência e eleitor da cidade pesquisada. Na etapa seguinte é realizado um controle das seguintes variáveis: sexo, idade, grau de instrução e nível econômico. Também adotamos p=50% para maximizar o tamanho da amostra. a) a amostra é ponderada levando em consideração a variável sexo da população do Brasil sendo 47,18 % homens e 52,82 % mulheres, conforme dados do TSE de ABRIL DE 2026 e a variável idade sendo consideradas as faixas: 16 anos:0,34%;17 anos:0,68%; 18 a 20 anos:4,33%; 21 a 24 anos: 6,90%; de 25 a 34 anos: 19,15%; de 35 a 44 anos: 19,89%, de 45 a 59 anos: 25,46%; de 60 a 69 anos: 12,63% e acima de 69 anos: 10,62% (TSE ABRIL DE 2026). Quanto à variável grau de instrução, temos: ANALFABETO: 3,52%; LÊ E ESCREVE: 6,16%; ENSINO FUNDAMENTAL INCOMPLETO: 21,41%; ENSINO FUNDAMENTAL COMPLETO:6,17%; ENSINO MÉDIO INCOMPLETO: 18,01%; ENSINO MÉDIO COMPLETO: 27,89%; SUPERIOR INCOMPLETO: 5,62% e SUPERIOR COMPLETO: 11,22%(TSE ABRIL DE 2026). E para a variável renda, temos: Até 2 Salários Mínimos: 83,89%; 2 a 5 Salários Mínimos: 12,42%; 5 a 10 Salários Mínimos: 2,79% e acima de 10 Salários Mínimos: 0,90% (IBGE Censo 2022 [https://sidra.ibge.gov.br/]). Área física: Brasil em domicílios particulares permanentemente ocupados e sorteados de maneira aleatória simples sem reposição. Margem de Erro: A margem de erro máxima prevista para o total da amostra é de 2,15 pontos percentuais para mais ou para menos, considerando um nível de confiança de 95%. Os intervalos de confiança serão calculados considerando os resultados obtidos para um nível de confiança de 95%. Fonte de Dados: TSE- ABRIL DE 2026 e IBGE Censo 2022.",
+        "control_system": "Os pesquisadores envolvidos na realização desta pesquisa recebem treinamento especializado e instruções específicas de abordagem. O trabalho é feito com a equipe e coordenadores de campo. Há fiscalização no ato da entrevista e os questionários são recolhidos e checados quanto ao correto preenchimento dos dados. Após os trabalhos de campo, os questionários são submetidos a uma fiscalização que consiste na verificação de 20% dos questionários aplicados individualmente pelos entrevistadores, para checagem das respostas. Internamente, todo o material é verificado, codificado, digitado e, antes do processamento final, realiza-se a conferência da digitação (consistência dos dados).",
+        "matched_by": "protocol",
+        "sample_design": {
+          "layer": "A_sample_design",
+          "note": "Sample composition/weighting (quota frame) declared in the TSE registration. This is SAMPLE DESIGN, NOT vote-by-demographic crosstabs (layer B), which are not in TSE open data. Best-effort parse of free text; null where the institute did not declare structured percentages.",
+          "quota_detail_level": "full_percentages",
+          "control_variables": {
+            "sex": true,
+            "age": true,
+            "education": true,
+            "income": true,
+            "region": true
+          },
+          "sex_quota": {
+            "male_pct": 47.18,
+            "female_pct": 52.82
+          },
+          "age_quota": null,
+          "education_quota": null,
+          "income_quota": null
+        }
+      },
+      "field_window": {
+        "start": "2026-09-29",
+        "end": "2026-10-01"
+      },
+      "field_midpoint": "2026-09-30",
+      "dating_source": "field_midpoint",
+      "days_to_first_round": 4,
+      "days_to_runoff": 25
     }
   ],
   "enriched_at_note": "tse_registration sourced from TSE Open Data (Lei 9.504/97 art. 33). Null where no confident registry match. For institute+date matches the methodology/design is the institute standard (stable across waves), not a claim of identical protocol.",
