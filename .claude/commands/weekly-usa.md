@@ -191,6 +191,18 @@ Conferir os 3 idiomas e reportar a URL. **Aguardar aprovação expressa.**
    npx vercel --yes --prod
    ```
 
+4. 🔴 **ARQUIVAR NO NEON, e esta régua não citava o próprio script:**
+
+   ```bash
+   npx tsx scripts/persist-afos-weekly.ts YYYY-MM-DD --pais=us
+   ```
+
+   ⚠️ **Medido em 01/Out/2026:** o `persist-afos-weekly.ts` existe, e esta skill o citava **ZERO vezes**. A nº 9 foi publicada, foi para produção e foi disparada para os 21 assinantes **sem estar no banco**, e só entrou porque o André pediu "salva no Neon" depois. É o mesmo defeito que deixou o `conferir-us-polls` um mês sem rodar e o `semana-do-contrato` fora do único produto cuja manchete é o Δ da semana: **script não citado é script que não roda**.
+
+   📌 **Ele arquiva só a ORIGEM, de propósito**, filtrando `.pt-BR.` e `.es.`: um registro por edição, do idioma canônico. O Tradeoff faz o espelho disso, filtrando `.en.` e `.es.`, porque lá a origem é o português. Ver `1/1 arquivados` e não estranhar.
+
+   ⚠️ **Sem `--pais=us` ele cai no país padrão.** E o `slugQualifier` só entra quando o país é diferente do padrão, então hoje o slug sai como `afos-weekly-DD-MM-AAAA`, **sem país**. Isso funciona **enquanto só existir `us`**: país novo colide e o upsert apaga um sem erro.
+
 ## 📅 Calendário: 13 + 1
 
 Quintas: **06/Ago** (№1, piloto) · **13/Ago** (№2, piloto, **decisão de seguir**) · 20 e 27/Ago · 03, 10, 17 e 24/Set · 01, 08, 15 e 22/Out · **29/Out** (№13, última antes da urna).
