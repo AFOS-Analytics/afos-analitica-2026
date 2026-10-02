@@ -133,6 +133,47 @@ export function lerRotulo(txt) {
 }
 
 /**
+ * 🧬 A ASSINATURA DA RODADA É CAMPO + AMOSTRA + RECORTE, e NÃO o nome.
+ *
+ * 🔴 Régua de 02/Out/2026, e ela já existia na casa: o `duplicata-de-rodada.mjs`
+ *    diz, com todas as letras, que a assinatura é campo mais amostra mais
+ *    recorte "e nunca o nome, que é a coisa sob suspeita". Este conferidor
+ *    casava SÓ por nome, e por isso o mesmo defeito reapareceu aqui.
+ *
+ * 📌 O caso: o agregador escreve `Nat Res./Impact Res.` e o índice escreve
+ *    `Impact Research (D)/National Research Inc. (R)`. Mesma onda (16-21/Set),
+ *    mesma amostra (1.500) e mesmo recorte (RV), com as duas firmas em ordem
+ *    INVERTIDA e abreviadas. Nenhuma tabela de apelido razoável casa isso, e a
+ *    assinatura casa de primeira.
+ *
+ * ⚠️ E o comentário do bloco de APELIDOS já tinha previsto a esteira: "apelido
+ *    conserta uma casa; o buraco volta a abrir em TODA casa nova". Três dias
+ *    depois de a Clarity entrar na tabela, apareceram DUAS novas. Apelido é
+ *    sintoma; assinatura é a regra.
+ *
+ * ⛔ A assinatura exige os TRÊS campos. Sem amostra ou sem recorte no rótulo
+ *    ela NÃO opina, e o casamento por nome volta a ser a única resposta: duas
+ *    casas diferentes com a mesma data colidiriam sozinhas, que é a mesma
+ *    anti-excesso que o `duplicata-de-rodada.mjs` aplica.
+ */
+export const pertoNoDia = (a, b) =>
+  Math.abs(new Date(a + 'T00:00:00Z').getTime() - new Date(b + 'T00:00:00Z').getTime()) <= 86400000
+
+export function assinaturaBate(rodadaDeles, nossas) {
+  if (!rodadaDeles || !Array.isArray(nossas)) return false
+  const { campoFim, amostra, recorte } = rodadaDeles
+  if (!campoFim || amostra == null || recorte == null) return false
+  return nossas.some(
+    (n) =>
+      n &&
+      n.campoFim &&
+      pertoNoDia(n.campoFim, campoFim) &&
+      Number(n.amostra) === Number(amostra) &&
+      String(n.amostraTipo ?? '').toUpperCase() === String(recorte).toUpperCase()
+  )
+}
+
+/**
  * Nome do agregador → nome no nosso índice. Tabela EXPLÍCITA, nunca por semelhança.
  *
  * 🔴 APELIDO QUE FALTA VIRA BURACO QUE NÃO EXISTE, medido em 20/Set/2026: logo
@@ -239,12 +280,11 @@ async function main() {
   // agregador e o índice às vezes anotam o fim de campo com um dia de
   // diferença para a MESMA onda. Casar só por casa esconderia rodada
   // faltando de casa que já temos, e é o sentido em que o conferidor cala.
-  const temosRodada = (casa, iso) => {
-    const d = new Date(iso + 'T00:00:00Z').getTime()
-    return nossas.some(
-      (p) => normalizar(p.instituto) === casa && Math.abs(new Date(p.campoFim + 'T00:00:00Z').getTime() - d) <= 86400000,
-    )
-  }
+  const perto = pertoNoDia
+
+  const temosRodada = (p) =>
+    nossas.some((n) => normalizar(n.instituto) === p.casaNorm && n.campoFim && perto(n.campoFim, p.campoFim)) ||
+    assinaturaBate(p, nossas)
   const nossasCasas = new Set(nossas.map((p) => normalizar(p.instituto)))
 
   const deles = []
@@ -254,7 +294,8 @@ async function main() {
     const p = lerRotulo(txt)
     if (!p || p.campoFim < corte) continue
     const casa = normalizar(p.casaCompleta || p.casa)
-    deles.push({ ...p, casaNorm: casa, temos: temosRodada(casa, p.campoFim) })
+    const comCasa = { ...p, casaNorm: casa }
+    deles.push({ ...comCasa, temos: temosRodada(comCasa) })
   }
 
   console.log(`\n🔎 AGREGADOR NA FONTE x NOSSA BASE  [USO INTERNO, nao publicar]`)
@@ -334,7 +375,25 @@ async function main() {
   if (faltando.length) {
     console.log(`\n🔴 ${faltando.length} rodada(s) que o agregador tem e a nossa base NAO:`)
     for (const f of faltando) {
-      const noArquivo = (dados.polls ?? []).some((p) => normalizar(p.instituto) === f.casaNorm)
+      // 🔴 "A CASA NÃO TEM UMA LINHA" é a afirmação mais forte deste conferidor e
+      //    a que mais errou: ela manda abrir cobertura nova para uma casa que já
+      //    está coberta. Em 02/Out ela saiu em 3 de 3, e DUAS eram falso alarme.
+      //
+      // 📌 Antes de dizê-la, procura o nome da casa como PEDAÇO do nosso nome e
+      //    o contrário também: `The Argument` do agregador contra o
+      //    `The Argument/Verasight` do índice. Isso NÃO decide se a rodada falta,
+      //    que é outra pergunta e já foi respondida: decide só o rótulo.
+      //
+      // ⛔ Comparação por pedaço é frouxa de propósito AQUI e em lugar nenhum
+      //    mais: ela nunca entra no casamento de rodada, onde juntaria séries de
+      //    casas distintas. Aqui o custo de errar é mandar conferir uma casa que
+      //    existe, e o de não ter nada é mandar abrir cobertura que já existe.
+      const casaCrua = String(f.casaNorm).toLowerCase()
+      const nomesNossos = [...new Set((dados.polls ?? []).map((p) => String(p.instituto).toLowerCase()))]
+      const noArquivo =
+        nomesNossos.includes(casaCrua) ||
+        nomesNossos.some((n) => normalizar(n) === f.casaNorm) ||
+        nomesNossos.some((n) => n.startsWith(casaCrua) || casaCrua.startsWith(n))
       console.log(`      ${f.campoFim}  ${f.casaNorm.padEnd(28)} ${String(f.amostra ?? '?').padStart(5)} ${f.recorte ?? '??'}   ${noArquivo ? 'a casa existe no arquivo' : '🔴 a casa NAO tem UMA linha no arquivo'}`)
       console.log(`                 «${f.rotulo.slice(0, 74)}»`)
     }

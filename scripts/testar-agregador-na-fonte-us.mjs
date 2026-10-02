@@ -15,7 +15,7 @@
  *    ainda assim produz número errado no arquivo é o tipo que este repositório
  *    já viu várias vezes.
  */
-import { lerRotulo, APELIDOS, CHAVE_GENERIC_BALLOT, BASE_LIVE } from './agregador-na-fonte-us.mjs'
+import { lerRotulo, APELIDOS, CHAVE_GENERIC_BALLOT, BASE_LIVE, assinaturaBate, pertoNoDia } from './agregador-na-fonte-us.mjs'
 
 let ok = 0
 let falhas = 0
@@ -210,6 +210,71 @@ eq(umDia.campoFim, '2026-09-21', 'rotulo de um dia: fim')
 eq(apelidar('Clarity Campaign'), 'Clarity Campaign Labs (D)', 'o nome CURTO do agregador acha o nome longo do indice')
 eq(apelidar('Clarity Campaign Labs (D)'), 'Clarity Campaign Labs (D)', 'o nome longo passa por ele mesmo')
 eq(apelidar('Clarity Research'), 'Clarity Research', 'Clarity Research NAO e capturada pelo apelido')
+
+// ── 02/Out/2026 · a ASSINATURA da rodada, que nao depende do nome ──────────
+//
+// 🔴 O caso: o agregador escreve `Nat Res./Impact Res. (A-), 1500 RV` para a
+//    onda de 16-21/Set, e o indice escreve `Impact Research (D)/National
+//    Research Inc. (R)`. Duas firmas em ordem INVERTIDA e abreviadas. Nenhuma
+//    tabela de apelido razoavel casa isso, e a assinatura casa de primeira.
+//
+// ⚠️ E a esteira do apelido estava prevista no proprio codigo: tres dias depois
+//    de a Clarity entrar na tabela, apareceram DUAS casas novas com o mesmo
+//    falso alarme. Apelido e sintoma; assinatura e a regra, e ela ja existia no
+//    duplicata-de-rodada.mjs: campo mais amostra mais recorte, NUNCA o nome.
+console.log('\n🧪 assinatura da rodada: campo + amostra + recorte, nunca o nome\n')
+
+const NOSSAS = [
+  { instituto: 'Impact Research (D)/National Research Inc. (R)', campoFim: '2026-09-21', amostra: 1500, amostraTipo: 'RV' },
+  { instituto: 'The Argument/Verasight', campoFim: '2026-07-26', amostra: 3000, amostraTipo: 'RV' },
+]
+const deles = (o) => ({ campoFim: '2026-09-21', amostra: 1500, recorte: 'RV', ...o })
+
+// 🔑 O caso real: nome irreconhecivel, assinatura identica.
+eq(assinaturaBate(deles(), NOSSAS), true, 'nome invertido e abreviado casa pela ASSINATURA')
+eq(assinaturaBate(deles({ campoFim: '2026-09-22' }), NOSSAS), true, 'um dia de diferenca no campo ainda casa')
+eq(assinaturaBate(deles({ recorte: 'rv' }), NOSSAS), true, 'o recorte casa sem ligar para caixa')
+
+// 🚫 ANTI-EXCESSO: a assinatura exige os TRES campos e nao inventa casamento.
+eq(assinaturaBate(deles({ amostra: 1501 }), NOSSAS), false, 'amostra diferente NAO casa')
+eq(assinaturaBate(deles({ recorte: 'LV' }), NOSSAS), false, 'recorte diferente NAO casa')
+eq(assinaturaBate(deles({ campoFim: '2026-09-23' }), NOSSAS), false, 'dois dias de diferenca NAO casa')
+// ⛔ Sem amostra ou sem recorte ela NAO OPINA: duas casas diferentes na mesma
+//    data colidiriam sozinhas, que e a anti-excesso do duplicata-de-rodada.
+eq(assinaturaBate(deles({ amostra: null }), NOSSAS), false, 'sem amostra ela NAO opina')
+eq(assinaturaBate(deles({ recorte: null }), NOSSAS), false, 'sem recorte ela NAO opina')
+eq(assinaturaBate(deles({ campoFim: null }), NOSSAS), false, 'sem campo ela NAO opina')
+
+// 🔴 E O CASO QUE TORNA A GUARDA NECESSARIA, achado por mutacao em 02/Out/2026.
+//
+// As tres asercoes acima passavam mesmo SEM a guarda, pelo motivo errado:
+// `Number(null)` e 0 e nenhuma linha nossa tem amostra 0, entao a comparacao
+// falhava sozinha. Teste que acerta o resultado sem exercitar a regra e teste
+// verde protegendo outra coisa.
+//
+// O caso real: o agregador publica algumas casas SEM amostra (a Strength In #s
+// e uma delas, e esta no comentario do lerRotulo), e o nosso arquivo tem 31
+// linhas com amostra NULA, que sao os livros de escolha forcada em dois. Sem a
+// guarda, `Number(null) === Number(null)` da 0 === 0 e a assinatura casaria
+// QUALQUER uma delas que caisse na mesma data, inventando um "temos".
+const SEM_AMOSTRA = [{ instituto: 'Casa Qualquer', campoFim: '2026-09-21', amostra: null, amostraTipo: 'RV' }]
+eq(
+  assinaturaBate({ campoFim: '2026-09-21', amostra: null, recorte: 'RV' }, SEM_AMOSTRA),
+  false,
+  'duas amostras NULAS na mesma data NAO sao a mesma rodada'
+)
+
+// ——— forma
+eq(assinaturaBate(null, NOSSAS), false, 'rodada nula devolve false')
+eq(assinaturaBate(deles(), null), false, 'base que nao e lista devolve false')
+eq(assinaturaBate(deles(), []), false, 'base vazia devolve false')
+eq(assinaturaBate(deles(), [{ instituto: 'X', amostra: 1500, amostraTipo: 'RV' }]), false, 'linha nossa sem campoFim nao explode')
+
+// ——— pertoNoDia
+eq(pertoNoDia('2026-09-21', '2026-09-21'), true, 'mesmo dia esta perto')
+eq(pertoNoDia('2026-09-21', '2026-09-22'), true, 'um dia esta perto')
+eq(pertoNoDia('2026-09-22', '2026-09-21'), true, 'um dia para tras tambem')
+eq(pertoNoDia('2026-09-21', '2026-09-23'), false, 'dois dias NAO esta perto')
 
 console.log(`\n${falhas === 0 ? '✅' : '❌'} ${ok} asserção(ões) passaram, ${falhas} falharam\n`)
 process.exit(falhas === 0 ? 0 : 1)
