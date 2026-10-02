@@ -399,6 +399,25 @@ Ele roda `build-us-2026-dataset.mjs`, `build-us-2026-metadata.mjs`, o portão de
 
 ⚠️ **Linha não é conteúdo:** rotação da imprensa com o mesmo tamanho sai como +0. O +0 prova que chegou, não que é idêntico.
 
+🔴 **E `conferir --exato` SOZINHO não responde "o dataset está em dia?". Régua de 02/Out/2026.**
+
+Ele compara o HF contra o **staging que já está no disco**, e **não reconstrói nada**. A própria docstring diz para que ele serve: *"a conferência DEPOIS de subir"*. Usá-lo como medidor de defasagem responde outra pergunta.
+
+**Medido no dia:** o arquivo local tinha 464 publicadas e o `conferir --exato` imprimiu `464 vs 464 · VEREDITO: PUBLICADO CONFERE`, porque o staging em `.cache/us2026-dataset/` era da véspera, das 21:26. Com `--ensaio`, que **reconstrói** antes de comparar, o mesmo arquivo saiu **`464 no HF contra 465 no staging, +1`**: o dataset estava um dia atrás.
+
+📌 **A régua: para saber se o HF está defasado, rodar `npm run hf:usa -- --ensaio`.** O `conferir --exato` é a prova de que a subida chegou, e só isso.
+
+⏰ **E a ORDEM importa, porque o dataset lê o BACKUP e não o banco vivo.**
+
+| automatismo | horário | o que eu versiono depois |
+|---|---|---|
+| cron da imprensa | 07:20 · 13:20 · **19:20Z** | o arquivo nasce a partir de **19:30Z** (ETAPA 3.1) |
+| backup do Neon | ~19:45 a **20:59Z** | o dataset sobe **DEPOIS** dele (ETAPA 6.1) |
+
+⚠️ **Subir o dataset antes do backup do dia publica as séries de mercado um dia atrás**, e elas só se corrigem na passada seguinte. Em 01/Out a subida saiu às 22:1xZ, depois do backup das 20:02Z, e veio completa; em 02/Out o `--ensaio` das 19:0xZ mostrava **+0 em todas as dez séries de mercado** justamente porque o backup ainda não tinha rodado.
+
+📌 **As duas esperas são a mesma ideia:** deixar o automatismo terminar e só então versionar o que ele produziu. Quem versiona antes congela uma coleta parcial.
+
 ⚠️ **Uma árvore só, dois terminais.** O `vercel --prod` publica o **estado inteiro do diretório**, inclusive alteração de outro terminal. Rodar `git status` antes e commitar por NOME de arquivo, nunca `git add -A`.
 
 ## Relatório final
