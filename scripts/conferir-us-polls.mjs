@@ -41,7 +41,18 @@
 
 import { readFileSync } from 'fs'
 import { execFileSync } from 'child_process'
-import { comparar, conferirSubtracao, mediaDe, veredito } from '../lib/us-polls/atribuicao.mjs'
+import { comparar, conferirSubtracao, decompor, mediaDe, veredito } from '../lib/us-polls/atribuicao.mjs'
+
+/** Nome legível de cada causa da variação, para a linha do peso. */
+const ROTULO_DA_CAUSA = {
+  entraram: 'pesquisa NOVA',
+  duplicaram: 'casa contada DUAS vezes',
+  sairam: 'borda da janela',
+  deduplicadas: 'deduplicação',
+  excluidasPorInstrumento: 'exclusão por INSTRUMENTO',
+  mudaram: 'correção de valor na origem',
+  renomeadas: 'renomeação',
+}
 import { separarPorConferencia, validarRegistro } from '../lib/us-polls/soma-conferida.mjs'
 import { dividasAbertas, fonteDa, conferirCarga as conferirFontes } from '../lib/us-polls/fonte-conferida.mjs'
 
@@ -371,6 +382,44 @@ if (m && mb) {
     }
     const v = veredito(dif, d)
     console.log(`        🧭 VEREDITO DA VARIAÇÃO: ${v.join(' + ')}`)
+
+    // ⚖️ E QUANDO MAIS DE UMA CAUSA ACENDE, O PESO DE CADA UMA.
+    //
+    // 🔴 Instalado em 03/Out/2026. O veredito acima diz QUAIS causas acenderam,
+    // e a leitura natural de "PESQUISA_NOVA + borda-rolou" é que as duas pesam
+    // parecido. Naquele dia não pesavam: a borda valeu −0,01pp e a rodada nova
+    // valeu −0,05pp, ou seja cinco sextos do deslocamento eram a pesquisa nova.
+    // Em 02/Out o veredito foi o MESMO par e a conta saiu à mão na hora de
+    // escrever o relato, que é a esteira que esta casa já pagou várias vezes.
+    const dec = decompor(mb.incluidas, m.incluidas, dif)
+    if (dec && (dec.causas.length >= 2 || dec.indeterminadas.length)) {
+      console.log(`        ⚖️ PESO DE CADA CAUSA no ${dec.total >= 0 ? '+' : ''}${dec.total.toFixed(2)}pp:`)
+      for (const c of dec.causas) {
+        const nome = ROTULO_DA_CAUSA[c.causa] ?? c.causa
+        if (c.indeterminado) {
+          console.log(`           ${cor.aviso}INDETERMINADO${cor.fim} ${nome} (${c.n}): ${c.motivo}`)
+          continue
+        }
+        const n = (x) => `${x >= 0 ? '+' : ''}${x.toFixed(2)}pp`
+        console.log(
+          c.sozinha === c.porUltimo
+            ? `           ${nome} (${c.n}): ${n(c.sozinha)}`
+            : `           ${nome} (${c.n}): de ${n(c.faixa[0])} a ${n(c.faixa[1])}, meio ${n(c.meio)}`
+        )
+      }
+      if (dec.ordemImporta) {
+        console.log(
+          `           ${cor.aviso}⚠️${cor.fim}  A ORDEM IMPORTA: as duas pontas de alguma causa discordam, ou sobra interação.\n` +
+            `              Citar a FAIXA, nunca um número único por causa.`
+        )
+      }
+      if (!dec.fecha) {
+        console.log(
+          `           ${cor.aviso}⚠️${cor.fim}  a soma dos meios dá ${dec.somaDosMeios.toFixed(2)}pp e o total é ${dec.total.toFixed(2)}pp:\n` +
+            `              sobram ${dec.interacao.toFixed(2)}pp de INTERAÇÃO, que a decomposição não explica.`
+        )
+      }
+    }
     if (v.includes('COMPOSICAO')) {
       console.log(
         `        ${cor.aviso}⚠️${cor.fim}  ZERO informação nova: ninguém entrou e nada foi corrigido.\n` +

@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-02",
-  "fetchedAt": "2026-10-02T18:32:18.115Z",
+  "lastUpdate": "2026-10-03",
+  "fetchedAt": "2026-10-03T16:02:13.381Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,9 +47,16 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-02",
-    "nPesquisas": 35,
+    "desde": "2026-09-03",
+    "nPesquisas": 34,
     "incluidas": [
+      {
+        "instituto": "AlphaROC/The Independent Center",
+        "campoFim": "2026-09-28",
+        "amostraTipo": "A",
+        "dem": 43,
+        "rep": 37
+      },
       {
         "instituto": "Harvard/Harris Poll/HarrisX",
         "campoFim": "2026-09-28",
@@ -282,21 +289,6 @@
         "amostraTipo": "RV",
         "dem": 49,
         "rep": 38
-      },
-      {
-        "instituto": "Cygnal (R)",
-        "campoFim": "2026-09-02",
-        "amostraTipo": "LV",
-        "dem": 51,
-        "rep": 42
-      },
-      {
-        "instituto": "Focaldata",
-        "institutoNoIndice": "Focaldata/Financial Times",
-        "campoFim": "2026-09-02",
-        "amostraTipo": "LV",
-        "dem": 52,
-        "rep": 45
       }
     ],
     "excluidasPorInstrumento": [
@@ -349,13 +341,14 @@
         "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
       }
     ],
-    "nInstitutos": 28,
-    "dem": 49.49,
-    "rep": 41.57,
-    "vantagemDem": 7.92,
+    "nInstitutos": 27,
+    "dem": 49.18,
+    "rep": 41.32,
+    "vantagemDem": 7.86,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
+      "AlphaROC/The Independent Center",
       "Angus Reid Global",
       "Beacon Research (D)/ Shaw & Co. Research (R)",
       "Big Data Poll",
@@ -363,10 +356,8 @@
       "CNN/SSRS",
       "Catawba College/YouGov",
       "Clarity Campaign Labs (D)",
-      "Cygnal (R)",
       "Echelon Insights",
       "Emerson College",
-      "Focaldata",
       "Hart Research Associates (D)/ Public Opinion Strategies (R)",
       "Harvard/Harris Poll/HarrisX",
       "Impact Research (D)/National Research Inc. (R)",
@@ -386,14 +377,14 @@
     ]
   },
   "qualidade": {
-    "linhasLidas": 451,
-    "publicadas": 464,
+    "linhasLidas": 452,
+    "publicadas": 465,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 451,
+    "doIndice": 452,
     "curadas": 13,
     "curadasDescartadasPorDuplicidade": 17
   },
@@ -425,6 +416,21 @@
       "outros": null,
       "vantagemDem": 2,
       "fontePrimaria": "https://harvardharrispoll.com/assets/uploads/2026/09/HHP_Sep2026_KeyResults.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "AlphaROC/The Independent Center",
+      "campoInicio": "2026-09-25",
+      "campoFim": "2026-09-28",
+      "amostra": 1000,
+      "amostraTipo": "A",
+      "margemErro": 3.1,
+      "dem": 43,
+      "rep": 37,
+      "outros": 20,
+      "vantagemDem": 6,
+      "fontePrimaria": "https://cdn.prod.website-files.com/68f64c3625044325e169d107/6abeab6856927d619c0317c2_ICV_Wave4_Toplines_Sept2026.pdf",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },

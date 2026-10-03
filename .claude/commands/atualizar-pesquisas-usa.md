@@ -214,6 +214,39 @@ Reportar sempre, com os números do arquivo e não de memória:
 
 ✅ **Não fazer essa atribuição de cabeça: ela sai do `conferir-us-polls.mjs` do Passo 2**, no bloco `composição`, que nomeia a rodada que entrou e a que saiu e fecha a subtração. Em 04/Set/2026 a média foi de D+6.07 para D+5.69 com zero pesquisa nova, porque a John Zogby Strategies, campo 04-05/Ago e D+11.00, saiu pela borda quando o dia UTC virou: `(6.07 × 14 − 11.00) / 13 = 5.69`, exato.
 
+### ⚖️ E QUANDO O VEREDITO ACENDE MAIS DE UMA CAUSA, ele agora diz o PESO de cada uma (03/Out/2026)
+
+🔴 **O veredito dizia QUAIS causas acenderam e não dizia de qual delas veio o deslocamento.** `PESQUISA_NOVA + borda-rolou` se lê como "as duas", e a leitura natural de "as duas" é que pesam parecido.
+
+📊 **Medido em 03/Out, e não pesavam:**
+
+| causa | peso |
+|---|---|
+| borda da janela (2 saídas de 02/Set) | **−0,01pp** |
+| pesquisa nova (AlphaROC, D+6.00) | **−0,05pp** |
+| soma | −0,06pp, que é o total |
+
+⚠️ **Cinco sextos do movimento eram a rodada nova**, e em 02/Set o veredito foi o MESMO par com a conta feita à mão na hora de escrever. Conta refeita à mão toda passada é a esteira que este arquivo passa a vida nomeando.
+
+✅ O bloco sai do próprio portão, logo abaixo do veredito, como `⚖️ PESO DE CADA CAUSA`. A regra é `decompor` em `lib/us-polls/atribuicao.mjs`, no MESMO arquivo que já faz a diferença de conjuntos, para não nascer segunda cópia dela.
+
+🔑 **Cada causa sai com DUAS medidas, porque atribuição depende da ORDEM:** `sozinha` é ela aplicada antes de todas, `porUltimo` é o final menos o final sem ela. Quando as duas coincidem, o portão imprime um número só; quando discordam, imprime a **faixa**.
+
+| leitura | o que fazer |
+|---|---|
+| número único por causa | usar na frase |
+| `⚠️ A ORDEM IMPORTA` | citar a **faixa**, nunca um número único. Pode acender **mesmo quando a conta fecha** |
+| `INDETERMINADO` | o cenário sem aquela causa fica com ZERO rodada. Média de lista vazia não existe, e chamá-la de zero é inventar medida |
+| sobra `INTERAÇÃO` | com três causas ou mais o meio é aproximação, e o que sobra é o que a decomposição NÃO explica |
+
+📌 **Causa de peso 0,00pp NÃO sai da lista, e isso é anti-silêncio de propósito:** peso zero é achado, porque é justamente a causa que o relato ia citar e não devia.
+
+🔢 **E o conserto trouxe outro, latente.** O `mediaDe` do `atribuicao.mjs` tinha a convenção de arredondamento **inline**, reescrita ali, o que é exatamente o que a régua de 29/Set proíbe ao dizer *"nenhum medidor recomputa a média"*. ✅ Passou a delegar a `vantagemDeProducao`, e a troca foi medida antes: as duas implementações concordavam em `dem`, `rep` e `vantagemDem` nos **597 subconjuntos** contíguos das rodadas do arquivo real, ou seja a troca não move número nenhum hoje. O que ela tira é a chance de divergirem amanhã.
+
+🧪 `node scripts/testar-atribuicao-us.mjs`, de 45 para **73 asserções**, com **7 de 7 mutações reprovadas**. Metade dos casos novos é anti-silêncio (peso zero sobrevive, cenário vazio sai indeterminado, a ordem acende) e metade é anti-excesso (causa que não acendeu não aparece, entrada ruim devolve `null`).
+
+⚠️ **E uma régua do ARNÊS de mutação, que me custou uma rodada falsa:** a mutação 4 foi reportada como **sobrevivente** e não era. O `sed` tinha `||` dentro de uma expressão delimitada por `|`, não aplicou nada, e o teste rodou contra o arquivo bom. **Mutação que não aplica é indistinguível de mutação que sobreviveu.** Conferir que o arquivo MUDOU antes de ler o resultado, com `diff -q` contra a cópia boa.
+
 Comparar `nPesquisas` e `nInstitutos` com a leitura anterior antes de escrever qualquer verbo de movimento. Se caíram, a variação é de **composição** até prova em contrário. E citar a **data de campo mais recente da base**: se ela tem vários dias, a régua está parada e a média mexer é alerta, não sinal.
 - quantas pesquisas e quantos institutos entraram na janela, e qual é a janela em dias
 

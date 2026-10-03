@@ -14,7 +14,17 @@
  * Uso: node scripts/testar-atribuicao-us.mjs
  */
 
-import { chaveDe, comparar, conferirSubtracao, mediaDe, mudou, veredito } from '../lib/us-polls/atribuicao.mjs'
+import {
+  TOLERANCIA_DE_ORDEM,
+  chaveDe,
+  comparar,
+  conferirSubtracao,
+  decompor,
+  mediaDe,
+  mudou,
+  veredito,
+} from '../lib/us-polls/atribuicao.mjs'
+import { vantagemDeProducao } from '../lib/us-polls/collect.mjs'
 
 let falhas = 0
 let passes = 0
@@ -212,6 +222,117 @@ console.log('\n8. RENOMEACAO, DEDUPLICACAO e DUPLICOU (25/Set/2026)')
   conferir('a MESMA casa em outra ONDA segue PESQUISA_NOVA', veredito(outraOnda, 0.2).includes('PESQUISA_NOVA') && outraOnda.duplicaram.length === 0)
   const semTabela = comparar([...HOJE, p('Casa Sem Tabela', '2026-09-14', 51, 44)], [...HOJE, p('Outra Casa Qualquer', '2026-09-14', 51, 44)])
   conferir('nomes NAO declarados nao viram renomeacao', semTabela.renomeadas.length === 0 && semTabela.entraram.length === 1 && semTabela.sairam.length === 1)
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// ⚖️ O PESO DE CADA CAUSA, `decompor`. Casos com números feitos à mão.
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  console.log('\n⚖️ decompor: o peso de cada causa')
+
+  // 🔢 A DELEGAÇÃO: `mediaDe` tinha a convenção de arredondamento INLINE, e a
+  // régua de 29/Set manda importar a de produção. Se alguém reescrever a conta
+  // aqui dentro outra vez, estas asserções caem.
+  const amostras = [
+    [p('A', '2026-09-28', 50, 40)],
+    [p('A', '2026-09-28', 50, 40), p('B', '2026-09-27', 52, 42)],
+    [p('A', '2026-09-28', 50.01, 42.41), p('B', '2026-09-27', 50.0, 42.43)],
+    [p('A', '2026-09-28', 48, 41.02), p('B', '2026-09-27', 48, 42.39)],
+  ]
+  conferir(
+    'mediaDe DELEGA a vantagemDeProducao em dem, rep e vantagem',
+    amostras.every((l) => {
+      const a = mediaDe(l)
+      const b = vantagemDeProducao(l)
+      return a.dem === b.dem && a.rep === b.rep && a.vantagemDem === b.vantagemDem
+    }),
+  )
+  conferir('mediaDe segue devolvendo o n', mediaDe(amostras[1]).n === 2)
+
+  // ── CASO 1: UMA causa só. O peso dela É o total, e a ordem não existe.
+  const base1 = [p('X', '2026-09-20', 50, 40), p('Y', '2026-09-19', 50, 40)]
+  const dep1 = [...base1, p('Z', '2026-09-28', 40, 40)]
+  const c1 = comparar(base1, dep1)
+  const d1 = decompor(base1, dep1, c1)
+  conferir('1 causa: total -3.33pp', d1.total === -3.33, `total=${d1.total}`)
+  conferir('1 causa: o peso dela é o TOTAL', d1.causas[0].sozinha === -3.33 && d1.causas[0].porUltimo === -3.33)
+  conferir('1 causa: fecha e a ordem NÃO importa', d1.fecha === true && d1.ordemImporta === false)
+  // ⛔ ANTI-EXCESSO: causa que não acendeu não aparece.
+  conferir('1 causa: só UMA causa na saída', d1.causas.length === 1 && d1.causas[0].causa === 'entraram')
+  conferir('1 causa: `sairam` NÃO aparece', !d1.causas.some((c) => c.causa === 'sairam'))
+
+  // ── CASO 2: DUAS causas, e é o caso que separa FECHAR de ORDEM IMPORTAR.
+  //    base dem 50 / rep 40 → D+10.00
+  //    depois dem 47.33 / rep 40.67 → D+6.66, total −3.34pp
+  //    saída: sozinha 0.00 (sobram A e B, D+10.00) · por último −0.84
+  //    entrada: sozinha −2.50 · por último −3.34
+  //    meios −0.42 e −2.92 somam −3.34, que FECHA, e ainda assim as duas
+  //    ordens discordam em 0.84pp, então número único seria desonesto.
+  const A2 = p('A', '2026-09-20', 50, 40)
+  const B2 = p('B', '2026-09-19', 52, 42)
+  const C2 = p('C', '2026-09-18', 48, 38)
+  const base2 = [A2, B2, C2]
+  const dep2 = [A2, B2, p('D', '2026-09-28', 40, 40)]
+  const c2 = comparar(base2, dep2)
+  const d2 = decompor(base2, dep2, c2)
+  const saiu2 = d2.causas.find((c) => c.causa === 'sairam')
+  const entrou2 = d2.causas.find((c) => c.causa === 'entraram')
+  conferir('2 causas: total -3.34pp', d2.total === -3.34, `total=${d2.total}`)
+  conferir('2 causas: a saída vai de 0.00 a -0.84', saiu2.sozinha === 0 && saiu2.porUltimo === -0.84, JSON.stringify(saiu2))
+  conferir('2 causas: a entrada vai de -2.50 a -3.34', entrou2.sozinha === -2.5 && entrou2.porUltimo === -3.34, JSON.stringify(entrou2))
+  conferir('2 causas: os meios SOMAM o total', d2.fecha === true && d2.somaDosMeios === d2.total)
+  conferir('2 causas: e mesmo FECHANDO, a ORDEM IMPORTA', d2.ordemImporta === true)
+  conferir('2 causas: a faixa sai ordenada', saiu2.faixa[0] <= saiu2.faixa[1] && entrou2.faixa[0] <= entrou2.faixa[1])
+
+  // ── CASO 3 (ANTI-SILÊNCIO): peso ZERO é ACHADO, não motivo para sumir.
+  //    Sai uma D+10 e entra outra D+10: a média não se move, e as duas causas
+  //    acenderam. Omitir a de peso zero é o que faria o relato citar uma causa
+  //    que não moveu nada como se tivesse movido.
+  const base3 = [p('X', '2026-09-20', 50, 40), p('Y', '2026-09-01', 50, 40)]
+  const dep3 = [p('X', '2026-09-20', 50, 40), p('Z', '2026-09-28', 50, 40)]
+  const d3 = decompor(base3, dep3, comparar(base3, dep3))
+  conferir('peso zero: total 0.00pp', d3.total === 0)
+  conferir('peso zero: as DUAS causas seguem na saída', d3.causas.length === 2, JSON.stringify(d3.causas.map((c) => c.causa)))
+  conferir('peso zero: e as duas valem 0.00pp', d3.causas.every((c) => c.sozinha === 0 && c.porUltimo === 0))
+  conferir('peso zero: fecha, e a ordem não importa', d3.fecha === true && d3.ordemImporta === false)
+
+  // ── CASO 4 (ANTI-SILÊNCIO): cenário que fica com ZERO rodada é
+  //    INDETERMINADO, nunca 0.00pp. Média de lista vazia não existe, e chamá-la
+  //    de zero é inventar medida.
+  const base4 = [p('X', '2026-09-20', 50, 40)]
+  const dep4 = [p('Z', '2026-09-28', 40, 40)]
+  const d4 = decompor(base4, dep4, comparar(base4, dep4))
+  const saiu4 = d4.causas.find((c) => c.causa === 'sairam')
+  conferir('zero rodada: a saída sai INDETERMINADA', saiu4.indeterminado === true, JSON.stringify(saiu4))
+  conferir('zero rodada: e NÃO sai valendo 0.00pp', saiu4.sozinha === undefined && saiu4.porUltimo === undefined)
+  conferir('zero rodada: a causa é nomeada em `indeterminadas`', d4.indeterminadas.includes('sairam'))
+  // ⛔ E com causa indeterminada ele NÃO pode alegar que a conta fechou: a
+  //    interação carrega o total inteiro, porque nada foi medido.
+  conferir('zero rodada: NÃO alega que fecha', d4.fecha === false && d4.ordemImporta === true, JSON.stringify({ fecha: d4.fecha, interacao: d4.interacao }))
+
+  // ── CASO 5: a IDENTIDADE que não pode quebrar nunca.
+  for (const [rotulo, d] of [['1 causa', d1], ['2 causas', d2], ['peso zero', d3], ['zero rodada', d4]]) {
+    conferir(
+      `identidade (${rotulo}): soma dos meios + interação = total`,
+      Math.abs(d.somaDosMeios + d.interacao - d.total) < 1e-9,
+      `meios=${d.somaDosMeios} interacao=${d.interacao} total=${d.total}`,
+    )
+  }
+
+  // ── CASO 6: a TROCA (correção de valor) também é causa e também é medida.
+  const base6 = [p('A', '2026-09-20', 50, 40), p('B', '2026-09-19', 50, 40)]
+  const dep6 = [p('A', '2026-09-20', 50, 40), p('B', '2026-09-19', 44, 40)]
+  const d6 = decompor(base6, dep6, comparar(base6, dep6))
+  conferir('troca: `mudaram` aparece como causa', d6.causas.some((c) => c.causa === 'mudaram'), JSON.stringify(d6.causas.map((c) => c.causa)))
+  conferir('troca: e carrega o total, -3.00pp', d6.total === -3 && d6.causas[0].sozinha === -3)
+
+  // ── CASO 7 (ANTI-EXCESSO): entrada ruim não derruba, devolve null.
+  conferir('null: decompor(null,null,null) é null', decompor(null, null, null) === null)
+  conferir('null: lista vazia é null', decompor([], [], { entraram: [], sairam: [] }) === null)
+  conferir('null: sem o resultado de comparar é null', decompor(base1, dep1, null) === null)
+
+  // ── CASO 8: a TOLERÂNCIA é meio centésimo, que é o que não existe na tela.
+  conferir('a tolerância de ordem é 0.005', TOLERANCIA_DE_ORDEM === 0.005)
 }
 
 console.log(`\n${falhas === 0 ? '✅' : '❌'} ${passes} passaram, ${falhas} falharam.`)
