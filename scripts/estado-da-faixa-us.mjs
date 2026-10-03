@@ -332,7 +332,13 @@ await comBanco().catch((e) => linha('⚠️', 'banco', `não deu para olhar: ${S
     linha('🔴', 'backup', `o backup de hoje está no REMOTO e não aqui (local: ${local ?? 'nenhum'})`)
     anota('backup do dia está no remoto: dar git pull ANTES de subir o dataset, senão sobe a série de ontem')
   } else {
-    linha('⏳', 'backup', `o backup de hoje ainda não chegou · último: ${local ?? 'nenhum'} · janela histórica 19:43 a 20:59Z`)
+    // ⏰ A FAIXA É OBSERVAÇÃO, NÃO PROMESSA, e ela já me enganou no dia em que
+    //    eu a escrevi. Em 03/Out eu publiquei "19:43 a 20:59Z" a partir de 4
+    //    rodadas, e naquela mesma tarde o backup caiu às 18:28Z, fora dela.
+    //    Sobre 8 rodadas (26/Set a 03/Out) a faixa observada é 18:12 a 20:59Z.
+    // 🔑 Quem decide é o COMMIT, nunca o relógio: a faixa serve para dar ordem
+    //    de grandeza da espera, e é por isso que ela sai com o n declarado.
+    linha('⏳', 'backup', `o backup de hoje ainda não chegou · último: ${local ?? 'nenhum'} · faixa observada 18:12 a 20:59Z em 8 rodadas`)
     console.log(`        a ETAPA 6.1 sobe DEPOIS dele: subir antes publica as 10 séries de mercado um dia atrás`)
   }
 }

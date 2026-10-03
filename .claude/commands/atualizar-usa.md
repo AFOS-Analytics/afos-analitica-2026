@@ -423,7 +423,7 @@ Ele compara o HF contra o **staging que já está no disco**, e **não reconstr�
 ```
 ⏳ data corrente ADIADA por desenho, não é atraso: a janela abre 19:30Z
      (último cron 19:20Z + 10 min de folga), faltam 2h17
-⏳ backup   o backup de hoje ainda não chegou · último: 2026-10-02 · janela histórica 19:43 a 20:59Z
+⏳ backup   o backup de hoje ainda não chegou · último: 2026-10-02 · faixa observada 18:12 a 20:59Z em 8 rodadas
      a ETAPA 6.1 sobe DEPOIS dele: subir antes publica as 10 séries de mercado um dia atrás
 ```
 
@@ -437,7 +437,7 @@ Ele compara o HF contra o **staging que já está no disco**, e **não reconstr�
 |---|---|
 | commit de hoje **aqui** | a ETAPA 6.1 pode subir |
 | commit de hoje **no remoto** e não aqui | 🔴 `git pull` ANTES de subir, senão sobe a série de ontem |
-| sem commit de hoje | esperar. A janela histórica é 19:43 a 20:59Z |
+| sem commit de hoje | esperar. ⏰ A faixa OBSERVADA é 18:12 a 20:59Z em 8 rodadas, de 26/Set a 03/Out, e ela é observação e não promessa: em 03/Out eu publiquei "19:43 a 20:59Z" a partir de 4 rodadas e naquela tarde o backup caiu às 18:28Z, FORA dela. Quem decide é o COMMIT, nunca o relógio |
 
 ⛔ O estado do meio é o que engana: o `--ensaio` leria o backup de ontem e diria `+0` com toda a confiança.
 
