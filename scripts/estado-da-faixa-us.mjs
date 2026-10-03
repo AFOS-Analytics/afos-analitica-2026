@@ -37,6 +37,35 @@ import { config } from 'dotenv'
 import { readFileSync, readdirSync, existsSync } from 'fs'
 import { join } from 'path'
 import { execSync } from 'child_process'
+// 🕘 A FRONTEIRA DA DATA CORRENTE É IMPORTADA, NUNCA REESCRITA AQUI.
+//
+// 🔴 Até 03/Out/2026 este arquivo tinha a conta inline, como
+// `>= 19 * 60 + 30`, e o comentário ao lado APONTAVA para este módulo enquanto
+// o código o reimplementava. A skill diz, literal, que "o horário sai do
+// `vercel.json`, não de constante", e a régua de 29/Set diz que nenhum medidor
+// recomputa regra que já tem dona.
+//
+// 🔑 O que a cópia literal não tinha, e é o que importa: `ultimoCronDoDia`
+// devolve `null` para agenda ilegível, e o dono trata null como ADIAR, que é a
+// direção que não congela nada. O `19 * 60 + 30` escrito à mão seguiria
+// afirmando 19:30Z depois de a agenda mudar, e erraria em SILÊNCIO.
+import { FOLGA_MIN, agendaDaRota, ultimoCronDoDia } from '../lib/us-press/data-corrente.mjs'
+
+const ROTA_IMPRENSA = '/api/cron/refresh-us-press'
+
+/** A fronteira da data corrente, em minutos do dia UTC, lida de onde ela é declarada. */
+function fronteiraDaDataCorrente(raizDoProjeto) {
+  try {
+    const v = JSON.parse(readFileSync(join(raizDoProjeto, 'vercel.json'), 'utf8'))
+    const cron = ultimoCronDoDia(agendaDaRota(v, ROTA_IMPRENSA))
+    if (!cron) return null
+    return { minutos: cron.hora * 60 + cron.minuto + FOLGA_MIN, cron }
+  } catch {
+    return null
+  }
+}
+
+const hhmm = (min) => `${String(Math.floor(min / 60)).padStart(2, '0')}:${String(min % 60).padStart(2, '0')}`
 
 // 🔑 O DATABASE_URL vive no `.env.local` e NÃO está no ambiente do shell.
 config({ path: '.env.local' })
@@ -114,10 +143,14 @@ console.log(`   vivo x versionado, artefato por artefato. Leitura pura: nada é 
       .sort()
     const ultima = datas.at(-1)
     const atraso = diasEntre(ultima, hoje)
-    // ⏳ A data corrente só nasce depois do último cron do dia mais 10 min, que
-    //    é 19:30Z. Antes disso, não ter o arquivo de HOJE é o comportamento
-    //    certo e não defasagem. Ver lib/us-press/data-corrente.mjs.
-    const passouDaJanela = agora.getUTCHours() * 60 + agora.getUTCMinutes() >= 19 * 60 + 30
+    // ⏳ A data corrente só nasce depois do último cron do dia mais a folga, e
+    //    esse horário vem de `vercel.json` pela regra de `data-corrente.mjs`.
+    //    Antes dele, não ter o arquivo de HOJE é o comportamento certo.
+    //    ⛔ Agenda ilegível conta como janela FECHADA, que é a direção que não
+    //    acusa atraso falso, igual ao ADIAR do dono da regra.
+    const fronteira = fronteiraDaDataCorrente(ROOT)
+    const agoraMin = agora.getUTCHours() * 60 + agora.getUTCMinutes()
+    const passouDaJanela = fronteira ? agoraMin >= fronteira.minutos : false
     const esperado = passouDaJanela ? 0 : 1
     if (atraso <= esperado) linha('✅', 'imprensa', `${datas.length} data(s), a mais recente ${ultima}`)
     else {
@@ -130,7 +163,18 @@ console.log(`   vivo x versionado, artefato por artefato. Leitura pura: nada é 
       if (faltando.length) console.log(`        faltam: ${faltando.join(', ')}`)
       anota(`imprensa ${atraso} dia(s) atrás: rodar node scripts/rodada-us-imprensa.mjs --sem-cron`)
     }
-    if (!passouDaJanela) console.log(`        ⏳ antes das 19:30Z a data corrente é ADIADA por desenho, não é atraso`)
+    if (!fronteira) {
+      console.log(`        ⚠️ agenda do cron da imprensa ILEGÍVEL em vercel.json: contando a janela como FECHADA`)
+    } else if (!passouDaJanela) {
+      const faltam = fronteira.minutos - agoraMin
+      console.log(
+        `        ⏳ data corrente ADIADA por desenho, não é atraso: a janela abre ${hhmm(fronteira.minutos)}Z` +
+          ` (último cron ${hhmm(fronteira.cron.hora * 60 + fronteira.cron.minuto)}Z + ${FOLGA_MIN} min de folga),` +
+          ` faltam ${Math.floor(faltam / 60)}h${String(faltam % 60).padStart(2, '0')}`
+      )
+    } else {
+      console.log(`        ✅ janela da data corrente ABERTA desde ${hhmm(fronteira.minutos)}Z`)
+    }
   }
 }
 
@@ -256,6 +300,42 @@ async function comBanco() {
 }
 
 await comBanco().catch((e) => linha('⚠️', 'banco', `não deu para olhar: ${String(e.message).slice(0, 80)}`))
+
+// ── 6 · A ESPERA DO DATASET: o backup do dia já chegou? ──────────────────
+//
+// 🔴 POR QUE EXISTE, medido em 02 e 03/Out/2026. Esta passada tem DUAS travas
+// de horário e nada as media: a da imprensa, logo acima, e esta. Nos dois dias
+// eu calculei o tempo que faltava À MÃO, e em 02/Out quase subi o dataset antes
+// do backup, o que publica as dez séries de mercado um dia atrás.
+//
+// 🔑 A trava é de DEPENDÊNCIA, não de cautela: o `build-us-2026-dataset.mjs` lê
+// `backup/neon/`, e quem escreve ali é o workflow `backup-neon.yml`, que CHEGA
+// COMO COMMIT. Então a pergunta "o backup de hoje chegou?" é a pergunta "existe
+// commit de hoje tocando backup/neon?".
+//
+// ⛔ E a resposta tem TRÊS estados, não dois: pode estar aqui, pode estar no
+// remoto sem ter sido trazido, e pode não existir. O estado do meio é o que
+// engana, porque `--ensaio` leria o backup de ontem e diria +0 com toda a
+// confiança. Ver memory/feedback_o_portao_do_hf_confere_contra_staging_e_nao_contra_o_banco.md
+{
+  const dataDoBackup = (ref) => {
+    const out = sh(`git log -1 --format=%cI ${ref} -- backup/neon`)
+    return out ? out.slice(0, 10) : null
+  }
+  const local = dataDoBackup('HEAD')
+  const remoto = dataDoBackup('origin/main')
+  if (local === null && remoto === null) {
+    linha('⚠️', 'backup', 'não deu para olhar o histórico de backup/neon: NÃO subir o dataset às cegas')
+  } else if (local === hoje) {
+    linha('✅', 'backup', `o backup de hoje está AQUI (commit de ${local}): a ETAPA 6.1 pode subir`)
+  } else if (remoto === hoje) {
+    linha('🔴', 'backup', `o backup de hoje está no REMOTO e não aqui (local: ${local ?? 'nenhum'})`)
+    anota('backup do dia está no remoto: dar git pull ANTES de subir o dataset, senão sobe a série de ontem')
+  } else {
+    linha('⏳', 'backup', `o backup de hoje ainda não chegou · último: ${local ?? 'nenhum'} · janela histórica 19:43 a 20:59Z`)
+    console.log(`        a ETAPA 6.1 sobe DEPOIS dele: subir antes publica as 10 séries de mercado um dia atrás`)
+  }
+}
 
 // ── FECHO ────────────────────────────────────────────────────────────────
 console.log()

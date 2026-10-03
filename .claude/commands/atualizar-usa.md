@@ -418,6 +418,29 @@ Ele compara o HF contra o **staging que já está no disco**, e **não reconstr�
 
 📌 **As duas esperas são a mesma ideia:** deixar o automatismo terminar e só então versionar o que ele produziu. Quem versiona antes congela uma coleta parcial.
 
+🚀 **E desde 03/Out/2026 as duas esperas são MEDIDAS, pelo `npm run estado:usa`:**
+
+```
+⏳ data corrente ADIADA por desenho, não é atraso: a janela abre 19:30Z
+     (último cron 19:20Z + 10 min de folga), faltam 2h17
+⏳ backup   o backup de hoje ainda não chegou · último: 2026-10-02 · janela histórica 19:43 a 20:59Z
+     a ETAPA 6.1 sobe DEPOIS dele: subir antes publica as 10 séries de mercado um dia atrás
+```
+
+⚠️ **Por que isso faltava:** esta passada tem duas travas de horário e nada as media. Em 02 e 03/Out eu calculei o tempo que faltava **à mão**, e em 02/Out quase subi o dataset antes do backup. Conta de relógio refeita à mão toda passada é a mesma esteira de sempre, e aqui ela tinha um agravante: eu tenho defeito gravado de aritmética de hora em bash, com `$((19*60+09))` reprovando por octal.
+
+🔑 **O horário da imprensa agora é DERIVADO do `vercel.json`**, pela regra de `lib/us-press/data-corrente.mjs` (20 casos no CI). 🔴 **Até 03/Out o `estado:usa` tinha a conta inline, `>= 19 * 60 + 30`, e o comentário ao lado APONTAVA para o módulo dono enquanto o código o reimplementava.** O que a cópia literal não tinha: `ultimoCronDoDia` devolve `null` para agenda ilegível e o dono trata null como ADIAR, a direção que não congela nada. O número escrito à mão seguiria afirmando 19:30Z depois de a agenda mudar, e erraria em silêncio.
+
+🧷 **E o backup tem TRÊS estados, não dois**, porque ele chega como **commit** em `backup/neon`:
+
+| estado | o que fazer |
+|---|---|
+| commit de hoje **aqui** | a ETAPA 6.1 pode subir |
+| commit de hoje **no remoto** e não aqui | 🔴 `git pull` ANTES de subir, senão sobe a série de ontem |
+| sem commit de hoje | esperar. A janela histórica é 19:43 a 20:59Z |
+
+⛔ O estado do meio é o que engana: o `--ensaio` leria o backup de ontem e diria `+0` com toda a confiança.
+
 ⚠️ **Uma árvore só, dois terminais.** O `vercel --prod` publica o **estado inteiro do diretório**, inclusive alteração de outro terminal. Rodar `git status` antes e commitar por NOME de arquivo, nunca `git add -A`.
 
 ## Relatório final
