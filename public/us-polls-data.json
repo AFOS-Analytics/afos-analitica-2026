@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-10-03",
-  "fetchedAt": "2026-10-03T16:02:13.381Z",
+  "fetchedAt": "2026-10-03T16:30:49.271Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -51,7 +51,8 @@
     "nPesquisas": 34,
     "incluidas": [
       {
-        "instituto": "AlphaROC/The Independent Center",
+        "instituto": "AlphaROC",
+        "institutoNoIndice": "AlphaROC/The Independent Center",
         "campoFim": "2026-09-28",
         "amostraTipo": "A",
         "dem": 43,
@@ -348,7 +349,7 @@
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
-      "AlphaROC/The Independent Center",
+      "AlphaROC",
       "Angus Reid Global",
       "Beacon Research (D)/ Shaw & Co. Research (R)",
       "Big Data Poll",

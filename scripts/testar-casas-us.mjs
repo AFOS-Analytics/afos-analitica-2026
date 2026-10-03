@@ -200,6 +200,7 @@ caso(
     'ActiVote',
     'McLaughlin & Associates (R)',
     'Emerson College',
+    'AlphaROC',
   ].every((serie) => CASAS_DECLARADAS.some((e) => e.serie === serie))
 )
 // ⚖️ Decisão do André em 26/Set: os dois rótulos da Emerson colapsam no executor.
@@ -207,6 +208,43 @@ caso('os dois rotulos da Emerson/RealClear caem em Emerson College', serieDaCasa
 caso('inclusive o rotulo com o ESPACO depois da barra', serieDaCasa('Emerson College/ RealClear Opinion Research') === 'Emerson College')
 // ⛔ ANTI-EXCESSO: a advertencia do arquivo continua valendo para quem NAO foi declarado.
 caso('Morning Consult/Cato NAO colapsa em Morning Consult', serieDaCasa('Morning Consult/Cato Institute') === 'Morning Consult/Cato Institute')
+
+// ⚖️ Decisao do Andre em 03/Out: a AlphaROC executa e o Independent Center
+//    encomenda, entao o rotulo com o encomendante colapsa no executor.
+caso('AlphaROC/The Independent Center cai em AlphaROC', serieDaCasa('AlphaROC/The Independent Center') === 'AlphaROC')
+// ⛔ ANTI-EXCESSO: so o rotulo DECLARADO colapsa.
+caso('outro encomendante da mesma casa NAO colapsa', serieDaCasa('AlphaROC/Outro Cliente') === 'AlphaROC/Outro Cliente')
+caso('o ENCOMENDANTE sozinho nao e a casa', serieDaCasa('The Independent Center') === 'The Independent Center')
+caso('e a grafia com espaco NAO foi declarada', serieDaCasa('Alpha Roc') === 'Alpha Roc')
+{
+  // 🔑 O RISCO DORMENTE, tornado explicito. Em 03/Out a declaracao custou ZERO,
+  //    porque so UMA onda da casa caia na janela. Este caso planta o dia em que
+  //    duas caem: sem a tabela sao duas rodadas e dois institutos, com a tabela
+  //    e UMA rodada e UM instituto. Sem este caso, a entrada que custa zero hoje
+  //    nao teria nada cobrando o que ela existe para fazer.
+  const mesmaOnda = [
+    linha('AlphaROC', '2026-09-10', 43, 37, 'A', 1000),
+    linha('AlphaROC/The Independent Center', '2026-09-10', 43, 37, 'A', 1000),
+  ]
+  const comTabela = media(mesmaOnda, 30, AGORA)
+  const semAlphaROC = CASAS_DECLARADAS.filter((e) => e.serie !== 'AlphaROC')
+  const semTabela = media(mesmaOnda, 30, AGORA, semAlphaROC)
+  caso('dormente: com a tabela, a MESMA onda sob 2 rotulos e 1 rodada', comTabela.nPesquisas === 1 && comTabela.nInstitutos === 1)
+  caso('dormente: SEM a tabela seriam 2 rodadas e 2 institutos', semTabela.nPesquisas === 2 && semTabela.nInstitutos === 2)
+  caso('dormente: e o rotulo do INDICE fica ao lado, nao se perde', comTabela.incluidas.every((x) => x.instituto === 'AlphaROC'))
+
+  // ⛔ ANTI-EXCESSO: ondas DIFERENTES da mesma casa seguem sendo rodadas
+  //    diferentes. A tabela une o NOME, nunca as ondas, e os quatro campos
+  //    reais da casa sao distintos, que e por que o custo de hoje foi zero.
+  const ondasReais = [
+    linha('AlphaROC', '2026-08-20', 41, 37, 'A', 1000),
+    linha('AlphaROC', '2026-08-28', 42, 37, 'A', 1000),
+    linha('AlphaROC/The Independent Center', '2026-09-05', 43, 37, 'A', 1000),
+    linha('AlphaROC/The Independent Center', '2026-09-10', 43, 37, 'A', 1000),
+  ]
+  const quatro = media(ondasReais, 30, AGORA)
+  caso('4 ondas distintas seguem 4 rodadas, com 1 instituto so', quatro.nPesquisas === 4 && quatro.nInstitutos === 1)
+}
 // Dois papéis, porque "entre ondas" deixou de ser papel e virou `mesmaOnda`.
 caso('os 2 papeis previstos', Object.keys(PAPEIS).sort().join(',') === 'grafia,veiculo')
 {
