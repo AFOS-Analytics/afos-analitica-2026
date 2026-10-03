@@ -26,7 +26,13 @@ O TSE instalou proteção anti-robô na borda Akamai em toda a propriedade. O co
 
 Chamar a rota mesmo assim não é erro grave, ela **falha fechada** e nada é gravado, mas é uma chamada desperdiçada e um 500 no log. Confirme o estado se quiser, e siga para o Passo 1.
 
-⚠️ **"Morta" é quase sempre, não sempre (medido em 01/Out/2026).** O cron agendado (`0 6,12,18 * * *`) passou **uma vez**: em 29/Set às 18:00:10Z gravou a `BR098702026`, municipal, das 734 linhas ingeridas desde 18/Ago a única em minuto de cron. Gravação do cron **não anota** o `historico-arquivo.jsonl`, então a subtração da rodada seguinte sobra exatamente essas linhas e o aviso `📓 N linha(s) entraram no banco SEM rodada registrada` aparece. **Esse aviso pede NOME, não descarte:** consultar `researchFinding` com `createdAt` depois da última rodada e conferir se o minuto é 06, 12 ou 18 UTC. → `memory/project_state_01out_brz_pesquisas.md`
+⚠️ **"Morta" é quase sempre, não sempre (medido em 01/Out/2026).** O cron agendado (`0 6,12,18 * * *`) passou **uma vez**: em 29/Set às 18:00:10Z gravou a `BR098702026`, municipal, das 734 linhas ingeridas desde 18/Ago a única em minuto de cron. Gravação do cron **não anota** o `historico-arquivo.jsonl`, então a subtração da rodada seguinte sobra exatamente essas linhas e o aviso `📓 N linha(s) entraram no banco SEM rodada registrada` aparece. **Esse aviso pede NOME, não descarte**, e desde 03/Out/2026 o nome sai num comando:
+
+```bash
+npx tsx scripts/linhas-fora-de-rodada-brz.ts     # janela = entre as duas últimas rodadas do historico-arquivo.jsonl
+```
+
+Ele lista protocolo, minuto de gravação (CRON ou OUTRO), cargo, n, divulgação e casa. 📌 **Em 03/Out o cron gravou de novo**, às 12:00:11Z: 7 linhas, todas com divulgação em 08/Out, entre elas as primeiras **nacionais do 2º turno** (Datafolha n=2.520 e PoderData n=3.000). Duas passagens em cinco dias: "morta" é intermitente, e a régua de rodar daqui continua valendo porque nada garante a próxima. → `memory/project_state_01out_brz_pesquisas.md`
 
 ⛔ **Não forjar user-agent** para escapar do 403, e **não insistir**. Se um dia o modo `--rede` também apanhar, a resposta é o modo ARQUIVO, nunca a insistência. → `memory/reference_tse_bloqueio_antirrobo_2026.md`
 
