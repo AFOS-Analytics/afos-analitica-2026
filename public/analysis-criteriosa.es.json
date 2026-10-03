@@ -1,115 +1,110 @@
 {
-  "updatedAt": "02/10/2026, 16:07",
-  "subtitle": "Cruce del 02/Oct/2026: Polymarket en la lectura confirmada del 02/Oct, 16:07 BRT, la encuesta nacional divulgada el 02/Oct, Vox Brasil BR-00148/2026, las cinco del 30/Sep y el 01/Oct, Datafolha BR-08039/2026, Real Time Big Data BR-09503/2026, Futura/100% Cidades BR-01122/2026, Ideia BR-08706/2026 e Indexa BR-00698/2026, y el flujo de prensa del 01 y el 02/Oct.",
+  "updatedAt": "03/10/2026, 20:23",
+  "subtitle": "Cruce del 03/Oct/2026, víspera de la [primera vuelta](/es/glossary#primeiro-turno): Polymarket en la lectura confirmada del 03/Oct, 20:23 BRT, las siete encuestas nacionales divulgadas el 03/Oct, Datafolha BR-01708/2026, [Quaest](/es/glossary#quaest) BR-02197/2026, PoderData BR-03519/2026, CNT/MDA BR-04756/2026, Palver BR-00198/2026, Gerp BR-00509/2026 y Futura/100% Cidades BR-02431/2026, y el flujo de prensa del 02 y el 03/Oct.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PRECIO: 42,50% (vol USD 13,76M acumulado) en el contrato de ganador, alza de 5,00pp en crudo y de 4,34pp en el normalizado, lectura confirmada del 02/Oct, 16:07 BRT. En el de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) cae 4,55pp, a 23,70% (vol USD 1,28M). ENCUESTA: 40,4% a 41,2% en la primera vuelta y 45,2% a 48,2% en la segunda en la Vox Brasil del 02/Oct; lidera la primera vuelta en cuatro de las seis nacionales del 30/Sep al 02/Oct y la segunda en tres.",
+      "header": "PRECIO: 35,50% (vol USD 14,46M acumulado) en el contrato de ganador, caída de 7,00pp en crudo y de 6,91pp en el normalizado, lectura confirmada del 03/Oct, 20:23 BRT. En el de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) sube 17,30pp, a 41,00% (vol USD 1,46M). ENCUESTA: lidera la primera vuelta en cuatro de las siete nacionales del 03/Oct y la [segunda vuelta](/es/glossary#segundo-turno) en dos; en la Palver, referencia del gráfico, tiene 43% y 44%.",
       "fortes": [
-        "Sube 5,00pp en el contrato de ganador, a 42,50%, y la brecha se cierra de 23,55pp a 15,25pp, después de cinco aperturas seguidas entre lecturas confirmadas. Normalizado por la suma del par, que subió de 98,55 a 100,25, la ganancia es de 4,34pp.",
-        "Lidera la [primera vuelta](/es/glossary#primeiro-turno) en cuatro de las seis nacionales del 30/Sep al 02/Oct: 42% a 38% en la Datafolha, 43% a 39% en la Real Time Big Data, 39% a 34% en la Indexa y 39,4% a 38,4% en la Ideia.",
-        "Lidera la [segunda vuelta](/es/glossary#segundo-turno) en la Datafolha, 48% a 45%, en la Indexa, 43% a 42%, y en la Ideia, 48,5% a 48%. En la Vox Brasil del 02/Oct vence a Ronaldo Caiado por 46,3% a 42,1% y a Augusto Cury por 46,8% a 33,1%."
+        "Lidera la [primera vuelta](/es/glossary#primeiro-turno) en cuatro de las siete nacionales del 03/Oct: 42% a 40% en la Datafolha, 40% a 38% en la [Quaest](/es/glossary#quaest), 42% a 41% en la PoderData y 43,1% a 38% en la CNT/MDA.",
+        "Lidera la [segunda vuelta](/es/glossary#segundo-turno) en la Datafolha, 47% a 46%, y en la CNT/MDA, 47,3% a 43,1%, y empata en 46% en la PoderData. En la Palver vence a Augusto Cury por 44% a 36% y a Renan Santos por 44% a 33%.",
+        "En el contrato de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) sube 17,30pp, a 41,00%."
       ],
       "fracos": [
-        "En la Vox Brasil del 02/Oct queda atrás en las dos vueltas, 40,4% a 41,2% y 45,2% a 48,2%, después de liderar la [primera vuelta](/es/glossary#primeiro-turno) por 41,1% a 37,8% en la ronda de la casa del 29/Sep.",
-        "Queda atrás en la [segunda vuelta](/es/glossary#segundo-turno) en tres de las seis nacionales del 30/Sep al 02/Oct: Real Time Big Data, Futura y Vox Brasil.",
-        "En la serie grabada desde el 14 de abril su precio queda a 25,00pp del techo, 67,50% del 16/Ago.",
-        "📺 No iría al debate de TV Globo del 01/Oct, que la emisora canceló atribuyendo la cancelación a las decisiones judiciales que vetaron el atril vacío y las preguntas a él."
+        "Cae 7,00pp en el contrato de ganador, a 35,50%, y la brecha de Flávio Bolsonaro sobre Lula se abre de 15,25pp a 29,05pp.",
+        "En la serie grabada desde el 14 de abril su precio queda a 1,00pp del piso, 34,50% del 25/Abr.",
+        "Queda atrás en la [segunda vuelta](/es/glossary#segundo-turno) en cuatro de las siete nacionales del 03/Oct: Palver y Gerp, 44% a 49%, Futura, 45,1% a 48%, y [Quaest](/es/glossary#quaest), 42% a 44%.",
+        "En la [Quaest](/es/glossary#quaest) del 03/Oct la aprobación del gobierno cae de 46% a 44%, con 49% de desaprobación."
       ],
-      "analise": "Lula subió 5,00pp en el contrato de ganador, a 42,50% (vol USD 13,76M acumulado), en la lectura confirmada del 02/Oct, 16:07 BRT, y 4,34pp en el normalizado, porque la suma del par subió de 98,55 a 100,25; con eso la brecha se cierra de 23,55pp a 15,25pp, después de cinco aperturas seguidas entre lecturas confirmadas. En el contrato de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) cae 4,55pp, a 23,70%. 🗳️ En las seis nacionales del 30/Sep al 02/Oct lidera la primera vuelta en cuatro y la segunda en tres, y la Vox Brasil, que es la referencia del gráfico, lo pone 0,8 punto atrás en la primera vuelta y 3 en la segunda. 📺 En la noche del 01/Oct TV Globo canceló el debate presidencial y atribuyó la cancelación a las decisiones judiciales de las horas anteriores, que según la emisora crearon inseguridad jurídica (Gazeta do Povo, CartaCapital, G1 y Folha de S.Paulo). ⛔ El panel no atribuye el precio a las encuestas ni a las noticias: mide los dos lados con la marca de hora de cada uno."
+      "analise": "Lula cayó 7,00pp en el contrato de ganador, a 35,50% (vol USD 14,46M acumulado), en la lectura confirmada del 03/Oct, 20:23 BRT, y 6,91pp en el normalizado, porque la suma del par pasó de 100,25 a 100,05; con eso la brecha de Flávio Bolsonaro sobre Lula se abre de 15,25pp a 29,05pp, y su precio está a 1,00pp del piso registrado de la serie. En el contrato de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) sube 17,30pp, a 41,00%. 🗳️ En las siete nacionales del 03/Oct lidera la primera vuelta en cuatro y la [segunda vuelta](/es/glossary#segundo-turno) en dos, y la Palver, que es la referencia del gráfico, lo pone 4 puntos atrás en la primera vuelta y 5 en la segunda. ⛔ El panel no atribuye el precio a las encuestas ni a las noticias: mide los dos lados con la marca de hora de cada uno."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PRECIO: 57,75% (vol USD 13,49M acumulado) en el contrato de ganador, caída de 3,30pp en crudo y de 4,34pp en el normalizado, lectura confirmada del 02/Oct, 16:07 BRT. En el de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) sube 5,00pp, a 76,50% (vol USD 1,51M). ENCUESTA: 41,2% en la primera vuelta y 48,2% en la segunda en la Vox Brasil del 02/Oct; lidera la [segunda vuelta](/es/glossary#segundo-turno) en tres de las seis nacionales del 30/Sep al 02/Oct.",
+      "header": "PRECIO: 64,55% (vol USD 14,08M acumulado) en el contrato de ganador, alza de 6,80pp en crudo y de 6,91pp en el normalizado, lectura confirmada del 03/Oct, 20:23 BRT. En el de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) cae 18,00pp, a 58,50% (vol USD 1,75M). ENCUESTA: 47% en la primera vuelta y 49% en la segunda en la Palver del 03/Oct; lidera la [segunda vuelta](/es/glossary#segundo-turno) en cuatro de las siete nacionales del día.",
       "fortes": [
-        "Lidera las dos vueltas en la Vox Brasil del 02/Oct, 41,2% a 40,4% y 48,2% a 45,2%, después de estar atrás en la [primera vuelta](/es/glossary#primeiro-turno) por 37,8% a 41,1% en la ronda de la casa del 29/Sep.",
-        "Lidera la [segunda vuelta](/es/glossary#segundo-turno) en tres de las seis nacionales del 30/Sep al 02/Oct, con la mayor distancia en la Futura, 49% a 43,5%, la única fuera del margen.",
-        "En la serie grabada desde el 14 de abril su precio está a 5,55pp del máximo registrado, 63,30% del 01/Oct.",
+        "Sube 6,80pp en el contrato de ganador, a 64,55%, y la brecha de Flávio Bolsonaro sobre Lula se abre de 15,25pp a 29,05pp. El precio queda 1,25pp por encima del máximo registrado de la serie, 63,30% del 01/Oct.",
+        "Lidera la [segunda vuelta](/es/glossary#segundo-turno) en cuatro de las siete nacionales del 03/Oct: 49% a 44% en la Palver y en la Gerp, 48% a 45,1% en la Futura y 44% a 42% en la [Quaest](/es/glossary#quaest).",
+        "En las siete nacionales del 03/Oct su número en la [primera vuelta](/es/glossary#primeiro-turno) es mayor que el de la ronda anterior de la misma casa, y lidera la primera vuelta en la Palver, en la Gerp y en la Futura.",
         "⭐ En la [Quaest](/es/glossary#quaest) del 28/Sep la transferencia de voto de los otros nombres en la [segunda vuelta](/es/glossary#segundo-turno) lo favorece: 81% de los electores de Romeu Zema, 48% de los de Renan Santos, 42% de los de Ronaldo Caiado y 34% de los de Augusto Cury irían hacia él (O Globo)."
       ],
       "fracos": [
-        "Cae 3,30pp en el contrato de ganador, a 57,75%, y la brecha se cierra de 23,55pp a 15,25pp, después de cinco aperturas seguidas entre lecturas confirmadas.",
-        "En el contrato de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) sube 5,00pp, a 76,50%: el mercado paga más por la chance de que él termine la primera vuelta en segundo lugar.",
-        "Queda atrás en la [primera vuelta](/es/glossary#primeiro-turno) en cuatro de las seis nacionales del 30/Sep al 02/Oct, con la mayor distancia en la Indexa, 34% a 39%.",
+        "En el contrato de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) cae 18,00pp, a 58,50%: el mercado paga menos por la chance de que termine la primera vuelta en segundo lugar.",
+        "Queda atrás en la [primera vuelta](/es/glossary#primeiro-turno) en cuatro de las siete nacionales del 03/Oct, con la mayor distancia en la CNT/MDA, 38% a 43,1%, y en la [segunda vuelta](/es/glossary#segundo-turno) en la Datafolha y en la CNT/MDA.",
         "🏦 Según O Globo, la [Policía Federal](/es/glossary#pf) examina, en la investigación policial sobre Daniel Vorcaro y la relación del Master con el BRB, el financiamiento de R$ 3,1 millones del banco a Flávio Bolsonaro para la compra de una mansión de R$ 6 millones en Brasilia; él dice que la transacción fue legal, y el registro proviene de un solo grupo de medios y se incluye aquí atribuido.",
-        "📺 Anunció que no iría al debate de TV Globo del 01/Oct después de la medida cautelar del [TSE](/es/glossary#tse) que vetó el atril vacío y las preguntas a Lula, alegando censura; la emisora canceló el debate atribuyendo la cancelación a las decisiones judiciales.",
         "📰 Mensajes extraídos del celular de Daniel Vorcaro y divulgados por Estadão el 24/Sep muestran cuatro intentos de contacto de él con el banquero entre el 13 y el 16 de noviembre de 2025, en los días anteriores a la prisión de Vorcaro, el 17 de noviembre de 2025. Gazeta do Povo confirmó la veracidad de los diálogos con fuentes propias próximas a la investigación. Parte de las conversaciones trata del financiamiento de la película Dark Horse, y él confirmó un diálogo de septiembre de 2025 sobre eso, citando un contrato de financiamiento particular que no fue presentado públicamente."
       ],
-      "analise": "Flávio Bolsonaro cayó 3,30pp en el contrato de ganador, a 57,75% (vol USD 13,49M acumulado), en la lectura confirmada del 02/Oct, 16:07 BRT, y 4,34pp en el normalizado. Con eso la brecha se cierra de 23,55pp a 15,25pp, después de cinco aperturas seguidas entre lecturas confirmadas, y su precio está a 5,55pp del máximo registrado de la serie, 63,30% del 01/Oct. En el contrato de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) sube 5,00pp, a 76,50%. 🗳️ En las seis nacionales del 30/Sep al 02/Oct lidera la [segunda vuelta](/es/glossary#segundo-turno) en tres y la primera vuelta en dos, la Futura y la Vox Brasil, que es la referencia del gráfico. 📺 En la noche del 01/Oct TV Globo canceló el debate presidencial y atribuyó la cancelación a las decisiones judiciales de las horas anteriores, que según la emisora crearon inseguridad jurídica (Gazeta do Povo, CartaCapital, G1 y Folha de S.Paulo). 🏦 Según O Globo, la [Policía Federal](/es/glossary#pf) examina, en la investigación policial sobre Daniel Vorcaro y la relación del Master con el BRB, el financiamiento de R$ 3,1 millones del banco a Flávio Bolsonaro para la compra de una mansión de R$ 6 millones en Brasilia; él dice que la transacción fue legal, y el registro proviene de un solo grupo de medios y se incluye aquí atribuido. ⛔ El panel no atribuye el precio a las encuestas ni a las noticias: mide los dos lados con la marca de hora de cada uno."
+      "analise": "Flávio Bolsonaro subió 6,80pp en el contrato de ganador, a 64,55% (vol USD 14,08M acumulado), en la lectura confirmada del 03/Oct, 20:23 BRT, y 6,91pp en el normalizado. Con eso la brecha de Flávio Bolsonaro sobre Lula se abre de 15,25pp a 29,05pp, y su precio queda 1,25pp por encima del máximo registrado de la serie, 63,30% del 01/Oct. En el contrato de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) cae 18,00pp, a 58,50%. 🗳️ En las siete nacionales del 03/Oct lidera la [segunda vuelta](/es/glossary#segundo-turno) en cuatro y la primera vuelta en tres, entre ellas la Palver, que es la referencia del gráfico, y en las siete su número en la primera vuelta es mayor que el de la ronda anterior de la misma casa. ⛔ El panel no atribuye el precio a las encuestas ni a las noticias: mide los dos lados con la marca de hora de cada uno."
     },
     {
       "rank": "3",
       "name": "Augusto Cury",
       "party": "Avante",
       "color": "#0891B2",
-      "header": "PRECIO: 0,05% en el contrato de ganador (vol USD 5,20M acumulado) y 27,30% (vol USD 0,35M acumulado) en el de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno), caída de 9,40pp en crudo y de 9,23pp en el normalizado por la suma del libro, en la lectura confirmada del 02/Oct, 16:07 BRT. ENCUESTA: 1,2% en la Vox Brasil del 02/Oct y 6,7% en la Ideia del 30/Sep.",
+      "header": "PRECIO: 0,05% en el contrato de ganador (vol USD 5,25M acumulado) y 23,50% (vol USD 0,38M acumulado) en el de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno), caída de 3,80pp en crudo y de 3,67pp en el normalizado por la suma del libro, en la lectura confirmada del 03/Oct, 20:23 BRT. ENCUESTA: de 1% en la Palver a 4% en la Gerp en las nacionales del 03/Oct.",
       "fortes": [
-        "Es el tercer colocado de la [primera vuelta](/es/glossary#primeiro-turno) en la Datafolha del 01/Oct, con 4%, y en la Ideia del 30/Sep, con 6,7%, su mayor lectura entre las nacionales del 30/Sep al 02/Oct.",
-        "En la Futura del 30/Sep vence a Lula en el par de [segunda vuelta](/es/glossary#segundo-turno), por 45,1% a 42%."
+        "Es el tercer colocado de la [primera vuelta](/es/glossary#primeiro-turno) en la CNT/MDA del 03/Oct, con 3,2%, en la Gerp, con 4%, y en la Futura, con 3,9%, y empata en el tercer lugar en la PoderData y en la [Quaest](/es/glossary#quaest)."
       ],
       "fracos": [
-        "Cae 9,40pp en el libro de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno), a 27,30%, y queda 35,20pp detrás de Renan Santos.",
-        "Tiene 1,2% en la Vox Brasil del 02/Oct y pierde ante Lula allí por 33,1% a 46,8% en el par de [segunda vuelta](/es/glossary#segundo-turno).",
+        "Cae 3,80pp en el libro de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno), a 23,50%, y es superado por Ronaldo Caiado en ese libro.",
+        "Tiene 1% en la Palver del 03/Oct y pierde allí con Lula por 36% a 44% en el par de [segunda vuelta](/es/glossary#segundo-turno).",
         "En el contrato de ganador sigue en el piso del libro, 0,05%, y paga menos de lo que su volumen acumulado sugeriría, USD 5,02M."
       ],
-      "analise": "Augusto Cury cayó 9,40pp en crudo en el libro de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno), a 27,30% (vol USD 0,35M acumulado), en la lectura confirmada del 02/Oct, 16:07 BRT, y 9,23pp en el normalizado, y quedó 35,20pp detrás de Renan Santos. En la serie de las lecturas confirmadas la distancia fue de 4,15pp con Renan Santos adelante el 26/Sep, de 2,90pp y 2,10pp con Augusto Cury adelante el 27 y el 28/Sep, de 15,65pp y 11,80pp con Renan Santos adelante el 29/Sep y el 01/Oct, y ahora de 35,20pp. 🗳️ En las seis nacionales del 30/Sep al 02/Oct el tercer lugar cambia de casa en casa: Augusto Cury en la Datafolha y en la Ideia, Renan Santos en la Real Time Big Data, Ronaldo Caiado en la Futura y en la Vox Brasil, y Caiado y Cury empatados en la Indexa."
+      "analise": "Augusto Cury cayó 3,80pp en crudo en el libro de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno), a 23,50% (vol USD 0,38M acumulado), en la lectura confirmada del 03/Oct, 20:23 BRT, y 3,67pp en el normalizado, y fue superado por Ronaldo Caiado, que está en 25,00%. Renan Santos sigue adelante en ese libro, con 52,50%. 🗳️ En las siete nacionales del 03/Oct el tercer lugar cambia de casa en casa: Augusto Cury en la CNT/MDA, en la Gerp y en la Futura, Ronaldo Caiado en la Datafolha, Renan Santos en la Palver, con 7%, Cury y Renan Santos empatados en la PoderData y los tres empatados en 3% en la [Quaest](/es/glossary#quaest)."
     },
     {
       "rank": "4",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PRECIO: 0,15% (vol USD 15,80M acumulado) en el contrato de ganador y 62,50% (vol USD 0,62M acumulado) en el de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno), alza de 14,00pp en crudo y de 13,60pp en el normalizado por la suma del libro, en la lectura confirmada del 02/Oct, 16:07 BRT. ENCUESTA: 2,2% en la Vox Brasil del 02/Oct y 4% en la Real Time Big Data del 01/Oct, en tercer lugar.",
+      "header": "PRECIO: 0,15% (vol USD 16,14M acumulado) en el contrato de ganador y 52,50% (vol USD 0,68M acumulado) en el de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno), caída de 10,00pp en crudo y de 9,67pp en el normalizado por la suma del libro, en la lectura confirmada del 03/Oct, 20:23 BRT. ENCUESTA: 7% en la Palver del 03/Oct, en tercer lugar, y de 1,5% a 3% en las otras seis nacionales del día.",
       "fortes": [
-        "Sube 14,00pp en el libro de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno), a 62,50%, y abre 35,20pp de ventaja sobre Augusto Cury.",
-        "Es el tercer colocado de la [primera vuelta](/es/glossary#primeiro-turno) en la Real Time Big Data del 01/Oct, con 4%, y tiene 4,5% en la Ideia del 30/Sep.",
-        "🏆 Su contrato en el libro de ganador sigue siendo el de MAYOR volumen acumulado del presidencial, USD 15,80M contra USD 14,56M del de Tarcísio de Freitas.",
-        "📺 Gilmar Mendes, del Supremo, ordenó el 01/Oct su inclusión en el debate de TV Globo, que fue cancelado esa misma noche (Gazeta do Povo y Folha de S.Paulo)."
+        "Sigue adelante en el libro de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno), con 52,50%, 27,50pp sobre Ronaldo Caiado.",
+        "Es el tercer colocado de la [primera vuelta](/es/glossary#primeiro-turno) en la Palver del 03/Oct, con 7%, y empata en el tercer lugar en la PoderData y en la [Quaest](/es/glossary#quaest).",
+        "🏆 Su contrato en el libro de ganador sigue siendo el de MAYOR volumen acumulado del presidencial, USD 16,14M contra USD 14,65M del de Tarcísio de Freitas."
       ],
       "fracos": [
-        "Tiene 2,2% en la Vox Brasil del 02/Oct, detrás de Ronaldo Caiado.",
-        "En el libro de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) el mayor volumen acumulado es el de Flávio Bolsonaro, USD 1,51M contra USD 1,42M del suyo."
+        "Cae 10,00pp en el libro de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno), a 52,50%.",
+        "Tiene 1,5% en la CNT/MDA del 03/Oct y 2% en la Gerp, detrás de Augusto Cury y de Ronaldo Caiado en las dos."
       ],
-      "analise": "Renan Santos subió 14,00pp en crudo en el libro de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno), a 62,50% (vol USD 0,62M acumulado), en la lectura confirmada del 02/Oct, 16:07 BRT, y 13,60pp en el normalizado, y abrió 35,20pp de ventaja sobre Augusto Cury en aquel libro. En el de ganador está en 0,15%. 🏆 Su contrato en el libro de ganador sigue siendo el de mayor volumen acumulado del presidencial, USD 15,80M contra USD 14,56M del de Tarcísio de Freitas. 🗳️ En las nacionales del 30/Sep al 02/Oct va de 2,2% a 4,5%, y es el tercer colocado en la Real Time Big Data. 📺 Gilmar Mendes ordenó el 01/Oct su inclusión en el debate de TV Globo, cancelado esa misma noche."
+      "analise": "Renan Santos cayó 10,00pp en crudo en el libro de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno), a 52,50% (vol USD 0,68M acumulado), en la lectura confirmada del 03/Oct, 20:23 BRT, y 9,67pp en el normalizado, y sigue adelante en ese libro, 27,50pp sobre Ronaldo Caiado. En el de ganador está en 0,15%. 🏆 Su contrato en el libro de ganador sigue siendo el de mayor volumen acumulado del presidencial, USD 16,14M contra USD 14,65M del de Tarcísio de Freitas. 🗳️ En las nacionales del 03/Oct va de 1,5% en la CNT/MDA a 7% en la Palver, donde es el tercer colocado."
     },
     {
       "rank": "5",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PRECIO: Ronaldo Caiado en 11,50% (vol USD 0,22M acumulado) en el libro de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno), caída de 4,50pp en crudo y de 4,42pp en el normalizado, y Romeu Zema en 0,20%, en la lectura confirmada del 02/Oct, 16:07 BRT. Fernando Haddad sigue en el piso del libro de ganador, 0,05%. ENCUESTA: Caiado tiene 3,3% en la Vox Brasil del 02/Oct, en tercer lugar, y Zema 1,3%.",
-      "subtitle": "Los tres nombres fuera del pelotón de punta, en la lectura confirmada del 02/Oct, 16:07 BRT. Las nacionales del 30/Sep al 02/Oct prueban a Ronaldo Caiado y a Romeu Zema, y la Vox Brasil, la Datafolha y la Futura los ponen contra Lula en pares de [segunda vuelta](/es/glossary#segundo-turno).",
+      "header": "PRECIO: Ronaldo Caiado en 25,00% (vol USD 0,23M acumulado) en el libro de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno), alza de 13,50pp en crudo y de 13,23pp en el normalizado, y Romeu Zema en 0,35%, en la lectura confirmada del 03/Oct, 20:23 BRT. Fernando Haddad sigue en el piso del libro de ganador, 0,05%. ENCUESTA: Caiado tiene 4% en la Datafolha del 03/Oct, en tercer lugar, y Zema de 0,8% a 1% en las nacionales que lo puntúan.",
+      "subtitle": "Los tres nombres fuera del pelotón de punta, en la lectura confirmada del 03/Oct, 20:23 BRT. Las nacionales del 03/Oct prueban a Ronaldo Caiado y a Romeu Zema en la [primera vuelta](/es/glossary#primeiro-turno), y la Palver los enfrenta a Lula en pares de [segunda vuelta](/es/glossary#segundo-turno).",
       "caiado": {
-        "label": "CAIADO (PSD), 0,05% en el contrato de GANADOR, lectura confirmada del 02/Oct, 16:07 BRT, por debajo del piso de 0,5% de la doble lectura, con USD 7,81M acumulados. En el contrato de TERCER LUGAR de la [primera vuelta](/es/glossary#primeiro-turno) cae a 11,50%, en un libro de USD 0,22M. En las nacionales del 30/Sep al 02/Oct va de 3% a 4,4%.",
-        "fortes": "Es el tercer colocado de la [primera vuelta](/es/glossary#primeiro-turno) en la Vox Brasil del 02/Oct, con 3,3%, y en la Futura del 30/Sep, con 4%; en la Futura vence a Lula en el par de [segunda vuelta](/es/glossary#segundo-turno), por 45,6% a 42,4%.",
-        "fracos": "En la Vox Brasil del 02/Oct pierde ante Lula en la [segunda vuelta](/es/glossary#segundo-turno) por 42,1% a 46,3%, y en la Datafolha del 01/Oct por 42% a 48%. En el libro de tercer lugar cae 4,50pp, a 11,50%."
+        "label": "CAIADO (PSD), 0,05% en el contrato de GANADOR, lectura confirmada del 03/Oct, 20:23 BRT, por debajo del piso de 0,5% de la doble lectura, con USD 7,81M acumulados. En el contrato de TERCER LUGAR de la [primera vuelta](/es/glossary#primeiro-turno) sube a 25,00%, en un libro de USD 0,23M. En las nacionales del 03/Oct va de 1% a 4%.",
+        "fortes": "Sube 13,50pp en el libro de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno) y supera a Augusto Cury. Es el tercer colocado de la primera vuelta en la Datafolha del 03/Oct, con 4%, y en la Palver pierde con Lula en la [segunda vuelta](/es/glossary#segundo-turno) por solo 1 punto, 42% a 43%.",
+        "fracos": "Tiene 1% en la [primera vuelta](/es/glossary#primeiro-turno) de la Palver del 03/Oct y 2% en la PoderData. En el libro de tercer lugar queda 27,50pp detrás de Renan Santos."
       },
       "haddad": {
-        "label": "HADDAD (PT), 0,05% en el contrato de GANADOR, lectura confirmada del 02/Oct, 16:07 BRT, en el piso del libro, con USD 7,74M acumulados. No es candidato a la Presidencia: disputa la gobernación de São Paulo, y ninguna de las nacionales del 30/Sep al 02/Oct lo prueba en escenario presidencial.",
+        "label": "HADDAD (PT), 0,05% en el contrato de GANADOR, lectura confirmada del 03/Oct, 20:23 BRT, en el piso del libro, con USD 7,74M acumulados. No es candidato a la Presidencia: disputa la gobernación de São Paulo, y ninguna de las nacionales del 03/Oct lo prueba en escenario presidencial.",
         "fortes": "Su contrato no se movió en esta lectura, así que no hay movimiento que explicar, y el techo de su serie en el contrato de ganador es 7,60%, el 26/May, medido en el backup del banco.",
         "fracos": "No es medido en la [primera vuelta](/es/glossary#primeiro-turno) por ninguna de las seis nacionales del día ni probado en par de [segunda vuelta](/es/glossary#segundo-turno), así que la comparación entre precio y encuesta no existe para él en esta ronda. Su contrato de ganador acumula USD 7,55M, volumen mayor que el de Augusto Cury, que es probado por las seis casas y tiene USD 5,02M."
       },
       "zema": {
-        "label": "ZEMA (Novo), 0,05% en el contrato de GANADOR, lectura confirmada del 02/Oct, 16:07 BRT, por debajo del piso de 0,5% de la doble lectura, con USD 7,73M acumulados. En el contrato de TERCER LUGAR de la [primera vuelta](/es/glossary#primeiro-turno) está en 0,20%. En las nacionales del 30/Sep al 02/Oct va de 1% a 3,5%.",
-        "fortes": "⭐ En la [Quaest](/es/glossary#quaest) del 28/Sep, el 81% de sus electores iría a Flávio Bolsonaro en la [segunda vuelta](/es/glossary#segundo-turno), la mayor transferencia entre los nombres medidos. En la Ideia del 30/Sep tiene 3,5%, la mayor de sus lecturas en las nacionales del 30/Sep al 02/Oct.",
-        "fracos": "Sigue en el piso del libro de ganador, 0,05%, y está en 0,20% en el de tercer lugar. En la Vox Brasil del 02/Oct tiene 1,3%."
+        "label": "ZEMA (Novo), 0,05% en el contrato de GANADOR, lectura confirmada del 03/Oct, 20:23 BRT, por debajo del piso de 0,5% de la doble lectura, con USD 7,73M acumulados. En el contrato de TERCER LUGAR de la [primera vuelta](/es/glossary#primeiro-turno) está en 0,35%. En las nacionales del 03/Oct que lo puntúan tiene de 0,8% a 1%.",
+        "fortes": "⭐ En la [Quaest](/es/glossary#quaest) del 28/Sep, el 81% de sus electores iría a Flávio Bolsonaro en la [segunda vuelta](/es/glossary#segundo-turno), la mayor transferencia entre los nombres medidos. En la Palver del 03/Oct pierde con Lula en la segunda vuelta por 42% a 44%.",
+        "fracos": "Sigue en el piso del libro de ganador, 0,05%, y está en 0,35% en el de tercer lugar. En la Palver del 03/Oct queda por debajo de 1% en la [primera vuelta](/es/glossary#primeiro-turno)."
       },
-      "analise": "Ronaldo Caiado cayó 4,50pp en el libro de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno), a 11,50% (vol USD 0,22M acumulado), en la lectura confirmada del 02/Oct, 16:07 BRT, y 4,42pp en el normalizado, y sigue tercero en aquel libro. Romeu Zema está en 0,20%. 🗳️ En la Vox Brasil del 02/Oct, Caiado es el tercer colocado, con 3,3%, y pierde ante Lula en la [segunda vuelta](/es/glossary#segundo-turno) por 42,1% a 46,3%; en la Futura del 30/Sep vence por 45,6% a 42,4%. Zema va de 1% a 3,5% en las nacionales del 30/Sep al 02/Oct. Fernando Haddad sigue fuera de los escenarios presidenciales y en el piso del libro de ganador, con USD 7,74M acumulados.",
+      "analise": "Ronaldo Caiado subió 13,50pp en el libro de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno), a 25,00% (vol USD 0,23M acumulado), en la lectura confirmada del 03/Oct, 20:23 BRT, y 13,23pp en el normalizado, y superó a Augusto Cury en ese libro. Romeu Zema está en 0,35%. 🗳️ En la Datafolha del 03/Oct Caiado es el tercer colocado, con 4%, y en la Palver pierde con Lula en la [segunda vuelta](/es/glossary#segundo-turno) por 42% a 43%; Zema pierde allí por 42% a 44%. Fernando Haddad sigue fuera de los escenarios presidenciales y en el piso del libro de ganador, con USD 7,74M acumulados.",
       "fortes": [
         "⭐ En la Futura del 24/Sep los dos aparecen adelante de Lula en par de [segunda vuelta](/es/glossary#segundo-turno): Ronaldo Caiado por 46,5% a 42,4% y Romeu Zema por 43,8% a 43,3%.",
         "Ronaldo Caiado subió de 4,5% a 5,7% en la [primera vuelta](/es/glossary#primeiro-turno) de la Futura del 24/Sep y pasó a Augusto Cury.",
         "En el recorte estatal de la Datafolha del 25/Sep, Ronaldo Caiado tiene 9% en el Distrito Federal y Romeu Zema 4% en Minas Gerais (G1)."
       ],
       "fracos": [
-        "Ronaldo Caiado cae 4,50pp en el libro de tercer lugar, a 11,50%.",
-        "Romeu Zema está en 0,20% en el libro de tercer lugar y tiene 1,3% en la Vox Brasil del 02/Oct.",
-        "Fernando Haddad no es probado por ninguna de las nacionales del 30/Sep al 02/Oct en escenario presidencial y sigue en el piso del libro de ganador, 0,05%, con USD 7,74M acumulados."
+        "Romeu Zema está en 0,35% en el libro de tercer lugar y queda por debajo de 1% en la Palver del 03/Oct.",
+        "Fernando Haddad no es probado por ninguna de las nacionales del 03/Oct en escenario presidencial y sigue en el piso del libro de ganador, 0,05%, con USD 7,74M acumulados."
       ]
     }
   ],
@@ -117,57 +112,57 @@
     {
       "n": "Lula (PT)",
       "p": "Las seis nacionales del 24/Sep lo miden de 43% en Palver, empatado con Flávio Bolsonaro, a 38,4% en Futura, atrás por 2 puntos, con 41% en Real Time y en PoderData y 40% en Datafolha y en Alfa. En la [segunda vuelta](/es/glossary#segundo-turno) lidera en una de las seis, Datafolha, por 47% a 45%, empata en Alfa en 43% y pierde en las otras cuatro.",
-      "m": "42,50% (vol USD 13,76M acumulado) en el contrato de ganador, lectura confirmada del 02/Oct, 16:07 BRT, alza de 5,00pp",
-      "t": "sube 5,00pp en crudo y 4,34pp en el normalizado, y la brecha frente a Flávio Bolsonaro se cierra de 23,55pp a 15,25pp",
-      "s": "⚖️ Lidera la [primera vuelta](/es/glossary#primeiro-turno) en cuatro de las seis nacionales del 30/Sep al 02/Oct y la segunda en tres, y queda atrás en las dos vueltas en la Vox Brasil del 02/Oct.",
+      "m": "35,50% (vol USD 14,46M acumulado) en el contrato de ganador, lectura confirmada del 03/Oct, 20:23 BRT, caída de 7,00pp",
+      "t": "cae 7,00pp en crudo y 6,91pp en el normalizado, a 1,00pp del piso registrado de la serie, y la brecha de Flávio Bolsonaro se abre de 15,25pp a 29,05pp",
+      "s": "⚖️ Lidera la [primera vuelta](/es/glossary#primeiro-turno) en cuatro de las siete nacionales del 03/Oct y la [segunda vuelta](/es/glossary#segundo-turno) en dos.",
       "pc": "#DC2626",
       "mc": ""
     },
     {
       "n": "Flávio Bolsonaro (PL)",
       "p": "Las seis nacionales del 24/Sep lo miden de 40,4% en Futura, donde lidera la [primera vuelta](/es/glossary#primeiro-turno), a 33% en Alfa/TMC, con 39% en PoderData, 37% en Real Time, 36% en Datafolha y 43% en Palver, en empate. En la [segunda vuelta](/es/glossary#segundo-turno) lidera en cuatro de las seis.",
-      "m": "57,75% (vol USD 13,49M acumulado) en el contrato de ganador, lectura confirmada del 02/Oct, 16:07 BRT, caída de 3,30pp",
-      "t": "cae 3,30pp en crudo y 4,34pp en el normalizado, a 5,55pp del máximo registrado de la serie, 63,30% del 01/Oct",
-      "s": "📌 Lidera las dos vueltas en la Vox Brasil del 02/Oct y la [segunda vuelta](/es/glossary#segundo-turno) en tres de las seis nacionales del 30/Sep al 02/Oct.",
+      "m": "64,55% (vol USD 14,08M acumulado) en el contrato de ganador, lectura confirmada del 03/Oct, 20:23 BRT, alza de 6,80pp",
+      "t": "sube 6,80pp en crudo y 6,91pp en el normalizado, 1,25pp por encima del máximo registrado de la serie, 63,30% del 01/Oct",
+      "s": "📌 Lidera la [segunda vuelta](/es/glossary#segundo-turno) en cuatro de las siete nacionales del 03/Oct, y en las siete su número en la [primera vuelta](/es/glossary#primeiro-turno) sube frente a la ronda anterior de la casa.",
       "pc": "#2563EB",
       "mc": ""
     },
     {
       "n": "Augusto Cury (Avante)",
       "p": "Las seis nacionales del 24/Sep lo miden de 2% en Palver a 6% en Alfa, en PoderData y en Real Time, con 5,6% en Futura y 5% en Datafolha. PoderData lo pone ganándole a Lula en la [segunda vuelta](/es/glossary#segundo-turno), por 45% a 42%.",
-      "m": "0,05% en el contrato de ganador y 27,30% (vol USD 0,35M acumulado) en el de tercer lugar, caída de 9,40pp en crudo, lectura confirmada del 02/Oct, 16:07 BRT",
-      "t": "cae 9,40pp en crudo y 9,23pp en el normalizado, y queda 35,20pp detrás de Renan Santos",
-      "s": "🗳️ Tercero en la Datafolha del 01/Oct, con 4%, y en la Ideia del 30/Sep, con 6,7%; tiene 1,2% en la Vox Brasil del 02/Oct.",
+      "m": "0,05% en el contrato de ganador y 23,50% (vol USD 0,38M acumulado) en el de tercer lugar, caída de 3,80pp en crudo, lectura confirmada del 03/Oct, 20:23 BRT",
+      "t": "cae 3,80pp en crudo y 3,67pp en el normalizado, y es superado por Ronaldo Caiado en el libro de tercer lugar",
+      "s": "🗳️ Tercero en la CNT/MDA, en la Gerp y en la Futura del 03/Oct; tiene 1% en la Palver.",
       "pc": "#0891B2",
       "mc": ""
     },
     {
       "n": "Renan Santos (Missão)",
       "p": "Las seis nacionales del 24/Sep lo miden de 2,4% en Futura a 8% en Palver, con 6% en Real Time y 3% en Datafolha y en PoderData. En Palver cayó de 11% a 8% contra la ronda de la casa del 21/Sep.",
-      "m": "0,15% (vol USD 15,80M acumulado) en el contrato de ganador y 62,50% (vol USD 0,62M acumulado) en el de tercer lugar, alza de 14,00pp en crudo, lectura confirmada del 02/Oct, 16:07 BRT",
-      "t": "sube 14,00pp en crudo y 13,60pp en el normalizado en el libro de tercer lugar, y abre 35,20pp de ventaja sobre Augusto Cury",
-      "s": "🏆 Su contrato en el libro de ganador sigue siendo el de mayor volumen acumulado del presidencial, USD 15,80M contra USD 14,56M del de Tarcísio de Freitas. 📺 Gilmar Mendes ordenó su inclusión en el debate cancelado del 01/Oct.",
+      "m": "0,15% (vol USD 16,14M acumulado) en el contrato de ganador y 52,50% (vol USD 0,68M acumulado) en el de tercer lugar, caída de 10,00pp en crudo, lectura confirmada del 03/Oct, 20:23 BRT",
+      "t": "cae 10,00pp en crudo y 9,67pp en el normalizado en el libro de tercer lugar, y sigue adelante, 27,50pp sobre Ronaldo Caiado",
+      "s": "🏆 Su contrato en el libro de ganador sigue siendo el de mayor volumen acumulado del presidencial, USD 16,14M contra USD 14,65M del de Tarcísio de Freitas. 🗳️ Tercero en la Palver del 03/Oct, con 7%.",
       "pc": "#7C3AED",
       "mc": ""
     },
     {
       "n": "Caiado (PSD)",
       "p": "Las seis nacionales del 24/Sep lo miden de 1% en Palver a 5,7% en Futura, donde subió de 4,5% y pasó a Augusto Cury. En el par de [segunda vuelta](/es/glossary#segundo-turno) de Futura le gana a Lula por 46,5% a 42,4%.",
-      "m": "0,05% en el contrato de ganador y 11,50% (vol USD 0,22M acumulado) en el de tercer lugar, caída de 4,50pp en crudo, lectura confirmada del 02/Oct, 16:07 BRT",
-      "t": "cae 4,50pp en crudo y 4,42pp en el normalizado, y sigue tercero en el libro de tercer lugar",
-      "s": "🗳️ Tercer colocado de la [primera vuelta](/es/glossary#primeiro-turno) en la Vox Brasil del 02/Oct, con 3,3%, y en la Futura del 30/Sep, con 4%.",
+      "m": "0,05% en el contrato de ganador y 25,00% (vol USD 0,23M acumulado) en el de tercer lugar, alza de 13,50pp en crudo, lectura confirmada del 03/Oct, 20:23 BRT",
+      "t": "sube 13,50pp en crudo y 13,23pp en el normalizado, y supera a Augusto Cury en el libro de tercer lugar",
+      "s": "🗳️ Tercer colocado de la [primera vuelta](/es/glossary#primeiro-turno) en la Datafolha del 03/Oct, con 4%.",
       "pc": "#059669",
       "mc": ""
     },
     {
       "n": "Romeu Zema (Novo)",
       "p": "Las seis nacionales del 24/Sep lo miden en 1% en cinco de ellas y 0,9% en Futura. ⭐ Y Futura lo pone ADELANTE de Lula en el par de [segunda vuelta](/es/glossary#segundo-turno), por 43,8% a 43,3%, dentro del margen de 2,2pp.",
-      "m": "0,05% en el contrato de ganador y 0,20% (vol USD 0,12M acumulado) en el de tercer lugar, lectura confirmada del 02/Oct, 16:07 BRT",
-      "t": "está en 0,20% en el libro de tercer lugar",
-      "s": "⭐ En la [Quaest](/es/glossary#quaest) del 28/Sep, el 81% de sus electores iría a Flávio Bolsonaro en la [segunda vuelta](/es/glossary#segundo-turno). En las nacionales del 30/Sep al 02/Oct tiene de 1% a 3,5%.",
+      "m": "0,05% en el contrato de ganador y 0,35% (vol USD 0,12M acumulado) en el de tercer lugar, lectura confirmada del 03/Oct, 20:23 BRT",
+      "t": "está en 0,35% en el libro de tercer lugar",
+      "s": "⭐ En la [Quaest](/es/glossary#quaest) del 28/Sep, el 81% de sus electores iría a Flávio Bolsonaro en la [segunda vuelta](/es/glossary#segundo-turno). En las nacionales del 03/Oct que lo puntúan tiene de 0,8% a 1%.",
       "pc": "#EA580C",
       "mc": ""
     }
   ],
-  "cruzamento": "El contrato de ganador cerró la brecha después de cinco aperturas seguidas, y la única nacional del día puso a Flávio Bolsonaro adelante en las dos vueltas. 🗳️ El 02/Oct, la Vox Brasil (BR-00148/2026, n=2.100, campo del 29/Sep al 01/Oct) da a Flávio Bolsonaro 41,2% a 40,4% en la [primera vuelta](/es/glossary#primeiro-turno) y 48,2% a 45,2% en la segunda, después de que Lula estuviera adelante en la primera vuelta por 41,1% a 37,8% en la ronda de la casa del 29/Sep. En las seis nacionales divulgadas del 30/Sep al 02/Oct, Lula queda adelante en la primera vuelta en cuatro (Datafolha, Real Time Big Data, Indexa e Ideia) y atrás en dos (Futura y Vox Brasil), y en la [segunda vuelta](/es/glossary#segundo-turno) se dividen en tres para cada lado: Lula en la Datafolha, en la Indexa y en la Ideia, y Flávio Bolsonaro en la Real Time Big Data, en la Futura y en la Vox Brasil; solo la Futura queda fuera del margen en la segunda vuelta. 💹 En la lectura confirmada del 02/Oct, 16:07 BRT, Lula sube 5,00pp, a 42,50%, y Flávio Bolsonaro cae 3,30pp, a 57,75%, con 4,34pp para cada lado en el normalizado, y la brecha se cierra de 23,55pp a 15,25pp, después de cinco aperturas seguidas entre lecturas confirmadas. 🥉 En el libro de tercer lugar de la primera vuelta Renan Santos se despega, 62,50% a 27,30% de Augusto Cury. 📺 En las noticias, en la noche del 01/Oct TV Globo canceló el debate presidencial y atribuyó la cancelación a las decisiones judiciales de las horas anteriores, que según la emisora crearon inseguridad jurídica (Gazeta do Povo, CartaCapital, G1 y Folha de S.Paulo). Hacia las 18h30 la ministra Estela Aranha, del [TSE](/es/glossary#tse), prohibió mediante medida cautelar la exhibición del atril vacío de Lula y las preguntas dirigidas a él, y Gilmar Mendes, del Supremo, ordenó la inclusión de Renan Santos, que Kassio Nunes Marques y Cármen Lúcia habían negado (Gazeta do Povo y Folha de S.Paulo). Lula y Flávio Bolsonaro ya habían anunciado que no irían. Gazeta do Povo calificó de inédita la decisión del TSE que inviabilizó el debate. 🏦 Según O Globo, la [Policía Federal](/es/glossary#pf) examina, en la investigación policial sobre Daniel Vorcaro y la relación del Master con el BRB, el financiamiento de R$ 3,1 millones del banco a Flávio Bolsonaro para la compra de una mansión de R$ 6 millones en Brasilia; él dice que la transacción fue legal, y el registro proviene de un solo grupo de medios y se incluye aquí atribuido. ⛔ El panel no atribuye movimiento de precio a encuesta ni a acto: mide los dos lados con las marcas de hora de cada uno."
+  "cruzamento": "En la víspera de la [primera vuelta](/es/glossary#primeiro-turno) la brecha del contrato de ganador casi se duplica, y las siete nacionales del día se dividen. 💹 En la lectura confirmada del 03/Oct, 20:23 BRT, Flávio Bolsonaro sube 6,80pp, a 64,55%, y Lula cae 7,00pp, a 35,50%, con 6,91pp para cada lado en el normalizado, y la brecha de Flávio Bolsonaro sobre Lula se abre de 15,25pp a 29,05pp. Flávio Bolsonaro queda 1,25pp por encima del máximo registrado de la serie, 63,30% del 01/Oct, y Lula a 1,00pp del piso, 34,50% del 25/Abr. 🗳️ En las siete nacionales divulgadas el 03/Oct, víspera de la primera vuelta, Lula queda adelante en la primera vuelta en cuatro (Datafolha, [Quaest](/es/glossary#quaest), PoderData y CNT/MDA) y Flávio Bolsonaro en tres (Palver, Gerp y Futura); en la [segunda vuelta](/es/glossary#segundo-turno) Flávio Bolsonaro queda adelante en cuatro (Palver, Gerp, Futura y Quaest), Lula en dos (Datafolha y CNT/MDA) y la PoderData da empate en 46%. En las siete, el número de Flávio Bolsonaro en la primera vuelta es mayor que el de la ronda anterior de la misma casa: de 38% a 40% en la Datafolha, de 34% a 38% en la Quaest y de 44% a 47% en la Palver, por ejemplo. 🥈 En el libro de segundo lugar de la primera vuelta el precio de Flávio Bolsonaro cae 18,00pp, a 58,50%, y el de Lula sube 17,30pp, a 41,00%. 🥉 En el de tercer lugar Renan Santos sigue adelante, 52,50%, y Ronaldo Caiado supera a Augusto Cury. ⛔ El panel no atribuye movimiento de precio a encuesta ni a acto: mide los dos lados con las marcas de hora de cada uno."
 }
