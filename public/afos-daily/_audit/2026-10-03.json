@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-03",
+  "refetch": {
+    "fetchedAt": "2026-10-03T23:37:31Z",
+    "certificada": "2026-10-03T23:23:41Z",
+    "gate": "disparou na leitura das 20:37 BRT (Flavio 65,05, +0,50pp); trava das 20:45 aprovou presidencial e bloqueou o 3o lugar; trava das 20:55 bloqueou com Flavio em 64,40 (0,15pp do publicado). Mantida a certificada das 20:23, oscilacao em torno do valor publicado e mesmo enquadramento"
+  },
+  "factCheck": [
+    { "evento": "Floriano de Azevedo Marques (TSE) indefere o registro de Deltan Dallagnol ao Senado pelo PR e manda anular os votos, decisao monocratica que vai ao colegiado", "fontes": ["Metropoles 03/10, corpo lido", "CartaCapital 03/10, corpo lido", "Folha de S.Paulo, O Globo, VEJA, Estadao e Valor 03/10"], "decisao": "incorporar" },
+    { "evento": "Coligacao de Lula pede ao TSE que a suspensao dos servicos consulares dos EUA entre como fato novo na acao sobre interferencia estrangeira", "fontes": ["CartaCapital 03/10, corpo lido, peticao de 02/10", "Folha de S.Paulo e G1 02/10"], "decisao": "incorporar como pedido, com a data de 02/10" },
+    { "evento": "Nunes Marques diz que a eleicao nao esta sob ameaca de interferencia estrangeira nem do crime organizado", "fontes": ["Folha de S.Paulo 03/10", "O Globo 03/10"], "decisao": "incorporar como declaracao" }
+  ],
+  "pesquisas": [
+    { "casa": "Datafolha", "protocolo": "BR-01708/2026", "campo": "2026-10-03", "n": 4006, "conferida": "corpo Money Times e Valor" },
+    { "casa": "Quaest", "protocolo": "BR-02197/2026", "campo": "2026-10-02 a 2026-10-03", "n": 3702, "conferida": "corpo Money Times" },
+    { "casa": "PoderData/Aya", "protocolo": "BR-03519/2026", "campo": "2026-09-30 a 2026-10-02", "n": 4000, "conferida": "corpo SBT News e Gazeta do Povo" },
+    { "casa": "CNT/MDA", "protocolo": "BR-04756/2026", "campo": "2026-09-29 a 2026-10-02 (TSE); materia diz 30/09", "n": 2007, "conferida": "corpo Poder360" },
+    { "casa": "Palver", "protocolo": "BR-00198/2026", "campo": "2026-09-30 a 2026-10-03", "n": 5000, "conferida": "corpo Exame" },
+    { "casa": "Gerp", "protocolo": "BR-00509/2026", "campo": "2026-09-30 a 2026-10-02", "n": 2400, "conferida": "corpo Poder360" },
+    { "casa": "Futura/100% Cidades", "protocolo": "BR-02431/2026", "campo": "2026-09-29 a 2026-10-03 (TSE); materia diz 02 e 03/10", "n": 2000, "conferida": "corpo Money Times" }
+  ],
+  "adversarial": {
+    "singleSource": ["Flavio diz que governo Lula capturou STF, PF e Congresso (Folha, atribuida)", "Flavio da a disputa como encerrada (Valor, atribuida sem aspas, corpo nao abriu)"],
+    "numerical": "reconcile-claims: so titulos do rodape (votos validos da CNT/MDA e Futura), fora do corpo",
+    "fontesInventadas": "nenhuma; 17 links, 76% secundario",
+    "quotes": "'a Paulista nao e da direita, e do povo brasileiro' confirmada no corpo do UOL; 'acabou para o Lula' retirada das aspas",
+    "causacao": "nenhuma; pesquisas e preco com os carimbos de cada um",
+    "verbos": "indeferiu (monocratica, vai ao colegiado), pediu em 02/10",
+    "superlativo": "piso de Lula 34,50 em 25/04 conferido no banco vivo ate 20:00 BRT; Flavio acima do topo GRAVADO",
+    "decisao": "prosseguir"
+  }
+}
