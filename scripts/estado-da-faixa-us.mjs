@@ -50,6 +50,9 @@ import { execSync } from 'child_process'
 // direção que não congela nada. O `19 * 60 + 30` escrito à mão seguiria
 // afirmando 19:30Z depois de a agenda mudar, e erraria em SILÊNCIO.
 import { FOLGA_MIN, agendaDaRota, ultimoCronDoDia } from '../lib/us-press/data-corrente.mjs'
+// 🧭 De quem é cada arquivo modificado. A regra vive fora daqui porque ela
+//    decide se dá para publicar, e regra que decide publicação tem teste.
+import { FAIXA_EUA, faixaDaLinha } from '../lib/faixa-do-arquivo.mjs'
 
 const ROTA_IMPRENSA = '/api/cron/refresh-us-press'
 
@@ -103,28 +106,32 @@ console.log(`   vivo x versionado, artefato por artefato. Leitura pura: nada é 
   const sujo = sh('git status --short') || ''
   const atras = sh('git rev-list --count HEAD..origin/main')
   const arquivos = sujo.split('\n').filter(Boolean)
-  // ⚠️ Arquivo de OUTRA faixa na árvore não é problema meu, mas muda o que eu
+  // ⚠️ Arquivo que não é meu na árvore não é problema meu, mas muda o que eu
   //    posso publicar: o `vercel --prod` leva o diretório inteiro.
-  // 📌 `wayback` entrou em 02/Out: ele roda ANTES da daily, que é do Brasil, e
-  //    na estreia saía rotulado como EUA. O rótulo errado aqui é barato mas
-  //    engana sobre de quem é a árvore, que é o que decide se dá para publicar.
-  // 🔴 O PADRÃO DO BRASIL TEM DE SER ANCORADO, régua de 02/Out/2026.
   //
-  // `polls-data\.json` casa DENTRO de `us-polls-data.json`, então o piso das
-  // pesquisas dos EUA, que é o artefato central desta faixa, saía rotulado como
-  // "outra faixa". Eu vi isso na estreia em 29/Set, achei pequeno e deixei
-  // passar; o rótulo decide de quem é a árvore, que é o que libera ou trava uma
-  // publicação, então pequeno ele não é.
+  // 🔴 A CLASSIFICAÇÃO INVERTEU DE SENTIDO em 04/Out/2026, e a regra saiu daqui
+  //    para `lib/faixa-do-arquivo.mjs`, onde ela tem teste.
   //
-  // 📌 `wayback` entrou junto: ele roda ANTES da daily, que é do Brasil.
-  const outros = arquivos.filter((l) => /tse|brz|analysis-|afos-daily|wayback|public\/polls-data\.(json|en\.json|es\.json)/.test(l))
-  const meus = arquivos.filter((l) => !outros.includes(l))
+  //    Antes isto era uma lista do que é da OUTRA faixa, e tudo que não casava
+  //    virava MEU. Medido no dia: o terminal do Brasil tinha SETE arquivos em
+  //    `hf-assets/` e CINCO saíram rotulados como EUA, porque só os dois de
+  //    `tse-registry` continham uma palavra da lista. E o aviso disparou POR
+  //    ACIDENTE, só porque dois dos sete casaram: com os outros cinco sozinhos,
+  //    o medidor teria dito que a árvore era toda minha.
+  //
+  // 🔑 Agora a lista é do que é MEU, e o desconhecido cai em FORA. A direção do
+  //    erro passa a ser um aviso a mais, nunca uma publicação indevida.
+  const meus = arquivos.filter((l) => faixaDaLinha(l) === FAIXA_EUA)
+  const fora = arquivos.filter((l) => faixaDaLinha(l) !== FAIXA_EUA)
   if (!arquivos.length) linha('✅', 'árvore', 'limpa')
   else {
     linha(meus.length ? '⚠️' : '·', 'árvore', `${arquivos.length} arquivo(s) modificado(s)`)
-    for (const l of meus) console.log(`        ${c.aviso}EUA${c.fim}    ${l.trim()}`)
-    for (const l of outros) console.log(`        outra faixa  ${l.trim()}`)
-    if (outros.length) anota('árvore tem arquivo de OUTRA faixa: deploy daqui levaria o trabalho dela junto')
+    for (const l of meus) console.log(`        ${c.aviso}EUA${c.fim}           ${l.trim()}`)
+    for (const l of fora) console.log(`        FORA da faixa  ${l.trim()}`)
+    if (fora.length)
+      anota(
+        `${fora.length} arquivo(s) FORA da faixa US declarada: pode ser de outra faixa ou compartilhado, e o deploy daqui leva tudo junto`,
+      )
   }
   if (atras && Number(atras) > 0) {
     linha('🔴', 'remoto', `${atras} commit(s) à frente: dar git pull ANTES de medir qualquer coisa local`)
