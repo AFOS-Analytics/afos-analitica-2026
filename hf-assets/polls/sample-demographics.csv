@@ -560,3 +560,31 @@ BR-09503/2026,BR095032026,Real Time Big Data,2026-10-01,2026-09-28,age,16 anos,0
 BR-09503/2026,BR095032026,Real Time Big Data,2026-10-01,2026-09-28,education,Analfabeto,3.5,full_percentages
 BR-00148/2026,BR001482026,Vox Brasil,2026-10-02,2026-09-30,sex,male,47.18,full_percentages
 BR-00148/2026,BR001482026,Vox Brasil,2026-10-02,2026-09-30,sex,female,52.82,full_percentages
+BR-00198/2026,BR001982026,Palver,2026-10-03,2026-10-01,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-00198/2026,BR001982026,Palver,2026-10-03,2026-10-01,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-00198/2026,BR001982026,Palver,2026-10-03,2026-10-01,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-00198/2026,BR001982026,Palver,2026-10-03,2026-10-01,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-00198/2026,BR001982026,Palver,2026-10-03,2026-10-01,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-01708/2026,BR017082026,Datafolha,2026-10-03,2026-10-03,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-01708/2026,BR017082026,Datafolha,2026-10-03,2026-10-03,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-01708/2026,BR017082026,Datafolha,2026-10-03,2026-10-03,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-01708/2026,BR017082026,Datafolha,2026-10-03,2026-10-03,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-01708/2026,BR017082026,Datafolha,2026-10-03,2026-10-03,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-03519/2026,BR035192026,PoderData/Aya,2026-10-03,2026-10-01,sex,male,47.2,full_percentages
+BR-03519/2026,BR035192026,PoderData/Aya,2026-10-03,2026-10-01,sex,female,52.8,full_percentages
+BR-03519/2026,BR035192026,PoderData/Aya,2026-10-03,2026-10-01,income,Sem rendimentos até 2 SM,45.8,full_percentages
+BR-02197/2026,BR021972026,Quaest/Globo,2026-10-03,2026-10-02,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-02197/2026,BR021972026,Quaest/Globo,2026-10-03,2026-10-02,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-02197/2026,BR021972026,Quaest/Globo,2026-10-03,2026-10-02,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-02197/2026,BR021972026,Quaest/Globo,2026-10-03,2026-10-02,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-02197/2026,BR021972026,Quaest/Globo,2026-10-03,2026-10-02,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-04756/2026,BR047562026,CNT/MDA,2026-10-03,2026-09-30,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-04756/2026,BR047562026,CNT/MDA,2026-10-03,2026-09-30,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-04756/2026,BR047562026,CNT/MDA,2026-10-03,2026-09-30,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-04756/2026,BR047562026,CNT/MDA,2026-10-03,2026-09-30,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-04756/2026,BR047562026,CNT/MDA,2026-10-03,2026-09-30,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-00509/2026,BR005092026,Gerp,2026-10-03,2026-10-01,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-00509/2026,BR005092026,Gerp,2026-10-03,2026-10-01,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-00509/2026,BR005092026,Gerp,2026-10-03,2026-10-01,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-02431/2026,BR024312026,Futura/100% Cidades,2026-10-03,2026-10-01,sex,male,47.2,full_percentages
+BR-02431/2026,BR024312026,Futura/100% Cidades,2026-10-03,2026-10-01,sex,female,52.8,full_percentages
