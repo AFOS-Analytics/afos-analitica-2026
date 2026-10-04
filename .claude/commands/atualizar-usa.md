@@ -418,6 +418,10 @@ Ele compara o HF contra o **staging que já está no disco**, e **não reconstr�
 
 📌 **As duas esperas são a mesma ideia:** deixar o automatismo terminar e só então versionar o que ele produziu. Quem versiona antes congela uma coleta parcial.
 
+🔗 **E a ORDEM entre as duas não é só de relógio, é de CONTEÚDO: a ETAPA 3.1 vem antes da 6.1 porque o dataset LÊ o arquivo da imprensa.** Pensei em adiantar o dataset em 04/Out, quando o backup chegou antes da janela da imprensa (em 03/Out ele caiu às 18:28Z, uma hora antes das 19:30Z), e seria um defeito: o `press/us-press-timeline.csv` subiria **sem as matérias do dia**, e elas só entrariam na passada seguinte. Em 03/Out esse arquivo subiu com **+10**, que são exatamente os 10 itens arquivados minutos antes.
+
+⛔ **Então backup presente não autoriza subir: autoriza subir DEPOIS de a imprensa estar arquivada.** Se o backup chegar primeiro, a espera que sobra é a da imprensa, e não o contrário.
+
 🚀 **E desde 03/Out/2026 as duas esperas são MEDIDAS, pelo `npm run estado:usa`:**
 
 ```
