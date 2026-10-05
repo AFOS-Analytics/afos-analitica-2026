@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-04",
-  "fetchedAt": "2026-10-04T15:49:51.891Z",
+  "lastUpdate": "2026-10-05",
+  "fetchedAt": "2026-10-05T19:19:26.288Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,9 +47,23 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-04",
-    "nPesquisas": 34,
+    "desde": "2026-09-05",
+    "nPesquisas": 36,
     "incluidas": [
+      {
+        "instituto": "ActiVote",
+        "campoFim": "2026-10-02",
+        "amostraTipo": "LV",
+        "dem": 52,
+        "rep": 48
+      },
+      {
+        "instituto": "CBS News/YouGov",
+        "campoFim": "2026-10-02",
+        "amostraTipo": "LV",
+        "dem": 54,
+        "rep": 45
+      },
       {
         "instituto": "AlphaROC",
         "institutoNoIndice": "AlphaROC/The Independent Center",
@@ -343,9 +357,9 @@
       }
     ],
     "nInstitutos": 27,
-    "dem": 49.18,
-    "rep": 41.32,
-    "vantagemDem": 7.86,
+    "dem": 49.39,
+    "rep": 41.61,
+    "vantagemDem": 7.78,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
@@ -378,18 +392,48 @@
     ]
   },
   "qualidade": {
-    "linhasLidas": 452,
-    "publicadas": 465,
+    "linhasLidas": 454,
+    "publicadas": 467,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 452,
+    "doIndice": 454,
     "curadas": 13,
     "curadasDescartadasPorDuplicidade": 17
   },
   "polls": [
+    {
+      "instituto": "CBS News/YouGov",
+      "campoInicio": "2026-09-30",
+      "campoFim": "2026-10-02",
+      "amostra": 1572,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 54,
+      "rep": 45,
+      "outros": null,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://assets1.cbsnewsstatic.com/hub/cms/prod_cms_alt/file/2026/10/04/0957ee32-a848-4872-b659-14303d3d3734/cbsnews_20261004_sun.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "ActiVote",
+      "campoInicio": "2026-09-22",
+      "campoFim": "2026-10-02",
+      "amostra": 1000,
+      "amostraTipo": "LV",
+      "margemErro": 4.4,
+      "dem": 52,
+      "rep": 48,
+      "outros": null,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://www.activote.net/polls/generic-ballot/2026-10-03/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
     {
       "instituto": "Harvard/Harris Poll/HarrisX",
       "campoInicio": "2026-09-26",
