@@ -197,8 +197,13 @@ export const DIR_CERTIFICADOS = '.cache/capture-guard'
  *
  * `minMinutos` evita que a trava refeita minutos depois de um bloqueio vire base
  * de si mesma (mesma régua do `escolherCapturaAnterior` dos EUA).
+ *
+ * 🗳️ `livrosAtuais`, 05/Out/2026: só os livros que TÊM leitura agora ganham
+ * base. Sem isto, um livro resolvido (2º e 3º lugar e Senado, no dia seguinte
+ * ao 1º turno) continuaria vindo da última certificada em que foi aprovado, e
+ * todos os contratos dele sairiam em "SUMIU do book" em toda rodada, para sempre.
  */
-export function escolherBasePorLivro(certificados, carimboAtual, { minMinutos = 60 } = {}) {
+export function escolherBasePorLivro(certificados, carimboAtual, { minMinutos = 60, livrosAtuais = null } = {}) {
   const t0 = Date.parse(carimboAtual ?? '')
   if (!Number.isFinite(t0)) throw new Error('escolherBasePorLivro exige o carimbo da leitura atual')
   const ordenados = (certificados ?? [])
@@ -207,7 +212,7 @@ export function escolherBasePorLivro(certificados, carimboAtual, { minMinutos = 
       return Number.isFinite(t) && t0 - t >= minMinutos * 60_000
     })
     .sort((a, b) => Date.parse(b.fetchedAt) - Date.parse(a.fetchedAt))
-  const livros = new Set(ordenados.flatMap((c) => c.livrosOk ?? []))
+  const livros = new Set(ordenados.flatMap((c) => c.livrosOk ?? []).filter((l) => !livrosAtuais || livrosAtuais.has(l)))
   const linhas = []
   const origem = {}
   for (const livro of livros) {
@@ -336,7 +341,7 @@ async function principal() {
     const certificados = readdirSync(DIR_CERTIFICADOS)
       .filter((f) => /^br-.*\.json$/.test(f))
       .map((f) => JSON.parse(readFileSync(`${DIR_CERTIFICADOS}/${f}`, 'utf8')))
-    const base = escolherBasePorLivro(certificados, carimbo)
+    const base = escolherBasePorLivro(certificados, carimbo, { livrosAtuais: new Set(agora.map((l) => l.livro)) })
     if (base.linhas.length) {
       anterior = { fetchedAt: 'por livro', linhas: base.linhas }
       console.log('\n🧭 BASE POR LIVRO, a certificada anterior em que cada livro foi aprovado:')
@@ -372,6 +377,7 @@ async function principal() {
 
     console.log('\n⚖️ NORMALIZADO, ao lado do cru (par = soma dos dois maiores; livro = soma do livro inteiro):')
     for (const [livro, modo] of Object.entries(MODO_NORMALIZACAO)) {
+      if (!agora.some((l) => l.livro === livro)) continue
       const n = normalizado(anterior.linhas, agora, livro, { modo, piso: PISO })
       if (!n) {
         console.log(`   ${livro.padEnd(13)} sem base comparável para normalizar`)

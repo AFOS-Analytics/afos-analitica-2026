@@ -397,7 +397,13 @@ ensure(join(STAGING, 'polls')); ensure(join(STAGING, 'news')); ensure(join(STAGI
 writeJSON(join(dCrit, `${dateCrit}.json`), crit)
 writeJSON(join(dCards, `${dateCards}.json`), cards)
 writeJSON(join(STAGING, 'polls', `polls-data-${datePolls}.json`), polls)
-writeFileSync(join(STAGING, 'data', `divergence-${datePolls}.csv`), divergenceCsv(polls, datePolls))
+// 🗳️ 05/Out/2026: a partir do 2º turno o `percentage` do grafo é o do PAR do
+// 2º turno, e o `pollSource.round` diz isso. O arquivo muda de NOME para a série
+// do 1º turno (`divergence-AAAA-MM-DD.csv`, de abril até 04/Out) continuar
+// homogênea: misturar os dois turnos sob o mesmo nome e o mesmo cabeçalho faria
+// um "poll_pct" de 2º turno parecer continuação do de 1º.
+const turnoDoGrafo = polls?.polymarketComparison?.pollSource?.round === 2 ? 'second-round-' : ''
+writeFileSync(join(STAGING, 'data', `divergence-${turnoDoGrafo}${datePolls}.csv`), divergenceCsv(polls, datePolls))
 
 // série de odds de mercado — começa com hoje, recebe o histórico no backfill abaixo
 const marketRows = [

@@ -122,6 +122,20 @@ Roda **depois** da trava aprovar e **antes** de escrever qualquer "sobe", "cai" 
 
 Teste: `node scripts/testar-deltas-brz.mjs`, 42 asserções, no CI.
 
+## ETAPA 1.10: O LADO PESQUISA DO GRAFO sai de UM script, com a procedência junto (obrigatória, instalada 05/Out/2026)
+
+```bash
+node scripts/percentage-do-grafo-brz.mjs              # ensaio: régua do 2º TURNO, que é o padrão desde 05/Out
+node scripts/percentage-do-grafo-brz.mjs --aplicar    # grava percentage, pesquisaRange e pollSource JUNTOS
+node scripts/percentage-do-grafo-brz.mjs --casa="Datafolha" --aplicar   # escolha declarada quando duas nacionais do dia discordam
+```
+
+🔴 **Por que é etapa:** o script existia desde 21/Set e este comando nunca o citava. De 28/Set a 04/Out o `percentage` foi gravado pelos aplicadores avulsos de cada rodada, que não gravavam a procedência, e a tela do grafo dizia **"Palver, 24/09"** sobre números da Quaest de 28/Set e depois da Palver de 03/Out. ⛔ **Nenhum aplicador avulso escreve `percentage`, `pesquisaRange` ou `pollSource`.** Os três saem deste script, juntos.
+
+🗳️ **No 2º turno** (padrão; `--turno=1` reproduz a régua antiga): o lado pesquisa é o PAR Lula × Flávio do `secondRound` da nacional mais recente que o mediu, com desempate pela maior amostra. Os eliminados **perdem** o campo, que é removido e não zerado, e saem do grafo. A faixa é o mínimo e o máximo do par nas nacionais desde 05/Out; antes da primeira, a véspera, e o script diz isso. `pollSource.round: 2` faz o export do HF gravar `divergence-second-round-AAAA-MM-DD.csv`, sem misturar com a série do 1º turno.
+
+🗳️ **Livro resolvido:** desde 05/Out a trava (ETAPA 1.7) pula contrato com `closed: true`, e o livro em que todos os contratos fecharam sai em `livrosResolvidos`, fora da certificação (2º e 3º lugar e Senado, resolvidos no 1º turno). Livro sem contrato nenhum, nem aberto nem fechado, **bloqueia**: é o leitor que falhou. O `deltas-brz` só dá base a livro que tem leitura agora.
+
 ## ETAPA 2: Coleta de notícias (Google News RSS)
 
 **OBRIGATÓRIO — usar `scripts/fetch-google-news.mjs`** (não usar WebFetch direto). Implementado em 07/Mai/2026 após incidente daily 06/Mai. Razão: WebFetch processa o RSS retornando texto resumido, descartando o campo `<link>` que contém URL primária. O script usa `curl`-equivalente nativo Node, parseia XML completo, e salva cache `public/news-cache/{YYYY-MM-DD}.json` com URLs primárias preservadas (Google News redirect → matéria do veículo, funciona até para veículos com anti-bot).
