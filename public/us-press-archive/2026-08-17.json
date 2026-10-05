@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-17",
-  "fetchedAt": "2026-08-17T18:34:58.392Z",
+  "fetchedAt": "2026-08-17T19:20:33.210Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,9 +113,9 @@
     }
   ],
   "qualidade": {
-    "lidos": 103,
-    "naLista": 31,
-    "foraDaLista": 72,
+    "lidos": 106,
+    "naLista": 28,
+    "foraDaLista": 78,
     "publicados": 10,
     "descartadosPorAcompanhamento": 5,
     "veiculosRepresentados": 8,
@@ -130,11 +130,11 @@
   },
   "itens": [
     {
-      "titulo": "A Democrat is leading polls in reliably red Alaska. Meet Mary Peltola",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNWWQ3elk5WU9kU1VhcDBNVWsxU2t6eEhBMW1NT1gzM1ltUkFqZmxjVUdpQWttQXpkVEJzUWNWNWJKZzJJbkRNOHdLbEdKWWxncHVTTllTQVJCQ1dFTklwVGZJZDlBbFpEOTNaVUh3cVNGSXE3RHMyZkhZWlhueHpiZkNERWdvbHVFdDd0bS1tWnVwMHAxQ29JZFJWTmZkQW14M1dlbzVZNGxTZnpSRjg0N2oxZmpmdHppV0pBbTY0VkM5UQ?oc=5",
-      "casa": "USA Today",
-      "publicadoEm": "2026-08-17T15:42:00.000Z",
-      "consulta": "senate-races",
+      "titulo": "Under new Florida maps, a White Democrat aims to win a heavily Black district",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNdFdhaFdhSF9CQXBzRmxxemw0MVQwWkp6Wmx2YUtJMUVpWEVLN3VqRWgxT2dLM1UyczczN2xXUE5TYnp0bU5LckZtUU9iclZ4SE9UdzU5cU44SEtFZUttSFBKWlNvX0E4c3RoOVlCdjE3c0tvaVFSVlFrQjdtOGlfYW4yc3lHUi1UclI4WDRWRVh3M0JaSUoteUZITDA4aXlaN2hpeHl2cGotQ2hXVDhyQXNhYmVleVhn?oc=5",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-08-17T17:00:00.000Z",
+      "consulta": "midterms",
       "origem": "google",
       "trilho": "disputa"
     },
@@ -175,15 +175,6 @@
       "trilho": "disputa"
     },
     {
-      "titulo": "Democratic Socialists Look for Upsets in Hostile Territory: Florida",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNVXFydGVvRzdTRl81VDBkcVJPUFdjU01nLUY2OVpRLVN4MGpodDBXNHRGVHFWTXAzOFpTMUVCdnMzeUhlTEVoU2F3N2h0SHFLVzA2LXdTLXhIQTZWZUxpeU5UZU1SbFlxTW9uTHZlWUdnMjgtczgtTFRwdW9RUGZWeUhMUlFmMm5GRWc?oc=5",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-08-17T09:03:46.000Z",
-      "consulta": "midterms",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
       "titulo": "Jon Ossoff’s takedown of Trump reveals two very different versions of America",
       "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9ZaUFBbzNaSG4zeUxWNk01dG9YNmpUYUJwbVZnZVB2TDZrWVVselJ3bWxFQVFpeHF1eS1CME5iTWR3Z0ZqX3I0MkxkRzVveThGb1VIWURSbWItQ1ljWkgwVzNmRThTakY1MHE4c2NTQ0l4cW5Ed1NiekNB?oc=5",
       "casa": "CNN",
@@ -193,11 +184,11 @@
       "trilho": "disputa"
     },
     {
-      "titulo": "Could El-Sayed Cost Democrats Michigan?",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQbUJING1rR3d0M1IyRnN1QlE3Y3NCOGJnQnpBOXpJU2t4cTVTdzJ5QWFudjZWOS04S2o2MWxjR3d3bHdxSXpxNklGTlF1Y21QanpDa2xiUWFFWEJVcnV1Y0FLRHAzcDFmRk9yZURmZkVOcS1oT0xmX3VPa19HVnAtR0NuYw?oc=5",
+      "titulo": "A Free-for-All in Alaska as 17 Candidates Compete to Be Governor",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPZmhMMmZ2aEcyTGxFejVfZE94YnZES2FpX3B0ZDNUVFBBZm1FSURVcFpNX2pTMWhrWWotbm5HYmVLM2VPME1hS0ZEbHZ1Vzl6dGVOZ2FTSmtVZVNxenN5MVJMMkNyT25nXzJmeEhQc0c3a2k2cWJHYnVXN0ZFbUQ5NkNB?oc=5",
       "casa": "The New York Times",
-      "publicadoEm": "2026-08-16T19:12:15.000Z",
-      "consulta": "generic-ballot",
+      "publicadoEm": "2026-08-16T18:36:13.000Z",
+      "consulta": "senate-races",
       "origem": "google",
       "trilho": "disputa"
     },
@@ -217,6 +208,15 @@
       "publicadoEm": "2026-08-16T12:00:25.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Where Trump could spend his $400 million war chest in 2026",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPQlRDY0gwMld6U3RBcG1VLUdSNzVHdlNaaGxINFNQUGlRN2R2ODVLcHdacVJkZFNxQUlpSk43ZTJyUEY1aHJjQWcyXzMwQUQzUC1zX2hnV04wZGU3Y0pTOURfNF9oMHJrc2taUTRSSm14bms4U3RvTkZpR21LalVGS2stN3dFY0tCZm9yZmtBaDl1NG5mcmpuN2IweFdPNlp0WE82M2FBLUZDTnVkMHZtZld6VGdPNXd3S2Jocg?oc=5",
+      "casa": "Washington Examiner",
+      "publicadoEm": "2026-08-16T11:00:00.000Z",
+      "consulta": "midterms",
+      "origem": "google",
       "trilho": "disputa"
     }
   ]

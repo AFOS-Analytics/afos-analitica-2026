@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-20",
-  "fetchedAt": "2026-08-20T13:48:15.105Z",
+  "fetchedAt": "2026-08-20T19:20:04.417Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,16 +113,16 @@
     }
   ],
   "qualidade": {
-    "lidos": 249,
-    "naLista": 107,
-    "foraDaLista": 142,
+    "lidos": 239,
+    "naLista": 105,
+    "foraDaLista": 134,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 35,
-    "veiculosRepresentados": 9,
+    "descartadosPorAcompanhamento": 37,
+    "veiculosRepresentados": 8,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 36,
+    "lidosEmFeedProprio": 32,
     "publicadosComLinkCanonico": 7,
     "publicadosViaGoogleNews": 3,
     "publicadosPorDisputa": 10,
@@ -130,91 +130,91 @@
   },
   "itens": [
     {
-      "titulo": "White House legislative affairs director departs post ahead of midterms",
-      "url": "https://thehill.com/homenews/administration/6040729-donald-trump-legislative-director-leaving/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-08-20T13:25:36.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "GOP trails Democrats by 8 points on congressional ballot in new poll",
-      "url": "https://www.newsnationnow.com/politics/democrats-lead-republicans-8-points-emerson-poll/",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-08-20T11:55:41.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "From McDonald’s to Congress: can a former fry cook flip a key district for Democrats?",
-      "url": "https://www.theguardian.com/us-news/2026/aug/20/mcdonalds-congress-affordability-democrats",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-08-20T11:00:50.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "The new kingmakers: Crypto, AI and betting firms fuel record spending on the 2026 midterms",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOeENQNnM1RGoxMUFwdGJ2c19GUDRnTUhiWVdieDZNZG1qX2QzN29SYVBqU0NBcnVaMjRISjB3ZFc5WTlRbXYwQ1FkallpcmdLeEcwWk1wcS1pbG9TbTB6WFQ4VENCa25wMTE1TmJMeGJ1dEFtY0xrX0hOb0ZURkZJWlRmM3lFcHFZaXpqTWFCYVhHdDc0UXJzNEpPTUo5LXdBYzlCcXppZklKbkN5cnc4NGFsU3p5U0xPNnJ1dGUxYWEzQVI0Y3ZqcA?oc=5",
-      "casa": "Reuters",
-      "publicadoEm": "2026-08-20T10:23:53.000Z",
-      "consulta": "midterms",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Luxury travel, shopping, six-figure income: Battleground Dems ripped for 'phony' working-class narrative",
-      "url": "https://www.foxnews.com/politics/luxury-travel-shopping-six-figure-salary-battleground-dems-ripped-phony-working-class-narrative",
-      "casa": "Fox News",
-      "publicadoEm": "2026-08-20T10:00:44.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Top Dem group reveals new congressional targets in bid to flip House: 'Proven fighters'",
-      "url": "https://www.foxnews.com/politics/top-dem-group-reveals-new-congressional-targets-bid-flip-house-proven-fighters",
-      "casa": "Fox News",
-      "publicadoEm": "2026-08-20T09:15:32.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "The Democrats’ one neat trick to try to win a Senate majority",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQSk12Z3pWTThFMng2NTNwS1NURVRKTkpiNE9RaEpnNEY1MHJ3bU1pejg0ZXJ0alF6UE03NVdpajVlbDloU0dxZVNUY2JPNjVWbGdZVHpKVldrQ2xnLWo4T1BmYjM1Z2o2NU01NjZKWFRobzNqUHFjdTNRdU5FbWo4UXB0X2VxWXc?oc=5",
-      "casa": "CNN",
-      "publicadoEm": "2026-08-20T09:00:30.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Data center uproar scrambles the midterm election",
-      "url": "https://www.axios.com/2026/08/20/data-center-uproar-2026-midterms",
-      "casa": "Axios",
-      "publicadoEm": "2026-08-20T09:00:04.000Z",
+      "titulo": "Cook Political Report shifts Senate races in Texas, Iowa leftward to ‘Toss Up’",
+      "url": "https://www.washingtonpost.com/politics/2026/08/20/cook-political-report-shifts-senate-races-texas-iowa-leftward-toss-up/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-08-20T19:00:00.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
       "titulo": "Top Alaska Senate Candidates Advance as Angie Nixon Wins in Florida",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQMThrVU1Vc0ZNS0MtQzBteGNWNUpzbDYxVC1XRHRVazQ3bWVXUXBLZTJ3elZnbWRCSDhILS1zNDBiU2RpckItRWpZZ25sQXZ1YWN0aGxpcTk2QTN3N0lVOXZ5S2NSdFBINVRXbE9kRm5QUVk1alREZWIyNmpyWkJmbDIzRTJOWXRoa2VRUTcyQno3dWduZzlQdFppU3U5ME1VSUgyWGpKd3puZFBZMlBxa3ZRRmdZUQ?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQci1UckpMV09GWU5CY3VPWGxobnZnOEh6akZLb0syV3A1bGd4Zi1sSEpFajZ2YTc5UnpBSHpsejQyQnJHRFdQTkIxYlZUb1Rfak43bUFzMjhzc0trZVQxNkRaTWZxdENhUWFVVGMxSGk3N09CUkIxTnMyWTdidmFpb2h2TEk?oc=5",
       "casa": "The New York Times",
-      "publicadoEm": "2026-08-20T05:23:00.000Z",
+      "publicadoEm": "2026-08-20T18:40:28.000Z",
       "consulta": "senate-races",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "Mike Lindell says he’ll pay for recount after loss in Minnesota governor primary",
-      "url": "https://www.nbcnews.com/politics/elections/mike-lindell-plans-pay-recount-losing-minnesota-gop-primary-governor-rcna593447",
-      "casa": "NBC News",
-      "publicadoEm": "2026-08-19T23:37:42.000Z",
+      "titulo": "The new kingmakers: Crypto, AI and betting firms fuel record spending on the 2026 midterms",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOeENQNnM1RGoxMUFwdGJ2c19GUDRnTUhiWVdieDZNZG1qX2QzN29SYVBqU0NBcnVaMjRISjB3ZFc5WTlRbXYwQ1FkallpcmdLeEcwWk1wcS1pbG9TbTB6WFQ4VENCa25wMTE1TmJMeGJ1dEFtY0xrX0hOb0ZURkZJWlRmM3lFcHFZaXpqTWFCYVhHdDc0UXJzNEpPTUo5LXdBYzlCcXppZklKbkN5cnc4NGFsU3p5U0xPNnJ1dGUxYWEzQVI0Y3ZqcA?oc=5",
+      "casa": "Reuters",
+      "publicadoEm": "2026-08-20T18:39:27.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Texas and Iowa Senate races tighten heading into midterms",
+      "url": "https://www.axios.com/local/san-antonio/2026/08/20/texas-iowa-senate-election-races-midterms-close",
+      "casa": "Axios",
+      "publicadoEm": "2026-08-20T18:07:48.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Bipartisan women call on Ethics panel to speed up Gomez probe ahead of midterms",
+      "url": "https://thehill.com/homenews/house/6041953-house-ethics-jimmy-gomez/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-08-20T18:04:39.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Alaska was a trial run for Democrats’ Senate majority hopes. How did it go?",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNQS1Pd3NERXoxMGY2RmJuUXBLUE85ODhxVXRWYjBWMXJGTWMwQVd1R3VoemlEbHp4YWJ4Y3F3RXFRUmp5dkZvTkNUVXhabWQtd2tUVUlIRlQ3RTNZTUt2ZzJETDN4Sm1oemxSVWpMR0RWZWhiNWdMU3dNY25TTV9nTUFtQWJrSDJuc2JrX0ZEeGI1WlhYS19jNm9YQ3NKRTA?oc=5",
+      "casa": "CNN",
+      "publicadoEm": "2026-08-20T16:42:56.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Republicans notch win in Missouri congressional redistricting fight",
+      "url": "https://www.washingtonpost.com/politics/2026/08/20/republicans-notch-win-missouri-congressional-redistricting-fight/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-08-20T16:30:00.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump could face impeachment if Democrats seize House majority, GOP leader warns",
+      "url": "https://www.foxnews.com/politics/trump-could-face-impeachment-democrats-seize-house-majority-gop-leader-warns",
+      "casa": "Fox News",
+      "publicadoEm": "2026-08-20T15:35:47.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Senate Health Panel Chairman Voices Strong Reservations About F.D.A. Nominee",
+      "url": "https://www.nytimes.com/2026/08/19/us/politics/heidi-overton-cassidy-fda.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-08-20T14:32:04.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "White House legislative liaison’s exit comes ahead of tricky pre-midterms session",
+      "url": "https://rollcall.com/2026/08/20/white-house-legislative-liaisons-exit-comes-ahead-of-tricky-pre-midterms-session/",
+      "casa": "Roll Call",
+      "publicadoEm": "2026-08-20T12:41:31.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"

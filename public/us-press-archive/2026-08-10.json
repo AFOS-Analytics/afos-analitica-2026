@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-10",
-  "fetchedAt": "2026-08-10T17:31:46.100Z",
+  "fetchedAt": "2026-08-10T19:20:42.533Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -108,20 +108,36 @@
     }
   ],
   "qualidade": {
-    "lidos": 98,
-    "naLista": 47,
-    "foraDaLista": 51,
+    "lidos": 99,
+    "naLista": 41,
+    "foraDaLista": 58,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 11,
-    "veiculosRepresentados": 6,
+    "descartadosPorAcompanhamento": 4,
+    "veiculosRepresentados": 7,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 15,
-    "lidosEmFeedProprio": 23,
+    "lidosEmFeedProprio": 22,
     "publicadosComLinkCanonico": 7,
     "publicadosViaGoogleNews": 3
   },
   "itens": [
+    {
+      "titulo": "How the economy is hurting Republicans’ midterm chances",
+      "url": "https://www.washingtonpost.com/politics/2026/08/10/how-economy-is-hurting-republicans-midterm-chances/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-08-10T18:44:28.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
+    {
+      "titulo": "'I'll never bow down': Montana Democratic Senate nominee refuses to pave way for independent",
+      "url": "https://www.politico.com/news/2026/08/10/montana-senate-bankhead-midterms-01031177",
+      "casa": "Politico",
+      "publicadoEm": "2026-08-10T18:12:38.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
     {
       "titulo": "A twist in the race for Lindsey Graham’s seat: No clear Trump-aligned candidate",
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQSlI3Zm9NMGU0THROdHZBWVBHamY0eWxDcXdGd3pKdzhNSjI4Z0Z5Q3JLT0phSWhUR3NxOGNPUi1aU1lxZGtibWh0VzVDVVUyejZsSEYwN3NfVkgxTjUzOEVDc18zaDdqZ0pVbHpyX05nYTBIRDdhWGdlUGRnOWFYUkJKR2xSbVVQTmEyNjk4b2I4T2E3Q2NGQ1NPRUhzMzAxdlNRa0ZvVVRlY21ZaDJiNnZMWldMVlU?oc=5",
@@ -179,24 +195,8 @@
       "origem": "google"
     },
     {
-      "titulo": "Eleventh-hour primary upsets muddy the race for control of Congress",
-      "url": "https://www.washingtonpost.com/politics/2026/08/10/primary-upsets-scramble-fight-control-congress/",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-08-10T09:00:00.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
-    },
-    {
       "titulo": "In a competitive Maine Senate race, women voters could be the deciders",
       "url": "https://www.npr.org/2026/08/10/nx-s1-5925349/maine-senate-race-susan-collins-troy-jackson-women-voters",
-      "casa": "NPR",
-      "publicadoEm": "2026-08-10T09:00:00.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
-    },
-    {
-      "titulo": "Mike Lindell touts Trump ties in race for governor of Minnesota, where Trump has lost",
-      "url": "https://www.npr.org/2026/08/10/nx-s1-5925152/lindell-minnesota-primary-elections-trump",
       "casa": "NPR",
       "publicadoEm": "2026-08-10T09:00:00.000Z",
       "consulta": "feed-proprio",

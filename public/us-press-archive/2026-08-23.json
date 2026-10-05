@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-23",
-  "fetchedAt": "2026-08-23T16:44:05.088Z",
+  "fetchedAt": "2026-08-23T19:20:45.586Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,16 +113,16 @@
     }
   ],
   "qualidade": {
-    "lidos": 137,
-    "naLista": 76,
-    "foraDaLista": 61,
+    "lidos": 105,
+    "naLista": 37,
+    "foraDaLista": 68,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 35,
+    "descartadosPorAcompanhamento": 9,
     "veiculosRepresentados": 7,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 22,
+    "lidosEmFeedProprio": 21,
     "publicadosComLinkCanonico": 10,
     "publicadosViaGoogleNews": 0,
     "publicadosPorDisputa": 10,

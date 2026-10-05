@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-09",
-  "fetchedAt": "2026-08-09T15:40:49.443Z",
+  "fetchedAt": "2026-08-09T19:20:38.596Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -108,20 +108,44 @@
     }
   ],
   "qualidade": {
-    "lidos": 136,
-    "naLista": 71,
-    "foraDaLista": 65,
+    "lidos": 105,
+    "naLista": 45,
+    "foraDaLista": 60,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 28,
-    "veiculosRepresentados": 6,
+    "descartadosPorAcompanhamento": 7,
+    "veiculosRepresentados": 8,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 15,
-    "lidosEmFeedProprio": 27,
-    "publicadosComLinkCanonico": 9,
-    "publicadosViaGoogleNews": 1
+    "lidosEmFeedProprio": 24,
+    "publicadosComLinkCanonico": 8,
+    "publicadosViaGoogleNews": 2
   },
   "itens": [
+    {
+      "titulo": "Obama and Abdul El-Sayed Spoke to Discuss Unity After Michigan Senate Primary",
+      "url": "https://www.nytimes.com/2026/08/09/us/politics/obama-abdul-el-sayed-michigan-senate.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-08-09T18:38:03.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
+    {
+      "titulo": "Trump's immigration crackdown looms over Minnesota's bruising Senate primary",
+      "url": "https://abcnews.com/Politics/wireStory/trumps-immigration-crackdown-looms-minnesotas-bruising-senate-primary-135500626",
+      "casa": "ABC News",
+      "publicadoEm": "2026-08-09T18:29:11.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
+    {
+      "titulo": "'Outsider' House primary winner sets sights on flipping longtime GOP seat back from Dems: 'Ready for a change'",
+      "url": "https://www.foxnews.com/politics/outsider-house-primary-winner-sets-sights-flipping-longtime-gop-seat-back-dems-ready-change",
+      "casa": "Fox News",
+      "publicadoEm": "2026-08-09T17:24:39.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
     {
       "titulo": "El-Sayed reveals he spoke with Obama after Michigan Senate primary win",
       "url": "https://thehill.com/homenews/campaign/6019094-abdul-elsayed-obama-michigan-senate/",
@@ -131,7 +155,7 @@
       "origem": "feed"
     },
     {
-      "titulo": "AOC declines to endorse Hong, says she’s focused on ‘winning back’ Congress",
+      "titulo": "Ocasio-Cortez declines to endorse Hong, says she’s focused on ‘winning back’ Congress",
       "url": "https://thehill.com/homenews/house/6019083-ocasio-cortez-declines-hong-endorsement/",
       "casa": "The Hill",
       "publicadoEm": "2026-08-09T15:14:55.000Z",
@@ -139,20 +163,12 @@
       "origem": "feed"
     },
     {
-      "titulo": "Wisconsin Democrats’ governor primary is an all-out fight over electability",
-      "url": "https://www.politico.com/news/2026/08/09/wisconsin-governor-race-hong-crowley-electability-01030198",
-      "casa": "Politico",
-      "publicadoEm": "2026-08-09T15:02:13.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
-    },
-    {
-      "titulo": "South Carolina’s Senate race tests Trump — again",
-      "url": "https://www.politico.com/news/2026/08/09/south-carolina-senate-darline-graham-trump-01029927",
+      "titulo": "Will Darline Graham face the same fate Pamela Evette did in South Carolina?",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQN3E3dUV4UVkyVTB5MnJxUUd3WlZtTFZDMlNZQmZNbWpsUEpyWldERkdjVnRsOHgzSG5sMFc4VlRKMU9jaW81WXRvaVYwMTUxaVpnV0xZc04waWp3aW5aWlA4dWhvbWM3Sjd3dlhZWDRFZ1RHcnotSnNOMVhtTGNsa2EzTVB6SGM5YjVhcTA1YVBrOXlXV3RB?oc=5",
       "casa": "Politico",
       "publicadoEm": "2026-08-09T15:00:00.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
+      "consulta": "senate-races",
+      "origem": "google"
     },
     {
       "titulo": "Sen. Bernie Sanders calls on Democratic leaders to end \"corrupt system\" of super PAC donations",
@@ -161,14 +177,6 @@
       "publicadoEm": "2026-08-09T14:30:00.000Z",
       "consulta": "midterms",
       "origem": "google"
-    },
-    {
-      "titulo": "Obama and Abdul El-Sayed Spoke to Discuss Unity After Michigan Senate Primary",
-      "url": "https://www.nytimes.com/2026/08/09/us/politics/obama-abdul-el-sayed-michigan-senate.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-08-09T14:18:19.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
     },
     {
       "titulo": "Michigan Senate Candidate, a Former Trump Critic, Shifts Toward Election Skepticism",
@@ -191,14 +199,6 @@
       "url": "https://www.npr.org/2026/08/09/nx-s1-5925106/politics-chat-progressive-candidates-in-primaries-trumps-influence-on-midterms",
       "casa": "NPR",
       "publicadoEm": "2026-08-09T12:12:20.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
-    },
-    {
-      "titulo": "GOP-controlled Senate delivers win for Trump with Blanche confirmation",
-      "url": "https://www.npr.org/2026/08/08/nx-s1-5925869/gop-controlled-senate-delivers-win-for-trump-with-blanche-confirmation",
-      "casa": "NPR",
-      "publicadoEm": "2026-08-08T21:19:17.000Z",
       "consulta": "feed-proprio",
       "origem": "feed"
     }

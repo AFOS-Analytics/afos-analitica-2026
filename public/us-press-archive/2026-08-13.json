@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-13",
-  "fetchedAt": "2026-08-13T14:04:21.520Z",
+  "fetchedAt": "2026-08-13T19:20:21.362Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -108,33 +108,25 @@
     }
   ],
   "qualidade": {
-    "lidos": 202,
-    "naLista": 61,
-    "foraDaLista": 141,
+    "lidos": 173,
+    "naLista": 60,
+    "foraDaLista": 113,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 7,
-    "veiculosRepresentados": 6,
+    "descartadosPorAcompanhamento": 13,
+    "veiculosRepresentados": 7,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 15,
-    "lidosEmFeedProprio": 28,
-    "publicadosComLinkCanonico": 7,
-    "publicadosViaGoogleNews": 3
+    "lidosEmFeedProprio": 24,
+    "publicadosComLinkCanonico": 6,
+    "publicadosViaGoogleNews": 4
   },
   "itens": [
     {
-      "titulo": "Wisconsin governor's race: How Crowley pulled off the upset over Hong",
-      "url": "https://thehill.com/homenews/campaign/data-nerds/6026856-david-crowley-francesca-hong-wisconsin-upset-polling-turnout-midterms-discussion/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-08-13T13:36:11.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
-    },
-    {
-      "titulo": "Minnesota fraud scandal will haunt Flanagan in high-stakes Senate race, top House Republican warns",
-      "url": "https://www.foxnews.com/politics/minnesota-fraud-scandal-haunt-flanagan-high-stakes-senate-race-top-house-republican-warns",
+      "titulo": "10 House incumbent lawmakers who saw their 2026 re-election bids end in primary defeat",
+      "url": "https://www.foxnews.com/politics/10-house-incumbent-lawmakers-who-saw-2026-re-election-bids-end-primary-defeat",
       "casa": "Fox News",
-      "publicadoEm": "2026-08-13T12:00:17.000Z",
+      "publicadoEm": "2026-08-13T17:23:56.000Z",
       "consulta": "feed-proprio",
       "origem": "feed"
     },
@@ -142,23 +134,23 @@
       "titulo": "Older Democrats walloped by midterms anti-establishment revolt",
       "url": "https://www.axios.com/2026/08/13/democrats-old-age-larson-bronin-young-primaries",
       "casa": "Axios",
-      "publicadoEm": "2026-08-13T09:10:08.000Z",
+      "publicadoEm": "2026-08-13T15:34:17.000Z",
       "consulta": "feed-proprio",
       "origem": "feed"
     },
     {
-      "titulo": "NRSC seeks to expose Democratic candidates for hypocrisy",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPWnJNUXhxanBTdGNlSVppMmE3U3h6M1huS3V2a1JXMnM3a1czWnJUNXB5MUNFQlNTSW41Yk8wRzZYWDMtNWJGakE3UUZHRnQ4TVdqVTFxcGlKbVBLM0J0dVU5Y04tTnBXbFlRcjJxRVlwdFNxaVFJTW9wZUtHZll5cGxHNFFLZGRNb3Z3RWxqZHdXaWZlaFVpbUtSNDR5ekIwVmYta25HZWFyOHA5c3RLQThCUk5PLW8wdTRweGI4RTc?oc=5",
-      "casa": "Washington Examiner",
-      "publicadoEm": "2026-08-13T09:00:00.000Z",
+      "titulo": "Poll finds Texas Senate race tied as Republicans lead race for governor",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOT3h0Z082Z0poSEtqaThWRmw0UGZjSHlfRlFWdnAzbkZmMjdpQ0hSb0JzNkRrRVlsVFhYNzNZWHBkSC1lZjhnX3A3YUZDS0Q3emdUTXhWc2xNOTlodkNsbTVQU3ozOVp2NVFzVWk5ckg4OVlVSnRfRjQ4SHJhdjB1VUxGbnZKdkhfVU9NeG9SN09CUG1QN0Y5Sm1Mb0ZOWGt0em9IbjVab0wxRzhBbmZVUXB6aVlfRkNRWk9YVU5KWS1JZ0Qtc2NiVEFFckVoZw?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-08-13T14:54:00.000Z",
       "consulta": "senate-races",
       "origem": "google"
     },
     {
-      "titulo": "Why Were Polls So Wrong in the Wisconsin Governor’s Race?",
-      "url": "https://www.nytimes.com/2026/08/12/us/politics/crowley-hong-wisconsin-governor-primary-polls.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-08-12T22:51:15.000Z",
+      "titulo": "Minnesota fraud scandal will haunt Flanagan in high-stakes Senate race, top House Republican warns",
+      "url": "https://www.foxnews.com/politics/minnesota-fraud-scandal-haunt-flanagan-high-stakes-senate-race-top-house-republican-warns",
+      "casa": "Fox News",
+      "publicadoEm": "2026-08-13T12:00:17.000Z",
       "consulta": "feed-proprio",
       "origem": "feed"
     },
@@ -171,14 +163,6 @@
       "origem": "feed"
     },
     {
-      "titulo": "Fox News Poll: New matchup, same result: Maine Senate race stays locked",
-      "url": "https://www.foxnews.com/politics/fox-news-poll-new-matchup-same-result-maine-senate-race-stays-locked",
-      "casa": "Fox News",
-      "publicadoEm": "2026-08-12T22:00:02.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
-    },
-    {
       "titulo": "South Carolina Senate Runoff Kicks Off With Chick-fil-A and Trump Calls",
       "url": "https://www.nytimes.com/2026/08/12/us/politics/south-carolina-republican-senate-primary-runoff.html",
       "casa": "The New York Times",
@@ -187,11 +171,19 @@
       "origem": "feed"
     },
     {
-      "titulo": "Wisconsin Democrats chose a middle path – will it lead to victory in November?",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNeXdjSTFsdGFLcFVQVDlSRnM4Rml6Z0YwM0FGdjRrdlhHbHpsc1lsM3g2dGxDM041dXJuZW9CRVM5blRObjNNTUJ5eHFOYkZmbTdXZnNCQ1BmNXduOUVuY1htRDlkaVBiU2ZHZlN5am9mNUVuVE9tMGtpVFN5d2NHQVFCUi00OERaRzY3YUliT2RsSjQ?oc=5",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-08-12T20:31:00.000Z",
+      "titulo": "Trump’s cost-of-living crunch",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQREpiV3h6NDc3azljbDFzTDlpOTdsZkNhRlZBRHlORVhfbHZsbjZIVkpGS2Fnck5JQ01XbGdUUk1nbFZPekFYLWM0VlZRS1RWNWx4VGxNaUVsSmNuSGdMTUZ6X0JCS1h4aGthaGhKNDhGZDB1MWNDbzU4ZUVSajNQX0dvZlRkaHkxbFhzX0ZLRzRVaVd6TmZBbG0tYTJLUQ?oc=5",
+      "casa": "Politico",
+      "publicadoEm": "2026-08-12T17:52:48.000Z",
       "consulta": "generic-ballot",
+      "origem": "google"
+    },
+    {
+      "titulo": "Democratic Socialist Falls in Tight Wisconsin Primary for Governor",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQelZOSjR3cU5vOVB4anhwZ2NETUNTRXVKLVhqdG1qSVFJeEFfR0JQTjJldWVyWHRjdzFNWUQ2dmF0X3MxbnZLOFZRUGFFSjFlYllkVW1oZXdqVy1CeGZSdXF6Ml9vOGNLS0RWdktpaTN1S3dCZ1ZEYWdpOTFrcXY0SHpn?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-08-12T17:26:42.000Z",
+      "consulta": "midterms",
       "origem": "google"
     },
     {
@@ -201,6 +193,14 @@
       "publicadoEm": "2026-08-12T16:46:00.000Z",
       "consulta": "midterms",
       "origem": "google"
+    },
+    {
+      "titulo": "Lisa Demuth tops Mike Lindell in GOP primary for Minnesota governor",
+      "url": "https://www.cbsnews.com/news/lisa-demuth-minnesota-republican-governor-primary-projected-winner/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-08-12T13:26:39.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
     }
   ]
 }

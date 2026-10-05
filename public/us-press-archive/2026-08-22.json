@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-22",
-  "fetchedAt": "2026-08-22T19:11:36.355Z",
+  "fetchedAt": "2026-08-22T19:20:45.372Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {

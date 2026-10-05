@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-09-07",
-  "fetchedAt": "2026-09-07T15:03:39.334Z",
+  "fetchedAt": "2026-09-07T19:20:13.398Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,22 +113,58 @@
     }
   ],
   "qualidade": {
-    "lidos": 156,
-    "naLista": 77,
-    "foraDaLista": 79,
+    "lidos": 116,
+    "naLista": 61,
+    "foraDaLista": 55,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 16,
-    "veiculosRepresentados": 8,
+    "descartadosPorAcompanhamento": 2,
+    "veiculosRepresentados": 7,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 45,
-    "publicadosComLinkCanonico": 9,
-    "publicadosViaGoogleNews": 1,
-    "publicadosPorDisputa": 10,
-    "publicadosPorMetodo": 0
+    "lidosEmFeedProprio": 43,
+    "publicadosComLinkCanonico": 8,
+    "publicadosViaGoogleNews": 2,
+    "publicadosPorDisputa": 9,
+    "publicadosPorMetodo": 1
   },
   "itens": [
+    {
+      "titulo": "Midterms enter final stretch with control of Congress on the line",
+      "url": "https://www.newsnationnow.com/politics/midterms-enter-final-stretch-with-control-of-congress-on-the-line/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-09-07T18:58:05.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump promises midterm victory, slams Democrats in Labor Day message",
+      "url": "https://thehill.com/homenews/administration/6075049-trump-attacks-democrats-labor-day/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-09-07T17:15:50.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "5 Races to Watch This Fall for Answers to the Biggest Midterm Questions",
+      "url": "https://www.nytimes.com/2026/09/07/us/politics/midterms-key-races-to-watch.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-07T16:44:31.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Prediction markets' regulation draws closer to Supreme Court",
+      "url": "https://www.newsnationnow.com/politics/prediction-markets-regulation-draws-closer-to-supreme-court/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-09-07T14:34:31.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "metodo"
+    },
     {
       "titulo": "Armed individual lunged at Democratic nominee for Ohio governor",
       "url": "https://www.washingtonpost.com/politics/2026/09/06/armed-individual-lunged-democrat-nominee-ohio-governor-campaign-says/",
@@ -148,12 +184,12 @@
       "trilho": "disputa"
     },
     {
-      "titulo": "Live updates: Canadian retaliatory tariffs loom; Big Tech opposition grows as midterms approach",
-      "url": "https://thehill.com/homenews/administration/6074261-live-canadian-tariffs-loom-us-iran-strikes/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-09-07T12:29:27.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
+      "titulo": "Warning signs abound for Trump's Republicans as midterm campaign begins final sprint",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQX1pPNkdJdEFkeWVzaVNnQlh2STA1STItVXpwZWl4VkdwVERRcU9qaHVOOW16VjVibUNTelhMeHd6WXNxQmZRTTU1MU9zRFBXam5pOFJ6MGpqZ1h0QVhpWGM2RnBUbXl3czFndEpkbmxGcDlLUGxpRnQtQkZzbTJfaUVyTUNjTUxVakVJUV9RWDJhazd5cXowS3FMbmxYSzg1dXZBVVRveVN2ZFd1U2lJSnU3MmhuWVhNMy1uVjJpWlQ4RXNqUlFycA?oc=5",
+      "casa": "Reuters",
+      "publicadoEm": "2026-09-07T13:41:28.000Z",
+      "consulta": "midterms",
+      "origem": "google",
       "trilho": "disputa"
     },
     {
@@ -175,48 +211,12 @@
       "trilho": "disputa"
     },
     {
-      "titulo": "The nine midterm races that will decide control of the US Senate",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPWHNQbThINkZTd0M5Zi1aVTBMNlNNa2NFeFhWaWwwampJc0c0T1ptcVRDemJGX3owMm1zRFZmQ1BQaWdYbVRJMk9nTUhDVEpoc1h5LTZ0QmIwRlFZQ2tYV0RFZUpLVk5rY3lLSHVQMmZDOE1udEZyVTc2eUIxV3F1SW05T2lkUWtBLWYzZkRaWDhvaTdXX1ZNRGhZYTVUZGM?oc=5",
+      "titulo": "US House races to watch in the 2026 midterm elections",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNSC0wZVVxbVROaG9nV3oxbG9OMDNCR3kxamYwOC1iemdqRWFZLXpDZ1RBSGdJaTdVQ3JvR3NVTjFzZUJtbnR6SXhkOXJ0ZGNIQ1ZMZUxFcm95UllpdTJJNHZlVUNMb1JoWFJHSTI2NDBzQzhWTkw1WjdGY2F1VEtBMGhMS1JlYWNtSDh0RGtoX2JCUQ?oc=5",
       "casa": "Reuters",
-      "publicadoEm": "2026-09-07T10:05:43.000Z",
-      "consulta": "senate-races",
+      "publicadoEm": "2026-09-07T10:09:54.000Z",
+      "consulta": "midterms",
       "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Republican midterm convention will be ‘Trumpist pageantry’ - at the party’s own risk",
-      "url": "https://www.theguardian.com/us-news/2026/sep/07/republican-midterm-convention-trump",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-09-07T10:00:48.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Democrats try a novel path to defeat a battleground Republican: Moving to the left",
-      "url": "https://www.washingtonpost.com/politics/2026/09/07/california-progressive-tries-novel-path-fight-against-gop-swing-district/",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-09-07T10:00:01.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Fact-Checking Midterm Ads Referring to Jeffrey Epstein",
-      "url": "https://www.nytimes.com/2026/09/07/us/politics/fact-check-midterm-ads-jeffrey-epstein-files.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-09-07T09:04:18.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "With the midterms fast approaching, campaign season begins",
-      "url": "https://www.npr.org/2026/09/07/nx-s1-5955739/with-the-midterms-fast-approaching-campaign-season-begins",
-      "casa": "NPR",
-      "publicadoEm": "2026-09-07T08:43:05.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
       "trilho": "disputa"
     }
   ]

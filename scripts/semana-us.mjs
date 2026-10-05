@@ -203,7 +203,10 @@ function main() {
 
   // Imprensa: só o que está ARQUIVADO, que é o que se pode citar depois.
   const dir = 'public/us-press-archive'
-  for (const f of readdirSync(dir).sort()) {
+  // ⚠️ Sem este filtro, `ERRATA.json` escapava POR ACIDENTE: `f.replace('.json','')`
+  // da "ERRATA", e comparar "ERRATA" com uma data como string calha de cair no
+  // `continue`, porque "E" e maior que "2". Funcionar por acidente nao e funcionar.
+  for (const f of readdirSync(dir).filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).sort()) {
     const dia = f.replace('.json', '')
     if (dia <= desde || dia > hoje) continue
     const a = JSON.parse(readFileSync(`${dir}/${f}`, 'utf8'))

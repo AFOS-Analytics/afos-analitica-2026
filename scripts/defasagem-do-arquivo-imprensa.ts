@@ -53,7 +53,7 @@ async function main() {
   }
 
   if (!existsSync(DIR)) { console.error(`sem ${DIR}`); process.exit(1) }
-  const arquivos = readdirSync(DIR).filter(f => f.endsWith('.json')).sort()
+  const arquivos = readdirSync(DIR).filter(f => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).sort()
 
   console.log('\n📰 DEFASAGEM DO ARQUIVO DA IMPRENSA (EUA)')
   console.log(`   ${arquivos.length} arquivo(s) em disco · ${banco.size} coleta(s) no banco\n`)

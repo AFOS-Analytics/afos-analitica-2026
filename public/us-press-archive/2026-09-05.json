@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-09-05",
-  "fetchedAt": "2026-09-05T15:28:44.321Z",
+  "fetchedAt": "2026-09-05T19:20:13.987Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,16 +113,16 @@
     }
   ],
   "qualidade": {
-    "lidos": 186,
-    "naLista": 88,
-    "foraDaLista": 98,
+    "lidos": 167,
+    "naLista": 79,
+    "foraDaLista": 88,
     "publicados": 10,
     "descartadosPorAcompanhamento": 25,
     "veiculosRepresentados": 7,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 39,
+    "lidosEmFeedProprio": 31,
     "publicadosComLinkCanonico": 8,
     "publicadosViaGoogleNews": 2,
     "publicadosPorDisputa": 10,
@@ -130,28 +130,19 @@
   },
   "itens": [
     {
+      "titulo": "Missouri asks Supreme Court to restore GOP-friendly congressional map",
+      "url": "https://www.newsnationnow.com/politics/missouri-supreme-court-restore-gop-friendly-congressional-map/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-09-05T18:39:33.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
       "titulo": "\"We're stuck:\" GOP accepts Trump's all-about-me midterms",
       "url": "https://www.axios.com/2026/09/05/republicans-stuck-trump-midterms",
       "casa": "Axios",
       "publicadoEm": "2026-09-05T13:19:36.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Live updates: Hegseth eyes Driscoll replacement, Missouri asks to restore GOP-friendly congressional map",
-      "url": "https://thehill.com/homenews/administration/6072768-live-updates-hegseth-eyes-driscoll-replacement-missouri-asks-to-restore-gop-friendly-congressional-map/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-09-05T13:00:00.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Missouri asks Supreme Court to restore GOP-friendly congressional map",
-      "url": "https://thehill.com/regulation/court-battles/6072940-missouri-redistricting-gop-map-supreme-court/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-09-05T11:45:47.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
@@ -202,21 +193,30 @@
       "trilho": "disputa"
     },
     {
-      "titulo": "More Americans Are Identifying as Democrats Ahead of Midterms",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNdjdmRWh1QXE4cjhXWk9jZWk2bng1SjZpRVgxcnFQQTRGMS1WUXZKUzJLZnlfNFVpNmE3V28xbkc0Sk1feVFvYTV3ZkRKWkw5T1dNVFIxYURFckN1cFkzalRPNHRBaUNTQlE3MVVZM3NSSC13Mlp2WFdQRTJlS1c1bGJQSTVtdEJNV244ZnRfbk1mRTJKVS0wZ1BEMlQ?oc=5",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-09-05T09:03:09.000Z",
-      "consulta": "midterms",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
       "titulo": "Republican House candidates tone down Trump on their campaign websites",
       "url": "https://www.washingtonpost.com/elections/2026/09/05/republican-house-candidates-tone-down-trump-their-campaign-websites/",
       "casa": "The Washington Post",
       "publicadoEm": "2026-09-05T09:00:00.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Voters are fed up with data centers. Both parties are trying to cash in for midterms",
+      "url": "https://www.npr.org/2026/09/05/nx-s1-5913671/ai-data-center-campaign-spending",
+      "casa": "NPR",
+      "publicadoEm": "2026-09-05T09:00:00.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Massachusetts Sixth Congressional District Primary Election Results",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQRlhIVWVDVDhvcmh4MFZudThlN1paNDl5dFM5SGhyaFMxY1ZNOFNXQTlqRHQ1M01ENm16N2ZWRjlWNkpTZ0VWck9pVEJvWWJSNzRQSFFQMS1kOWNwYkJMeDFuTnJiOURIdThwTXNXU0FRY09wc09HOXF1bDdkaVVnMnFuZk91ZEVzUV9wZ2xrYjNtZW5QTDBtX2VVaFprT0NwX0JRMTVCMWc?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-05T00:00:00.000Z",
+      "consulta": "midterms",
+      "origem": "google",
       "trilho": "disputa"
     }
   ]

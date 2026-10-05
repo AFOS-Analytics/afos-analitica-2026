@@ -1,0 +1,641 @@
+{
+  "regra": "Data encerrada normalmente NUNCA e reescrita, e erro em data passada se corrige por errata. Cada entrada aqui e uma reescrita que ACONTECEU, com o carimbo de coleta de antes e de depois e as materias trocadas, para a serie seguir auditavel.",
+  "reescritas": [
+    {
+      "data": "2026-08-03",
+      "regeradaEm": "2026-10-05T22:09:50.104Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-08-03T13:20:24.368Z",
+      "fetchedAtDepois": "2026-08-03T19:20:03.504Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 8,
+      "urlsRemovidas": [
+        "https://news.google.com/rss/articles/CBMitgFBVV95cUxPejlxSDRDZ3dzNUxlUGo2Nk5uZHNJUDBuUEVkcmJEVkc3OXN1RDVwcl9GVnl3ZHpQX0NHZ3hkdHQwT0V6MnNyU1Z2aWdReXdLVU85SGNRQXp1WHhMMzVBV0ZPSGI1TkJ3WGc0a2piczhGZmdBQTdnbU1MS0g5N2ZLLVhHX0hxZmc4cEkyN1RMd1FCNU5nOEZBY2Z4bVAxODN1TDdXbWt0RmhjZWpMQmQwWHVIQlYwQQ?oc=5",
+        "https://news.google.com/rss/articles/CBMijwFBVV95cUxOeTB5a3pyaHd3ZmJ5NTBkMXpfVHBwR1VVcjFLaTc2VGwtZjR0Q2xqVkF4QS0wMnZ2Rmprb25lN214MFNXVnpfNjNTcFVPbTVTRUhmRzk5UnBQZGZLaU5JX0NRQ3RVLWVDRXBpM3Zqb2JyZzUwTjJVdDZxSGFTdjlZa3JTTXJsOHJPYmVac2Fwdw?oc=5",
+        "https://www.foxnews.com/politics/first-showdown-race-lindsey-grahams-senate-seat-puts-gop-hopefuls-test",
+        "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQRE8yeWpuSVJzSXpjWFBMenFjM0JjU2lCa01Za1VxdlZ2dWlzcUd5bUtWbVRkZEJySUYwQ3EtM3ZSNGdUUWd4QmFTLS1uSUUxQzVYM2kyT1RvTk1yUE5jaEQwbGVCX1NlSTd0VDVKMVNmUmJTTHRrVG9IeXhJVDk4YThDLUlJb18wR3JnbUlKOEpXTHdMRl9yZjRIWDRfak9iemRZOXlpUGZ3eDg?oc=5",
+        "https://news.google.com/rss/articles/CBMimAFBVV95cUxPMlVHSFhWRmt1SldIS3o2bzVyd1VmZjZGcnpDVVY2QVNqWXNIZWxrRGxTRkdmbU40VVRHQl84Q1hiTk82NTYweWEyeEViWTFEMVJtMGFLZERwRk1rMTZzcG9GYzhILWxMVkVyQjZIZ01lX0steDdrNlA4TzFBT3c3dktsQmRqZFh1aFJBZlJuS1J3ZFNaY3BPTw?oc=5",
+        "https://www.washingtonpost.com/politics/2026/08/03/black-voters-divided-progressives-are-pivotal-michigan-senate-primary/",
+        "https://www.politico.com/news/2026/08/03/michigans-gop-governor-primary-john-james-01020176",
+        "https://news.google.com/rss/articles/CBMixgFBVV95cUxQRGVteWVjUXN0UWpVME9BMjdUbzZpWXVCQW9iY29jU1hwaWpKbWI1am0tWWExZFEtcVdnVUZvc0JlSkFNXzRkanc4T0lsMnVCUWR5cUVFUTNXOFMxbFhtYUlrT0p6ZW1UYkFqc3owNEl6ZzFPWVk2bXBmN0F5T3ZUTUR3MXlwMVJ4Wm92SUJfTF92X3JZWFJQVlMya3c5QndaTWdJV2FzSE91NmJ2YnN1MThvNXhMT0doUUpIQnRGWUM4Ulh4OGc?oc=5"
+      ],
+      "urlsAcrescentadas": [
+        "https://thehill.com/homenews/campaign/6006366-michigan-senate-poll-rogers-stevens/",
+        "https://news.google.com/rss/articles/CBMigwFBVV95cUxQdTZSWjFqbmVDdzdDcFhBQ01CVU5oWEJGOEx0SHRnMWxYMk9MYnV3SXlWTVRyY3JLUkZLTTRjQXNPNVdLYzhQeDFCeFdXc3NuRnczNGhKQmxIcHZaaEg2RWNsNjVFWU5rcXFPN3NVUGVkelZHSDRtMi1BSmpmbzRVcHpDSQ?oc=5",
+        "https://www.foxnews.com/politics/socialist-house-candidate-says-he-agrees-republicans-one-issue",
+        "https://thehill.com/newsletters/1230-report/6006046-anti-weaponization-fund-trump-allies-ends-blanche-confirmation-ariana-grande-health/",
+        "https://www.nbcnews.com/politics/congress/senate-leaders-reach-deal-avert-shutdown-2026-elections-rcna590564",
+        "https://www.cbsnews.com/news/senate-government-funding-midterm-elections/",
+        "https://news.google.com/rss/articles/CBMifkFVX3lxTFB6MFVXc1FKS056enNfSkhILUJhaDR0RTNqRENuRi1TYTNtbkxTeG5HNlpvVW9PSHl6a0FOMjhTUnJsVEpYM3dmQUJKNEg1czU3YnhJTF82QjgyU3A2TThqNkM5eHVGMXpPa2ZxRERqVHpON1BkR2N1aWk4cnBGdw?oc=5",
+        "https://news.google.com/rss/articles/CBMioAFBVV95cUxPUkdXNjVtRDJnWExmWEZEN1ZUWG10OXJUZXlma1l3SXlLelNvSEhqc0VTVWlwZHUzQUlxdUM5b3pSaU9CdUhfUUIwcThINko0MjJzbXBGV1NPa0ljU2xPUUVNVFYtOTZyZDQ3ZHZuY1g5TGZFZXhuc09UZVZZaWxocUYxZmhqLVdRUlVTOVZHNWhzQ2pkR2ptay0wNW5zUmpB?oc=5"
+      ]
+    },
+    {
+      "data": "2026-09-03",
+      "regeradaEm": "2026-10-05T22:09:50.108Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-09-03T02:28:43.615Z",
+      "fetchedAtDepois": "2026-09-03T19:20:13.425Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 10,
+      "urlsRemovidas": [
+        "https://www.nbcnews.com/politics/2026-election/trump-says-will-campaign-republicans-35-races-ahead-midterms-rcna595807",
+        "https://www.nytimes.com/2026/09/02/us/politics/democrats-defections-internal-feud-midterms.html",
+        "https://www.nytimes.com/2026/09/02/us/politics/midterms-nepo-baby-shaheen.html",
+        "https://www.newsnationnow.com/politics/polls-michigan-senate-race/",
+        "https://thehill.com/policy/defense/6067742-trump-iran-strikes-escalation-midterms/",
+        "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNX05pSXZKUzltSlNrN1RLSEluYW4tUmU1NF9ZWlFXRC1RWWY4Y1ZHY2hjNXFMbFpHbUtBQzFFc19DTWdSSHVDNkI5LVpzWGdoZFNzQy14VTRlVW1obUhUa2VPaEpmTmxjNkhUSFFDNVZ1NXlfMURtQ2lRRE1CZXR5cXlaUUNYYkMwSkR6ejVuNGFramtGaEt3QnZobDkxTVRyS01YX1RGMXV3aF9HaDRLS2VVa1N2SDd3?oc=5",
+        "https://thehill.com/homenews/senate/6067615-thune-gop-senate-majority/",
+        "https://www.cbsnews.com/news/texas-dark-money-talarico-complaint-paxton/",
+        "https://www.nbcnews.com/politics/politics-news/progressive-senate-candidates-rack-primary-wins-even-get-outspent-rcna595769",
+        "https://www.washingtonpost.com/elections/2026/09/02/senate-majority-leader-john-thune-warns-republicans-could-lose-senate/"
+      ],
+      "urlsAcrescentadas": [
+        "https://www.washingtonpost.com/politics/2026/09/03/gop-led-house-scraps-two-weeks-work-ahead-midterms/",
+        "https://www.washingtonpost.com/politics/2026/09/03/what-watch-when-voting-midterms/",
+        "https://www.foxnews.com/politics/blue-state-governor-candidate-claims-met-satan-person-resurfaced-podcast-episode",
+        "https://www.foxnews.com/politics/dem-senate-nominee-changes-tune-ice-after-vowing-not-one-more-dime-agency",
+        "https://www.nbcnews.com/politics/2026-election/elon-musk-super-pac-midterms-republicans-rcna595909",
+        "https://www.newsnationnow.com/politics/missouri-gop-house-candidate-accused-of-trying-to-plant-drugs-on-opponent/",
+        "https://news.google.com/rss/articles/CBMimwFBVV95cUxQWHhrVWRDYmtrZzM0S2JxTTMzeFAzakpZYTM3ckx0UDVVUWlpT0I5OG1HejgyRnZGaHRvbGpNakZBREFpYmhETGdxdEVkd19RN3BfcUoyVlFkVzZ4VWlpd180bUo5cFZQMTBYWHZBdkZfMjhnLVNmWUpRVExoSGxGcTdJSkhlN2tEUE9NVlB6aUlHaE8tTENaTDhQQQ?oc=5",
+        "https://news.google.com/rss/articles/CBMiswFBVV95cUxQakxzT1U5YTR6TEp0cjFmdFphWjhOQzBoZkV4dUJwdVhVcGJUTXNBVHNsLTlWYWdxdk9hOVZUQTlkU0sxem9KX01JWVlmMENUVTNZcUM2YW9scmdNaWhrOUszUHZqMGxVSDBGQXVOTFFjT09pS2ZGZzNjV0hkSGVqUVZ2YUhSa0twdTRySHY1Q2IzZlh3U09yYzFMNjMtekxBT01RbEtSQnVUSE91U1UzTHBOMA?oc=5",
+        "https://www.npr.org/2026/09/03/nx-s1-5954541/election-security-midterms-dhs-democrats",
+        "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNcVFpbFl6ZEtkOVZlOWhMbXVuTzBmaFpGMkg2clM1cGZxQVBBV1BUOTBpUnRxM0NCOWZleWF2RV9XbjIxRW5OcGtNUmJaTEpsU3kzNXFjMTZfVlA1UHNWVklPQy1EQVpvbDdWSlNQQnMwQjVNdlI1LUhqN2MxZFJ6ZGNMLWVvTkhzRWxZT1lZeXpYRVUtVVhUTklGa1kyQWdjLXdQdEVvQ2NfVTZhaWU5RTdJVmlPdmxn?oc=5"
+      ]
+    },
+    {
+      "data": "2026-09-04",
+      "regeradaEm": "2026-10-05T22:09:50.112Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-09-04T04:48:07.439Z",
+      "fetchedAtDepois": "2026-09-04T19:20:13.478Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 7,
+      "urlsRemovidas": [
+        "https://thehill.com/homenews/administration/6070786-trump-condemns-missouri-redistricting-ruling/",
+        "https://thehill.com/homenews/campaign/6070660-maryland-supreme-court-redistrict-referendum-back/",
+        "https://www.npr.org/2026/09/03/nx-s1-5955822/voting-citizenship-lists-dhs-uscis-lawsuit",
+        "https://www.politico.com/news/2026/09/03/missouri-gerrymander-paused-2026-election-01064420",
+        "https://rollcall.com/2026/09/03/missouri-and-maryland-high-courts-hand-democrats-a-pair-of-redistricting-wins/",
+        "https://news.google.com/rss/articles/CBMihAFBVV95cUxQci1UckpMV09GWU5CY3VPWGxobnZnOEh6akZLb0syV3A1bGd4Zi1sSEpFajZ2YTc5UnpBSHpsejQyQnJHRFdQTkIxYlZUb1Rfak43bUFzMjhzc0trZVQxNkRaTWZxdENhUWFVVGMxSGk3N09CUkIxTnMyWTdidmFpb2h2TEk?oc=5",
+        "https://www.nbcnews.com/politics/trump-administration/justice-department-usps-supreme-court-action-mail-ballots-elections-rcna595924"
+      ],
+      "urlsAcrescentadas": [
+        "https://www.nytimes.com/2026/09/04/us/politics/josh-turek-iowa-senate-race.html",
+        "https://www.theguardian.com/commentisfree/2026/sep/04/donald-trump-winning-midterms-us-president",
+        "https://www.theguardian.com/us-news/2026/sep/04/north-carolina-mail-in-ballots-midterms",
+        "https://www.newsnationnow.com/politics/insulin-price-cap-bill-house/",
+        "https://abcnews.com/Politics/wireStory/midterm-mail-ballots-start-voters-litigation-trumps-order-136193718",
+        "https://abcnews.com/Politics/wireStory/flock-surveillance-cameras-become-midterm-campaign-target-voters-136193735",
+        "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOM3pFa1pMajU5Uklha3FVd1FpZHNaWDZUeDBNMkt1OXN5SERWOEN3NHVKSU9UckF6WVhMcnpfaEEwOXYxNlFLMVZwMUpWNVBZZVBwWXkyTGozeUx4QW5Ib2JFal90TW9lYUM5dGZuQlhBVFZ1akcyS0syYWVBOFdCQlFnWjRLeWdwNGlJ?oc=5"
+      ]
+    },
+    {
+      "data": "2026-09-05",
+      "regeradaEm": "2026-10-05T22:09:50.114Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-09-05T15:28:44.321Z",
+      "fetchedAtDepois": "2026-09-05T19:20:13.987Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 3,
+      "urlsRemovidas": [
+        "https://thehill.com/homenews/administration/6072768-live-updates-hegseth-eyes-driscoll-replacement-missouri-asks-to-restore-gop-friendly-congressional-map/",
+        "https://thehill.com/regulation/court-battles/6072940-missouri-redistricting-gop-map-supreme-court/",
+        "https://news.google.com/rss/articles/CBMinAFBVV95cUxNdjdmRWh1QXE4cjhXWk9jZWk2bng1SjZpRVgxcnFQQTRGMS1WUXZKUzJLZnlfNFVpNmE3V28xbkc0Sk1feVFvYTV3ZkRKWkw5T1dNVFIxYURFckN1cFkzalRPNHRBaUNTQlE3MVVZM3NSSC13Mlp2WFdQRTJlS1c1bGJQSTVtdEJNV244ZnRfbk1mRTJKVS0wZ1BEMlQ?oc=5"
+      ],
+      "urlsAcrescentadas": [
+        "https://www.newsnationnow.com/politics/missouri-supreme-court-restore-gop-friendly-congressional-map/",
+        "https://www.npr.org/2026/09/05/nx-s1-5913671/ai-data-center-campaign-spending",
+        "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQRlhIVWVDVDhvcmh4MFZudThlN1paNDl5dFM5SGhyaFMxY1ZNOFNXQTlqRHQ1M01ENm16N2ZWRjlWNkpTZ0VWck9pVEJvWWJSNzRQSFFQMS1kOWNwYkJMeDFuTnJiOURIdThwTXNXU0FRY09wc09HOXF1bDdkaVVnMnFuZk91ZEVzUV9wZ2xrYjNtZW5QTDBtX2VVaFprT0NwX0JRMTVCMWc?oc=5"
+      ]
+    },
+    {
+      "data": "2026-09-06",
+      "regeradaEm": "2026-10-05T22:09:50.116Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-09-06T18:59:54.504Z",
+      "fetchedAtDepois": "2026-09-06T19:20:13.793Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 1,
+      "urlsRemovidas": [
+        "https://www.cbsnews.com/news/trump-10-million-ken-paxton-first-major-contribution-midterms/"
+      ],
+      "urlsAcrescentadas": [
+        "https://news.google.com/rss/articles/CBMihAFBVV95cUxOMFgyWG5LZGlDUVlLM2NmY2d0RXk2VmdSN1RiUktkSG1qcmlfMXY4YzlwYXpaa2RPM2h2cEZMcjVRdkx5UEdXdVlMcFRNSnMxaEF0SjhwZVhTS0ZOM3UzdHVHR2hFb0pNbFd3YUNfRGV3NW5jVGQxY0llSGUzS3hKT25YZnI?oc=5"
+      ]
+    },
+    {
+      "data": "2026-09-07",
+      "regeradaEm": "2026-10-05T22:09:50.118Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-09-07T15:03:39.334Z",
+      "fetchedAtDepois": "2026-09-07T19:20:13.398Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 6,
+      "urlsRemovidas": [
+        "https://thehill.com/homenews/administration/6074261-live-canadian-tariffs-loom-us-iran-strikes/",
+        "https://news.google.com/rss/articles/CBMinwFBVV95cUxPWHNQbThINkZTd0M5Zi1aVTBMNlNNa2NFeFhWaWwwampJc0c0T1ptcVRDemJGX3owMm1zRFZmQ1BQaWdYbVRJMk9nTUhDVEpoc1h5LTZ0QmIwRlFZQ2tYV0RFZUpLVk5rY3lLSHVQMmZDOE1udEZyVTc2eUIxV3F1SW05T2lkUWtBLWYzZkRaWDhvaTdXX1ZNRGhZYTVUZGM?oc=5",
+        "https://www.theguardian.com/us-news/2026/sep/07/republican-midterm-convention-trump",
+        "https://www.washingtonpost.com/politics/2026/09/07/california-progressive-tries-novel-path-fight-against-gop-swing-district/",
+        "https://www.nytimes.com/2026/09/07/us/politics/fact-check-midterm-ads-jeffrey-epstein-files.html",
+        "https://www.npr.org/2026/09/07/nx-s1-5955739/with-the-midterms-fast-approaching-campaign-season-begins"
+      ],
+      "urlsAcrescentadas": [
+        "https://www.newsnationnow.com/politics/midterms-enter-final-stretch-with-control-of-congress-on-the-line/",
+        "https://thehill.com/homenews/administration/6075049-trump-attacks-democrats-labor-day/",
+        "https://www.nytimes.com/2026/09/07/us/politics/midterms-key-races-to-watch.html",
+        "https://www.newsnationnow.com/politics/prediction-markets-regulation-draws-closer-to-supreme-court/",
+        "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQX1pPNkdJdEFkeWVzaVNnQlh2STA1STItVXpwZWl4VkdwVERRcU9qaHVOOW16VjVibUNTelhMeHd6WXNxQmZRTTU1MU9zRFBXam5pOFJ6MGpqZ1h0QVhpWGM2RnBUbXl3czFndEpkbmxGcDlLUGxpRnQtQkZzbTJfaUVyTUNjTUxVakVJUV9RWDJhazd5cXowS3FMbmxYSzg1dXZBVVRveVN2ZFd1U2lJSnU3MmhuWVhNMy1uVjJpWlQ4RXNqUlFycA?oc=5",
+        "https://news.google.com/rss/articles/CBMikgFBVV95cUxNSC0wZVVxbVROaG9nV3oxbG9OMDNCR3kxamYwOC1iemdqRWFZLXpDZ1RBSGdJaTdVQ3JvR3NVTjFzZUJtbnR6SXhkOXJ0ZGNIQ1ZMZUxFcm95UllpdTJJNHZlVUNMb1JoWFJHSTI2NDBzQzhWTkw1WjdGY2F1VEtBMGhMS1JlYWNtSDh0RGtoX2JCUQ?oc=5"
+      ]
+    },
+    {
+      "data": "2026-08-08",
+      "regeradaEm": "2026-10-05T22:09:50.120Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-08-08T16:39:57.750Z",
+      "fetchedAtDepois": "2026-08-08T19:20:30.872Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 1,
+      "urlsRemovidas": [
+        "https://www.nbcnews.com/politics/congress/senate-passes-short-term-bill-prevent-shutdown-midterm-elections-rcna591359"
+      ],
+      "urlsAcrescentadas": [
+        "https://news.google.com/rss/articles/CBMivgFBVV95cUxOT2EtQ3FrXzUyMXlVYXhBN0o2NEd5UDdPTVdDdGU4d2xsYWhBTWNTS0FYNUtMUzhjc1RZaE5LcVliMTdqWGcwa1BGRHdpQkIwYTdFWnJfRzdpcEwtbURQSmU1ajY1TFEzdjlXSU1yNEdSS29hUGZpckJmN3F6WDFoOE5LMHdhNWtrMWR5S01VbXhkNlJrelNiRXhfSGxxb0FORnlTa1k3MDdveldrVmhUTm4zSUNydGNvcWZFQXRB?oc=5"
+      ]
+    },
+    {
+      "data": "2026-08-09",
+      "regeradaEm": "2026-10-05T22:09:50.122Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-08-09T15:40:49.443Z",
+      "fetchedAtDepois": "2026-08-09T19:20:38.596Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 3,
+      "urlsRemovidas": [
+        "https://www.politico.com/news/2026/08/09/wisconsin-governor-race-hong-crowley-electability-01030198",
+        "https://www.politico.com/news/2026/08/09/south-carolina-senate-darline-graham-trump-01029927",
+        "https://www.npr.org/2026/08/08/nx-s1-5925869/gop-controlled-senate-delivers-win-for-trump-with-blanche-confirmation"
+      ],
+      "urlsAcrescentadas": [
+        "https://abcnews.com/Politics/wireStory/trumps-immigration-crackdown-looms-minnesotas-bruising-senate-primary-135500626",
+        "https://www.foxnews.com/politics/outsider-house-primary-winner-sets-sights-flipping-longtime-gop-seat-back-dems-ready-change",
+        "https://news.google.com/rss/articles/CBMilwFBVV95cUxQN3E3dUV4UVkyVTB5MnJxUUd3WlZtTFZDMlNZQmZNbWpsUEpyWldERkdjVnRsOHgzSG5sMFc4VlRKMU9jaW81WXRvaVYwMTUxaVpnV0xZc04waWp3aW5aWlA4dWhvbWM3Sjd3dlhZWDRFZ1RHcnotSnNOMVhtTGNsa2EzTVB6SGM5YjVhcTA1YVBrOXlXV3RB?oc=5"
+      ]
+    },
+    {
+      "data": "2026-09-09",
+      "regeradaEm": "2026-10-05T22:09:50.123Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-09-09T17:01:22.313Z",
+      "fetchedAtDepois": "2026-09-09T19:20:13.546Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 6,
+      "urlsRemovidas": [
+        "https://news.google.com/rss/articles/CBMimgFBVV95cUxPY2MxSW80T25wMVRIYWFsejg5Y01nSkJDNzVzb3l1ZkJ2VEhJQ2JIVnNtdE5lcmRmRGxCNzlMYnRIbU5ZU2hZU1NyTGVKOElPX2hKd2Vkdm9kUjBnMU1SWkc4c2xwdGJsTjBGckZCOHZsYXZaT0dVbUJHTWVGZV9NTERLTUdFVHZrc05va25uWXFfYzVLZGRZUGRR?oc=5",
+        "https://www.nbcnews.com/video/missouri-voters-face-confusion-over-congressional-map-ahead-of-midterms-269551173948",
+        "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPUDQzVTlTUmRiM2hfUTZwNXVZUzVfc3NZNEZyU0dzTU40MXR4cl9NdFNlQXJBRE5pbExTNGlOUnFZckJjUklzV1JiNHJKLWFSLV9GVm5ZaVBRSVN4SDNSVjhDcnI5akQtcWhjSGZ2ZVlMU19SUS0zaXZxOGMyZWdTYTBRelpObmluRDl3SWQ1MG9mWnZ5c2ZFR0JSQXZLaUl1UHJvSGdub3Nsbjg?oc=5",
+        "https://www.theguardian.com/us-news/2026/sep/09/texas-brandon-herrera-republican-house",
+        "https://thehill.com/homenews/campaign/6078750-michigan-senate-poll-rogers-elsayed/",
+        "https://www.nbcnews.com/politics/elections/missouri-court-opens-contempt-probe-republican-official-redistricting-rcna596803"
+      ],
+      "urlsAcrescentadas": [
+        "https://www.nytimes.com/live/2026/09/09/us/rnc-trump-midterm-convention-updates/how-republicans-and-democrats-see-their-advantages-in-the-midterms",
+        "https://thehill.com/video-clips/6079217-watch-live-donald-trump-rnc-midterms-convention-dallas/",
+        "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPLTdZMjRUTGFCWWhVNm5CZVhkTzJ0ampFbjBGS0w2bVUyN2E4cjhTRHZMS2RHMk5WX1lMYXMwVnE3clJuQ18xekVwUVJXZTZZY19hQjRTdFVfbmFLSHJHTV9hNzZQWUNQQkZvZTJoOVk4LW9SOHpfeS1uZldXWFF5V1dUS3kxTWJFSmtWRWMyVjJ3cEUxRmdNTi1qOEZlcENyRFJ4LWtnSzZub0tISjdrb1phNGNMWk9STkVRcDBsU0NacEk0VXItUHNTd3lGSjhJRmRvSlktNnFtZl8yLTNn?oc=5",
+        "https://www.nytimes.com/2026/09/09/us/politics/trump-midterms-maga-inc-spending.html",
+        "https://www.foxnews.com/politics/missouri-supreme-court-threatens-secretary-state-contempt-intensifying-redistricting-battle",
+        "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOUWhoQ0o4cVNYLWY0dEtIMl9kQnFVQVJwUFdrcTF2Z0YwVktuMWVIa1RyVVYza3NwSE1aN3d3QVZGTDFWd3BsdnhBSnRZZ1VSeEFHblpEQ2Q4QlM0OW5CM1RkcVNxQ19wa1FEUk00ZVBHQXZWMC12UEh6djVRYXpEQm1DejM4cWJSUTItWlNSSHhTeHFFSnNKTENFRHZCSnJ6aTNqMFNpQ19VdXp6bFJ5OVhUM3MwelVwbnVTdS1KSXhSUTdySUtuRzdCRHdLd044RlZ1UnZB?oc=5"
+      ]
+    },
+    {
+      "data": "2026-08-10",
+      "regeradaEm": "2026-10-05T22:09:50.125Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-08-10T17:31:46.100Z",
+      "fetchedAtDepois": "2026-08-10T19:20:42.533Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 2,
+      "urlsRemovidas": [
+        "https://www.washingtonpost.com/politics/2026/08/10/primary-upsets-scramble-fight-control-congress/",
+        "https://www.npr.org/2026/08/10/nx-s1-5925152/lindell-minnesota-primary-elections-trump"
+      ],
+      "urlsAcrescentadas": [
+        "https://www.washingtonpost.com/politics/2026/08/10/how-economy-is-hurting-republicans-midterm-chances/",
+        "https://www.politico.com/news/2026/08/10/montana-senate-bankhead-midterms-01031177"
+      ]
+    },
+    {
+      "data": "2026-09-10",
+      "regeradaEm": "2026-10-05T22:09:50.126Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-09-10T15:21:23.030Z",
+      "fetchedAtDepois": "2026-09-10T19:20:13.471Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 7,
+      "urlsRemovidas": [
+        "https://www.nbcnews.com/video/supreme-court-rejects-missouri-s-attempt-to-use-newly-drawn-republican-congressional-map-269621829784",
+        "https://www.theguardian.com/us-news/2026/sep/10/trump-5000-midterm-cash-dividend-response",
+        "https://www.foxnews.com/politics/supreme-court-again-blocks-missouri-from-using-trump-backed-congressional-maps",
+        "https://www.washingtonpost.com/politics/2026/09/10/pollwatcher-seven-simple-tips-understand-midterm-election-polls/",
+        "https://thehill.com/regulation/court-battles/6081621-supreme-court-blocks-missouri-congressional-map/",
+        "https://www.newsnationnow.com/politics/ap-federal-judge-allows-missouris-top-court-to-hold-contempt-hearing-in-redistricting-dispute/",
+        "https://www.nbcnews.com/politics/supreme-court/supreme-court-blocks-missouris-attempt-use-newly-drawn-republican-cong-rcna596857"
+      ],
+      "urlsAcrescentadas": [
+        "https://news.google.com/rss/articles/CBMinAFBVV95cUxQdHJ0MGt6LXhTcms2LTkxSWN1V1J2UVFPVnBtWjJnY04ydkI3WHp2UXYwOWFQMTFXTHMyMjc2S1Z1aFlmMjZ6UVk2TjlwbkhJY0Q2MFZPMno5RnRsNmRQMjNCSklwNWtGU2U5TEw5V1Y1Um1QRXZWTUdHd1pfSGVzenRKX2RVZjcxWkRHd2RaWHBleVF1bXR2YXZQQ1Q?oc=5",
+        "https://thehill.com/video-clips/6082172-watch-live-jd-vance-donald-trump-gop-midterm-convention-2026-dallas/",
+        "https://news.google.com/rss/articles/CBMihgFBVV95cUxONU14Yk9udVo3NE9fYVYzUmZxenVId2JSXzl2VjgzT3VuWS1aUERlUWI2NGJiU3ZFXzVpbGVVNjVFUzJiUWwwcUZwS1dPZnc2ZlZjYlhub1RIX2pjUHIxaW9zbDZ3bXhMc0xKWWd0VjRrM1M4UEIwTGs5bVVQcXBTOTNyb09TZw?oc=5",
+        "https://news.google.com/rss/articles/CBMiogFBVV95cUxQeU13MnNSZkJSaUhJNGZYY3o3ckVBZm5JYUR2Z0lHUzRBV1FTZWs3WmFzX2I5aS1xTDF6aDFyalVwQkEtbmNMOV94UzctaDlMcU0yVmVTYWpNNnNsbl83ZzVibi1lVlNCVDRlSklZT0NPVkRUaFJDWTdsLWduYlVzOXJ6UmpPZ21kQWRYMk1VdU1BRUdtYk1VZ3lHbGZ2SmMzUEE?oc=5",
+        "https://www.cbsnews.com/news/trump-dividends-5000-checks-rnc-midterm-convention/",
+        "https://www.theguardian.com/us-news/2026/sep/10/usps-mail-ballot-voting-court-ruling",
+        "https://www.nytimes.com/2026/09/10/us/politics/trump-dividend-5000-dollar-checks.html"
+      ]
+    },
+    {
+      "data": "2026-08-13",
+      "regeradaEm": "2026-10-05T22:09:50.129Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-08-13T14:04:21.520Z",
+      "fetchedAtDepois": "2026-08-13T19:20:21.362Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 5,
+      "urlsRemovidas": [
+        "https://thehill.com/homenews/campaign/data-nerds/6026856-david-crowley-francesca-hong-wisconsin-upset-polling-turnout-midterms-discussion/",
+        "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPWnJNUXhxanBTdGNlSVppMmE3U3h6M1huS3V2a1JXMnM3a1czWnJUNXB5MUNFQlNTSW41Yk8wRzZYWDMtNWJGakE3UUZHRnQ4TVdqVTFxcGlKbVBLM0J0dVU5Y04tTnBXbFlRcjJxRVlwdFNxaVFJTW9wZUtHZll5cGxHNFFLZGRNb3Z3RWxqZHdXaWZlaFVpbUtSNDR5ekIwVmYta25HZWFyOHA5c3RLQThCUk5PLW8wdTRweGI4RTc?oc=5",
+        "https://www.nytimes.com/2026/08/12/us/politics/crowley-hong-wisconsin-governor-primary-polls.html",
+        "https://www.foxnews.com/politics/fox-news-poll-new-matchup-same-result-maine-senate-race-stays-locked",
+        "https://news.google.com/rss/articles/CBMikwFBVV95cUxNeXdjSTFsdGFLcFVQVDlSRnM4Rml6Z0YwM0FGdjRrdlhHbHpsc1lsM3g2dGxDM041dXJuZW9CRVM5blRObjNNTUJ5eHFOYkZmbTdXZnNCQ1BmNXduOUVuY1htRDlkaVBiU2ZHZlN5am9mNUVuVE9tMGtpVFN5d2NHQVFCUi00OERaRzY3YUliT2RsSjQ?oc=5"
+      ],
+      "urlsAcrescentadas": [
+        "https://www.foxnews.com/politics/10-house-incumbent-lawmakers-who-saw-2026-re-election-bids-end-primary-defeat",
+        "https://news.google.com/rss/articles/CBMizgFBVV95cUxOT3h0Z082Z0poSEtqaThWRmw0UGZjSHlfRlFWdnAzbkZmMjdpQ0hSb0JzNkRrRVlsVFhYNzNZWHBkSC1lZjhnX3A3YUZDS0Q3emdUTXhWc2xNOTlodkNsbTVQU3ozOVp2NVFzVWk5ckg4OVlVSnRfRjQ4SHJhdjB1VUxGbnZKdkhfVU9NeG9SN09CUG1QN0Y5Sm1Mb0ZOWGt0em9IbjVab0wxRzhBbmZVUXB6aVlfRkNRWk9YVU5KWS1JZ0Qtc2NiVEFFckVoZw?oc=5",
+        "https://news.google.com/rss/articles/CBMingFBVV95cUxQREpiV3h6NDc3azljbDFzTDlpOTdsZkNhRlZBRHlORVhfbHZsbjZIVkpGS2Fnck5JQ01XbGdUUk1nbFZPekFYLWM0VlZRS1RWNWx4VGxNaUVsSmNuSGdMTUZ6X0JCS1h4aGthaGhKNDhGZDB1MWNDbzU4ZUVSajNQX0dvZlRkaHkxbFhzX0ZLRzRVaVd6TmZBbG0tYTJLUQ?oc=5",
+        "https://news.google.com/rss/articles/CBMiggFBVV95cUxQelZOSjR3cU5vOVB4anhwZ2NETUNTRXVKLVhqdG1qSVFJeEFfR0JQTjJldWVyWHRjdzFNWUQ2dmF0X3MxbnZLOFZRUGFFSjFlYllkVW1oZXdqVy1CeGZSdXF6Ml9vOGNLS0RWdktpaTN1S3dCZ1ZEYWdpOTFrcXY0SHpn?oc=5",
+        "https://www.cbsnews.com/news/lisa-demuth-minnesota-republican-governor-primary-projected-winner/"
+      ]
+    },
+    {
+      "data": "2026-08-14",
+      "regeradaEm": "2026-10-05T22:09:50.131Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-08-14T16:30:26.178Z",
+      "fetchedAtDepois": "2026-08-14T19:20:09.625Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 3,
+      "urlsRemovidas": [
+        "https://www.foxnews.com/politics/fox-news-poll-senate-battle-looms-michigan",
+        "https://news.google.com/rss/articles/CBMihAFBVV95cUxQZkFrbjdJcDc3SHlUcDM4a3U3amtiMjZPalA3WEZ3R3dxaGVJWmJzLU5GR2tRQ3htTGdMOFpoaWNkOGJjeGZjR21XX2ZIZ19sb1psQU9PcGhVYmVZRlcwWFFwa0gwdmdWbTBtVkNLNFpJbG9QNkRoRkxpR0NpTHdoM3ZtU1fSAYoBQVVfeXFMUFVEWnduLXhva19wSGQ1RFFiN2E5WXBaZ09sNzhmMlBGdlEwNGo4RVJ0LTIwZkw2ZHVzRmJtRFdSOGgwd0duTlRYNGdOeDJldW0tR0w4ZjhHSWpNZm1CTnJBeWtJcHA3Vm5kalZqdTBWTlR6VEhqYWRfOWhIenJ6dTNkRDJyd2tIMVNR?oc=5",
+        "https://www.axios.com/2026/08/13/democrats-old-age-larson-bronin-young-primaries"
+      ],
+      "urlsAcrescentadas": [
+        "https://abcnews.com/Politics/wireStory/us-rep-russell-fry-endorses-sen-darline-graham-135652151",
+        "https://thehill.com/homenews/campaign/6030313-fry-endorses-darline-graham-sc-runoff/",
+        "https://www.foxnews.com/politics/mn-senate-candidate-ripped-blaming-walz-fraud-despite-being-his-2-knows-shes-cooked"
+      ]
+    },
+    {
+      "data": "2026-08-15",
+      "regeradaEm": "2026-10-05T22:09:50.134Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-08-15T15:50:27.800Z",
+      "fetchedAtDepois": "2026-08-15T19:20:10.539Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 0,
+      "urlsRemovidas": [],
+      "urlsAcrescentadas": []
+    },
+    {
+      "data": "2026-08-17",
+      "regeradaEm": "2026-10-05T22:09:50.137Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-08-17T18:34:58.392Z",
+      "fetchedAtDepois": "2026-08-17T19:20:33.210Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 3,
+      "urlsRemovidas": [
+        "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNWWQ3elk5WU9kU1VhcDBNVWsxU2t6eEhBMW1NT1gzM1ltUkFqZmxjVUdpQWttQXpkVEJzUWNWNWJKZzJJbkRNOHdLbEdKWWxncHVTTllTQVJCQ1dFTklwVGZJZDlBbFpEOTNaVUh3cVNGSXE3RHMyZkhZWlhueHpiZkNERWdvbHVFdDd0bS1tWnVwMHAxQ29JZFJWTmZkQW14M1dlbzVZNGxTZnpSRjg0N2oxZmpmdHppV0pBbTY0VkM5UQ?oc=5",
+        "https://news.google.com/rss/articles/CBMiigFBVV95cUxNVXFydGVvRzdTRl81VDBkcVJPUFdjU01nLUY2OVpRLVN4MGpodDBXNHRGVHFWTXAzOFpTMUVCdnMzeUhlTEVoU2F3N2h0SHFLVzA2LXdTLXhIQTZWZUxpeU5UZU1SbFlxTW9uTHZlWUdnMjgtczgtTFRwdW9RUGZWeUhMUlFmMm5GRWc?oc=5",
+        "https://news.google.com/rss/articles/CBMigwFBVV95cUxQbUJING1rR3d0M1IyRnN1QlE3Y3NCOGJnQnpBOXpJU2t4cTVTdzJ5QWFudjZWOS04S2o2MWxjR3d3bHdxSXpxNklGTlF1Y21QanpDa2xiUWFFWEJVcnV1Y0FLRHAzcDFmRk9yZURmZkVOcS1oT0xmX3VPa19HVnAtR0NuYw?oc=5"
+      ],
+      "urlsAcrescentadas": [
+        "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNdFdhaFdhSF9CQXBzRmxxemw0MVQwWkp6Wmx2YUtJMUVpWEVLN3VqRWgxT2dLM1UyczczN2xXUE5TYnp0bU5LckZtUU9iclZ4SE9UdzU5cU44SEtFZUttSFBKWlNvX0E4c3RoOVlCdjE3c0tvaVFSVlFrQjdtOGlfYW4yc3lHUi1UclI4WDRWRVh3M0JaSUoteUZITDA4aXlaN2hpeHl2cGotQ2hXVDhyQXNhYmVleVhn?oc=5",
+        "https://news.google.com/rss/articles/CBMiggFBVV95cUxPZmhMMmZ2aEcyTGxFejVfZE94YnZES2FpX3B0ZDNUVFBBZm1FSURVcFpNX2pTMWhrWWotbm5HYmVLM2VPME1hS0ZEbHZ1Vzl6dGVOZ2FTSmtVZVNxenN5MVJMMkNyT25nXzJmeEhQc0c3a2k2cWJHYnVXN0ZFbUQ5NkNB?oc=5",
+        "https://news.google.com/rss/articles/CBMivAFBVV95cUxPQlRDY0gwMld6U3RBcG1VLUdSNzVHdlNaaGxINFNQUGlRN2R2ODVLcHdacVJkZFNxQUlpSk43ZTJyUEY1aHJjQWcyXzMwQUQzUC1zX2hnV04wZGU3Y0pTOURfNF9oMHJrc2taUTRSSm14bms4U3RvTkZpR21LalVGS2stN3dFY0tCZm9yZmtBaDl1NG5mcmpuN2IweFdPNlp0WE82M2FBLUZDTnVkMHZtZld6VGdPNXd3S2Jocg?oc=5"
+      ]
+    },
+    {
+      "data": "2026-08-18",
+      "regeradaEm": "2026-10-05T22:09:50.139Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-08-18T18:36:17.199Z",
+      "fetchedAtDepois": "2026-08-18T19:20:38.602Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 2,
+      "urlsRemovidas": [
+        "https://news.google.com/rss/articles/CBMisAFBVV95cUxPdWVBUFRFWGdnWHZXV1BfRHhOQzZEMlpEUVJ4Q2lXOVlPQTdKeGZBZWlteGxkQnMyaUZGcEVXZjhqb3FtVF9zMXVIRFVMbzBNUXVMYm1raVhWd3QxNnFVWUZuSUw5S0ZESkFfZnhyR1lYeW1pc1doS3psa29qaWVjRzhaeEVsS1BXMFIwc1pkM3VfcWRDbG90cnFvYmt2cmNlbEgwWUJXVS1WcHdtbXVmNQ?oc=5",
+        "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPTlZKcV9yZUNsay1Ock1mSnhCS2lseGU2Q3ZHX2dlRUx6QkpHMFVmVGZVT3F2RkU3RzNhdjlyTEhTVXB6OXRIYTM3a2NGZklnTTBNZmlZNnRhWU9zNGdkY1lTaWNQblI4V1BnWFdSa3BjUGpvNzdDNGpwNU5VOHBwYXFMQkRjdk81?oc=5"
+      ],
+      "urlsAcrescentadas": [
+        "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQeE81dThzeEJ1QlZraC13cVhTb0NwZEUtNk5naFRGRVpMWWxuVjZVSlZ0bWs2LTZYSFNnOGZMcTU3R3VwQ2M0cC1GVmVYSkpEdEpMRWdHT3kwSnRINDVGU3dmZllPaUppS19UMG83cDJHRDR2LXpsbzRodE5BVDJ2WlY1N3dqeDUxNTB4NjZqa1NCVnNWcGtzajlzSE5yYjhvTXZZZ1lSc01sdw?oc=5",
+        "https://news.google.com/rss/articles/CBMimgFBVV95cUxQUTh6YUpyelpQbS1GVGtla1NCLVJEeVZncTY3Nk96aWllYWRoYjRCd0duUFpYVkxXWFk4R3BmSzBRQVdnLTNjWFpvaEI3RFNBM2tIUTF6Rk9mUV9CSTM2c1JQZXB0YzJZZkpVLXRLVWdzYWxNdGptVTZpZVNfTnVZTWx5QmJoaWxEWHJfVE44Um8wV3VoNjRrd0R3?oc=5"
+      ]
+    },
+    {
+      "data": "2026-08-19",
+      "regeradaEm": "2026-10-05T22:09:50.142Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-08-19T17:02:07.074Z",
+      "fetchedAtDepois": "2026-08-19T19:20:04.449Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 7,
+      "urlsRemovidas": [
+        "https://www.theguardian.com/us-news/live/2026/aug/19/mary-peltola-dan-sullivan-alaska-primary-election-us-senate-florida-california-wyoming--donald-trump-us-politics-latest",
+        "https://thehill.com/homenews/administration/6037487-live-updates-trump-crypto-canada-tariffs-primary-elections/",
+        "https://news.google.com/rss/articles/CBMimgFBVV95cUxOV1VfLTB1ZVFTSER4QkQ1WUY3VXlSTDlzazhnUTR0V3EzQmlrdm9pd3FNTGpNQmVOSFJ1ZTZ2Q19QbjkwSkNSdnFVV0hCZWUzdGt3WERkaWtNc0oxdGhWcjktbTdqTVExeFcyeVZzVzlESjZjS3NkMlNBSG1ZTGlKR3B6XzNzbDlDOF9XQnhrdzBBTUNUUk5hY3ln?oc=5",
+        "https://thehill.com/homenews/administration/6038507-cftc-innovation-committee-kickoff-meeting/",
+        "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQS3BlZzJzZVR6Y2RVMF9PaFR5bzc2NGgtSDRXNXZKUTFvU01DY3VHYXpBQWJHSVdBQ2d1bFRVT0xfWm5sX1o1TVBpcHZ2LWxlU2VlcTZlNHBlTWVqT29nWG5Na1VtcTdfY1llUGRQY1NCT2RrS2JCRFljQmZXTU1DcFc5NTFzN29LME5CWldxaG5DYWZxZkdra2pOMmYycXhXTms5V3JfVGs5ZElzelpWV0gwandqWFF6eDdWYW5PTWpuNWdpM0VjTWJsVlhMRjh1UXRZ?oc=5",
+        "https://news.google.com/rss/articles/CBMipAFBVV95cUxOb1lDZktxQ2pEVExkbWVDeEE1RHYtdS1OM0xISy1Nd01oTDBnYjR1c0ZGckhmcHRTeExxQ1ltZjduMXdFel9lUG9UdFhFZjdzYkdoQnBWUWZ0Yml5SG05TEduZDlqTmNYUnFqbTM5ZlRNRlU3NXBZQ3hhRlR0LTVFamkteUdSYjBVa3BZdTlFTk5aTGwwM09ZTE9NRUN5bS1rTFh4ZQ?oc=5",
+        "https://www.cbsnews.com/news/mary-peltola-dan-sullivan-alaska-senate-primary-results/"
+      ],
+      "urlsAcrescentadas": [
+        "https://thehill.com/homenews/campaign/6039515-ohio-senate-race-data-centers-husted-brown/",
+        "https://thehill.com/homenews/campaign/6039123-kevin-mccarthy-gop-midterms-concerns/",
+        "https://news.google.com/rss/articles/CBMifkFVX3lxTFBiXzRMUTI2N2c2dGFPVzB6YnRQMmFYQVhqUmczNVVXRklGUTRlR3ZNQjFsRmNHbmVMcF9NMW5wUENjcTNnRHZIaS0yNmh4MHJ6dDNORDRTdEhqZnR4OEQxMEplMnVXVkZwdlJ5bjlrQmtQQzROb2hDXzhRT0Z6dw?oc=5",
+        "https://www.cbsnews.com/news/democratic-primaries-progressive-wins-midterm-elections/",
+        "https://news.google.com/rss/articles/CBMijgFBVV95cUxNaDJZVEZ6U1JkTV9ZZkhrRE1tS0xPbndrQnlyWnFGNkNMbHBwUXJwMl9NZ250MU1Od2tSdEN3R1c2VnYtQU1QelZoWkdrenFsWGlxWDFILVJTM0d4UXM2VmM4UGIxb25QSXQtV1ozVjJ0b2ZJYzJ2MFEzdHZjSlZkYjR3R1k1eUJ5UUhETFpn?oc=5",
+        "https://www.theguardian.com/us-news/2026/aug/19/alaska-senate-primary-results",
+        "https://news.google.com/rss/articles/CBMiowFBVV95cUxOUFBPaFBMQ2I2bHliVUJfNnBVYS1GQ3Fib2l5NUN3TXVpbHZtNHBsa09samFUd21sbGhVQWdxc1lxYnVtLXlQUnFCZURiajBUckdRbXRVb2R6aFdPMzJzYmgyUnp4WEVSVzQwSHZpam5fdDAtZ3E2VjFkVzNDYXdXdlZITm1oQnk1UWE1RU9Bb3NpUjJWMHowNWQ3SjhvNDBidkU0?oc=5"
+      ]
+    },
+    {
+      "data": "2026-08-20",
+      "regeradaEm": "2026-10-05T22:09:50.145Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-08-20T13:48:15.105Z",
+      "fetchedAtDepois": "2026-08-20T19:20:04.417Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 9,
+      "urlsRemovidas": [
+        "https://thehill.com/homenews/administration/6040729-donald-trump-legislative-director-leaving/",
+        "https://www.newsnationnow.com/politics/democrats-lead-republicans-8-points-emerson-poll/",
+        "https://www.theguardian.com/us-news/2026/aug/20/mcdonalds-congress-affordability-democrats",
+        "https://www.foxnews.com/politics/luxury-travel-shopping-six-figure-salary-battleground-dems-ripped-phony-working-class-narrative",
+        "https://www.foxnews.com/politics/top-dem-group-reveals-new-congressional-targets-bid-flip-house-proven-fighters",
+        "https://news.google.com/rss/articles/CBMihwFBVV95cUxQSk12Z3pWTThFMng2NTNwS1NURVRKTkpiNE9RaEpnNEY1MHJ3bU1pejg0ZXJ0alF6UE03NVdpajVlbDloU0dxZVNUY2JPNjVWbGdZVHpKVldrQ2xnLWo4T1BmYjM1Z2o2NU01NjZKWFRobzNqUHFjdTNRdU5FbWo4UXB0X2VxWXc?oc=5",
+        "https://www.axios.com/2026/08/20/data-center-uproar-2026-midterms",
+        "https://news.google.com/rss/articles/CBMitgFBVV95cUxQMThrVU1Vc0ZNS0MtQzBteGNWNUpzbDYxVC1XRHRVazQ3bWVXUXBLZTJ3elZnbWRCSDhILS1zNDBiU2RpckItRWpZZ25sQXZ1YWN0aGxpcTk2QTN3N0lVOXZ5S2NSdFBINVRXbE9kRm5QUVk1alREZWIyNmpyWkJmbDIzRTJOWXRoa2VRUTcyQno3dWduZzlQdFppU3U5ME1VSUgyWGpKd3puZFBZMlBxa3ZRRmdZUQ?oc=5",
+        "https://www.nbcnews.com/politics/elections/mike-lindell-plans-pay-recount-losing-minnesota-gop-primary-governor-rcna593447"
+      ],
+      "urlsAcrescentadas": [
+        "https://www.washingtonpost.com/politics/2026/08/20/cook-political-report-shifts-senate-races-texas-iowa-leftward-toss-up/",
+        "https://news.google.com/rss/articles/CBMihAFBVV95cUxQci1UckpMV09GWU5CY3VPWGxobnZnOEh6akZLb0syV3A1bGd4Zi1sSEpFajZ2YTc5UnpBSHpsejQyQnJHRFdQTkIxYlZUb1Rfak43bUFzMjhzc0trZVQxNkRaTWZxdENhUWFVVGMxSGk3N09CUkIxTnMyWTdidmFpb2h2TEk?oc=5",
+        "https://www.axios.com/local/san-antonio/2026/08/20/texas-iowa-senate-election-races-midterms-close",
+        "https://thehill.com/homenews/house/6041953-house-ethics-jimmy-gomez/",
+        "https://news.google.com/rss/articles/CBMinwFBVV95cUxNQS1Pd3NERXoxMGY2RmJuUXBLUE85ODhxVXRWYjBWMXJGTWMwQVd1R3VoemlEbHp4YWJ4Y3F3RXFRUmp5dkZvTkNUVXhabWQtd2tUVUlIRlQ3RTNZTUt2ZzJETDN4Sm1oemxSVWpMR0RWZWhiNWdMU3dNY25TTV9nTUFtQWJrSDJuc2JrX0ZEeGI1WlhYS19jNm9YQ3NKRTA?oc=5",
+        "https://www.washingtonpost.com/politics/2026/08/20/republicans-notch-win-missouri-congressional-redistricting-fight/",
+        "https://www.foxnews.com/politics/trump-could-face-impeachment-democrats-seize-house-majority-gop-leader-warns",
+        "https://www.nytimes.com/2026/08/19/us/politics/heidi-overton-cassidy-fda.html",
+        "https://rollcall.com/2026/08/20/white-house-legislative-liaisons-exit-comes-ahead-of-tricky-pre-midterms-session/"
+      ]
+    },
+    {
+      "data": "2026-08-21",
+      "regeradaEm": "2026-10-05T22:09:50.148Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-08-21T18:13:26.155Z",
+      "fetchedAtDepois": "2026-08-21T19:20:30.644Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 1,
+      "urlsRemovidas": [
+        "https://news.google.com/rss/articles/CBMilAFBVV95cUxQZ0ZhWGZlU2pYdmYwbk9SNk9JMWd6aTN1SjNudktsVkFoWEt3T3FJR1RjTC1ZU3Q3YU9ReTV0WUJJQkdDOWpzTWJ1X0liWk91MlpFdmxvX2F2THY3VnBVRDlRQlZFY19fYjRrZDQ1UlN6TGRueERkdmNIQkVveEZHMjd3eFVlM0VFWVN6WDEzcFBDSzdt?oc=5"
+      ],
+      "urlsAcrescentadas": [
+        "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPSWdqdG1TZFVaM2ltTXBsSHlySmEtdldMMFBSRnZMbXJoZC1MdU15cUotaUZZV3lXSmZSVWtuT1NNUnFVOE54QWRleXdDSXpXczVWUElYa1REV2JTeFpSbU95SDd6UjRVaTRrZnlMczJObFlpQWdxSzBYOVlLMkRQeTVVZ2RLMGpWMERLOG5wYkg4MTZ6RzloVWNMMHZUdkNhWkZYaER0cEZBNHFnb2hRMDEtTWd1dHB6QnYw?oc=5"
+      ]
+    },
+    {
+      "data": "2026-08-22",
+      "regeradaEm": "2026-10-05T22:09:50.149Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-08-22T19:11:36.355Z",
+      "fetchedAtDepois": "2026-08-22T19:20:45.372Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 0,
+      "urlsRemovidas": [],
+      "urlsAcrescentadas": []
+    },
+    {
+      "data": "2026-08-23",
+      "regeradaEm": "2026-10-05T22:09:50.152Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-08-23T16:44:05.088Z",
+      "fetchedAtDepois": "2026-08-23T19:20:45.586Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 0,
+      "urlsRemovidas": [],
+      "urlsAcrescentadas": []
+    },
+    {
+      "data": "2026-08-24",
+      "regeradaEm": "2026-10-05T22:09:50.154Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-08-24T16:19:08.180Z",
+      "fetchedAtDepois": "2026-08-24T19:20:19.003Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 2,
+      "urlsRemovidas": [
+        "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQWlVKclpBSnpKYmJELVJ2bzNxMnh3ZHRKcWEyaFVQNTRmdTYzUUdYX29IMnU5NS1wdTF5VUh5NmlIWTJ2QkdGRlc3RUYzcHdkUVlGQkk5SFM4U0ZBUzFhajFGYmxPem5VSHFrRDBNaDV4QzNlMEhrY293dU02R0U0R2tWUkFYWHJ2cjdIVGZwT3FGWkJDQnlnZW12d1dnZnI1QkxxZVhfNGRIZw?oc=5",
+        "https://news.google.com/rss/articles/CBMimwFBVV95cUxNSFlpUF83dHRIOFJXU2xVTHhJbmswTF9qN3Q3LUZiVWZFM25Ua2kxakgxajhnSTlVZUdwaDJXdVhHT2JZcGRLYkp4cXpQN0lVMU43R1p5dnRTUHVyazlaeTI4VUVnYlQzdU5uNzZ2ZklJdEpCR0dvWWQzRWVHeEhsamdDdER3SndjQnVDeWowcDFKTUtKWlRTSzhhUQ?oc=5"
+      ],
+      "urlsAcrescentadas": [
+        "https://news.google.com/rss/articles/CBMiugFBVV95cUxPeTNqWWVGa3dUX1JfaFhmWXVGamhMZzhHNGxNQThUcXFaVy1WdFpDQk1DUFFEU2tKazlBWXRkT05wRG9fQXhuRDhEQ1dOM3gxX3o5UkJzQnc1Nm92QmJDUlF0c1BScktXV2E1aVZacDVVbzRIZ3RxMTI1U1hKSkZSS1FnVU1JZENlcFZsTlhkWnVJZjNaNlhWTUk2bk9Jdm1fRDFsckhHZDBGMGlwZlZRV0k5cFZmRVV4ZUE?oc=5",
+        "https://www.theguardian.com/us-news/ng-interactive/2026/aug/24/north-carolina-senate-race-hurricane-helene"
+      ]
+    },
+    {
+      "data": "2026-08-25",
+      "regeradaEm": "2026-10-05T22:09:50.156Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-08-25T17:50:07.933Z",
+      "fetchedAtDepois": "2026-08-25T19:20:01.420Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 2,
+      "urlsRemovidas": [
+        "https://www.theguardian.com/us-news/2026/aug/25/first-thing-us-supreme-court-midterms-mail-in-voting-trump-plan",
+        "https://news.google.com/rss/articles/CBMijwFBVV95cUxQTWlVZlp6bzcyalpvZUdkMEVzcmgtaHE1RnJGVkF3a0Fsc1kyTldoeDJES0pKektpaGYzeUwxSmpoelZwWlBGNlpaMG03M1hwWEtEdzZaTnhsSGZwek1zaTBZTGxzakVPbjZneWNKdGxTNDd6b1RuQXp0WmRfRE1hRHZLd0s5MUZSTjNfZERZOA?oc=5"
+      ],
+      "urlsAcrescentadas": [
+        "https://www.foxnews.com/politics/gop-singer-very-prepared-oust-dem-moskowitz-toss-up-florida-race-determine-house-majority",
+        "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNTVJiNFFLa0VoeDVRU3JaWVpPcG9fYmUweGFTellOVHN2VmpKSm5abzNZMExIUW9idF90M3hIVFg1bmZkTWZQZnFzeUIzZXpLdXhnNG5JVGV4amFfRkZ6VWU5bEtDYlhNRnR5T3pTU0w5NUphd0xQWlh0Uzc3Ri1wNGo5R1ZsVWk0TGZTekR0eWVUYmtzTjM5ZkRJWWpTRDBpOGhGQUZ5X2d6TnhfUVNSSkFRSWU5X2U1?oc=5"
+      ]
+    },
+    {
+      "data": "2026-08-26",
+      "regeradaEm": "2026-10-05T22:09:50.159Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-08-26T16:55:09.806Z",
+      "fetchedAtDepois": "2026-08-26T19:20:43.611Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 6,
+      "urlsRemovidas": [
+        "https://thehill.com/homenews/campaign/6052255-iowa-gubernatorial-candidate-rob-sand-kamala-harris-2028-presidential-election/",
+        "https://news.google.com/rss/articles/CBMiggFBVV95cUxNcWs5aU9sTUpyQmtqX1RibXVUalBINlNBSEE0VXJuYUdVVXZzdmVzZmlQSG11ckZnNEoyX2tJLVpUN3EtUHpHUmxNenRVajZjTFVCUEI3Qk14VlN6MndIZWVsR2p6ZWY3SmV3UU1SVjUzOEZrZ1VabTZNWEl6M3p4UnNB?oc=5",
+        "https://abcnews.com/Politics/wireStory/democratic-states-file-new-lawsuit-seeking-block-trumps-135974009",
+        "https://www.washingtonpost.com/politics/2026/08/26/texas-senate-race-talarico-seeks-depositions-that-could-damage-paxton/",
+        "https://www.foxnews.com/politics/seeing-double-second-dan-sullivan-advances-setting-up-bizarre-alaska-senate-ballot",
+        "https://abcnews.com/Politics/wireStory/republican-same-incumbent-dan-sullivan-advances-alaska-us-135960450"
+      ],
+      "urlsAcrescentadas": [
+        "https://www.foxnews.com/politics/trump-scores-federal-court-win-against-house-progressive-accused-assaulting-ice",
+        "https://thehill.com/homenews/campaign/6052692-jd-vance-troy-jackson-maine-ice-shooting/",
+        "https://abcnews.com/Politics/wireStory/maryland-court-rules-democratic-backed-redistricting-amendment-november-135978167",
+        "https://news.google.com/rss/articles/CBMihAFBVV95cUxQci1UckpMV09GWU5CY3VPWGxobnZnOEh6akZLb0syV3A1bGd4Zi1sSEpFajZ2YTc5UnpBSHpsejQyQnJHRFdQTkIxYlZUb1Rfak43bUFzMjhzc0trZVQxNkRaTWZxdENhUWFVVGMxSGk3N09CUkIxTnMyWTdidmFpb2h2TEk?oc=5",
+        "https://www.newsnationnow.com/politics/ap-maryland-court-rules-democratic-backed-redistricting-amendment-cannot-go-on-november-ballot/",
+        "https://news.google.com/rss/articles/CBMif0FVX3lxTFB2SDUySUFLMWVhSUs2clRzaDNONHptYndmM0FrWWhJUDd5R3RoYkJIakxoWkNGTERPVTk1TUp1aWZsVEx1azA0dVZRbmsxUmhScDNXUnJGa1hsZURBcWdVcnRrOHdFRVAxQWdqM3c4OXpnd2VfTVZaRmNMaXJZeXc?oc=5"
+      ]
+    },
+    {
+      "data": "2026-08-27",
+      "regeradaEm": "2026-10-05T22:09:50.162Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-08-27T12:48:27.731Z",
+      "fetchedAtDepois": "2026-08-27T19:20:34.480Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 6,
+      "urlsRemovidas": [
+        "https://www.theguardian.com/us-news/2026/aug/27/ryan-mackenzie-pennsylvania-congressman-resume",
+        "https://news.google.com/rss/articles/CBMilAFBVV95cUxQZ0ZhWGZlU2pYdmYwbk9SNk9JMWd6aTN1SjNudktsVkFoWEt3T3FJR1RjTC1ZU3Q3YU9ReTV0WUJJQkdDOWpzTWJ1X0liWk91MlpFdmxvX2F2THY3VnBVRDlRQlZFY19fYjRrZDQ1UlN6TGRueERkdmNIQkVveEZHMjd3eFVlM0VFWVN6WDEzcFBDSzdt?oc=5",
+        "https://news.google.com/rss/articles/CBMigAFBVV95cUxPLWtCRkJJSmRCWjV6XzZtdFJIMWYzQkNtWFAyUElrMUlpWmkzZnFPbzRXczJGdzZ6X0dzck9RcXQwamN4SmFwYWlfVjhCMHZoQkdEYTBEc3o5NDNEbUZGUEl3OFBBR3Y0NGFoUE9qOE5xY0pId2Q4alBtUU01ejBhNw?oc=5",
+        "https://abcnews.com/Politics/wireStory/maryland-court-rules-democratic-backed-redistricting-amendment-november-135978167",
+        "https://thehill.com/homenews/campaign/6053905-texas-rep-candidate-borrego-apology/",
+        "https://news.google.com/rss/articles/CBMiygFBVV95cUxOTFZ4dXVvMFpPUU9wZmRXaEhualdSdzQwV0xrTTMzeDd0cUFpcGtrMThMQVdGSUtQWm5fOVdWYlYzV3VWX1FTalpTYXBOVVgxQmlrclVINEpHSDI5WGhpRjFOVkpPQTNiNjhaRExUUzBITmRaQkhzbWNYZlEtUExRejhNeWdWV3NPOXFqYWdBZ0ViekZLcGZBSm9FTHc5YURrUGY1QzcwZkdMd2R4TjVDeWxiV2dRTkRQTDc1b2lJS05leC00UXhUVWRn?oc=5"
+      ],
+      "urlsAcrescentadas": [
+        "https://thehill.com/homenews/administration/6055367-trump-midterm-republican-voters-pretend-ballot/",
+        "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPX0dFSkZramUwaFBHYlZfYW5SMU1NVjBOemdKZlNpWUJodlJDUTlSb0FKOEJ5MDdGd0U4ZkJJQWZpa0NCUTJweWpmdlNaN3BSV2xubGFlRjJEbWVSTm56TTdybWtVMEdqU01XSG5nekZDTmdVek1KaTlYLXd5aWtrVDVnZV96T1BIWEtSeEJGZmJmRzNjWEp5QlFNblJLcmxIRThIWW1rNHRwVkllSGpQSTgzVzJsbmZ0QWUyWXNOTEYtekFYSm9fT2tXSGNfZERWb1R2V0NPRDZKUQ?oc=5",
+        "https://thehill.com/homenews/campaign/6055357-texas-senate-poll-talarico-leading/",
+        "https://news.google.com/rss/articles/CBMilwFBVV95cUxQUWp3QWhiV0QxOU5kV3FVWGl3bFNHZU40MzFIZHNNLTE5MU9hYWZWaC1KMnRIaWstZEMxQ3l5WTJCN01aSmhpeHR5MVd5eXVuSEVjZFRhUl9DNjZDVkZoOHMxOXRZWG1HX1BlOTROS1Rqem5rZENwNHZFeVVjbURRcGdjN3dVWnBuU1Q5cEZFTlhCb2Y2YVBR0gGcAUFVX3lxTE9HVVN4WDhqdVBxUW54STMtYkE3VDN1Q294dE5ibW1jdkVnZjBlSGhfZU1JekpGdTVON2t0NGFJdVBGbFFBMmZYeGVZTXJCNk5vTURsSWdFUjZVZVAzMEEtSUhub2Y1ZElmeVU1TThpZmw4dDZnNjhZYUFsUTE2S1JjTEhKU0Fwdi1fSk5zWlVPeDJGTC0xVGFBeEh1Mw?oc=5",
+        "https://www.nbcnews.com/politics/2026-election/wyoming-republican-governor-concerns-aggressive-doj-election-monitors-rcna594730",
+        "https://www.nytimes.com/2026/08/27/us/politics/trump-midterm-election-republicans.html"
+      ]
+    },
+    {
+      "data": "2026-08-28",
+      "regeradaEm": "2026-10-05T22:09:50.164Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-08-28T16:14:18.406Z",
+      "fetchedAtDepois": "2026-08-28T19:20:18.491Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 5,
+      "urlsRemovidas": [
+        "https://news.google.com/rss/articles/CBMitgFBVV95cUxPeWJUb2NCWWpfVXhKQmlzYm1XeFJyMnp5YjRoaEw0d19tSzU0ellXQUdEMy1BMl92MEZqZFlneFJPajJ1dUlGUEZxX3M5SldrdUxqUWJGajRxMlgxazRWMmdSakNqWW9YWGV0aUsyWjVRZzU2S0pVemlETnhBSzlDRF9yN0ZPVzZkc0xUNE1wSk5oVVZ0R2h6aHpVQ0l1M0syZ3k2aVFDNDdIbTJTYWVIakFZZGRTZw?oc=5",
+        "https://www.foxnews.com/politics/dems-derided-trumps-midterm-gamble-until-he-ended-up-winning-big",
+        "https://www.nytimes.com/2026/08/28/us/politics/wyoming-governor-objects-to-very-odd-doj-election-monitoring.html",
+        "https://www.foxnews.com/politics/federal-judge-blocks-trump-mail-ballot-order-midterms",
+        "https://www.nbcnews.com/politics/politics-news/gops-underlying-midterm-problem-politics-desk-rcna594787"
+      ],
+      "urlsAcrescentadas": [
+        "https://www.washingtonpost.com/politics/2026/08/28/wyoming-governor-decries-aggressive-behavior-federal-election-monitors/",
+        "https://www.foxnews.com/politics/election-fraud-arrests-begin-wh-takes-victory-lap-around-doubting-critics",
+        "https://news.google.com/rss/articles/CBMihAFBVV95cUxQci1UckpMV09GWU5CY3VPWGxobnZnOEh6akZLb0syV3A1bGd4Zi1sSEpFajZ2YTc5UnpBSHpsejQyQnJHRFdQTkIxYlZUb1Rfak43bUFzMjhzc0trZVQxNkRaTWZxdENhUWFVVGMxSGk3N09CUkIxTnMyWTdidmFpb2h2TEk?oc=5",
+        "https://www.foxnews.com/politics/kamala-harris-dives-midterm-fight-roasted-never-having-original-thought-life",
+        "https://news.google.com/rss/articles/CBMiggFBVV95cUxNcWs5aU9sTUpyQmtqX1RibXVUalBINlNBSEE0VXJuYUdVVXZzdmVzZmlQSG11ckZnNEoyX2tJLVpUN3EtUHpHUmxNenRVajZjTFVCUEI3Qk14VlN6MndIZWVsR2p6ZWY3SmV3UU1SVjUzOEZrZ1VabTZNWEl6M3p4UnNB?oc=5"
+      ]
+    },
+    {
+      "data": "2026-08-29",
+      "regeradaEm": "2026-10-05T22:09:50.166Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-08-29T14:49:48.671Z",
+      "fetchedAtDepois": "2026-08-29T19:20:32.522Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 4,
+      "urlsRemovidas": [
+        "https://www.nytimes.com/2026/08/29/us/politics/midterms-senate-race-georgia-alaska-texas-fact-check.html",
+        "https://www.nbcnews.com/politics/politics-news/elon-musk-enters-midterm-chat-politics-desk-rcna594934",
+        "https://abcnews.com/Politics/wireStory/wyoming-governor-requests-investigation-activity-justice-department-monitors-136040978",
+        "https://www.washingtonpost.com/politics/2026/08/28/wyoming-governor-decries-aggressive-behavior-federal-election-monitors/"
+      ],
+      "urlsAcrescentadas": [
+        "https://thehill.com/homenews/analysis/6057609-gop-campaign-centered-trump/",
+        "https://www.nytimes.com/2026/08/29/us/politics/georgia-senate-ossoff-collins-trump.html",
+        "https://www.theguardian.com/us-news/2026/aug/29/michigan-senate-candidate-mike-rogers-osama-bin-laden",
+        "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNWVd1dk9lT1M5cGU1TXZPa3B3REpyWC1BNFNwWlFuQUJpVXVIZm1NQ1VUanE0d09hbEEySXZkZmxMMUFDR0RYRWlZWVZVTUEyNzVoemE0V2h3UXliTE4xXzk0U2luTWpJdl9KT2piQ0RaYnVMZTgySm5kRHRMSkxHeEk0Tjg4V1ZUY3VpZG0tTWMtYjJrQ2ZkaC1IYkw3VTdGa2FXUnNOSDMzb2ZGTUdEOTVVMmNGcm01OVFpaVphcHo?oc=5"
+      ]
+    },
+    {
+      "data": "2026-08-30",
+      "regeradaEm": "2026-10-05T22:09:50.169Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-08-30T16:42:18.998Z",
+      "fetchedAtDepois": "2026-08-30T19:20:33.420Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 1,
+      "urlsRemovidas": [
+        "https://news.google.com/rss/articles/CBMiowFBVV95cUxOVXFkSEhsSGtZS0l6bE9FNW56OUdfUjk1a0pPM1dhOXI0U25Cbk5nN3cwV1E3NVlIMC1qUHc1TUtSM2ZuamFQanRpTFpKb09VNlZEcnNuVmVhVUsxeXhad0hGdWQ3Nl9NWXNpcWNGeUhaejBJUWQwZExOMEt3V3ljZ28ta1Zwb3FZN180dVA1cmhoNUlJMjhNMEJUVzdHVU14V2F3?oc=5"
+      ],
+      "urlsAcrescentadas": [
+        "https://news.google.com/rss/articles/CBMijAFBVV95cUxOVTQ3WHB0dmJCekZwVVVMakIzQmQzRWRyMlFmNkNoWW9ENFhkeXpYLS15eDlYTTlWaUpVa2QwVnRXM1E5MUFZRE10aENTUVNCUWc0NHVYUDN4QmN1NmoybFh0Um5jYXB3bjBwSTBCQkU2M0xfS3J5UXJvVGFkdDk4SExJQzBpZm1UUFZrYg?oc=5"
+      ]
+    },
+    {
+      "data": "2026-08-31",
+      "regeradaEm": "2026-10-05T22:09:50.171Z",
+      "motivo": "O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.",
+      "fetchedAtAntes": "2026-08-31T14:42:18.766Z",
+      "fetchedAtDepois": "2026-08-31T19:20:04.575Z",
+      "itensAntes": 10,
+      "itensDepois": 10,
+      "materiasTrocadas": 8,
+      "urlsRemovidas": [
+        "https://thehill.com/homenews/campaign/6060905-harris-pappas-new-hampshire-senate/",
+        "https://www.nytimes.com/2026/08/29/us/politics/trump-economy-inflation.html",
+        "https://news.google.com/rss/articles/CBMicEFVX3lxTE40QURlWjVjUXRuVlEzeG8tR21FQVdMcE5nN1pJSGlxRGZMOHFfWW1QVW1EWFh4VFpFQjdHRzlIRlhjZXBjczQydnp6aWNRbGQybUNGR2pBeVVWNElnNXIwU1JoSmlnd2hTZWxaeExZZzA?oc=5",
+        "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNcmRTZTBxVnFqQVRQQTVOdkNCTGhaVDB4M0VPNFNvb0JOdUNFRmN4M25ha1RFZkhTSmQ4MER5ZmFUUi12UkNFT2ZtUXhUbFhkclJyc1RPNHdrVUE4d250M2pYRkU3YzQ1cmgxMEJ1eTRfT0hVbHlVbEl0TTVZa0dBQVJxQ0RWRXZNV1YwaWc2NDRyYXJSLVl2ZkprTDRGMVpWWG1SdDJmc2FZdw?oc=5",
+        "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNZFB6WUJIVGZ0azVIR3N5NUJzNlFsQlJiaGJSNFJjaWQxVzllZFZtWDE1ZGdqcEk0X3JXYTBpQndYZGVZOTRTSjV5U1NDSzFTbkUza05EZ0l5dml5dXMzTzhtY2VLNEJmNUNuRXplSnpXTGcyZnNqRE4yM2d0QnhxcFJMSHBpZlpJX2Ew?oc=5",
+        "https://news.google.com/rss/articles/CBMisAFBVV95cUxOQmk1bDFUTmpSM2M2VnVwUXBBWHdRYllnaUdpUWdvZWcwVy1abmhGTWhLTWpXVEpIa3NNSENxX1BzbUN6WEg4czlfRkgyam5mVGg4UGR1cWtIbGxMcVk2SVNPZmNac0JoV1FQdmtNY0dRLU5CRVN3akY4YUs3bVEwb1hFZDdzWUxNczAxQnktNDBqa045UlhmSlhOMklJMkNEV2dpYnpfY3JielpPalVFQg?oc=5",
+        "https://www.newsnationnow.com/politics/gop-gambles-midterm-dividends-maha/",
+        "https://news.google.com/rss/articles/CBMifEFVX3lxTFBhdEplVUVJM0hrczRaUFVQU2RVSlNvaGQ1VDgwZnRvVDhsMVlUcEhabmRROUtuNUlhejhDVTNKZndYY2UzaEZYbGNSU05kU3RMTGhtX3RISGQxd3YydmhiRndOcGY3eWVjUi0xQ2hVSEJkNVNGODZfV1FqUEE?oc=5"
+      ],
+      "urlsAcrescentadas": [
+        "https://www.washingtonpost.com/politics/2026/08/31/alaska-democrats-back-independent-bill-hill-statewide-house-race/",
+        "https://thehill.com/opinion/campaign/6061519-gop-vulnerable-trade-war-costs/",
+        "https://www.theguardian.com/us-news/2026/aug/31/george-santos-kalshi-lifetime-ban",
+        "https://thehill.com/policy/technology/6061531-kalshi-prediction-market-ban-laurie-buckhout-north-carolina-gop-house-race/",
+        "https://www.theguardian.com/us-news/2026/aug/31/brad-lander-israel-protesters",
+        "https://news.google.com/rss/articles/CBMib0FVX3lxTFBDZHhwVTU5TzMybjN2dVdDcFc1ZWdiZE96TjBfOHRKVl9WLVRvQ1NSMWJ4My1IVmVWNGE2alhjZ3BrLXhLRDU0aWkyZVBJVDY4T0NXMmFXMDItUUg2c01PcWxHNGlGRTF2d2NxRTkxTQ?oc=5",
+        "https://news.google.com/rss/articles/CBMihAFBVV95cUxQci1UckpMV09GWU5CY3VPWGxobnZnOEh6akZLb0syV3A1bGd4Zi1sSEpFajZ2YTc5UnpBSHpsejQyQnJHRFdQTkIxYlZUb1Rfak43bUFzMjhzc0trZVQxNkRaTWZxdENhUWFVVGMxSGk3N09CUkIxTnMyWTdidmFpb2h2TEk?oc=5",
+        "https://www.nbcnews.com/politics/congress/kalshi-ban-george-santos-rcna595318"
+      ]
+    }
+  ]
+}

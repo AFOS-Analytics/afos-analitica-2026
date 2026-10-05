@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-14",
-  "fetchedAt": "2026-08-14T16:30:26.178Z",
+  "fetchedAt": "2026-08-14T19:20:09.625Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -109,24 +109,48 @@
   ],
   "qualidade": {
     "lidos": 149,
-    "naLista": 66,
-    "foraDaLista": 83,
+    "naLista": 77,
+    "foraDaLista": 72,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 21,
+    "descartadosPorAcompanhamento": 25,
     "veiculosRepresentados": 6,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 15,
-    "lidosEmFeedProprio": 20,
-    "publicadosComLinkCanonico": 5,
-    "publicadosViaGoogleNews": 5
+    "lidosEmFeedProprio": 22,
+    "publicadosComLinkCanonico": 6,
+    "publicadosViaGoogleNews": 4
   },
   "itens": [
+    {
+      "titulo": "US Rep. Russell Fry endorses Sen. Darline Graham in South Carolina Republican Senate runoff",
+      "url": "https://abcnews.com/Politics/wireStory/us-rep-russell-fry-endorses-sen-darline-graham-135652151",
+      "casa": "ABC News",
+      "publicadoEm": "2026-08-14T18:32:12.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
     {
       "titulo": "Russell Fry Backs Darline Graham in South Carolina Senate Runoff Amid Trump Pressure",
       "url": "https://www.nytimes.com/2026/08/14/us/politics/russell-fry-darline-graham-south-carolina.html",
       "casa": "The New York Times",
-      "publicadoEm": "2026-08-14T16:16:22.000Z",
+      "publicadoEm": "2026-08-14T17:35:41.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
+    {
+      "titulo": "Fry throws support behind Darline Graham's Senate bid after primary loss",
+      "url": "https://thehill.com/homenews/campaign/6030313-fry-endorses-darline-graham-sc-runoff/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-08-14T17:27:32.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
+    {
+      "titulo": "MN Senate candidate ripped for blaming Walz for fraud despite being his #2: 'Knows she's cooked'",
+      "url": "https://www.foxnews.com/politics/mn-senate-candidate-ripped-blaming-walz-fraud-despite-being-his-2-knows-shes-cooked",
+      "casa": "Fox News",
+      "publicadoEm": "2026-08-14T16:29:58.000Z",
       "consulta": "feed-proprio",
       "origem": "feed"
     },
@@ -134,9 +158,17 @@
       "titulo": "Michigan’s marquee Senate race close in first poll after El-Sayed primary win",
       "url": "https://www.washingtonpost.com/politics/2026/08/14/michigans-marquee-senate-race-close-first-poll-after-el-sayed-primary-win/",
       "casa": "The Washington Post",
-      "publicadoEm": "2026-08-14T16:00:00.000Z",
+      "publicadoEm": "2026-08-14T16:25:00.000Z",
       "consulta": "feed-proprio",
       "origem": "feed"
+    },
+    {
+      "titulo": "Here are 12 Senate, House incumbents who’ve lost their primaries",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOUkNTeGJ4blVNYm82TFlQakUyQUJaSXQ4VWJfODJYdG41UHQ1bVZKZlNDNmhPNVdpc3Fnc21TM25mcWNfTEladl8yaG41blVYSFhyalZmNGp5YnpjUGk5N005bEtGbFZIY3BqMTVUVHFDV25LUUdma3BuUHZvYTlKcnA5b1VMd25VaFFqR3hEZV9DdHQxT1VR0gGcAUFVX3lxTE52VmUzamhvc2xCLWQ1a0FWczJqQ3dvSDh2R3RTUUdVRUF2QndJekEzZG9EN0lXZnBfNXhaTjROMjJ1YVk1TUpnT1pNUFpJb0JSeFNuTUpRSHhCYVN5VVNvTHhncUUxODhkYnBkcXA2anlycmxSb0haTWw2SWIxdS1PUWpqSVpXVTBCWDlfR2x5elp4T0xhanIxSHNoSg?oc=5",
+      "casa": "The Hill",
+      "publicadoEm": "2026-08-14T16:19:00.000Z",
+      "consulta": "midterms",
+      "origem": "google"
     },
     {
       "titulo": "New York City’s lone Republican in Congress accuses Mamdani, Schumer of 'hypocrisy' in voter ID fight",
@@ -169,38 +201,6 @@
       "publicadoEm": "2026-08-13T22:19:32.000Z",
       "consulta": "senate-races",
       "origem": "google"
-    },
-    {
-      "titulo": "Fox News Poll: A Senate battle looms in Michigan",
-      "url": "https://www.foxnews.com/politics/fox-news-poll-senate-battle-looms-michigan",
-      "casa": "Fox News",
-      "publicadoEm": "2026-08-13T22:00:05.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
-    },
-    {
-      "titulo": "Republican Senate candidate: Voters say ‘it’s embarrassing’ to be from Minnesota",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQZkFrbjdJcDc3SHlUcDM4a3U3amtiMjZPalA3WEZ3R3dxaGVJWmJzLU5GR2tRQ3htTGdMOFpoaWNkOGJjeGZjR21XX2ZIZ19sb1psQU9PcGhVYmVZRlcwWFFwa0gwdmdWbTBtVkNLNFpJbG9QNkRoRkxpR0NpTHdoM3ZtU1fSAYoBQVVfeXFMUFVEWnduLXhva19wSGQ1RFFiN2E5WXBaZ09sNzhmMlBGdlEwNGo4RVJ0LTIwZkw2ZHVzRmJtRFdSOGgwd0duTlRYNGdOeDJldW0tR0w4ZjhHSWpNZm1CTnJBeWtJcHA3Vm5kalZqdTBWTlR6VEhqYWRfOWhIenJ6dTNkRDJyd2tIMVNR?oc=5",
-      "casa": "The Hill",
-      "publicadoEm": "2026-08-13T21:31:00.000Z",
-      "consulta": "generic-ballot",
-      "origem": "google"
-    },
-    {
-      "titulo": "Here are 12 Senate, House incumbents who’ve lost their primaries",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOUkNTeGJ4blVNYm82TFlQakUyQUJaSXQ4VWJfODJYdG41UHQ1bVZKZlNDNmhPNVdpc3Fnc21TM25mcWNfTEladl8yaG41blVYSFhyalZmNGp5YnpjUGk5N005bEtGbFZIY3BqMTVUVHFDV25LUUdma3BuUHZvYTlKcnA5b1VMd25VaFFqR3hEZV9DdHQxT1VR0gGcAUFVX3lxTE52VmUzamhvc2xCLWQ1a0FWczJqQ3dvSDh2R3RTUUdVRUF2QndJekEzZG9EN0lXZnBfNXhaTjROMjJ1YVk1TUpnT1pNUFpJb0JSeFNuTUpRSHhCYVN5VVNvTHhncUUxODhkYnBkcXA2anlycmxSb0haTWw2SWIxdS1PUWpqSVpXVTBCWDlfR2x5elp4T0xhanIxSHNoSg?oc=5",
-      "casa": "The Hill",
-      "publicadoEm": "2026-08-13T17:07:00.000Z",
-      "consulta": "midterms",
-      "origem": "google"
-    },
-    {
-      "titulo": "Older Democrats walloped by midterms anti-establishment revolt",
-      "url": "https://www.axios.com/2026/08/13/democrats-old-age-larson-bronin-young-primaries",
-      "casa": "Axios",
-      "publicadoEm": "2026-08-13T15:34:17.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
     }
   ]
 }

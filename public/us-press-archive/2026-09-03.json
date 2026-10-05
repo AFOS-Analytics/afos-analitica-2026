@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-09-03",
-  "fetchedAt": "2026-09-03T02:28:43.615Z",
+  "fetchedAt": "2026-09-03T19:20:13.425Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,110 +113,110 @@
     }
   ],
   "qualidade": {
-    "lidos": 124,
-    "naLista": 70,
-    "foraDaLista": 54,
+    "lidos": 181,
+    "naLista": 72,
+    "foraDaLista": 109,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 11,
-    "veiculosRepresentados": 6,
+    "descartadosPorAcompanhamento": 4,
+    "veiculosRepresentados": 8,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 41,
-    "publicadosComLinkCanonico": 9,
-    "publicadosViaGoogleNews": 1,
+    "lidosEmFeedProprio": 43,
+    "publicadosComLinkCanonico": 7,
+    "publicadosViaGoogleNews": 3,
     "publicadosPorDisputa": 10,
     "publicadosPorMetodo": 0
   },
   "itens": [
     {
-      "titulo": "Trump says he’ll campaign for Republicans in 35 races ahead of the midterms",
-      "url": "https://www.nbcnews.com/politics/2026-election/trump-says-will-campaign-republicans-35-races-ahead-midterms-rcna595807",
-      "casa": "NBC News",
-      "publicadoEm": "2026-09-03T02:15:36.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "As Midterms Loom, Democrats Feud Over Defections",
-      "url": "https://www.nytimes.com/2026/09/02/us/politics/democrats-defections-internal-feud-midterms.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-09-03T00:17:00.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "In the Midterms, Will the Nepo-Baby Attack Work?",
-      "url": "https://www.nytimes.com/2026/09/02/us/politics/midterms-nepo-baby-shaheen.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-09-02T22:55:07.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "With primary misses, what you should know about polls in Michigan's Senate race",
-      "url": "https://www.newsnationnow.com/politics/polls-michigan-senate-race/",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-09-02T22:36:59.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Trump under pressure to contain Iran fighting as midterms near",
-      "url": "https://thehill.com/policy/defense/6067742-trump-iran-strikes-escalation-midterms/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-09-02T22:32:32.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Opinion | Democrats’ path to a House majority is narrower than it looks",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNX05pSXZKUzltSlNrN1RLSEluYW4tUmU1NF9ZWlFXRC1RWWY4Y1ZHY2hjNXFMbFpHbUtBQzFFc19DTWdSSHVDNkI5LVpzWGdoZFNzQy14VTRlVW1obUhUa2VPaEpmTmxjNkhUSFFDNVZ1NXlfMURtQ2lRRE1CZXR5cXlaUUNYYkMwSkR6ejVuNGFramtGaEt3QnZobDkxTVRyS01YX1RGMXV3aF9HaDRLS2VVa1N2SDd3?oc=5",
+      "titulo": "GOP-led House scraps two weeks of work ahead of midterms",
+      "url": "https://www.washingtonpost.com/politics/2026/09/03/gop-led-house-scraps-two-weeks-work-ahead-midterms/",
       "casa": "The Washington Post",
-      "publicadoEm": "2026-09-02T22:00:00.000Z",
+      "publicadoEm": "2026-09-03T18:38:58.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "What to watch for when voting in the midterms",
+      "url": "https://www.washingtonpost.com/politics/2026/09/03/what-watch-when-voting-midterms/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-09-03T18:04:35.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Blue state governor candidate claims he ‘met Satan in person’ in resurfaced podcast episode",
+      "url": "https://www.foxnews.com/politics/blue-state-governor-candidate-claims-met-satan-person-resurfaced-podcast-episode",
+      "casa": "Fox News",
+      "publicadoEm": "2026-09-03T17:29:59.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Dem Senate nominee changes tune on ICE after vowing not 'one more dime' for agency",
+      "url": "https://www.foxnews.com/politics/dem-senate-nominee-changes-tune-ice-after-vowing-not-one-more-dime-agency",
+      "casa": "Fox News",
+      "publicadoEm": "2026-09-03T16:41:52.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Elon Musk’s super PAC dives into the midterms to bolster Republicans in battleground races",
+      "url": "https://www.nbcnews.com/politics/2026-election/elon-musk-super-pac-midterms-republicans-rcna595909",
+      "casa": "NBC News",
+      "publicadoEm": "2026-09-03T15:26:41.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Missouri GOP House candidate accused of trying to plant drugs on opponent",
+      "url": "https://www.newsnationnow.com/politics/missouri-gop-house-candidate-accused-of-trying-to-plant-drugs-on-opponent/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-09-03T12:03:30.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "How much can we believe the polls as the midterms inch closer?",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQWHhrVWRDYmtrZzM0S2JxTTMzeFAzakpZYTM3ckx0UDVVUWlpT0I5OG1HejgyRnZGaHRvbGpNakZBREFpYmhETGdxdEVkd19RN3BfcUoyVlFkVzZ4VWlpd180bUo5cFZQMTBYWHZBdkZfMjhnLVNmWUpRVExoSGxGcTdJSkhlN2tEUE9NVlB6aUlHaE8tTENaTDhQQQ?oc=5",
+      "casa": "The Hill",
+      "publicadoEm": "2026-09-03T11:12:00.000Z",
       "consulta": "generic-ballot",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "Thune says he worries about losing Senate majority: 'I’m a realist'",
-      "url": "https://thehill.com/homenews/senate/6067615-thune-gop-senate-majority/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-09-02T21:47:40.000Z",
+      "titulo": "Signs of a blue wave",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQakxzT1U5YTR6TEp0cjFmdFphWjhOQzBoZkV4dUJwdVhVcGJUTXNBVHNsLTlWYWdxdk9hOVZUQTlkU0sxem9KX01JWVlmMENUVTNZcUM2YW9scmdNaWhrOUszUHZqMGxVSDBGQXVOTFFjT09pS2ZGZzNjV0hkSGVqUVZ2YUhSa0twdTRySHY1Q2IzZlh3U09yYzFMNjMtekxBT01RbEtSQnVUSE91U1UzTHBOMA?oc=5",
+      "casa": "Washington Examiner",
+      "publicadoEm": "2026-09-03T11:00:00.000Z",
+      "consulta": "generic-ballot",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Democrats demand Homeland Security officials fund election security ahead of midterms",
+      "url": "https://www.npr.org/2026/09/03/nx-s1-5954541/election-security-midterms-dhs-democrats",
+      "casa": "NPR",
+      "publicadoEm": "2026-09-03T09:00:00.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Dark money in Texas Senate race spurs Talarico complaint to FEC against Paxton",
-      "url": "https://www.cbsnews.com/news/texas-dark-money-talarico-complaint-paxton/",
-      "casa": "CBS News",
-      "publicadoEm": "2026-09-02T21:23:00.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Progressive Senate candidates rack up primary wins even as they get outspent",
-      "url": "https://www.nbcnews.com/politics/politics-news/progressive-senate-candidates-rack-primary-wins-even-get-outspent-rcna595769",
-      "casa": "NBC News",
-      "publicadoEm": "2026-09-02T21:05:45.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Senate Majority Leader John Thune warns Republicans could lose the Senate",
-      "url": "https://www.washingtonpost.com/elections/2026/09/02/senate-majority-leader-john-thune-warns-republicans-could-lose-senate/",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-09-02T18:30:00.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
+      "titulo": "North Carolina loves Roy Cooper. All GOP has is misinformation. | Opinion",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNcVFpbFl6ZEtkOVZlOWhMbXVuTzBmaFpGMkg2clM1cGZxQVBBV1BUOTBpUnRxM0NCOWZleWF2RV9XbjIxRW5OcGtNUmJaTEpsU3kzNXFjMTZfVlA1UHNWVklPQy1EQVpvbDdWSlNQQnMwQjVNdlI1LUhqN2MxZFJ6ZGNMLWVvTkhzRWxZT1lZeXpYRVUtVVhUTklGa1kyQWdjLXdQdEVvQ2NfVTZhaWU5RTdJVmlPdmxn?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-09-03T08:05:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
       "trilho": "disputa"
     }
   ]

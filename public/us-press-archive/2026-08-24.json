@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-24",
-  "fetchedAt": "2026-08-24T16:19:08.180Z",
+  "fetchedAt": "2026-08-24T19:20:19.003Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,18 +113,18 @@
     }
   ],
   "qualidade": {
-    "lidos": 112,
-    "naLista": 59,
-    "foraDaLista": 53,
+    "lidos": 96,
+    "naLista": 51,
+    "foraDaLista": 45,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 15,
-    "veiculosRepresentados": 6,
+    "descartadosPorAcompanhamento": 10,
+    "veiculosRepresentados": 7,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
     "lidosEmFeedProprio": 23,
-    "publicadosComLinkCanonico": 7,
-    "publicadosViaGoogleNews": 3,
+    "publicadosComLinkCanonico": 8,
+    "publicadosViaGoogleNews": 2,
     "publicadosPorDisputa": 10,
     "publicadosPorMetodo": 0
   },
@@ -184,6 +184,15 @@
       "trilho": "disputa"
     },
     {
+      "titulo": "AP Decision Notes: What to expect in South Carolina’s special U.S. Senate primary runoff",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPeTNqWWVGa3dUX1JfaFhmWXVGamhMZzhHNGxNQThUcXFaVy1WdFpDQk1DUFFEU2tKazlBWXRkT05wRG9fQXhuRDhEQ1dOM3gxX3o5UkJzQnc1Nm92QmJDUlF0c1BScktXV2E1aVZacDVVbzRIZ3RxMTI1U1hKSkZSS1FnVU1JZENlcFZsTlhkWnVJZjNaNlhWTUk2bk9Jdm1fRDFsckhHZDBGMGlwZlZRV0k5cFZmRVV4ZUE?oc=5",
+      "casa": "AP News",
+      "publicadoEm": "2026-08-24T13:10:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
       "titulo": "Dem House candidate's 2013 arrest resurfaces in pivotal race for control of Congress",
       "url": "https://www.foxnews.com/politics/michigan-dem-candidates-2013-arrest-resurfaces-pivotal-race-control-congress",
       "casa": "Fox News",
@@ -194,11 +203,11 @@
     },
     {
       "titulo": "Devastation, doubt and blame: Hurricane Helene looms over North Carolina’s US Senate race",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQWlVKclpBSnpKYmJELVJ2bzNxMnh3ZHRKcWEyaFVQNTRmdTYzUUdYX29IMnU5NS1wdTF5VUh5NmlIWTJ2QkdGRlc3RUYzcHdkUVlGQkk5SFM4U0ZBUzFhajFGYmxPem5VSHFrRDBNaDV4QzNlMEhrY293dU02R0U0R2tWUkFYWHJ2cjdIVGZwT3FGWkJDQnlnZW12d1dnZnI1QkxxZVhfNGRIZw?oc=5",
+      "url": "https://www.theguardian.com/us-news/ng-interactive/2026/aug/24/north-carolina-senate-race-hurricane-helene",
       "casa": "The Guardian",
-      "publicadoEm": "2026-08-24T10:02:00.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
+      "publicadoEm": "2026-08-24T10:00:30.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
       "trilho": "disputa"
     },
     {
@@ -208,15 +217,6 @@
       "publicadoEm": "2026-08-24T09:03:09.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Ex-mayor Dan Sullivan supports incumbent Dan Sullivan’s Senate bid against third Dan Sullivan",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNSFlpUF83dHRIOFJXU2xVTHhJbmswTF9qN3Q3LUZiVWZFM25Ua2kxakgxajhnSTlVZUdwaDJXdVhHT2JZcGRLYkp4cXpQN0lVMU43R1p5dnRTUHVyazlaeTI4VUVnYlQzdU5uNzZ2ZklJdEpCR0dvWWQzRWVHeEhsamdDdER3SndjQnVDeWowcDFKTUtKWlRTSzhhUQ?oc=5",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-08-24T09:00:00.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
       "trilho": "disputa"
     }
   ]

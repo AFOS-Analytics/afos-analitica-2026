@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-28",
-  "fetchedAt": "2026-08-28T16:14:18.406Z",
+  "fetchedAt": "2026-08-28T19:20:18.491Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,27 +113,63 @@
     }
   ],
   "qualidade": {
-    "lidos": 182,
-    "naLista": 87,
-    "foraDaLista": 95,
+    "lidos": 181,
+    "naLista": 84,
+    "foraDaLista": 97,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 23,
+    "descartadosPorAcompanhamento": 19,
     "veiculosRepresentados": 7,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 37,
-    "publicadosComLinkCanonico": 8,
-    "publicadosViaGoogleNews": 2,
+    "lidosEmFeedProprio": 38,
+    "publicadosComLinkCanonico": 7,
+    "publicadosViaGoogleNews": 3,
     "publicadosPorDisputa": 10,
     "publicadosPorMetodo": 0
   },
   "itens": [
     {
+      "titulo": "Wyoming governor decries ‘aggressive’ behavior of federal election monitors",
+      "url": "https://www.washingtonpost.com/politics/2026/08/28/wyoming-governor-decries-aggressive-behavior-federal-election-monitors/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-08-28T19:14:38.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump election fraud crackdown lands first arrest, putting longtime critics in White House crosshairs",
+      "url": "https://www.foxnews.com/politics/election-fraud-arrests-begin-wh-takes-victory-lap-around-doubting-critics",
+      "casa": "Fox News",
+      "publicadoEm": "2026-08-28T17:49:52.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
       "titulo": "Top Alaska Senate Candidates Advance as Angie Nixon Wins in Florida",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPeWJUb2NCWWpfVXhKQmlzYm1XeFJyMnp5YjRoaEw0d19tSzU0ellXQUdEMy1BMl92MEZqZFlneFJPajJ1dUlGUEZxX3M5SldrdUxqUWJGajRxMlgxazRWMmdSakNqWW9YWGV0aUsyWjVRZzU2S0pVemlETnhBSzlDRF9yN0ZPVzZkc0xUNE1wSk5oVVZ0R2h6aHpVQ0l1M0syZ3k2aVFDNDdIbTJTYWVIakFZZGRTZw?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQci1UckpMV09GWU5CY3VPWGxobnZnOEh6akZLb0syV3A1bGd4Zi1sSEpFajZ2YTc5UnpBSHpsejQyQnJHRFdQTkIxYlZUb1Rfak43bUFzMjhzc0trZVQxNkRaTWZxdENhUWFVVGMxSGk3N09CUkIxTnMyWTdidmFpb2h2TEk?oc=5",
       "casa": "The New York Times",
-      "publicadoEm": "2026-08-28T13:27:09.000Z",
+      "publicadoEm": "2026-08-28T17:39:29.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Kamala Harris dives into midterm fight only to get roasted for never having 'an original thought in her life’",
+      "url": "https://www.foxnews.com/politics/kamala-harris-dives-midterm-fight-roasted-never-having-original-thought-life",
+      "casa": "Fox News",
+      "publicadoEm": "2026-08-28T16:09:39.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Darline Graham, With Push From Trump, Wins Senate Primary in South Carolina",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNcWs5aU9sTUpyQmtqX1RibXVUalBINlNBSEE0VXJuYUdVVXZzdmVzZmlQSG11ckZnNEoyX2tJLVpUN3EtUHpHUmxNenRVajZjTFVCUEI3Qk14VlN6MndIZWVsR2p6ZWY3SmV3UU1SVjUzOEZrZ1VabTZNWEl6M3p4UnNB?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-08-28T15:44:00.000Z",
       "consulta": "senate-races",
       "origem": "google",
       "trilho": "disputa"
@@ -143,24 +179,6 @@
       "url": "https://www.theguardian.com/commentisfree/2026/aug/28/trump-midterm-campaign-devotion",
       "casa": "The Guardian",
       "publicadoEm": "2026-08-28T10:00:54.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Dems derided Trump’s midterm gamble — until he ended up winning big",
-      "url": "https://www.foxnews.com/politics/dems-derided-trumps-midterm-gamble-until-he-ended-up-winning-big",
-      "casa": "Fox News",
-      "publicadoEm": "2026-08-28T10:00:37.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Wyoming Governor Objects to ‘Very Odd’ D.O.J. Election Monitoring",
-      "url": "https://www.nytimes.com/2026/08/28/us/politics/wyoming-governor-objects-to-very-odd-doj-election-monitoring.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-08-28T09:04:08.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
@@ -193,30 +211,12 @@
       "trilho": "disputa"
     },
     {
-      "titulo": "Federal judge again blocks Trump's mail ballot order just before midterms",
-      "url": "https://www.foxnews.com/politics/federal-judge-blocks-trump-mail-ballot-order-midterms",
-      "casa": "Fox News",
-      "publicadoEm": "2026-08-28T04:42:53.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
       "titulo": "Abdul El-Sayed says he's spoken with Jeremy Moss after Hasan Piker's comments",
       "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPUlFDdUc4MkNrX1lvQVJYa1JaUktjWkVuUXJKNUNOdjJuNUFCNnRBaEdEVDZFQmgtd0p6cmxxemFTVmttaTc5TjVrMUVqQjNZWHhxaUpVSWc0bnBnS1djd3BfeXdrUGM1OUJ1dWUzQ0xBalluMHE1ZW9CMFJmdTNxLVRveldKS0M0LUJZWUtTT25IS1c1?oc=5",
       "casa": "CBS News",
       "publicadoEm": "2026-08-28T00:16:00.000Z",
       "consulta": "senate-races",
       "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "The GOP’s underlying midterm problem: From the Politics Desk",
-      "url": "https://www.nbcnews.com/politics/politics-news/gops-underlying-midterm-problem-politics-desk-rcna594787",
-      "casa": "NBC News",
-      "publicadoEm": "2026-08-27T21:43:22.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
       "trilho": "disputa"
     }
   ]

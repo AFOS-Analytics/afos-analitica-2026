@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-31",
-  "fetchedAt": "2026-08-31T14:42:18.766Z",
+  "fetchedAt": "2026-08-31T19:20:04.575Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,111 +113,111 @@
     }
   ],
   "qualidade": {
-    "lidos": 121,
-    "naLista": 43,
-    "foraDaLista": 78,
+    "lidos": 129,
+    "naLista": 59,
+    "foraDaLista": 70,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 4,
-    "veiculosRepresentados": 7,
+    "descartadosPorAcompanhamento": 12,
+    "veiculosRepresentados": 6,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 18,
-    "publicadosComLinkCanonico": 4,
-    "publicadosViaGoogleNews": 6,
-    "publicadosPorDisputa": 9,
-    "publicadosPorMetodo": 1
+    "lidosEmFeedProprio": 24,
+    "publicadosComLinkCanonico": 7,
+    "publicadosViaGoogleNews": 3,
+    "publicadosPorDisputa": 7,
+    "publicadosPorMetodo": 3
   },
   "itens": [
     {
-      "titulo": "With shutdown looming, House leaders aim to quickly pass funding bill",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSVJnMGxLN3VnS2RNSGdERS1ERFBiSGVaOUtreENWVEdZendHS2dlLXJyRXA5Sm9jcFFiZWo0ajRoMEl6eURUQWNqcTZuNFplZ29UaGxoZ1FWRUltUDhzMzl6WTRfQlhyTE5sRFMwTDhRYUJiUF9sN1BYemdyQ3NPcXhwY0dBX1laRXV6ZGUxdUNLRVhJU3FXSFp0Nl93eHRwYWppUWxYOWYzSlBmNmk3eEdKT2JPeFBv?oc=5",
+      "titulo": "Alaska Democrats back independent Bill Hill in statewide House race",
+      "url": "https://www.washingtonpost.com/politics/2026/08/31/alaska-democrats-back-independent-bill-hill-statewide-house-race/",
       "casa": "The Washington Post",
-      "publicadoEm": "2026-08-31T14:33:13.000Z",
-      "consulta": "midterms",
-      "origem": "google",
+      "publicadoEm": "2026-08-31T19:10:40.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Harris endorses Pappas for New Hampshire Senate",
-      "url": "https://thehill.com/homenews/campaign/6060905-harris-pappas-new-hampshire-senate/",
+      "titulo": "Republicans will pay for Trump’s tariffs in the midterms",
+      "url": "https://thehill.com/opinion/campaign/6061519-gop-vulnerable-trade-war-costs/",
       "casa": "The Hill",
-      "publicadoEm": "2026-08-31T14:19:45.000Z",
+      "publicadoEm": "2026-08-31T18:30:00.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Kalshi bans ex-congressman George Santos from prediction platform for life",
+      "url": "https://www.theguardian.com/us-news/2026/aug/31/george-santos-kalshi-lifetime-ban",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-08-31T18:26:30.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "metodo"
+    },
+    {
+      "titulo": "Kalshi suspends GOP House candidate in North Carolina for betting on own race",
+      "url": "https://thehill.com/policy/technology/6061531-kalshi-prediction-market-ban-laurie-buckhout-north-carolina-gop-house-race/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-08-31T18:08:46.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Congressional nominee Brad Lander heckled over Israel stance at New York protest",
+      "url": "https://www.theguardian.com/us-news/2026/aug/31/brad-lander-israel-protesters",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-08-31T18:03:39.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump’s bogus narrative about the GOP losing in the 2026 midterms",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBDZHhwVTU5TzMybjN2dVdDcFc1ZWdiZE96TjBfOHRKVl9WLVRvQ1NSMWJ4My1IVmVWNGE2alhjZ3BrLXhLRDU0aWkyZVBJVDY4T0NXMmFXMDItUUg2c01PcWxHNGlGRTF2d2NxRTkxTQ?oc=5",
+      "casa": "CNN",
+      "publicadoEm": "2026-08-31T17:35:10.000Z",
+      "consulta": "generic-ballot",
+      "origem": "google",
       "trilho": "disputa"
     },
     {
       "titulo": "Why the Times/Siena Poll Isn’t Hanging Up the Phone",
       "url": "https://www.nytimes.com/2026/08/31/upshot/times-siena-phone-polling.html",
       "casa": "The New York Times",
-      "publicadoEm": "2026-08-31T13:59:37.000Z",
+      "publicadoEm": "2026-08-31T17:29:12.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "metodo"
     },
     {
-      "titulo": "High Debt and Rising Prices Catch Up to Trump, as Midterms Near",
-      "url": "https://www.nytimes.com/2026/08/29/us/politics/trump-economy-inflation.html",
+      "titulo": "Top Alaska Senate Candidates Advance as Angie Nixon Wins in Florida",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQci1UckpMV09GWU5CY3VPWGxobnZnOEh6akZLb0syV3A1bGd4Zi1sSEpFajZ2YTc5UnpBSHpsejQyQnJHRFdQTkIxYlZUb1Rfak43bUFzMjhzc0trZVQxNkRaTWZxdENhUWFVVGMxSGk3N09CUkIxTnMyWTdidmFpb2h2TEk?oc=5",
       "casa": "The New York Times",
-      "publicadoEm": "2026-08-31T12:56:44.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "House returns with vote expected on Senate bill to prevent government shutdown",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE40QURlWjVjUXRuVlEzeG8tR21FQVdMcE5nN1pJSGlxRGZMOHFfWW1QVW1EWFh4VFpFQjdHRzlIRlhjZXBjczQydnp6aWNRbGQybUNGR2pBeVVWNElnNXIwU1JoSmlnd2hTZWxaeExZZzA?oc=5",
-      "casa": "CBS News",
-      "publicadoEm": "2026-08-31T10:00:08.000Z",
+      "publicadoEm": "2026-08-31T17:13:24.000Z",
       "consulta": "midterms",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "House returns to Washington as GOP moves to avert shutdown before midterm elections",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNcmRTZTBxVnFqQVRQQTVOdkNCTGhaVDB4M0VPNFNvb0JOdUNFRmN4M25ha1RFZkhTSmQ4MER5ZmFUUi12UkNFT2ZtUXhUbFhkclJyc1RPNHdrVUE4d250M2pYRkU3YzQ1cmgxMEJ1eTRfT0hVbHlVbEl0TTVZa0dBQVJxQ0RWRXZNV1YwaWc2NDRyYXJSLVl2ZkprTDRGMVpWWG1SdDJmc2FZdw?oc=5",
-      "casa": "Washington Examiner",
-      "publicadoEm": "2026-08-31T09:00:00.000Z",
-      "consulta": "midterms",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "The House is back in session. Many Republicans hope it won’t be for long.",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNZFB6WUJIVGZ0azVIR3N5NUJzNlFsQlJiaGJSNFJjaWQxVzllZFZtWDE1ZGdqcEk0X3JXYTBpQndYZGVZOTRTSjV5U1NDSzFTbkUza05EZ0l5dml5dXMzTzhtY2VLNEJmNUNuRXplSnpXTGcyZnNqRE4yM2d0QnhxcFJMSHBpZlpJX2Ew?oc=5",
-      "casa": "Politico",
-      "publicadoEm": "2026-08-31T08:45:00.000Z",
-      "consulta": "midterms",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Trump says he will report NBC host to FCC for ‘rebuke or punishment’",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOQmk1bDFUTmpSM2M2VnVwUXBBWHdRYllnaUdpUWdvZWcwVy1abmhGTWhLTWpXVEpIa3NNSENxX1BzbUN6WEg4czlfRkgyam5mVGg4UGR1cWtIbGxMcVk2SVNPZmNac0JoV1FQdmtNY0dRLU5CRVN3akY4YUs3bVEwb1hFZDdzWUxNczAxQnktNDBqa045UlhmSlhOMklJMkNEV2dpYnpfY3JielpPalVFQg?oc=5",
+      "titulo": "With shutdown looming, House leaders aim to quickly pass funding bill",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSVJnMGxLN3VnS2RNSGdERS1ERFBiSGVaOUtreENWVEdZendHS2dlLXJyRXA5Sm9jcFFiZWo0ajRoMEl6eURUQWNqcTZuNFplZ29UaGxoZ1FWRUltUDhzMzl6WTRfQlhyTE5sRFMwTDhRYUJiUF9sN1BYemdyQ3NPcXhwY0dBX1laRXV6ZGUxdUNLRVhJU3FXSFp0Nl93eHRwYWppUWxYOWYzSlBmNmk3eEdKT2JPeFBv?oc=5",
       "casa": "The Washington Post",
-      "publicadoEm": "2026-08-31T03:34:00.000Z",
+      "publicadoEm": "2026-08-31T17:00:01.000Z",
       "consulta": "midterms",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "GOP gambles on midterm dividends from RFK Jr.’s MAHA",
-      "url": "https://www.newsnationnow.com/politics/gop-gambles-midterm-dividends-maha/",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-08-30T22:46:18.000Z",
+      "titulo": "Kalshi bans George Santos for life after he secretly bet on himself",
+      "url": "https://www.nbcnews.com/politics/congress/kalshi-ban-george-santos-rcna595318",
+      "casa": "NBC News",
+      "publicadoEm": "2026-08-31T15:33:10.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Full transcript of \"Face the Nation with Margaret Brennan,\" Aug. 30, 2026",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBhdEplVUVJM0hrczRaUFVQU2RVSlNvaGQ1VDgwZnRvVDhsMVlUcEhabmRROUtuNUlhejhDVTNKZndYY2UzaEZYbGNSU05kU3RMTGhtX3RISGQxd3YydmhiRndOcGY3eWVjUi0xQ2hVSEJkNVNGODZfV1FqUEE?oc=5",
-      "casa": "CBS News",
-      "publicadoEm": "2026-08-30T18:06:51.000Z",
-      "consulta": "midterms",
-      "origem": "google",
-      "trilho": "disputa"
+      "trilho": "metodo"
     }
   ]
 }

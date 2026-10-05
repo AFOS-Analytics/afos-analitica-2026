@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-09-10",
-  "fetchedAt": "2026-09-10T15:21:23.030Z",
+  "fetchedAt": "2026-09-10T19:20:13.471Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,72 +113,45 @@
     }
   ],
   "qualidade": {
-    "lidos": 260,
-    "naLista": 129,
-    "foraDaLista": 131,
+    "lidos": 250,
+    "naLista": 124,
+    "foraDaLista": 126,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 12,
+    "descartadosPorAcompanhamento": 14,
     "veiculosRepresentados": 6,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 83,
-    "publicadosComLinkCanonico": 10,
-    "publicadosViaGoogleNews": 0,
+    "lidosEmFeedProprio": 77,
+    "publicadosComLinkCanonico": 7,
+    "publicadosViaGoogleNews": 3,
     "publicadosPorDisputa": 10,
     "publicadosPorMetodo": 0
   },
   "itens": [
     {
-      "titulo": "Supreme Court rejects Missouri’s attempt to use newly drawn Republican congressional map",
-      "url": "https://www.nbcnews.com/video/supreme-court-rejects-missouri-s-attempt-to-use-newly-drawn-republican-congressional-map-269621829784",
-      "casa": "NBC News",
-      "publicadoEm": "2026-09-10T15:01:51.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Trump’s promise of $5,000 ‘dividend’ for US citizens after midterms decried as ‘bribery’",
-      "url": "https://www.theguardian.com/us-news/2026/sep/10/trump-5000-midterm-cash-dividend-response",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-09-10T15:01:35.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Supreme Court again blocks Missouri from using Trump-backed congressional maps",
-      "url": "https://www.foxnews.com/politics/supreme-court-again-blocks-missouri-from-using-trump-backed-congressional-maps",
-      "casa": "Fox News",
-      "publicadoEm": "2026-09-10T15:00:50.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Seven simple tips to understand midterm election polls",
-      "url": "https://www.washingtonpost.com/politics/2026/09/10/pollwatcher-seven-simple-tips-understand-midterm-election-polls/",
+      "titulo": "What to know about Trump’s proposed $5,000 payouts",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQdHJ0MGt6LXhTcms2LTkxSWN1V1J2UVFPVnBtWjJnY04ydkI3WHp2UXYwOWFQMTFXTHMyMjc2S1Z1aFlmMjZ6UVk2TjlwbkhJY0Q2MFZPMno5RnRsNmRQMjNCSklwNWtGU2U5TEw5V1Y1Um1QRXZWTUdHd1pfSGVzenRKX2RVZjcxWkRHd2RaWHBleVF1bXR2YXZQQ1Q?oc=5",
       "casa": "The Washington Post",
-      "publicadoEm": "2026-09-10T15:00:00.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
+      "publicadoEm": "2026-09-10T19:05:55.000Z",
+      "consulta": "midterms",
+      "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "Vance appears to walk back Trump’s offer of $5,000 ‘dividend’ if Republicans win midterms – US politics live",
+      "titulo": "Supreme court’s decision seems to spell end for Republican-drawn congressional maps in Missouri – US politics live",
       "url": "https://www.theguardian.com/us-news/live/2026/sep/10/donald-trump-republican-midterm-convention-dividend-offer-5000-vance-latest-news-updates",
       "casa": "The Guardian",
-      "publicadoEm": "2026-09-10T14:59:43.000Z",
+      "publicadoEm": "2026-09-10T19:03:22.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Live updates: Supreme Court puts new Missouri map on hold; Trump, Vance to close out RNC midterm convention",
-      "url": "https://thehill.com/homenews/administration/6080688-live-trump-vance-rnc-midterm-convention-charlie-kirk-missouri/",
+      "titulo": "Watch live: Vance, Trump to close out Day 2 of RNC midterm convention",
+      "url": "https://thehill.com/video-clips/6082172-watch-live-jd-vance-donald-trump-gop-midterm-convention-2026-dallas/",
       "casa": "The Hill",
-      "publicadoEm": "2026-09-10T14:57:10.000Z",
+      "publicadoEm": "2026-09-10T19:00:00.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
@@ -187,34 +160,61 @@
       "titulo": "Supreme Court again blocks new Missouri congressional map favoring GOP",
       "url": "https://www.washingtonpost.com/politics/2026/09/10/supreme-court-again-blocks-new-missouri-congressional-map-favoring-gop/",
       "casa": "The Washington Post",
-      "publicadoEm": "2026-09-10T14:53:53.000Z",
+      "publicadoEm": "2026-09-10T18:55:59.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Supreme Court blocks Missouri's use of GOP-favored congressional map",
-      "url": "https://thehill.com/regulation/court-battles/6081621-supreme-court-blocks-missouri-congressional-map/",
+      "titulo": "Live updates: Missouri will revert to 2022 district map; Trump, Vance to close out RNC midterm convention",
+      "url": "https://thehill.com/homenews/administration/6080688-live-trump-vance-rnc-midterm-convention-charlie-kirk-missouri/",
       "casa": "The Hill",
-      "publicadoEm": "2026-09-10T14:52:05.000Z",
+      "publicadoEm": "2026-09-10T18:49:58.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Supreme Court again rejects push for Missouri's Trump-backed congressional map",
-      "url": "https://www.newsnationnow.com/politics/ap-federal-judge-allows-missouris-top-court-to-hold-contempt-hearing-in-redistricting-dispute/",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-09-10T14:33:13.000Z",
+      "titulo": "Trump Floats $5,000 Checks to Americans if Republicans Win Midterms",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxONU14Yk9udVo3NE9fYVYzUmZxenVId2JSXzl2VjgzT3VuWS1aUERlUWI2NGJiU3ZFXzVpbGVVNjVFUzJiUWwwcUZwS1dPZnc2ZlZjYlhub1RIX2pjUHIxaW9zbDZ3bXhMc0xKWWd0VjRrM1M4UEIwTGs5bVVQcXBTOTNyb09TZw?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-10T18:02:00.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Explainer: Is Trump's $5,000 'dividend' legal and how would it work?",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQeU13MnNSZkJSaUhJNGZYY3o3ckVBZm5JYUR2Z0lHUzRBV1FTZWs3WmFzX2I5aS1xTDF6aDFyalVwQkEtbmNMOV94UzctaDlMcU0yVmVTYWpNNnNsbl83ZzVibi1lVlNCVDRlSklZT0NPVkRUaFJDWTdsLWduYlVzOXJ6UmpPZ21kQWRYMk1VdU1BRUdtYk1VZ3lHbGZ2SmMzUEE?oc=5",
+      "casa": "Reuters",
+      "publicadoEm": "2026-09-10T17:36:21.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump pitches $5,000 payments, but only if GOP wins House and Senate",
+      "url": "https://www.cbsnews.com/news/trump-dividends-5000-checks-rnc-midterm-convention/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-09-10T17:25:05.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Supreme Court blocks Missouri’s attempt to use newly drawn GOP congressional map",
-      "url": "https://www.nbcnews.com/politics/supreme-court/supreme-court-blocks-missouris-attempt-use-newly-drawn-republican-cong-rcna596857",
-      "casa": "NBC News",
-      "publicadoEm": "2026-09-10T14:28:10.000Z",
+      "titulo": "US appeals court rejects Trump’s bid to impose restrictions on mail-in voting before midterms",
+      "url": "https://www.theguardian.com/us-news/2026/sep/10/usps-mail-ballot-voting-court-ruling",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-09-10T17:07:37.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump Floats $5,000 ‘Trump Dividend’ Checks if Republicans Win the Midterms",
+      "url": "https://www.nytimes.com/2026/09/10/us/politics/trump-dividend-5000-dollar-checks.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-10T16:04:45.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"

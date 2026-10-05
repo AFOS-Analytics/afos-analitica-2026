@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-26",
-  "fetchedAt": "2026-08-26T16:55:09.806Z",
+  "fetchedAt": "2026-08-26T19:20:43.611Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,22 +113,76 @@
     }
   ],
   "qualidade": {
-    "lidos": 188,
-    "naLista": 90,
-    "foraDaLista": 98,
+    "lidos": 170,
+    "naLista": 82,
+    "foraDaLista": 88,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 20,
-    "veiculosRepresentados": 8,
+    "descartadosPorAcompanhamento": 10,
+    "veiculosRepresentados": 9,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 41,
-    "publicadosComLinkCanonico": 7,
-    "publicadosViaGoogleNews": 3,
+    "lidosEmFeedProprio": 45,
+    "publicadosComLinkCanonico": 6,
+    "publicadosViaGoogleNews": 4,
     "publicadosPorDisputa": 10,
     "publicadosPorMetodo": 0
   },
   "itens": [
+    {
+      "titulo": "Trump scores federal court win against House progressive accused of assaulting ICE",
+      "url": "https://www.foxnews.com/politics/trump-scores-federal-court-win-against-house-progressive-accused-assaulting-ice",
+      "casa": "Fox News",
+      "publicadoEm": "2026-08-26T17:39:22.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Dan Sullivan v Dan Sullivan: officials confirm challenger will join senator on Alaska midterms ballot",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE0wYVN1eG9OVWR4WWlZeVhadjNOZ3Z4aDctaGtjLXhHYVQtbDRpZXpPcXRic0dHdVVEYklkNUNCRG9fUjZmNFcxNWZLT3E1MVk1aGhnTDNYeFhvWEZQeGpKaTFZN2J3WnFVODJlcmpzUVdORjdDUmViV0RVSEo3U3M?oc=5",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-08-26T17:34:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "‘JD Vance is a dirtbag’: Maine Senate nominee responds to vice president on ICE shooting death",
+      "url": "https://thehill.com/homenews/campaign/6052692-jd-vance-troy-jackson-maine-ice-shooting/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-08-26T17:15:01.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Maryland court rules Democratic-backed redistricting amendment cannot go on November ballot",
+      "url": "https://abcnews.com/Politics/wireStory/maryland-court-rules-democratic-backed-redistricting-amendment-november-135978167",
+      "casa": "ABC News",
+      "publicadoEm": "2026-08-26T17:09:32.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Iran War Weighs on Virginia Beach Voters in Key House Race",
+      "url": "https://www.nytimes.com/2026/08/26/us/politics/virginia-beach-congressional-election-iran-war.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-08-26T17:05:57.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Top Alaska Senate Candidates Advance as Angie Nixon Wins in Florida",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQci1UckpMV09GWU5CY3VPWGxobnZnOEh6akZLb0syV3A1bGd4Zi1sSEpFajZ2YTc5UnpBSHpsejQyQnJHRFdQTkIxYlZUb1Rfak43bUFzMjhzc0trZVQxNkRaTWZxdENhUWFVVGMxSGk3N09CUkIxTnMyWTdidmFpb2h2TEk?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-08-26T16:58:31.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
     {
       "titulo": "Sen. Darline Graham projected to win runoff in South Carolina GOP Senate primary",
       "url": "https://www.cbsnews.com/news/south-carolina-republican-runoff-senate-race-results-darline-graham-ralph-norman/",
@@ -139,82 +193,28 @@
       "trilho": "disputa"
     },
     {
-      "titulo": "Iran War Weighs on Virginia Beach Voters in Key House Race",
-      "url": "https://www.nytimes.com/2026/08/26/us/politics/virginia-beach-congressional-election-iran-war.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-08-26T16:29:35.000Z",
+      "titulo": "Maryland court: Democratic-backed redistricting amendment cannot go on ballot",
+      "url": "https://www.newsnationnow.com/politics/ap-maryland-court-rules-democratic-backed-redistricting-amendment-cannot-go-on-november-ballot/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-08-26T16:53:29.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Iowa's Democratic governor candidate: Kamala Harris shouldn't run in 2028",
-      "url": "https://thehill.com/homenews/campaign/6052255-iowa-gubernatorial-candidate-rob-sand-kamala-harris-2028-presidential-election/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-08-26T16:04:02.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Darline Graham, With Push From Trump, Wins Senate Primary in South Carolina",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNcWs5aU9sTUpyQmtqX1RibXVUalBINlNBSEE0VXJuYUdVVXZzdmVzZmlQSG11ckZnNEoyX2tJLVpUN3EtUHpHUmxNenRVajZjTFVCUEI3Qk14VlN6MndIZWVsR2p6ZWY3SmV3UU1SVjUzOEZrZ1VabTZNWEl6M3p4UnNB?oc=5",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-08-26T15:47:00.000Z",
+      "titulo": "‘Maine has been through a lot’: Democrats sharpen pitch to women after turmoil in must-win Senate race",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB2SDUySUFLMWVhSUs2clRzaDNONHptYndmM0FrWWhJUDd5R3RoYkJIakxoWkNGTERPVTk1TUp1aWZsVEx1azA0dVZRbmsxUmhScDNXUnJGa1hsZURBcWdVcnRrOHdFRVAxQWdqM3c4OXpnd2VfTVZaRmNMaXJZeXc?oc=5",
+      "casa": "CNN",
+      "publicadoEm": "2026-08-26T16:00:29.000Z",
       "consulta": "senate-races",
       "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Democratic states file new lawsuit seeking to block Trump’s order limiting mail voting in midterms",
-      "url": "https://abcnews.com/Politics/wireStory/democratic-states-file-new-lawsuit-seeking-block-trumps-135974009",
-      "casa": "ABC News",
-      "publicadoEm": "2026-08-26T15:13:28.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "In Texas Senate race, Talarico seeks depositions that could damage Paxton",
-      "url": "https://www.washingtonpost.com/politics/2026/08/26/texas-senate-race-talarico-seeks-depositions-that-could-damage-paxton/",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-08-26T14:33:00.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "SEEING DOUBLE: Second Dan Sullivan advances, setting up bizarre Alaska Senate ballot",
-      "url": "https://www.foxnews.com/politics/seeing-double-second-dan-sullivan-advances-setting-up-bizarre-alaska-senate-ballot",
-      "casa": "Fox News",
-      "publicadoEm": "2026-08-26T13:55:01.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
       "trilho": "disputa"
     },
     {
       "titulo": "Even Iowa? Trump's troubles tighten races for Senate, governor",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQajlIb29ONDNpSzkwMW9FaVRFUm1idHo2RDNmX2VDU1F5Y2JrUnNBUDZGcG1iLTdkVEw4bU9idlJwMV9kelBVYkQwbjlJNDk0UjRISVFCSVhWRWk1WkVFVzFWYkF1ZllUZHJ2REtlVk1Kb2x6WjJ5MFN5QmRNa3lnTncwLUloXzFCUVU1Nk56alhHcHJZd0JZSzE3Yk1UMmI5QmNCeDdCRXl6VUFGaWtR?oc=5",
       "casa": "USA Today",
-      "publicadoEm": "2026-08-26T13:22:00.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Republican with same name as incumbent Dan Sullivan advances from Alaska US Senate primary",
-      "url": "https://abcnews.com/Politics/wireStory/republican-same-incumbent-dan-sullivan-advances-alaska-us-135960450",
-      "casa": "ABC News",
-      "publicadoEm": "2026-08-26T12:10:22.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Dan Sullivan v Dan Sullivan: officials confirm challenger will join senator on Alaska midterms ballot",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE0wYVN1eG9OVWR4WWlZeVhadjNOZ3Z4aDctaGtjLXhHYVQtbDRpZXpPcXRic0dHdVVEYklkNUNCRG9fUjZmNFcxNWZLT3E1MVk1aGhnTDNYeFhvWEZQeGpKaTFZN2J3WnFVODJlcmpzUVdORjdDUmViV0RVSEo3U3M?oc=5",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-08-26T12:06:00.000Z",
+      "publicadoEm": "2026-08-26T15:44:00.000Z",
       "consulta": "senate-races",
       "origem": "google",
       "trilho": "disputa"

@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-09-09",
-  "fetchedAt": "2026-09-09T17:01:22.313Z",
+  "fetchedAt": "2026-09-09T19:20:13.546Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,16 +113,16 @@
     }
   ],
   "qualidade": {
-    "lidos": 228,
-    "naLista": 109,
-    "foraDaLista": 119,
+    "lidos": 242,
+    "naLista": 107,
+    "foraDaLista": 135,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 7,
+    "descartadosPorAcompanhamento": 4,
     "veiculosRepresentados": 6,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 68,
+    "lidosEmFeedProprio": 72,
     "publicadosComLinkCanonico": 8,
     "publicadosViaGoogleNews": 2,
     "publicadosPorDisputa": 10,
@@ -130,28 +130,73 @@
   },
   "itens": [
     {
-      "titulo": "Live updates: Republicans converge on Dallas for Trump's midterm convention",
-      "url": "https://thehill.com/homenews/administration/6077751-live-updates-trump-republican-midterm-convention-dallas/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-09-09T16:49:44.000Z",
+      "titulo": "How Republicans and Democrats see their advantages in the midterms.",
+      "url": "https://www.nytimes.com/live/2026/09/09/us/rnc-trump-midterm-convention-updates/how-republicans-and-democrats-see-their-advantages-in-the-midterms",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-09T19:17:51.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Trump center stage at Republican midterm convention amid party concerns over president’s unpopularity – live",
+      "titulo": "Trump to address midterm convention after Qatar-gifted plane delayed by emergency-slide check – live",
       "url": "https://www.theguardian.com/us-news/live/2026/sep/09/donald-trump-rnc-republican-national-convention-jd-vance-midterms-latest-news-updates",
       "casa": "The Guardian",
-      "publicadoEm": "2026-09-09T16:49:21.000Z",
+      "publicadoEm": "2026-09-09T19:08:23.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "New Hampshire Primary 2026: Live Election Results",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPY2MxSW80T25wMVRIYWFsejg5Y01nSkJDNzVzb3l1ZkJ2VEhJQ2JIVnNtdE5lcmRmRGxCNzlMYnRIbU5ZU2hZU1NyTGVKOElPX2hKd2Vkdm9kUjBnMU1SWkc4c2xwdGJsTjBGckZCOHZsYXZaT0dVbUJHTWVGZV9NTERLTUdFVHZrc05va25uWXFfYzVLZGRZUGRR?oc=5",
+      "titulo": "Watch live: Trump to headline first GOP midterm convention",
+      "url": "https://thehill.com/video-clips/6079217-watch-live-donald-trump-rnc-midterms-convention-dallas/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-09-09T19:00:00.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Live updates: Trump, Republicans converge on Dallas for GOP midterm convention",
+      "url": "https://thehill.com/homenews/administration/6077751-live-updates-trump-republican-midterm-convention-dallas/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-09-09T18:57:42.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Talarico, Paxton face new Texas Senate poll as Election Day nears",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPLTdZMjRUTGFCWWhVNm5CZVhkTzJ0ampFbjBGS0w2bVUyN2E4cjhTRHZMS2RHMk5WX1lMYXMwVnE3clJuQ18xekVwUVJXZTZZY19hQjRTdFVfbmFLSHJHTV9hNzZQWUNQQkZvZTJoOVk4LW9SOHpfeS1uZldXWFF5V1dUS3kxTWJFSmtWRWMyVjJ3cEUxRmdNTi1qOEZlcENyRFJ4LWtnSzZub0tISjdrb1phNGNMWk9STkVRcDBsU0NacEk0VXItUHNTd3lGSjhJRmRvSlktNnFtZl8yLTNn?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-09-09T18:30:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump’s PAC Unloads War Chest, With $49 Million Headed to Key Midterm Races",
+      "url": "https://www.nytimes.com/2026/09/09/us/politics/trump-midterms-maga-inc-spending.html",
       "casa": "The New York Times",
-      "publicadoEm": "2026-09-09T16:31:00.000Z",
+      "publicadoEm": "2026-09-09T18:13:13.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Missouri Supreme Court threatens secretary of state with contempt amid intensifying redistricting battle",
+      "url": "https://www.foxnews.com/politics/missouri-supreme-court-threatens-secretary-state-contempt-intensifying-redistricting-battle",
+      "casa": "Fox News",
+      "publicadoEm": "2026-09-09T17:52:53.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Texas races to watch as Republicans head to GOP convention",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOUWhoQ0o4cVNYLWY0dEtIMl9kQnFVQVJwUFdrcTF2Z0YwVktuMWVIa1RyVVYza3NwSE1aN3d3QVZGTDFWd3BsdnhBSnRZZ1VSeEFHblpEQ2Q4QlM0OW5CM1RkcVNxQ19wa1FEUk00ZVBHQXZWMC12UEh6djVRYXpEQm1DejM4cWJSUTItWlNSSHhTeHFFSnNKTENFRHZCSnJ6aTNqMFNpQ19VdXp6bFJ5OVhUM3MwelVwbnVTdS1KSXhSUTdySUtuRzdCRHdLd044RlZ1UnZB?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-09-09T17:38:00.000Z",
       "consulta": "senate-races",
       "origem": "google",
       "trilho": "disputa"
@@ -170,51 +215,6 @@
       "url": "https://www.washingtonpost.com/business/2026/09/09/oils-rise-past-100-per-barrel-deepens-gops-midterm-challenge/",
       "casa": "The Washington Post",
       "publicadoEm": "2026-09-09T16:04:08.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Missouri voters face confusion over congressional map ahead of midterms",
-      "url": "https://www.nbcnews.com/video/missouri-voters-face-confusion-over-congressional-map-ahead-of-midterms-269551173948",
-      "casa": "NBC News",
-      "publicadoEm": "2026-09-09T16:01:28.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Maine and Michigan Senate races are neck and neck, CNN polls find",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPUDQzVTlTUmRiM2hfUTZwNXVZUzVfc3NZNEZyU0dzTU40MXR4cl9NdFNlQXJBRE5pbExTNGlOUnFZckJjUklzV1JiNHJKLWFSLV9GVm5ZaVBRSVN4SDNSVjhDcnI5akQtcWhjSGZ2ZVlMU19SUS0zaXZxOGMyZWdTYTBRelpObmluRDl3SWQ1MG9mWnZ5c2ZFR0JSQXZLaUl1UHJvSGdub3Nsbjg?oc=5",
-      "casa": "CNN",
-      "publicadoEm": "2026-09-09T16:00:29.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Texas Republican in race for key House seat under fire for derogatory comments",
-      "url": "https://www.theguardian.com/us-news/2026/sep/09/texas-brandon-herrera-republican-house",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-09-09T15:45:59.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Rogers, El-Sayed locked in tight Michigan Senate race: Survey",
-      "url": "https://thehill.com/homenews/campaign/6078750-michigan-senate-poll-rogers-elsayed/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-09-09T15:11:43.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Missouri court opens contempt probe into Republican official over redistricting fight",
-      "url": "https://www.nbcnews.com/politics/elections/missouri-court-opens-contempt-probe-republican-official-redistricting-rcna596803",
-      "casa": "NBC News",
-      "publicadoEm": "2026-09-09T14:33:22.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"

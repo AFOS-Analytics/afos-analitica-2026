@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-03",
-  "fetchedAt": "2026-08-03T13:20:24.368Z",
+  "fetchedAt": "2026-08-03T19:20:03.504Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -108,33 +108,89 @@
     }
   ],
   "qualidade": {
-    "lidos": 156,
-    "naLista": 56,
-    "foraDaLista": 100,
+    "lidos": 146,
+    "naLista": 67,
+    "foraDaLista": 79,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 16,
-    "veiculosRepresentados": 7,
+    "descartadosPorAcompanhamento": 21,
+    "veiculosRepresentados": 8,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 15,
-    "lidosEmFeedProprio": 17,
-    "publicadosComLinkCanonico": 4,
-    "publicadosViaGoogleNews": 6
+    "lidosEmFeedProprio": 21,
+    "publicadosComLinkCanonico": 6,
+    "publicadosViaGoogleNews": 4
   },
   "itens": [
     {
-      "titulo": "AP Decision Notes: What to expect in Michigan’s state primary",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPejlxSDRDZ3dzNUxlUGo2Nk5uZHNJUDBuUEVkcmJEVkc3OXN1RDVwcl9GVnl3ZHpQX0NHZ3hkdHQwT0V6MnNyU1Z2aWdReXdLVU85SGNRQXp1WHhMMzVBV0ZPSGI1TkJ3WGc0a2piczhGZmdBQTdnbU1MS0g5N2ZLLVhHX0hxZmc4cEkyN1RMd1FCNU5nOEZBY2Z4bVAxODN1TDdXbWt0RmhjZWpMQmQwWHVIQlYwQQ?oc=5",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-08-03T13:16:52.000Z",
+      "titulo": "Rogers beats El-Sayed, loses to Stevens in Michigan Senate poll",
+      "url": "https://thehill.com/homenews/campaign/6006366-michigan-senate-poll-rogers-stevens/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-08-03T19:12:03.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
+    {
+      "titulo": "Michigan Looks Left",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQdTZSWjFqbmVDdzdDcFhBQ01CVU5oWEJGOEx0SHRnMWxYMk9MYnV3SXlWTVRyY3JLUkZLTTRjQXNPNVdLYzhQeDFCeFdXc3NuRnczNGhKQmxIcHZaaEg2RWNsNjVFWU5rcXFPN3NVUGVkelZHSDRtMi1BSmpmbzRVcHpDSQ?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-08-03T17:35:12.000Z",
+      "consulta": "senate-races",
+      "origem": "google"
+    },
+    {
+      "titulo": "Socialist House candidate says he agrees with Republicans on &apos;one issue&apos;",
+      "url": "https://www.foxnews.com/politics/socialist-house-candidate-says-he-agrees-republicans-one-issue",
+      "casa": "Fox News",
+      "publicadoEm": "2026-08-03T17:00:18.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
+    {
+      "titulo": "Senate races through high-profile agenda",
+      "url": "https://thehill.com/newsletters/1230-report/6006046-anti-weaponization-fund-trump-allies-ends-blanche-confirmation-ariana-grande-health/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-08-03T16:32:10.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
+    {
+      "titulo": "Senate leaders reach a deal to avert a shutdown before the 2026 elections",
+      "url": "https://www.nbcnews.com/politics/congress/senate-leaders-reach-deal-avert-shutdown-2026-elections-rcna590564",
+      "casa": "NBC News",
+      "publicadoEm": "2026-08-03T16:03:18.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
+    {
+      "titulo": "Will Missouri be the next primary win for a democratic socialist challenger?",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPQmVON19TWl83VUlwcVFxRnNwTFh3ZG9zbi1RR1FMM18wckdlQkN5Smd1Umg3Nzk4NzlmZU5OTzVQOGdveDN2empQTXdWdXBxSGFWQWFibXBNekFGczdNSDhpSFZQN05VTWVaa1JXRzlvYkM3cWV0bWxIODNmNHl6eWdRMF9tcjE4YUhEUEtmVHF1a1ZrV1BKVA?oc=5",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-08-03T14:27:00.000Z",
       "consulta": "midterms",
       "origem": "google"
     },
     {
-      "titulo": "Races to watch in Michigan as establishment Democrats face off against challenges on their left flank",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOeTB5a3pyaHd3ZmJ5NTBkMXpfVHBwR1VVcjFLaTc2VGwtZjR0Q2xqVkF4QS0wMnZ2Rmprb25lN214MFNXVnpfNjNTcFVPbTVTRUhmRzk5UnBQZGZLaU5JX0NRQ3RVLWVDRXBpM3Zqb2JyZzUwTjJVdDZxSGFTdjlZa3JTTXJsOHJPYmVac2Fwdw?oc=5",
-      "casa": "Washington Examiner",
-      "publicadoEm": "2026-08-03T12:04:00.000Z",
+      "titulo": "Senate pushes ahead with plan to fund government through midterms",
+      "url": "https://www.cbsnews.com/news/senate-government-funding-midterm-elections/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-08-03T13:55:58.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
+    {
+      "titulo": "Senate pushes ahead with plan to fund the government through midterm elections",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB6MFVXc1FKS056enNfSkhILUJhaDR0RTNqRENuRi1TYTNtbkxTeG5HNlpvVW9PSHl6a0FOMjhTUnJsVEpYM3dmQUJKNEg1czU3YnhJTF82QjgyU3A2TThqNkM5eHVGMXpPa2ZxRERqVHpON1BkR2N1aWk4cnBGdw?oc=5",
+      "casa": "CBS News",
+      "publicadoEm": "2026-08-03T13:55:58.000Z",
+      "consulta": "midterms",
+      "origem": "google"
+    },
+    {
+      "titulo": "Democrats’ future is on the line as El-Sayed and Stevens make final push in Michigan primary",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPUkdXNjVtRDJnWExmWEZEN1ZUWG10OXJUZXlma1l3SXlLelNvSEhqc0VTVWlwZHUzQUlxdUM5b3pSaU9CdUhfUUIwcThINko0MjJzbXBGV1NPa0ljU2xPUUVNVFYtOTZyZDQ3ZHZuY1g5TGZFZXhuc09UZVZZaWxocUYxZmhqLVdRUlVTOVZHNWhzQ2pkR2ptay0wNW5zUmpB?oc=5",
+      "casa": "AP News",
+      "publicadoEm": "2026-08-03T13:54:00.000Z",
       "consulta": "senate-races",
       "origem": "google"
     },
@@ -145,62 +201,6 @@
       "publicadoEm": "2026-08-03T11:37:09.000Z",
       "consulta": "feed-proprio",
       "origem": "feed"
-    },
-    {
-      "titulo": "Across the US, progressives are upending Democratic primary races. Will it happen in Missouri?",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPQmVON19TWl83VUlwcVFxRnNwTFh3ZG9zbi1RR1FMM18wckdlQkN5Smd1Umg3Nzk4NzlmZU5OTzVQOGdveDN2empQTXdWdXBxSGFWQWFibXBNekFGczdNSDhpSFZQN05VTWVaa1JXRzlvYkM3cWV0bWxIODNmNHl6eWdRMF9tcjE4YUhEUEtmVHF1a1ZrV1BKVA?oc=5",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-08-03T11:27:00.000Z",
-      "consulta": "senate-races",
-      "origem": "google"
-    },
-    {
-      "titulo": "First showdown in race for Lindsey Graham&apos;s Senate seat puts GOP hopefuls to the test",
-      "url": "https://www.foxnews.com/politics/first-showdown-race-lindsey-grahams-senate-seat-puts-gop-hopefuls-test",
-      "casa": "Fox News",
-      "publicadoEm": "2026-08-03T10:00:18.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
-    },
-    {
-      "titulo": "SAVE America Act unlikely to affect 2026 election even if Senate passes it",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQRE8yeWpuSVJzSXpjWFBMenFjM0JjU2lCa01Za1VxdlZ2dWlzcUd5bUtWbVRkZEJySUYwQ3EtM3ZSNGdUUWd4QmFTLS1uSUUxQzVYM2kyT1RvTk1yUE5jaEQwbGVCX1NlSTd0VDVKMVNmUmJTTHRrVG9IeXhJVDk4YThDLUlJb18wR3JnbUlKOEpXTHdMRl9yZjRIWDRfak9iemRZOXlpUGZ3eDg?oc=5",
-      "casa": "Washington Examiner",
-      "publicadoEm": "2026-08-03T10:00:00.000Z",
-      "consulta": "midterms",
-      "origem": "google"
-    },
-    {
-      "titulo": "Michigan’s Tense Democratic Senate Race Poses a Big Test for a Divided Party",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPMlVHSFhWRmt1SldIS3o2bzVyd1VmZjZGcnpDVVY2QVNqWXNIZWxrRGxTRkdmbU40VVRHQl84Q1hiTk82NTYweWEyeEViWTFEMVJtMGFLZERwRk1rMTZzcG9GYzhILWxMVkVyQjZIZ01lX0steDdrNlA4TzFBT3c3dktsQmRqZFh1aFJBZlJuS1J3ZFNaY3BPTw?oc=5",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-08-03T09:00:58.000Z",
-      "consulta": "senate-races",
-      "origem": "google"
-    },
-    {
-      "titulo": "Crucial Senate race could come down to Michigan’s Black voters",
-      "url": "https://www.washingtonpost.com/politics/2026/08/03/black-voters-divided-progressives-are-pivotal-michigan-senate-primary/",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-08-03T09:00:00.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
-    },
-    {
-      "titulo": "Michigan’s GOP governor primary is getting weird",
-      "url": "https://www.politico.com/news/2026/08/03/michigans-gop-governor-primary-john-james-01020176",
-      "casa": "Politico",
-      "publicadoEm": "2026-08-03T08:45:00.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
-    },
-    {
-      "titulo": "Republicans want to talk about James Talarico’s manhood. Talarico says let them.",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQRGVteWVjUXN0UWpVME9BMjdUbzZpWXVCQW9iY29jU1hwaWpKbWI1am0tWWExZFEtcVdnVUZvc0JlSkFNXzRkanc4T0lsMnVCUWR5cUVFUTNXOFMxbFhtYUlrT0p6ZW1UYkFqc3owNEl6ZzFPWVk2bXBmN0F5T3ZUTUR3MXlwMVJ4Wm92SUJfTF92X3JZWFJQVlMya3c5QndaTWdJV2FzSE91NmJ2YnN1MThvNXhMT0doUUpIQnRGWUM4Ulh4OGc?oc=5",
-      "casa": "Politico",
-      "publicadoEm": "2026-08-03T08:45:00.000Z",
-      "consulta": "senate-races",
-      "origem": "google"
     }
   ]
 }

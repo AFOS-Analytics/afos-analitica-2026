@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-27",
-  "fetchedAt": "2026-08-27T12:48:27.731Z",
+  "fetchedAt": "2026-08-27T19:20:34.480Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -114,21 +114,84 @@
   ],
   "qualidade": {
     "lidos": 193,
-    "naLista": 89,
-    "foraDaLista": 104,
+    "naLista": 91,
+    "foraDaLista": 102,
     "publicados": 10,
     "descartadosPorAcompanhamento": 22,
     "veiculosRepresentados": 7,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 37,
-    "publicadosComLinkCanonico": 6,
-    "publicadosViaGoogleNews": 4,
+    "lidosEmFeedProprio": 38,
+    "publicadosComLinkCanonico": 7,
+    "publicadosViaGoogleNews": 3,
     "publicadosPorDisputa": 10,
     "publicadosPorMetodo": 0
   },
   "itens": [
+    {
+      "titulo": "Trump tells voters ahead of midterms: 'Pretend I'm on the ballot'",
+      "url": "https://thehill.com/homenews/administration/6055367-trump-midterm-republican-voters-pretend-ballot/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-08-27T18:04:35.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Democrats embrace voter suppression with decoy Dan Sullivan in Alaska",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPX0dFSkZramUwaFBHYlZfYW5SMU1NVjBOemdKZlNpWUJodlJDUTlSb0FKOEJ5MDdGd0U4ZkJJQWZpa0NCUTJweWpmdlNaN3BSV2xubGFlRjJEbWVSTm56TTdybWtVMEdqU01XSG5nekZDTmdVek1KaTlYLXd5aWtrVDVnZV96T1BIWEtSeEJGZmJmRzNjWEp5QlFNblJLcmxIRThIWW1rNHRwVkllSGpQSTgzVzJsbmZ0QWUyWXNOTEYtekFYSm9fT2tXSGNfZERWb1R2V0NPRDZKUQ?oc=5",
+      "casa": "Washington Examiner",
+      "publicadoEm": "2026-08-27T17:57:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Talarico leads Paxton for Texas Senate while Hinojosa trails Abbott in governor's race: Poll",
+      "url": "https://thehill.com/homenews/campaign/6055357-texas-senate-poll-talarico-leading/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-08-27T17:38:12.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Top Alaska Senate Candidates Advance as Angie Nixon Wins in Florida",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQci1UckpMV09GWU5CY3VPWGxobnZnOEh6akZLb0syV3A1bGd4Zi1sSEpFajZ2YTc5UnpBSHpsejQyQnJHRFdQTkIxYlZUb1Rfak43bUFzMjhzc0trZVQxNkRaTWZxdENhUWFVVGMxSGk3N09CUkIxTnMyWTdidmFpb2h2TEk?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-08-27T17:12:35.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "12 races scramble Senate battlefield as Democrats eye comeback",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQUWp3QWhiV0QxOU5kV3FVWGl3bFNHZU40MzFIZHNNLTE5MU9hYWZWaC1KMnRIaWstZEMxQ3l5WTJCN01aSmhpeHR5MVd5eXVuSEVjZFRhUl9DNjZDVkZoOHMxOXRZWG1HX1BlOTROS1Rqem5rZENwNHZFeVVjbURRcGdjN3dVWnBuU1Q5cEZFTlhCb2Y2YVBR0gGcAUFVX3lxTE9HVVN4WDhqdVBxUW54STMtYkE3VDN1Q294dE5ibW1jdkVnZjBlSGhfZU1JekpGdTVON2t0NGFJdVBGbFFBMmZYeGVZTXJCNk5vTURsSWdFUjZVZVAzMEEtSUhub2Y1ZElmeVU1TThpZmw4dDZnNjhZYUFsUTE2S1JjTEhKU0Fwdi1fSk5zWlVPeDJGTC0xVGFBeEh1Mw?oc=5",
+      "casa": "Fox News",
+      "publicadoEm": "2026-08-27T17:11:54.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Wyoming’s Republican governor raises concerns over ‘aggressive’ DOJ election monitors",
+      "url": "https://www.nbcnews.com/politics/2026-election/wyoming-republican-governor-concerns-aggressive-doj-election-monitors-rcna594730",
+      "casa": "NBC News",
+      "publicadoEm": "2026-08-27T16:52:18.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump’s Strength in Primaries is Clear. The Midterms Pose a Different Test.",
+      "url": "https://www.nytimes.com/2026/08/27/us/politics/trump-midterm-election-republicans.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-08-27T15:20:41.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
     {
       "titulo": "Republicans face midterm verdict as Iran war drags on longer than Trump promised",
       "url": "https://abcnews.com/Politics/wireStory/republicans-face-midterm-verdict-iran-war-drags-months-135998199",
@@ -154,69 +217,6 @@
       "publicadoEm": "2026-08-27T10:45:40.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Top Alaska Senate Candidates Advance as Angie Nixon Wins in Florida",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQci1UckpMV09GWU5CY3VPWGxobnZnOEh6akZLb0syV3A1bGd4Zi1sSEpFajZ2YTc5UnpBSHpsejQyQnJHRFdQTkIxYlZUb1Rfak43bUFzMjhzc0trZVQxNkRaTWZxdENhUWFVVGMxSGk3N09CUkIxTnMyWTdidmFpb2h2TEk?oc=5",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-08-27T10:09:07.000Z",
-      "consulta": "midterms",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "In a Pennsylvania congressional swing district, a Republican incumbent faces allegations over embellishing résumé",
-      "url": "https://www.theguardian.com/us-news/2026/aug/27/ryan-mackenzie-pennsylvania-congressman-resume",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-08-27T10:00:11.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Tracking Competitive Races in the House and Senate",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQZ0ZhWGZlU2pYdmYwbk9SNk9JMWd6aTN1SjNudktsVkFoWEt3T3FJR1RjTC1ZU3Q3YU9ReTV0WUJJQkdDOWpzTWJ1X0liWk91MlpFdmxvX2F2THY3VnBVRDlRQlZFY19fYjRrZDQ1UlN6TGRueERkdmNIQkVveEZHMjd3eFVlM0VFWVN6WDEzcFBDSzdt?oc=5",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-08-27T09:39:00.000Z",
-      "consulta": "midterms",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Jon Ossoff, usually a head down senator, has found a formula to excite Democrats",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPLWtCRkJJSmRCWjV6XzZtdFJIMWYzQkNtWFAyUElrMUlpWmkzZnFPbzRXczJGdzZ6X0dzck9RcXQwamN4SmFwYWlfVjhCMHZoQkdEYTBEc3o5NDNEbUZGUEl3OFBBR3Y0NGFoUE9qOE5xY0pId2Q4alBtUU01ejBhNw?oc=5",
-      "casa": "NPR",
-      "publicadoEm": "2026-08-27T09:00:00.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Maryland court rules Democratic-backed redistricting amendment cannot go on November ballot",
-      "url": "https://abcnews.com/Politics/wireStory/maryland-court-rules-democratic-backed-redistricting-amendment-november-135978167",
-      "casa": "ABC News",
-      "publicadoEm": "2026-08-27T01:22:16.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "GOP nominee for Texas House seat apologizes for 'crude' online posts",
-      "url": "https://thehill.com/homenews/campaign/6053905-texas-rep-candidate-borrego-apology/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-08-27T01:03:01.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Trump's endorsed candidates almost all won 2026 Republican primaries",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOTFZ4dXVvMFpPUU9wZmRXaEhualdSdzQwV0xrTTMzeDd0cUFpcGtrMThMQVdGSUtQWm5fOVdWYlYzV3VWX1FTalpTYXBOVVgxQmlrclVINEpHSDI5WGhpRjFOVkpPQTNiNjhaRExUUzBITmRaQkhzbWNYZlEtUExRejhNeWdWV3NPOXFqYWdBZ0ViekZLcGZBSm9FTHc5YURrUGY1QzcwZkdMd2R4TjVDeWxiV2dRTkRQTDc1b2lJS05leC00UXhUVWRn?oc=5",
-      "casa": "USA Today",
-      "publicadoEm": "2026-08-26T22:48:00.000Z",
-      "consulta": "midterms",
-      "origem": "google",
       "trilho": "disputa"
     }
   ]

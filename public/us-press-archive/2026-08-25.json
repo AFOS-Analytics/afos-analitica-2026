@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-25",
-  "fetchedAt": "2026-08-25T17:50:07.933Z",
+  "fetchedAt": "2026-08-25T19:20:01.420Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,22 +113,31 @@
     }
   ],
   "qualidade": {
-    "lidos": 128,
-    "naLista": 57,
+    "lidos": 133,
+    "naLista": 62,
     "foraDaLista": 71,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 19,
+    "descartadosPorAcompanhamento": 22,
     "veiculosRepresentados": 8,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 18,
+    "lidosEmFeedProprio": 16,
     "publicadosComLinkCanonico": 4,
     "publicadosViaGoogleNews": 6,
     "publicadosPorDisputa": 10,
     "publicadosPorMetodo": 0
   },
   "itens": [
+    {
+      "titulo": "GOP's Singer 'very prepared' to oust Dem Moskowitz in toss-up Florida race that could determine House majority",
+      "url": "https://www.foxnews.com/politics/gop-singer-very-prepared-oust-dem-moskowitz-toss-up-florida-race-determine-house-majority",
+      "casa": "Fox News",
+      "publicadoEm": "2026-08-25T17:56:40.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
     {
       "titulo": "Mike Lindell withholds payment for recount request in Minnesota GOP governor primary",
       "url": "https://www.cbsnews.com/news/mike-lindell-withholds-payment-recount-primary/",
@@ -148,30 +157,21 @@
       "trilho": "disputa"
     },
     {
+      "titulo": "Top Alaska Senate Candidates Advance as Angie Nixon Wins in Florida",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQci1UckpMV09GWU5CY3VPWGxobnZnOEh6akZLb0syV3A1bGd4Zi1sSEpFajZ2YTc5UnpBSHpsejQyQnJHRFdQTkIxYlZUb1Rfak43bUFzMjhzc0trZVQxNkRaTWZxdENhUWFVVGMxSGk3N09CUkIxTnMyWTdidmFpb2h2TEk?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-08-25T16:13:38.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
       "titulo": "Live updates: South Carolina GOP Senate special primary runoff",
       "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNV0dnQVZYRVZBa1A4eFdoVzRrdzJvWGZvWjYwc1BCc3lUU1Vsek5fckhubm1YbFN4eUdxY24yRHFCQkMxeHN0SDk2bnhkNXpNS3V5cmhFeGV0RFFPaDlaM25SQWcwNUlfN0hZWE05cEVLMFRxZUdmem5wT0tvdlFsSnFSbHdfRUZhaXAwUXRuU2h1SW5wYU02REJlNVBUSlk2MEZCNVk0aGU5eXNFNUtONFBNN0ZzYi1VVGVGb0hZZ2VpVTZJeVl5WnBLc2dpOEVTM3pIemJHTldCSEdn?oc=5",
       "casa": "The Washington Post",
       "publicadoEm": "2026-08-25T16:00:00.000Z",
       "consulta": "senate-races",
       "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Top Alaska Senate Candidates Advance as Angie Nixon Wins in Florida",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQci1UckpMV09GWU5CY3VPWGxobnZnOEh6akZLb0syV3A1bGd4Zi1sSEpFajZ2YTc5UnpBSHpsejQyQnJHRFdQTkIxYlZUb1Rfak43bUFzMjhzc0trZVQxNkRaTWZxdENhUWFVVGMxSGk3N09CUkIxTnMyWTdidmFpb2h2TEk?oc=5",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-08-25T13:59:00.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Supreme court threatens midterms mail-in voting as it backs Trump plan | First Thing",
-      "url": "https://www.theguardian.com/us-news/2026/aug/25/first-thing-us-supreme-court-midterms-mail-in-voting-trump-plan",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-08-25T12:31:53.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
       "trilho": "disputa"
     },
     {
@@ -193,15 +193,6 @@
       "trilho": "disputa"
     },
     {
-      "titulo": "Darline Graham, Ralph Norman compete in rushed runoff today to replace late Sen. Lindsey Graham on ballot",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQTWlVZlp6bzcyalpvZUdkMEVzcmgtaHE1RnJGVkF3a0Fsc1kyTldoeDJES0pKektpaGYzeUwxSmpoelZwWlBGNlpaMG03M1hwWEtEdzZaTnhsSGZwek1zaTBZTGxzakVPbjZneWNKdGxTNDd6b1RuQXp0WmRfRE1hRHZLd0s5MUZSTjNfZERZOA?oc=5",
-      "casa": "CBS News",
-      "publicadoEm": "2026-08-25T10:00:00.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
       "titulo": "Darline Graham faces make-or-break GOP runoff in historic bid to keep brother’s Senate seat",
       "url": "https://www.foxnews.com/politics/darline-graham-faces-make-or-break-gop-runoff-historic-bid-keep-brother-senate-seat",
       "casa": "Fox News",
@@ -217,6 +208,15 @@
       "publicadoEm": "2026-08-25T08:54:11.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Democrats lead GOP in polls. Here's what has to happen next. | Opinion",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNTVJiNFFLa0VoeDVRU3JaWVpPcG9fYmUweGFTellOVHN2VmpKSm5abzNZMExIUW9idF90M3hIVFg1bmZkTWZQZnFzeUIzZXpLdXhnNG5JVGV4amFfRkZ6VWU5bEtDYlhNRnR5T3pTU0w5NUphd0xQWlh0Uzc3Ri1wNGo5R1ZsVWk0TGZTekR0eWVUYmtzTjM5ZkRJWWpTRDBpOGhGQUZ5X2d6TnhfUVNSSkFRSWU5X2U1?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-08-25T08:31:00.000Z",
+      "consulta": "generic-ballot",
+      "origem": "google",
       "trilho": "disputa"
     }
   ]

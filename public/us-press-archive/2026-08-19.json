@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-19",
-  "fetchedAt": "2026-08-19T17:02:07.074Z",
+  "fetchedAt": "2026-08-19T19:20:04.449Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,36 +113,72 @@
     }
   ],
   "qualidade": {
-    "lidos": 240,
-    "naLista": 114,
-    "foraDaLista": 126,
+    "lidos": 247,
+    "naLista": 124,
+    "foraDaLista": 123,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 33,
-    "veiculosRepresentados": 7,
+    "descartadosPorAcompanhamento": 41,
+    "veiculosRepresentados": 6,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 45,
+    "lidosEmFeedProprio": 42,
     "publicadosComLinkCanonico": 7,
     "publicadosViaGoogleNews": 3,
-    "publicadosPorDisputa": 9,
-    "publicadosPorMetodo": 1
+    "publicadosPorDisputa": 10,
+    "publicadosPorMetodo": 0
   },
   "itens": [
     {
-      "titulo": "Progressives and establishment Democrats celebrate Angie Nixon’s surprise Senate primary win in Florida – live",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/19/mary-peltola-dan-sullivan-alaska-primary-election-us-senate-florida-california-wyoming--donald-trump-us-politics-latest",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-08-19T16:48:51.000Z",
+      "titulo": "Fervor over data centers fires up competitive Ohio Senate race",
+      "url": "https://thehill.com/homenews/campaign/6039515-ohio-senate-race-data-centers-husted-brown/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-08-19T19:17:44.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Live updates: Florida Dem Angie Nixon stuns in Senate primary; Trump says US, Canada closing in on tariff deal",
-      "url": "https://thehill.com/homenews/administration/6037487-live-updates-trump-crypto-canada-tariffs-primary-elections/",
+      "titulo": "McCarthy 'worried' for GOP in midterms: 'What is the plan?'",
+      "url": "https://thehill.com/homenews/campaign/6039123-kevin-mccarthy-gop-midterms-concerns/",
       "casa": "The Hill",
-      "publicadoEm": "2026-08-19T16:43:19.000Z",
+      "publicadoEm": "2026-08-19T19:00:23.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Unhinged White House response shows senator’s ‘Natalie’ barb struck a nerve",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBiXzRMUTI2N2c2dGFPVzB6YnRQMmFYQVhqUmczNVVXRklGUTRlR3ZNQjFsRmNHbmVMcF9NMW5wUENjcTNnRHZIaS0yNmh4MHJ6dDNORDRTdEhqZnR4OEQxMEplMnVXVkZwdlJ5bjlrQmtQQzROb2hDXzhRT0Z6dw?oc=5",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-08-19T18:38:00.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "How progressive wins in Democratic primaries are shaping the midterms",
+      "url": "https://www.cbsnews.com/news/democratic-primaries-progressive-wins-midterm-elections/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-08-19T17:41:19.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "How progressive wins in Democratic primaries are shaping the midterm landscape",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNaDJZVEZ6U1JkTV9ZZkhrRE1tS0xPbndrQnlyWnFGNkNMbHBwUXJwMl9NZ250MU1Od2tSdEN3R1c2VnYtQU1QelZoWkdrenFsWGlxWDFILVJTM0d4UXM2VmM4UGIxb25QSXQtV1ozVjJ0b2ZJYzJ2MFEzdHZjSlZkYjR3R1k1eUJ5UUhETFpn?oc=5",
+      "casa": "CBS News",
+      "publicadoEm": "2026-08-19T17:41:19.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Republican senator Dan Sullivan and Democrat Mary Peltola advance in Alaska Senate primary",
+      "url": "https://www.theguardian.com/us-news/2026/aug/19/alaska-senate-primary-results",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-08-19T17:36:24.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
@@ -157,28 +193,10 @@
       "trilho": "disputa"
     },
     {
-      "titulo": "A democratic socialist win and losses for Trump allies: takeaways from primaries in three key states",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOV1VfLTB1ZVFTSER4QkQ1WUY3VXlSTDlzazhnUTR0V3EzQmlrdm9pd3FNTGpNQmVOSFJ1ZTZ2Q19QbjkwSkNSdnFVV0hCZWUzdGt3WERkaWtNc0oxdGhWcjktbTdqTVExeFcyeVZzVzlESjZjS3NkMlNBSG1ZTGlKR3B6XzNzbDlDOF9XQnhrdzBBTUNUUk5hY3ln?oc=5",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-08-19T15:56:00.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Prediction markets shut out of Trump's meeting with tech executives",
-      "url": "https://thehill.com/homenews/administration/6038507-cftc-innovation-committee-kickoff-meeting/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-08-19T15:23:42.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "metodo"
-    },
-    {
-      "titulo": "Dem socialists' mixed results in Florida primaries: 5 takeaways",
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQS3BlZzJzZVR6Y2RVMF9PaFR5bzc2NGgtSDRXNXZKUTFvU01DY3VHYXpBQWJHSVdBQ2d1bFRVT0xfWm5sX1o1TVBpcHZ2LWxlU2VlcTZlNHBlTWVqT29nWG5Na1VtcTdfY1llUGRQY1NCT2RrS2JCRFljQmZXTU1DcFc5NTFzN29LME5CWldxaG5DYWZxZkdra2pOMmYycXhXTms5V3JfVGs5ZElzelpWV0gwandqWFF6eDdWYW5PTWpuNWdpM0VjTWJsVlhMRjh1UXRZ?oc=5",
-      "casa": "USA Today",
-      "publicadoEm": "2026-08-19T14:59:00.000Z",
+      "titulo": "Five takeaways from Tuesday's primaries in Florida and Alaska",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOUFBPaFBMQ2I2bHliVUJfNnBVYS1GQ3Fib2l5NUN3TXVpbHZtNHBsa09samFUd21sbGhVQWdxc1lxYnVtLXlQUnFCZURiajBUckdRbXRVb2R6aFdPMzJzYmgyUnp4WEVSVzQwSHZpam5fdDAtZ3E2VjFkVzNDYXdXdlZITm1oQnk1UWE1RU9Bb3NpUjJWMHowNWQ3SjhvNDBidkU0?oc=5",
+      "casa": "Reuters",
+      "publicadoEm": "2026-08-19T15:22:50.000Z",
       "consulta": "senate-races",
       "origem": "google",
       "trilho": "disputa"
@@ -197,24 +215,6 @@
       "url": "https://www.foxnews.com/politics/5-takeaways-florida-senate-primary-gop-sen-ashley-moody-face-dsa-nixon",
       "casa": "Fox News",
       "publicadoEm": "2026-08-19T13:48:31.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Sen. Sullivan, former US Rep. Peltola begin Alaska US Senate campaign after advancing from primary",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOb1lDZktxQ2pEVExkbWVDeEE1RHYtdS1OM0xISy1Nd01oTDBnYjR1c0ZGckhmcHRTeExxQ1ltZjduMXdFel9lUG9UdFhFZjdzYkdoQnBWUWZ0Yml5SG05TEduZDlqTmNYUnFqbTM5ZlRNRlU3NXBZQ3hhRlR0LTVFamkteUdSYjBVa3BZdTlFTk5aTGwwM09ZTE9NRUN5bS1rTFh4ZQ?oc=5",
-      "casa": "AP News",
-      "publicadoEm": "2026-08-19T13:39:00.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Sen. Dan Sullivan, Mary Peltola advance in Alaska Senate primary",
-      "url": "https://www.cbsnews.com/news/mary-peltola-dan-sullivan-alaska-senate-primary-results/",
-      "casa": "CBS News",
-      "publicadoEm": "2026-08-19T11:11:51.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"

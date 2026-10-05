@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-30",
-  "fetchedAt": "2026-08-30T16:42:18.998Z",
+  "fetchedAt": "2026-08-30T19:20:33.420Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,16 +113,16 @@
     }
   ],
   "qualidade": {
-    "lidos": 120,
-    "naLista": 52,
-    "foraDaLista": 68,
+    "lidos": 121,
+    "naLista": 55,
+    "foraDaLista": 66,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 17,
+    "descartadosPorAcompanhamento": 18,
     "veiculosRepresentados": 8,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 21,
+    "lidosEmFeedProprio": 19,
     "publicadosComLinkCanonico": 6,
     "publicadosViaGoogleNews": 4,
     "publicadosPorDisputa": 10,
@@ -130,21 +130,30 @@
   },
   "itens": [
     {
-      "titulo": "Rep. Jim Clyburn says impeaching Trump shouldn’t be Democrats’ priority if they win back the House",
-      "url": "https://www.nbcnews.com/politics/congress/jim-clyburn-impeaching-trump-shouldnt-democrats-priority-win-house-rcna595118",
-      "casa": "NBC News",
-      "publicadoEm": "2026-08-30T15:14:38.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
+      "titulo": "Postal Service Rule Could Bar Millions From Voting by Mail",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOYjNOT1BNSkxYVmFGR2lCeEdFcU5zZUh1bDRrOU1XOUdrUnlPVV81UGFGdTNxSDExTUtFdWxGb0Q0TW9VZHVrajNnOVJ6M1VpeDQ3QWsxdHY5OGJWU3hfRUl1MjZ4VjdmU2dCRHpNSnB4cUVJTlNhd0JuRmo0OXNHeTVldzJjWHc0SHRXZW4zVmlNbTJlamVj?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-08-30T18:17:10.000Z",
+      "consulta": "midterms",
+      "origem": "google",
       "trilho": "disputa"
     },
     {
       "titulo": "Top Alaska Senate Candidates Advance as Angie Nixon Wins in Florida",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQci1UckpMV09GWU5CY3VPWGxobnZnOEh6akZLb0syV3A1bGd4Zi1sSEpFajZ2YTc5UnpBSHpsejQyQnJHRFdQTkIxYlZUb1Rfak43bUFzMjhzc0trZVQxNkRaTWZxdENhUWFVVGMxSGk3N09CUkIxTnMyWTdidmFpb2h2TEk?oc=5",
       "casa": "The New York Times",
-      "publicadoEm": "2026-08-30T14:56:27.000Z",
-      "consulta": "midterms",
+      "publicadoEm": "2026-08-30T16:55:30.000Z",
+      "consulta": "senate-races",
       "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Rep. Jim Clyburn says impeaching Trump shouldn’t be Democrats’ priority if they win back the House",
+      "url": "https://www.nbcnews.com/politics/congress/jim-clyburn-impeaching-trump-shouldnt-democrats-priority-win-house-rcna595118",
+      "casa": "NBC News",
+      "publicadoEm": "2026-08-30T15:14:38.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
       "trilho": "disputa"
     },
     {
@@ -166,10 +175,10 @@
       "trilho": "disputa"
     },
     {
-      "titulo": "Postal Service Rule Could Bar Millions From Voting by Mail",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOYjNOT1BNSkxYVmFGR2lCeEdFcU5zZUh1bDRrOU1XOUdrUnlPVV81UGFGdTNxSDExTUtFdWxGb0Q0TW9VZHVrajNnOVJ6M1VpeDQ3QWsxdHY5OGJWU3hfRUl1MjZ4VjdmU2dCRHpNSnB4cUVJTlNhd0JuRmo0OXNHeTVldzJjWHc0SHRXZW4zVmlNbTJlamVj?oc=5",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-08-30T09:01:04.000Z",
+      "titulo": "‘Grassroots will beat big money every day’: can a DSA member flip a Republican Senate seat?",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOVTQ3WHB0dmJCekZwVVVMakIzQmQzRWRyMlFmNkNoWW9ENFhkeXpYLS15eDlYTTlWaUpVa2QwVnRXM1E5MUFZRE10aENTUVNCUWc0NHVYUDN4QmN1NmoybFh0Um5jYXB3bjBwSTBCQkU2M0xfS3J5UXJvVGFkdDk4SExJQzBpZm1UUFZrYg?oc=5",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-08-30T10:02:00.000Z",
       "consulta": "midterms",
       "origem": "google",
       "trilho": "disputa"
@@ -208,15 +217,6 @@
       "publicadoEm": "2026-08-29T22:09:20.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Michigan Senate candidate Mike Rogers says he saw Bin Laden’s body with his ‘own eyes’. He did not",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOVXFkSEhsSGtZS0l6bE9FNW56OUdfUjk1a0pPM1dhOXI0U25Cbk5nN3cwV1E3NVlIMC1qUHc1TUtSM2ZuamFQanRpTFpKb09VNlZEcnNuVmVhVUsxeXhad0hGdWQ3Nl9NWXNpcWNGeUhaejBJUWQwZExOMEt3V3ljZ28ta1Zwb3FZN180dVA1cmhoNUlJMjhNMEJUVzdHVU14V2F3?oc=5",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-08-29T15:07:00.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
       "trilho": "disputa"
     }
   ]

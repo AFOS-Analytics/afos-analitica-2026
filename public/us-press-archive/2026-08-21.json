@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-21",
-  "fetchedAt": "2026-08-21T18:13:26.155Z",
+  "fetchedAt": "2026-08-21T19:20:30.644Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,16 +113,16 @@
     }
   ],
   "qualidade": {
-    "lidos": 168,
-    "naLista": 68,
-    "foraDaLista": 100,
+    "lidos": 160,
+    "naLista": 64,
+    "foraDaLista": 96,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 22,
+    "descartadosPorAcompanhamento": 21,
     "veiculosRepresentados": 6,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 25,
+    "lidosEmFeedProprio": 24,
     "publicadosComLinkCanonico": 7,
     "publicadosViaGoogleNews": 3,
     "publicadosPorDisputa": 10,
@@ -175,15 +175,6 @@
       "trilho": "disputa"
     },
     {
-      "titulo": "Tracking Competitive Races in the House and Senate",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQZ0ZhWGZlU2pYdmYwbk9SNk9JMWd6aTN1SjNudktsVkFoWEt3T3FJR1RjTC1ZU3Q3YU9ReTV0WUJJQkdDOWpzTWJ1X0liWk91MlpFdmxvX2F2THY3VnBVRDlRQlZFY19fYjRrZDQ1UlN6TGRueERkdmNIQkVveEZHMjd3eFVlM0VFWVN6WDEzcFBDSzdt?oc=5",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-08-21T10:05:15.000Z",
-      "consulta": "midterms",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
       "titulo": "Seeking to flip Senate, Democrats are running ads to criticize their own",
       "url": "https://www.washingtonpost.com/politics/2026/08/21/swing-state-democrats-criticize-an-unpopular-institution-their-own-party/",
       "casa": "The Washington Post",
@@ -215,6 +206,15 @@
       "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPNTl6XzRRV29qd0pPYTI2Q055YXR1bW5oUktndG5fS2xPMFhHR0hRMjVwaFBUeFZUUXZrRkxfSTZLbUNaV1BjZ0QyMHJkTldFRHZLbWdiWGJ3QTJCYkdJbGJxZEZJWlMzT1ZQUGJLQjQ5dkVfdVY2MlRsM3E0U1RBTENONk51RWhFU0R3QUdpdVp0RUZGY0JXUVB3ek5RYXlzYXNQSDVuQWdpMkh3cnF2LXVvcVZkck0zRU1lTDYzb2RXQnVTTnNvaw?oc=5",
       "casa": "USA Today",
       "publicadoEm": "2026-08-21T08:31:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "How democratic socialists fared in 2026 until Angie Nixon's win",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPSWdqdG1TZFVaM2ltTXBsSHlySmEtdldMMFBSRnZMbXJoZC1MdU15cUotaUZZV3lXSmZSVWtuT1NNUnFVOE54QWRleXdDSXpXczVWUElYa1REV2JTeFpSbU95SDd6UjRVaTRrZnlMczJObFlpQWdxSzBYOVlLMkRQeTVVZ2RLMGpWMERLOG5wYkg4MTZ6RzloVWNMMHZUdkNhWkZYaER0cEZBNHFnb2hRMDEtTWd1dHB6QnYw?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-08-21T02:13:00.000Z",
       "consulta": "senate-races",
       "origem": "google",
       "trilho": "disputa"

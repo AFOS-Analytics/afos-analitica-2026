@@ -25,6 +25,7 @@
  *   npx tsx scripts/snapshot-us-press.ts                  # ensaio, não escreve
  *   npx tsx scripts/snapshot-us-press.ts --apply
  *   npx tsx scripts/snapshot-us-press.ts --apply --dia-corrente   # cria a data de hoje mesmo cedo
+ *   npx tsx scripts/snapshot-us-press.ts --apply --regerar-encerradas  # reescreve data encerrada que DIFERE, com ERRATA.json
  */
 import { config } from 'dotenv'
 config({ path: '.env.local' })
@@ -37,6 +38,28 @@ import { agendaDaRota, decidirDataCorrente, ultimoCronDoDia, ACOES } from '../li
 
 const APLICAR = process.argv.includes('--apply')
 const FORCAR_DIA_CORRENTE = process.argv.includes('--dia-corrente')
+
+/**
+ * 🔴 `--regerar-encerradas`: reescreve data ENCERRADA cujo conteúdo em disco
+ * DIFERE do banco, e REGISTRA cada reescrita em `ERRATA.json`.
+ *
+ * ⚖️ Decisão do André em 05/Out/2026, depois de eu apresentar a escolha errada.
+ * O contrato no topo deste arquivo diz que erro em data passada se corrige por
+ * ERRATA e não por reescrita, porque reescrita silenciosa tira a auditabilidade
+ * da série. A decisão foi fazer as DUAS coisas: regerar e registrar.
+ *
+ * 📊 O passivo que a criou: em 05/Out, 29 das 68 datas guardavam a coleta do
+ * MEIO do dia. O arquivador rodava antes do último cron, gravava a coleta
+ * parcial, o cron das 19:20Z depois atualizava o banco com a final, e na passada
+ * seguinte a data já estava encerrada. Testado sobre as 68: 68 de 68 sem
+ * exceção, toda data que difere foi arquivada antes de 19:20Z.
+ *
+ * ⛔ Não é padrão e nunca será: sem a flag, data encerrada segue intocada.
+ * ⛔ Só toca data que DIFERE: idêntica não é reescrita.
+ * ⛔ Não inventa conteúdo: entra o registro do banco, nunca uma releitura.
+ * ⛔ Sem `--apply` não escreve nada, nem o arquivo nem a errata.
+ */
+const REGERAR_ENCERRADAS = process.argv.includes('--regerar-encerradas')
 const DIR_ARQUIVO = join(process.cwd(), 'public', 'us-press-archive')
 const PISO = join(process.cwd(), 'public', 'us-press-data.json')
 
@@ -78,7 +101,8 @@ async function main() {
   } catch {
     ultimoCron = null
   }
-  let novos = 0, regerados = 0, preservados = 0, invalidos = 0, adiados = 0
+  let novos = 0, regerados = 0, preservados = 0, invalidos = 0, adiados = 0, regeradasEncerradas = 0
+  const errata: Record<string, unknown>[] = []
   let maisRecente: { iso: string; payload: unknown } | null = null
 
   for (const r of rows) {
@@ -101,10 +125,48 @@ async function main() {
     const jaExiste = existsSync(destino)
 
     if (jaExiste && iso !== hoje) {
-      // Data encerrada. Não se reescreve, nem que o conteúdo tenha mudado.
+      // Data encerrada. Não se reescreve, nem que o conteúdo tenha mudado,
+      // EXCETO sob `--regerar-encerradas`, e aí a reescrita vai para a ERRATA.
       const atual = readFileSync(destino, 'utf-8')
       const novo = JSON.stringify(payload, null, 2) + '\n'
-      const marca = atual === novo ? 'idêntico' : '⚠️  DIFERE do banco, preservado'
+      const igual = atual === novo
+
+      if (!igual && REGERAR_ENCERRADAS) {
+        // 🔑 O que mudou se diz em COISAS, nunca em bytes. O comparador acima é
+        // igualdade de string do JSON inteiro, e dizer só "DIFERE" fez 29 datas
+        // passarem semanas sendo lidas como ruído: ele não distingue matéria
+        // trocada de carimbo trocado. Aqui as duas pontas saem nomeadas, e o
+        // MESMO cálculo alimenta a errata, para não existir segunda cópia dele.
+        const antes = JSON.parse(atual) as Record<string, unknown>
+        const urls = (x: unknown) =>
+          ((x as { itens?: { url?: string }[] })?.itens ?? []).map((i) => i.url ?? '')
+        const urlsAntes = urls(antes)
+        const urlsDepois = urls(payload)
+        const soAntes = urlsAntes.filter((u) => !urlsDepois.includes(u))
+        const soDepois = urlsDepois.filter((u) => !urlsAntes.includes(u))
+        const carimbo = (x: unknown) => String((x as { fetchedAt?: string }).fetchedAt ?? '?')
+        errata.push({
+          data: iso,
+          regeradaEm: new Date().toISOString(),
+          motivo:
+            'O arquivo em disco guardava a coleta de um cron ANTERIOR ao ultimo do dia, e a regra de data encerrada congelou a versao parcial. O conteudo novo e o registro do Neon, que e a coleta final daquele dia.',
+          fetchedAtAntes: carimbo(antes),
+          fetchedAtDepois: carimbo(payload),
+          itensAntes: urlsAntes.length,
+          itensDepois: urlsDepois.length,
+          materiasTrocadas: soAntes.length,
+          urlsRemovidas: soAntes,
+          urlsAcrescentadas: soDepois,
+        })
+        console.log(
+          `  \u267B\uFE0F  ${iso}  ${String(itens).padStart(3)} itens  REGERADA do banco \u00B7 carimbo ${carimbo(antes).slice(11, 16)}Z -> ${carimbo(payload).slice(11, 16)}Z \u00B7 ${soAntes.length} mat\u00E9ria(s) trocada(s)`,
+        )
+        if (APLICAR) writeFileSync(destino, novo, 'utf-8')
+        regeradasEncerradas++
+        continue
+      }
+
+      const marca = igual ? 'idêntico' : '⚠️  DIFERE do banco, preservado'
       console.log(`  🔒 ${iso}  ${String(itens).padStart(3)} itens  data encerrada, ${marca}`)
       preservados++
       continue
@@ -131,6 +193,21 @@ async function main() {
   }
 
   console.log(`\n${novos} novos · ${regerados} regerados · ${preservados} preservados · ${adiados} adiados · ${invalidos} inválidos`)
+  if (errata.length) {
+    // A errata ACUMULA: reescrita antiga não desaparece porque houve outra.
+    const caminho = join(DIR_ARQUIVO, 'ERRATA.json')
+    const anterior = existsSync(caminho)
+      ? (JSON.parse(readFileSync(caminho, 'utf-8')) as { reescritas?: Record<string, unknown>[] })
+      : {}
+    const corpo = {
+      regra:
+        'Data encerrada normalmente NUNCA e reescrita, e erro em data passada se corrige por errata. Cada entrada aqui e uma reescrita que ACONTECEU, com o carimbo de coleta de antes e de depois e as materias trocadas, para a serie seguir auditavel.',
+      reescritas: [...(anterior.reescritas ?? []), ...errata],
+    }
+    console.log(`\n\u267B\uFE0F  ${regeradasEncerradas} data(s) ENCERRADA(S) regerada(s) do banco por --regerar-encerradas.`)
+    console.log(`\u{1F9FE} errata: ${corpo.reescritas.length} reescrita(s) registrada(s) em ${caminho}`)
+    if (APLICAR) writeFileSync(caminho, JSON.stringify(corpo, null, 2) + '\n', 'utf-8')
+  }
   if (adiados) {
     console.log('⏳ a data adiada nasce completa na próxima passada depois do último cron, a partir do registro do Neon. Nada se perde.')
   }

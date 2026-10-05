@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-09-06",
-  "fetchedAt": "2026-09-06T18:59:54.504Z",
+  "fetchedAt": "2026-09-06T19:20:13.793Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,18 +113,18 @@
     }
   ],
   "qualidade": {
-    "lidos": 159,
-    "naLista": 97,
-    "foraDaLista": 62,
+    "lidos": 157,
+    "naLista": 73,
+    "foraDaLista": 84,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 36,
+    "descartadosPorAcompanhamento": 12,
     "veiculosRepresentados": 7,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
     "lidosEmFeedProprio": 42,
-    "publicadosComLinkCanonico": 9,
-    "publicadosViaGoogleNews": 1,
+    "publicadosComLinkCanonico": 8,
+    "publicadosViaGoogleNews": 2,
     "publicadosPorDisputa": 10,
     "publicadosPorMetodo": 0
   },
@@ -136,6 +136,15 @@
       "publicadoEm": "2026-09-06T16:23:02.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "GOP pollster: Texas Senate race ‘is a race that Republicans cannot afford to lose’",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOMFgyWG5LZGlDUVlLM2NmY2d0RXk2VmdSN1RiUktkSG1qcmlfMXY4YzlwYXpaa2RPM2h2cEZMcjVRdkx5UEdXdVlMcFRNSnMxaEF0SjhwZVhTS0ZOM3UzdHVHR2hFb0pNbFd3YUNfRGV3NW5jVGQxY0llSGUzS3hKT25YZnI?oc=5",
+      "casa": "CNN",
+      "publicadoEm": "2026-09-06T14:22:05.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
       "trilho": "disputa"
     },
     {
@@ -206,15 +215,6 @@
       "url": "https://www.washingtonpost.com/politics/2026/09/06/guide-key-battleground-house-races-this-november/",
       "casa": "The Washington Post",
       "publicadoEm": "2026-09-06T09:00:00.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Trump delivers $10 million to Ken Paxton in first major contribution of midterms",
-      "url": "https://www.cbsnews.com/news/trump-10-million-ken-paxton-first-major-contribution-midterms/",
-      "casa": "CBS News",
-      "publicadoEm": "2026-09-06T00:24:14.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"

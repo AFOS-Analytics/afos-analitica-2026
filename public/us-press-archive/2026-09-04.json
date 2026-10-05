@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-09-04",
-  "fetchedAt": "2026-09-04T04:48:07.439Z",
+  "fetchedAt": "2026-09-04T19:20:13.478Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,16 +113,16 @@
     }
   ],
   "qualidade": {
-    "lidos": 183,
-    "naLista": 80,
-    "foraDaLista": 103,
+    "lidos": 182,
+    "naLista": 75,
+    "foraDaLista": 107,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 12,
-    "veiculosRepresentados": 9,
+    "descartadosPorAcompanhamento": 21,
+    "veiculosRepresentados": 7,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 42,
+    "lidosEmFeedProprio": 33,
     "publicadosComLinkCanonico": 9,
     "publicadosViaGoogleNews": 1,
     "publicadosPorDisputa": 10,
@@ -130,10 +130,55 @@
   },
   "itens": [
     {
-      "titulo": "Trump: Missouri Supreme Court 'ridiculously ruled in favor' of blocking redistricting plan",
-      "url": "https://thehill.com/homenews/administration/6070786-trump-condemns-missouri-redistricting-ruling/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-09-04T02:58:55.000Z",
+      "titulo": "Can a ‘Prairie Populist’ Democrat Win a Senate Seat in Trump’s Iowa?",
+      "url": "https://www.nytimes.com/2026/09/04/us/politics/josh-turek-iowa-senate-race.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-04T16:42:17.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "How much does Donald Trump care about winning the midterms? Apparently, not much at all | Jonathan Freedland",
+      "url": "https://www.theguardian.com/commentisfree/2026/sep/04/donald-trump-winning-midterms-us-president",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-09-04T16:01:18.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "North Carolina becomes first state to send out mail-in ballots for US midterms",
+      "url": "https://www.theguardian.com/us-news/2026/sep/04/north-carolina-mail-in-ballots-midterms",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-09-04T14:58:45.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Insulin price cap introduced in House as lawmakers seek affordability win",
+      "url": "https://www.newsnationnow.com/politics/insulin-price-cap-bill-house/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-09-04T13:47:53.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Midterm mail ballots start to go to voters as litigation creates uncertainty",
+      "url": "https://abcnews.com/Politics/wireStory/midterm-mail-ballots-start-voters-litigation-trumps-order-136193718",
+      "casa": "ABC News",
+      "publicadoEm": "2026-09-04T06:47:04.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Flock surveillance cameras become midterm campaign target as voters balk at tech companies' power",
+      "url": "https://abcnews.com/Politics/wireStory/flock-surveillance-cameras-become-midterm-campaign-target-voters-136193735",
+      "casa": "ABC News",
+      "publicadoEm": "2026-09-04T05:11:27.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
@@ -157,12 +202,12 @@
       "trilho": "disputa"
     },
     {
-      "titulo": "Maryland Supreme Court puts redistricting referendum back on November ballot",
-      "url": "https://thehill.com/homenews/campaign/6070660-maryland-supreme-court-redistrict-referendum-back/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-09-04T00:43:05.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
+      "titulo": "Wyoming Governor Election 2026 Polls",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOM3pFa1pMajU5Uklha3FVd1FpZHNaWDZUeDBNMkt1OXN5SERWOEN3NHVKSU9UckF6WVhMcnpfaEEwOXYxNlFLMVZwMUpWNVBZZVBwWXkyTGozeUx4QW5Ib2JFal90TW9lYUM5dGZuQlhBVFZ1akcyS0syYWVBOFdCQlFnWjRLeWdwNGlJ?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-04T01:28:29.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
       "trilho": "disputa"
     },
     {
@@ -170,51 +215,6 @@
       "url": "https://www.washingtonpost.com/politics/2026/09/03/court-throws-out-missouri-congressional-map-helping-democrats-keep-seat/",
       "casa": "The Washington Post",
       "publicadoEm": "2026-09-04T00:34:10.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "The Trump administration still aims to make state citizenship lists ahead of midterms",
-      "url": "https://www.npr.org/2026/09/03/nx-s1-5955822/voting-citizenship-lists-dhs-uscis-lawsuit",
-      "casa": "NPR",
-      "publicadoEm": "2026-09-03T23:59:35.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Missouri Supreme Court pauses GOP gerrymander, likely netting Democrats 1 House seat",
-      "url": "https://www.politico.com/news/2026/09/03/missouri-gerrymander-paused-2026-election-01064420",
-      "casa": "Politico",
-      "publicadoEm": "2026-09-03T22:28:11.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Missouri and Maryland high courts hand Democrats a pair of redistricting wins",
-      "url": "https://rollcall.com/2026/09/03/missouri-and-maryland-high-courts-hand-democrats-a-pair-of-redistricting-wins/",
-      "casa": "Roll Call",
-      "publicadoEm": "2026-09-03T22:16:19.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Top Alaska Senate Candidates Advance as Angie Nixon Wins in Florida",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQci1UckpMV09GWU5CY3VPWGxobnZnOEh6akZLb0syV3A1bGd4Zi1sSEpFajZ2YTc5UnpBSHpsejQyQnJHRFdQTkIxYlZUb1Rfak43bUFzMjhzc0trZVQxNkRaTWZxdENhUWFVVGMxSGk3N09CUkIxTnMyWTdidmFpb2h2TEk?oc=5",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-09-03T21:39:00.000Z",
-      "consulta": "midterms",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "DOJ asks Supreme Court to allow Trump’s USPS action on mail-in ballots to proceed ahead of midterm elections",
-      "url": "https://www.nbcnews.com/politics/trump-administration/justice-department-usps-supreme-court-action-mail-ballots-elections-rcna595924",
-      "casa": "NBC News",
-      "publicadoEm": "2026-09-03T21:07:28.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"

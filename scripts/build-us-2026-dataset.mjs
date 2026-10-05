@@ -158,9 +158,14 @@ writeFileSync(
 )
 
 // ── 3. IMPRENSA ────────────────────────────────────────────────────────────────
+// 🔑 A varredura da pasta de imprensa filtra por FORMA DE DATA, nunca por
+// `.json`. Em 05/Out/2026 a pasta ganhou `ERRATA.json`, e com o filtro de extensao
+// ela entraria em TRES lugares de uma vez: as linhas da timeline, o
+// `raw/us-press-archive.json` e a contagem `press.collections` do case-summary,
+// que e numero PUBLICADO. Medido: 69 arquivos pela extensao contra 68 pela data.
 const dirPress = join(ROOT, 'public', 'us-press-archive')
 const press = []
-for (const f of readdirSync(dirPress).filter((f) => f.endsWith('.json')).sort()) {
+for (const f of readdirSync(dirPress).filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).sort()) {
   const j = JSON.parse(readFileSync(join(dirPress, f), 'utf-8'))
   for (const it of j.itens || []) {
     press.push([j.lastUpdate, it.casa, it.titulo, it.publicadoEm || '', it.origem || '', it.trilho || '', it.url])
@@ -174,7 +179,7 @@ writeFileSync(
 // ── 4. RAW ─────────────────────────────────────────────────────────────────────
 copyFileSync(join(ROOT, 'public', 'us-polls-data.json'), join(OUT, 'raw', 'us-polls-data.json'))
 const arquivoPress = {}
-for (const f of readdirSync(dirPress).filter((f) => f.endsWith('.json')).sort()) {
+for (const f of readdirSync(dirPress).filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).sort()) {
   arquivoPress[f.replace('.json', '')] = JSON.parse(readFileSync(join(dirPress, f), 'utf-8'))
 }
 writeFileSync(join(OUT, 'raw', 'us-press-archive.json'), JSON.stringify(arquivoPress, null, 2))
@@ -196,7 +201,7 @@ const resumo = {
     with_primary_source: polls.filter((p) => p.fontePrimaria).length,
   },
   markets: resumoMercado.map(([slug, tipo, n, de, ate]) => ({ slug, type: tipo, rows: n, from: de, to: ate })),
-  press: { rows: press.length, collections: readdirSync(dirPress).filter((f) => f.endsWith('.json')).length },
+  press: { rows: press.length, collections: readdirSync(dirPress).filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).length },
 }
 writeFileSync(join(OUT, 'data', 'us-2026-case-summary.json'), JSON.stringify(resumo, null, 2))
 

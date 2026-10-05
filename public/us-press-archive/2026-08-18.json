@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-18",
-  "fetchedAt": "2026-08-18T18:36:17.199Z",
+  "fetchedAt": "2026-08-18T19:20:38.602Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,9 +113,9 @@
     }
   ],
   "qualidade": {
-    "lidos": 125,
-    "naLista": 39,
-    "foraDaLista": 86,
+    "lidos": 122,
+    "naLista": 43,
+    "foraDaLista": 79,
     "publicados": 10,
     "descartadosPorAcompanhamento": 6,
     "veiculosRepresentados": 8,
@@ -166,6 +166,15 @@
       "trilho": "disputa"
     },
     {
+      "titulo": "Backlash in Michigan complicates Democrats’ road to retaking the Senate",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQeE81dThzeEJ1QlZraC13cVhTb0NwZEUtNk5naFRGRVpMWWxuVjZVSlZ0bWs2LTZYSFNnOGZMcTU3R3VwQ2M0cC1GVmVYSkpEdEpMRWdHT3kwSnRINDVGU3dmZllPaUppS19UMG83cDJHRDR2LXpsbzRodE5BVDJ2WlY1N3dqeDUxNTB4NjZqa1NCVnNWcGtzajlzSE5yYjhvTXZZZ1lSc01sdw?oc=5",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-08-18T16:00:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
       "titulo": "Longtime GOP aide defects to Dem rising star as Texas Senate battle for Cornyn's seat heats up",
       "url": "https://www.foxnews.com/politics/longtime-gop-aide-defects-dem-rising-star-texas-senate-battle-heats",
       "casa": "Fox News",
@@ -202,19 +211,10 @@
       "trilho": "disputa"
     },
     {
-      "titulo": "Florida, Alaska primaries offer early clues to battle for control of Congress",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPdWVBUFRFWGdnWHZXV1BfRHhOQzZEMlpEUVJ4Q2lXOVlPQTdKeGZBZWlteGxkQnMyaUZGcEVXZjhqb3FtVF9zMXVIRFVMbzBNUXVMYm1raVhWd3QxNnFVWUZuSUw5S0ZESkFfZnhyR1lYeW1pc1doS3psa29qaWVjRzhaeEVsS1BXMFIwc1pkM3VfcWRDbG90cnFvYmt2cmNlbEgwWUJXVS1WcHdtbXVmNQ?oc=5",
-      "casa": "Reuters",
-      "publicadoEm": "2026-08-18T14:20:13.000Z",
-      "consulta": "midterms",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Senate Democrats have 1 unpopular candidate. It’s much worse for Republicans",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPTlZKcV9yZUNsay1Ock1mSnhCS2lseGU2Q3ZHX2dlRUx6QkpHMFVmVGZVT3F2RkU3RzNhdjlyTEhTVXB6OXRIYTM3a2NGZklnTTBNZmlZNnRhWU9zNGdkY1lTaWNQblI4V1BnWFdSa3BjUGpvNzdDNGpwNU5VOHBwYXFMQkRjdk81?oc=5",
-      "casa": "CNN",
-      "publicadoEm": "2026-08-18T10:00:29.000Z",
+      "titulo": "Top Democrats tussle in Florida primary but progressive liberalism not on menu",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQUTh6YUpyelpQbS1GVGtla1NCLVJEeVZncTY3Nk96aWllYWRoYjRCd0duUFpYVkxXWFk4R3BmSzBRQVdnLTNjWFpvaEI3RFNBM2tIUTF6Rk9mUV9CSTM2c1JQZXB0YzJZZkpVLXRLVWdzYWxNdGptVTZpZVNfTnVZTWx5QmJoaWxEWHJfVE44Um8wV3VoNjRrd0R3?oc=5",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-08-18T14:25:00.000Z",
       "consulta": "senate-races",
       "origem": "google",
       "trilho": "disputa"

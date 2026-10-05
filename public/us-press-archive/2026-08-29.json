@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-29",
-  "fetchedAt": "2026-08-29T14:49:48.671Z",
+  "fetchedAt": "2026-08-29T19:20:32.522Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,22 +113,58 @@
     }
   ],
   "qualidade": {
-    "lidos": 136,
-    "naLista": 66,
-    "foraDaLista": 70,
+    "lidos": 127,
+    "naLista": 62,
+    "foraDaLista": 65,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 22,
+    "descartadosPorAcompanhamento": 23,
     "veiculosRepresentados": 7,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 25,
-    "publicadosComLinkCanonico": 9,
-    "publicadosViaGoogleNews": 1,
+    "lidosEmFeedProprio": 24,
+    "publicadosComLinkCanonico": 8,
+    "publicadosViaGoogleNews": 2,
     "publicadosPorDisputa": 9,
     "publicadosPorMetodo": 1
   },
   "itens": [
+    {
+      "titulo": "Top Alaska Senate Candidates Advance as Angie Nixon Wins in Florida",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQci1UckpMV09GWU5CY3VPWGxobnZnOEh6akZLb0syV3A1bGd4Zi1sSEpFajZ2YTc5UnpBSHpsejQyQnJHRFdQTkIxYlZUb1Rfak43bUFzMjhzc0trZVQxNkRaTWZxdENhUWFVVGMxSGk3N09CUkIxTnMyWTdidmFpb2h2TEk?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-08-29T16:53:16.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "The Memo: GOP sees risks in Trump’s midterm strategy of focusing on himself",
+      "url": "https://thehill.com/homenews/analysis/6057609-gop-campaign-centered-trump/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-08-29T16:00:00.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "In Georgia, Jon Ossoff Courts Broad Appeal With an Anti-Trump Script for Senate Race",
+      "url": "https://www.nytimes.com/2026/08/29/us/politics/georgia-senate-ossoff-collins-trump.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-08-29T15:25:22.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Michigan Senate candidate Mike Rogers says he saw Bin Laden’s body with his ‘own eyes’. He did not",
+      "url": "https://www.theguardian.com/us-news/2026/aug/29/michigan-senate-candidate-mike-rogers-osama-bin-laden",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-08-29T15:07:53.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
     {
       "titulo": "Noncitizen voting claims animate Trump's attacks on midterms and set up potential result challenges",
       "url": "https://abcnews.com/Politics/wireStory/noncitizen-voting-claims-animate-trumps-attacks-midterms-set-136053546",
@@ -157,28 +193,10 @@
       "trilho": "disputa"
     },
     {
-      "titulo": "Top Alaska Senate Candidates Advance as Angie Nixon Wins in Florida",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQci1UckpMV09GWU5CY3VPWGxobnZnOEh6akZLb0syV3A1bGd4Zi1sSEpFajZ2YTc5UnpBSHpsejQyQnJHRFdQTkIxYlZUb1Rfak43bUFzMjhzc0trZVQxNkRaTWZxdENhUWFVVGMxSGk3N09CUkIxTnMyWTdidmFpb2h2TEk?oc=5",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-08-29T11:50:07.000Z",
-      "consulta": "midterms",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
       "titulo": "How states’ fight over an ICE agent could open a new political battleground",
       "url": "https://www.washingtonpost.com/politics/2026/08/29/how-texas-fight-over-an-ice-agent-could-open-new-political-battleground/",
       "casa": "The Washington Post",
       "publicadoEm": "2026-08-29T10:00:01.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Fact-Checking Senate Races in Georgia, Alaska and Texas",
-      "url": "https://www.nytimes.com/2026/08/29/us/politics/midterms-senate-race-georgia-alaska-texas-fact-check.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-08-29T09:04:08.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
@@ -193,30 +211,12 @@
       "trilho": "metodo"
     },
     {
-      "titulo": "Elon Musk enters the midterm chat: From the Politics Desk",
-      "url": "https://www.nbcnews.com/politics/politics-news/elon-musk-enters-midterm-chat-politics-desk-rcna594934",
-      "casa": "NBC News",
-      "publicadoEm": "2026-08-28T21:00:00.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Wyoming governor requests investigation into activity of DOJ monitors during primary",
-      "url": "https://abcnews.com/Politics/wireStory/wyoming-governor-requests-investigation-activity-justice-department-monitors-136040978",
-      "casa": "ABC News",
-      "publicadoEm": "2026-08-28T19:49:09.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Wyoming governor decries ‘aggressive’ behavior of federal election monitors",
-      "url": "https://www.washingtonpost.com/politics/2026/08/28/wyoming-governor-decries-aggressive-behavior-federal-election-monitors/",
+      "titulo": "Rep. Crockett says she’ll be campaigning ‘downballot’ instead of with Talarico",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNWVd1dk9lT1M5cGU1TXZPa3B3REpyWC1BNFNwWlFuQUJpVXVIZm1NQ1VUanE0d09hbEEySXZkZmxMMUFDR0RYRWlZWVZVTUEyNzVoemE0V2h3UXliTE4xXzk0U2luTWpJdl9KT2piQ0RaYnVMZTgySm5kRHRMSkxHeEk0Tjg4V1ZUY3VpZG0tTWMtYjJrQ2ZkaC1IYkw3VTdGa2FXUnNOSDMzb2ZGTUdEOTVVMmNGcm01OVFpaVphcHo?oc=5",
       "casa": "The Washington Post",
-      "publicadoEm": "2026-08-28T19:14:38.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
+      "publicadoEm": "2026-08-29T00:30:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
       "trilho": "disputa"
     }
   ]
