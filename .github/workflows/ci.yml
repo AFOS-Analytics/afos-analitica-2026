@@ -153,6 +153,7 @@ jobs:
           node scripts/testar-instrumento-us.mjs
           node scripts/testar-instrumento-medido.mjs
           node scripts/testar-soma-conferida.mjs
+          node scripts/testar-tratamento-do-indeciso.mjs
           node scripts/testar-casas-us.mjs
           node scripts/testar-leaner-us.mjs
           node scripts/testar-amostra-de-entrega.mjs

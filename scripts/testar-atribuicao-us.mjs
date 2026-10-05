@@ -333,6 +333,112 @@ console.log('\n8. RENOMEACAO, DEDUPLICACAO e DUPLICOU (25/Set/2026)')
 
   // ── CASO 8: a TOLERÂNCIA é meio centésimo, que é o que não existe na tela.
   conferir('a tolerância de ordem é 0.005', TOLERANCIA_DE_ORDEM === 0.005)
+
+  // ── CASO 9: 🎚️ TROCA DE PAINEL do tratamento do indeciso, 05/Out/2026.
+  //
+  // 🔑 A onda é a MESMA e o número mudou porque a NOSSA escolha passou a servir
+  // outro painel. Sem esta classe o veredito diz CORRECAO, que afirma que a
+  // Wikipédia mexeu, e ela não mexeu. É a terceira vez que esta forma aparece:
+  // antes dela, COMPOSICAO dizia "saiu gente pela borda" quando quem saía era a
+  // elegibilidade, e virou EXCLUIDA_POR_INSTRUMENTO.
+  {
+    const casa = 'Angus Reid Global'
+    const onda = '2026-09-25'
+    const antesP = { instituto: casa, campoFim: onda, dem: 49, rep: 35, amostra: 1041, amostraTipo: 'RV' }
+    const depoisP = { instituto: casa, campoFim: onda, dem: 45, rep: 34, amostra: 1205, amostraTipo: 'A' }
+    const outra = { instituto: 'Quinnipiac University', campoFim: '2026-09-27', dem: 51, rep: 39, amostra: 1032, amostraTipo: 'RV' }
+    const auditoria = [{ serie: casa, campoFim: onda, escolha: 'With leaners', declarado: { dem: 45, rep: 34 } }]
+
+    const comAud = comparar([antesP, outra], [depoisP, outra], [], auditoria)
+    conferir('painel: a troca sai em trocaDePainel', comAud.trocaDePainel.length === 1)
+    conferir('painel: e NÃO sai em mudaram', comAud.mudaram.length === 0)
+    conferir('painel: o par guarda antes e depois', comAud.trocaDePainel[0]?.antes?.dem === 49 && comAud.trocaDePainel[0]?.depois?.dem === 45)
+    const v = veredito(comAud, -0.11)
+    conferir('painel: o veredito diz TROCA_DE_PAINEL', v.includes('TROCA_DE_PAINEL'))
+    conferir('painel: e NÃO diz CORRECAO, porque a origem não mexeu', !v.includes('CORRECAO'))
+    conferir('painel: e NÃO diz PESQUISA_NOVA nem COMPOSICAO', !v.includes('PESQUISA_NOVA') && !v.includes('COMPOSICAO'))
+
+    // 🔑 A conta de atribuição tem de FECHAR com a causa nova. Sem a linha dela
+    // em `conferirSubtracao`, `dem` saía 4 pontos acima do real: foi o defeito
+    // real medido no dia em que esta classe nasceu.
+    conferir('painel: a subtração FECHA com a causa nova', conferirSubtracao([antesP, outra], [depoisP, outra], comAud).length === 0)
+
+    // ── ANTI-EXCESSO, e esta metade é a que importa: sem auditoria, a MESMA
+    //    mudança tem de voltar a ser CORRECAO, porque aí ela é de origem.
+    const semAud = comparar([antesP, outra], [depoisP, outra], [], [])
+    conferir('painel ANTI-EXCESSO: sem auditoria, volta a ser mudaram', semAud.mudaram.length === 1 && semAud.trocaDePainel.length === 0)
+    conferir('painel ANTI-EXCESSO: e o veredito volta a CORRECAO', veredito(semAud, -0.11).includes('CORRECAO'))
+    conferir('painel ANTI-EXCESSO: a subtração fecha nos dois cenários', conferirSubtracao([antesP, outra], [depoisP, outra], semAud).length === 0)
+
+    // Mudança de valor que NÃO chega ao painel declarado segue sendo correção.
+    const paraOutroValor = { instituto: casa, campoFim: onda, dem: 50, rep: 36, amostra: 1041, amostraTipo: 'RV' }
+    const d3 = comparar([antesP, outra], [paraOutroValor, outra], [], auditoria)
+    conferir('painel ANTI-EXCESSO: valor que não é o declarado é CORRECAO', d3.mudaram.length === 1 && d3.trocaDePainel.length === 0)
+
+    // E o sentido INVERSO não se cala: sair do painel declarado para outro valor
+    // é correção de origem, não troca nossa.
+    const d4 = comparar([depoisP, outra], [antesP, outra], [], auditoria)
+    conferir('painel ANTI-EXCESSO: SAIR do painel declarado é CORRECAO', d4.mudaram.length === 1 && d4.trocaDePainel.length === 0)
+
+    // Onda de outra casa com os mesmos valores não é tocada.
+    const outraCasa = [{ instituto: 'Marist University', campoFim: onda, dem: 49, rep: 35 }]
+    const outraCasaDepois = [{ instituto: 'Marist University', campoFim: onda, dem: 45, rep: 34 }]
+    const d5 = comparar(outraCasa, outraCasaDepois, [], auditoria)
+    conferir('painel ANTI-EXCESSO: casa não declarada é CORRECAO', d5.mudaram.length === 1 && d5.trocaDePainel.length === 0)
+
+    // ── 🔴 OS DOIS CASOS QUE AS MUTAÇÕES REVELARAM, 05/Out/2026.
+    //
+    // A suíte passava 88 de 88 com duas mutações VIVAS, e as duas eram buraco do
+    // TESTE e não do código. É exatamente o que a mutação existe para achar.
+
+    // (a) Sem o guarda `!ehOPainelEscolhido(antes)`, correção de ROTULO feita
+    //     pela origem sobre a linha JÁ escolhida sairia como troca NOSSA. É um
+    //     caso realista: o índice rotula a linha escolhida como adultos e o
+    //     documento diz eleitores registrados, então ele pode consertar o rótulo
+    //     um dia. `mudou()` olha dem, rep e amostraTipo, então a mudança existe
+    //     mesmo com dem e rep parados.
+    const painelComRotuloErrado = { instituto: casa, campoFim: onda, dem: 45, rep: 34, amostra: 1205, amostraTipo: 'A' }
+    const painelComRotuloCerto = { instituto: casa, campoFim: onda, dem: 45, rep: 34, amostra: 1205, amostraTipo: 'RV' }
+    const dRotulo = comparar([painelComRotuloErrado, outra], [painelComRotuloCerto, outra], [], auditoria)
+    conferir(
+      'painel ANTI-EXCESSO: origem conserta o RÓTULO da linha já escolhida, e isso é CORRECAO',
+      dRotulo.mudaram.length === 1 && dRotulo.trocaDePainel.length === 0,
+    )
+
+    // (b) Sem comparar `rep`, duas linhas com o MESMO dem seriam as duas tidas
+    //     como o painel declarado, e a troca entre elas desapareceria.
+    const mesmoDemOutroRep = { instituto: casa, campoFim: onda, dem: 45, rep: 38, amostra: 900, amostraTipo: 'RV' }
+    const dRep = comparar([mesmoDemOutroRep, outra], [depoisP, outra], [], auditoria)
+    conferir(
+      'painel: duas linhas com o mesmo dem e rep diferente NÃO se confundem',
+      dRep.trocaDePainel.length === 1 && dRep.trocaDePainel[0]?.antes?.rep === 38,
+    )
+    const dRepInverso = comparar([depoisP, outra], [mesmoDemOutroRep, outra], [], auditoria)
+    conferir(
+      'painel: e sair do declarado para o mesmo dem com rep diferente é CORRECAO',
+      dRepInverso.mudaram.length === 1 && dRepInverso.trocaDePainel.length === 0,
+    )
+
+    // (c) E a ESPELHADA de (b), porque a assinatura tem DOIS campos e calar um
+    //     deles é o mesmo defeito por outro lado: duas linhas com o mesmo `rep`
+    //     e `dem` diferente também não podem se confundir.
+    const mesmoRepOutroDem = { instituto: casa, campoFim: onda, dem: 52, rep: 34, amostra: 880, amostraTipo: 'RV' }
+    const dDem = comparar([mesmoRepOutroDem, outra], [depoisP, outra], [], auditoria)
+    conferir(
+      'painel: duas linhas com o mesmo rep e dem diferente NÃO se confundem',
+      dDem.trocaDePainel.length === 1 && dDem.trocaDePainel[0]?.antes?.dem === 52,
+    )
+    const dDemInverso = comparar([depoisP, outra], [mesmoRepOutroDem, outra], [], auditoria)
+    conferir(
+      'painel: e sair do declarado para o mesmo rep com dem diferente é CORRECAO',
+      dDemInverso.mudaram.length === 1 && dDemInverso.trocaDePainel.length === 0,
+    )
+
+    // E `decompor` tem de reconhecer a causa nova, senão o peso dela não sai.
+    const dec = decompor([antesP, outra], [depoisP, outra], comAud)
+    conferir('painel: decompor reconhece a causa', dec.causas.some((c) => c.causa === 'trocaDePainel'))
+    conferir('painel: e a conta dele fecha', Math.abs(dec.interacao) < 0.01)
+  }
 }
 
 console.log(`\n${falhas === 0 ? '✅' : '❌'} ${passes} passaram, ${falhas} falharam.`)

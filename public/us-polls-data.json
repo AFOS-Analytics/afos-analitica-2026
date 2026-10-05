@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-10-05",
-  "fetchedAt": "2026-10-05T19:19:26.288Z",
+  "fetchedAt": "2026-10-05T19:58:09.486Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -49,6 +49,48 @@
     "janelaDias": 30,
     "desde": "2026-09-05",
     "nPesquisas": 36,
+    "tratamentoDoIndeciso": [
+      {
+        "serie": "Angus Reid Global",
+        "campoFim": "2026-09-25",
+        "escolha": "With leaners",
+        "declarado": {
+          "dem": 45,
+          "rep": 34
+        },
+        "estado": "ESCOLHIDA",
+        "quantasCasam": 1,
+        "linhasDaOnda": [
+          {
+            "dem": 56,
+            "rep": 40,
+            "outros": 4,
+            "amostra": 919,
+            "amostraTipo": "RV",
+            "escolhida": false
+          },
+          {
+            "dem": 49,
+            "rep": 35,
+            "outros": 16,
+            "amostra": 1041,
+            "amostraTipo": "RV",
+            "escolhida": false
+          },
+          {
+            "dem": 45,
+            "rep": 34,
+            "outros": 21,
+            "amostra": 1205,
+            "amostraTipo": "A",
+            "escolhida": true
+          }
+        ],
+        "prova": "https://angusreid.us/wp-content/uploads/2026/09/2026.09.28_Trump_Midterms.pdf",
+        "conferidoEm": "2026-10-05",
+        "decididoEm": "2026-10-05"
+      }
+    ],
     "incluidas": [
       {
         "instituto": "ActiVote",
@@ -89,9 +131,9 @@
       {
         "instituto": "Angus Reid Global",
         "campoFim": "2026-09-25",
-        "amostraTipo": "RV",
-        "dem": 49,
-        "rep": 35
+        "amostraTipo": "A",
+        "dem": 45,
+        "rep": 34
       },
       {
         "instituto": "Emerson College",
@@ -357,9 +399,9 @@
       }
     ],
     "nInstitutos": 27,
-    "dem": 49.39,
-    "rep": 41.61,
-    "vantagemDem": 7.78,
+    "dem": 49.28,
+    "rep": 41.58,
+    "vantagemDem": 7.7,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",

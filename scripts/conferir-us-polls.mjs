@@ -52,9 +52,11 @@ const ROTULO_DA_CAUSA = {
   excluidasPorInstrumento: 'exclusão por INSTRUMENTO',
   mudaram: 'correção de valor na origem',
   renomeadas: 'renomeação',
+  trocaDePainel: 'troca de PAINEL do indeciso',
 }
 import { separarPorConferencia, validarRegistro } from '../lib/us-polls/soma-conferida.mjs'
 import { dividasAbertas, fonteDa, conferirCarga as conferirFontes } from '../lib/us-polls/fonte-conferida.mjs'
+import { conferirCarga as conferirIndeciso } from '../lib/us-polls/tratamento-do-indeciso.mjs'
 
 const arg = (n, padrao) =>
   process.argv.find((a) => a.startsWith(`--${n}=`))?.slice(n.length + 3) ?? padrao
@@ -274,7 +276,7 @@ if (m && mb) {
 
   if (m.incluidas && mb.incluidas) {
     // ✅ Caminho bom: comparar RODADA a rodada.
-    const dif = comparar(mb.incluidas, m.incluidas, m.excluidasPorInstrumento)
+    const dif = comparar(mb.incluidas, m.incluidas, m.excluidasPorInstrumento, m.tratamentoDoIndeciso)
     const rot = (x) => `${x.campoFim} ${x.instituto} (D+${(x.dem - x.rep).toFixed(2)})`
     console.log(`        saíram    ${dif.sairam.map(rot).join(' · ') || '(ninguém)'}`)
     console.log(`        entraram  ${dif.entraram.map(rot).join(' · ') || '(ninguém)'}`)
@@ -340,6 +342,18 @@ if (m && mb) {
         console.log(`            conferir NA FONTE: D e R, recorte (LV/RV/A), amostra e margem. O índice não é a fonte,`)
         console.log(`            e registrar o que ela sustentou em lib/us-polls/fonte-conferida.mjs`)
       }
+    }
+    // 🎚️ TROCA DE PAINEL tem guarda PRÓPRIA, e isso não é estilo.
+    //
+    // 🔴 Escrito primeiro DENTRO de `if (dif.mudaram.length)`, em 05/Out/2026, e
+    // nunca imprimiu: a classe nova ESVAZIA `mudaram` ao tirar o par dela, então
+    // a guarda da causa antiga fecha a porta justamente quando a causa nova
+    // existe. ⚠️ A régua: classe nova que se subtrai de uma lista existente não
+    // pode ser impressa sob a guarda daquela lista.
+    for (const x of dif.trocaDePainel ?? []) {
+      console.log(
+        `        ${cor.aviso}troca de PAINEL do indeciso${cor.fim}, a origem NÃO mexeu: ${rot(x.antes)} → ${rot(x.depois)}`
+      )
     }
     if (dif.mudaram.length) {
       // 🔑 "Corrigida na origem" afirma que a Wikipédia mudou o número, e isso
@@ -464,6 +478,46 @@ if (m && mb) {
     console.log(`
    ${cor.mau}❌${cor.fim} registro de FONTE CONFERIDA inválido:`)
     errosFonte.forEach((e) => console.log(`        ${e}`))
+  }
+
+  // 🎚️ TRATAMENTO DO INDECISO, auditado onda por onda.
+  //
+  // ⛔ Isto é impresso em TODA passada, e não só quando dá problema: escolha que
+  // só aparece quando quebra é escolha que ninguém sabe que está valendo. E as
+  // duas falhas dela, CADUCOU e AMBIGUA, devolvem a decisão à hierarquia de
+  // recorte em silêncio, que é o defeito que o registro existe para corrigir.
+  const errosIndeciso = conferirIndeciso()
+  if (errosIndeciso.length) {
+    console.log(`
+   ${cor.mau}❌${cor.fim} registro de TRATAMENTO DO INDECISO inválido:`)
+    errosIndeciso.forEach((e) => console.log(`        ${e}`))
+  }
+  const auditoria = m?.tratamentoDoIndeciso ?? []
+  if (auditoria.length) {
+    console.log(`
+   🎚️ tratamento do indeciso, escolha declarada por onda`)
+    for (const a of auditoria) {
+      const sinal = a.estado === 'ESCOLHIDA' ? `${cor.ok}✅${cor.fim}` : `${cor.mau}🔴${cor.fim}`
+      console.log(
+        `        ${sinal} ${a.estado} ${a.serie} campo→${a.campoFim} · painel "${a.escolha}", D ${a.declarado.dem} x R ${a.declarado.rep} · decidido em ${a.decididoEm}`
+      )
+      for (const l of a.linhasDaOnda) {
+        console.log(
+          `            ${l.escolhida ? '→' : ' '} D ${l.dem} R ${l.rep} outros ${l.outros ?? '?'} · n=${l.amostra ?? '?'} ${l.amostraTipo ?? '?'}${l.escolhida ? '   SERVIDA' : ''}`
+        )
+      }
+      if (a.estado === 'CADUCOU') {
+        console.log(
+          `            ⛔ nenhuma linha casa com o valor declarado: o ÍNDICE reescreveu o número e a escolha perdeu objeto.`
+        )
+        console.log(`            A média voltou à hierarquia de recorte. Reconferir na fonte: ${a.prova}`)
+      }
+      if (a.estado === 'AMBIGUA') {
+        console.log(
+          `            ⛔ ${a.quantasCasam} linhas casam com o valor declarado: quem decide volta a ser a ORDEM de leitura.`
+        )
+      }
+    }
   }
   const naJanela = (atual.polls ?? []).filter((p) => m?.desde && p.campoFim >= m.desde)
   const abertas = dividasAbertas(naJanela)
