@@ -30,7 +30,7 @@
 //    release" e tipo de versao, e manda REPETIR com type=major. A mensagem
 //    decide, nunca o codigo.
 //
-// Token: .env.local (DATAVERSE_TOKEN).
+// Token: variavel de ambiente DATAVERSE_TOKEN, com .env.local como reserva.
 //
 // Uso:
 //   node scripts/harvard-publish-us2026.mjs conferir
@@ -46,9 +46,19 @@ const ORIGEM = '.cache/us2026-dataset'
 const TMP = '.cache/us2026-harvard-original'
 const MODO = process.argv[2] === 'publicar' ? 'publicar' : 'conferir'
 
+// Token: VARIAVEL DE AMBIENTE primeiro, .env.local so como reserva.
+//
+// A regua da casa, de 25/Ago/2026: o token do Dataverse e colado pelo Andre,
+// usado so em memoria, NUNCA gravado em disco, e revogado por ele ao fim, com a
+// revogacao CONFIRMADA por uma chamada e nao pela lembranca de quem revogou.
+// Ler apenas do .env.local obrigava a escrever em disco para rodar, que e
+// exatamente o que a regua proibe.
 const TOKEN = (() => {
+  const doAmbiente = (process.env.DATAVERSE_TOKEN ?? '').trim()
+  if (doAmbiente) return doAmbiente
+  if (!existsSync('.env.local')) { console.error('DATAVERSE_TOKEN ausente: nem no ambiente, nem em .env.local'); process.exit(1) }
   const m = readFileSync('.env.local', 'utf8').match(/^DATAVERSE_TOKEN=(.+)$/m)
-  if (!m) { console.error('DATAVERSE_TOKEN ausente no .env.local'); process.exit(1) }
+  if (!m) { console.error('DATAVERSE_TOKEN ausente: nem no ambiente, nem em .env.local'); process.exit(1) }
   return m[1].trim().replace(/^["']|["']$/g, '')
 })()
 
