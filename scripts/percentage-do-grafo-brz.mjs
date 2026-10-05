@@ -37,8 +37,8 @@
  *    turno acabou em 04/Out com Flávio Bolsonaro e Lula, e o lado pesquisa do
  *    grafo passa a ser o PAR do 2º turno (`secondRound`, o confronto Lula ×
  *    Flávio), com a MESMA régua: a nacional mais recente que mediu o par,
- *    desempate pela maior amostra. Os eliminados PERDEM o campo (não viram 0):
- *    não foram medidos no 2º turno, e zero seria uma medição que não existe.
+ *    desempate pela maior amostra. Os eliminados ficam com 0, a convenção de
+ *    nome não medido, e o filtro `> 0` do grafo os tira da tela.
  *    O `pollSource.round` grava o turno, e o export do HF o lê para não misturar
  *    as duas séries sob o mesmo nome de arquivo.
  *
@@ -191,8 +191,8 @@ if (turno === 2) {
 
 console.log('')
 if (semMedida && turno === 2) {
-  console.log(`   🗳️ ${semMedida} candidato(s) eliminado(s) no 1º turno perdem o percentage e saem do grafo.`)
-  console.log('      O campo é REMOVIDO, não zerado: zero seria uma medição de 2º turno que não existe.')
+  console.log(`   🗳️ ${semMedida} candidato(s) fora do 2º turno ficam com percentage 0 e saem do grafo.`)
+  console.log('      Ficam com percentage 0, a convenção de nome não medido, e o filtro > 0 do grafo os tira da tela.')
 } else if (semMedida) {
   console.log(`   ⚠️ ${semMedida} candidato(s) com percentage mas fora do cenário desta casa.`)
   console.log('      Eles NÃO são zerados: zerar tira a linha do grafo, e ausência de')
@@ -208,8 +208,13 @@ if (!aplicar) {
 
 for (const c of dados.polymarketComparison?.candidates ?? []) {
   const novo = medido[semPartido(c.name)]
+  // 🗳️ Fora do 2º turno vira 0, a convenção da casa para "nenhuma nacional
+  // mede" (Tarcísio e Haddad desde Jul): o filtro `> 0` do DashboardClient o
+  // tira do grafo. A 1ª versão APAGAVA o campo, e o check-json-structure
+  // reprovou o commit, com razão: campo que some não se distingue de bloco
+  // perdido. O export do HF não grava esses zeros no arquivo do 2º turno.
   if (novo !== undefined) c.percentage = novo
-  else if (turno === 2) delete c.percentage
+  else if (turno === 2) c.percentage = 0
   if (turno === 2 && faixas[semPartido(c.name)]) c.pesquisaRange = faixas[semPartido(c.name)].texto
 }
 dados.polymarketComparison.pollSource = {

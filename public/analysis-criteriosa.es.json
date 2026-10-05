@@ -1,164 +1,163 @@
 {
-  "updatedAt": "04/10/2026, 21:43",
-  "subtitle": "Cruce del 04/Oct/2026, noche de la [primera vuelta](/es/glossary#primeiro-turno): Polymarket en la lectura confirmada del 04/Oct, 21:43 BRT, el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT (99,59% de las secciones totalizadas), las nueve encuestas nacionales divulgadas el 03/Oct y el flujo de prensa del 03 y el 04/Oct.",
+  "updatedAt": "05/10/2026, 17:31",
+  "subtitle": "Cruce del 05/Oct/2026, primera ronda de la [segunda vuelta](/es/glossary#segundo-turno): Polymarket en la lectura confirmada del 05/Oct, 17:31 BRT, la totalización oficial del [TSE](/es/glossary#tse) de la [primera vuelta](/es/glossary#primeiro-turno) (100% de las secciones, generada a las 12:51 del 05/Oct), las nueve encuestas nacionales divulgadas el 03/Oct y el flujo de prensa del 04 y el 05/Oct.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PRECIO: 15,50% (vol USD 16,52M acumulado) en el contrato de ganador, caída de 20,00pp en crudo y de 19,94pp en el normalizado, lectura confirmada del 04/Oct, 21:43 BRT. ESCRUTINIO: 45,06% de los votos válidos en el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT, con 99,59% de las secciones totalizadas. ENCUESTA: lideraba la [primera vuelta](/es/glossary#primeiro-turno) en cinco de las nueve nacionales del 03/Oct.",
+      "header": "PRECIO: 16,50% (vol USD 17,91M acumulado) en el contrato de ganador, lectura confirmada del 05/Oct, 17:31 BRT, sube 1,00pp frente a la lectura confirmada del 04/Oct a las 21:43 BRT, publicada en la noche del escrutinio. URNA: 45,16% de los votos válidos en la [primera vuelta](/es/glossary#primeiro-turno), 1,87 puntos detrás. ENCUESTA: en la víspera, lideraba la [segunda vuelta](/es/glossary#segundo-turno) en tres de las nueve nacionales del 03/Oct y empataba en una.",
       "fortes": [
-        "Lideraba la [primera vuelta](/es/glossary#primeiro-turno) en cinco de las nueve nacionales del 03/Oct: Datafolha, [Quaest](/es/glossary#quaest), PoderData, CNT/MDA y AtlasIntel, que da 46,7% a 43,8% en los votos totales.",
-        "Lideraba la [segunda vuelta](/es/glossary#segundo-turno) en la Datafolha, 47% a 46%, en la CNT/MDA, 47,3% a 43,1%, y en la AtlasIntel, 47,6% a 47,4%, y empataba en 46% en la PoderData."
+        "En la víspera lideraba la [segunda vuelta](/es/glossary#segundo-turno) en la Datafolha, 47% a 46%, en la CNT/MDA, 47,3% a 43,1%, y en la AtlasIntel, 47,6% a 47,4%, y empataba en 46% en la PoderData.",
+        "🏆 Contando los contratos cerrados, su contrato pasó a ser el de mayor volumen acumulado del libro presidencial, USD 17,91M."
       ],
       "fracos": [
-        "Cae 20,00pp en el contrato de ganador, a 15,50%, 19,00pp por debajo del piso registrado de la serie, y la brecha de Flávio Bolsonaro sobre Lula pasa de 29,05pp a 68,75pp.",
-        "Tiene 45,06% de los votos válidos en el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT, detrás de Flávio Bolsonaro, con 99,59% de las secciones totalizadas.",
+        "Está en 16,50% en el contrato de ganador, lectura confirmada del 05/Oct, 17:31 BRT, y la brecha de Flávio Bolsonaro sobre él es de 66,60pp.",
+        "Terminó la [primera vuelta](/es/glossary#primeiro-turno) 1,87 puntos detrás de Flávio Bolsonaro, con 45,16% de los votos válidos frente a 47,03%.",
         "En la [Quaest](/es/glossary#quaest) del 03/Oct la aprobación del gobierno pasó de 46% a 44%, con 49% de desaprobación."
       ],
-      "analise": "Lula cayó 20,00pp en el contrato de ganador, a 15,50% (vol USD 16,52M acumulado), en la lectura confirmada del 04/Oct, 21:43 BRT, durante el escrutinio, y 19,94pp en el normalizado; su precio queda 19,00pp por debajo del piso registrado de la serie. 🗳️ En el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT del 04/Oct, con 99,59% de las secciones totalizadas, Flávio Bolsonaro tiene 47,12% de los votos válidos para presidente y Lula 45,06%, seguidos por Augusto Cury, con 2,89%, Ronaldo Caiado, con 2,19%, y Renan Santos, con 2,25%. A las 20:58 el TSE marcó el resultado presidencial como matemáticamente definido: Flávio Bolsonaro y Lula van a la [segunda vuelta](/es/glossary#segundo-turno), fijada para el 25/Oct (Agência Brasil). En las nueve nacionales del 03/Oct lideraba la [primera vuelta](/es/glossary#primeiro-turno) en cinco. ⛔ El panel no atribuye el precio al escrutinio ni a las encuestas: mide los lados con la marca de hora de cada uno."
+      "analise": "Lula está en 16,50% en el contrato de ganador (vol USD 17,91M acumulado), lectura confirmada del 05/Oct, 17:31 BRT, y sube 1,00pp frente a la lectura confirmada del 04/Oct a las 21:43 BRT, publicada en la noche del escrutinio. 🗳️ Terminó la [primera vuelta](/es/glossary#primeiro-turno) con 45,16% de los votos válidos, 1,87 puntos detrás de Flávio Bolsonaro, en la totalización del [TSE](/es/glossary#tse), y los dos disputan la [segunda vuelta](/es/glossary#segundo-turno) el 25/Oct. En la víspera de la primera vuelta la segunda vuelta estaba dividida: Lula por delante en la Datafolha (47% a 46%), en la CNT/MDA (47,3% a 43,1%) y en la AtlasIntel (47,6% a 47,4%), empate en 46% en la PoderData, y Flávio Bolsonaro por delante en la [Quaest](/es/glossary#quaest) (44% a 42%), en la Palver (49% a 44%), en la Futura (48% a 45,1%) y en la Gerp (49% a 44%). Las primeras nacionales después de la primera vuelta están registradas en el TSE para el 08/Oct (Datafolha y PoderData) y el 09/Oct (AtlasIntel y Vox Brasil). ⛔ El panel no atribuye el precio al resultado ni a los apoyos: mide los lados con la marca de hora de cada uno."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PRECIO: 84,25% (vol USD 16,11M acumulado) en el contrato de ganador, alza de 19,70pp en crudo y de 19,94pp en el normalizado, lectura confirmada del 04/Oct, 21:43 BRT. ESCRUTINIO: 47,12% de los votos válidos en el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT, con 99,59% de las secciones totalizadas. ENCUESTA: lideraba la [primera vuelta](/es/glossary#primeiro-turno) en cuatro de las nueve nacionales del 03/Oct.",
+      "header": "PRECIO: 83,10% (vol USD 16,98M acumulado) en el contrato de ganador, lectura confirmada del 05/Oct, 17:31 BRT, cae 1,15pp frente a la lectura confirmada del 04/Oct a las 21:43 BRT, publicada en la noche del escrutinio. URNA: 47,03% de los votos válidos en la [primera vuelta](/es/glossary#primeiro-turno), 1,87 puntos por delante. ENCUESTA: en la víspera, lideraba la [segunda vuelta](/es/glossary#segundo-turno) en cuatro de las nueve nacionales del 03/Oct.",
       "fortes": [
-        "Sube 19,70pp en el contrato de ganador, a 84,25%, 20,95pp por encima del máximo registrado de la serie, 63,30% del 01/Oct.",
-        "Tiene 47,12% de los votos válidos en el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT, con 99,59% de las secciones totalizadas.",
-        "Lideraba la [primera vuelta](/es/glossary#primeiro-turno) en la Palver, en la Futura y en las dos rondas de la Gerp del 03/Oct, y la [segunda vuelta](/es/glossary#segundo-turno) en la Palver, en la Gerp, en la Futura y en la [Quaest](/es/glossary#quaest).",
-        "⭐ En la [Quaest](/es/glossary#quaest) del 28/Sep la transferencia de voto de los otros nombres en la [segunda vuelta](/es/glossary#segundo-turno) lo favorece: 81% de los electores de Romeu Zema, 48% de los de Renan Santos, 42% de los de Ronaldo Caiado y 34% de los de Augusto Cury irían hacia él (O Globo)."
+        "Terminó la [primera vuelta](/es/glossary#primeiro-turno) por delante, con 47,03% de los votos válidos frente a 45,16% de Lula, en la totalización del [TSE](/es/glossary#tse).",
+        "Está en 83,10% en el contrato de ganador, lectura confirmada del 05/Oct, 17:31 BRT.",
+        "En la víspera lideraba la [segunda vuelta](/es/glossary#segundo-turno) en la [Quaest](/es/glossary#quaest), 44% a 42%, en la Palver, 49% a 44%, en la Futura, 48% a 45,1%, y en la Gerp, 49% a 44%.",
+        "⭐ En la [Quaest](/es/glossary#quaest) del 28/Sep, la transferencia en la [segunda vuelta](/es/glossary#segundo-turno) favorecía a Flávio Bolsonaro entre los electores de Romeu Zema (81%), Renan Santos (48%), Ronaldo Caiado (42%) y Augusto Cury (34%) (O Globo)."
       ],
       "fracos": [
-        "Quedaba detrás en la [primera vuelta](/es/glossary#primeiro-turno) en cinco de las nueve nacionales del 03/Oct, con la mayor distancia en la CNT/MDA, 38% a 43,1%.",
+        "En la víspera quedaba detrás en la [segunda vuelta](/es/glossary#segundo-turno) en la Datafolha, en la CNT/MDA y en la AtlasIntel, y empataba en la PoderData.",
         "🏦 Según O Globo, la [Policía Federal](/es/glossary#pf) examina, en la investigación policial sobre Daniel Vorcaro y la relación del Master con el BRB, el financiamiento de R$ 3,1 millones del banco a Flávio Bolsonaro para la compra de una mansión de R$ 6 millones en Brasilia; él dice que la transacción fue legal, y el registro proviene de un solo grupo de medios y se incluye aquí atribuido.",
-        "📰 Mensajes extraídos del celular de Daniel Vorcaro y divulgados por Estadão el 24/Sep muestran cuatro intentos de contacto de él con el banquero entre el 13 y el 16 de noviembre de 2025, en los días anteriores a la prisión de Vorcaro, el 17 de noviembre de 2025. Gazeta do Povo confirmó la veracidad de los diálogos con fuentes propias próximas a la investigación. Parte de las conversaciones trata del financiamiento de la película Dark Horse, y él confirmó un diálogo de septiembre de 2025 sobre eso, citando un contrato de financiamiento particular que no fue presentado públicamente."
+        "📰 Mensajes extraídos del celular de Daniel Vorcaro y divulgados por Estadão el 24/Sep muestran cuatro intentos de contacto de él con el banquero entre el 13 y el 16 de noviembre de 2025, en los días anteriores a la prisión de Vorcaro, el 17 de noviembre de 2025. Gazeta do Povo confirmó la veracidad de los diálogos con fuentes propias próximas a la investigación."
       ],
-      "analise": "Flávio Bolsonaro subió 19,70pp en el contrato de ganador, a 84,25% (vol USD 16,11M acumulado), en la lectura confirmada del 04/Oct, 21:43 BRT, durante el escrutinio, y 19,94pp en el normalizado; su precio queda 20,95pp por encima del máximo registrado de la serie. 🗳️ En el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT del 04/Oct, con 99,59% de las secciones totalizadas, Flávio Bolsonaro tiene 47,12% de los votos válidos para presidente y Lula 45,06%, seguidos por Augusto Cury, con 2,89%, Ronaldo Caiado, con 2,19%, y Renan Santos, con 2,25%. A las 20:58 el TSE marcó el resultado presidencial como matemáticamente definido: Flávio Bolsonaro y Lula van a la [segunda vuelta](/es/glossary#segundo-turno), fijada para el 25/Oct (Agência Brasil). En las nueve nacionales del 03/Oct lideraba la [primera vuelta](/es/glossary#primeiro-turno) en cuatro. ⛔ El panel no atribuye el precio al escrutinio ni a las encuestas: mide los lados con la marca de hora de cada uno."
+      "analise": "Flávio Bolsonaro está en 83,10% en el contrato de ganador (vol USD 16,98M acumulado), lectura confirmada del 05/Oct, 17:31 BRT, y cae 1,15pp frente a la lectura confirmada del 04/Oct a las 21:43 BRT, publicada en la noche del escrutinio. 🗳️ Terminó la [primera vuelta](/es/glossary#primeiro-turno) con 47,03% de los votos válidos, 1,87 puntos por delante de Lula, en la totalización del [TSE](/es/glossary#tse). 🤝 União Brasil y PP señalan apoyo a él, con decisión en los próximos días (Folha de S.Paulo y O Globo), y Ronaldo Caiado prometió anunciar su apoyo el martes 06/Oct, en Goiânia (Metrópoles y O Globo). Las primeras nacionales después de la primera vuelta están registradas en el TSE para el 08/Oct (Datafolha y PoderData) y el 09/Oct (AtlasIntel y Vox Brasil). ⛔ El panel no atribuye el precio al resultado ni a los apoyos: mide los lados con la marca de hora de cada uno."
     },
     {
       "rank": "3",
       "name": "Augusto Cury",
       "party": "Avante",
       "color": "#0891B2",
-      "header": "PRECIO: 0,05% en el contrato de ganador (vol USD 5,30M acumulado), lectura confirmada del 04/Oct, 21:43 BRT. ESCRUTINIO: 2,89% de los votos válidos en el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT. ENCUESTA: de 1% en la Palver a 4% en la Gerp en las nacionales del 03/Oct.",
+      "header": "ELIMINADO EN LA [PRIMERA VUELTA](/es/glossary#primeiro-turno): tercer colocado, con 2,89% de los votos válidos en la totalización del [TSE](/es/glossary#tse). PRECIO: contrato de ganador cerrado y resuelto en cero, con USD 5,51M acumulados. [SEGUNDA VUELTA](/es/glossary#segundo-turno): según Agência Brasil, habla de mantener silencio.",
       "fortes": [
-        "Tiene 2,89% de los votos válidos en el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT, con 99,59% de las secciones totalizadas.",
-        "Era el tercer colocado de la [primera vuelta](/es/glossary#primeiro-turno) en la CNT/MDA, en la Gerp y en la Futura del 03/Oct."
+        "Terminó en tercer lugar, con 2,89% de los votos válidos, por delante de Renan Santos y Ronaldo Caiado.",
+        "El libro de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno) fue resuelto a su favor."
       ],
       "fracos": [
-        "En la misma lectura, el libro de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) pagaba 99,85% por Lula y el de tercer lugar 99,85% por Augusto Cury, el mismo orden del resultado del [TSE](/es/glossary#tse).",
-        "En el contrato de ganador sigue en el piso del libro, 0,05%, y paga menos de lo que su volumen acumulado sugeriría, USD 5,02M."
+        "Está fuera de la [segunda vuelta](/es/glossary#segundo-turno), y su contrato en el libro de ganador fue resuelto en cero.",
+        "En la víspera el libro de tercer lugar pagaba más por Renan Santos, 47,50%, y por Ronaldo Caiado, 30,00%, que por él, 23,70%."
       ],
-      "analise": "Augusto Cury está en el piso del libro de ganador, 0,05% (vol USD 5,30M acumulado), en la lectura confirmada del 04/Oct, 21:43 BRT. 🗳️ En el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT, con 99,59% de las secciones totalizadas, tiene 2,89% de los votos válidos. En la misma lectura, el libro de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) pagaba 99,85% por Lula y el de tercer lugar 99,85% por Augusto Cury, el mismo orden del resultado del TSE."
+      "analise": "Augusto Cury terminó la [primera vuelta](/es/glossary#primeiro-turno) en tercer lugar, con 2,89% de los votos válidos en la totalización del [TSE](/es/glossary#tse), y está fuera de la [segunda vuelta](/es/glossary#segundo-turno). Su contrato en el libro de ganador fue cerrado por Polymarket después de la primera vuelta y resuelto en cero, con USD 5,51M acumulados. El libro de tercer lugar de la primera vuelta, que en la víspera pagaba 23,70% por él, a las 23:00 UTC del 03/Oct, fue resuelto a su favor. 🤝 Según Agência Brasil, él habla de mantener silencio en la segunda vuelta; el registro tiene una sola fuente y se incluye atribuido."
     },
     {
       "rank": "4",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PRECIO: 0,05% (vol USD 17,10M acumulado) en el contrato de ganador, lectura confirmada del 04/Oct, 21:43 BRT. ESCRUTINIO: 2,25% de los votos válidos en el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT. ENCUESTA: 7% en la Palver del 03/Oct, en tercer lugar, y de 1,5% a 4,6% en las otras nacionales del día.",
+      "header": "ELIMINADO EN LA [PRIMERA VUELTA](/es/glossary#primeiro-turno): cuarto colocado, con 2,24% de los votos válidos en la totalización del [TSE](/es/glossary#tse). PRECIO: contrato de ganador cerrado y resuelto en cero, con USD 17,12M acumulados. [SEGUNDA VUELTA](/es/glossary#segundo-turno): no apoya a ninguno de los dos.",
       "fortes": [
-        "🏆 Su contrato en el libro de ganador sigue siendo el de MAYOR volumen acumulado del presidencial, USD 17,10M contra USD 16,52M del de Lula.",
-        "Era el tercer colocado de la [primera vuelta](/es/glossary#primeiro-turno) en la Palver del 03/Oct, con 7%, y en la AtlasIntel, con 4,6%."
+        "Terminó en cuarto lugar, con 2,24% de los votos válidos, por delante de Ronaldo Caiado, con 2,18%.",
+        "Su contrato en el libro de ganador cerró con USD 17,12M acumulados, el segundo mayor del libro presidencial."
       ],
       "fracos": [
-        "Tiene 2,25% de los votos válidos en el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT, con 99,59% de las secciones totalizadas.",
-        "En la misma lectura, el libro de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) pagaba 99,85% por Lula y el de tercer lugar 99,85% por Augusto Cury, el mismo orden del resultado del [TSE](/es/glossary#tse)."
+        "Está fuera de la [segunda vuelta](/es/glossary#segundo-turno), y su contrato en el libro de ganador fue resuelto en cero.",
+        "En la víspera el libro de tercer lugar pagaba 47,50% por él, y el tercer lugar quedó para Augusto Cury."
       ],
-      "analise": "Renan Santos cayó al piso del libro de ganador, 0,05%, en la lectura confirmada del 04/Oct, 21:43 BRT, y su contrato sigue siendo el de mayor volumen acumulado del presidencial, USD 17,10M. 🗳️ En el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT, con 99,59% de las secciones totalizadas, tiene 2,25% de los votos válidos. En la misma lectura, el libro de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) pagaba 99,85% por Lula y el de tercer lugar 99,85% por Augusto Cury, el mismo orden del resultado del TSE."
+      "analise": "Renan Santos terminó la [primera vuelta](/es/glossary#primeiro-turno) en cuarto lugar, con 2,24% de los votos válidos en la totalización del [TSE](/es/glossary#tse), y está fuera de la [segunda vuelta](/es/glossary#segundo-turno). Su contrato en el libro de ganador fue cerrado por Polymarket después de la primera vuelta y resuelto en cero, con USD 17,12M acumulados, el segundo mayor del libro presidencial, detrás del de Lula. En la víspera el libro de tercer lugar pagaba 47,50% por él, a las 23:00 UTC del 03/Oct, y fue resuelto a favor de Augusto Cury. 🤝 En la noche del 04/Oct dijo que no apoya a ninguno de los dos en la segunda vuelta y liberó a la militancia del Missão (Gazeta do Povo y Agência Brasil)."
     },
     {
       "rank": "5",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PRECIO: Ronaldo Caiado, Romeu Zema y Fernando Haddad en el piso del libro de ganador, 0,05%, lectura confirmada del 04/Oct, 21:43 BRT. ESCRUTINIO: Caiado tiene 2,19% de los votos válidos y Zema 0,27% en el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT.",
-      "subtitle": "Los tres nombres fuera del pelotón de punta, en la lectura confirmada del 04/Oct, 21:43 BRT, con el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT (99,59% de las secciones totalizadas).",
+      "header": "ELIMINADOS EN LA [PRIMERA VUELTA](/es/glossary#primeiro-turno): Ronaldo Caiado, con 2,18% de los votos válidos, y Romeu Zema, con 0,27%, en la totalización del [TSE](/es/glossary#tse). Fernando Haddad no disputó la Presidencia. PRECIO: los tres contratos de ganador fueron cerrados y resueltos en cero.",
+      "subtitle": "Los tres nombres fuera del pelotón de frente, con la totalización del [TSE](/es/glossary#tse) de la [primera vuelta](/es/glossary#primeiro-turno) (100% de las secciones) y el cierre de los contratos de ganador después de la primera vuelta.",
       "caiado": {
-        "label": "CAIADO (PSD), 0,05% en el contrato de GANADOR, lectura confirmada del 04/Oct, 21:43 BRT, con USD 7,81M acumulados. Tiene 2,19% de los votos válidos en el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT. En las nacionales del 03/Oct iba de 1% a 4%.",
-        "fortes": "Tiene 2,19% de los votos válidos en el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT. Era el tercer colocado de la [primera vuelta](/es/glossary#primeiro-turno) en la Datafolha del 03/Oct, con 4%.",
-        "fracos": "Está en el piso del libro de ganador, 0,05%. En la misma lectura, el libro de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) pagaba 99,85% por Lula y el de tercer lugar 99,85% por Augusto Cury, el mismo orden del resultado del [TSE](/es/glossary#tse)."
+        "label": "CAIADO (PSD), eliminado en la [primera vuelta](/es/glossary#primeiro-turno) con 2,18% de los votos válidos en la totalización del [TSE](/es/glossary#tse). Su contrato de ganador fue cerrado y resuelto en cero, con USD 7,82M acumulados.",
+        "fortes": "Prometió anunciar su apoyo a Flávio Bolsonaro el martes 06/Oct, en Goiânia (Metrópoles y O Globo).",
+        "fracos": "Quedó en quinto lugar, detrás de Renan Santos, y el PSD decidió por la neutralidad en la [segunda vuelta](/es/glossary#segundo-turno) (Folha de S.Paulo y Agência Brasil)."
       },
       "haddad": {
-        "label": "HADDAD (PT), 0,05% en el contrato de GANADOR, lectura confirmada del 04/Oct, 21:43 BRT, en el piso del libro, con USD 7,74M acumulados. No es candidato a la Presidencia: disputó la gobernación de São Paulo y perdió ante Tarcísio de Freitas en la [primera vuelta](/es/glossary#primeiro-turno).",
-        "fortes": "Su contrato no se movió en esta lectura, así que no hay movimiento que explicar, y el techo de su serie en el contrato de ganador es 7,60%, el 26/May, medido en el backup del banco.",
-        "fracos": "No es medido en la [primera vuelta](/es/glossary#primeiro-turno) por ninguna de las seis nacionales del día ni probado en par de [segunda vuelta](/es/glossary#segundo-turno), así que la comparación entre precio y encuesta no existe para él en esta ronda. Su contrato de ganador acumula USD 7,55M, volumen mayor que el de Augusto Cury, que es probado por las seis casas y tiene USD 5,02M."
+        "label": "HADDAD (PT), no disputó la Presidencia: disputó la gobernación de São Paulo y perdió frente a Tarcísio de Freitas en la [primera vuelta](/es/glossary#primeiro-turno). Su contrato de ganador fue cerrado y resuelto en cero, con USD 7,74M acumulados.",
+        "fortes": "El máximo de su serie en el contrato de ganador fue de 7,60%, el 26/May, medido en el backup del banco de datos.",
+        "fracos": "No fue medido por ninguna nacional en escenario presidencial ni en par de [segunda vuelta](/es/glossary#segundo-turno)."
       },
       "zema": {
-        "label": "ZEMA (Novo), 0,05% en el contrato de GANADOR, lectura confirmada del 04/Oct, 21:43 BRT, con USD 7,74M acumulados. Tiene 0,27% de los votos válidos en el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT.",
-        "fortes": "⭐ En la [Quaest](/es/glossary#quaest) del 28/Sep, el 81% de sus electores iría a Flávio Bolsonaro en la [segunda vuelta](/es/glossary#segundo-turno), la mayor transferencia entre los nombres medidos.",
-        "fracos": "Tiene 0,27% de los votos válidos en el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT, y está en el piso del libro de ganador, 0,05%."
+        "label": "ZEMA (Novo), eliminado en la [primera vuelta](/es/glossary#primeiro-turno) con 0,27% de los votos válidos en la totalización del [TSE](/es/glossary#tse). Su contrato de ganador fue cerrado y resuelto en cero, con USD 7,74M acumulados.",
+        "fortes": "⭐ En la [Quaest](/es/glossary#quaest) del 28/Sep, 81% de sus electores irían hacia Flávio Bolsonaro en la [segunda vuelta](/es/glossary#segundo-turno), la mayor transferencia entre los nombres medidos (O Globo).",
+        "fracos": "Tuvo 0,27% de los votos válidos. Según Folha de S.Paulo, el Novo va a declarar apoyo a Flávio Bolsonaro; el registro tiene una sola fuente y se incluye atribuido."
       },
-      "analise": "Ronaldo Caiado, Romeu Zema y Fernando Haddad están en el piso del libro de ganador, 0,05%, en la lectura confirmada del 04/Oct, 21:43 BRT. 🗳️ En el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT, con 99,59% de las secciones totalizadas, Caiado tiene 2,19% de los votos válidos y Zema 0,27%. Haddad disputó la gobernación de São Paulo, no la Presidencia, y perdió ante Tarcísio de Freitas en la [primera vuelta](/es/glossary#primeiro-turno). En la misma lectura, el libro de segundo lugar de la primera vuelta pagaba 99,85% por Lula y el de tercer lugar 99,85% por Augusto Cury, el mismo orden del resultado del TSE.",
+      "analise": "🗳️ Ronaldo Caiado terminó la [primera vuelta](/es/glossary#primeiro-turno) en quinto lugar, con 2,18% de los votos válidos, y Romeu Zema tuvo 0,27%, en la totalización del [TSE](/es/glossary#tse). Fernando Haddad disputó la gobernación de São Paulo, no la Presidencia. Los tres contratos en el libro de ganador fueron cerrados por Polymarket y resueltos en cero. 🤝 El PSD decidió por la neutralidad en la [segunda vuelta](/es/glossary#segundo-turno) y liberó a las bases estatales (Folha de S.Paulo y Agência Brasil), y Ronaldo Caiado prometió a Flávio Bolsonaro anunciar su apoyo a él el martes 06/Oct, en Goiânia (Metrópoles y O Globo). Según Folha de S.Paulo, el Novo, partido de Romeu Zema, va a declarar apoyo a Flávio Bolsonaro; el registro tiene una sola fuente y se incluye atribuido.",
       "fortes": [
-        "⭐ En la Futura del 24/Sep los dos aparecen adelante de Lula en par de [segunda vuelta](/es/glossary#segundo-turno): Ronaldo Caiado por 46,5% a 42,4% y Romeu Zema por 43,8% a 43,3%.",
-        "Ronaldo Caiado subió de 4,5% a 5,7% en la [primera vuelta](/es/glossary#primeiro-turno) de la Futura del 24/Sep y pasó a Augusto Cury.",
-        "En el recorte estatal de la Datafolha del 25/Sep, Ronaldo Caiado tiene 9% en el Distrito Federal y Romeu Zema 4% en Minas Gerais (G1)."
+        "Ronaldo Caiado prometió anunciar su apoyo a Flávio Bolsonaro el martes 06/Oct, en Goiânia (Metrópoles y O Globo).",
+        "⭐ En la [Quaest](/es/glossary#quaest) del 28/Sep, 81% de los electores de Romeu Zema y 42% de los de Ronaldo Caiado irían hacia Flávio Bolsonaro en la [segunda vuelta](/es/glossary#segundo-turno) (O Globo)."
       ],
       "fracos": [
-        "En la misma lectura, el libro de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) pagaba 99,85% por Lula y el de tercer lugar 99,85% por Augusto Cury, el mismo orden del resultado del [TSE](/es/glossary#tse).",
-        "Fernando Haddad no es candidato a la Presidencia y sigue en el piso del libro de ganador, 0,05%, con USD 7,74M acumulados."
+        "Los dos están fuera de la [segunda vuelta](/es/glossary#segundo-turno), y los contratos de ganador de los tres nombres fueron resueltos en cero.",
+        "Fernando Haddad no disputó la Presidencia: disputó la gobernación de São Paulo y perdió frente a Tarcísio de Freitas en la [primera vuelta](/es/glossary#primeiro-turno)."
       ]
     }
   ],
   "quadroComparativo": [
     {
       "n": "Lula (PT)",
-      "p": "Las seis nacionales del 24/Sep lo miden de 43% en Palver, empatado con Flávio Bolsonaro, a 38,4% en Futura, atrás por 2 puntos, con 41% en Real Time y en PoderData y 40% en Datafolha y en Alfa. En la [segunda vuelta](/es/glossary#segundo-turno) lidera en una de las seis, Datafolha, por 47% a 45%, empata en Alfa en 43% y pierde en las otras cuatro.",
-      "m": "15,50% (vol USD 16,52M acumulado) en el contrato de ganador, lectura confirmada del 04/Oct, 21:43 BRT, caída de 20,00pp",
-      "t": "cae 20,00pp en crudo y 19,94pp en el normalizado, 19,00pp por debajo del piso registrado de la serie, y la brecha de Flávio Bolsonaro pasa de 29,05pp a 68,75pp",
-      "s": "🗳️ 45,06% de los votos válidos en el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT; lideraba la [primera vuelta](/es/glossary#primeiro-turno) en cinco de las nueve nacionales del 03/Oct.",
+      "p": "En la víspera, 03/Oct, lideraba la [segunda vuelta](/es/glossary#segundo-turno) en la Datafolha (47% a 46%), en la CNT/MDA (47,3% a 43,1%) y en la AtlasIntel (47,6% a 47,4%), y empataba en 46% en la PoderData. URNA de la [primera vuelta](/es/glossary#primeiro-turno): 45,16% de los válidos.",
+      "m": "16,50% (vol USD 17,91M acumulado) en el contrato de ganador, lectura confirmada del 05/Oct, 17:31 BRT",
+      "t": "sube 1,00pp frente a la lectura confirmada del 04/Oct a las 21:43 BRT, publicada en la noche del escrutinio, y la brecha de Flávio Bolsonaro pasa de 68,75pp a 66,60pp",
+      "s": "🗳️ En la [segunda vuelta](/es/glossary#segundo-turno), 1,87 puntos detrás en la urna de la [primera vuelta](/es/glossary#primeiro-turno).",
       "pc": "#DC2626",
       "mc": ""
     },
     {
       "n": "Flávio Bolsonaro (PL)",
-      "p": "Las seis nacionales del 24/Sep lo miden de 40,4% en Futura, donde lidera la [primera vuelta](/es/glossary#primeiro-turno), a 33% en Alfa/TMC, con 39% en PoderData, 37% en Real Time, 36% en Datafolha y 43% en Palver, en empate. En la [segunda vuelta](/es/glossary#segundo-turno) lidera en cuatro de las seis.",
-      "m": "84,25% (vol USD 16,11M acumulado) en el contrato de ganador, lectura confirmada del 04/Oct, 21:43 BRT, alza de 19,70pp",
-      "t": "sube 19,70pp en crudo y 19,94pp en el normalizado, 20,95pp por encima del máximo registrado de la serie, 63,30% del 01/Oct",
-      "s": "🗳️ 47,12% de los votos válidos en el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT; lideraba la [primera vuelta](/es/glossary#primeiro-turno) en cuatro de las nueve nacionales del 03/Oct.",
+      "p": "En la víspera, 03/Oct, lideraba la [segunda vuelta](/es/glossary#segundo-turno) en la [Quaest](/es/glossary#quaest) (44% a 42%), en la Palver (49% a 44%), en la Futura (48% a 45,1%) y en la Gerp (49% a 44%). URNA de la [primera vuelta](/es/glossary#primeiro-turno): 47,03% de los válidos.",
+      "m": "83,10% (vol USD 16,98M acumulado) en el contrato de ganador, lectura confirmada del 05/Oct, 17:31 BRT",
+      "t": "cae 1,15pp frente a la lectura confirmada del 04/Oct a las 21:43 BRT, publicada en la noche del escrutinio",
+      "s": "🗳️ En la [segunda vuelta](/es/glossary#segundo-turno), 1,87 puntos por delante en la urna de la [primera vuelta](/es/glossary#primeiro-turno).",
       "pc": "#2563EB",
       "mc": ""
     },
     {
       "n": "Augusto Cury (Avante)",
-      "p": "Las seis nacionales del 24/Sep lo miden de 2% en Palver a 6% en Alfa, en PoderData y en Real Time, con 5,6% en Futura y 5% en Datafolha. PoderData lo pone ganándole a Lula en la [segunda vuelta](/es/glossary#segundo-turno), por 45% a 42%.",
-      "m": "0,05% (vol USD 5,30M acumulado) en el contrato de ganador, lectura confirmada del 04/Oct, 21:43 BRT",
-      "t": "2,89% de los votos válidos en el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT",
-      "s": "🗳️ Tercero en la CNT/MDA, en la Gerp y en la Futura del 03/Oct.",
+      "p": "URNA de la [primera vuelta](/es/glossary#primeiro-turno): 2,89% de los válidos, tercer colocado.",
+      "m": "contrato de ganador cerrado y resuelto en cero, con USD 5,51M acumulados",
+      "t": "eliminado en la [primera vuelta](/es/glossary#primeiro-turno)",
+      "s": "🤝 Según Agência Brasil, habla de mantener silencio en la [segunda vuelta](/es/glossary#segundo-turno).",
       "pc": "#0891B2",
       "mc": ""
     },
     {
       "n": "Renan Santos (Missão)",
-      "p": "Las seis nacionales del 24/Sep lo miden de 2,4% en Futura a 8% en Palver, con 6% en Real Time y 3% en Datafolha y en PoderData. En Palver cayó de 11% a 8% contra la ronda de la casa del 21/Sep.",
-      "m": "0,05% (vol USD 17,10M acumulado) en el contrato de ganador, lectura confirmada del 04/Oct, 21:43 BRT",
-      "t": "2,25% de los votos válidos en el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT",
-      "s": "🏆 Su contrato en el libro de ganador sigue siendo el de mayor volumen acumulado del presidencial, USD 17,10M contra USD 16,52M del de Lula.",
+      "p": "URNA de la [primera vuelta](/es/glossary#primeiro-turno): 2,24% de los válidos, cuarto colocado.",
+      "m": "contrato de ganador cerrado y resuelto en cero, con USD 17,12M acumulados",
+      "t": "eliminado en la [primera vuelta](/es/glossary#primeiro-turno)",
+      "s": "🤝 No apoya a ninguno de los dos en la [segunda vuelta](/es/glossary#segundo-turno) (Gazeta do Povo y Agência Brasil).",
       "pc": "#7C3AED",
       "mc": ""
     },
     {
       "n": "Caiado (PSD)",
-      "p": "Las seis nacionales del 24/Sep lo miden de 1% en Palver a 5,7% en Futura, donde subió de 4,5% y pasó a Augusto Cury. En el par de [segunda vuelta](/es/glossary#segundo-turno) de Futura le gana a Lula por 46,5% a 42,4%.",
-      "m": "0,05% (vol USD 7,81M acumulado) en el contrato de ganador, lectura confirmada del 04/Oct, 21:43 BRT",
-      "t": "2,19% de los votos válidos en el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT",
-      "s": "🗳️ Tercer colocado de la [primera vuelta](/es/glossary#primeiro-turno) en la Datafolha del 03/Oct, con 4%.",
+      "p": "URNA de la [primera vuelta](/es/glossary#primeiro-turno): 2,18% de los válidos, quinto colocado.",
+      "m": "contrato de ganador cerrado y resuelto en cero, con USD 7,82M acumulados",
+      "t": "eliminado en la [primera vuelta](/es/glossary#primeiro-turno)",
+      "s": "🤝 Prometió anunciar su apoyo a Flávio Bolsonaro el 06/Oct (Metrópoles y O Globo); el PSD quedó neutral.",
       "pc": "#059669",
       "mc": ""
     },
     {
       "n": "Romeu Zema (Novo)",
-      "p": "Las seis nacionales del 24/Sep lo miden en 1% en cinco de ellas y 0,9% en Futura. ⭐ Y Futura lo pone ADELANTE de Lula en el par de [segunda vuelta](/es/glossary#segundo-turno), por 43,8% a 43,3%, dentro del margen de 2,2pp.",
-      "m": "0,05% (vol USD 7,74M acumulado) en el contrato de ganador, lectura confirmada del 04/Oct, 21:43 BRT",
-      "t": "0,27% de los votos válidos en el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT",
-      "s": "⭐ En la [Quaest](/es/glossary#quaest) del 28/Sep, el 81% de sus electores iría a Flávio Bolsonaro en la [segunda vuelta](/es/glossary#segundo-turno).",
+      "p": "URNA de la [primera vuelta](/es/glossary#primeiro-turno): 0,27% de los válidos.",
+      "m": "contrato de ganador cerrado y resuelto en cero, con USD 7,74M acumulados",
+      "t": "eliminado en la [primera vuelta](/es/glossary#primeiro-turno)",
+      "s": "🤝 Según Folha de S.Paulo, el Novo va a declarar apoyo a Flávio Bolsonaro.",
       "pc": "#EA580C",
       "mc": ""
     }
   ],
-  "cruzamento": "Noche de la [primera vuelta](/es/glossary#primeiro-turno), escrutinio en curso. 💹 En la lectura confirmada del 04/Oct, 21:43 BRT, Flávio Bolsonaro sube 19,70pp en el contrato de ganador, a 84,25%, y Lula cae 20,00pp, a 15,50%, con 19,94pp para cada lado en el normalizado, y la brecha pasa de 29,05pp a 68,75pp. Flávio Bolsonaro queda 20,95pp por encima del máximo registrado de la serie desde el 14 de abril, 63,30% del 01/Oct, y Lula 19,00pp por debajo del piso registrado, 34,50% del 25/Abr. 🗳️ En el parcial oficial del [TSE](/es/glossary#tse) de las 21:44 BRT del 04/Oct, con 99,59% de las secciones totalizadas, Flávio Bolsonaro tiene 47,12% de los votos válidos para presidente y Lula 45,06%, seguidos por Augusto Cury, con 2,89%, Ronaldo Caiado, con 2,19%, y Renan Santos, con 2,25%. A las 20:58 el TSE marcó el resultado presidencial como matemáticamente definido: Flávio Bolsonaro y Lula van a la [segunda vuelta](/es/glossary#segundo-turno), fijada para el 25/Oct (Agência Brasil). 📊 En las nueve nacionales divulgadas el 03/Oct, víspera de la primera vuelta, Lula queda adelante en la primera vuelta en cinco (Datafolha, [Quaest](/es/glossary#quaest), PoderData, CNT/MDA y AtlasIntel) y Flávio Bolsonaro en cuatro (Palver, Futura y dos de la Gerp, que informa que las dos mediciones comparten parte de las entrevistas). ⛔ El panel no atribuye movimiento de precio al escrutinio ni a las encuestas: mide los lados con las marcas de hora de cada uno."
+  "cruzamento": "Primer día de la [segunda vuelta](/es/glossary#segundo-turno). 🗳️ En la totalización del [TSE](/es/glossary#tse) generada a las 12:51 del 05/Oct, con 100% de las secciones, Flávio Bolsonaro tiene 47,03% de los votos válidos y Lula 45,16%, seguidos por Augusto Cury, con 2,89%, Renan Santos, con 2,24%, y Ronaldo Caiado, con 2,18%. La abstención fue de 21,08% del electorado, y los votos en blanco y nulos sumaron 1,84% y 2,93% de los votos emitidos. La segunda vuelta es el 25/Oct. 💹 En la lectura confirmada del 05/Oct, 17:31 BRT, Flávio Bolsonaro cae 1,15pp y Lula sube 1,00pp frente a la lectura confirmada del 04/Oct a las 21:43 BRT, publicada en la noche del escrutinio, y la brecha pasa de 68,75pp a 66,60pp. 📊 En la víspera de la [primera vuelta](/es/glossary#primeiro-turno) la segunda vuelta estaba dividida: Lula por delante en la Datafolha (47% a 46%), en la CNT/MDA (47,3% a 43,1%) y en la AtlasIntel (47,6% a 47,4%), empate en 46% en la PoderData, y Flávio Bolsonaro por delante en la [Quaest](/es/glossary#quaest) (44% a 42%), en la Palver (49% a 44%), en la Futura (48% a 45,1%) y en la Gerp (49% a 44%). 🤝 Renan Santos dijo en la noche del 04/Oct que no apoya a ninguno de los dos y libera a la militancia del Missão (Gazeta do Povo y Agência Brasil). El PSD decidió por la neutralidad y liberó a las bases estatales (Folha de S.Paulo y Agência Brasil), y Ronaldo Caiado prometió a Flávio Bolsonaro anunciar su apoyo a él el martes 06/Oct, en Goiânia (Metrópoles y O Globo); hasta esta lectura el anuncio no se había hecho. União Brasil y PP señalan apoyo a Flávio Bolsonaro, con decisión en los próximos días (Folha de S.Paulo y O Globo). Según Folha de S.Paulo, el Novo, partido de Romeu Zema, va a declarar apoyo a Flávio Bolsonaro, y según Agência Brasil Augusto Cury habla de mantener silencio en la segunda vuelta; los dos registros tienen una sola fuente y se incluyen atribuidos. ⛔ El panel no atribuye movimiento de precio al resultado ni a los apoyos: mide los lados con las marcas de hora de cada uno."
 }

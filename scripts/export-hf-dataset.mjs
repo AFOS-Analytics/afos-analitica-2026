@@ -88,7 +88,10 @@ const num = (v) => { const n = parseFloat(String(v ?? '').replace(',', '.')); re
 // dizia "03/08/2026, 19:11 UTC" enquanto o `lastUpdate` do arquivo dizia
 // 2026-08-05. O dado estava lá; o extrator antigo não olhava.
 function divergenceCsv(polls, date) {
-  const cands = polls?.polymarketComparison?.candidates || []
+  // No 2º turno, quem está fora tem `percentage: 0` (convenção de nome não
+  // medido) e preço 0 de contrato fechado: a linha "0 contra 0" não é medição.
+  const segundo = polls?.polymarketComparison?.pollSource?.round === 2
+  const cands = (polls?.polymarketComparison?.candidates || []).filter((c) => !segundo || num(c.percentage) > 0)
   // data em que o PREÇO foi medido; cai para a data do snapshot se o painel não declarar
   const priceDate = deriveDate(polls?.polymarketComparison) || date
   const head = 'date,candidate,polymarket_pct,poll_pct,divergence_pp,polymarket_date'

@@ -181,6 +181,15 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
         const nationalPolls = (polls?.polls || []).filter(p => !isStatePoll(p))
         return nationalPolls.length > 0 && (
           <>
+            {/* 🗳️ 05/Out/2026: o 1º turno acabou, e as pesquisas dele passam a ser
+                registro. A referência delas agora é a urna, que fica dita aqui. */}
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 sm:p-4 mb-4 text-xs sm:text-sm text-dark leading-relaxed">
+              {locale === 'en'
+                ? <>The first round closed on 4 October. Official TSE result: <strong>Flávio Bolsonaro 47.03%</strong> and <strong>Lula 45.16%</strong> of valid votes. The first-round polls below remain as a <strong>historical record</strong>; second-round polls come in from 8 October. <a href="#sec-1turno" className="text-primary hover:underline">Result and retrospective</a>.</>
+                : locale === 'es'
+                  ? <>La primera vuelta terminó el 4 de octubre. Resultado oficial del TSE: <strong>Flávio Bolsonaro 47,03%</strong> y <strong>Lula 45,16%</strong> de los votos válidos. Las encuestas de primera vuelta de abajo quedan como <strong>registro histórico</strong>; las de segunda vuelta entran a partir del 8 de octubre. <a href="#sec-1turno" className="text-primary hover:underline">Resultado y retrospectiva</a>.</>
+                  : <>O 1º turno terminou em 4 de outubro. Resultado oficial do TSE: <strong>Flávio Bolsonaro 47,03%</strong> e <strong>Lula 45,16%</strong> dos votos válidos. As pesquisas de 1º turno abaixo ficam como <strong>registro histórico</strong>; as de 2º turno entram a partir de 8 de outubro. <a href="#sec-1turno" className="text-primary hover:underline">Resultado e retrospecto</a>.</>}
+            </div>
             <p className="text-xs text-gray-500 italic mb-3 px-1">
               📍 {pl.natIntro} <a href={`/${locale}/daily`} className="text-primary hover:underline">{pl.natState}</a>{pl.natHist} <a href="/api/polls/tse?days=30" className="text-primary hover:underline">{pl.natHistApi}</a>.
             </p>

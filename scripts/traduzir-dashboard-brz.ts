@@ -94,11 +94,21 @@ const NAO_TRADUZ = [
 ]
 const naoTraduz = (c: string) => NAO_TRADUZ.some((re) => re.test(c))
 
+/**
+ * 🔴 05/Out/2026: o `catch` devolvia null para QUALQUER erro, e "git fora do
+ * PATH" virava "arquivo ausente no HEAD". Resultado medido: 0 herdados e 814
+ * pendências onde havia 222, sem aviso nenhum, e o insumo mandava traduzir de
+ * novo 274 campos que não tinham mudado. Só a ausência REAL do arquivo no HEAD
+ * devolve null; o resto aborta dizendo a causa.
+ */
 function doHead(caminho: string): unknown | null {
   try {
-    return JSON.parse(execFileSync('git', ['show', `HEAD:${caminho}`], { encoding: 'utf8', maxBuffer: 1e8 }))
-  } catch {
-    return null
+    return JSON.parse(execFileSync('git', ['show', `HEAD:${caminho}`], { encoding: 'utf8', maxBuffer: 1e8, stdio: ['ignore', 'pipe', 'pipe'] }))
+  } catch (e) {
+    const err = e as { code?: string; stderr?: string }
+    if (err.code === 'ENOENT') throw new Error('git não encontrado no PATH: sem ele a herança do HEAD não roda e TUDO sairia pendente. Pôr o git no PATH e rodar de novo.')
+    if (/does not exist in|exists on disk, but not in/.test(String(err.stderr ?? ''))) return null
+    throw e
   }
 }
 

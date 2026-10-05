@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-10-04",
+  "lastUpdate": "2026-10-05",
   "institutes": [
     {
       "name": "Datafolha",
@@ -3687,117 +3687,118 @@
     "lastUpdate": "04/10/2026, 21:43"
   },
   "polymarketComparison": {
-    "note": "Polymarket prices at the confirmed reading of 04/Oct, 21:43 BRT, during the [first-round](/en/glossary#primeiro-turno) count, with the presidential book totaling USD 170.31M cumulative across 19 contracts. IN THE WINNER CONTRACT FLÁVIO BOLSONARO'S GAP OVER LULA GOES FROM 29.05pp TO 68.75pp: Flávio Bolsonaro rises 19.70pp, to 84.25%, and Lula falls 20.00pp, to 15.50%, with 19.94pp for each side normalized. 🗳️ In the official [TSE](/en/glossary#tse) partial count of 21:44 BRT on 04/Oct, with 99.59% of polling sections tallied, Flávio Bolsonaro has 47.12% of the valid votes for president and Lula 45.06%, followed by Augusto Cury, with 2.89%, Ronaldo Caiado, with 2.19%, and Renan Santos, with 2.25%. At 20:58 the TSE marked the presidential result as mathematically defined: Flávio Bolsonaro and Lula go to the [second round](/en/glossary#segundo-turno), scheduled for 25/Oct (Agência Brasil). The poll side of this chart remains Palver of 03/Oct, n=5,000, the largest sample among the national polls of the most recent day, which gives Flávio Bolsonaro 47% to 43% in the first round. In the nine national polls released on 03/Oct, the eve of the first round, Lula is ahead in the first round in five (Datafolha, [Quaest](/en/glossary#quaest), PoderData, CNT/MDA and AtlasIntel) and Flávio Bolsonaro in four (Palver, Futura and two from Gerp, which reports that the two measurements share part of the interviews).",
-    "sources": "Polymarket prices via the AFOS proxy, and the panel only publishes a price that two independent readings, taken eight minutes apart, confirm within 0.20pp. Confirmation is done contract by contract, and the prices on this page are all from the confirmed reading of 04/Oct, 21:43 BRT. Alongside the raw move comes the move normalized by the sum of the binary pair, or of the whole book when it has more than two relevant names. Polls registered with the [TSE](/en/glossary#tse), with protocol, pollster, fieldwork, sample and method declared in each entry. Count: official TSE partial count, with the time and the percentage of polling sections tallied. 🗳️ The POLL side of the divergence chart uses ONE national poll, not the average: the panel's rule is the most recent national poll, with ties broken by the largest sample, which gives Palver of 03/Oct, n=5,000, the largest sample among the national polls of the most recent day. Palver is an online panel with a calibrated non-probability sample, and the choice is declared on the chart, with pollster and date.",
+    "note": "Polymarket prices at the confirmed reading of 05/Oct, 17:31 BRT, the first day of the [second round](/en/glossary#segundo-turno). IN THE WINNER CONTRACT, NOW A PAIR, FLÁVIO BOLSONARO'S GAP OVER LULA GOES FROM 68.75pp TO 66.60pp against the confirmed reading of 04/Oct at 21:43 BRT, published on the night of the count: Flávio Bolsonaro stands at 83.10% and Lula at 16.50%. The contracts for the other names in the winner book were closed by Polymarket after the [first round](/en/glossary#primeiro-turno) and resolved at zero. 🗳️ In the [TSE](/en/glossary#tse) final tally generated at 12:51 on 05/Oct, with 100% of polling sections, Flávio Bolsonaro has 47.03% of the valid votes and Lula 45.16%, followed by Augusto Cury, with 2.89%, Renan Santos, with 2.24%, and Ronaldo Caiado, with 2.18%. The poll side of this chart becomes the second-round pair: Palver of 03/Oct, n=5,000, the largest sample among the national polls of the most recent day that measured the pair, with Flávio Bolsonaro at 49% to 44%. On the eve of the first round the second round was split: Lula ahead in Datafolha (47% to 46%), in CNT/MDA (47.3% to 43.1%) and in AtlasIntel (47.6% to 47.4%), a tie at 46% in PoderData, and Flávio Bolsonaro ahead in [Quaest](/en/glossary#quaest) (44% to 42%), in Palver (49% to 44%), in Futura (48% to 45.1%) and in Gerp (49% to 44%). The first national polls after the first round are registered with the TSE for 08/Oct (Datafolha and PoderData) and 09/Oct (AtlasIntel and Vox Brasil).",
+    "sources": "Polymarket prices via the AFOS proxy, and the panel only publishes a price that two independent readings, taken eight minutes apart, confirm within 0.20pp. Confirmation is done contract by contract, and the prices on this page all come from the confirmed reading of 05/Oct, 17:31 BRT. Alongside the raw move comes the move normalized by the pair's sum. Polls registered with the [TSE](/en/glossary#tse), with protocol, pollster, fieldwork, sample and method declared in each entry. [First-round](/en/glossary#primeiro-turno) result: official TSE final tally, 100% of polling sections. 🗳️ The POLL side of the divergence chart uses ONE national poll, not the average: the panel's rule is the second-round pair from the most recent national poll that measured it, with ties broken by the largest sample, which gives Palver of 03/Oct, n=5,000, the largest sample among the national polls of the most recent day that measured the pair, with Flávio Bolsonaro at 49% to 44%. Palver is an online panel with a calibrated non-probability sample, and the choice is declared on the chart, with pollster and date.",
     "candidates": [
       {
         "name": "Lula",
-        "percentage": 43,
-        "odds": 15.5,
-        "value": 15.5,
-        "polymarket": "15.50%",
-        "pesquisaRange": "34% to 46.7%",
-        "lastUpdate": "04/10/2026, 21:43",
-        "tendenciaPesquisa": "HAD 43% IN THE [FIRST ROUND](/en/glossary#primeiro-turno) IN PALVER OF 03/Oct, the source of this chart's poll side, 4 points behind Flávio Bolsonaro. ⭐ In the nine national polls of 03/Oct he led the first round in five: 42% to 40% in Datafolha, 40% to 38% in [Quaest](/en/glossary#quaest), 42% to 41% in PoderData, 43.1% to 38% in CNT/MDA and 46.7% to 43.8% in AtlasIntel.",
-        "tendenciaPolymarket": "FALLS 20.00pp IN THE WINNER CONTRACT, to 15.50% (vol USD 16.52M cumulative), confirmed reading of 04/Oct, 21:43 BRT, and 19.94pp normalized. Flávio Bolsonaro's gap over him goes from 29.05pp to 68.75pp. In the series recorded since April 14 his price stands 19.00pp below the recorded low, 34.50% on 25/Apr. In the official [TSE](/en/glossary#tse) partial count of 21:44 BRT on 04/Oct, with 99.59% of polling sections tallied, he has 45.06% of the valid votes."
+        "percentage": 44,
+        "odds": 16.5,
+        "value": 16.5,
+        "polymarket": "16.50%",
+        "pesquisaRange": "42% to 47.6%",
+        "lastUpdate": "05/10/2026, 17:31",
+        "tendenciaPesquisa": "HAS 44% IN THE [SECOND ROUND](/en/glossary#segundo-turno) IN PALVER OF 03/Oct, the source of this chart's poll side, against Flávio Bolsonaro's 49%. On the eve he led the second round in Datafolha (47% to 46%), in CNT/MDA (47.3% to 43.1%) and in AtlasIntel (47.6% to 47.4%), and was tied in PoderData. In the [first-round](/en/glossary#primeiro-turno) count he had 45.16% of valid votes.",
+        "tendenciaPolymarket": "UP 1.00pp IN THE WINNER CONTRACT, to 16.50% (vol USD 17.91M cumulative), confirmed reading of 05/Oct, 17:31 BRT, against the confirmed reading of 04/Oct at 21:43 BRT, published on the night of the count. Flávio Bolsonaro's gap over him goes from 68.75pp to 66.60pp. 🏆 Counting the closed contracts, his is now the one with the highest cumulative volume in the presidential book."
       },
       {
         "name": "Flávio Bolsonaro",
-        "percentage": 47,
-        "odds": 84.25,
-        "value": 84.25,
-        "polymarket": "84.25%",
-        "pesquisaRange": "29% to 47%",
-        "lastUpdate": "04/10/2026, 21:43",
-        "tendenciaPesquisa": "HAD 47% IN THE [FIRST ROUND](/en/glossary#primeiro-turno) IN PALVER OF 03/Oct, the source of this chart's poll side, and 49% in the second. ⭐ In the nine national polls of 03/Oct he led the first round in four, Palver, Futura and both Gerp rounds, and in the seven released on the afternoon of 03/Oct his first-round number rose against the same pollster's previous round.",
-        "tendenciaPolymarket": "RISES 19.70pp IN THE WINNER CONTRACT, to 84.25% (vol USD 16.11M cumulative), confirmed reading of 04/Oct, 21:43 BRT, and 19.94pp normalized. The gap over Lula goes from 29.05pp to 68.75pp. In the series recorded since April 14 his price stands 20.95pp above the recorded top, 63.30% on 01/Oct. In the official [TSE](/en/glossary#tse) partial count of 21:44 BRT on 04/Oct, with 99.59% of polling sections tallied, he has 47.12% of the valid votes."
+        "percentage": 49,
+        "odds": 83.1,
+        "value": 83.1,
+        "polymarket": "83.10%",
+        "pesquisaRange": "43.1% to 49%",
+        "lastUpdate": "05/10/2026, 17:31",
+        "tendenciaPesquisa": "HAS 49% IN THE [SECOND ROUND](/en/glossary#segundo-turno) IN PALVER OF 03/Oct, the source of this chart's poll side, against Lula's 44%. On the eve he led the second round in [Quaest](/en/glossary#quaest) (44% to 42%), in Palver, in Futura (48% to 45.1%) and in Gerp (49% to 44%). In the [first-round](/en/glossary#primeiro-turno) count he had 47.03% of valid votes.",
+        "tendenciaPolymarket": "DOWN 1.15pp IN THE WINNER CONTRACT, to 83.10% (vol USD 16.98M cumulative), confirmed reading of 05/Oct, 17:31 BRT, against the confirmed reading of 04/Oct at 21:43 BRT, published on the night of the count. The gap over Lula goes from 68.75pp to 66.60pp."
       },
       {
         "name": "Augusto Cury",
-        "percentage": 1,
-        "odds": 0.05,
-        "value": 0.05,
-        "polymarket": "0.05%",
+        "odds": 0,
+        "value": 0,
+        "polymarket": "closed",
         "pesquisaRange": "1% to 12.2%",
-        "lastUpdate": "04/10/2026, 21:43",
-        "tendenciaPesquisa": "HAS 1% IN THE [FIRST ROUND](/en/glossary#primeiro-turno) IN PALVER OF 03/Oct, fieldwork from 30/Sep to 03/Oct and n=5,000, which is the source of this chart's poll side, and loses to Lula there in the [second round](/en/glossary#segundo-turno) by 36% to 44%. In the national polls of 03/Oct he ranges from 1% in Palver to 4% in Gerp, and is third in CNT/MDA, Gerp and Futura.",
-        "tendenciaPolymarket": "IS AT THE FLOOR OF THE WINNER BOOK, 0.05% (vol USD 5.30M cumulative), confirmed reading of 04/Oct, 21:43 BRT. In the official [TSE](/en/glossary#tse) partial count of 21:44 BRT on 04/Oct, with 99.59% of polling sections tallied, he has 2.89% of the valid votes. In the same reading, the second-place book of the [first round](/en/glossary#primeiro-turno) paid 99.85% for Lula and the third-place book 99.85% for Augusto Cury, the same order as the TSE result."
+        "lastUpdate": "05/10/2026, 17:31",
+        "tendenciaPesquisa": "ELIMINATED: 2.89% of the valid votes in the [first round](/en/glossary#primeiro-turno), third place, in the [TSE](/en/glossary#tse) final tally.",
+        "tendenciaPolymarket": "Winner contract closed by Polymarket after the [first round](/en/glossary#primeiro-turno) and resolved at zero, with USD 5.51M cumulative.",
+        "percentage": 0
       },
       {
         "name": "Renan Santos",
-        "percentage": 7,
-        "odds": 0.05,
-        "value": 0.05,
-        "polymarket": "0.05%",
+        "odds": 0,
+        "value": 0,
+        "polymarket": "closed",
         "pesquisaRange": "1.5% to 11%",
-        "lastUpdate": "04/10/2026, 21:43",
-        "tendenciaPesquisa": "HAS 7% IN THE [FIRST ROUND](/en/glossary#primeiro-turno) IN PALVER OF 03/Oct, fieldwork from 30/Sep to 03/Oct and n=5,000, which is the source of this chart's poll side, where he is third, and loses to Lula in the [second round](/en/glossary#segundo-turno) by 33% to 44%. In the national polls of 03/Oct he ranges from 1.5% in CNT/MDA to 7% in Palver.",
-        "tendenciaPolymarket": "FALLS TO THE FLOOR OF THE WINNER BOOK, 0.05%, confirmed reading of 04/Oct, 21:43 BRT. 🏆 His contract remains the one with the HIGHEST cumulative volume in the presidential book, USD 17.10M against USD 16.52M for Lula's. In the official [TSE](/en/glossary#tse) partial count of 21:44 BRT on 04/Oct, with 99.59% of polling sections tallied, he has 2.25% of the valid votes. In the same reading, the second-place book of the [first round](/en/glossary#primeiro-turno) paid 99.85% for Lula and the third-place book 99.85% for Augusto Cury, the same order as the TSE result."
+        "lastUpdate": "05/10/2026, 17:31",
+        "tendenciaPesquisa": "ELIMINATED: 2.24% of the valid votes in the [first round](/en/glossary#primeiro-turno), fourth place, in the [TSE](/en/glossary#tse) final tally.",
+        "tendenciaPolymarket": "Winner contract closed by Polymarket after the [first round](/en/glossary#primeiro-turno) and resolved at zero, with USD 17.12M cumulative, the second largest in the presidential book.",
+        "percentage": 0
       },
       {
         "name": "Ronaldo Caiado",
-        "percentage": 1,
-        "odds": 0.05,
-        "value": 0.05,
-        "polymarket": "0.05%",
+        "odds": 0,
+        "value": 0,
+        "polymarket": "closed",
         "pesquisaRange": "1% to 5.7%",
-        "lastUpdate": "04/10/2026, 21:43",
-        "tendenciaPesquisa": "HAS 1% IN THE [FIRST ROUND](/en/glossary#primeiro-turno) IN PALVER OF 03/Oct, fieldwork from 30/Sep to 03/Oct and n=5,000, which is the source of this chart's poll side, and loses to Lula there in the [second round](/en/glossary#segundo-turno) by 42% to 43%. In the national polls of 03/Oct he ranges from 1% in Palver to 4% in Datafolha, where he is third.",
-        "tendenciaPolymarket": "IS AT THE FLOOR OF THE WINNER BOOK, 0.05% (vol USD 7.81M cumulative), confirmed reading of 04/Oct, 21:43 BRT. In the official [TSE](/en/glossary#tse) partial count of 21:44 BRT on 04/Oct, with 99.59% of polling sections tallied, he has 2.19% of the valid votes. In the same reading, the second-place book of the [first round](/en/glossary#primeiro-turno) paid 99.85% for Lula and the third-place book 99.85% for Augusto Cury, the same order as the TSE result."
+        "lastUpdate": "05/10/2026, 17:31",
+        "tendenciaPesquisa": "ELIMINATED: 2.18% of the valid votes in the [first round](/en/glossary#primeiro-turno), fifth place, in the [TSE](/en/glossary#tse) final tally.",
+        "tendenciaPolymarket": "Winner contract closed by Polymarket after the [first round](/en/glossary#primeiro-turno) and resolved at zero, with USD 7.82M cumulative.",
+        "percentage": 0
       },
       {
         "name": "Pablo Marçal",
-        "percentage": 0,
-        "odds": 0.05,
-        "value": 0.05,
-        "polymarket": "0.05%",
+        "odds": 0,
+        "value": 0,
+        "polymarket": "closed",
         "pesquisaRange": "1% to 2%",
-        "lastUpdate": "04/10/2026, 21:43",
-        "tendenciaPesquisa": "Outside the prompted scenarios of the national polls of 03/Oct, after his candidacy registration was rejected on 11/Sep.",
-        "tendenciaPolymarket": "He stays at 0.05% in the winner contract. His candidacy registration was denied by the Superior Electoral Court on 11/Sep."
+        "lastUpdate": "05/10/2026, 17:31",
+        "tendenciaPesquisa": "Out of the election since the [TSE](/en/glossary#tse) rejected his candidacy registration on 11/Sep.",
+        "tendenciaPolymarket": "Winner contract closed by Polymarket after the [first round](/en/glossary#primeiro-turno) and resolved at zero.",
+        "percentage": 0
       },
       {
         "name": "Romeu Zema",
-        "percentage": 0,
-        "odds": 0.05,
-        "value": 0.05,
-        "polymarket": "0.05%",
+        "odds": 0,
+        "value": 0,
+        "polymarket": "closed",
         "pesquisaRange": "0.3% to 3.5%",
-        "lastUpdate": "04/10/2026, 21:43",
-        "tendenciaPesquisa": "Stands below 1% in the [first round](/en/glossary#primeiro-turno) IN PALVER OF 03/Oct, fieldwork from 30/Sep to 03/Oct and n=5,000, which is the source of this chart's poll side, and loses to Lula there in the [second round](/en/glossary#segundo-turno) by 42% to 44%. In the national polls of 03/Oct that score him he has 0.8% to 1%.",
-        "tendenciaPolymarket": "IS AT THE FLOOR OF THE WINNER BOOK, 0.05% (vol USD 7.74M cumulative), confirmed reading of 04/Oct, 21:43 BRT. In the official [TSE](/en/glossary#tse) partial count of 21:44 BRT on 04/Oct, with 99.59% of polling sections tallied, he has 0.27% of the valid votes."
+        "lastUpdate": "05/10/2026, 17:31",
+        "tendenciaPesquisa": "ELIMINATED: 0.27% of the valid votes in the [first round](/en/glossary#primeiro-turno), in the [TSE](/en/glossary#tse) final tally.",
+        "tendenciaPolymarket": "Winner contract closed by Polymarket after the [first round](/en/glossary#primeiro-turno) and resolved at zero, with USD 7.74M cumulative.",
+        "percentage": 0
       },
       {
         "name": "Tarcísio",
-        "percentage": 0,
-        "odds": 0.05,
-        "value": 0.05,
-        "polymarket": "0.05%",
+        "odds": 0,
+        "value": 0,
+        "polymarket": "closed",
         "pesquisaRange": "not tested",
-        "lastUpdate": "04/10/2026, 21:43",
-        "tendenciaPesquisa": "The national polls released on 03/Oct do not include him in a [first-round](/en/glossary#primeiro-turno) presidential scenario or in a second-round pairing.",
-        "tendenciaPolymarket": "Remains at 0.05% in the winner contract, with USD 14.89M cumulative, confirmed reading of 04/Oct, 21:43 BRT, and his contract is still behind Renan Santos's in cumulative volume in the presidential book, which has USD 17.10M."
+        "lastUpdate": "05/10/2026, 17:31",
+        "tendenciaPesquisa": "Did not run for President: he was re-elected governor of São Paulo in the [first round](/en/glossary#primeiro-turno).",
+        "tendenciaPolymarket": "Winner contract closed by Polymarket after the [first round](/en/glossary#primeiro-turno) and resolved at zero, with USD 14.96M cumulative.",
+        "percentage": 0
       },
       {
         "name": "Fernando Haddad",
-        "percentage": 0,
-        "odds": 0.05,
-        "value": 0.05,
-        "polymarket": "0.05%",
+        "odds": 0,
+        "value": 0,
+        "polymarket": "closed",
         "pesquisaRange": "not tested",
-        "lastUpdate": "04/10/2026, 21:43",
-        "tendenciaPesquisa": "The national polls released on 03/Oct do not include him in a [first-round](/en/glossary#primeiro-turno) presidential scenario or in a second-round pairing.",
-        "tendenciaPolymarket": "He remains at 0.05% in the winner contract, with USD 7.55M cumulative."
+        "lastUpdate": "05/10/2026, 17:31",
+        "tendenciaPesquisa": "Did not run for President: he ran for governor of São Paulo and lost to Tarcísio de Freitas in the [first round](/en/glossary#primeiro-turno).",
+        "tendenciaPolymarket": "Winner contract closed by Polymarket after the [first round](/en/glossary#primeiro-turno) and resolved at zero, with USD 7.74M cumulative.",
+        "percentage": 0
       }
     ],
-    "updatedAt": "04/10/2026, 21:43",
+    "updatedAt": "05/10/2026, 17:31",
     "lastUpdate": "25/09/2026, 17:08",
     "pollSource": {
       "pollster": "Palver",
-      "date": "2026-09-24",
+      "date": "2026-10-03",
       "sample": 5000,
-      "register": "BR-09587/2026",
-      "scenario": "Main scenario (first round, prompted)"
+      "register": "BR-00198/2026",
+      "scenario": "Second round, Lula vs Flávio",
+      "round": 2
     }
   }
 }
