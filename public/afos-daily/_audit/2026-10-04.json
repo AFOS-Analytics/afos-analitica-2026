@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-04",
+  "edicao": "resultado do 1º turno, definitiva, depois de 4 previews horarios arquivados em data/brz/noite-1turno-2026/",
+  "refetch": {
+    "certificada": "2026-10-05T00:43:52.920Z",
+    "gate": "livro de vencedor bloqueado nas travas de 20:10, 20:18, 20:59 e 21:42 (oscilacao de 83,00 a 85,05 durante a apuracao); aprovado na trava das 21:43, que e a leitura publicada. Senado bloqueado: usada a confirmada das 18:59, declarada no texto"
+  },
+  "tse": {
+    "presidente": "totalizacao 21:44:54 BRT, 99,59% das secoes, matematicamente definido as 20:58: Flavio 47,12, Lula 45,06, Cury 2,89, Renan 2,25, Caiado 2,19, Zema 0,27",
+    "estaduais": "arquivos por UF da eleicao 6259 (c0003 governador, c0005 senador), 21:45 BRT: 20 governadores eleitos, 7 segundos turnos; PL 19 das 54 vagas do Senado entre os dois mais votados por UF; segundas vagas apertadas sinalizadas (PA 0,05, RN 0,27, AM e SE abaixo de 1 ponto)"
+  },
+  "factCheck": [
+    { "evento": "Nunes Marques suspende a decisao que indeferiu a candidatura de Deltan Dallagnol (manha de 04/10)", "fontes": ["G1 04/10", "Gazeta do Povo 04/10"], "decisao": "incorporar; corrigiu o rascunho que ainda tratava a candidatura como indeferida (fato de 03/10)" },
+    { "evento": "Renan Calheiros perde a vaga no Senado por AL", "fontes": ["Metropoles 04/10", "Folha de S.Paulo e CartaCapital 04/10", "TSE: 3o colocado"], "decisao": "incorporar" },
+    { "evento": "Raquel Lyra reeleita em PE, unica mulher eleita governadora no 1o turno", "fontes": ["Folha de S.Paulo (projecao Datafolha)", "G1", "TSE: lista dos 20 eleitos"], "decisao": "incorporar; G1 dizia 'outras tres no 2o turno' e o TSE mostra quatro (inclui AM), usado o TSE" },
+    { "evento": "Segundo turno em 25/10", "fontes": ["Agencia Brasil 04/10"], "decisao": "incorporar" }
+  ],
+  "adversarial": {
+    "singleSource": ["estrategia da campanha de Flavio em MG (Folha, atribuida)", "Lula discursou apos o resultado (G1, atribuido, sem conteudo do discurso)"],
+    "numerical": "gate de traducao 173/173/173; numeros conferidos contra o arquivo do TSE das 21:44 e a trava das 21:43",
+    "correcoes": ["PL com cinco governadores eleitos, nao seis", "data UTC da leitura das 21:43 BRT e 05/Out (apontado pelo tradutor ES)", "frase 'sete da tarde' reescrita", "painel das 21h com numeros das 19:45 refeito antes de enviar o link"],
+    "decisao": "prosseguir"
+  }
+}

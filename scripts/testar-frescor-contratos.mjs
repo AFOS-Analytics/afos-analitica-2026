@@ -207,5 +207,18 @@ console.log('\n13. FAIXA gravada entre leituras, a forma que a régua do livro b
   conferir('precosAfirmados só devolve o de hoje', p.length === 1 && p[0] === '55,55', JSON.stringify(p))
 }
 
+console.log('\n10. apuração do TSE tem duas casas e NÃO é preço (04/Out/2026)')
+{
+  const a = 'PREÇO: 15,50% no contrato de vencedor. APURAÇÃO: 41,63% dos votos válidos na parcial oficial do TSE, com 47,26% das seções totalizadas.'
+  const p = precosAfirmados(a, 'vencedor').map((x) => x.preco)
+  conferir('voto válido e seção ficam fora, o preço fica', p.length === 1 && p[0] === '15,50', JSON.stringify(p))
+  const b = 'Está em 41,63% no contrato, dos maiores do livro.'
+  conferir('"dos" sem "votos" NÃO é passe livre', precosAfirmados(b, 'vencedor').length === 1)
+  const c = 'Tem 2,32% das urnas e 3,10% do eleitorado no contrato.'
+  conferir('"das urnas" fica fora, "do eleitorado" não', precosAfirmados(c, 'vencedor').map((x) => x.preco).join() === '3,10')
+  const d = 'Na parcial oficial do TSE das 18:44 BRT, Flávio Bolsonaro tem 50,20% dos votos válidos e Lula 41,63%, seguidos por Augusto Cury, com 2,96%. Lula caiu para 15,50% no contrato, durante a apuração.'
+  conferir('a lista da parcial fica fora e o preço "durante a apuração" fica', precosAfirmados(d, 'vencedor').map((x) => x.preco).join() === '15,50', JSON.stringify(precosAfirmados(d, 'vencedor').map((x) => x.preco)))
+}
+
 console.log(`\n${falhas === 0 ? '✅' : '❌'} ${passes} passaram, ${falhas} falharam.`)
 process.exit(falhas === 0 ? 0 : 1)

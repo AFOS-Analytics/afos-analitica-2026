@@ -157,14 +157,31 @@ export function ehHistoricoEm(texto, pos) {
  * vem com uma ("5,2%") ou nenhuma ("39%"). Exigir as duas separa preco de
  * pesquisa sem precisar entender a frase.
  */
+/**
+ * 🗳️ NUMERO DE APURACAO nao e preco, instalado em 04/Out/2026, noite do 1º turno.
+ * A regua "preco tem duas casas, urna tem uma" quebra com a totalizacao do TSE,
+ * que publica DUAS casas ("50,20% dos votos validos", "47,26% das secoes"). A
+ * primeira parcial do painel acusou 11 contradicoes falsas assim. O que separa
+ * e a unidade escrita logo depois do numero: votos, secoes ou urnas.
+ */
+export function ehApuracaoEm(texto, pos) {
+  const depois = texto.slice(pos).replace(/^\d+,\d+/, '')
+  return /^\s*%\s+(?:dos\s+votos|das\s+se[çc][õo]es|das\s+urnas)/i.test(depois)
+}
+
 export function precosAfirmados(texto, padrao = 'vencedor') {
   const saida = []
   for (const frase of frasesDe(String(texto ?? ''))) {
     const contrato = contratoDaFrase(frase, padrao)
     if (!contrato) continue // frase ambigua nomeia dois livros: nao se julga
+    // Frase que cita a "parcial oficial do TSE" e frase de APURACAO, com a lista
+    // de candidatos depois do primeiro numero. "Durante a apuracao" sozinho NAO
+    // basta: a frase de preco do painel usa essa expressao.
+    if (/parcial oficial do TSE/i.test(frase)) continue
     for (const m of frase.matchAll(/(\d+,\d{2})\s*%/g)) {
       const pos = m.index ?? 0
       if (ehHistoricoEm(frase, pos)) continue
+      if (ehApuracaoEm(frase, pos)) continue
       saida.push({ contrato, preco: m[1], frase })
     }
   }

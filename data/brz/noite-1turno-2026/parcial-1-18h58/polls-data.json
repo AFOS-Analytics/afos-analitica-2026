@@ -3684,11 +3684,11 @@
         "disapproval6m": 50
       }
     ],
-    "lastUpdate": "04/10/2026, 21:43"
+    "lastUpdate": "04/10/2026, 18:59"
   },
   "polymarketComparison": {
-    "note": "Preços do Polymarket na leitura confirmada de 04/Out, 21:43 BRT, durante a apuração do 1º turno, com o livro presidencial somando USD 170,31M acumulados em 19 contratos. NO CONTRATO DE VENCEDOR O VÃO DE FLÁVIO BOLSONARO SOBRE LULA VAI DE 29,05pp PARA 68,75pp: Flávio Bolsonaro sobe 19,70pp, para 84,25%, e Lula cai 20,00pp, para 15,50%, com 19,94pp para cada lado no normalizado. 🗳️ Na parcial oficial do TSE das 21:44 BRT de 04/Out, com 99,59% das seções totalizadas, Flávio Bolsonaro tem 47,12% dos votos válidos para presidente e Lula 45,06%, seguidos por Augusto Cury, com 2,89%, Ronaldo Caiado, com 2,19%, e Renan Santos, com 2,25%. Às 20:58 o TSE marcou o resultado presidencial como matematicamente definido: Flávio Bolsonaro e Lula vão ao 2º turno, marcado para 25/Out (Agência Brasil). O lado pesquisa deste grafo segue sendo a Palver de 03/Out, n=5.000, a maior amostra entre as nacionais do dia mais recente, que dá Flávio Bolsonaro 47% a 43% no 1º turno. Nas nove nacionais divulgadas em 03/Out, véspera do 1º turno, Lula fica à frente no 1º turno em cinco (Datafolha, Quaest, PoderData, CNT/MDA e AtlasIntel) e Flávio Bolsonaro em quatro (Palver, Futura e duas da Gerp, que informa que as duas medições compartilham parte das entrevistas).",
-    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. A confirmação é feita contrato a contrato, e os preços desta página são todos da leitura confirmada de 04/Out, 21:43 BRT. Ao lado do movimento cru vai o normalizado pela soma do par binário, ou do livro inteiro quando ele tem mais de dois nomes relevantes. Pesquisas registradas no TSE, com protocolo, casa, campo, amostra e método declarados em cada entrada. Apuração: parcial oficial do TSE, com hora e porcentagem de seções totalizadas. 🗳️ O lado PESQUISA do grafo de divergência usa UMA nacional, não a média: a régua do painel é a nacional mais recente com desempate pela maior amostra, o que dá a Palver de 03/Out, n=5.000, a maior amostra entre as nacionais do dia mais recente. A Palver é um painel online com amostra não probabilística calibrada, e a escolha vai declarada no grafo, com casa e data.",
+    "note": "Preços do Polymarket na leitura confirmada de 04/Out, 18:59 BRT, durante a apuração do 1º turno, com o livro presidencial somando USD 168,86M acumulados em 19 contratos. NO CONTRATO DE VENCEDOR O VÃO DE FLÁVIO BOLSONARO SOBRE LULA VAI DE 29,05pp PARA 68,00pp: Flávio Bolsonaro sobe 18,95pp, para 83,50%, e Lula cai 20,00pp, para 15,50%, com 19,83pp para cada lado no normalizado. 🗳️ Na parcial oficial do TSE das 18:44 BRT de 04/Out, com 47,26% das seções totalizadas, Flávio Bolsonaro tem 50,20% dos votos válidos para presidente e Lula 41,63%, seguidos por Augusto Cury, com 2,96%, Ronaldo Caiado, com 2,38%, e Renan Santos, com 2,32%. Parcial não é resultado: a ordem em que as seções são totalizadas muda o retrato ao longo da noite, e em 2022 a liderança do 1º turno trocou de mãos com mais de 70% das urnas apuradas (CartaCapital). O lado pesquisa deste grafo segue sendo a Palver de 03/Out, n=5.000, a maior amostra entre as nacionais do dia mais recente, que dá Flávio Bolsonaro 47% a 43% no 1º turno. Nas nove nacionais divulgadas em 03/Out, véspera do 1º turno, Lula fica à frente no 1º turno em cinco (Datafolha, Quaest, PoderData, CNT/MDA e AtlasIntel) e Flávio Bolsonaro em quatro (Palver, Futura e duas da Gerp, que informa que as duas medições compartilham parte das entrevistas).",
+    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. A confirmação é feita contrato a contrato, e os preços desta página são todos da leitura confirmada de 04/Out, 18:59 BRT. Ao lado do movimento cru vai o normalizado pela soma do par binário, ou do livro inteiro quando ele tem mais de dois nomes relevantes. Pesquisas registradas no TSE, com protocolo, casa, campo, amostra e método declarados em cada entrada. Apuração: parcial oficial do TSE, com hora e porcentagem de seções totalizadas. 🗳️ O lado PESQUISA do grafo de divergência usa UMA nacional, não a média: a régua do painel é a nacional mais recente com desempate pela maior amostra, o que dá a Palver de 03/Out, n=5.000, a maior amostra entre as nacionais do dia mais recente. A Palver é um painel online com amostra não probabilística calibrada, e a escolha vai declarada no grafo, com casa e data.",
     "candidates": [
       {
         "name": "Lula",
@@ -3697,20 +3697,20 @@
         "value": 15.5,
         "polymarket": "15,50%",
         "pesquisaRange": "34% a 46,7%",
-        "lastUpdate": "04/10/2026, 21:43",
+        "lastUpdate": "04/10/2026, 18:59",
         "tendenciaPesquisa": "TINHA 43% NO 1º TURNO NA PALVER DE 03/Out, fonte do lado pesquisa deste grafo, 4 pontos atrás de Flávio Bolsonaro. ⭐ Nas nove nacionais de 03/Out liderava o 1º turno em cinco: 42% a 40% na Datafolha, 40% a 38% na Quaest, 42% a 41% na PoderData, 43,1% a 38% na CNT/MDA e 46,7% a 43,8% na AtlasIntel.",
-        "tendenciaPolymarket": "CAI 20,00pp NO CONTRATO DE VENCEDOR, para 15,50% (vol USD 16,52M acumulado), leitura confirmada de 04/Out, 21:43 BRT, e 19,94pp no normalizado. O vão de Flávio Bolsonaro sobre ele vai de 29,05pp para 68,75pp. Na série gravada desde 14 de abril o preço dele fica 19,00pp abaixo do piso gravado, 34,50% de 25/Abr. Na parcial oficial do TSE das 21:44 BRT de 04/Out, com 99,59% das seções totalizadas, tem 45,06% dos votos válidos."
+        "tendenciaPolymarket": "CAI 20,00pp NO CONTRATO DE VENCEDOR, para 15,50% (vol USD 16,00M acumulado), leitura confirmada de 04/Out, 18:59 BRT, e 19,83pp no normalizado. O vão de Flávio Bolsonaro sobre ele vai de 29,05pp para 68,00pp. Na série gravada desde 14 de abril o preço dele fica 19,00pp abaixo do piso gravado, 34,50% de 25/Abr. Na parcial oficial do TSE das 18:44 BRT de 04/Out, com 47,26% das seções totalizadas, tem 41,63% dos votos válidos."
       },
       {
         "name": "Flávio Bolsonaro",
         "percentage": 47,
-        "odds": 84.25,
-        "value": 84.25,
-        "polymarket": "84,25%",
+        "odds": 83.5,
+        "value": 83.5,
+        "polymarket": "83,50%",
         "pesquisaRange": "29% a 47%",
-        "lastUpdate": "04/10/2026, 21:43",
-        "tendenciaPesquisa": "TINHA 47% NO 1º TURNO NA PALVER DE 03/Out, fonte do lado pesquisa deste grafo, e 49% no 2º. ⭐ Nas nove nacionais de 03/Out liderava o 1º turno em quatro, Palver, Futura e as duas rodadas da Gerp, e nas sete divulgadas na tarde de 03/Out o número dele no 1º turno subia contra a rodada anterior da mesma casa.",
-        "tendenciaPolymarket": "SOBE 19,70pp NO CONTRATO DE VENCEDOR, para 84,25% (vol USD 16,11M acumulado), leitura confirmada de 04/Out, 21:43 BRT, e 19,94pp no normalizado. O vão sobre Lula vai de 29,05pp para 68,75pp. Na série gravada desde 14 de abril o preço dele fica 20,95pp acima do topo gravado, 63,30% de 01/Out. Na parcial oficial do TSE das 21:44 BRT de 04/Out, com 99,59% das seções totalizadas, tem 47,12% dos votos válidos."
+        "lastUpdate": "04/10/2026, 18:59",
+        "tendenciaPesquisa": "TINHA 47% NO 1º TURNO NA PALVER DE 03/Out, fonte do lado pesquisa deste grafo, e 49% no 2º. ⭐ Nas nove nacionais de 03/Out liderava o 1º turno em quatro, Palver, Futura e as duas rodadas da Gerp, e em todas as sete da tarde o número dele no 1º turno subia contra a rodada anterior da mesma casa.",
+        "tendenciaPolymarket": "SOBE 18,95pp NO CONTRATO DE VENCEDOR, para 83,50% (vol USD 15,71M acumulado), leitura confirmada de 04/Out, 18:59 BRT, e 19,83pp no normalizado. O vão sobre Lula vai de 29,05pp para 68,00pp. Na série gravada desde 14 de abril o preço dele fica 20,20pp acima do topo gravado, 63,30% de 01/Out. Na parcial oficial do TSE das 18:44 BRT de 04/Out, com 47,26% das seções totalizadas, tem 50,20% dos votos válidos."
       },
       {
         "name": "Augusto Cury",
@@ -3719,9 +3719,9 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "1% a 12,2%",
-        "lastUpdate": "04/10/2026, 21:43",
+        "lastUpdate": "04/10/2026, 18:59",
         "tendenciaPesquisa": "TEM 1% NO 1º TURNO NA PALVER DE 03/Out, campo de 30/Set a 03/Out e n=5.000, que é a fonte do lado pesquisa deste grafo, e perde para Lula no 2º turno ali por 36% a 44%. Nas nacionais de 03/Out vai de 1% na Palver a 4% na Gerp, e é o terceiro na CNT/MDA, na Gerp e na Futura.",
-        "tendenciaPolymarket": "ESTÁ NO PISO DO LIVRO DE VENCEDOR, 0,05% (vol USD 5,30M acumulado), leitura confirmada de 04/Out, 21:43 BRT. Na parcial oficial do TSE das 21:44 BRT de 04/Out, com 99,59% das seções totalizadas, tem 2,89% dos votos válidos. Na mesma leitura, o livro de 2º lugar do 1º turno pagava 99,85% por Lula e o de 3º lugar 99,85% por Augusto Cury, a mesma ordem do resultado do TSE."
+        "tendenciaPolymarket": "ESTÁ NO PISO DO LIVRO DE VENCEDOR, 0,05% (vol USD 5,30M acumulado), leitura confirmada de 04/Out, 18:59 BRT. Na parcial oficial do TSE das 18:44 BRT de 04/Out, com 47,26% das seções totalizadas, tem 2,96% dos votos válidos. Os livros de 2º e 3º lugar do 1º turno se resolvem com o resultado do 1º turno, e esta rodada não publica preço novo para eles."
       },
       {
         "name": "Renan Santos",
@@ -3730,9 +3730,9 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "1,5% a 11%",
-        "lastUpdate": "04/10/2026, 21:43",
+        "lastUpdate": "04/10/2026, 18:59",
         "tendenciaPesquisa": "TEM 7% NO 1º TURNO NA PALVER DE 03/Out, campo de 30/Set a 03/Out e n=5.000, que é a fonte do lado pesquisa deste grafo, onde é o terceiro colocado, e perde para Lula no 2º turno por 33% a 44%. Nas nacionais de 03/Out vai de 1,5% na CNT/MDA a 7% na Palver.",
-        "tendenciaPolymarket": "CAI PARA O PISO DO LIVRO DE VENCEDOR, 0,05%, leitura confirmada de 04/Out, 21:43 BRT. 🏆 O contrato dele segue sendo o de MAIOR volume acumulado do presidencial, USD 17,10M contra USD 16,52M do de Lula. Na parcial oficial do TSE das 21:44 BRT de 04/Out, com 99,59% das seções totalizadas, tem 2,25% dos votos válidos. Na mesma leitura, o livro de 2º lugar do 1º turno pagava 99,85% por Lula e o de 3º lugar 99,85% por Augusto Cury, a mesma ordem do resultado do TSE."
+        "tendenciaPolymarket": "CAI PARA O PISO DO LIVRO DE VENCEDOR, 0,05%, leitura confirmada de 04/Out, 18:59 BRT. 🏆 O contrato dele segue sendo o de MAIOR volume acumulado do presidencial, USD 17,10M contra USD 16,00M do de Lula. Na parcial oficial do TSE das 18:44 BRT de 04/Out, com 47,26% das seções totalizadas, tem 2,32% dos votos válidos. Os livros de 2º e 3º lugar do 1º turno se resolvem com o resultado do 1º turno, e esta rodada não publica preço novo para eles."
       },
       {
         "name": "Ronaldo Caiado",
@@ -3741,9 +3741,9 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "1% a 5,7%",
-        "lastUpdate": "04/10/2026, 21:43",
+        "lastUpdate": "04/10/2026, 18:59",
         "tendenciaPesquisa": "TEM 1% NO 1º TURNO NA PALVER DE 03/Out, campo de 30/Set a 03/Out e n=5.000, que é a fonte do lado pesquisa deste grafo, e perde para Lula no 2º turno ali por 42% a 43%. Nas nacionais de 03/Out vai de 1% na Palver a 4% na Datafolha, onde é o terceiro colocado.",
-        "tendenciaPolymarket": "ESTÁ NO PISO DO LIVRO DE VENCEDOR, 0,05% (vol USD 7,81M acumulado), leitura confirmada de 04/Out, 21:43 BRT. Na parcial oficial do TSE das 21:44 BRT de 04/Out, com 99,59% das seções totalizadas, tem 2,19% dos votos válidos. Na mesma leitura, o livro de 2º lugar do 1º turno pagava 99,85% por Lula e o de 3º lugar 99,85% por Augusto Cury, a mesma ordem do resultado do TSE."
+        "tendenciaPolymarket": "ESTÁ NO PISO DO LIVRO DE VENCEDOR, 0,05% (vol USD 7,81M acumulado), leitura confirmada de 04/Out, 18:59 BRT. Na parcial oficial do TSE das 18:44 BRT de 04/Out, com 47,26% das seções totalizadas, tem 2,38% dos votos válidos. Os livros de 2º e 3º lugar do 1º turno se resolvem com o resultado do 1º turno, e esta rodada não publica preço novo para eles."
       },
       {
         "name": "Pablo Marçal",
@@ -3752,7 +3752,7 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "1% a 2%",
-        "lastUpdate": "04/10/2026, 21:43",
+        "lastUpdate": "04/10/2026, 18:59",
         "tendenciaPesquisa": "Fora dos cenários estimulados das nacionais de 03/Out, depois do indeferimento do registro de candidatura em 11/Set.",
         "tendenciaPolymarket": "Segue em 0,05% no contrato de vencedor. O registro de candidatura dele foi indeferido pelo Tribunal Superior Eleitoral em 11/Set."
       },
@@ -3763,9 +3763,9 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "0,3% a 3,5%",
-        "lastUpdate": "04/10/2026, 21:43",
+        "lastUpdate": "04/10/2026, 18:59",
         "tendenciaPesquisa": "Fica abaixo de 1% no 1º turno NA PALVER DE 03/Out, campo de 30/Set a 03/Out e n=5.000, que é a fonte do lado pesquisa deste grafo, e perde para Lula no 2º turno ali por 42% a 44%. Nas nacionais de 03/Out que o pontuam tem de 0,8% a 1%.",
-        "tendenciaPolymarket": "ESTÁ NO PISO DO LIVRO DE VENCEDOR, 0,05% (vol USD 7,74M acumulado), leitura confirmada de 04/Out, 21:43 BRT. Na parcial oficial do TSE das 21:44 BRT de 04/Out, com 99,59% das seções totalizadas, tem 0,27% dos votos válidos."
+        "tendenciaPolymarket": "ESTÁ NO PISO DO LIVRO DE VENCEDOR, 0,05% (vol USD 7,74M acumulado), leitura confirmada de 04/Out, 18:59 BRT. Na parcial oficial do TSE das 18:44 BRT de 04/Out, com 47,26% das seções totalizadas, tem 0,29% dos votos válidos."
       },
       {
         "name": "Tarcísio",
@@ -3774,9 +3774,9 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "não testado",
-        "lastUpdate": "04/10/2026, 21:43",
+        "lastUpdate": "04/10/2026, 18:59",
         "tendenciaPesquisa": "As nacionais divulgadas em 03/Out não o incluem em cenário presidencial de 1º turno nem em par de 2º turno.",
-        "tendenciaPolymarket": "Segue em 0,05% no contrato de vencedor, com USD 14,89M acumulados, leitura confirmada de 04/Out, 21:43 BRT, e o contrato dele continua atrás do de Renan Santos em volume acumulado no livro presidencial, que tem USD 17,10M."
+        "tendenciaPolymarket": "Segue em 0,05% no contrato de vencedor, com USD 14,89M acumulados, leitura confirmada de 04/Out, 18:59 BRT, e o contrato dele continua atrás do de Renan Santos em volume acumulado no livro presidencial, que tem USD 17,10M."
       },
       {
         "name": "Fernando Haddad",
@@ -3785,12 +3785,12 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "não testado",
-        "lastUpdate": "04/10/2026, 21:43",
+        "lastUpdate": "04/10/2026, 18:59",
         "tendenciaPesquisa": "As nacionais divulgadas em 03/Out não o incluem em cenário presidencial de 1º turno nem em par de 2º turno.",
         "tendenciaPolymarket": "Segue em 0,05% no contrato de vencedor, com USD 7,55M acumulados."
       }
     ],
-    "updatedAt": "04/10/2026, 21:43",
+    "updatedAt": "04/10/2026, 18:59",
     "lastUpdate": "25/09/2026, 17:08",
     "pollSource": {
       "pollster": "Palver",

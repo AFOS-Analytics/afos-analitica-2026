@@ -1,0 +1,117 @@
+'use client';
+
+import type { CandidateProfile } from '../types';
+import { partyColor } from '../lib/utils';
+import { SectionTitle, Card } from './ui';
+import { LogicLink } from './LogicLink';
+import { useTranslation } from '../i18n/context';
+
+// Os campos `polymarket`, `poll` e `risk` são atualizados pela skill /atualizar
+// (a cada execução, o markdown dos JSONs e este arquivo são reescritos com
+// dados frescos).
+const candidates: CandidateProfile[] = [
+  {
+    name: "Lula",
+    party: "PT",
+    age: 80,
+    role: "Presidente da República",
+    polymarket: "15,50%",
+    poll: "RESULTADO DEFINIDO PELO TSE: na parcial oficial do TSE das 20:58 BRT de 04/Out, com 97,65% das seções totalizadas, Flávio Bolsonaro tem 47,39% dos votos válidos para presidente e Lula 44,74%, seguidos por Augusto Cury, com 2,91%, Ronaldo Caiado, com 2,21%, e Renan Santos, com 2,26%. Às 20:58 o TSE marcou o resultado presidencial como matematicamente definido: Flávio Bolsonaro e Lula vão ao 2º turno, marcado para 25/Out (Agência Brasil). NAS NOVE NACIONAIS DE 03/Out, VÉSPERA DO 1º TURNO, Lula liderava o 1º turno em cinco (Datafolha 42% a 40%, Quaest 40% a 38%, PoderData 42% a 41%, CNT/MDA 43,1% a 38% e AtlasIntel 46,7% a 43,8%) e Flávio Bolsonaro em quatro (Palver 47% a 43%, Futura 42,5% a 40,5% e as duas rodadas da Gerp, 43% a 41% e 44% a 42%).",
+    position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
+    risk: "CAI 20,00pp NO CONTRATO DE VENCEDOR, para 15,50% (vol USD 16,00M acumulado), leitura confirmada de 04/Out, 18:59 BRT, durante a apuração, e 19,83pp no normalizado. O vão de Flávio Bolsonaro sobre ele vai de 29,05pp para 68,00pp, e o preço dele fica 19,00pp abaixo do piso gravado da série, 34,50% de 25 de abril. Tem 44,74% dos votos válidos na parcial oficial do TSE das 20:58 BRT.",
+  },
+  {
+    name: "Flávio Bolsonaro",
+    party: "PL",
+    age: 45,
+    role: "Senador (RJ)",
+    polymarket: "83,50%",
+    poll: "RESULTADO DEFINIDO PELO TSE: na parcial oficial do TSE das 20:58 BRT de 04/Out, com 97,65% das seções totalizadas, Flávio Bolsonaro tem 47,39% dos votos válidos para presidente e Lula 44,74%, seguidos por Augusto Cury, com 2,91%, Ronaldo Caiado, com 2,21%, e Renan Santos, com 2,26%. Às 20:58 o TSE marcou o resultado presidencial como matematicamente definido: Flávio Bolsonaro e Lula vão ao 2º turno, marcado para 25/Out (Agência Brasil). NAS NOVE NACIONAIS DE 03/Out, VÉSPERA DO 1º TURNO, Lula liderava o 1º turno em cinco (Datafolha 42% a 40%, Quaest 40% a 38%, PoderData 42% a 41%, CNT/MDA 43,1% a 38% e AtlasIntel 46,7% a 43,8%) e Flávio Bolsonaro em quatro (Palver 47% a 43%, Futura 42,5% a 40,5% e as duas rodadas da Gerp, 43% a 41% e 44% a 42%).",
+    position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
+    risk: "SOBE 18,95pp NO CONTRATO DE VENCEDOR, para 83,50% (vol USD 15,71M acumulado), leitura confirmada de 04/Out, 18:59 BRT, durante a apuração, e 19,83pp no normalizado. O preço dele fica 20,20pp acima do topo gravado da série, 63,30% de 1º de outubro. Tem 47,39% dos votos válidos na parcial oficial do TSE das 20:58 BRT.",
+  },
+  {
+    name: "Renan Santos",
+    party: "Missão",
+    age: 35,
+    role: "Fundador do MBL",
+    polymarket: "0,05%",
+    poll: "RESULTADO DEFINIDO PELO TSE: na parcial oficial do TSE das 20:58 BRT de 04/Out, com 97,65% das seções totalizadas, Flávio Bolsonaro tem 47,39% dos votos válidos para presidente e Lula 44,74%, seguidos por Augusto Cury, com 2,91%, Ronaldo Caiado, com 2,21%, e Renan Santos, com 2,26%. Às 20:58 o TSE marcou o resultado presidencial como matematicamente definido: Flávio Bolsonaro e Lula vão ao 2º turno, marcado para 25/Out (Agência Brasil). NAS NOVE NACIONAIS DE 03/Out, VÉSPERA DO 1º TURNO, Lula liderava o 1º turno em cinco (Datafolha 42% a 40%, Quaest 40% a 38%, PoderData 42% a 41%, CNT/MDA 43,1% a 38% e AtlasIntel 46,7% a 43,8%) e Flávio Bolsonaro em quatro (Palver 47% a 43%, Futura 42,5% a 40,5% e as duas rodadas da Gerp, 43% a 41% e 44% a 42%).",
+    position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.",
+    risk: "CAI PARA O PISO DO LIVRO DE VENCEDOR, 0,05%, leitura confirmada de 04/Out, 18:59 BRT. 🏆 O contrato dele segue sendo o de MAIOR volume acumulado do presidencial, USD 17,10M contra USD 16,00M do de Lula. Tem 2,26% dos votos válidos na parcial oficial do TSE das 20:58 BRT. Os livros de 2º e 3º lugar do 1º turno se resolvem com o resultado do 1º turno, e esta rodada não publica preço novo para eles.",
+  },
+  {
+    name: "Fernando Haddad",
+    party: "PT",
+    age: 63,
+    role: "Pré-candidato Gov. SP",
+    polymarket: "0,05%",
+    poll: "RESULTADO DEFINIDO PELO TSE: na parcial oficial do TSE das 20:58 BRT de 04/Out, com 97,65% das seções totalizadas, Flávio Bolsonaro tem 47,39% dos votos válidos para presidente e Lula 44,74%, seguidos por Augusto Cury, com 2,91%, Ronaldo Caiado, com 2,21%, e Renan Santos, com 2,26%. Às 20:58 o TSE marcou o resultado presidencial como matematicamente definido: Flávio Bolsonaro e Lula vão ao 2º turno, marcado para 25/Out (Agência Brasil). NAS NOVE NACIONAIS DE 03/Out, VÉSPERA DO 1º TURNO, Lula liderava o 1º turno em cinco (Datafolha 42% a 40%, Quaest 40% a 38%, PoderData 42% a 41%, CNT/MDA 43,1% a 38% e AtlasIntel 46,7% a 43,8%) e Flávio Bolsonaro em quatro (Palver 47% a 43%, Futura 42,5% a 40,5% e as duas rodadas da Gerp, 43% a 41% e 44% a 42%).",
+    position: "Centro-esquerda. Ministro da Fazenda até a desincompatibilização. Foco no maior colégio eleitoral do país.",
+    risk: "Parado no piso do livro, 0,05%, leitura confirmada de 04/Out, 18:59 BRT, com USD 7,74M acumulados. Não é candidato à Presidência: disputa o governo de São Paulo.",
+  },
+  {
+    name: "Ronaldo Caiado",
+    party: "PSD",
+    age: 76,
+    role: "Ex-Gov. Goiás",
+    polymarket: "0,05%",
+    poll: "RESULTADO DEFINIDO PELO TSE: na parcial oficial do TSE das 20:58 BRT de 04/Out, com 97,65% das seções totalizadas, Flávio Bolsonaro tem 47,39% dos votos válidos para presidente e Lula 44,74%, seguidos por Augusto Cury, com 2,91%, Ronaldo Caiado, com 2,21%, e Renan Santos, com 2,26%. Às 20:58 o TSE marcou o resultado presidencial como matematicamente definido: Flávio Bolsonaro e Lula vão ao 2º turno, marcado para 25/Out (Agência Brasil). NAS NOVE NACIONAIS DE 03/Out, VÉSPERA DO 1º TURNO, Lula liderava o 1º turno em cinco (Datafolha 42% a 40%, Quaest 40% a 38%, PoderData 42% a 41%, CNT/MDA 43,1% a 38% e AtlasIntel 46,7% a 43,8%) e Flávio Bolsonaro em quatro (Palver 47% a 43%, Futura 42,5% a 40,5% e as duas rodadas da Gerp, 43% a 41% e 44% a 42%).",
+    position: "Centro-direita. Agronegócio, gestão fiscal. Candidato oficializado pelo PSD.",
+    risk: "No piso do livro de vencedor, 0,05% (vol USD 7,81M acumulado), leitura confirmada de 04/Out, 18:59 BRT. Tem 2,21% dos votos válidos na parcial oficial do TSE das 20:58 BRT. Os livros de 2º e 3º lugar do 1º turno se resolvem com o resultado do 1º turno, e esta rodada não publica preço novo para eles.",
+  },
+  {
+    name: "Romeu Zema",
+    party: "Novo",
+    age: 56,
+    role: "Ex-Gov. Minas Gerais",
+    polymarket: "0,05%",
+    poll: "RESULTADO DEFINIDO PELO TSE: na parcial oficial do TSE das 20:58 BRT de 04/Out, com 97,65% das seções totalizadas, Flávio Bolsonaro tem 47,39% dos votos válidos para presidente e Lula 44,74%, seguidos por Augusto Cury, com 2,91%, Ronaldo Caiado, com 2,21%, e Renan Santos, com 2,26%. Às 20:58 o TSE marcou o resultado presidencial como matematicamente definido: Flávio Bolsonaro e Lula vão ao 2º turno, marcado para 25/Out (Agência Brasil). NAS NOVE NACIONAIS DE 03/Out, VÉSPERA DO 1º TURNO, Lula liderava o 1º turno em cinco (Datafolha 42% a 40%, Quaest 40% a 38%, PoderData 42% a 41%, CNT/MDA 43,1% a 38% e AtlasIntel 46,7% a 43,8%) e Flávio Bolsonaro em quatro (Palver 47% a 43%, Futura 42,5% a 40,5% e as duas rodadas da Gerp, 43% a 41% e 44% a 42%).",
+    position: "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.",
+    risk: "No piso do livro de vencedor, 0,05% (vol USD 7,74M acumulado), leitura confirmada de 04/Out, 18:59 BRT. Tem 0,28% dos votos válidos na parcial oficial do TSE das 20:58 BRT.",
+  },
+  {
+    name: "Tarcísio de Freitas",
+    party: "Republicanos",
+    age: 51,
+    role: "Governador de São Paulo",
+    polymarket: "0,05%",
+    poll: "RESULTADO DEFINIDO PELO TSE: na parcial oficial do TSE das 20:58 BRT de 04/Out, com 97,65% das seções totalizadas, Flávio Bolsonaro tem 47,39% dos votos válidos para presidente e Lula 44,74%, seguidos por Augusto Cury, com 2,91%, Ronaldo Caiado, com 2,21%, e Renan Santos, com 2,26%. Às 20:58 o TSE marcou o resultado presidencial como matematicamente definido: Flávio Bolsonaro e Lula vão ao 2º turno, marcado para 25/Out (Agência Brasil). NAS NOVE NACIONAIS DE 03/Out, VÉSPERA DO 1º TURNO, Lula liderava o 1º turno em cinco (Datafolha 42% a 40%, Quaest 40% a 38%, PoderData 42% a 41%, CNT/MDA 43,1% a 38% e AtlasIntel 46,7% a 43,8%) e Flávio Bolsonaro em quatro (Palver 47% a 43%, Futura 42,5% a 40,5% e as duas rodadas da Gerp, 43% a 41% e 44% a 42%).",
+    position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.",
+    risk: "Parado no piso do livro, 0,05%, leitura confirmada de 04/Out, 18:59 BRT, com USD 14,89M acumulados, e o contrato dele segue atrás do de Renan Santos em volume acumulado no livro presidencial, que tem USD 17,10M.",
+  },
+];
+
+export function CandidatesSection() {
+  const { t } = useTranslation();
+  return (
+    <section>
+      <SectionTitle icon="👤" rightSlot={<LogicLink anchor="perfil-candidatos" />}>{t('sections.candidates')}</SectionTitle>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {candidates.map(c => (
+          <Card key={c.name} className="flex flex-col">
+            <div className="flex items-center gap-3 mb-3">
+              <div>
+                <h4 className="font-bold text-dark">{c.name}</h4>
+                <span className="text-xs px-2 py-0.5 rounded-full text-white" style={{ backgroundColor: partyColor[c.party] || '#94A3B8' }}>{c.party}</span>
+              </div>
+            </div>
+            <div className="text-xs text-gray-500 mb-2">{c.role} · {c.age} {t('candidates.age')}</div>
+            <div className="grid grid-cols-2 gap-2 mb-3">
+              <div className="bg-blue-50 rounded-lg p-2 text-center">
+                <div className="text-xs text-gray-500">Polymarket</div>
+                <div className="font-bold text-primary">{c.polymarket}</div>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-2 text-center">
+                <div className="text-xs text-gray-500">{t('candidates.poll')}</div>
+                <div className="font-bold text-dark">{c.poll}</div>
+              </div>
+            </div>
+            <p className="text-xs text-gray-600 mb-2"><strong>{t('candidates.position')}:</strong> {c.position}</p>
+            <p className="text-xs text-red-600"><strong>⚠️ {t('candidates.risk')}:</strong> {c.risk}</p>
+          </Card>
+        ))}
+      </div>
+    </section>
+  );
+}
