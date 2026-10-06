@@ -101,9 +101,31 @@ const naoTraduz = (c: string) => NAO_TRADUZ.some((re) => re.test(c))
  * novo 274 campos que não tinham mudado. Só a ausência REAL do arquivo no HEAD
  * devolve null; o resto aborta dizendo a causa.
  */
+/**
+ * 🧭 A BASE DA HERANÇA, 06/Out/2026. O padrão é `HEAD`, mas o HEAD local pode estar
+ *    ATRÁS do que foi publicado: quando o main local diverge do origin (commits de
+ *    outra faixa por enviar) e a publicação saiu por worktree limpo, o HEAD guarda o
+ *    painel de antes. Medido no dia: 69 pendências na `criteriosa` onde a rodada
+ *    mexeu em 21 campos, com a referência de estilo sendo o texto de 04/Out. O
+ *    `--base=origin/main` herda do que está publicado, e o aviso abaixo dispara
+ *    quando o padrão HEAD não contém o origin.
+ */
+const BASE_REF = (process.argv.find((a) => a.startsWith('--base='))?.slice(7)) || 'HEAD'
+function avisarBaseAtrasada(): void {
+  if (BASE_REF !== 'HEAD') { console.log(`🧭 herança contra ${BASE_REF}`); return }
+  try {
+    execFileSync('git', ['merge-base', '--is-ancestor', 'origin/main', 'HEAD'], { stdio: 'ignore' })
+  } catch (e) {
+    if ((e as { code?: string }).code === 'ENOENT') return
+    console.log('⚠️ o HEAD local NÃO contém o origin/main: a herança vai comparar com um painel MAIS VELHO que o publicado.')
+    console.log('   Se a publicação saiu por worktree, rodar de novo com --base=origin/main (depois de git fetch).')
+  }
+}
+avisarBaseAtrasada()
+
 function doHead(caminho: string): unknown | null {
   try {
-    return JSON.parse(execFileSync('git', ['show', `HEAD:${caminho}`], { encoding: 'utf8', maxBuffer: 1e8, stdio: ['ignore', 'pipe', 'pipe'] }))
+    return JSON.parse(execFileSync('git', ['show', `${BASE_REF}:${caminho}`], { encoding: 'utf8', maxBuffer: 1e8, stdio: ['ignore', 'pipe', 'pipe'] }))
   } catch (e) {
     const err = e as { code?: string; stderr?: string }
     if (err.code === 'ENOENT') throw new Error('git não encontrado no PATH: sem ele a herança do HEAD não roda e TUDO sairia pendente. Pôr o git no PATH e rodar de novo.')

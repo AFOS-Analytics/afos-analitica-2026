@@ -445,6 +445,8 @@ npx tsx scripts/traduzir-dashboard-brz.ts --mapa=en.json --mapa=es.json   # um m
 
 Ele **herda a tradução de tudo que não mudou desde o `HEAD`** e **cobra pelo nome** só o que mudou. Medido na estreia: dos 117 textos da `analysis-criteriosa`, 70 tinham mudado e 47 eram idênticos aos de ontem. Ao todo herdou **177 campos por idioma** e cobrou 115.
 
+🧭 **E a BASE da herança tem de ser o que está PUBLICADO, instalado em 06/Out/2026.** Com o `main` local divergente do `origin` (commits de outra faixa por enviar) e a publicação saindo por worktree limpo, o `HEAD` local guarda o painel de ANTES: naquele dia ele cobrou 69 campos na `criteriosa` onde a rodada mexeu em 21, com a referência de estilo de 04/Out. O script agora AVISA quando o `HEAD` não contém o `origin/main`, e a saída é `git fetch` e rodar com `--base=origin/main`; o `npm run glossario:brz -- --base=origin/main` usa a mesma base.
+
 ⛔ **Ele NÃO traduz.** Herda, cobra, confere e escreve. A tradução continua sendo feita **na sessão**, que é como a tradução do AFOS sempre foi feita. O mapa é `{ arquivo: { caminho: { en, es } } }`.
 
 🔴 **A HERANÇA É POR TEXTO, NUNCA POR CAMINHO, e a primeira versão errou isso.** Ela casava `polls[8].note` com `polls[8].note` de `HEAD`, e a rodada de estreia tinha removido 3 pesquisas vencidas e inserido 1 no topo: `polls[8]` passou a ser OUTRA pesquisa. Deu **358 pendências onde havia 115 mudanças reais**, e o modo perigoso do mesmo defeito seria herdar a tradução da pesquisa errada. **Índice de array não é identidade.** → `memory/feedback_fallback_por_indice_desfaz_a_protecao_da_chave_natural.md`
