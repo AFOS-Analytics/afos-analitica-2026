@@ -75,6 +75,11 @@ export const CASAS_BRZ = [
 // registro diz "DATAVERO PESQUISA E CONSULTORIA"; a imprensa escreve "DataVero",
 // medido: 1 manchete no cache de setembro inteiro, e estadual (RN).
 { registro: /datavero/i, nome: 'Datavero', busca: '"DataVero"', alvos: [palavra('data ?vero')] },
+// 06/Out/2026: entrou pelo detector (BR009332026, n=1.500, campo 06 a 08/Out,
+// div 10/Out, 1ª nacional da casa no índice). O registro diz "IPESPE INST DE
+// PESQUISAS SOCIAIS POLITIC"; a imprensa escreve "Ipespe", medido: 4 itens no
+// cache inteiro, 3 deles a InfoMoney de 06/Out anunciando a divulgação da semana.
+{ registro: /ipespe/i, nome: 'Ipespe', busca: 'Ipespe', alvos: [palavra('ipespe')] },
   { registro: /indexa/i, nome: 'Indexa', busca: '"Instituto Indexa"', alvos: [palavra('indexa')] },
   { registro: /ideia|canal meio/i, nome: 'Ideia/Canal Meio', busca: '"Canal Meio"', alvos: [palavra('ideia'), palavra('canal meio')] },
   // 🔴⭐ A ENTRADA QUE PROVA POR QUE A TABELA É EXPLÍCITA, medida em 18/Set/2026.

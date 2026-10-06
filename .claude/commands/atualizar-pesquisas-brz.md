@@ -34,6 +34,8 @@ npx tsx scripts/linhas-fora-de-rodada-brz.ts     # janela = entre as duas últim
 
 Ele lista protocolo, minuto de gravação (CRON ou OUTRO), cargo, n, divulgação e casa. 📌 **Em 03/Out o cron gravou de novo**, às 12:00:11Z: 7 linhas, todas com divulgação em 08/Out, entre elas as primeiras **nacionais do 2º turno** (Datafolha n=2.520 e PoderData n=3.000). Duas passagens em cinco dias: "morta" é intermitente, e a régua de rodar daqui continua valendo porque nada garante a próxima. → `memory/project_state_01out_brz_pesquisas.md`
 
+🏷️ **Desde 06/Out/2026 o rótulo tem um terceiro valor, `RODADA`.** O carimbo da rodada no histórico é gravado DEPOIS da inserção, então as linhas que a própria rodada acabou de inserir caíam na janela como `OUTRO` e acendiam "conferir quem gravou", que é alarme falso. Agora as N últimas até 10 minutos antes do carimbo, com N igual ao `inseridas` que a rodada declarou, saem como `RODADA`; o que passar de N continua acusado. Teste: `npx tsx scripts/testar-linhas-fora-de-rodada.ts`. O cron passou de novo em **05/Out às 18:00:11Z** (5 linhas, a Ipespe nacional entre elas). → `memory/project_state_06out_brz_pesquisas.md`
+
 ⛔ **Não forjar user-agent** para escapar do 403, e **não insistir**. Se um dia o modo `--rede` também apanhar, a resposta é o modo ARQUIVO, nunca a insistência. → `memory/reference_tse_bloqueio_antirrobo_2026.md`
 
 ## 🚀 O atalho, criado em 09/Set/2026
