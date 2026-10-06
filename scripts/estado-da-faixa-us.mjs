@@ -52,7 +52,8 @@ import { execSync } from 'child_process'
 import { FOLGA_MIN, agendaDaRota, ultimoCronDoDia } from '../lib/us-press/data-corrente.mjs'
 // 🧭 De quem é cada arquivo modificado. A regra vive fora daqui porque ela
 //    decide se dá para publicar, e regra que decide publicação tem teste.
-import { FAIXA_EUA, faixaDaLinha } from '../lib/faixa-do-arquivo.mjs'
+import { FAIXA_EUA, faixaDaLinha, caminhoDoStatus } from '../lib/faixa-do-arquivo.mjs'
+import { rotaDoBackup, ROTAS } from '../lib/rota-do-backup.mjs'
 
 const ROTA_IMPRENSA = '/api/cron/refresh-us-press'
 
@@ -324,28 +325,70 @@ await comBanco().catch((e) => linha('⚠️', 'banco', `não deu para olhar: ${S
 // remoto sem ter sido trazido, e pode não existir. O estado do meio é o que
 // engana, porque `--ensaio` leria o backup de ontem e diria +0 com toda a
 // confiança. Ver memory/feedback_o_portao_do_hf_confere_contra_staging_e_nao_contra_o_banco.md
+//
+// 🔴 E O ESTADO DO MEIO SE PARTE EM TRÊS, medido em 06/Out/2026, porque até
+// aqui ele mandava dar `git pull` e naquele dia o `git pull` era IMPOSSÍVEL.
+//
+// A árvore é compartilhada entre dois terminais, e o outro tinha 25 arquivos
+// modificados sem commit. O merge aborta antes de começar quando um caminho que
+// ele precisa escrever está sujo localmente, então a instrução "dar git pull"
+// não era conselho ruim: era conselho INEXECUTÁVEL. ⛔ Medidor que manda fazer
+// o que não se pode fazer é pior que medidor calado, porque gasta a confiança
+// de quem lê e empurra para a gambiarra.
+//
+// 🔑 A pergunta "o pull passa?" se responde sem tentar o pull: é a INTERSEÇÃO
+// entre os caminhos que os commits de entrada escrevem e os caminhos sujos
+// aqui. Interseção vazia, o pull passa; não vazia, ele aborta nela.
+//
+// ✅ E quando ele não passa, existe saída que NÃO toca no trabalho alheio:
+// trazer só `backup/neon` do remoto. Ela é segura por uma razão medida e não
+// por otimismo, e é por isso que este bloco a CONFERE antes de sugerir: se
+// aquele caminho está limpo aqui, trazer a versão do remoto não pode perder
+// trabalho nenhum, por construção. Se estiver sujo, a saída não existe e o
+// bloco manda PARAR em vez de entregar um comando que descartaria alteração.
 {
   const dataDoBackup = (ref) => {
     const out = sh(`git log -1 --format=%cI ${ref} -- backup/neon`)
     return out ? out.slice(0, 10) : null
   }
+  // 📌 O script LÊ o git; quem DECIDE é `lib/rota-do-backup.mjs`, que tem 26
+  //    asserções no CI. A primeira versão desta decisão nasceu inline aqui e já
+  //    trazia dois defeitos: refazia à mão o recorte de caminho que o
+  //    `caminhoDoStatus` já faz testado (e sem tratar o ` -> ` de renomeação), e
+  //    usava `startsWith('backup/neon')`, que casa `backup/neonologia/`.
+  const base = sh('git merge-base HEAD origin/main')
+  const deEntrada = (sh(`git diff --name-only ${base ?? 'HEAD'} origin/main`) ?? '').split('\n').filter(Boolean)
+  const sujos = (sh('git status --porcelain') ?? '').split('\n').filter(Boolean).map(caminhoDoStatus).filter(Boolean)
   const local = dataDoBackup('HEAD')
-  const remoto = dataDoBackup('origin/main')
-  if (local === null && remoto === null) {
-    linha('⚠️', 'backup', 'não deu para olhar o histórico de backup/neon: NÃO subir o dataset às cegas')
-  } else if (local === hoje) {
-    linha('✅', 'backup', `o backup de hoje está AQUI (commit de ${local}): a ETAPA 6.1 pode subir`)
-  } else if (remoto === hoje) {
+  const { rota, colidem, motivo } = rotaDoBackup({ local, remoto: dataDoBackup('origin/main'), hoje, deEntrada, sujos })
+
+  if (rota === ROTAS.AQUI) {
+    linha('✅', 'backup', `o backup de hoje está AQUI (${motivo}): a ETAPA 6.1 pode subir`)
+  } else if (rota === ROTAS.INDETERMINADO) {
+    linha('⚠️', 'backup', `${motivo}: NÃO subir o dataset às cegas`)
+    anota('não deu para olhar o histórico de backup/neon: NÃO subir o dataset')
+  } else if (rota === ROTAS.PULL) {
     linha('🔴', 'backup', `o backup de hoje está no REMOTO e não aqui (local: ${local ?? 'nenhum'})`)
+    console.log(`        · ${motivo}: dar \`git pull --no-rebase\` ANTES de subir`)
     anota('backup do dia está no remoto: dar git pull ANTES de subir o dataset, senão sobe a série de ontem')
+  } else if (rota === ROTAS.SO_BACKUP) {
+    linha('🔴', 'backup', `o backup de hoje está no REMOTO e não aqui (local: ${local ?? 'nenhum'})`)
+    console.log(`        🔴 o \`git pull\` NÃO passa: ${colidem.length} caminho(s) sujo(s) que o merge precisa escrever`)
+    console.log(`           ${colidem.slice(0, 4).join(' · ')}${colidem.length > 4 ? ` · e mais ${colidem.length - 4}` : ''}`)
+    console.log(`        ✅ saída que NÃO toca trabalho alheio, porque backup/neon está LIMPO aqui:`)
+    console.log(`           git checkout origin/main -- backup/neon/`)
+    anota(`backup do dia está no remoto e o git pull NÃO passa (${colidem.length} caminho(s) sujo(s)): trazer só backup/neon com git checkout origin/main -- backup/neon/`)
+  } else if (rota === ROTAS.PARAR) {
+    linha('🔴', 'backup', `o backup de hoje está no REMOTO e não há saída segura`)
+    console.log(`        ${motivo}`)
+    console.log(`        ⛔ NÃO subir o dataset: resolver a árvore primeiro`)
+    anota('backup do dia está no remoto, o git pull não passa e backup/neon está sujo: NÃO subir o dataset')
   } else {
     // ⏰ A FAIXA É OBSERVAÇÃO, NÃO PROMESSA, e ela já me enganou no dia em que
-    //    eu a escrevi. Em 03/Out eu publiquei "19:43 a 20:59Z" a partir de 4
-    //    rodadas, e naquela mesma tarde o backup caiu às 18:28Z, fora dela.
-    //    Sobre 8 rodadas (26/Set a 03/Out) a faixa observada é 18:12 a 20:59Z.
-    // 🔑 Quem decide é o COMMIT, nunca o relógio: a faixa serve para dar ordem
-    //    de grandeza da espera, e é por isso que ela sai com o n declarado.
-    linha('⏳', 'backup', `o backup de hoje ainda não chegou · último: ${local ?? 'nenhum'} · faixa observada 18:12 a 20:59Z em 8 rodadas`)
+    //    eu a escrevi. Em 03/Out publiquei "19:43 a 20:59Z" a partir de 4
+    //    rodadas, e naquela tarde o backup caiu às 18:28Z, fora dela.
+    // 🔑 Quem decide é o COMMIT, nunca o relógio.
+    linha('⏳', 'backup', `o backup de hoje ainda não chegou · ${motivo} · faixa observada 18:12 a 20:59Z em 8 rodadas`)
     console.log(`        a ETAPA 6.1 sobe DEPOIS dele: subir antes publica as 10 séries de mercado um dia atrás`)
   }
 }

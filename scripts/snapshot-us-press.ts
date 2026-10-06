@@ -212,7 +212,12 @@ async function main() {
     console.log('⏳ a data adiada nasce completa na próxima passada depois do último cron, a partir do registro do Neon. Nada se perde.')
   }
   if (APLICAR) {
-    const total = readdirSync(DIR_ARQUIVO).filter(f => f.endsWith('.json')).length
+    // 🔑 Por FORMA DE DATA, nunca por `.json`. ⚠️ Esta era a QUINTA ocorrência do
+    // mesmo filtro largo, achada em 06/Out/2026: em 05/Out eu consertei quatro
+    // leitores da pasta e deixei de fora a contagem que este script IMPRIME, que
+    // passou a dizer "70 coletas" para 69 datas mais a ERRATA.json. Varrer por
+    // um dos nomes achou quatro; varrer pela FORMA da conta acha as cinco.
+    const total = readdirSync(DIR_ARQUIVO).filter(f => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).length
     console.log(`arquivo em disco: ${total} coletas`)
   } else {
     console.log('\nrodar de novo com --apply para gravar\n')
