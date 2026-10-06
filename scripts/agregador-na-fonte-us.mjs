@@ -238,6 +238,23 @@ export const APELIDOS = [
   [/morning consult/i, 'Morning Consult'],
   [/activote/i, 'Activote'],
   [/honest/i, 'The Honest Poll'],
+  // 🔑 Dois apelidos que faltavam, e os dois foram achados em 06/Out/2026 pelo
+  // efeito que a ficha deste arquivo já descreve: APELIDO QUE FALTA VIRA BURACO
+  // QUE NAO EXISTE. Naquela passada o conferidor imprimiu DUAS rodadas faltando
+  // e uma delas estava na base com QUATRO linhas da mesma onda.
+  //
+  // ⚠️ E a causa primeira é o NOME, não a amostra. O `temosRodada` casa por casa
+  // mais data ANTES de tentar a assinatura, então nome que não normaliza derruba
+  // o casamento barato e deixa o caro, que exige amostra igual, decidir sozinho.
+  // A The Argument tem 1.533 no agregador e 1.603 no índice, e o documento já
+  // explicava a diferença desde 03/Out: 1.533 é o COMPLETADO de 1.603
+  // REGISTRADOS. Sem o apelido, a rodada aparecia como buraco por dois motivos
+  // somados, e o segundo esconde o primeiro.
+  [/argument/i, 'The Argument/Verasight'],
+  // ⛔ A KFF entra aqui e o buraco dela CONTINUA, porque é real: a nossa base tem
+  // as ondas de Jan e Abr e NAO a de 16-21/Set. O apelido conserta o RÓTULO
+  // ("a casa existe no arquivo"), e nunca a contagem.
+  [/kff/i, 'KFF'],
 ]
 // 🧬 O apelido mapeia o rótulo do AGREGADOR para o nosso, e a série mapeia o
 // rótulo do ÍNDICE para o nosso: as duas pontas compõem, e compor evita que o

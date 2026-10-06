@@ -181,6 +181,41 @@ eq(
 )
 eq(apelidar('Wave Polling (Verasight)'), 'Wave Polling (Verasight)', 'Wave Polling passa intacta, sem apelido')
 
+// ── 06/Out/2026 · DOIS apelidos que faltavam, e a causa primeira e o NOME ────
+//
+// O conferidor imprimiu DUAS rodadas faltando e UMA delas estava na base com
+// QUATRO linhas da mesma onda. E a causa primeira nao e a amostra: o
+// `temosRodada` casa por casa mais data ANTES de tentar a assinatura, entao nome
+// que nao normaliza derruba o casamento barato e deixa o caro, que exige amostra
+// igual, decidir sozinho.
+eq(apelidar('The Argument'), 'The Argument/Verasight', 'The Argument apelida para o nome do indice')
+eq(apelidar('KFF (SSRS)'), 'KFF', 'KFF (SSRS) apelida para KFF')
+eq(apelidar('The Argument (A-)'), 'The Argument/Verasight', 'a nota do agregador no rotulo nao atrapalha')
+
+// ⛔ ANTI-EXCESSO: os dois apelidos novos nao podem fundir casa distinta.
+eq(
+  apelidar('KFF (SSRS)') === apelidar('CNN/SSRS'),
+  false,
+  'KFF (SSRS) NAO se funde com CNN/SSRS, que e outra casa'
+)
+eq(apelidar('CNN/SSRS'), 'CNN/SSRS', 'CNN/SSRS passa intacta')
+eq(
+  apelidar('The Argument') === apelidar('Strength In Numbers/Verasight'),
+  false,
+  'The Argument NAO se funde com Strength In Numbers, que tambem usa Verasight'
+)
+
+// 📌 E o apelido conserta o ROTULO, nunca a CONTAGEM: a onda da KFF de 16-21/Set
+//    segue faltando na base depois do apelido, porque ela falta de verdade.
+eq(
+  assinaturaBate(
+    { campoFim: '2026-09-21', amostra: 1013, recorte: 'RV' },
+    [{ campoFim: '2026-04-19', amostra: 1107, amostraTipo: 'RV' }]
+  ),
+  false,
+  'a onda da KFF de Set nao casa com a de Abr que temos'
+)
+
 // ── 29/Set/2026 · o INÍCIO do campo, e a casa de nome curto ───────────────
 //
 // 🔴 Os dois casos nasceram na mesma passada. O conferidor imprimiu 3 buracos e
