@@ -2,6 +2,17 @@
 
 All notable changes to this dataset. The data itself is dated and append-only; this log records **structural** changes (new files, schema, coverage).
 
+## 2026-10-05, the second round gets its own daily divergence file
+
+### Added: `data/divergence-second-round-{date}.csv`
+
+The first round was held on 2026-10-04 (TSE final tally: Flávio Bolsonaro 47.03%, Lula 45.16% of valid votes; runoff on 2026-10-25). From 2026-10-05 the panel's poll side is the **second-round head-to-head** between the two runoff candidates, so the daily snapshot is written under a new name instead of continuing `data/divergence-{date}.csv`.
+
+- Same columns as `data/divergence-{date}.csv`.
+- Only Lula and Flávio Bolsonaro. Eliminated candidates carry no second-round measurement and are not written as zero rows.
+- `data/divergence-{date}.csv` (first round) is unchanged and ends on 2026-10-04.
+- Files on the Hub so far: `2026-10-05` and `2026-10-06`.
+
 ## 2026-09-26, a national poll is no longer matched to a STATE registration
 
 ### Fixed — affects `polls/national-polls.json` (`tse_registration`), `polls/sample-demographics.csv` and `data/poll-divergence.csv` (`register_tse`)

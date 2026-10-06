@@ -142,7 +142,8 @@ Full column-level definitions for every file are in **[`DATA_DICTIONARY.md`](DAT
 | `data/market-odds-timeseries.csv` | **Polymarket presidential odds per candidate, daily** (`date, candidate, party, polymarket_pct, volume_usd_m`) — full history from 2026-04-04. |
 | `data/divergence-timeseries.csv` | **Market × poll divergence** per candidate (`poll_date, institute, register_tse, candidate, poll_pct, polymarket_pct, polymarket_date, divergence_pp`) — each national poll joined to the market odds on its date. The dataset's namesake signal. |
 | `data/poll-divergence.csv` | **Poll-level market × poll pairing** anchored on each poll's **fieldwork midpoint**; `naive_gap_pp` is explicitly flagged `naive_winprob_minus_voteshare` — the market prices *P(win)* while the poll reports *vote share*, so the gap is **not scale-reconciled** (reconciling the scales is a modeling choice left to the researcher). |
-| `data/divergence-{date}.csv` | Per-day market × poll divergence snapshot. |
+| `data/divergence-{date}.csv` | Per-day market × poll divergence snapshot, **first round** (ends 2026-10-04). |
+| `data/divergence-second-round-{date}.csv` | Per-day snapshot for the **second round** (from 2026-10-05): the two runoff candidates only, with the poll side taken from the Lula × Flávio Bolsonaro head-to-head. See `DATA_DICTIONARY.md`. |
 
 ### 📰 Daily analysis & news
 
