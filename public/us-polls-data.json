@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-05",
-  "fetchedAt": "2026-10-05T19:58:09.486Z",
+  "lastUpdate": "2026-10-06",
+  "fetchedAt": "2026-10-06T18:19:33.424Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,8 +47,8 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-05",
-    "nPesquisas": 36,
+    "desde": "2026-09-06",
+    "nPesquisas": 44,
     "tratamentoDoIndeciso": [
       {
         "serie": "Angus Reid Global",
@@ -93,6 +93,20 @@
     ],
     "incluidas": [
       {
+        "instituto": "Reuters/Ipsos",
+        "campoFim": "2026-10-05",
+        "amostraTipo": "RV",
+        "dem": 44,
+        "rep": 37
+      },
+      {
+        "instituto": "Morning Consult",
+        "campoFim": "2026-10-04",
+        "amostraTipo": "LV",
+        "dem": 50,
+        "rep": 43
+      },
+      {
         "instituto": "ActiVote",
         "campoFim": "2026-10-02",
         "amostraTipo": "LV",
@@ -107,8 +121,14 @@
         "rep": 45
       },
       {
+        "instituto": "Rasmussen Reports (R)",
+        "campoFim": "2026-09-30",
+        "amostraTipo": "LV",
+        "dem": 47,
+        "rep": 44
+      },
+      {
         "instituto": "AlphaROC",
-        "institutoNoIndice": "AlphaROC/The Independent Center",
         "campoFim": "2026-09-28",
         "amostraTipo": "A",
         "dem": 43,
@@ -120,6 +140,13 @@
         "amostraTipo": "LV",
         "dem": 51,
         "rep": 49
+      },
+      {
+        "instituto": "Morning Consult",
+        "campoFim": "2026-09-27",
+        "amostraTipo": "LV",
+        "dem": 50,
+        "rep": 43
       },
       {
         "instituto": "Quinnipiac University",
@@ -136,6 +163,13 @@
         "rep": 34
       },
       {
+        "instituto": "Rasmussen Reports (R)",
+        "campoFim": "2026-09-23",
+        "amostraTipo": "LV",
+        "dem": 48,
+        "rep": 43
+      },
+      {
         "instituto": "Emerson College",
         "campoFim": "2026-09-22",
         "amostraTipo": "LV",
@@ -148,6 +182,13 @@
         "amostraTipo": "LV",
         "dem": 48,
         "rep": 43
+      },
+      {
+        "instituto": "The Argument/Verasight",
+        "campoFim": "2026-09-22",
+        "amostraTipo": "LV",
+        "dem": 55,
+        "rep": 45
       },
       {
         "instituto": "ActiVote",
@@ -165,6 +206,7 @@
       },
       {
         "instituto": "Impact Research (D)/National Research Inc. (R)",
+        "institutoNoIndice": "Impact Research (D)/ National Research Inc. (R)",
         "campoFim": "2026-09-21",
         "amostraTipo": "RV",
         "dem": 50,
@@ -218,6 +260,13 @@
         "amostraTipo": "LV",
         "dem": 50,
         "rep": 43
+      },
+      {
+        "instituto": "Rasmussen Reports (R)",
+        "campoFim": "2026-09-16",
+        "amostraTipo": "LV",
+        "dem": 49,
+        "rep": 41
       },
       {
         "instituto": "Big Data Poll",
@@ -334,6 +383,13 @@
         "rep": 41
       },
       {
+        "instituto": "Rasmussen Reports (R)",
+        "campoFim": "2026-09-09",
+        "amostraTipo": "LV",
+        "dem": 47,
+        "rep": 42
+      },
+      {
         "instituto": "Morning Consult",
         "campoFim": "2026-09-06",
         "amostraTipo": "RV",
@@ -398,10 +454,10 @@
         "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
       }
     ],
-    "nInstitutos": 27,
-    "dem": 49.28,
-    "rep": 41.58,
-    "vantagemDem": 7.7,
+    "nInstitutos": 29,
+    "dem": 49.18,
+    "rep": 41.7,
+    "vantagemDem": 7.48,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
@@ -427,25 +483,72 @@
       "Quantus Insights (R)",
       "Quinnipiac University",
       "RMG Research",
+      "Rasmussen Reports (R)",
       "Reuters/Ipsos",
       "Strength In Numbers/Verasight",
+      "The Argument/Verasight",
       "The Honest Poll",
       "The Rainey Center"
     ]
   },
   "qualidade": {
-    "linhasLidas": 454,
-    "publicadas": 467,
+    "linhasLidas": 468,
+    "publicadas": 481,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 454,
+    "doIndice": 468,
     "curadas": 13,
     "curadasDescartadasPorDuplicidade": 17
   },
   "polls": [
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-09-30",
+      "campoFim": "2026-10-05",
+      "amostra": 3526,
+      "amostraTipo": "RV",
+      "margemErro": 1.7,
+      "dem": 44,
+      "rep": 37,
+      "outros": 19,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-10/Reuters%20Ipsos%20October%20Large%20Issue%20Topline%2010.5%20release.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-09-30",
+      "campoFim": "2026-10-05",
+      "amostra": 4506,
+      "amostraTipo": "A",
+      "margemErro": 1.5,
+      "dem": 37,
+      "rep": 30,
+      "outros": 33,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-10/Reuters%20Ipsos%20October%20Large%20Issue%20Topline%2010.5%20release.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-09-28",
+      "campoFim": "2026-10-04",
+      "amostra": 17659,
+      "amostraTipo": "LV",
+      "margemErro": 0.9,
+      "dem": 50,
+      "rep": 43,
+      "outros": 7,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
     {
       "instituto": "CBS News/YouGov",
       "campoInicio": "2026-09-30",
@@ -473,6 +576,21 @@
       "outros": null,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.activote.net/polls/generic-ballot/2026-10-03/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Rasmussen Reports (R)",
+      "campoInicio": "2026-09-24",
+      "campoFim": "2026-09-30",
+      "amostra": 1794,
+      "amostraTipo": "LV",
+      "margemErro": 2,
+      "dem": 47,
+      "rep": 44,
+      "outros": 9,
+      "vantagemDem": 3,
+      "fontePrimaria": "https://www.rasmussenreports.com/public_content/politics/mood_of_america/generic_congressional_ballot_oct5",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -507,7 +625,7 @@
       "origem": "indice-wikipedia"
     },
     {
-      "instituto": "AlphaROC/The Independent Center",
+      "instituto": "AlphaROC",
       "campoInicio": "2026-09-25",
       "campoFim": "2026-09-28",
       "amostra": 1000,
@@ -567,6 +685,21 @@
       "origem": "indice-wikipedia"
     },
     {
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-09-21",
+      "campoFim": "2026-09-27",
+      "amostra": 18786,
+      "amostraTipo": "LV",
+      "margemErro": 0.9,
+      "dem": 50,
+      "rep": 43,
+      "outros": 7,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
       "instituto": "Angus Reid Global",
       "campoInicio": "2026-09-19",
       "campoFim": "2026-09-25",
@@ -612,6 +745,21 @@
       "origem": "indice-wikipedia"
     },
     {
+      "instituto": "Rasmussen Reports (R)",
+      "campoInicio": "2026-09-17",
+      "campoFim": "2026-09-23",
+      "amostra": 1819,
+      "amostraTipo": "LV",
+      "margemErro": 2,
+      "dem": 48,
+      "rep": 43,
+      "outros": 9,
+      "vantagemDem": 5,
+      "fontePrimaria": "https://www.rasmussenreports.com/public_content/archive/mood_of_america_archive/generic_congressional_ballot/democrats_lead_down_to_5_points_in_midterm_forecast",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
       "instituto": "Emerson College",
       "campoInicio": "2026-09-21",
       "campoFim": "2026-09-22",
@@ -623,6 +771,66 @@
       "outros": 5,
       "vantagemDem": 11,
       "fontePrimaria": "https://emersoncollegepolling.com/september-2026-national-poll-democrats/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "The Argument/Verasight",
+      "campoInicio": "2026-09-16",
+      "campoFim": "2026-09-22",
+      "amostra": null,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 55,
+      "rep": 45,
+      "outros": null,
+      "vantagemDem": 10,
+      "fontePrimaria": "https://www.theargumentmag.com/p/the-least-popular-war-since-vietnam",
+      "comLeaners": true,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "The Argument/Verasight",
+      "campoInicio": "2026-09-16",
+      "campoFim": "2026-09-22",
+      "amostra": null,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 50,
+      "rep": 41,
+      "outros": 9,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://www.theargumentmag.com/p/the-least-popular-war-since-vietnam",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "The Argument/Verasight",
+      "campoInicio": "2026-09-16",
+      "campoFim": "2026-09-22",
+      "amostra": 1603,
+      "amostraTipo": "RV",
+      "margemErro": 2.7,
+      "dem": 53,
+      "rep": 47,
+      "outros": null,
+      "vantagemDem": 6,
+      "fontePrimaria": "https://www.theargumentmag.com/p/the-least-popular-war-since-vietnam",
+      "comLeaners": true,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "The Argument/Verasight",
+      "campoInicio": "2026-09-16",
+      "campoFim": "2026-09-22",
+      "amostra": 1603,
+      "amostraTipo": "RV",
+      "margemErro": 2.7,
+      "dem": 48,
+      "rep": 41,
+      "outros": 11,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://www.theargumentmag.com/p/the-least-popular-war-since-vietnam",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -732,7 +940,7 @@
       "origem": "indice-wikipedia"
     },
     {
-      "instituto": "Impact Research (D)/National Research Inc. (R)",
+      "instituto": "Impact Research (D)/ National Research Inc. (R)",
       "campoInicio": "2026-09-16",
       "campoFim": "2026-09-21",
       "amostra": 1500,
@@ -772,7 +980,7 @@
       "rep": 43,
       "outros": 7,
       "vantagemDem": 7,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -785,7 +993,7 @@
       "margemErro": 3.2,
       "dem": 43,
       "rep": 35,
-      "outros": 9,
+      "outros": 22,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.ipsos.com/en-us/republicans-rating-trump-cost-living-declines",
       "comLeaners": false,
@@ -800,7 +1008,7 @@
       "margemErro": 2.8,
       "dem": 37,
       "rep": 29,
-      "outros": 19,
+      "outros": 34,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.ipsos.com/en-us/republicans-rating-trump-cost-living-declines",
       "comLeaners": false,
@@ -878,6 +1086,21 @@
       "outros": 8,
       "vantagemDem": 7,
       "fontePrimaria": "https://www.claritycampaigns.com/clarity-omnibus-2026-september",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Rasmussen Reports (R)",
+      "campoInicio": "2026-09-10",
+      "campoFim": "2026-09-16",
+      "amostra": 1746,
+      "amostraTipo": "LV",
+      "margemErro": 2,
+      "dem": 49,
+      "rep": 41,
+      "outros": 10,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://www.rasmussenreports.com/public_content/archive/mood_of_america_archive/generic_congressional_ballot/midterm_forecast_democrats_expand_lead_to_8_points",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -1102,7 +1325,7 @@
       "rep": 43,
       "outros": 8,
       "vantagemDem": 6,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -1205,6 +1428,21 @@
       "origem": "indice-wikipedia"
     },
     {
+      "instituto": "Rasmussen Reports (R)",
+      "campoInicio": "2026-09-03",
+      "campoFim": "2026-09-09",
+      "amostra": 1905,
+      "amostraTipo": "LV",
+      "margemErro": 2,
+      "dem": 47,
+      "rep": 42,
+      "outros": 11,
+      "vantagemDem": 5,
+      "fontePrimaria": "https://www.rasmussenreports.com/public_content/archive/mood_of_america_archive/generic_congressional_ballot/democrats_maintain_lead_in_midterm_forecast",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
       "instituto": "Marquette University Law School",
       "campoInicio": "2026-09-02",
       "campoFim": "2026-09-09",
@@ -1290,7 +1528,7 @@
       "rep": 42,
       "outros": 12,
       "vantagemDem": 4,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -1554,6 +1792,21 @@
       "outros": null,
       "vantagemDem": -2,
       "fontePrimaria": "https://www.harrisx.com/content/harvard-caps-harrisx-august",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Rasmussen Reports (R)",
+      "campoInicio": "2026-08-23",
+      "campoFim": "2026-08-30",
+      "amostra": 2231,
+      "amostraTipo": "LV",
+      "margemErro": 2,
+      "dem": 41,
+      "rep": 36,
+      "outros": 23,
+      "vantagemDem": 5,
+      "fontePrimaria": "https://www.rasmussenreports.com/public_content/archive/mood_of_america_archive/generic_congressional_ballot/democrats_now_lead_by_5_points_in_midterm_forecast",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -1858,7 +2111,7 @@
       "rep": 42,
       "outros": 12,
       "vantagemDem": 4,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -2008,7 +2261,7 @@
       "rep": 42,
       "outros": 11,
       "vantagemDem": 5,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -2143,7 +2396,7 @@
       "rep": 42,
       "outros": 12,
       "vantagemDem": 4,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -2323,7 +2576,7 @@
       "rep": 43,
       "outros": 11,
       "vantagemDem": 3,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -2488,7 +2741,7 @@
       "rep": 43,
       "outros": 11,
       "vantagemDem": 3,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -2563,7 +2816,7 @@
       "rep": 43,
       "outros": 11,
       "vantagemDem": 3,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -2803,7 +3056,7 @@
       "rep": 42,
       "outros": 12,
       "vantagemDem": 4,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -2849,6 +3102,21 @@
       "outros": 6,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.cygn.al/wp-content/uploads/2026/07/24136-Cygnal-National-Jul-26-NVT-Deck-Public-1.pdf#page=22",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Rasmussen Reports (R)",
+      "campoInicio": "2026-06-24",
+      "campoFim": "2026-07-01",
+      "amostra": 2224,
+      "amostraTipo": "LV",
+      "margemErro": 2,
+      "dem": 46,
+      "rep": 42,
+      "outros": 12,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://www.rasmussenreports.com/public_content/archive/mood_of_america_archive/generic_congressional_ballot/democrats_lead_shrinks_in_midterm_forecast",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -2953,7 +3221,7 @@
       "rep": 42,
       "outros": 12,
       "vantagemDem": 4,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -3028,7 +3296,7 @@
       "rep": 42,
       "outros": 12,
       "vantagemDem": 4,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -3088,7 +3356,7 @@
       "rep": 42,
       "outros": 12,
       "vantagemDem": 4,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -3328,7 +3596,7 @@
       "rep": 42,
       "outros": 12,
       "vantagemDem": 4,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -3418,7 +3686,7 @@
       "rep": 42,
       "outros": 12,
       "vantagemDem": 4,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -3748,7 +4016,7 @@
       "rep": 42,
       "outros": 13,
       "vantagemDem": 3,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -4168,7 +4436,7 @@
       "rep": 41,
       "outros": 12,
       "vantagemDem": 6,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -4183,7 +4451,7 @@
       "rep": 42,
       "outros": 12,
       "vantagemDem": 4,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -4483,7 +4751,7 @@
       "rep": 43,
       "outros": 11,
       "vantagemDem": 3,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -4648,7 +4916,7 @@
       "rep": 42,
       "outros": 13,
       "vantagemDem": 3,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -4888,7 +5156,7 @@
       "rep": 42,
       "outros": 13,
       "vantagemDem": 3,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -5038,7 +5306,7 @@
       "rep": 42,
       "outros": 12,
       "vantagemDem": 4,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -5068,7 +5336,7 @@
       "rep": 42,
       "outros": 12,
       "vantagemDem": 4,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -5158,7 +5426,7 @@
       "rep": 42,
       "outros": 13,
       "vantagemDem": 3,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -5173,7 +5441,7 @@
       "rep": 42,
       "outros": 13,
       "vantagemDem": 3,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -5428,7 +5696,7 @@
       "rep": 42,
       "outros": 13,
       "vantagemDem": 3,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -5608,7 +5876,7 @@
       "rep": 40,
       "outros": 12,
       "vantagemDem": 8,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -5698,7 +5966,7 @@
       "rep": 42,
       "outros": 13,
       "vantagemDem": 3,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -5803,7 +6071,7 @@
       "rep": 42,
       "outros": 13,
       "vantagemDem": 3,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -5968,7 +6236,7 @@
       "rep": 42,
       "outros": 13,
       "vantagemDem": 3,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -6193,7 +6461,7 @@
       "rep": 42,
       "outros": 12,
       "vantagemDem": 4,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -6433,7 +6701,7 @@
       "rep": 43,
       "outros": 12,
       "vantagemDem": 2,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -6613,7 +6881,7 @@
       "rep": 41,
       "outros": 14,
       "vantagemDem": 4,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -6658,7 +6926,7 @@
       "rep": 42,
       "outros": 13,
       "vantagemDem": 3,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -6733,7 +7001,7 @@
       "rep": 42,
       "outros": 11,
       "vantagemDem": 5,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -7018,7 +7286,7 @@
       "rep": 43,
       "outros": 12,
       "vantagemDem": 2,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -7183,7 +7451,7 @@
       "rep": 43,
       "outros": 14,
       "vantagemDem": 2,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -7288,7 +7556,7 @@
       "rep": 43,
       "outros": 11,
       "vantagemDem": 3,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -7438,7 +7706,7 @@
       "rep": 42,
       "outros": 13,
       "vantagemDem": 3,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -7453,7 +7721,7 @@
       "rep": 42,
       "outros": 14,
       "vantagemDem": 2,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },

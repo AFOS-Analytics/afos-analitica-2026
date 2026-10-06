@@ -124,5 +124,54 @@ eq('o erro do indice e a Marquette', SOMAS_CONFERIDAS.find((e) => e.veredito ===
 eq('toda entrada real tem decomposicao', SOMAS_CONFERIDAS.every((e) => typeof e.decomposicao === 'string' && e.decomposicao.length > 40), true)
 eq('toda entrada real tem url http', SOMAS_CONFERIDAS.every((e) => /^https:\/\//.test(e.url)), true)
 
+
+  // ── 🔤 A CASA CASA PELA SÉRIE CANÔNICA, não pela string do índice (06/Out/2026)
+  //
+  // 🔴 O caso real: o índice acrescentou um ESPAÇO depois da barra no rótulo da
+  // Impact Research, sem mudar nada mais, a conferência deixou de casar e a
+  // passada inteira reprovou por CONTAMINAÇÃO. O irmão `fonte-conferida.mjs` já
+  // canonizava; este não.
+  {
+    const real = SOMAS_CONFERIDAS.find((e) => /Impact Research/.test(e.instituto))
+    eq('canonica: a entrada real da Impact Research existe', !!real, true)
+
+    const linhaCanonica = {
+      instituto: real.instituto,
+      campoInicio: real.campoInicio,
+      campoFim: real.campoFim,
+      dem: real.dem,
+      rep: real.rep,
+      outros: real.outros,
+    }
+    eq('canonica: o rotulo CANONICO casa', conferenciaDe(linhaCanonica).conferida, true)
+
+    // A grafia que o indice passou a escrever, declarada em casas.mjs.
+    const comEspaco = { ...linhaCanonica, instituto: 'Impact Research (D)/ National Research Inc. (R)' }
+    eq('canonica: a GRAFIA declarada tambem casa', conferenciaDe(comEspaco).conferida, true)
+    eq('canonica: e devolve a MESMA entrada', conferenciaDe(comEspaco).entrada?.url, real.url)
+
+    // ⛔ ANTI-EXCESSO, e esta metade e a que importa: canonizar a casa NAO pode
+    // afrouxar a caducidade por VALOR, que e o que faz a conferencia expirar
+    // quando o indice reescreve o numero.
+    eq('canonica ANTI-EXCESSO: dem reescrito CADUCA', conferenciaDe({ ...comEspaco, dem: real.dem + 1 }).conferida, false)
+    eq('canonica ANTI-EXCESSO: rep reescrito CADUCA', conferenciaDe({ ...comEspaco, rep: real.rep + 1 }).conferida, false)
+    eq('canonica ANTI-EXCESSO: outros reescrito CADUCA', conferenciaDe({ ...comEspaco, outros: 5 }).conferida, false)
+    eq('canonica ANTI-EXCESSO: campoFim diferente nao casa', conferenciaDe({ ...comEspaco, campoFim: '2026-09-22' }).conferida, false)
+    eq('canonica ANTI-EXCESSO: campoInicio diferente nao casa', conferenciaDe({ ...comEspaco, campoInicio: '2026-09-15' }).conferida, false)
+
+    // ⛔ E casa NAO declarada segue sem casar: a canonizacao normaliza o que a
+    // tabela declara, e nunca "qualquer nome parecido".
+    eq(
+      'canonica ANTI-EXCESSO: casa NAO declarada nao casa',
+      conferenciaDe({ ...linhaCanonica, instituto: 'Impact Research' }).conferida,
+      false,
+    )
+    eq(
+      'canonica ANTI-EXCESSO: outra casa com os MESMOS valores nao casa',
+      conferenciaDe({ ...linhaCanonica, instituto: 'Quinnipiac University' }).conferida,
+      false,
+    )
+  }
+
 console.log(`\n${falhou === 0 ? '✅' : '❌'} ${ok} asserções passaram, ${falhou} falharam`)
 process.exitCode = falhou === 0 ? 0 : 1
