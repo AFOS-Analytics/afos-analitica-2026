@@ -360,9 +360,21 @@ await comBanco().catch((e) => linha('⚠️', 'banco', `não deu para olhar: ${S
   const deEntrada = (sh(`git diff --name-only ${base ?? 'HEAD'} origin/main`) ?? '').split('\n').filter(Boolean)
   const sujos = (sh('git status --porcelain') ?? '').split('\n').filter(Boolean).map(caminhoDoStatus).filter(Boolean)
   const local = dataDoBackup('HEAD')
-  const { rota, colidem, motivo } = rotaDoBackup({ local, remoto: dataDoBackup('origin/main'), hoje, deEntrada, sujos })
+  // 🔑 A árvore BATE com o remoto em backup/neon? É a pergunta do DATASET, que
+  //    lê arquivo e não commit.  sai 0 quando não há diferença,
+  //    e o  devolve null quando o comando sai != 0, então null aqui é
+  //    "difere" e string vazia é "idêntico".
+  const bate = sh('git diff --quiet origin/main -- backup/neon && echo igual')
+  const { rota, colidem, motivo } = rotaDoBackup({
+    local,
+    remoto: dataDoBackup('origin/main'),
+    hoje,
+    deEntrada,
+    sujos,
+    arvoreBateComRemoto: bate === 'igual' ? true : bate === null ? false : null,
+  })
 
-  if (rota === ROTAS.AQUI) {
+  if (rota === ROTAS.AQUI || rota === ROTAS.AQUI_SEM_COMMIT) {
     linha('✅', 'backup', `o backup de hoje está AQUI (${motivo}): a ETAPA 6.1 pode subir`)
   } else if (rota === ROTAS.INDETERMINADO) {
     linha('⚠️', 'backup', `${motivo}: NÃO subir o dataset às cegas`)

@@ -84,11 +84,38 @@ caso(
   r({ local: '2026-10-05', remoto: HOJE, deEntrada: ['a.ts'], sujos: ['a.ts', 'backup/neonologia/x'] }).rota === ROTAS.SO_BACKUP,
 )
 
+// ───────── 🔑 AQUI_SEM_COMMIT: o buraco que a propria regua tinha ─────────
+//
+// Achado em 06/Out ao USAR a regua: ela media COMMIT e o remedio que ela
+// recomenda muda o WORKING TREE sem commitar. O dataset le ARQUIVO.
+
+caso(
+  'AQUI_SEM_COMMIT quando a arvore bate com o remoto',
+  r({ local: '2026-10-05', remoto: HOJE, arvoreBateComRemoto: true, deEntrada: ['a'], sujos: ['a'] }).rota === ROTAS.AQUI_SEM_COMMIT,
+)
+caso(
+  'e ele VENCE o SO_BACKUP, porque a pergunta e sobre arquivo',
+  r({ local: '2026-10-05', remoto: HOJE, arvoreBateComRemoto: true, deEntrada: ['a'], sujos: ['a'] }).rota !== ROTAS.SO_BACKUP,
+)
+caso(
+  'ANTI-EXCESSO: arvore que NAO bate volta a SO_BACKUP',
+  r({ local: '2026-10-05', remoto: HOJE, arvoreBateComRemoto: false, deEntrada: ['a'], sujos: ['a'] }).rota === ROTAS.SO_BACKUP,
+)
+caso(
+  'ANTI-EXCESSO: sem a medida (null) NAO assume que bate',
+  r({ local: '2026-10-05', remoto: HOJE, arvoreBateComRemoto: null, deEntrada: ['a'], sujos: ['a'] }).rota === ROTAS.SO_BACKUP,
+)
+caso(
+  'ANTI-EXCESSO: arvore batendo com remoto SEM o de hoje nao basta',
+  r({ local: '2026-10-05', remoto: '2026-10-05', arvoreBateComRemoto: true }).rota === ROTAS.ESPERAR,
+)
+caso('o commit AQUI ainda vence tudo', r({ local: HOJE, remoto: HOJE, arvoreBateComRemoto: false }).rota === ROTAS.AQUI)
+
 // ───────────────── CONTROLE POSITIVO ─────────────────
 
 caso('CONTROLE POSITIVO: a régua sabe dizer PARAR', r({ local: '2026-10-05', remoto: HOJE, deEntrada: ['a'], sujos: ['a', 'backup/neon/y'] }).rota === ROTAS.PARAR)
 caso('CONTROLE POSITIVO: a régua sabe dizer PULL', r({ local: '2026-10-05', remoto: HOJE, deEntrada: ['a'], sujos: [] }).rota === ROTAS.PULL)
-caso('CONTROLE POSITIVO: as 6 rotas são distintas', new Set(Object.values(ROTAS)).size === 6)
+caso('CONTROLE POSITIVO: as 7 rotas são distintas', new Set(Object.values(ROTAS)).size === 7)
 
 console.log(`\n🧷 ROTA DO BACKUP · ${ok + falhas.length} asserções`)
 if (falhas.length) {
