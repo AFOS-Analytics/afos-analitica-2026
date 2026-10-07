@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-06",
-  "fetchedAt": "2026-10-06T18:19:33.424Z",
+  "lastUpdate": "2026-10-07",
+  "fetchedAt": "2026-10-07T20:19:10.588Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,7 +47,7 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-06",
+    "desde": "2026-09-07",
     "nPesquisas": 44,
     "tratamentoDoIndeciso": [
       {
@@ -93,6 +93,7 @@
     ],
     "incluidas": [
       {
+        "key": "Reuters/Ipsos|2026-10-05",
         "instituto": "Reuters/Ipsos",
         "campoFim": "2026-10-05",
         "amostraTipo": "RV",
@@ -100,6 +101,7 @@
         "rep": 37
       },
       {
+        "key": "Morning Consult|2026-10-04",
         "instituto": "Morning Consult",
         "campoFim": "2026-10-04",
         "amostraTipo": "LV",
@@ -107,6 +109,7 @@
         "rep": 43
       },
       {
+        "key": "ActiVote|2026-10-02",
         "instituto": "ActiVote",
         "campoFim": "2026-10-02",
         "amostraTipo": "LV",
@@ -114,6 +117,7 @@
         "rep": 48
       },
       {
+        "key": "CBS News/YouGov|2026-10-02",
         "instituto": "CBS News/YouGov",
         "campoFim": "2026-10-02",
         "amostraTipo": "LV",
@@ -121,6 +125,15 @@
         "rep": 45
       },
       {
+        "key": "Centerline Research & Strategy|2026-10-01",
+        "instituto": "Centerline Research & Strategy",
+        "campoFim": "2026-10-01",
+        "amostraTipo": "LV",
+        "dem": 50,
+        "rep": 42
+      },
+      {
+        "key": "Rasmussen Reports (R)|2026-09-30",
         "instituto": "Rasmussen Reports (R)",
         "campoFim": "2026-09-30",
         "amostraTipo": "LV",
@@ -128,6 +141,7 @@
         "rep": 44
       },
       {
+        "key": "AlphaROC|2026-09-28",
         "instituto": "AlphaROC",
         "campoFim": "2026-09-28",
         "amostraTipo": "A",
@@ -135,6 +149,7 @@
         "rep": 37
       },
       {
+        "key": "Harvard/Harris Poll/HarrisX|2026-09-28",
         "instituto": "Harvard/Harris Poll/HarrisX",
         "campoFim": "2026-09-28",
         "amostraTipo": "LV",
@@ -142,6 +157,7 @@
         "rep": 49
       },
       {
+        "key": "Morning Consult|2026-09-27",
         "instituto": "Morning Consult",
         "campoFim": "2026-09-27",
         "amostraTipo": "LV",
@@ -149,6 +165,7 @@
         "rep": 43
       },
       {
+        "key": "Quinnipiac University|2026-09-27",
         "instituto": "Quinnipiac University",
         "campoFim": "2026-09-27",
         "amostraTipo": "RV",
@@ -156,6 +173,7 @@
         "rep": 39
       },
       {
+        "key": "Angus Reid Global|2026-09-25",
         "instituto": "Angus Reid Global",
         "campoFim": "2026-09-25",
         "amostraTipo": "A",
@@ -163,6 +181,7 @@
         "rep": 34
       },
       {
+        "key": "Rasmussen Reports (R)|2026-09-23",
         "instituto": "Rasmussen Reports (R)",
         "campoFim": "2026-09-23",
         "amostraTipo": "LV",
@@ -170,6 +189,7 @@
         "rep": 43
       },
       {
+        "key": "Emerson College|2026-09-22",
         "instituto": "Emerson College",
         "campoFim": "2026-09-22",
         "amostraTipo": "LV",
@@ -177,6 +197,7 @@
         "rep": 42
       },
       {
+        "key": "McLaughlin & Associates (R)|2026-09-22",
         "instituto": "McLaughlin & Associates (R)",
         "campoFim": "2026-09-22",
         "amostraTipo": "LV",
@@ -184,6 +205,7 @@
         "rep": 43
       },
       {
+        "key": "The Argument/Verasight|2026-09-22",
         "instituto": "The Argument/Verasight",
         "campoFim": "2026-09-22",
         "amostraTipo": "LV",
@@ -191,6 +213,7 @@
         "rep": 45
       },
       {
+        "key": "ActiVote|2026-09-21",
         "instituto": "ActiVote",
         "campoFim": "2026-09-21",
         "amostraTipo": "LV",
@@ -198,6 +221,7 @@
         "rep": 47
       },
       {
+        "key": "Echelon Insights|2026-09-21",
         "instituto": "Echelon Insights",
         "campoFim": "2026-09-21",
         "amostraTipo": "LV",
@@ -205,6 +229,7 @@
         "rep": 43
       },
       {
+        "key": "Impact Research (D)/National Research Inc. (R)|2026-09-21",
         "instituto": "Impact Research (D)/National Research Inc. (R)",
         "institutoNoIndice": "Impact Research (D)/ National Research Inc. (R)",
         "campoFim": "2026-09-21",
@@ -213,6 +238,15 @@
         "rep": 42
       },
       {
+        "key": "KFF|2026-09-21",
+        "instituto": "KFF",
+        "campoFim": "2026-09-21",
+        "amostraTipo": "RV",
+        "dem": 45,
+        "rep": 35
+      },
+      {
+        "key": "Strength In Numbers/Verasight|2026-09-21",
         "instituto": "Strength In Numbers/Verasight",
         "campoFim": "2026-09-21",
         "amostraTipo": "LV",
@@ -220,6 +254,7 @@
         "rep": 42
       },
       {
+        "key": "Morning Consult|2026-09-20",
         "instituto": "Morning Consult",
         "campoFim": "2026-09-20",
         "amostraTipo": "LV",
@@ -227,6 +262,7 @@
         "rep": 43
       },
       {
+        "key": "Reuters/Ipsos|2026-09-20",
         "instituto": "Reuters/Ipsos",
         "campoFim": "2026-09-20",
         "amostraTipo": "RV",
@@ -234,6 +270,7 @@
         "rep": 35
       },
       {
+        "key": "Quantus Insights (R)|2026-09-18",
         "instituto": "Quantus Insights (R)",
         "campoFim": "2026-09-18",
         "amostraTipo": "LV",
@@ -241,6 +278,7 @@
         "rep": 42
       },
       {
+        "key": "CNN/SSRS|2026-09-17",
         "instituto": "CNN/SSRS",
         "campoFim": "2026-09-17",
         "amostraTipo": "RV",
@@ -248,6 +286,7 @@
         "rep": 41
       },
       {
+        "key": "John Zogby Strategies|2026-09-17",
         "instituto": "John Zogby Strategies",
         "campoFim": "2026-09-17",
         "amostraTipo": "LV",
@@ -255,6 +294,7 @@
         "rep": 40
       },
       {
+        "key": "Clarity Campaign Labs (D)|2026-09-16",
         "instituto": "Clarity Campaign Labs (D)",
         "campoFim": "2026-09-16",
         "amostraTipo": "LV",
@@ -262,6 +302,7 @@
         "rep": 43
       },
       {
+        "key": "Rasmussen Reports (R)|2026-09-16",
         "instituto": "Rasmussen Reports (R)",
         "campoFim": "2026-09-16",
         "amostraTipo": "LV",
@@ -269,6 +310,7 @@
         "rep": 41
       },
       {
+        "key": "Big Data Poll|2026-09-15",
         "instituto": "Big Data Poll",
         "institutoNoIndice": "Big Data Poll (R)",
         "campoFim": "2026-09-15",
@@ -277,6 +319,7 @@
         "rep": 37
       },
       {
+        "key": "Emerson College|2026-09-15",
         "instituto": "Emerson College",
         "institutoNoIndice": "Emerson College/ RealClear Opinion Research",
         "campoFim": "2026-09-15",
@@ -285,6 +328,7 @@
         "rep": 29
       },
       {
+        "key": "Hart Research Associates (D)/ Public Opinion Strategies (R)|2026-09-15",
         "instituto": "Hart Research Associates (D)/ Public Opinion Strategies (R)",
         "campoFim": "2026-09-15",
         "amostraTipo": "RV",
@@ -292,6 +336,7 @@
         "rep": 45
       },
       {
+        "key": "Marist University|2026-09-15",
         "instituto": "Marist University",
         "campoFim": "2026-09-15",
         "amostraTipo": "RV",
@@ -299,6 +344,7 @@
         "rep": 41
       },
       {
+        "key": "Morning Consult|2026-09-15",
         "instituto": "Morning Consult",
         "campoFim": "2026-09-15",
         "amostraTipo": "RV",
@@ -306,6 +352,7 @@
         "rep": 43
       },
       {
+        "key": "RMG Research|2026-09-15",
         "instituto": "RMG Research",
         "campoFim": "2026-09-15",
         "amostraTipo": "RV",
@@ -313,6 +360,7 @@
         "rep": 43
       },
       {
+        "key": "Beacon Research (D)/ Shaw & Co. Research (R)|2026-09-14",
         "instituto": "Beacon Research (D)/ Shaw & Co. Research (R)",
         "campoFim": "2026-09-14",
         "amostraTipo": "RV",
@@ -320,6 +368,7 @@
         "rep": 44
       },
       {
+        "key": "Reuters/Ipsos|2026-09-14",
         "instituto": "Reuters/Ipsos",
         "campoFim": "2026-09-14",
         "amostraTipo": "RV",
@@ -327,6 +376,7 @@
         "rep": 37
       },
       {
+        "key": "The Rainey Center|2026-09-14",
         "instituto": "The Rainey Center",
         "campoFim": "2026-09-14",
         "amostraTipo": "RV",
@@ -334,6 +384,7 @@
         "rep": 42
       },
       {
+        "key": "Morning Consult|2026-09-13",
         "instituto": "Morning Consult",
         "campoFim": "2026-09-13",
         "amostraTipo": "LV",
@@ -341,6 +392,7 @@
         "rep": 43
       },
       {
+        "key": "New York Times/Siena College|2026-09-13",
         "instituto": "New York Times/Siena College",
         "campoFim": "2026-09-13",
         "amostraTipo": "LV",
@@ -348,6 +400,7 @@
         "rep": 43
       },
       {
+        "key": "The Honest Poll|2026-09-13",
         "instituto": "The Honest Poll",
         "campoFim": "2026-09-13",
         "amostraTipo": "LV",
@@ -355,6 +408,7 @@
         "rep": 42
       },
       {
+        "key": "CBS News/YouGov|2026-09-11",
         "instituto": "CBS News/YouGov",
         "campoFim": "2026-09-11",
         "amostraTipo": "LV",
@@ -362,6 +416,7 @@
         "rep": 46
       },
       {
+        "key": "ActiVote|2026-09-10",
         "instituto": "ActiVote",
         "campoFim": "2026-09-10",
         "amostraTipo": "LV",
@@ -369,6 +424,7 @@
         "rep": 48
       },
       {
+        "key": "Catawba College/YouGov|2026-09-09",
         "instituto": "Catawba College/YouGov",
         "campoFim": "2026-09-09",
         "amostraTipo": "LV",
@@ -376,6 +432,7 @@
         "rep": 38
       },
       {
+        "key": "Marquette University Law School|2026-09-09",
         "instituto": "Marquette University Law School",
         "campoFim": "2026-09-09",
         "amostraTipo": "LV",
@@ -383,28 +440,27 @@
         "rep": 41
       },
       {
+        "key": "Rasmussen Reports (R)|2026-09-09",
         "instituto": "Rasmussen Reports (R)",
         "campoFim": "2026-09-09",
         "amostraTipo": "LV",
         "dem": 47,
         "rep": 42
-      },
-      {
-        "instituto": "Morning Consult",
-        "campoFim": "2026-09-06",
-        "amostraTipo": "RV",
-        "dem": 46,
-        "rep": 42
-      },
-      {
-        "instituto": "Quinnipiac University",
-        "campoFim": "2026-09-06",
-        "amostraTipo": "RV",
-        "dem": 49,
-        "rep": 38
       }
     ],
     "excluidasPorInstrumento": [
+      {
+        "instituto": "The Economist/YouGov",
+        "campoInicio": "2026-10-02",
+        "campoFim": "2026-10-05",
+        "amostraTipo": "LV",
+        "dem": 51,
+        "rep": 40,
+        "desde": "2026-09-04",
+        "medidoEm": "2026-09-22",
+        "ressalva": "Asked using the names of candidates running in the respondent’s district of residence",
+        "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
+      },
       {
         "instituto": "The Economist/YouGov",
         "campoInicio": "2026-09-25",
@@ -454,10 +510,10 @@
         "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
       }
     ],
-    "nInstitutos": 29,
+    "nInstitutos": 31,
     "dem": 49.18,
-    "rep": 41.7,
-    "vantagemDem": 7.48,
+    "rep": 41.64,
+    "vantagemDem": 7.54,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
@@ -468,6 +524,7 @@
       "CBS News/YouGov",
       "CNN/SSRS",
       "Catawba College/YouGov",
+      "Centerline Research & Strategy",
       "Clarity Campaign Labs (D)",
       "Echelon Insights",
       "Emerson College",
@@ -475,6 +532,7 @@
       "Harvard/Harris Poll/HarrisX",
       "Impact Research (D)/National Research Inc. (R)",
       "John Zogby Strategies",
+      "KFF",
       "Marist University",
       "Marquette University Law School",
       "McLaughlin & Associates (R)",
@@ -492,18 +550,48 @@
     ]
   },
   "qualidade": {
-    "linhasLidas": 468,
-    "publicadas": 481,
+    "linhasLidas": 472,
+    "publicadas": 485,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 468,
+    "doIndice": 472,
     "curadas": 13,
     "curadasDescartadasPorDuplicidade": 17
   },
   "polls": [
+    {
+      "instituto": "The Economist/YouGov",
+      "campoInicio": "2026-10-02",
+      "campoFim": "2026-10-05",
+      "amostra": 995,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 52,
+      "rep": 40,
+      "outros": 8,
+      "vantagemDem": 12,
+      "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_703uvs1.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "The Economist/YouGov",
+      "campoInicio": "2026-10-02",
+      "campoFim": "2026-10-05",
+      "amostra": 1173,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 51,
+      "rep": 40,
+      "outros": 9,
+      "vantagemDem": 11,
+      "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_703uvs1.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
     {
       "instituto": "Reuters/Ipsos",
       "campoInicio": "2026-09-30",
@@ -576,6 +664,21 @@
       "outros": null,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.activote.net/polls/generic-ballot/2026-10-03/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Centerline Research & Strategy",
+      "campoInicio": "2026-09-26",
+      "campoFim": "2026-10-01",
+      "amostra": 930,
+      "amostraTipo": "LV",
+      "margemErro": 3.8,
+      "dem": 50,
+      "rep": 42,
+      "outros": 8,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://centerliners.com/assets/polls/centerline-national-poll-release-100626.pdf",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -951,6 +1054,21 @@
       "outros": null,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.wsj.com/politics/policy/americans-want-populist-policies-that-defy-traditional-political-labels-119b29b9",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "KFF",
+      "campoInicio": "2026-09-16",
+      "campoFim": "2026-09-21",
+      "amostra": 1013,
+      "amostraTipo": "RV",
+      "margemErro": 4,
+      "dem": 45,
+      "rep": 35,
+      "outros": 21,
+      "vantagemDem": 10,
+      "fontePrimaria": "https://files.kff.org/attachment/topline-kff-health-tracking-poll-october-2026.pdf",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
