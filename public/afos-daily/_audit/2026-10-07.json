@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-07",
+  "edicao": "terceiro dia do 2o turno, sobre o painel publicado no commit 639b22a9",
+  "refetch": {
+    "certificada": "2026-10-07T20:35:33.542Z",
+    "aoVivo": "2026-10-07T21:06:56Z: Flavio 84,65 (-0,30), Lula 14,50 (0), STF 2,75 (0), total USD 175,13M",
+    "gate": "rebaseline NAO disparou; trava (20:27Z -> 20:35Z) aprovou presidencial e bloqueou STF (4,40 -> 2,75); amplitude-do-dia ESTRUTURAL (9 pontos, 2,80 a 5,70, USD 1.098 novos): STF publicado com 'leitura de' e a faixa do dia, primeira vez pela regra de 04/Set"
+  },
+  "factCheck": [
+    { "evento": "Presidente do TSE (Nunes Marques) mantem no ar videos de Flavio que associam Lula a Moraes e Lulinha ao Careca do INSS", "fontes": ["Gazeta do Povo 07/10 19:37Z (corpo lido)", "G1 07/10 18:18Z"], "decisao": "incorporar como 'decisoes divulgadas em 7 de outubro'" },
+    { "evento": "PF adia depoimento de Campos Neto marcado para 07/10 no inquerito do Master", "fontes": ["Gazeta do Povo 07/10 17:41Z (corpo lido: adiado, sem nova data)", "Valor 07/10 18:49Z (fala em cancelamento)"], "decisao": "incorporar com as duas versoes" },
+    { "evento": "Novo e ACM Neto declaram apoio a Flavio (07/10); PP e Uniao Brasil (06/10)", "fontes": ["CartaCapital", "G1", "Folha de S.Paulo"], "decisao": "incorporar" },
+    { "evento": "Republicanos deve formalizar apoio; MDB consulta diretorios; Solidariedade nao deve apoiar", "fontes": ["VEJA e O Globo (Republicanos)", "Folha de S.Paulo e O Globo (MDB)", "Gazeta do Povo (Solidariedade)"], "decisao": "incorporar atribuido, no futuro" },
+    { "evento": "Quatro debates do 2o turno: Record 11/10, pool 15/10, Band 18/10, Globo 23/10", "fontes": ["CartaCapital 07/10 (corpo lido)", "Exame e G1 (Globo 23/10)", "VEJA (quatro debates)"], "decisao": "incorporar, com presenca dos candidatos nao confirmada" },
+    { "evento": "Verita 51,56 x 48,44 no 2o turno", "fontes": ["Portal Agua Clara MS e Portal da Abelhinha (corpo lido: n=40.500, campo 26/09 a 02/10)"], "decisao": "citar como medicao com campo anterior a urna; NAO usar como pesquisa do 2o turno nem no polls-data (regua de 20/Set)" }
+  ],
+  "adversarial": {
+    "singleSource": [
+      "Republicanos 'recebera apoio' (VEJA, atribuido)",
+      "MDB maioria pro-Flavio (Folha, atribuido)",
+      "Solidariedade (Gazeta do Povo, atribuido a Paulinho da Forca)",
+      "centrao e impeachment de ministro (Folha, atribuido)"
+    ],
+    "numerical": "gate de traducao 39/39/39; reconcile-claims so acusou pareamento de entidade, normalizado, limites da faixa de inflacao e a Verita, fora do JSON por decisao",
+    "correcoes": [
+      "TL;DR: 'videos dele contra Lula' trocado por 'videos da campanha dele que citam Lula' nos tres idiomas",
+      "link adicionado na frase da Verita e na de PP e Uniao Brasil",
+      "terceiro card de Divergencias (Apoios x urna: 2,45% contra 5,13%) incluido a pedido do Andre, nos tres idiomas"
+    ],
+    "links": "23 distintos, 11 ancora e 12 secundarios (52%)",
+    "palavras": "pt 992, en 1026, es 1055",
+    "decisao": "prosseguir"
+  },
+  "wayback": "pausa de 4 dias em curso desde o 429 de 06/10; o pre-check nao sondou; arquivamento desta daily fica para depois de ~10/10"
+}
