@@ -1,50 +1,51 @@
 {
-  "updatedAt": "07/10/2026, 17:35",
-  "subtitle": "Cross-check of 07/Oct/2026, third day of the [second round](/en/glossary#segundo-turno): Polymarket at the confirmed reading of 07/Oct, 17:35 BRT, the official [TSE](/en/glossary#tse) [first-round](/en/glossary#primeiro-turno) final tally, the national polls from the eve of the first round and the press flow of 06 and 07/Oct.",
+  "updatedAt": "08/10/2026, 20:38",
+  "subtitle": "Cross-check of 08/Oct/2026, fourth day of the [second round](/en/glossary#segundo-turno): Polymarket at the confirmed reading of 08/Oct, 20:38 BRT, the first national polls after the vote (Datafolha and PoderData/Aya), the official [TSE](/en/glossary#tse) [first-round](/en/glossary#primeiro-turno) final tally and the press flow of 07 and 08/Oct.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PRICE: 14.50% (vol USD 18.76M cumulative) in the winner contract, confirmed reading of 07/Oct, 17:35 BRT, down 1.00pp against the confirmed reading of 06/Oct at 15:05 BRT, published in the previous update. COUNT: 45.16% of the valid votes in the [first round](/en/glossary#primeiro-turno). POLL: the first second-round national polls come out on 08/Oct.",
+      "header": "PRICE: 13.50% (vol USD 21.00M cumulative) in the winner contract, confirmed reading of 08/Oct, 20:38 BRT, down 1.00pp against the confirmed reading of 07/Oct at 17:35 BRT, published in the previous update. COUNT: 45.16% of the valid votes in the [first round](/en/glossary#primeiro-turno). POLL: 45% in Datafolha of 08/Oct and 47% of the valid votes in PoderData/Aya.",
       "fortes": [
-        "On the eve he led the [second round](/en/glossary#segundo-turno) in Datafolha, 47% to 46%, in CNT/MDA, 47.3% to 43.1%, and in AtlasIntel, 47.6% to 47.4%, and was tied at 46% in PoderData.",
-        "🏆 Counting the closed contracts, his contract is still the one with the highest cumulative volume in the presidential book, USD 18.76M."
+        "Datafolha of 08/Oct records 43% rejection of Flávio Bolsonaro, close to his own 46%, and the second-round difference, of 4 points, sits at the limit of the margin of 2 points either way.",
+        "🏆 Counting the closed contracts, his contract is still the one with the highest cumulative volume in the presidential book, USD 21.00M."
       ],
       "fracos": [
-        "He stands at 14.50% in the winner contract, confirmed reading of 07/Oct, 17:35 BRT, and Flávio Bolsonaro's gap over him is 70.45pp.",
+        "He stands at 13.50% in the winner contract, confirmed reading of 08/Oct, 20:38 BRT, and Flávio Bolsonaro's gap over him is 72.15pp.",
+        "In Datafolha of 08/Oct he has 45% against 49% in the [second round](/en/glossary#segundo-turno), and 46% say they would not vote for him; in valid votes, 48% to 52%.",
         "He finished the [first round](/en/glossary#primeiro-turno) 1.87 points behind Flávio Bolsonaro, with 45.16% of the valid votes against 47.03%.",
         "In [Quaest](/en/glossary#quaest) of 03/Oct government approval went from 46% to 44%, with 49% disapproval."
       ],
-      "analise": "Lula stands at 14.50% in the winner contract (vol USD 18.76M cumulative), confirmed reading of 07/Oct, 17:35 BRT, and falls 1.00pp against the confirmed reading of 06/Oct at 15:05 BRT, published in the previous update. 🗳️ He had 45.16% of the valid votes in the [first round](/en/glossary#primeiro-turno), 1.87 points behind Flávio Bolsonaro. Lula said at a meeting with allies on 07/Oct that this year's campaign was the most disorganized he has taken part in since 1989 (Folha de S.Paulo and O Globo), called supporters to the streets on social media (G1) and pressed Flávio Bolsonaro for a position on ending the 6x1 work schedule (Agência Brasil). 📺 His campaign asked for the removal of Flávio Bolsonaro videos that associate him with Alexandre de Moraes and his son with the so-called Careca do [INSS](/en/glossary#inss), and the [TSE](/en/glossary#tse) president denied the requests (G1 and Gazeta do Povo). The first second-round national polls are registered with the TSE for 08/Oct (Datafolha and PoderData), 09/Oct (AtlasIntel and Vox Brasil), 10/Oct (Ipespe) and 11/Oct (DataTrends). ⛔ The panel does not attribute the price to the endorsements or to the schedule: it measures the sides with each one's timestamp."
+      "analise": "Lula stands at 13.50% in the winner contract (vol USD 21.00M cumulative), confirmed reading of 08/Oct, 20:38 BRT, and falls 1.00pp against the confirmed reading of 07/Oct at 17:35 BRT, published in the previous update. 🗳️ He had 45.16% of the valid votes in the [first round](/en/glossary#primeiro-turno). 📊 In Datafolha of 08/Oct he has 45% against 49% for Flávio Bolsonaro, after leading by 47% to 46% in the round of 03/Oct, conducted before the vote, and in PoderData/Aya he has 47% of the valid votes. After the Datafolha poll, Lula said he does not assess polls and that his obligation is to work for more votes (O Globo and Valor), and criticized Flávio Bolsonaro's fiscal adjustment plan (Folha de S.Paulo, O Globo and Estadão). He received the support of UP, PSTU and PCB (CNN Brasil and G1). ⛔ The panel does not attribute the price to the polls or to the schedule: it measures the sides with each one's timestamp."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PRICE: 84.95% (vol USD 17.91M cumulative) in the winner contract, confirmed reading of 07/Oct, 17:35 BRT, up 0.65pp against the confirmed reading of 06/Oct at 15:05 BRT, published in the previous update. COUNT: 47.03% of the valid votes in the [first round](/en/glossary#primeiro-turno). ENDORSEMENTS: Novo and ACM Neto on 07/Oct, after PP, União Brasil, Caiado, Zema and Temer.",
+      "header": "PRICE: 85.65% (vol USD 18.50M cumulative) in the winner contract, confirmed reading of 08/Oct, 20:38 BRT, up 0.70pp against the confirmed reading of 07/Oct at 17:35 BRT, published in the previous update. COUNT: 47.03% of the valid votes in the [first round](/en/glossary#primeiro-turno). POLL: 49% to 45% in Datafolha of 08/Oct and 53% to 47% of the valid votes in PoderData/Aya. ENDORSEMENTS: Podemos and Augusto Cury on 08/Oct.",
       "fortes": [
         "He finished the [first round](/en/glossary#primeiro-turno) ahead, with 47.03% of the valid votes against Lula's 45.16%, in the [TSE](/en/glossary#tse) final tally.",
-        "He stands at 84.95% in the winner contract, confirmed reading of 07/Oct, 17:35 BRT.",
-        "He received the support of PP and União Brasil (06/Oct; G1, O Globo and Folha de S.Paulo), of Ronaldo Caiado (06/Oct; O Globo and VEJA) and of Novo and ACM Neto (07/Oct; G1, CartaCapital and Folha de S.Paulo), in addition to the vote declarations of Romeu Zema and Michel Temer.",
-        "On the eve he led the [second round](/en/glossary#segundo-turno) in [Quaest](/en/glossary#quaest), 44% to 42%, in Palver, 49% to 44%, in Futura, 48% to 45.1%, and in Gerp, 49% to 44%.",
+        "He stands at 85.65% in the winner contract, confirmed reading of 08/Oct, 20:38 BRT.",
+        "He leads the first two national polls after the vote: 49% to 45% in Datafolha and 53% to 47% of the valid votes in PoderData/Aya (G1, Valor and Poder360).",
+        "He received the support of Podemos and of Augusto Cury on 08/Oct (G1, Estadão and CNN Brasil), after Novo, ACM Neto, PP, União Brasil, Ronaldo Caiado, Romeu Zema and Michel Temer.",
         "⭐ In [Quaest](/en/glossary#quaest) of 28/Sep, second-round vote transfer favoured Flávio Bolsonaro among the voters of Romeu Zema (81%), Renan Santos (48%), Ronaldo Caiado (42%) and Augusto Cury (34%) (O Globo)."
       ],
       "fracos": [
-        "On the eve he trailed in the [second round](/en/glossary#segundo-turno) in Datafolha, CNT/MDA and AtlasIntel, and was tied in PoderData.",
+        "In Datafolha of 08/Oct, 43% say they would not vote for him, and the 4 point lead sits at the limit of the margin of 2 points either way.",
         "🏦 According to O Globo, the [Federal Police](/en/glossary#pf) is investigating, in the inquiry into Daniel Vorcaro and Master's relationship with BRB, the bank's R$ 3.1 million financing to Flávio Bolsonaro for the purchase of a R$ 6 million mansion in Brasília; he says the transaction was legal, and the report comes from a single media group and is included here with attribution.",
         "📰 Messages extracted from Daniel Vorcaro's phone and published by Estadão on 24/Sep show four attempts by him to contact the banker between 13 and 16 November 2025, in the days before Vorcaro's arrest, on 17 November 2025. Gazeta do Povo confirmed the authenticity of the exchanges with its own sources close to the investigation."
       ],
-      "analise": "Flávio Bolsonaro stands at 84.95% in the winner contract (vol USD 17.91M cumulative), confirmed reading of 07/Oct, 17:35 BRT, and rises 0.65pp against the confirmed reading of 06/Oct at 15:05 BRT, published in the previous update. 🗳️ He had 47.03% of the valid votes in the [first round](/en/glossary#primeiro-turno). 🤝 Novo declared support for Flávio Bolsonaro on 07/Oct, after Romeu Zema (G1 and CartaCapital), and ACM Neto announced support for him on the same day (G1 and Folha de S.Paulo). PP and União Brasil, which form the União Progressista federation, announced support on 06/Oct (G1, O Globo and Folha de S.Paulo), and Ronaldo Caiado declared support for him in Goiânia on the same day (O Globo and VEJA). According to VEJA and O Globo, Republicanos is expected to formalize support for Flávio Bolsonaro, with Tarcísio de Freitas in Brasília for that purpose, and VEJA reports that he is aiming to bring in Podemos. MDB is consulting its state branches: the majority favours a vote for Flávio Bolsonaro, according to Folha de S.Paulo, and the party is expected to remain neutral, according to O Globo. Solidariedade is not expected to back him, Paulinho da Força told Gazeta do Povo. Michelle Bolsonaro was with Flávio Bolsonaro at the PL caucus meeting on 07/Oct (Folha de S.Paulo, O Globo and Estadão). 🎙️ The broadcasters confirmed four second-round debates: Record on 11/Oct, at 21:00, a pool of 11 outlets with CNN Brasil, SBT and VEJA on 15/Oct, at 20:00, Band on 18/Oct, at 20:00, and TV Globo on 23/Oct (CartaCapital, VEJA and G1). The attendance of the two candidates is not yet confirmed, and according to Gazeta do Povo Flávio Bolsonaro is waiting for Lula's decision to confirm Band. ⛔ The panel does not attribute the price to the endorsements or to the schedule: it measures the sides with each one's timestamp."
+      "analise": "Flávio Bolsonaro stands at 85.65% in the winner contract (vol USD 18.50M cumulative), confirmed reading of 08/Oct, 20:38 BRT, and rises 0.70pp against the confirmed reading of 07/Oct at 17:35 BRT, published in the previous update. 🗳️ He had 47.03% of the valid votes in the [first round](/en/glossary#primeiro-turno). 📊 The first national polls after the vote came out on 08/Oct. In Datafolha, with fieldwork from 06 to 08/Oct and 2,520 interviews, Flávio Bolsonaro has 49% and Lula 45% in the [second round](/en/glossary#segundo-turno), with 5% blank, null and none and 1% undecided; in valid votes, 52% to 48% (G1, Valor, CartaCapital and Brasil de Fato). In PoderData/Aya, with fieldwork from 05 to 07/Oct and 3,000 interviews, Flávio Bolsonaro has 53% and Lula 47% of the valid votes, and the release does not include the total vote (Poder360). In both, 46% say they would not vote for Lula and 43% that they would not vote for Flávio Bolsonaro. 🤝 Podemos confirmed support for Flávio Bolsonaro on 08/Oct (G1, Folha de S.Paulo, Estadão and Poder360), and Augusto Cury, third place in the first round, declared support for him on the same day (G1, Estadão and CNN Brasil). Before them came Novo, ACM Neto, PP, União Brasil, Ronaldo Caiado, Romeu Zema and Michel Temer. PSDB released its members in the second round (Congresso em Foco and Times Brasil). Lula received the support of UP, PSTU and PCB (CNN Brasil and G1), and Renan Santos still backs no one and denied any rapprochement with Lula (CNN Brasil and O Globo). Flávio Bolsonaro said the constitutional amendment ending reelection could extend his term to five years if he is elected (G1 and O Globo) and that he intends to bring Brazil into Donald Trump's Shield of the Americas (Poder360 and Diário do Poder). ⚖️ On 08/Oct, Alexandre de Moraes declared the final judgment (no further appeal) in the case against Eduardo Bolsonaro for coercion in the course of proceedings and ordered the start of his 4 years and 2 months sentence in an initial semi-open regime, with his name in the national arrest warrant database, the cancellation of his passports and the suspension of his political rights (Gazeta do Povo, O Globo, Estadão and Valor). Eduardo Bolsonaro lives in the United States and called the decision arbitrary (Gazeta do Povo and VEJA), and Flávio Bolsonaro called on Moraes to resign (Estadão and O Globo). ⛔ The panel does not attribute the price to the polls or to the endorsements: it measures the sides with each one's timestamp."
     },
     {
       "rank": "3",
       "name": "Augusto Cury",
       "party": "Avante",
       "color": "#0891B2",
-      "header": "ELIMINATED IN THE [FIRST ROUND](/en/glossary#primeiro-turno): third place, with 2.89% of the valid votes in the [TSE](/en/glossary#tse) final tally. PRICE: winner contract closed and resolved at zero, with USD 5.51M cumulative. [SECOND ROUND](/en/glossary#segundo-turno): according to Agência Brasil, he talks of staying silent.",
+      "header": "ELIMINATED IN THE [FIRST ROUND](/en/glossary#primeiro-turno): third place, with 2.89% of the valid votes in the [TSE](/en/glossary#tse) final tally. PRICE: winner contract closed and resolved at zero, with USD 5.51M cumulative. [SECOND ROUND](/en/glossary#segundo-turno): declared support for Flávio Bolsonaro on 08/Oct (G1, Estadão and CNN Brasil).",
       "fortes": [
         "He finished third, with 2.89% of the valid votes, ahead of Renan Santos and Ronaldo Caiado.",
         "The [first round](/en/glossary#primeiro-turno)'s third-place book was resolved in his favour."
@@ -53,7 +54,7 @@
         "He is out of the [second round](/en/glossary#segundo-turno), and his contract in the winner book was resolved at zero.",
         "On the eve the third-place book paid more for Renan Santos, 47.50%, and for Ronaldo Caiado, 30.00%, than for him, 23.70%."
       ],
-      "analise": "Augusto Cury finished the [first round](/en/glossary#primeiro-turno) in third, with 2.89% of the valid votes in the [TSE](/en/glossary#tse) final tally, and is out of the [second round](/en/glossary#segundo-turno). His contract in the winner book was closed by Polymarket after the first round and resolved at zero, with USD 5.51M cumulative. The first round's third-place book, which on the eve paid 23.70% for him, at 23:00 UTC on 03/Oct, was resolved in his favour. 🤝 According to Agência Brasil, he talks of staying silent in the second round; the report has a single source and is included with attribution."
+      "analise": "Augusto Cury finished the [first round](/en/glossary#primeiro-turno) in third, with 2.89% of the valid votes in the [TSE](/en/glossary#tse) final tally, and is out of the [second round](/en/glossary#segundo-turno). His contract in the winner book was closed by Polymarket after the first round and resolved at zero, with USD 5.51M cumulative. The first round's third-place book, which on the eve paid 23.70% for him, at 23:00 UTC on 03/Oct, was resolved in his favour. 🤝 On 08/Oct he declared support for Flávio Bolsonaro in the second round (G1, Estadão and CNN Brasil)."
     },
     {
       "rank": "4",
@@ -108,8 +109,8 @@
     {
       "n": "Lula (PT)",
       "p": "On the eve, 03/Oct, he led the [second round](/en/glossary#segundo-turno) in Datafolha (47% to 46%), in CNT/MDA (47.3% to 43.1%) and in AtlasIntel (47.6% to 47.4%), and was tied at 46% in PoderData. [First-round](/en/glossary#primeiro-turno) COUNT: 45.16% of valid votes.",
-      "m": "14.50% (vol USD 18.76M cumulative) in the winner contract, confirmed reading of 07/Oct, 17:35 BRT",
-      "t": "down 1.00pp against the confirmed reading of 06/Oct at 15:05 BRT, published in the previous update, and Flávio Bolsonaro's gap goes from 68.80pp to 70.45pp",
+      "m": "13.50% (vol USD 21.00M cumulative) in the winner contract, confirmed reading of 08/Oct, 20:38 BRT",
+      "t": "down 1.00pp against the confirmed reading of 07/Oct at 17:35 BRT, published in the previous update, and Flávio Bolsonaro's gap goes from 70.45pp to 72.15pp",
       "s": "🗳️ In the [second round](/en/glossary#segundo-turno), 1.87 points behind in the [first-round](/en/glossary#primeiro-turno) count.",
       "pc": "#DC2626",
       "mc": ""
@@ -117,9 +118,9 @@
     {
       "n": "Flávio Bolsonaro (PL)",
       "p": "On the eve, 03/Oct, he led the [second round](/en/glossary#segundo-turno) in [Quaest](/en/glossary#quaest) (44% to 42%), in Palver (49% to 44%), in Futura (48% to 45.1%) and in Gerp (49% to 44%). [First-round](/en/glossary#primeiro-turno) COUNT: 47.03% of valid votes.",
-      "m": "84.95% (vol USD 17.91M cumulative) in the winner contract, confirmed reading of 07/Oct, 17:35 BRT",
-      "t": "up 0.65pp against the confirmed reading of 06/Oct at 15:05 BRT, published in the previous update",
-      "s": "🤝 Novo and ACM Neto declared support on 07/Oct, after PP, União Brasil, Caiado, Zema and Temer; Republicanos is expected to formalize support, according to VEJA and O Globo.",
+      "m": "85.65% (vol USD 18.50M cumulative) in the winner contract, confirmed reading of 08/Oct, 20:38 BRT",
+      "t": "up 0.70pp against the confirmed reading of 07/Oct at 17:35 BRT, published in the previous update",
+      "s": "🤝 Podemos and Augusto Cury declared support on 08/Oct, after Novo, ACM Neto, PP, União Brasil, Caiado, Zema and Temer.",
       "pc": "#2563EB",
       "mc": ""
     },
@@ -128,7 +129,7 @@
       "p": "[First-round](/en/glossary#primeiro-turno) COUNT: 2.89% of valid votes, third place.",
       "m": "winner contract closed and resolved at zero, with USD 5.51M cumulative",
       "t": "eliminated in the [first round](/en/glossary#primeiro-turno)",
-      "s": "🤝 According to Agência Brasil, he talks of staying silent in the [second round](/en/glossary#segundo-turno).",
+      "s": "🤝 He declared support for Flávio Bolsonaro on 08/Oct (G1, Estadão and CNN Brasil).",
       "pc": "#0891B2",
       "mc": ""
     },
@@ -137,7 +138,7 @@
       "p": "[First-round](/en/glossary#primeiro-turno) COUNT: 2.24% of valid votes, fourth place.",
       "m": "winner contract closed and resolved at zero, with USD 17.12M cumulative",
       "t": "eliminated in the [first round](/en/glossary#primeiro-turno)",
-      "s": "🤝 He backs neither of the two in the [second round](/en/glossary#segundo-turno) (Gazeta do Povo and Agência Brasil).",
+      "s": "🤝 He backs neither of the two in the [second round](/en/glossary#segundo-turno) and denied any rapprochement with Lula (CNN Brasil and O Globo).",
       "pc": "#7C3AED",
       "mc": ""
     },
@@ -160,5 +161,5 @@
       "mc": ""
     }
   ],
-  "cruzamento": "Third day of the [second round](/en/glossary#segundo-turno). 💹 In the confirmed reading of 07/Oct, 17:35 BRT, Flávio Bolsonaro rises 0.65pp and Lula falls 1.00pp against the confirmed reading of 06/Oct at 15:05 BRT, published in the previous update, and the gap goes from 68.80pp to 70.45pp. 🗳️ In the [first round](/en/glossary#primeiro-turno), in the [TSE](/en/glossary#tse) final tally of 05/Oct, with 100% of polling sections, Flávio Bolsonaro had 47.03% of the valid votes and Lula 45.16%. 🤝 Novo declared support for Flávio Bolsonaro on 07/Oct, after Romeu Zema (G1 and CartaCapital), and ACM Neto announced support for him on the same day (G1 and Folha de S.Paulo). PP and União Brasil, which form the União Progressista federation, announced support on 06/Oct (G1, O Globo and Folha de S.Paulo), and Ronaldo Caiado declared support for him in Goiânia on the same day (O Globo and VEJA). According to VEJA and O Globo, Republicanos is expected to formalize support for Flávio Bolsonaro, with Tarcísio de Freitas in Brasília for that purpose, and VEJA reports that he is aiming to bring in Podemos. MDB is consulting its state branches: the majority favours a vote for Flávio Bolsonaro, according to Folha de S.Paulo, and the party is expected to remain neutral, according to O Globo. Solidariedade is not expected to back him, Paulinho da Força told Gazeta do Povo. Lula said at a meeting with allies on 07/Oct that this year's campaign was the most disorganized he has taken part in since 1989 (Folha de S.Paulo and O Globo), called supporters to the streets on social media (G1) and pressed Flávio Bolsonaro for a position on ending the 6x1 work schedule (Agência Brasil). 🎙️ The broadcasters confirmed four second-round debates: Record on 11/Oct, at 21:00, a pool of 11 outlets with CNN Brasil, SBT and VEJA on 15/Oct, at 20:00, Band on 18/Oct, at 20:00, and TV Globo on 23/Oct (CartaCapital, VEJA and G1). The attendance of the two candidates is not yet confirmed, and according to Gazeta do Povo Flávio Bolsonaro is waiting for Lula's decision to confirm Band. 📺 In decisions released on 07/Oct, the TSE president, Kassio Nunes Marques, kept online videos from Flávio Bolsonaro's campaign that associate Lula with Alexandre de Moraes and Lulinha with the so-called Careca do [INSS](/en/glossary#inss), and denied the Lula campaign's requests for removal and for a right of reply (G1 and Gazeta do Povo). 📊 The first second-round national polls are registered with the TSE for 08/Oct (Datafolha and PoderData), 09/Oct (AtlasIntel and Vox Brasil), 10/Oct (Ipespe) and 11/Oct (DataTrends). ⛔ The panel does not attribute price moves to the endorsements or to the schedule: it measures the sides with each one's timestamps."
+  "cruzamento": "Fourth day of the [second round](/en/glossary#segundo-turno) and the first with a national poll conducted after the vote. 💹 In the confirmed reading of 08/Oct, 20:38 BRT, Flávio Bolsonaro rises 0.70pp and Lula falls 1.00pp against the confirmed reading of 07/Oct at 17:35 BRT, published in the previous update, and the gap goes from 70.45pp to 72.15pp. 📊 The first national polls after the vote came out on 08/Oct. In Datafolha, with fieldwork from 06 to 08/Oct and 2,520 interviews, Flávio Bolsonaro has 49% and Lula 45% in the second round, with 5% blank, null and none and 1% undecided; in valid votes, 52% to 48% (G1, Valor, CartaCapital and Brasil de Fato). In PoderData/Aya, with fieldwork from 05 to 07/Oct and 3,000 interviews, Flávio Bolsonaro has 53% and Lula 47% of the valid votes, and the release does not include the total vote (Poder360). In both, 46% say they would not vote for Lula and 43% that they would not vote for Flávio Bolsonaro. In the Datafolha round of 03/Oct, conducted before the vote, Lula had 47% and Flávio Bolsonaro 46% in the second round. 🤝 Podemos confirmed support for Flávio Bolsonaro on 08/Oct (G1, Folha de S.Paulo, Estadão and Poder360), and Augusto Cury, third place in the [first round](/en/glossary#primeiro-turno), declared support for him on the same day (G1, Estadão and CNN Brasil). Before them came Novo, ACM Neto, PP, União Brasil, Ronaldo Caiado, Romeu Zema and Michel Temer. PSDB released its members in the second round (Congresso em Foco and Times Brasil). Lula received the support of UP, PSTU and PCB (CNN Brasil and G1), and Renan Santos still backs no one and denied any rapprochement with Lula (CNN Brasil and O Globo). ⚖️ On 08/Oct, Alexandre de Moraes declared the final judgment (no further appeal) in the case against Eduardo Bolsonaro for coercion in the course of proceedings and ordered the start of his 4 years and 2 months sentence in an initial semi-open regime, with his name in the national arrest warrant database, the cancellation of his passports and the suspension of his political rights (Gazeta do Povo, O Globo, Estadão and Valor). Eduardo Bolsonaro lives in the United States and called the decision arbitrary (Gazeta do Povo and VEJA), and Flávio Bolsonaro called on Moraes to resign (Estadão and O Globo). 📊 The next national polls registered with the [TSE](/en/glossary#tse) come out on 09/Oct (AtlasIntel and Vox Brasil), 10/Oct (Ipespe), 11/Oct (DataTrends) and 13/Oct (Gerp, Nexus, 100 Cidades and PoderData). ⛔ The panel does not attribute price moves to the polls, to the endorsements or to the day's acts: it measures the sides with each one's timestamps."
 }
