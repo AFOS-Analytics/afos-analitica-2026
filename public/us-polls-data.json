@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-07",
-  "fetchedAt": "2026-10-07T20:19:10.588Z",
+  "lastUpdate": "2026-10-08",
+  "fetchedAt": "2026-10-08T01:57:33.606Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,7 +47,7 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-07",
+    "desde": "2026-09-08",
     "nPesquisas": 44,
     "tratamentoDoIndeciso": [
       {
@@ -89,6 +89,54 @@
         "prova": "https://angusreid.us/wp-content/uploads/2026/09/2026.09.28_Trump_Midterms.pdf",
         "conferidoEm": "2026-10-05",
         "decididoEm": "2026-10-05"
+      },
+      {
+        "serie": "The Argument/Verasight",
+        "campoFim": "2026-09-22",
+        "escolha": "LV, duas vias normalizada",
+        "declarado": {
+          "dem": 55,
+          "rep": 45
+        },
+        "estado": "ESCOLHIDA",
+        "quantasCasam": 1,
+        "linhasDaOnda": [
+          {
+            "dem": 55,
+            "rep": 45,
+            "outros": null,
+            "amostra": null,
+            "amostraTipo": "LV",
+            "escolhida": true
+          },
+          {
+            "dem": 50,
+            "rep": 41,
+            "outros": 9,
+            "amostra": null,
+            "amostraTipo": "LV",
+            "escolhida": false
+          },
+          {
+            "dem": 53,
+            "rep": 47,
+            "outros": null,
+            "amostra": 1603,
+            "amostraTipo": "RV",
+            "escolhida": false
+          },
+          {
+            "dem": 48,
+            "rep": 41,
+            "outros": 11,
+            "amostra": 1603,
+            "amostraTipo": "RV",
+            "escolhida": false
+          }
+        ],
+        "prova": "https://www.theargumentmag.com/p/the-least-popular-war-since-vietnam",
+        "conferidoEm": "2026-10-07",
+        "decididoEm": "2026-10-07"
       }
     ],
     "incluidas": [

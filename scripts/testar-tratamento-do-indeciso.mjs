@@ -152,6 +152,53 @@ const mCaducado = media(universoCaducado, 30, AGORA, undefined, undefined, TRATA
 caso('escolha caducada: a média volta à hierarquia de recorte', angusDe(mCaducado)?.dem === 49)
 caso('escolha caducada: o arquivo diz CADUCOU', mCaducado.tratamentoDoIndeciso?.[0]?.estado === 'CADUCOU')
 
+
+// ───── 🎚️ A SEGUNDA onda declarada: The Argument, com QUATRO paineis (07/Out) ─────
+//
+// 🔑 Ela difere da Angus Reid no que mais importa: o topline esta atras de
+// PAYWALL, entao os rotulos sao DESCRITIVOS e nossos. A decisao saiu da anotacao
+// do indice (`comLeaners`) e da CONTINUIDADE da serie, medida nas 7 ondas da casa.
+{
+  const ONDA = [
+    { instituto: 'The Argument/Verasight', campoInicio: '2026-09-16', campoFim: '2026-09-22', amostra: null, amostraTipo: 'LV', dem: 55, rep: 45, outros: null },
+    { instituto: 'The Argument/Verasight', campoInicio: '2026-09-16', campoFim: '2026-09-22', amostra: null, amostraTipo: 'LV', dem: 50, rep: 41, outros: 9 },
+    { instituto: 'The Argument/Verasight', campoInicio: '2026-09-16', campoFim: '2026-09-22', amostra: 1603, amostraTipo: 'RV', dem: 53, rep: 47, outros: null },
+    { instituto: 'The Argument/Verasight', campoInicio: '2026-09-16', campoFim: '2026-09-22', amostra: 1603, amostraTipo: 'RV', dem: 48, rep: 41, outros: 11 },
+  ]
+  caso('argument: a onda esta declarada', buscar(ONDA[0]) !== null)
+  caso('argument: a linha de duas vias LV e a ESCOLHIDA', ehEscolhida(ONDA[0]) === true)
+  caso('argument: a de residual LV NAO e', ehEscolhida(ONDA[1]) === false)
+  caso('argument: a de duas vias RV NAO e', ehEscolhida(ONDA[2]) === false)
+  caso('argument: a de residual RV NAO e', ehEscolhida(ONDA[3]) === false)
+
+  const a = auditar(ONDA)
+  caso('argument: a auditoria sai ESCOLHIDA', a?.estado === 'ESCOLHIDA')
+  caso('argument: com QUATRO linhas na onda', a?.linhasDaOnda?.length === 4)
+  caso('argument: e exatamente UMA casando', a?.quantasCasam === 1)
+  caso('argument: a marcada e a de D55 x R45', a?.linhasDaOnda?.find((l) => l.escolhida)?.dem === 55)
+  caso('argument: os 4 paineis estao declarados', buscar(ONDA[0])?.paineis?.length === 4)
+
+  // 🔴 A caducidade por VALOR, que e o que protege de o indice reescrever.
+  caso('argument: dem reescrito CADUCA', auditar(ONDA.map((p) => (p.dem === 55 ? { ...p, dem: 56 } : p)))?.estado === 'CADUCOU')
+  caso('argument: rep reescrito CADUCA', auditar(ONDA.map((p) => (p.rep === 45 && p.dem === 55 ? { ...p, rep: 44 } : p)))?.estado === 'CADUCOU')
+
+  // ⛔ ANTI-EXCESSO: os quatro pares de valores sao DISTINTOS, entao nunca ha
+  //    AMBIGUA nesta onda. Se o indice passar a repetir um par, a regua acende.
+  const pares = new Set(ONDA.map((p) => p.dem + '/' + p.rep))
+  caso('argument ANTI-EXCESSO: os 4 pares sao distintos', pares.size === 4)
+  caso(
+    'argument ANTI-EXCESSO: par repetido daria AMBIGUA',
+    auditar([...ONDA, { ...ONDA[0] }])?.estado === 'AMBIGUA',
+  )
+
+  // ⛔ E a declaracao da The Argument NAO pode tocar a da Angus Reid.
+  const ANGUS = { instituto: 'Angus Reid Global', campoFim: '2026-09-25', dem: 45, rep: 34 }
+  caso('argument ANTI-EXCESSO: a Angus Reid segue escolhida pelo painel dela', ehEscolhida(ANGUS) === true)
+  caso('argument ANTI-EXCESSO: e a onda da Angus nao vira a da Argument', buscar(ANGUS)?.serie === 'Angus Reid Global')
+  caso('argument ANTI-EXCESSO: outra onda da MESMA casa nao e declarada', buscar({ ...ONDA[0], campoFim: '2026-07-26' }) === null)
+  caso('argument: o registro tem as DUAS ondas', TRATAMENTO_ESCOLHIDO.length === 2)
+}
+
 // ───────────────────────── CONTROLE POSITIVO ─────────────────────────
 //
 // Um arnês que não consegue reprovar nada é indistinguível de um arnês verde.
