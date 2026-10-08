@@ -411,8 +411,46 @@ Ver também `/atualizar-usa`, que roda isto dentro de uma passada completa do pa
 | `CONFIRMA_PARCIAL` | sustenta parte, e exige as **DUAS** listas: `confirmado` e `naoConfirmado` |
 | `NAO_CONTEM_A_PERGUNTA` | o documento existe, foi lido, e não traz a pergunta |
 | `NAO_ENCONTRADO` | nada do executor nem do patrocinador foi achado |
+| 🔒 `FONTE_INACESSIVEL` | o documento foi **LOCALIZADO** e **não abriu**: o host recusa leitor automatizado, ou cobra. **Difere de `NAO_ENCONTRADO` no que a próxima passada deve FAZER:** aquele manda procurar de novo, este manda PARAR |
 
 🔑 **Casa por casa (pela SÉRIE), campo e VALORES.** Se o índice reescrever D ou R, a conferência **CADUCA** e a linha volta a contar como não conferida. ⛔ Não é portão e não muda veredito: é ledger de dívida, impresso em toda passada pelo `conferir-us-polls`, e a ficha de quem ENTRA já diz se a fonte daquela rodada foi aberta antes.
+
+### 🔒 `FONTE_INACESSIVEL`, criado em 08/Out/2026, e ele EXIGE CONTROLE POSITIVO
+
+🔴 **Ele nasceu de uma condição que o registro IRMÃO declarou.** Em 05/Out a Impact Research entrou em `soma-conferida.mjs` com veredito de soma, e a nota dela dizia que aquilo esticava o `FONTE_NAO_SUSTENTA` de *"abri e não sustenta"* para *"não deu para abrir"*, e que **se o caso se repetisse valia veredito próprio**. Repetiu em 08/Out com a Cygnal, e com a soma **fechando em 101**, ou seja sem nenhum pretexto de soma para entrar no registro vizinho. O lugar sempre foi o `fonte-conferida.mjs`, e o que faltava era o nome.
+
+| trava | por quê |
+|---|---|
+| exige `acesso` com **status numérico** e `medidoEm` | sem a medição, "inacessível" é opinião, e opinião não abre nem fecha dívida |
+| exige **`controlePositivo`** | 🧪 **403 de host que bloqueia é indistinguível de 403 de leitor quebrado.** Numa rede com inspeção de TLS todo leitor local cai e o diagnóstico natural é "o host caiu". A forma barata de separar é outro host respondendo 200 no mesmo cliente e no mesmo minuto |
+| exige `naoConfirmado` **não vazio** | tem de dizer o que fica sem confirmação |
+| ⛔ `acesso` é **PROIBIDO** em `CONFIRMA`, `CONFIRMA_PARCIAL` e `NAO_CONTEM_A_PERGUNTA` | é o jeito silencioso de este veredito vazar: anexar status de acesso a entrada cujo documento **foi lido** faz o registro declarar bloqueio sobre página que abriu |
+| 📌 `acesso` é **PERMITIDO** em `NAO_ENCONTRADO` | um 404 na URL procurada é medição legítima de busca que não achou. A fronteira é **escolha declarada**, com caso de teste próprio |
+| `status: 0` **passa** | o `curl` devolve `000` quando o host não resolve, e a guarda é de **TIPO** e não de valor: escrita como `!acesso.status`, ela rejeitaria justamente o caso de DNS morto. Mesma família do `Number(true)` e `Number(null)` do `portao-gravacao` |
+
+### 🔴 O caso fundador: a Cygnal de 02/Out, que FECHOU o buraco de cobertura e abriu o de prova
+
+Em 07/Out a Cygnal de 02/Out era cobrada como **buraco real** numa casa que bloqueia a própria listagem. Em 08/Out ela **entrou pelo índice, sozinha**, levando a média de **D+7.54 sobre 44 para D+7.57 sobre 45**, veredito `PESQUISA_NOVA`. O buraco de **cobertura** fechou; o de **prova** não.
+
+📏 **E o 403 não cega uma linha, cega a SÉRIE:** a Cygnal tem **13 rodadas** na base, tracker mensal de 1.500 prováveis votantes, e **DEZ** citam PDF em `cygn.al`.
+
+🧪 **Medido com controle positivo, e o bloqueio é do HOST TODO:** raiz, listagem, PDF e **o próprio `robots.txt`** devolvem 403, enquanto `poll.qu.edu/robots.txt` e `harvardharrispoll.com` respondem 200 no mesmo cliente. **O arquivo que existe para declarar o que robô pode fazer é negado ao robô**, então a leitura honesta é "recusa automatizada" e nunca "proibido por política que eu li". ⛔ **Não forjar user-agent**, que é regra permanente.
+
+⚠️ **E o `curl -o` GRAVA no 403.** O arquivo saiu com **6.059 bytes** começando em `<!DOCTYP`: é a página de erro. Conferir o download pelo tamanho, ou pela existência do arquivo, diria que deu certo. **Conferir os primeiros bytes.**
+
+🛣️ **As rotas honestas ficam DECLARADAS na entrada, para a próxima passada não refazê-las:**
+
+| rota | resultado |
+|---|---|
+| `data.ddhq.io`, host que o índice já usou para esta casa em Mai/2026 | **200**, e não tem a rodada de outubro. A raiz é 404, então não há listagem |
+| Wayback, API de disponibilidade | 🔴 **429**, que é **`INDETERMINADO`** e **NÃO** "não existe cópia". 429 é limite de taxa, e bloqueio de host não se resolve insistindo. Ler isto como "o Wayback não tem" é afirmar o que ninguém mediu |
+| matéria de veículo | **não serve**, pelo precedente da Morning Consult neste mesmo registro: a matéria descreve a direção em palavras e não publica percentual |
+
+⛔ **O número não se mexe e a linha não sai.** Ela segue valendo pelo índice, com a procedência declarada.
+
+✅ **Custo zero em produção:** o registro é **ledger local**, lido pelo `conferir-us-polls.mjs`. O `collect.mjs` **não o importa** (o `casas.mjs` apenas o CITA em comentário), então **não há deploy a fazer** e nenhum número muda. Isto é diferente da ingestão curada, que é código compartilhado com o cron.
+
+🧪 `node scripts/testar-fonte-conferida.mjs`, de 29 para **44 asserções**, no CI, com **8 de 8 mutações reprovadas** e controle positivo nas duas pontas: a suíte conferida verde no arquivo bom antes de tudo, e cada mutação conferida como **APLICADA** antes de ler o resultado. A trava que mais importa é a que prova que **dívida inacessível continua ABERTA**: a mutação que a faz contar como fechada reprova.
 
 ### As duas primeiras entradas, de 25/Set/2026
 
