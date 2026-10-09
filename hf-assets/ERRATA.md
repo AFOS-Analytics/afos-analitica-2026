@@ -215,3 +215,69 @@ Este conjunto de datos es **fechado y aditivo**. Los archivos de fechas ya cerra
 **Alcance.** Ningún otro archivo se ve afectado: la columna `volume_usd_m` solo existe aquí, y ningún otro contrato de la serie se cotiza en miles.
 
 **Prevención.** El volumen pasa por una función única que prueba `mil|thousand|k` **antes** que `M`, exige que la `M` no vaya seguida de letra, y convierte miles en millones en vez de descartarlos.
+
+---
+
+## EN
+
+### ERR-2026-004 · `data/divergence-second-round-2026-10-08.csv` · Lula, poll side taken from the wrong poll
+
+| | Value |
+|---|---|
+| **Affected row** | `2026-10-08,Lula,13.5,45,-31.5,2026-10-08` |
+| **Published** | `poll_pct = 45` · `divergence_pp = -31.5` (Datafolha of 2026-10-08, n=2,520) |
+| **Correct under the stated rule** | `poll_pct = 44` · `divergence_pp = -30.5` (PoderData/Aya of 2026-10-08, n=3,000) |
+| **Magnitude** | 1 point on `poll_pct` and on `divergence_pp` |
+| **Rows affected** | 1 of 2 that date. The Flávio Bolsonaro row is unaffected: both polls gave him 49. |
+| **Detected** | 2026-10-09 |
+| **Status** | **Not rewritten.** The file for 2026-10-08 is closed. |
+
+**Cause.** The rule picks the most recent national poll that published the second-round **total vote**, breaking ties by the largest sample. Two nationals were released on 2026-10-08. We read PoderData/Aya only through an outlet that reported its valid votes (53-47) and recorded that it had not published the total. It had: 49-44, with 5% blank and spoiled ballots and 2% undecided. With the total on record, PoderData/Aya (n=3,000) wins the tie against Datafolha (n=2,520).
+
+**Reach.** Only the Lula row of that date. The panel and the 2026-10-08 daily said the same thing about PoderData/Aya and were corrected on 2026-10-09.
+
+**Prevention.** A claim that a poll did **not** publish a figure is a claim of absence, and it is now checked in more than one outlet, preferably one that reproduces the full table, before it enters the record.
+
+---
+
+## PT-BR
+
+### ERR-2026-004 · `data/divergence-second-round-2026-10-08.csv` · Lula, lado pesquisa tirado da pesquisa errada
+
+| | Valor |
+|---|---|
+| **Linha afetada** | `2026-10-08,Lula,13.5,45,-31.5,2026-10-08` |
+| **Publicado** | `poll_pct = 45` · `divergence_pp = -31.5` (Datafolha de 08/10/2026, n=2.520) |
+| **Correto pela régua declarada** | `poll_pct = 44` · `divergence_pp = -30.5` (PoderData/Aya de 08/10/2026, n=3.000) |
+| **Magnitude** | 1 ponto em `poll_pct` e em `divergence_pp` |
+| **Linhas afetadas** | 1 de 2 naquela data. A linha de Flávio Bolsonaro não muda: as duas pesquisas deram 49 a ele. |
+| **Detectado** | 09/10/2026 |
+| **Situação** | **Não reescrito.** O arquivo de 08/10/2026 está encerrado. |
+
+**Causa.** A régua escolhe a nacional mais recente que publicou o **total de votos** do 2º turno, com desempate pela maior amostra. Duas nacionais saíram em 08/10/2026. A PoderData/Aya foi lida só por um veículo que trazia os votos válidos (53 a 47), e registramos que ela não tinha publicado o total. Tinha: 49 a 44, com 5% de brancos e nulos e 2% de indecisos. Com o total no registro, a PoderData/Aya (n=3.000) vence o desempate contra a Datafolha (n=2.520).
+
+**Alcance.** Só a linha de Lula naquela data. O painel e a daily de 08/10/2026 diziam o mesmo sobre a PoderData/Aya e foram corrigidos em 09/10/2026.
+
+**Prevenção.** Afirmar que uma pesquisa **não** publicou um número é afirmar ausência, e agora isso se confere em mais de um veículo, de preferência um que reproduza a tabela inteira, antes de entrar no registro.
+
+---
+
+## ES
+
+### ERR-2026-004 · `data/divergence-second-round-2026-10-08.csv` · Lula, lado encuesta tomado de la encuesta equivocada
+
+| | Valor |
+|---|---|
+| **Fila afectada** | `2026-10-08,Lula,13.5,45,-31.5,2026-10-08` |
+| **Publicado** | `poll_pct = 45` · `divergence_pp = -31.5` (Datafolha del 08/10/2026, n=2.520) |
+| **Correcto según la regla declarada** | `poll_pct = 44` · `divergence_pp = -30.5` (PoderData/Aya del 08/10/2026, n=3.000) |
+| **Magnitud** | 1 punto en `poll_pct` y en `divergence_pp` |
+| **Filas afectadas** | 1 de 2 en esa fecha. La fila de Flávio Bolsonaro no cambia: las dos encuestas le dieron 49. |
+| **Detectado** | 09/10/2026 |
+| **Estado** | **No reescrito.** El archivo del 08/10/2026 está cerrado. |
+
+**Causa.** La regla elige la encuesta nacional más reciente que publicó el **total de votos** de la segunda vuelta, con desempate por la mayor muestra. El 08/10/2026 salieron dos nacionales. La PoderData/Aya se leyó solo en un medio que traía los votos válidos (53 a 47), y registramos que no había publicado el total. Lo había publicado: 49 a 44, con 5% de votos en blanco y nulos y 2% de indecisos. Con el total en el registro, la PoderData/Aya (n=3.000) gana el desempate frente a la Datafolha (n=2.520).
+
+**Alcance.** Solo la fila de Lula en esa fecha. El panel y la daily del 08/10/2026 decían lo mismo sobre la PoderData/Aya y se corrigieron el 09/10/2026.
+
+**Prevención.** Afirmar que una encuesta **no** publicó un número es afirmar una ausencia, y ahora eso se verifica en más de un medio, de preferencia uno que reproduzca la tabla completa, antes de entrar en el registro.
