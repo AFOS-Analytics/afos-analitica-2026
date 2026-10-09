@@ -147,6 +147,7 @@ jobs:
           node scripts/testar-portao-gravacao-us.mjs
           node scripts/testar-duplicata-us.mjs
           node scripts/testar-fonte-conferida.mjs
+          node scripts/testar-datas-devidas.mjs
           node scripts/testar-historico-us-polls.mjs
           node scripts/testar-rodadas-curadas.mjs
           node scripts/testar-data-corrente-imprensa.mjs

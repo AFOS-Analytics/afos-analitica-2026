@@ -50,6 +50,7 @@ import { execSync } from 'child_process'
 // direção que não congela nada. O `19 * 60 + 30` escrito à mão seguiria
 // afirmando 19:30Z depois de a agenda mudar, e erraria em SILÊNCIO.
 import { FOLGA_MIN, agendaDaRota, ultimoCronDoDia } from '../lib/us-press/data-corrente.mjs'
+import { datasDevidas } from '../lib/us-press/datas-devidas.mjs'
 // 🧭 De quem é cada arquivo modificado. A regra vive fora daqui porque ela
 //    decide se dá para publicar, e regra que decide publicação tem teste.
 import { FAIXA_EUA, faixaDaLinha, caminhoDoStatus } from '../lib/faixa-do-arquivo.mjs'
@@ -151,6 +152,17 @@ console.log(`   vivo x versionado, artefato por artefato. Leitura pura: nada é 
       .sort()
     const ultima = datas.at(-1)
     const atraso = diasEntre(ultima, hoje)
+    // 🕳️ PASTA PRESENTE e VAZIA nao e "em dia", e este caso e defeito MEU,
+    //    achado em 09/Out/2026 pela mutacao: `datasDevidas` devolve lista vazia
+    //    tanto para "nada devido" quanto para "nao da para dizer", e sem esta
+    //    guarda o verde de um saia pelo outro. A versao anterior do bloco caia
+    //    no ramo vermelho por acidente, porque `diasEntre` devolvia NaN e toda
+    //    comparacao com NaN e falsa: saida suja, veredito certo. Ao arrumar a
+    //    lista eu LIMPEI a saida e com ela o acidente que protegia.
+    if (!datas.length) {
+      linha('🔴', 'imprensa', 'pasta de arquivo PRESENTE e VAZIA: nao da para dizer se esta em dia')
+      anota('arquivo de imprensa VAZIO: rodar node scripts/rodada-us-imprensa.mjs --sem-cron')
+    } else {
     // ⏳ A data corrente só nasce depois do último cron do dia mais a folga, e
     //    esse horário vem de `vercel.json` pela regra de `data-corrente.mjs`.
     //    Antes dele, não ter o arquivo de HOJE é o comportamento certo.
@@ -159,17 +171,27 @@ console.log(`   vivo x versionado, artefato por artefato. Leitura pura: nada é 
     const fronteira = fronteiraDaDataCorrente(ROOT)
     const agoraMin = agora.getUTCHours() * 60 + agora.getUTCMinutes()
     const passouDaJanela = fronteira ? agoraMin >= fronteira.minutos : false
-    const esperado = passouDaJanela ? 0 : 1
-    if (atraso <= esperado) linha('✅', 'imprensa', `${datas.length} data(s), a mais recente ${ultima}`)
+    // 📅 QUEM DECIDE e a lista de datas DEVIDAS, nunca o atraso em dias.
+    //    As duas contas diferem, porque o dia corrente adiado entra numa e nao
+    //    na outra, e ate 09/Out/2026 elas DISCORDAVAM na mesma tela: o cabecalho
+    //    dizia "2 dia(s) de atraso" e a lista trazia uma data so, que era a
+    //    ERRADA. A regra mora em `lib/us-press/datas-devidas.mjs`, com teste
+    //    proprio, para nao nascer a segunda copia de uma conta de calendario.
+    const devidas = datasDevidas({ datas, hoje, janelaPassou: passouDaJanela })
+    if (!devidas.length) linha('✅', 'imprensa', `${datas.length} data(s), a mais recente ${ultima}`)
     else {
-      linha('🔴', 'imprensa', `${datas.length} data(s), a mais recente ${ultima} · ${atraso} dia(s) de atraso`)
-      const faltando = []
-      for (let d = 1; d <= atraso - esperado; d++) {
-        const dia = new Date(Date.parse(hoje) - (d - (passouDaJanela ? 0 : 1)) * 86400000).toISOString().slice(0, 10)
-        if (!datas.includes(dia)) faltando.push(dia)
-      }
-      if (faltando.length) console.log(`        faltam: ${faltando.join(', ')}`)
-      anota(`imprensa ${atraso} dia(s) atrás: rodar node scripts/rodada-us-imprensa.mjs --sem-cron`)
+      linha(
+        '🔴',
+        'imprensa',
+        `${datas.length} data(s), a mais recente ${ultima} · ${devidas.length} DEVIDA(s)` +
+          (atraso > devidas.length ? ` (${atraso} dia(s) de atraso, e ${atraso - devidas.length} adiada por desenho)` : '')
+      )
+      console.log(`        faltam: ${devidas.join(', ')}`)
+      anota(
+        `imprensa com ${devidas.length} data(s) devida(s), a mais antiga ${devidas[0]}:` +
+          ` rodar node scripts/rodada-us-imprensa.mjs --sem-cron`
+      )
+    }
     }
     if (!fronteira) {
       console.log(`        ⚠️ agenda do cron da imprensa ILEGÍVEL em vercel.json: contando a janela como FECHADA`)
