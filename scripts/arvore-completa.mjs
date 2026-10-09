@@ -15,18 +15,22 @@
  * A saída é uma árvore de trabalho DESTACADA em `C:/temp`, com o merge de
  * `origin/main`, pronta para medir, construir, publicar e subir dataset.
  *
- * 🔴🔴 E O PERIGO QUE ELE JÁ CAUSOU UMA VEZ, em 09/Out/2026: o `node_modules`
- * entra aqui como JUNCTION do Windows, que é uma PORTA para o diretório real da
- * árvore principal. `git worktree remove --force` ATRAVESSA essa porta e apaga o
- * ALVO, não o link. Foi o que aconteceu: a árvore principal ficou com
- * `node_modules` VAZIO, 0 pastas e sem `.bin`, e nada acusou, porque os comandos
- * que rodei em seguida só usavam builtins do node.
+ * ⚠️ SOBRE A JUNCTION DO `node_modules`, e isto e uma CORRECAO. Em 09/Out/2026
+ * este comentario afirmava que `git worktree remove --force` havia atravessado a
+ * junction e apagado o `node_modules` da arvore principal. **Estava errado.** A
+ * pasta tinha sido DESIDRATADA pelo OneDrive, que gerencia o projeto inteiro:
+ * ReparsePoint 0x9000a01a, e `attrib +P -U` devolveu 561 itens em 15 segundos.
+ * Conteudo apagado nao volta com mudanca de atributo.
  *
- * ✅ Por isso TODA remoção aqui passa por `soltarJunction()` ANTES, que usa
- * `rmdirSync` no ponto de reparse: ele remove o LINK e nunca o alvo. E a criação
- * tem CONTROLE POSITIVO dos dois lados, origem não vazia e `.bin` alcançável no
- * destino, porque junction para pasta vazia é indistinguível de junction boa até
- * a hora em que algo precisa rodar.
+ * ⛔ `node_modules` vazio aqui: tentar `attrib +P -U` ANTES de `npm install`.
+ * O `npm install` conserta sob as duas hipoteses, entao nao distingue nada, e
+ * destroi a evidencia que distinguiria.
+ * → memory/feedback_o_mesmo_sintoma_tinha_duas_causas_e_a_prova_estava_na_outra_faixa
+ *
+ * ✅ O `soltarJunction()` abaixo FICA, mas como guarda PREVENTIVA e nao como
+ * conserto de incidente: apagar recursivamente um diretorio que contem junction
+ * e risco real do Windows, e soltar o link antes custa nada. Ele nao consertou
+ * aquilo, porque aquilo nao foi ele.
  *
  * ⛔ O QUE ELE NÃO FAZ, de propósito: não commita, não empurra, não cria ramo,
  * não roda build nem deploy e NÃO TOCA na árvore principal. Orquestração apenas,
