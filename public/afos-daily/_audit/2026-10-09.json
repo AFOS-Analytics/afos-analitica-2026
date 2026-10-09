@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-09",
+  "edicao": "quinto dia do 2o turno, com AtlasIntel e Vox Brasil e a correcao da PoderData de 08/10, sobre o painel publicado no commit 41228ec6",
+  "refetch": {
+    "certificada": "2026-10-09T17:06:11.170Z",
+    "aoVivo": "2026-10-09T17:22:41Z: Flavio 86,85 (-0,30), Lula 13,50 (0), STF 3,40 (0), total USD 178,53M",
+    "gate": "rebaseline NAO disparou; trava aprovou presidencial e STF"
+  },
+  "factCheck": [
+    { "evento": "Kassio Nunes Marques manda remover video de Janja (Farmacia Popular); Andre Mendonca manda a campanha de Lula tirar publicacoes sobre o corte de R$ 200 bi; decisoes monocraticas, vao ao plenario", "fontes": ["Agencia Brasil 09/10 14:04Z (corpo lido, 'lastro minimo')", "Folha de S.Paulo 09/10 15:21Z (corpo lido)", "G1, UOL e Estadao"], "decisao": "incorporar como 'decisoes individuais publicadas em 09/10'; Folha diz dois videos de Lula e a Agencia Brasil um, por isso 'publicacoes'" },
+    { "evento": "AtlasIntel/Bloomberg 51,1 x 45,7, validos 52,8 x 47,2, n=5.026, campo 03 a 08/10, BR-03663", "fontes": ["Estadao via Tribuna do Norte (corpo lido)", "CNN Brasil e CartaCapital"], "decisao": "incorporar; vai ao grafo pela regra" },
+    { "evento": "Vox Brasil 44,2 x 42,7 (Lula), 9,7 nao sabem, n=2.100, campo 05 a 07/10, BR-09623", "fontes": ["CartaCapital (corpo lido)", "CNN Brasil e Poder360"], "decisao": "incorporar" },
+    { "evento": "Transferencia na AtlasIntel: Cury 50,4 Lula x 38,9 Flavio; Renan 40,3 Flavio x 28,1 Lula; Caiado 54,9 Flavio x 26,9 Lula", "fontes": ["VEJA (corpo lido)", "Estadao via Tribuna do Norte"], "decisao": "incorporar Cury e Caiado" },
+    { "evento": "PoderData/Aya de 08/10 publicou o TOTAL 49 x 44, brancos e nulos 5, indecisos 2", "fontes": ["Jovem Pan (corpo relido em 09/10, BR-08134 no corpo)", "Tribuna do Planalto (manchete)"], "decisao": "incorporar como CORRECAO da edicao de 08/10. Atencao: a Jovem Pan tem OUTRA materia de 08/10 com aprovacao 49 desaprova x 44 aprova; os mesmos numeros, conferido que a de voto e a de intencao de voto" },
+    { "evento": "Quaest 'primeira nacional do 2o turno' no cache de 09/10", "fontes": ["CartaCapital (corpo: divulga em 14/10, BR-08729)"], "decisao": "incorporar como agendamento para 14/10, nao como pesquisa publicada" }
+  ],
+  "adversarial": {
+    "singleSource": [ "Netanyahu liga para Flavio (G1 linkado; O Globo e Gazeta do Povo no cache)" ],
+    "numerical": "reconcile-claims so acusou a aprovacao da AtlasIntel (53,4 e 44,7), fora do JSON e com duas fontes",
+    "correcoes": [
+      "aspas 'lastro minimo' estavam atribuidas a Folha; sao da Agencia Brasil",
+      "'videos' de Lula trocado por 'publicacoes': as fontes divergem em um ou dois videos"
+    ],
+    "links": "16 distintos, 2 ancora e 14 secundarios (88%)",
+    "palavras": "pt 952, en 970, es 1009",
+    "decisao": "prosseguir"
+  },
+  "wayback": "pausa em curso desde o bloqueio de 06/10; pre-check nao sondou; faltam 2 dias"
+}
