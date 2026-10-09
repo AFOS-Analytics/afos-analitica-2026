@@ -397,6 +397,14 @@ Ele roda `build-us-2026-dataset.mjs`, `build-us-2026-metadata.mjs`, o portão de
 - **O portão aprovava sem enxergar.** Qualquer exceção na leitura do HF virava "arquivo NOVO": certificado recusado ou rede caída davam `VEREDITO: APROVADO` e o `subir` seguia sem comparar nada. Agora só o 404 é novo; o resto é `NAO LIDO` e bloqueia.
 - **O certificado de 12/Set foi resolvido à mão e não ficou em lugar nenhum.** O `httpx` do `huggingface_hub` usa o `certifi` e não conhece a raiz local que intercepta TLS no Windows. O script agora monta `certifi` mais as raízes do sistema e aponta `SSL_CERT_FILE`, só no Windows e só se ele não estiver definido. ⛔ Nunca desligar a verificação.
 
+🐍 **E o `python` do PATH pode ser o STUB da Microsoft Store**, medido em 09/Out/2026. Ele imprime *"Python não foi encontrado"* e o orquestrador **para no portão** com `saiu != 0`, o que se lê como defeito do dataset e é ambiente. O interpretador real vive em `AppData\Local\Python\pythoncore-3.14-64`, e o desbloqueio é uma linha antes do comando:
+
+```bash
+export PATH="/cygdrive/c/Users/afos3/AppData/Local/Python/pythoncore-3.14-64:$PATH"
+```
+
+📌 Conferir com `python --version` antes de culpar o portão: `Python 3.14.0` é o real, a mensagem da loja é o stub.
+
 ⚠️ **Linha não é conteúdo:** rotação da imprensa com o mesmo tamanho sai como +0. O +0 prova que chegou, não que é idêntico.
 
 🔴 **E `conferir --exato` SOZINHO não responde "o dataset está em dia?". Régua de 02/Out/2026.**
