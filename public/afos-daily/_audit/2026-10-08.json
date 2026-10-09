@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-08",
+  "edicao": "quarto dia do 2o turno e o primeiro com pesquisa nacional feita depois da urna, sobre o painel publicado no commit ba8c7b24",
+  "refetch": {
+    "certificada": "2026-10-08T23:38:33.169Z",
+    "aoVivo": "2026-10-08T23:50:54Z: Flavio 85,65 (0), Lula 13,50 (0), STF 3,90 (0), total USD 177,95M",
+    "gate": "rebaseline NAO disparou; trava aprovou presidencial e STF (o STF de 07/10 tinha ido ao ar pela regra estrutural, sem dupla leitura)"
+  },
+  "factCheck": [
+    { "evento": "Moraes declara transito em julgado e determina inicio do cumprimento da pena de Eduardo Bolsonaro (4 anos e 2 meses, semiaberto), com banco de mandados, passaportes cancelados e direitos politicos suspensos", "fontes": ["Gazeta do Povo 08/10 21:02Z (corpo lido, decisao citada)", "O Globo 08/10 18:55Z", "Estadao e Valor"], "decisao": "incorporar com 'determinou o inicio do cumprimento da pena', nunca 'preso'; Eduardo mora nos EUA" },
+    { "evento": "Datafolha 49 x 45, validos 52 x 48, n=2.520, campo 06 a 08/10, BR-02949", "fontes": ["Brasil de Fato (corpo lido)", "CartaCapital (corpo lido; campo '6 e 7' e protocolo 'BR-0949' errados contra o registro)", "G1 e Valor"], "decisao": "incorporar; vai ao grafo por ser a unica do dia com o total de votos" },
+    { "evento": "PoderData/Aya so validos 53 x 47, n=3.000, campo 05 a 07/10, BR-08134", "fontes": ["Poder360 (corpo lido)", "Opera Mundi e BPMoney"], "decisao": "incorporar como validos; fora do grafo" },
+    { "evento": "Augusto Cury e Podemos declaram apoio a Flavio; PSDB libera; UP, PSTU e PCB com Lula", "fontes": ["G1, Estadao e CNN Brasil (Cury)", "G1, Folha, Estadao e Poder360 (Podemos)", "Congresso em Foco, O Globo, Estadao e VEJA (PSDB)", "CNN Brasil e G1 (UP, PSTU, PCB)"], "decisao": "incorporar" },
+    { "evento": "AtlasIntel 50,1 x 49,9 e Palver 46 x 46 no cache de 08/10", "fontes": ["Portal Fala News (corpo: onda BR-00999, campo 27/09 a 02/10)", "CNN Brasil (corpo: campo 03 a 07 de AGOSTO, BR-06596)"], "decisao": "NAO incorporar: onda pre-urna e materia de agosto reindexada" }
+  ],
+  "adversarial": {
+    "singleSource": [
+      "50 senadores pro-impeachment (Folha, atribuido)",
+      "Galipolo a PF (Estadao; Folha tambem tem)",
+      "PSTU e PCB com Lula (CNN Brasil, atribuido)"
+    ],
+    "numerical": "gate de traducao 61/61/61; reconcile-claims so acusou pareamento de entidade, validos e rejeicao fora do JSON e os 5,34% calculados (2,89 + 2,18 + 0,27)",
+    "correcoes": [
+      "'o vao abre pelo quarto dia' corrigido para 'terceiro dia seguido': em 05/10 o vao fechou de 68,75 para 66,60, conferido nas dailies publicadas",
+      "rejeicao: cada pesquisa ganhou o proprio link (UOL para a Datafolha, CNN para a PoderData)"
+    ],
+    "links": "20 distintos, 7 ancora e 13 secundarios (65%)",
+    "palavras": "pt 885, en 920, es 946",
+    "decisao": "prosseguir"
+  },
+  "wayback": "pausa de 4 dias em curso desde o 429 de 06/10; o pre-check nao sondou; arquivamento desta daily fica para depois de ~10/10"
+}
