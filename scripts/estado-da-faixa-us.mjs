@@ -159,10 +159,13 @@ console.log(`   vivo x versionado, artefato por artefato. Leitura pura: nada é 
     //    no ramo vermelho por acidente, porque `diasEntre` devolvia NaN e toda
     //    comparacao com NaN e falsa: saida suja, veredito certo. Ao arrumar a
     //    lista eu LIMPEI a saida e com ela o acidente que protegia.
-    if (!datas.length) {
-      linha('🔴', 'imprensa', 'pasta de arquivo PRESENTE e VAZIA: nao da para dizer se esta em dia')
-      anota('arquivo de imprensa VAZIO: rodar node scripts/rodada-us-imprensa.mjs --sem-cron')
-    } else {
+    // 🔴 ESTAS TRES ficam FORA do `if` de propósito, e isto é CONSERTO de um
+    //    defeito meu de 09/Out/2026: ao envolver o bloco no guarda de pasta
+    //    vazia eu as deixei dentro do `else`, e o `if (!fronteira)` logo abaixo
+    //    passou a ler variável fora de escopo. O script ESTOUROU em toda
+    //    execução, e eu não vi porque conferi o conserto com um `grep` da linha
+    //    da imprensa, que fica ACIMA do ponto do estouro.
+    //    ⛔ Conserto de script se confere RODANDO o script inteiro.
     // ⏳ A data corrente só nasce depois do último cron do dia mais a folga, e
     //    esse horário vem de `vercel.json` pela regra de `data-corrente.mjs`.
     //    Antes dele, não ter o arquivo de HOJE é o comportamento certo.
@@ -171,6 +174,10 @@ console.log(`   vivo x versionado, artefato por artefato. Leitura pura: nada é 
     const fronteira = fronteiraDaDataCorrente(ROOT)
     const agoraMin = agora.getUTCHours() * 60 + agora.getUTCMinutes()
     const passouDaJanela = fronteira ? agoraMin >= fronteira.minutos : false
+    if (!datas.length) {
+      linha('🔴', 'imprensa', 'pasta de arquivo PRESENTE e VAZIA: nao da para dizer se esta em dia')
+      anota('arquivo de imprensa VAZIO: rodar node scripts/rodada-us-imprensa.mjs --sem-cron')
+    } else {
     // 📅 QUEM DECIDE e a lista de datas DEVIDAS, nunca o atraso em dias.
     //    As duas contas diferem, porque o dia corrente adiado entra numa e nao
     //    na outra, e ate 09/Out/2026 elas DISCORDAVAM na mesma tela: o cabecalho
