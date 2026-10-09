@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-08",
-  "fetchedAt": "2026-10-08T23:23:58.886Z",
+  "lastUpdate": "2026-10-09",
+  "fetchedAt": "2026-10-09T16:48:01.528Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,7 +47,7 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-08",
+    "desde": "2026-09-09",
     "nPesquisas": 45,
     "tratamentoDoIndeciso": [
       {
@@ -518,6 +518,18 @@
         "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
       },
       {
+        "instituto": "Pew Research Center",
+        "campoInicio": "2026-09-28",
+        "campoFim": "2026-10-04",
+        "amostraTipo": "RV",
+        "dem": 44,
+        "rep": 36,
+        "desde": "2026-09-28",
+        "medidoEm": "2026-10-09",
+        "ressalva": "In the October 2026 survey, candidate names were inserted into the response options based on the respondent’s congressional district",
+        "prova": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/10/PP_2026.10.8_midterms_report.pdf"
+      },
+      {
         "instituto": "The Economist/YouGov",
         "campoInicio": "2026-09-25",
         "campoFim": "2026-09-28",
@@ -548,18 +560,6 @@
         "amostraTipo": "LV",
         "dem": 51,
         "rep": 39,
-        "desde": "2026-09-04",
-        "medidoEm": "2026-09-22",
-        "ressalva": "Asked using the names of candidates running in the respondent’s district of residence",
-        "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
-      },
-      {
-        "instituto": "The Economist/YouGov",
-        "campoInicio": "2026-09-04",
-        "campoFim": "2026-09-08",
-        "amostraTipo": "LV",
-        "dem": 49,
-        "rep": 38,
         "desde": "2026-09-04",
         "medidoEm": "2026-09-22",
         "ressalva": "Asked using the names of candidates running in the respondent’s district of residence",
@@ -607,14 +607,14 @@
     ]
   },
   "qualidade": {
-    "linhasLidas": 473,
-    "publicadas": 486,
+    "linhasLidas": 474,
+    "publicadas": 487,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 473,
+    "doIndice": 474,
     "curadas": 13,
     "curadasDescartadasPorDuplicidade": 17
   },
@@ -691,6 +691,21 @@
       "outros": 7,
       "vantagemDem": 7,
       "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Pew Research Center",
+      "campoInicio": "2026-09-28",
+      "campoFim": "2026-10-04",
+      "amostra": 3917,
+      "amostraTipo": "RV",
+      "margemErro": 1.8,
+      "dem": 44,
+      "rep": 36,
+      "outros": 20,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/10/PP_2026.10.8_midterms_report.pdf",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
