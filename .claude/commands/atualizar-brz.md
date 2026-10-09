@@ -122,6 +122,22 @@ Roda **depois** da trava aprovar e **antes** de escrever qualquer "sobe", "cai" 
 
 Teste: `node scripts/testar-deltas-brz.mjs`, 42 asserções, no CI.
 
+## ETAPA 1.10: O LADO PESQUISA DO GRAFO sai de UM script, com a procedência junto (obrigatória, instalada 05/Out/2026)
+
+```bash
+node scripts/percentage-do-grafo-brz.mjs              # ensaio: régua do 2º TURNO, que é o padrão desde 05/Out
+node scripts/percentage-do-grafo-brz.mjs --aplicar    # grava percentage, pesquisaRange e pollSource JUNTOS
+node scripts/percentage-do-grafo-brz.mjs --casa="Datafolha" --aplicar   # escolha declarada quando duas nacionais do dia discordam
+```
+
+🔴 **Por que é etapa:** o script existia desde 21/Set e este comando nunca o citava. De 28/Set a 04/Out o `percentage` foi gravado pelos aplicadores avulsos de cada rodada, que não gravavam a procedência, e a tela do grafo dizia **"Palver, 24/09"** sobre números da Quaest de 28/Set e depois da Palver de 03/Out. ⛔ **Nenhum aplicador avulso escreve `percentage`, `pesquisaRange` ou `pollSource`.** Os três saem deste script, juntos.
+
+🗳️ **No 2º turno** (padrão; `--turno=1` reproduz a régua antiga): o lado pesquisa é o PAR Lula × Flávio do `secondRound` da nacional mais recente que o mediu, com desempate pela maior amostra. Os eliminados ficam com `percentage: 0`, a convenção de nome não medido, e o filtro `> 0` os tira do grafo (apagar o campo reprova no `check-json-structure`). A faixa é o mínimo e o máximo do par nas nacionais desde 05/Out; antes da primeira, a véspera, e o script diz isso. `pollSource.round: 2` faz o export do HF gravar `divergence-second-round-AAAA-MM-DD.csv`, sem misturar com a série do 1º turno.
+
+📏 **O par do grafo é sempre TOTAL de votos, instalado em 08/Out/2026.** Naquele dia saíram as duas primeiras nacionais pós-urna: Datafolha (n=2.520) com o total, 49 a 45, e PoderData/Aya (n=3.000) só com válidos, 53 a 47. O desempate pela maior amostra escolheria a PoderData e poria um número de VÁLIDOS ao lado de uma série de TOTAIS, e o vão contra o mercado mudaria só pela troca de base. ⛔ **Nacional que publica só válidos entra no `polls-data` com `secondRound: []` e os válidos escritos na `note`**, e por isso o script nem a enxerga; a nacional com total do dia vai por `--casa=`, com o motivo declarado na tela. O desempate por amostra vale só entre as que publicaram o total.
+
+🗳️ **Livro resolvido:** desde 05/Out a trava (ETAPA 1.7) pula contrato com `closed: true`, e o livro em que todos os contratos fecharam sai em `livrosResolvidos`, fora da certificação (2º e 3º lugar e Senado, resolvidos no 1º turno). Livro sem contrato nenhum, nem aberto nem fechado, **bloqueia**: é o leitor que falhou. O `deltas-brz` só dá base a livro que tem leitura agora.
+
 ## ETAPA 2: Coleta de notícias (Google News RSS)
 
 **OBRIGATÓRIO — usar `scripts/fetch-google-news.mjs`** (não usar WebFetch direto). Implementado em 07/Mai/2026 após incidente daily 06/Mai. Razão: WebFetch processa o RSS retornando texto resumido, descartando o campo `<link>` que contém URL primária. O script usa `curl`-equivalente nativo Node, parseia XML completo, e salva cache `public/news-cache/{YYYY-MM-DD}.json` com URLs primárias preservadas (Google News redirect → matéria do veículo, funciona até para veículos com anti-bot).
@@ -430,6 +446,8 @@ npx tsx scripts/traduzir-dashboard-brz.ts --mapa=en.json --mapa=es.json   # um m
 📝 **Desde 25/Set/2026 o insumo sai do próprio script** (`--insumo=`), e não mais de regex sobre a listagem de texto. Ele traz o pt-BR do dia e a tradução de HEAD **no mesmo caminho, só como referência de estilo**: o texto mudou, e copiar a referência publica a frase de ontem. Os mapas voltam no formato de sempre, um arquivo por idioma, e `--mapa=` repetido os junta sem um apagar o outro.
 
 Ele **herda a tradução de tudo que não mudou desde o `HEAD`** e **cobra pelo nome** só o que mudou. Medido na estreia: dos 117 textos da `analysis-criteriosa`, 70 tinham mudado e 47 eram idênticos aos de ontem. Ao todo herdou **177 campos por idioma** e cobrou 115.
+
+🧭 **E a BASE da herança tem de ser o que está PUBLICADO, instalado em 06/Out/2026.** Com o `main` local divergente do `origin` (commits de outra faixa por enviar) e a publicação saindo por worktree limpo, o `HEAD` local guarda o painel de ANTES: naquele dia ele cobrou 69 campos na `criteriosa` onde a rodada mexeu em 21, com a referência de estilo de 04/Out. O script agora AVISA quando o `HEAD` não contém o `origin/main`, e a saída é `git fetch` e rodar com `--base=origin/main`; o `npm run glossario:brz -- --base=origin/main` usa a mesma base.
 
 ⛔ **Ele NÃO traduz.** Herda, cobra, confere e escreve. A tradução continua sendo feita **na sessão**, que é como a tradução do AFOS sempre foi feita. O mapa é `{ arquivo: { caminho: { en, es } } }`.
 

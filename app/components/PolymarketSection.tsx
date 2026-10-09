@@ -32,6 +32,33 @@ export function PolymarketSection({ poly, loading }: Props) {
       </Card>
     );
 
+    // 🗳️ LIVRO RESOLVIDO, 05/Out/2026. Com todos os contratos fechados, o filtro
+    // abaixo esvazia o cartão e ele ia ao ar só com título e volume, sem barra
+    // nenhuma (2º e 3º lugar e Senado, no dia seguinte ao 1º turno). Agora o
+    // cartão diz que o livro resolveu e qual foi o desfecho.
+    if (event.markets.every(m => m.closed)) {
+      const venc = event.markets.find(m => Array.isArray(m.outcomePrices) && Number(m.outcomePrices[0]) >= 0.99);
+      const vol = event.markets.reduce((s, m) => s + (m.volumeNum || 0), 0);
+      const L = (pt: string, en: string, es: string) => (locale === 'en' ? en : locale === 'es' ? es : pt);
+      const url = /^[a-z0-9-]+$/.test(event.slug || '') ? `${POLYMARKET_BASE}${event.slug}` : null;
+      return (
+        <Card className="mb-4 opacity-90">
+          <div className="flex flex-wrap justify-between items-center mb-2 gap-2">
+            {url ? (
+              <a href={url} target="_blank" rel="noopener noreferrer" className="font-bold text-lg text-dark hover:text-primary transition-colors">{title} <span className="text-xs text-gray-400">↗</span></a>
+            ) : <h3 className="font-bold text-lg text-dark">{title}</h3>}
+            <span className="text-[11px] font-semibold rounded px-2 py-0.5 bg-gray-100 text-gray-600">{L('resolvido', 'resolved', 'resuelto')}</span>
+          </div>
+          <p className="text-sm text-dark">
+            {venc
+              ? <>{L('Desfecho', 'Outcome', 'Desenlace')}: <strong>{extractCandidateName(venc.question)}</strong></>
+              : L('Todos os contratos fechados.', 'All contracts closed.', 'Todos los contratos cerrados.')}
+          </p>
+          {vol > 0 && <p className="text-xs text-gray-500 mt-1">{t('sections.volume')}: {fmtVolumeUsd(vol, locale)}</p>}
+        </Card>
+      );
+    }
+
     const items: { name: string; odds: number; vol: number }[] = [];
     event.markets.forEach(m => {
       if (m.closed) return;
@@ -91,14 +118,36 @@ export function PolymarketSection({ poly, loading }: Props) {
           {t('sections.polymarketDesc')}
         </p>
       </div>
-      <div className="grid md:grid-cols-2 gap-4">
-        {renderMarkets(poly?.presidential, `🏆 ${t('sections.presidential')}`, 10)}
-        {renderMarkets(poly?.secondPlace, `🥈 ${t('sections.secondPlace')}`, 8)}
-        {renderMarkets(poly?.thirdPlace, `🥉 ${t('sections.thirdPlace')}`, 8)}
-        {renderMarkets(poly?.stf, `⚖️ ${t('sections.stfMarket')}`)}
-        {renderMarkets(poly?.senate, `🏛️ ${t('sections.senate')}`, 8)}
-        {renderMarkets(poly?.inflation, `📈 ${t('sections.inflation')}`)}
-      </div>
+      {(() => {
+        const livros: [PolyEvent | null | undefined, string, number?][] = [
+          [poly?.presidential, `🏆 ${t('sections.presidential')}`, 10],
+          [poly?.stf, `⚖️ ${t('sections.stfMarket')}`],
+          [poly?.inflation, `📈 ${t('sections.inflation')}`],
+          [poly?.secondPlace, `🥈 ${t('sections.secondPlace')}`, 8],
+          [poly?.thirdPlace, `🥉 ${t('sections.thirdPlace')}`, 8],
+          [poly?.senate, `🏛️ ${t('sections.senate')}`, 8],
+        ];
+        const resolvido = (e: PolyEvent | null | undefined) => !!e?.markets?.length && e.markets.every(m => m.closed);
+        const vivos = livros.filter(([e]) => !resolvido(e));
+        const fechados = livros.filter(([e]) => resolvido(e));
+        return (
+          <>
+            <div className="grid md:grid-cols-2 gap-4">
+              {vivos.map(([e, titulo, n]) => <div key={titulo}>{renderMarkets(e, titulo, n)}</div>)}
+            </div>
+            {fechados.length > 0 && (
+              <>
+                <h3 className="font-semibold text-sm text-gray-600 mt-2 mb-3">
+                  {locale === 'en' ? 'Books resolved in the first round' : locale === 'es' ? 'Libros resueltos en la primera vuelta' : 'Livros resolvidos no 1º turno'}
+                </h3>
+                <div className="grid md:grid-cols-3 gap-4">
+                  {fechados.map(([e, titulo, n]) => <div key={titulo}>{renderMarkets(e, titulo, n)}</div>)}
+                </div>
+              </>
+            )}
+          </>
+        );
+      })()}
     </section>
   );
 }

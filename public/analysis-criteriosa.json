@@ -1,164 +1,165 @@
 {
-  "updatedAt": "04/10/2026, 21:43",
-  "subtitle": "Cruzamento de 04/Out/2026, noite do 1º turno: Polymarket na leitura confirmada de 04/Out, 21:43 BRT, a parcial oficial do TSE das 21:44 BRT (99,59% das seções totalizadas), as nove pesquisas nacionais divulgadas em 03/Out e o fluxo de imprensa de 03 e 04/Out.",
+  "updatedAt": "08/10/2026, 20:38",
+  "subtitle": "Cruzamento de 08/Out/2026, quarto dia do 2º turno: Polymarket na leitura confirmada de 08/Out, 20:38 BRT, as primeiras nacionais depois da urna (Datafolha e PoderData/Aya), a totalização oficial do TSE do 1º turno e o fluxo de imprensa de 07 e 08/Out.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PREÇO: 15,50% (vol USD 16,52M acumulado) no contrato de vencedor, queda de 20,00pp no cru e de 19,94pp no normalizado, leitura confirmada de 04/Out, 21:43 BRT. APURAÇÃO: 45,06% dos votos válidos na parcial oficial do TSE das 21:44 BRT, com 99,59% das seções totalizadas. PESQUISA: liderava o 1º turno em cinco das nove nacionais de 03/Out.",
+      "header": "PREÇO: 13,50% (vol USD 21,00M acumulado) no contrato de vencedor, leitura confirmada de 08/Out, 20:38 BRT, cai 1,00pp contra a leitura confirmada de 07/Out às 17:35 BRT, publicada na rodada anterior. URNA: 45,16% dos votos válidos no 1º turno. PESQUISA: 45% na Datafolha de 08/Out e 47% dos válidos na PoderData/Aya.",
       "fortes": [
-        "Liderava o 1º turno em cinco das nove nacionais de 03/Out: Datafolha, Quaest, PoderData, CNT/MDA e AtlasIntel, que dá 46,7% a 43,8% nos votos totais.",
-        "Liderava o 2º turno na Datafolha, 47% a 46%, na CNT/MDA, 47,3% a 43,1%, e na AtlasIntel, 47,6% a 47,4%, e empatava em 46% na PoderData."
+        "A Datafolha de 08/Out registra 43% de rejeição a Flávio Bolsonaro, perto dos 46% dele, e a diferença no 2º turno, de 4 pontos, fica no limite da margem de 2 pontos para cada lado.",
+        "🏆 Contando os contratos fechados, o contrato dele segue sendo o de maior volume acumulado do livro presidencial, USD 21,00M."
       ],
       "fracos": [
-        "Cai 20,00pp no contrato de vencedor, para 15,50%, 19,00pp abaixo do piso gravado da série, e o vão de flávio bolsonaro sobre lula vai de 29,05pp para 68,75pp.",
-        "Tem 45,06% dos votos válidos na parcial oficial do TSE das 21:44 BRT, atrás de Flávio Bolsonaro, com 99,59% das seções totalizadas.",
+        "Está em 13,50% no contrato de vencedor, leitura confirmada de 08/Out, 20:38 BRT, e o vão de Flávio Bolsonaro sobre ele é de 72,15pp.",
+        "Na Datafolha de 08/Out tem 45% contra 49% no 2º turno, e 46% dizem que não votam nele; nos válidos, 48% a 52%.",
+        "Terminou o 1º turno 1,87 ponto atrás de Flávio Bolsonaro, com 45,16% dos votos válidos contra 47,03%.",
         "Na Quaest de 03/Out a aprovação do governo foi de 46% para 44%, com 49% de desaprovação."
       ],
-      "analise": "Lula caiu 20,00pp no contrato de vencedor, para 15,50% (vol USD 16,52M acumulado), na leitura confirmada de 04/Out, 21:43 BRT, durante a apuração, e 19,94pp no normalizado; o preço dele fica 19,00pp abaixo do piso gravado da série. 🗳️ Na parcial oficial do TSE das 21:44 BRT de 04/Out, com 99,59% das seções totalizadas, Flávio Bolsonaro tem 47,12% dos votos válidos para presidente e Lula 45,06%, seguidos por Augusto Cury, com 2,89%, Ronaldo Caiado, com 2,19%, e Renan Santos, com 2,25%. Às 20:58 o TSE marcou o resultado presidencial como matematicamente definido: Flávio Bolsonaro e Lula vão ao 2º turno, marcado para 25/Out (Agência Brasil). Nas nove nacionais de 03/Out ele liderava o 1º turno em cinco. ⛔ O painel não atribui o preço à apuração nem às pesquisas: mede os lados com o carimbo de hora de cada um."
+      "analise": "Lula está em 13,50% no contrato de vencedor (vol USD 21,00M acumulado), leitura confirmada de 08/Out, 20:38 BRT, e cai 1,00pp contra a leitura confirmada de 07/Out às 17:35 BRT, publicada na rodada anterior. 🗳️ Teve 45,16% dos votos válidos no 1º turno. 📊 Na Datafolha de 08/Out tem 45% contra 49% de Flávio Bolsonaro, depois de liderar por 47% a 46% na rodada de 03/Out, feita antes da urna, e na PoderData/Aya tem 47% dos válidos. Depois da Datafolha, Lula disse que não avalia pesquisas e que a obrigação dele é trabalhar por mais votos (O Globo e Valor), e criticou o plano de ajuste fiscal de Flávio Bolsonaro (Folha de S.Paulo, O Globo e Estadão). Recebeu o apoio da UP, do PSTU e do PCB (CNN Brasil e G1). ⛔ O painel não atribui o preço às pesquisas nem à agenda: mede os lados com o carimbo de hora de cada um."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PREÇO: 84,25% (vol USD 16,11M acumulado) no contrato de vencedor, alta de 19,70pp no cru e de 19,94pp no normalizado, leitura confirmada de 04/Out, 21:43 BRT. APURAÇÃO: 47,12% dos votos válidos na parcial oficial do TSE das 21:44 BRT, com 99,59% das seções totalizadas. PESQUISA: liderava o 1º turno em quatro das nove nacionais de 03/Out.",
+      "header": "PREÇO: 85,65% (vol USD 18,50M acumulado) no contrato de vencedor, leitura confirmada de 08/Out, 20:38 BRT, sobe 0,70pp contra a leitura confirmada de 07/Out às 17:35 BRT, publicada na rodada anterior. URNA: 47,03% dos votos válidos no 1º turno. PESQUISA: 49% a 45% na Datafolha de 08/Out e 53% a 47% dos válidos na PoderData/Aya. APOIOS: Podemos e Augusto Cury em 08/Out.",
       "fortes": [
-        "Sobe 19,70pp no contrato de vencedor, para 84,25%, 20,95pp acima do topo gravado da série, 63,30% de 01/Out.",
-        "Tem 47,12% dos votos válidos na parcial oficial do TSE das 21:44 BRT, com 99,59% das seções totalizadas.",
-        "Liderava o 1º turno na Palver, na Futura e nas duas rodadas da Gerp de 03/Out, e o 2º turno na Palver, na Gerp, na Futura e na Quaest.",
-        "⭐ Na Quaest de 28/Set a transferência de voto dos outros nomes no 2º turno o favorece: 81% dos eleitores de Romeu Zema, 48% dos de Renan Santos, 42% dos de Ronaldo Caiado e 34% dos de Augusto Cury iriam para ele (O Globo)."
+        "Terminou o 1º turno à frente, com 47,03% dos votos válidos contra 45,16% de Lula, na totalização do TSE.",
+        "Está em 85,65% no contrato de vencedor, leitura confirmada de 08/Out, 20:38 BRT.",
+        "Lidera as duas primeiras nacionais depois da urna: 49% a 45% na Datafolha e 53% a 47% dos válidos na PoderData/Aya (G1, Valor e Poder360).",
+        "Recebeu o apoio do Podemos e de Augusto Cury em 08/Out (G1, Estadão e CNN Brasil), depois de Novo, ACM Neto, PP, União Brasil, Ronaldo Caiado, Romeu Zema e Michel Temer.",
+        "⭐ Na Quaest de 28/Set, a transferência no 2º turno favorecia Flávio Bolsonaro entre os eleitores de Romeu Zema (81%), Renan Santos (48%), Ronaldo Caiado (42%) e Augusto Cury (34%) (O Globo)."
       ],
       "fracos": [
-        "Ficava atrás no 1º turno em cinco das nove nacionais de 03/Out, com a maior distância na CNT/MDA, 38% a 43,1%.",
+        "Na Datafolha de 08/Out, 43% dizem que não votam nele, e a vantagem de 4 pontos fica no limite da margem de 2 pontos para cada lado.",
         "🏦 Segundo O Globo, a Polícia Federal investiga, no inquérito sobre Daniel Vorcaro e a relação do Master com o BRB, o financiamento de R$ 3,1 milhões do banco a Flávio Bolsonaro para a compra de uma mansão de R$ 6 milhões em Brasília; ele diz que a transação foi legal, e o registro é de um grupo só e entra aqui atribuído.",
-        "📰 Mensagens extraídas do celular de Daniel Vorcaro e divulgadas pelo Estadão em 24/Set mostram quatro tentativas de contato dele com o banqueiro entre 13 e 16 de novembro de 2025, nos dias anteriores à prisão de Vorcaro, em 17 de novembro de 2025. A Gazeta do Povo confirmou a veracidade dos diálogos com fontes próprias à investigação. Parte das conversas trata do financiamento do filme Dark Horse, e ele confirmou um diálogo de setembro de 2025 sobre isso citando um contrato de financiamento particular que não foi apresentado publicamente."
+        "📰 Mensagens extraídas do celular de Daniel Vorcaro e divulgadas pelo Estadão em 24/Set mostram quatro tentativas de contato dele com o banqueiro entre 13 e 16 de novembro de 2025, nos dias anteriores à prisão de Vorcaro, em 17 de novembro de 2025. A Gazeta do Povo confirmou a veracidade dos diálogos com fontes próprias à investigação."
       ],
-      "analise": "Flávio Bolsonaro subiu 19,70pp no contrato de vencedor, para 84,25% (vol USD 16,11M acumulado), na leitura confirmada de 04/Out, 21:43 BRT, durante a apuração, e 19,94pp no normalizado; o preço dele fica 20,95pp acima do topo gravado da série. 🗳️ Na parcial oficial do TSE das 21:44 BRT de 04/Out, com 99,59% das seções totalizadas, Flávio Bolsonaro tem 47,12% dos votos válidos para presidente e Lula 45,06%, seguidos por Augusto Cury, com 2,89%, Ronaldo Caiado, com 2,19%, e Renan Santos, com 2,25%. Às 20:58 o TSE marcou o resultado presidencial como matematicamente definido: Flávio Bolsonaro e Lula vão ao 2º turno, marcado para 25/Out (Agência Brasil). Nas nove nacionais de 03/Out ele liderava o 1º turno em quatro. ⛔ O painel não atribui o preço à apuração nem às pesquisas: mede os lados com o carimbo de hora de cada um."
+      "analise": "Flávio Bolsonaro está em 85,65% no contrato de vencedor (vol USD 18,50M acumulado), leitura confirmada de 08/Out, 20:38 BRT, e sobe 0,70pp contra a leitura confirmada de 07/Out às 17:35 BRT, publicada na rodada anterior. 🗳️ Teve 47,03% dos votos válidos no 1º turno. 📊 As primeiras nacionais depois da urna saíram em 08/Out. Na Datafolha, com campo de 06 a 08/Out e 2.520 entrevistas, Flávio Bolsonaro tem 49% e Lula 45% no 2º turno, com 5% de brancos, nulos e nenhum e 1% de indecisos; nos válidos, 52% a 48% (G1, Valor, CartaCapital e Brasil de Fato). Na PoderData/Aya, com campo de 05 a 07/Out e 3.000 entrevistas, Flávio Bolsonaro tem 53% e Lula 47% dos votos válidos, e a divulgação não traz o total (Poder360). Nas duas, 46% dizem que não votam em Lula e 43% que não votam em Flávio Bolsonaro. 🤝 O Podemos confirmou apoio a Flávio Bolsonaro em 08/Out (G1, Folha de S.Paulo, Estadão e Poder360), e Augusto Cury, terceiro colocado no 1º turno, declarou apoio a ele no mesmo dia (G1, Estadão e CNN Brasil). Antes vieram Novo, ACM Neto, PP, União Brasil, Ronaldo Caiado, Romeu Zema e Michel Temer. O PSDB liberou os filiados no 2º turno (Congresso em Foco e Times Brasil). Lula recebeu o apoio da UP, do PSTU e do PCB (CNN Brasil e G1), e Renan Santos segue sem apoiar ninguém e negou aproximação com Lula (CNN Brasil e O Globo). Flávio Bolsonaro disse que a PEC do fim da reeleição pode estender o mandato dele para cinco anos se for eleito (G1 e O Globo) e que pretende incluir o Brasil no Escudo das Américas de Donald Trump (Poder360 e Diário do Poder). ⚖️ Em 08/Out, Alexandre de Moraes declarou o trânsito em julgado da ação contra Eduardo Bolsonaro por coação no curso do processo e determinou o início do cumprimento da pena de 4 anos e 2 meses em regime inicial semiaberto, com o nome dele no banco nacional de mandados de prisão, o cancelamento dos passaportes e a suspensão dos direitos políticos (Gazeta do Povo, O Globo, Estadão e Valor). Eduardo Bolsonaro mora nos Estados Unidos e chamou a decisão de arbitrária (Gazeta do Povo e VEJA), e Flávio Bolsonaro pediu que Moraes renuncie (Estadão e O Globo). ⛔ O painel não atribui o preço às pesquisas nem aos apoios: mede os lados com o carimbo de hora de cada um."
     },
     {
       "rank": "3",
       "name": "Augusto Cury",
       "party": "Avante",
       "color": "#0891B2",
-      "header": "PREÇO: 0,05% no contrato de vencedor (vol USD 5,30M acumulado), leitura confirmada de 04/Out, 21:43 BRT. APURAÇÃO: 2,89% dos votos válidos na parcial oficial do TSE das 21:44 BRT. PESQUISA: de 1% na Palver a 4% na Gerp nas nacionais de 03/Out.",
+      "header": "ELIMINADO NO 1º TURNO: terceiro colocado, com 2,89% dos votos válidos na totalização do TSE. PREÇO: contrato de vencedor fechado e resolvido em zero, com USD 5,51M acumulados. 2º TURNO: declarou apoio a Flávio Bolsonaro em 08/Out (G1, Estadão e CNN Brasil).",
       "fortes": [
-        "Tem 2,89% dos votos válidos na parcial oficial do TSE das 21:44 BRT, com 99,59% das seções totalizadas.",
-        "Era o terceiro colocado do 1º turno na CNT/MDA, na Gerp e na Futura de 03/Out."
+        "Terminou em terceiro, com 2,89% dos votos válidos, à frente de Renan Santos e Ronaldo Caiado.",
+        "O livro de 3º lugar do 1º turno foi resolvido a favor dele."
       ],
       "fracos": [
-        "Na mesma leitura, o livro de 2º lugar do 1º turno pagava 99,85% por Lula e o de 3º lugar 99,85% por Augusto Cury, a mesma ordem do resultado do TSE.",
-        "No contrato de vencedor ele segue no piso do livro, 0,05%, e paga menos que o volume acumulado dele sugeriria, USD 5,02M."
+        "Está fora do 2º turno, e o contrato dele no livro de vencedor foi resolvido em zero.",
+        "Na véspera o livro de 3º lugar pagava mais por Renan Santos, 47,50%, e por Ronaldo Caiado, 30,00%, do que por ele, 23,70%."
       ],
-      "analise": "Augusto Cury está no piso do livro de vencedor, 0,05% (vol USD 5,30M acumulado), na leitura confirmada de 04/Out, 21:43 BRT. 🗳️ Na parcial oficial do TSE das 21:44 BRT, com 99,59% das seções totalizadas, tem 2,89% dos votos válidos. Na mesma leitura, o livro de 2º lugar do 1º turno pagava 99,85% por Lula e o de 3º lugar 99,85% por Augusto Cury, a mesma ordem do resultado do TSE."
+      "analise": "Augusto Cury terminou o 1º turno em terceiro, com 2,89% dos votos válidos na totalização do TSE, e está fora do 2º turno. O contrato dele no livro de vencedor foi fechado pela Polymarket depois do 1º turno e resolvido em zero, com USD 5,51M acumulados. O livro de 3º lugar do 1º turno, que na véspera pagava 23,70% por ele, às 23:00 UTC de 03/Out, foi resolvido a favor dele. 🤝 Em 08/Out declarou apoio a Flávio Bolsonaro no 2º turno (G1, Estadão e CNN Brasil)."
     },
     {
       "rank": "4",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PREÇO: 0,05% (vol USD 17,10M acumulado) no contrato de vencedor, leitura confirmada de 04/Out, 21:43 BRT. APURAÇÃO: 2,25% dos votos válidos na parcial oficial do TSE das 21:44 BRT. PESQUISA: 7% na Palver de 03/Out, em terceiro, e de 1,5% a 4,6% nas outras nacionais do dia.",
+      "header": "ELIMINADO NO 1º TURNO: quarto colocado, com 2,24% dos votos válidos na totalização do TSE. PREÇO: contrato de vencedor fechado e resolvido em zero, com USD 17,12M acumulados. 2º TURNO: não apoia nenhum dos dois.",
       "fortes": [
-        "🏆 O contrato dele no livro de vencedor segue sendo o de MAIOR volume acumulado do presidencial, USD 17,10M contra USD 16,52M do de Lula.",
-        "Era o terceiro colocado do 1º turno na Palver de 03/Out, com 7%, e na AtlasIntel, com 4,6%."
+        "Terminou em quarto, com 2,24% dos votos válidos, à frente de Ronaldo Caiado, com 2,18%.",
+        "O contrato dele no livro de vencedor fechou com USD 17,12M acumulados, o segundo maior do livro presidencial."
       ],
       "fracos": [
-        "Tem 2,25% dos votos válidos na parcial oficial do TSE das 21:44 BRT, com 99,59% das seções totalizadas.",
-        "Na mesma leitura, o livro de 2º lugar do 1º turno pagava 99,85% por Lula e o de 3º lugar 99,85% por Augusto Cury, a mesma ordem do resultado do TSE."
+        "Está fora do 2º turno, e o contrato dele no livro de vencedor foi resolvido em zero.",
+        "Na véspera o livro de 3º lugar pagava 47,50% por ele, e o 3º lugar ficou com Augusto Cury."
       ],
-      "analise": "Renan Santos caiu para o piso do livro de vencedor, 0,05%, na leitura confirmada de 04/Out, 21:43 BRT, e o contrato dele segue sendo o de maior volume acumulado do presidencial, USD 17,10M. 🗳️ Na parcial oficial do TSE das 21:44 BRT, com 99,59% das seções totalizadas, tem 2,25% dos votos válidos. Na mesma leitura, o livro de 2º lugar do 1º turno pagava 99,85% por Lula e o de 3º lugar 99,85% por Augusto Cury, a mesma ordem do resultado do TSE."
+      "analise": "Renan Santos terminou o 1º turno em quarto, com 2,24% dos votos válidos na totalização do TSE, e está fora do 2º turno. O contrato dele no livro de vencedor foi fechado pela Polymarket depois do 1º turno e resolvido em zero, com USD 17,12M acumulados, o segundo maior do livro presidencial, atrás do de Lula. Na véspera o livro de 3º lugar pagava 47,50% por ele, às 23:00 UTC de 03/Out, e foi resolvido a favor de Augusto Cury. 🤝 Na noite de 04/Out disse que não apoia nenhum dos dois no 2º turno e liberou a militância do Missão (Gazeta do Povo e Agência Brasil)."
     },
     {
       "rank": "5",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PREÇO: Ronaldo Caiado, Romeu Zema e Fernando Haddad no piso do livro de vencedor, 0,05%, leitura confirmada de 04/Out, 21:43 BRT. APURAÇÃO: Caiado tem 2,19% dos votos válidos e Zema 0,27% na parcial oficial do TSE das 21:44 BRT.",
-      "subtitle": "Os três nomes fora do pelotão de frente, na leitura confirmada de 04/Out, 21:43 BRT, com a parcial oficial do TSE das 21:44 BRT (99,59% das seções totalizadas).",
+      "header": "ELIMINADOS NO 1º TURNO: Ronaldo Caiado, com 2,18% dos votos válidos, e Romeu Zema, com 0,27%, na totalização do TSE. Fernando Haddad não disputou a Presidência. PREÇO: os três contratos de vencedor foram fechados e resolvidos em zero.",
+      "subtitle": "Os três nomes fora do pelotão de frente, com a totalização do TSE do 1º turno (100% das seções) e o fechamento dos contratos de vencedor depois do 1º turno.",
       "caiado": {
-        "label": "CAIADO (PSD), 0,05% no contrato de VENCEDOR, leitura confirmada de 04/Out, 21:43 BRT, com USD 7,81M acumulados. Tem 2,19% dos votos válidos na parcial oficial do TSE das 21:44 BRT. Nas nacionais de 03/Out ia de 1% a 4%.",
-        "fortes": "Tem 2,19% dos votos válidos na parcial oficial do TSE das 21:44 BRT. Era o terceiro colocado do 1º turno na Datafolha de 03/Out, com 4%.",
-        "fracos": "Está no piso do livro de vencedor, 0,05%. Na mesma leitura, o livro de 2º lugar do 1º turno pagava 99,85% por Lula e o de 3º lugar 99,85% por Augusto Cury, a mesma ordem do resultado do TSE."
+        "label": "CAIADO (PSD), eliminado no 1º turno com 2,18% dos votos válidos na totalização do TSE. O contrato de vencedor dele foi fechado e resolvido em zero, com USD 7,82M acumulados.",
+        "fortes": "Declarou apoio a Flávio Bolsonaro em Goiânia em 06/Out, com o governador Daniel Vilela (O Globo e VEJA).",
+        "fracos": "Ficou em quinto, atrás de Renan Santos, e o PSD decidiu pela neutralidade no 2º turno (Folha de S.Paulo e Agência Brasil)."
       },
       "haddad": {
-        "label": "HADDAD (PT), 0,05% no contrato de VENCEDOR, leitura confirmada de 04/Out, 21:43 BRT, no piso do livro, com USD 7,74M acumulados. Não é candidato à Presidência: disputou o governo de São Paulo e perdeu para Tarcísio de Freitas no 1º turno.",
-        "fortes": "O contrato dele não se moveu nesta leitura, então não há movimento a explicar, e o topo da série dele no contrato de vencedor é de 7,60%, em 26/Mai, medido no backup do banco.",
-        "fracos": "Não é medido no 1º turno por nenhuma das seis nacionais do dia nem testado em par de 2º turno, então a comparação entre preço e pesquisa não existe para ele nesta rodada. O contrato de vencedor dele acumula USD 7,55M, volume maior que o de Augusto Cury, que é testado nas seis casas e tem USD 5,02M."
+        "label": "HADDAD (PT), não disputou a Presidência: disputou o governo de São Paulo e perdeu para Tarcísio de Freitas no 1º turno. O contrato de vencedor dele foi fechado e resolvido em zero, com USD 7,74M acumulados.",
+        "fortes": "O topo da série dele no contrato de vencedor foi de 7,60%, em 26/Mai, medido no backup do banco.",
+        "fracos": "Não foi medido por nenhuma nacional em cenário presidencial nem em par de 2º turno."
       },
       "zema": {
-        "label": "ZEMA (Novo), 0,05% no contrato de VENCEDOR, leitura confirmada de 04/Out, 21:43 BRT, com USD 7,74M acumulados. Tem 0,27% dos votos válidos na parcial oficial do TSE das 21:44 BRT.",
-        "fortes": "⭐ Na Quaest de 28/Set, 81% dos eleitores dele iriam para Flávio Bolsonaro no 2º turno, a maior transferência entre os nomes medidos.",
-        "fracos": "Tem 0,27% dos votos válidos na parcial oficial do TSE das 21:44 BRT, e está no piso do livro de vencedor, 0,05%."
+        "label": "ZEMA (Novo), eliminado no 1º turno com 0,27% dos votos válidos na totalização do TSE. O contrato de vencedor dele foi fechado e resolvido em zero, com USD 7,74M acumulados.",
+        "fortes": "⭐ Na Quaest de 28/Set, 81% dos eleitores dele iriam para Flávio Bolsonaro no 2º turno, a maior transferência entre os nomes medidos (O Globo).",
+        "fracos": "Teve 0,27% dos votos válidos. Declarou voto em Flávio Bolsonaro em 05/Out, e o Novo declarou apoio a ele em 07/Out (G1 e CartaCapital)."
       },
-      "analise": "Ronaldo Caiado, Romeu Zema e Fernando Haddad estão no piso do livro de vencedor, 0,05%, na leitura confirmada de 04/Out, 21:43 BRT. 🗳️ Na parcial oficial do TSE das 21:44 BRT, com 99,59% das seções totalizadas, Caiado tem 2,19% dos votos válidos e Zema 0,27%. Haddad disputou o governo de São Paulo, não a Presidência, e perdeu para Tarcísio de Freitas no 1º turno. Na mesma leitura, o livro de 2º lugar do 1º turno pagava 99,85% por Lula e o de 3º lugar 99,85% por Augusto Cury, a mesma ordem do resultado do TSE.",
+      "analise": "🗳️ Ronaldo Caiado terminou o 1º turno em quinto, com 2,18% dos votos válidos, e Romeu Zema teve 0,27%, na totalização do TSE. Fernando Haddad disputou o governo de São Paulo, não a Presidência. Os três contratos no livro de vencedor foram fechados pela Polymarket e resolvidos em zero. 🤝 Romeu Zema declarou voto em Flávio Bolsonaro na noite de 05/Out (G1 e Folha de S.Paulo), e o Novo, partido dele, declarou apoio em 07/Out (G1 e CartaCapital). Ronaldo Caiado declarou apoio a Flávio Bolsonaro em Goiânia em 06/Out (O Globo e VEJA), mesmo com o PSD neutro no 2º turno (Folha de S.Paulo e Agência Brasil).",
       "fortes": [
-        "⭐ Na Futura de 24/Set os dois aparecem à frente de Lula em par de 2º turno: Ronaldo Caiado por 46,5% a 42,4% e Romeu Zema por 43,8% a 43,3%.",
-        "Ronaldo Caiado subiu de 4,5% para 5,7% no 1º turno da Futura de 24/Set e passou Augusto Cury.",
-        "No recorte estadual da Datafolha de 25/Set, Ronaldo Caiado tem 9% no Distrito Federal e Romeu Zema 4% em Minas Gerais (G1)."
+        "Ronaldo Caiado declarou apoio a Flávio Bolsonaro em 06/Out (O Globo e VEJA), e Romeu Zema declarou voto nele em 05/Out, seguido pelo Novo em 07/Out (G1 e CartaCapital).",
+        "⭐ Na Quaest de 28/Set, 81% dos eleitores de Romeu Zema e 42% dos de Ronaldo Caiado iriam para Flávio Bolsonaro no 2º turno (O Globo)."
       ],
       "fracos": [
-        "Na mesma leitura, o livro de 2º lugar do 1º turno pagava 99,85% por Lula e o de 3º lugar 99,85% por Augusto Cury, a mesma ordem do resultado do TSE.",
-        "Fernando Haddad não é candidato à Presidência e segue no piso do livro de vencedor, 0,05%, com USD 7,74M acumulados."
+        "Os dois estão fora do 2º turno, e os contratos de vencedor dos três nomes foram resolvidos em zero.",
+        "Fernando Haddad não disputou a Presidência: disputou o governo de São Paulo e perdeu para Tarcísio de Freitas no 1º turno."
       ]
     }
   ],
   "quadroComparativo": [
     {
       "n": "Lula (PT)",
-      "p": "As seis nacionais de 24/Set o medem de 43% na Palver, empatado com Flávio Bolsonaro, a 38,4% na Futura, atrás por 2 pontos, com 41% na Real Time e na PoderData e 40% na Datafolha e na Alfa. No 2º turno ele lidera em uma das seis, a Datafolha, por 47% a 45%, empata na Alfa em 43% e perde nas outras quatro.",
-      "m": "15,50% (vol USD 16,52M acumulado) no contrato de vencedor, leitura confirmada de 04/Out, 21:43 BRT, queda de 20,00pp",
-      "t": "cai 20,00pp no cru e 19,94pp no normalizado, 19,00pp abaixo do piso gravado da série, e o vão de Flávio Bolsonaro vai de 29,05pp para 68,75pp",
-      "s": "🗳️ 45,06% dos votos válidos na parcial oficial do TSE das 21:44 BRT; liderava o 1º turno em cinco das nove nacionais de 03/Out.",
+      "p": "Na véspera, 03/Out, liderava o 2º turno na Datafolha (47% a 46%), na CNT/MDA (47,3% a 43,1%) e na AtlasIntel (47,6% a 47,4%), e empatava em 46% na PoderData. URNA do 1º turno: 45,16% dos válidos.",
+      "m": "13,50% (vol USD 21,00M acumulado) no contrato de vencedor, leitura confirmada de 08/Out, 20:38 BRT",
+      "t": "cai 1,00pp contra a leitura confirmada de 07/Out às 17:35 BRT, publicada na rodada anterior, e o vão de Flávio Bolsonaro vai de 70,45pp para 72,15pp",
+      "s": "🗳️ No 2º turno, 1,87 ponto atrás na urna do 1º turno.",
       "pc": "#DC2626",
       "mc": ""
     },
     {
       "n": "Flávio Bolsonaro (PL)",
-      "p": "As seis nacionais de 24/Set o medem de 40,4% na Futura, onde lidera o 1º turno, a 33% na Alfa/TMC, com 39% na PoderData, 37% na Real Time, 36% na Datafolha e 43% na Palver, em empate. No 2º turno ele lidera em quatro das seis.",
-      "m": "84,25% (vol USD 16,11M acumulado) no contrato de vencedor, leitura confirmada de 04/Out, 21:43 BRT, alta de 19,70pp",
-      "t": "sobe 19,70pp no cru e 19,94pp no normalizado, 20,95pp acima do topo gravado da série, 63,30% de 01/Out",
-      "s": "🗳️ 47,12% dos votos válidos na parcial oficial do TSE das 21:44 BRT; liderava o 1º turno em quatro das nove nacionais de 03/Out.",
+      "p": "Na véspera, 03/Out, liderava o 2º turno na Quaest (44% a 42%), na Palver (49% a 44%), na Futura (48% a 45,1%) e na Gerp (49% a 44%). URNA do 1º turno: 47,03% dos válidos.",
+      "m": "85,65% (vol USD 18,50M acumulado) no contrato de vencedor, leitura confirmada de 08/Out, 20:38 BRT",
+      "t": "sobe 0,70pp contra a leitura confirmada de 07/Out às 17:35 BRT, publicada na rodada anterior",
+      "s": "🤝 Podemos e Augusto Cury declararam apoio em 08/Out, depois de Novo, ACM Neto, PP, União Brasil, Caiado, Zema e Temer.",
       "pc": "#2563EB",
       "mc": ""
     },
     {
       "n": "Augusto Cury (Avante)",
-      "p": "As seis nacionais de 24/Set o medem de 2% na Palver a 6% na Alfa, na PoderData e na Real Time, com 5,6% na Futura e 5% na Datafolha. A PoderData o põe vencendo Lula no 2º turno, por 45% a 42%.",
-      "m": "0,05% (vol USD 5,30M acumulado) no contrato de vencedor, leitura confirmada de 04/Out, 21:43 BRT",
-      "t": "2,89% dos votos válidos na parcial oficial do TSE das 21:44 BRT",
-      "s": "🗳️ Terceiro na CNT/MDA, na Gerp e na Futura de 03/Out.",
+      "p": "URNA do 1º turno: 2,89% dos válidos, terceiro colocado.",
+      "m": "contrato de vencedor fechado e resolvido em zero, com USD 5,51M acumulados",
+      "t": "eliminado no 1º turno",
+      "s": "🤝 Declarou apoio a Flávio Bolsonaro em 08/Out (G1, Estadão e CNN Brasil).",
       "pc": "#0891B2",
       "mc": ""
     },
     {
       "n": "Renan Santos (Missão)",
-      "p": "As seis nacionais de 24/Set o medem de 2,4% na Futura a 8% na Palver, com 6% na Real Time e 3% na Datafolha e na PoderData. Na Palver ele caiu de 11% para 8% contra a rodada da casa de 21/Set.",
-      "m": "0,05% (vol USD 17,10M acumulado) no contrato de vencedor, leitura confirmada de 04/Out, 21:43 BRT",
-      "t": "2,25% dos votos válidos na parcial oficial do TSE das 21:44 BRT",
-      "s": "🏆 O contrato dele no livro de vencedor segue sendo o de maior volume acumulado do presidencial, USD 17,10M contra USD 16,52M do de Lula.",
+      "p": "URNA do 1º turno: 2,24% dos válidos, quarto colocado.",
+      "m": "contrato de vencedor fechado e resolvido em zero, com USD 17,12M acumulados",
+      "t": "eliminado no 1º turno",
+      "s": "🤝 Não apoia nenhum dos dois no 2º turno e negou aproximação com Lula (CNN Brasil e O Globo).",
       "pc": "#7C3AED",
       "mc": ""
     },
     {
       "n": "Caiado (PSD)",
-      "p": "As seis nacionais de 24/Set o medem de 1% na Palver a 5,7% na Futura, onde ele subiu de 4,5% e passou Augusto Cury. No par de 2º turno da Futura ele vence Lula por 46,5% a 42,4%.",
-      "m": "0,05% (vol USD 7,81M acumulado) no contrato de vencedor, leitura confirmada de 04/Out, 21:43 BRT",
-      "t": "2,19% dos votos válidos na parcial oficial do TSE das 21:44 BRT",
-      "s": "🗳️ Terceiro colocado do 1º turno na Datafolha de 03/Out, com 4%.",
+      "p": "URNA do 1º turno: 2,18% dos válidos, quinto colocado.",
+      "m": "contrato de vencedor fechado e resolvido em zero, com USD 7,82M acumulados",
+      "t": "eliminado no 1º turno",
+      "s": "🤝 Declarou apoio a Flávio Bolsonaro em Goiânia em 06/Out (O Globo e VEJA); o PSD ficou neutro.",
       "pc": "#059669",
       "mc": ""
     },
     {
       "n": "Romeu Zema (Novo)",
-      "p": "As seis nacionais de 24/Set o medem em 1% em cinco delas e 0,9% na Futura. ⭐ E a Futura o põe à FRENTE de Lula no par de 2º turno, por 43,8% a 43,3%, dentro da margem de 2,2pp.",
-      "m": "0,05% (vol USD 7,74M acumulado) no contrato de vencedor, leitura confirmada de 04/Out, 21:43 BRT",
-      "t": "0,27% dos votos válidos na parcial oficial do TSE das 21:44 BRT",
-      "s": "⭐ Na Quaest de 28/Set, 81% dos eleitores dele iriam para Flávio Bolsonaro no 2º turno.",
+      "p": "URNA do 1º turno: 0,27% dos válidos.",
+      "m": "contrato de vencedor fechado e resolvido em zero, com USD 7,74M acumulados",
+      "t": "eliminado no 1º turno",
+      "s": "🤝 Declarou voto em Flávio Bolsonaro em 05/Out, e o Novo declarou apoio em 07/Out (G1 e CartaCapital).",
       "pc": "#EA580C",
       "mc": ""
     }
   ],
-  "cruzamento": "Noite do 1º turno, apuração em curso. 💹 Na leitura confirmada de 04/Out, 21:43 BRT, Flávio Bolsonaro sobe 19,70pp no contrato de vencedor, para 84,25%, e Lula cai 20,00pp, para 15,50%, com 19,94pp para cada lado no normalizado, e o vão vai de 29,05pp para 68,75pp. Flávio Bolsonaro fica 20,95pp acima do topo gravado da série desde 14 de abril, 63,30% de 01/Out, e Lula 19,00pp abaixo do piso gravado, 34,50% de 25/Abr. 🗳️ Na parcial oficial do TSE das 21:44 BRT de 04/Out, com 99,59% das seções totalizadas, Flávio Bolsonaro tem 47,12% dos votos válidos para presidente e Lula 45,06%, seguidos por Augusto Cury, com 2,89%, Ronaldo Caiado, com 2,19%, e Renan Santos, com 2,25%. Às 20:58 o TSE marcou o resultado presidencial como matematicamente definido: Flávio Bolsonaro e Lula vão ao 2º turno, marcado para 25/Out (Agência Brasil). 📊 Nas nove nacionais divulgadas em 03/Out, véspera do 1º turno, Lula fica à frente no 1º turno em cinco (Datafolha, Quaest, PoderData, CNT/MDA e AtlasIntel) e Flávio Bolsonaro em quatro (Palver, Futura e duas da Gerp, que informa que as duas medições compartilham parte das entrevistas). ⛔ O painel não atribui movimento de preço à apuração nem às pesquisas: mede os lados com os carimbos de hora de cada um."
+  "cruzamento": "Quarto dia do 2º turno e o primeiro com pesquisa nacional feita depois da urna. 💹 Na leitura confirmada de 08/Out, 20:38 BRT, Flávio Bolsonaro sobe 0,70pp e Lula cai 1,00pp contra a leitura confirmada de 07/Out às 17:35 BRT, publicada na rodada anterior, e o vão vai de 70,45pp para 72,15pp. 📊 As primeiras nacionais depois da urna saíram em 08/Out. Na Datafolha, com campo de 06 a 08/Out e 2.520 entrevistas, Flávio Bolsonaro tem 49% e Lula 45% no 2º turno, com 5% de brancos, nulos e nenhum e 1% de indecisos; nos válidos, 52% a 48% (G1, Valor, CartaCapital e Brasil de Fato). Na PoderData/Aya, com campo de 05 a 07/Out e 3.000 entrevistas, Flávio Bolsonaro tem 53% e Lula 47% dos votos válidos, e a divulgação não traz o total (Poder360). Nas duas, 46% dizem que não votam em Lula e 43% que não votam em Flávio Bolsonaro. Na rodada da Datafolha de 03/Out, feita antes da urna, Lula tinha 47% e Flávio Bolsonaro 46% no 2º turno. 🤝 O Podemos confirmou apoio a Flávio Bolsonaro em 08/Out (G1, Folha de S.Paulo, Estadão e Poder360), e Augusto Cury, terceiro colocado no 1º turno, declarou apoio a ele no mesmo dia (G1, Estadão e CNN Brasil). Antes vieram Novo, ACM Neto, PP, União Brasil, Ronaldo Caiado, Romeu Zema e Michel Temer. O PSDB liberou os filiados no 2º turno (Congresso em Foco e Times Brasil). Lula recebeu o apoio da UP, do PSTU e do PCB (CNN Brasil e G1), e Renan Santos segue sem apoiar ninguém e negou aproximação com Lula (CNN Brasil e O Globo). ⚖️ Em 08/Out, Alexandre de Moraes declarou o trânsito em julgado da ação contra Eduardo Bolsonaro por coação no curso do processo e determinou o início do cumprimento da pena de 4 anos e 2 meses em regime inicial semiaberto, com o nome dele no banco nacional de mandados de prisão, o cancelamento dos passaportes e a suspensão dos direitos políticos (Gazeta do Povo, O Globo, Estadão e Valor). Eduardo Bolsonaro mora nos Estados Unidos e chamou a decisão de arbitrária (Gazeta do Povo e VEJA), e Flávio Bolsonaro pediu que Moraes renuncie (Estadão e O Globo). 📊 As próximas nacionais registradas no TSE saem em 09/Out (AtlasIntel e Vox Brasil), 10/Out (Ipespe), 11/Out (DataTrends) e 13/Out (Gerp, Nexus, 100 Cidades e PoderData). ⛔ O painel não atribui movimento de preço às pesquisas, aos apoios nem aos atos do dia: mede os lados com os carimbos de hora de cada um."
 }

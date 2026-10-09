@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-05",
+  "edicao": "primeiro dia do 2o turno, sobre o painel publicado no commit c5ad1831 (redesenho + rodada de 05/10)",
+  "refetch": {
+    "certificada": "2026-10-05T20:31:40.468Z",
+    "aoVivo": "2026-10-05T21:17:02Z: Lula 16,50 (0), Flavio 82,90 (-0,20), vao 66,40 (-0,20), total USD 173,39M",
+    "gate": "rebaseline NAO disparou (todos abaixo de 0,50pp); 1a trava das 20:23 bloqueada (Flavio 0,20pp), 2a das 20:31 aprovada e publicada; total do livro citado com a hora da leitura ao vivo (18:17 BRT)"
+  },
+  "tse": {
+    "presidente": "totalizacao final 05/10 12:51:47, 100% das secoes, andamento f: Flavio 47,03, Lula 45,16, Cury 2,89, Renan 2,24, Caiado 2,18, Zema 0,27; abstencao 21,08; demais nomes 0,49 pela soma dos votos"
+  },
+  "factCheck": [
+    { "evento": "PF adia depoimento de Andre Esteves no inquerito do Master", "recorrencia": "continuidade (agendamento na daily de 01/10); novo e o adiamento", "fontes": ["Folha c-level 05/10 16:23", "Valor 05/10 16:25"], "decisao": "incorporar estreitado, sem nova data (corpos bloqueados ao fetch)" },
+    { "evento": "PSD decide neutralidade no 2o turno e libera bases", "recorrencia": "novidade", "fontes": ["Folha 04/10 23:52", "Agencia Brasil 05/10 15:41"], "decisao": "incorporar" },
+    { "evento": "Caiado promete anunciar apoio a Flavio em 06/10, Goiania", "fontes": ["Metropoles 05/10 16:49 (corpo lido)", "O Globo 05/10 19:57"], "decisao": "incorporar como AGENDAMENTO" },
+    { "evento": "Renan Santos nao apoia ninguem no 2o turno", "fontes": ["Gazeta do Povo 04/10 23:07 (corpo lido)", "Agencia Brasil 05/10"], "decisao": "incorporar; frase literal 'nao voto em bandido' deixada de fora" },
+    { "evento": "Numero de senadores eleitos pro-impeachment", "fontes": ["Folha (titulo 49, URL 51: materia atualizada no dia)", "O Globo"], "decisao": "incorporar so 'abaixo dos 54 necessarios', que vale nas duas versoes" }
+  ],
+  "adversarial": {
+    "singleSource": ["Novo vai declarar apoio a Flavio (Folha, atribuido)", "Cury fala em silencio (Agencia Brasil, atribuido)"],
+    "numerical": "gate de traducao 49/49/49; reconcile-claims so acusou pareamento de entidade e rotulo de faixa de inflacao; precos contra a certificada das 20:31Z e o arquivo do TSE das 12:51",
+    "correcoes": ["EN: frase da BBC truncada reescrita", "ES: 'blancos de la investigacion' (ambiguo com voto em branco) virou 'investigados del INSS'", "volume total do livro com hora declarada, por ser de leitura diferente da certificada"],
+    "links": "22 distintos, 11 ancora e 11 secundarios (50%)",
+    "palavras": "pt 988, en 1016, es 1073",
+    "decisao": "prosseguir"
+  },
+  "wayback": "pausa por bloqueio de host medido em 01/10 22:55Z; pre-check nao sondou (exit 3); arquivamento desta daily fica para depois da pausa"
+}

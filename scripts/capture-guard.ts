@@ -78,6 +78,8 @@ interface Leitura {
   // certificado obriga a rodada a buscar volume numa segunda chamada, e aí o
   // par preço/volume publicado lado a lado passa a ser de dois momentos.
   volumes: Map<string, number>
+  // Contratos FECHADOS por livro, que ficaram fora da leitura. Ver `lerUmaVez`.
+  fechados: Map<string, number>
   fetchedAt: string | null
   degraded: boolean
   failedCount: number
@@ -131,8 +133,18 @@ async function lerUmaVez(proxy: string, books: readonly string[]): Promise<Leitu
 
   const precos = new Map<string, number>()
   const volumes = new Map<string, number>()
+  const fechados = new Map<string, number>()
   for (const book of books) {
     for (const m of j?.[book]?.markets ?? []) {
+      // 🗳️ CONTRATO FECHADO NÃO É PREÇO, instalado em 05/Out/2026, no dia
+      // seguinte ao 1º turno. Os livros de 2º e 3º lugar e o do Senado
+      // resolveram em 100/0 e o proxy segue servindo os três com `closed: true`.
+      // Lidos como preço, concordariam nas duas leituras e sairiam CERTIFICADOS
+      // como se fossem mercado vivo, e os eliminados do presidencial também.
+      if (m?.closed === true) {
+        fechados.set(book, (fechados.get(book) ?? 0) + 1)
+        continue
+      }
       const p = Number(m?.outcomePrices?.[0])
       if (!Number.isFinite(p)) continue
       const chave = `${book}:${limpaNome(m.question)}`
@@ -144,6 +156,7 @@ async function lerUmaVez(proxy: string, books: readonly string[]): Promise<Leitu
   return {
     precos,
     volumes,
+    fechados,
     fetchedAt: j?.fetchedAt ?? null,
     degraded: !!j?.degraded,
     failedCount: Number(j?.failedCount ?? 0),
@@ -302,9 +315,35 @@ async function main() {
    * 📌 `ok` continua sendo o veredicto GLOBAL, para quem só quer saber se a
    * captura inteira fechou. Quem publica por livro lê `livros`.
    */
+  /**
+   * 🗳️ LIVRO RESOLVIDO SAI DA CERTIFICAÇÃO, e livro VAZIO bloqueia, 05/Out/2026.
+   *
+   * Até aqui, livro sem preço nenhum era aprovado NO VAZIO: zero contratos, zero
+   * divergências, `ok: true`, e ele entrava em `livrosOk` sem ter sido medido.
+   * É o furo que o portão de leitura vazia lá em cima fecha para a leitura
+   * inteira, e que nunca tinha sido fechado por livro.
+   *
+   * 🔑 As duas causas de livro sem preço pedem respostas opostas:
+   *   - todos os contratos FECHADOS nas duas leituras: o mercado resolveu. Sai
+   *     de `livros` (senão a rodada o trata como bloqueado e roda a amplitude
+   *     nele) e vai para `livrosResolvidos`, dito no log.
+   *   - nenhum contrato, nem aberto nem fechado: é o LEITOR que falhou (nome de
+   *     livro errado, livro sumido do proxy). Bloqueia o livro.
+   */
+  const precosDe = (l: Leitura, book: string) => [...l.precos.keys()].filter(k => k.startsWith(`${book}:`)).length
+  const livrosResolvidos: string[] = []
+  for (const book of books) {
+    if (precosDe(a, book) > 0 || precosDe(b, book) > 0) continue
+    if ((a.fechados.get(book) ?? 0) > 0 && (b.fechados.get(book) ?? 0) > 0) livrosResolvidos.push(book)
+    else motivos.push(`${book}: nenhum contrato, nem aberto nem fechado, nas duas leituras. O livro não foi medido.`)
+  }
+  if (livrosResolvidos.length) {
+    log(`  livros RESOLVIDOS, com todos os contratos fechados, fora da certificação: ${livrosResolvidos.join(', ')}`)
+  }
+
   const livrosComProblema = new Set(divergencias.map(d => d.nome.split(':')[0]))
   const livros: Record<string, { ok: boolean; motivos: string[] }> = {}
-  for (const book of books) {
+  for (const book of books.filter(bk => !livrosResolvidos.includes(bk))) {
     const meus = motivos.filter(m => m.startsWith(`${book}:`))
     livros[book] = { ok: !livrosComProblema.has(book) && meus.length === 0, motivos: meus }
   }
@@ -312,7 +351,7 @@ async function main() {
   // Problema que não pertence a livro nenhum (leitura degradada, cache repetido,
   // preço sumido) contamina TODOS: aí não há o que certificar em lugar algum.
   const motivosGlobais = motivos.filter(m => !books.some(bk => m.startsWith(`${bk}:`)))
-  if (motivosGlobais.length) for (const book of books) livros[book] = { ok: false, motivos: motivosGlobais }
+  if (motivosGlobais.length) for (const book of Object.keys(livros)) livros[book] = { ok: false, motivos: motivosGlobais }
 
   const ok = motivos.length === 0
   const livrosOk = Object.entries(livros).filter(([, v]) => v.ok).map(([k]) => k)
@@ -321,6 +360,7 @@ async function main() {
     ok,
     livros,
     livrosOk,
+    livrosResolvidos,
     motivos,
     pais,
     fetchedAt: b.fetchedAt,

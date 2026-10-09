@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-06",
+  "edicao": "segundo dia do 2o turno, sobre o painel publicado no commit 918da2d3",
+  "refetch": {
+    "certificada": "2026-10-06T18:05:03.372Z",
+    "aoVivo": "2026-10-06T19:55:07Z: Flavio 84,20 (-0,10), Lula 15,50 (0), STF 2,80 (+0,15), total USD 174,45M",
+    "gate": "rebaseline NAO disparou; 1a trava (17:56Z) aprovou presidencial e bloqueou STF por 0,20pp; 2a (18:05Z) aprovou tudo e e a publicada; total do livro citado com a hora da leitura ao vivo (16:55 BRT)"
+  },
+  "factCheck": [
+    { "evento": "Caiado declara apoio a Flavio em ato em Goiania (06/10)", "fontes": ["O Globo 06/10 19:04Z (posterior ao ato)", "VEJA 06/10 19:41Z", "Metropoles 19:34Z (titulo identico ao do Poder360, nao usado como link)"], "decisao": "incorporar como ato; o painel das 15:05 dizia 'pronunciamento conjunto' porque so havia fonte anterior ao ato" },
+    { "evento": "Moraes envia a PGR o pedido de Flavio para visitar Jair Bolsonaro", "fontes": ["Gazeta do Povo 06/10 17:32Z", "Poder360 06/10 16:25Z"], "decisao": "incorporar como despacho, sem decisao sobre a visita" },
+    { "evento": "Mensagens de Vorcaro sobre Gonet e Gilmar", "fontes": ["Estadao 06/10"], "decisao": "NAO incorporado na daily (uma fonte so); o painel traz atribuido" },
+    { "evento": "PP, Republicanos (Tarcisio) e Podemos se aproximam de Flavio", "fontes": ["Folha de S.Paulo"], "decisao": "incorporar atribuido, como agendamento" },
+    { "evento": "Debates: Band/Estadao 18/10; Record 11/10", "fontes": ["Estadao e UOL (18/10)", "UOL (11/10, atribuido)"], "decisao": "incorporar" }
+  ],
+  "adversarial": {
+    "singleSource": ["PP/Republicanos/Podemos (Folha)", "Record 11/10 (UOL)"],
+    "numerical": "gate de traducao 32/32/32; reconcile-claims so acusou pareamento de entidade e rotulo de faixa de inflacao",
+    "correcoes": ["frase truncada nas Divergencias ('mais de cinco vezes um o outro') corrigida nos tres idiomas", "segunda fonte de Caiado trocada de Metropoles para VEJA porque o titulo do Metropoles era identico ao do Poder360 e o marcador nao desempata"],
+    "links": "17 distintos, 6 ancora e 11 secundarios (65%)",
+    "palavras": "pt 742, en 763, es 791",
+    "decisao": "prosseguir"
+  },
+  "wayback": "pre-check sondou em 06/10 e recebeu 429: nova pausa de 4 dias; arquivamento desta daily fica para depois"
+}

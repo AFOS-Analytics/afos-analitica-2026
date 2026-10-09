@@ -32,7 +32,7 @@
 import { readFileSync } from 'node:fs'
 import { UA_NAVEGADOR, resolverGoogleNews } from './lib/resolver-gnews.mjs'
 import { baseDeLeitura } from './lib/base-afos.mjs'
-import { urlApiPolls } from './lib/tse-api-polls.mjs'
+import { bordaDaResposta, tetoDaResposta, urlApiPolls } from './lib/tse-api-polls.mjs'
 import { dataCivilBrasil } from './lib/data-civil-brz.mjs'
 
 const argv = process.argv.slice(2)
@@ -163,13 +163,12 @@ async function consultarBase(protocolos) {
     if (!r.ok) return { erro: `HTTP ${r.status}` }
     const j = await r.json()
     const linhas = j.polls ?? []
-    const menorDiv = linhas
-      .map((p) => (p.publicationDate ?? '').slice(0, 10))
-      .filter(Boolean)
-      .sort()[0]
+    // teto e corte lidos DA RESPOSTA, nunca de constante: a rota serve até 1000 desde 27/Set/2026
+    const borda = bordaDaResposta(j, linhas)
     return {
-      cortada: linhas.length >= 200,
-      borda: menorDiv,
+      cortada: borda !== null,
+      teto: tetoDaResposta(j),
+      borda,
       achados: protocolos.map((p) => ({
         protocolo: p,
         linha: linhas.find((l) => (l.protocolo ?? l.protocol) === p) ?? null,
@@ -233,7 +232,8 @@ for (const alvo of lista) {
     for (const a of base.achados) {
       if (!a.linha) {
         console.log(`   🔴 ${a.protocolo}  NÃO está entre as linhas servidas.`)
-        if (base.cortada) console.log(`      ⚠️ a rota parou em 200 linhas (borda ${base.borda}): ausência aqui NÃO prova ausência no banco.`)
+        if (base.cortada) console.log(`      ⚠️ a rota parou em ${base.teto} linhas (borda ${base.borda}): ausência aqui NÃO prova ausência no banco.`)
+        else console.log('      a janela de 30 dias de ingestão veio inteira: o protocolo não foi ingerido nesse período.')
       } else {
         const l = a.linha
         console.log(`   ✅ ${a.protocolo}  ${l.institute}`)

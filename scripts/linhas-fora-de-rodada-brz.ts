@@ -30,16 +30,39 @@ import { readFileSync } from 'fs'
 const HISTORICO = 'data/tse/historico-arquivo.jsonl'
 const CRON_HORAS = ['06', '12', '18']
 
-function janela(): { desde: Date; ate: Date | null } {
+/**
+ * 🔴 06/Out/2026: o carimbo `quando` da rodada é gravado DEPOIS da inserção, então
+ *    as linhas que a ÚLTIMA rodada inseriu têm `createdAt` uns instantes antes dele
+ *    e caíam dentro da janela, saindo como "OUTRO" e acendendo "conferir quem
+ *    gravou". Medido no dia: 3 de 8 linhas eram da própria rodada (17:27:48 contra
+ *    17:27:49). A rodada declara quantas inseriu (`inseridas`), e é por esse número,
+ *    não por palpite, que elas saem como RODADA: as N últimas até 10 minutos antes
+ *    do carimbo. O que passar de N no intervalo continua acusado.
+ */
+const FOLGA_RODADA_MS = 10 * 60_000
+
+function janela(): { desde: Date; ate: Date | null; inseridasNaUltima: number } {
   const arg = process.argv.find((a) => a.startsWith('--desde='))
-  if (arg) return { desde: new Date(arg.slice(8)), ate: null }
+  if (arg) return { desde: new Date(arg.slice(8)), ate: null, inseridasNaUltima: 0 }
   const linhas = readFileSync(HISTORICO, 'utf8').trim().split('\n').map((l) => JSON.parse(l))
   if (linhas.length < 2) throw new Error(`${HISTORICO} tem menos de duas rodadas: não há janela entre rodadas`)
-  return { desde: new Date(linhas.at(-2).quando), ate: new Date(linhas.at(-1).quando) }
+  return { desde: new Date(linhas.at(-2).quando), ate: new Date(linhas.at(-1).quando), inseridasNaUltima: Number(linhas.at(-1).inseridas ?? 0) }
+}
+
+/** Índices (em `r`, ordenado por createdAt) das linhas que são da própria última rodada. */
+export function linhasDaRodada(datas: Date[], ate: Date | null, n: number): Set<number> {
+  const out = new Set<number>()
+  if (!ate || n <= 0) return out
+  for (let i = datas.length - 1; i >= 0 && out.size < n; i--) {
+    const dt = ate.getTime() - datas[i].getTime()
+    if (dt >= 0 && dt <= FOLGA_RODADA_MS) out.add(i)
+    else break
+  }
+  return out
 }
 
 async function main() {
-  const { desde, ate } = janela()
+  const { desde, ate, inseridasNaUltima } = janela()
   if (Number.isNaN(desde.getTime())) throw new Error('data de início inválida')
   const { getPrisma } = await import('../lib/db')
   const prisma = getPrisma()
@@ -50,17 +73,22 @@ async function main() {
   const where = { createdAt: ate ? { gt: desde, lt: ate } : { gt: desde } }
   const r = await prisma.researchFinding.findMany({ where, select: { title: true, createdAt: true, rawPayload: true }, orderBy: { createdAt: 'asc' } })
   console.log(`\n🔎 LINHAS FORA DE RODADA · de ${desde.toISOString()} até ${ate ? ate.toISOString() : 'agora'}`)
+  const daRodada = linhasDaRodada(r.map((d) => d.createdAt), ate, inseridasNaUltima)
   let cron = 0
-  for (const d of r) {
+  let outro = 0
+  r.forEach((d, i) => {
     const p = (d.rawPayload ?? {}) as Record<string, unknown>
     const t = d.createdAt.toISOString()
     const ehCron = CRON_HORAS.includes(t.slice(11, 13)) && t.slice(14, 16) === '00'
-    if (ehCron) cron++
+    const rot = daRodada.has(i) ? 'RODADA' : ehCron ? 'CRON  ' : 'OUTRO '
+    if (!daRodada.has(i)) ehCron ? cron++ : outro++
     const casa = String(p.institutoFantasia || p.instituto || '?').slice(0, 30)
     const plano = String(p.planoAmostral || '').replace(/\s+/g, ' ').slice(0, 60)
-    console.log(`   ${d.title}  ${t}  ${ehCron ? 'CRON ' : 'OUTRO'}  ${String(p.cargo ?? '?').padEnd(10)} n=${String(p.amostra ?? '?').padEnd(5)} div ${p.divulgacao ?? '?'}  ${casa}  | ${plano}`)
-  }
-  console.log(`\n   ${r.length} linha(s), ${cron} em minuto de cron (06, 12 ou 18 UTC, minuto 00).`)
-  if (r.length && cron < r.length) console.log('   ⚠️ há linha FORA de minuto de cron e fora de rodada: conferir quem gravou antes de seguir.')
+    console.log(`   ${d.title}  ${t}  ${rot}  ${String(p.cargo ?? '?').padEnd(10)} n=${String(p.amostra ?? '?').padEnd(5)} div ${p.divulgacao ?? '?'}  ${casa}  | ${plano}`)
+  })
+  console.log(`\n   ${r.length} linha(s): ${daRodada.size} da própria última rodada (declarou ${inseridasNaUltima}), ${cron} em minuto de cron (06, 12 ou 18 UTC, minuto 00), ${outro} de outra origem.`)
+  if (daRodada.size < Math.min(inseridasNaUltima, r.length) && ate) console.log(`   ⚠️ a rodada declarou ${inseridasNaUltima} inserção(ões) e só ${daRodada.size} caíram nos 10 min antes do carimbo: conferir.`)
+  if (outro > 0) console.log('   ⚠️ há linha FORA de minuto de cron e fora de rodada: conferir quem gravou antes de seguir.')
 }
-main()
+// Só roda quando chamado direto: o teste importa `linhasDaRodada` sem tocar no banco.
+if (/linhas-fora-de-rodada-brz\.ts$/.test(process.argv[1] ?? '')) main()

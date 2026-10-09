@@ -2,6 +2,23 @@
 
 All notable changes to this dataset. The data itself is dated and append-only; this log records **structural** changes (new files, schema, coverage).
 
+## 2026-10-08, the second-round poll side is always the TOTAL vote
+
+### Clarified: `poll_pct` in `data/divergence-second-round-{date}.csv`
+
+The first national polls fielded after the first round were released on 2026-10-08. Datafolha (n=2,520) published the total vote, 49-45 for Flávio Bolsonaro (52-48 in valid votes); PoderData/Aya (n=3,000) published valid votes only, 53-47. The rule that picks the poll side breaks ties by the largest sample, and applied blindly it would have taken PoderData and put a valid-vote share next to a series of total-vote shares, shifting `divergence_pp` by the change of base alone. From this date the tie-break runs only **among polls that published the total vote**, and `poll_pct` is always a total-vote share. The file for 2026-10-08 carries Datafolha.
+
+## 2026-10-05, the second round gets its own daily divergence file
+
+### Added: `data/divergence-second-round-{date}.csv`
+
+The first round was held on 2026-10-04 (TSE final tally: Flávio Bolsonaro 47.03%, Lula 45.16% of valid votes; runoff on 2026-10-25). From 2026-10-05 the panel's poll side is the **second-round head-to-head** between the two runoff candidates, so the daily snapshot is written under a new name instead of continuing `data/divergence-{date}.csv`.
+
+- Same columns as `data/divergence-{date}.csv`.
+- Only Lula and Flávio Bolsonaro. Eliminated candidates carry no second-round measurement and are not written as zero rows.
+- `data/divergence-{date}.csv` (first round) is unchanged and ends on 2026-10-04.
+- Files on the Hub so far: `2026-10-05` and `2026-10-06`.
+
 ## 2026-09-26, a national poll is no longer matched to a STATE registration
 
 ### Fixed — affects `polls/national-polls.json` (`tse_registration`), `polls/sample-demographics.csv` and `data/poll-divergence.csv` (`register_tse`)

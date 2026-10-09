@@ -88,7 +88,10 @@ const num = (v) => { const n = parseFloat(String(v ?? '').replace(',', '.')); re
 // dizia "03/08/2026, 19:11 UTC" enquanto o `lastUpdate` do arquivo dizia
 // 2026-08-05. O dado estava lá; o extrator antigo não olhava.
 function divergenceCsv(polls, date) {
-  const cands = polls?.polymarketComparison?.candidates || []
+  // No 2º turno, quem está fora tem `percentage: 0` (convenção de nome não
+  // medido) e preço 0 de contrato fechado: a linha "0 contra 0" não é medição.
+  const segundo = polls?.polymarketComparison?.pollSource?.round === 2
+  const cands = (polls?.polymarketComparison?.candidates || []).filter((c) => !segundo || num(c.percentage) > 0)
   // data em que o PREÇO foi medido; cai para a data do snapshot se o painel não declarar
   const priceDate = deriveDate(polls?.polymarketComparison) || date
   const head = 'date,candidate,polymarket_pct,poll_pct,divergence_pp,polymarket_date'
@@ -397,7 +400,13 @@ ensure(join(STAGING, 'polls')); ensure(join(STAGING, 'news')); ensure(join(STAGI
 writeJSON(join(dCrit, `${dateCrit}.json`), crit)
 writeJSON(join(dCards, `${dateCards}.json`), cards)
 writeJSON(join(STAGING, 'polls', `polls-data-${datePolls}.json`), polls)
-writeFileSync(join(STAGING, 'data', `divergence-${datePolls}.csv`), divergenceCsv(polls, datePolls))
+// 🗳️ 05/Out/2026: a partir do 2º turno o `percentage` do grafo é o do PAR do
+// 2º turno, e o `pollSource.round` diz isso. O arquivo muda de NOME para a série
+// do 1º turno (`divergence-AAAA-MM-DD.csv`, de abril até 04/Out) continuar
+// homogênea: misturar os dois turnos sob o mesmo nome e o mesmo cabeçalho faria
+// um "poll_pct" de 2º turno parecer continuação do de 1º.
+const turnoDoGrafo = polls?.polymarketComparison?.pollSource?.round === 2 ? 'second-round-' : ''
+writeFileSync(join(STAGING, 'data', `divergence-${turnoDoGrafo}${datePolls}.csv`), divergenceCsv(polls, datePolls))
 
 // série de odds de mercado — começa com hoje, recebe o histórico no backfill abaixo
 const marketRows = [

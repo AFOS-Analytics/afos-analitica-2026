@@ -164,6 +164,14 @@ console.log('\n9. 🔴 BASE POR LIVRO, o caso de 16/Set/2026: 3º lugar bloquead
     lancou = true
   }
   conferir('sem carimbo atual lança, nunca devolve base vazia', lancou)
+
+  // 🗳️ 05/Out/2026: o 3º lugar RESOLVEU e saiu da leitura atual. A base não pode
+  // trazê-lo de volta, senão os contratos dele saem "SUMIU" em toda rodada.
+  const soPres = escolherBasePorLivro([c16, c14, c15b, refeita, c15a], c16.fetchedAt, { livrosAtuais: new Set(['presidential']) })
+  conferir('livro fora da leitura atual não ganha base', !('thirdPlace' in soPres.origem), JSON.stringify(soPres.origem))
+  conferir('e o livro presente segue com a base de antes', soPres.origem.presidential === c15b.fetchedAt)
+  conferir('sem linha do livro resolvido na base', soPres.linhas.every((l) => l.livro === 'presidential'), JSON.stringify(soPres.linhas))
+  conferir('sem livrosAtuais, comportamento antigo intacto', 'thirdPlace' in b.origem)
   conferir('horasEntre mede a idade da base', horasEntre('2026-09-04T22:53:59Z', '2026-09-16T15:41:36Z') === 280.8, String(horasEntre('2026-09-04T22:53:59Z', '2026-09-16T15:41:36Z')))
 }
 

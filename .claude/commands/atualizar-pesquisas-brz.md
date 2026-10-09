@@ -34,6 +34,8 @@ npx tsx scripts/linhas-fora-de-rodada-brz.ts     # janela = entre as duas últim
 
 Ele lista protocolo, minuto de gravação (CRON ou OUTRO), cargo, n, divulgação e casa. 📌 **Em 03/Out o cron gravou de novo**, às 12:00:11Z: 7 linhas, todas com divulgação em 08/Out, entre elas as primeiras **nacionais do 2º turno** (Datafolha n=2.520 e PoderData n=3.000). Duas passagens em cinco dias: "morta" é intermitente, e a régua de rodar daqui continua valendo porque nada garante a próxima. → `memory/project_state_01out_brz_pesquisas.md`
 
+🏷️ **Desde 06/Out/2026 o rótulo tem um terceiro valor, `RODADA`.** O carimbo da rodada no histórico é gravado DEPOIS da inserção, então as linhas que a própria rodada acabou de inserir caíam na janela como `OUTRO` e acendiam "conferir quem gravou", que é alarme falso. Agora as N últimas até 10 minutos antes do carimbo, com N igual ao `inseridas` que a rodada declarou, saem como `RODADA`; o que passar de N continua acusado. Teste: `npx tsx scripts/testar-linhas-fora-de-rodada.ts`. O cron passou de novo em **05/Out às 18:00:11Z** (5 linhas, a Ipespe nacional entre elas). → `memory/project_state_06out_brz_pesquisas.md`
+
 ⛔ **Não forjar user-agent** para escapar do 403, e **não insistir**. Se um dia o modo `--rede` também apanhar, a resposta é o modo ARQUIVO, nunca a insistência. → `memory/reference_tse_bloqueio_antirrobo_2026.md`
 
 ## 🚀 O atalho, criado em 09/Set/2026
@@ -94,6 +96,8 @@ Teste: **124 asserções**, e **8 de 8 mutações** reprovadas. A do acento do P
 📏 **27/Set: a FOLGA do corte caiu de 67 para 19** com a entrada de 72 registros num dia, e a projeção foi a **~30/Set**, antes do 1º turno. No banco: 369 linhas na janela de 15 dias e 570 na de 30, contra 200 servidas; a resposta atual pesa ~880 KB (~4,4 KB por linha).
 
 ✅ **CONSERTADO NO MESMO DIA, por decisão do André: a rota agora aceita `?limit=` (teto 1.000) e declara `total` REAL, `returned`, `limit` e `truncated`.** O padrão público continua 200, mas passou a dizer a verdade (`total=369`, `truncated=true`). Os 7 leitores pedem pelo `urlApiPolls()` e leem o teto e o corte **da resposta** (`tetoDaResposta`, `bordaDaResposta`), nunca de constante. 🔑 **A ordem importa:** pedir 1.000 e comparar com 1.000 contra a rota ANTIGA faria 200 linhas parecerem "janela inteira", em silêncio; sem os campos novos, o leitor cai no 200 de sempre, e há teste plantado para isso (42 asserções, 2 mutações reprovadas). Com a base inteira, a folga foi a **819** e o conferidor de escopo passou a ver a Real Time contradizendo em **49 de 49**, não 11 de 11. A saída **3** do escopo ("aprovado sobre base CORTADA") deixa de ocorrer enquanto a janela couber em 1.000.
+
+🔢 **07/Out/2026: havia um OITAVO leitor com a constante.** O `ler-materia.mjs` pedia pelo `urlApiPolls()` (até 1.000) e julgava o corte com `linhas.length >= 200`, então com 247 linhas servidas imprimia *"a rota parou em 200 linhas"* sobre uma janela inteira, e o "ausência aqui NÃO prova ausência" virava ressalva falsa. Agora lê `bordaDaResposta` e `tetoDaResposta`, e quando a janela vem inteira diz que o protocolo não foi ingerido nos 30 dias. 📌 Varrer pela FORMA da conta: `grep -rn "length >= 200|TETO_API_POLLS" scripts`.
 
 ## 🔍 A SONDA, passos 0 e 4, criada em 11/Set/2026
 

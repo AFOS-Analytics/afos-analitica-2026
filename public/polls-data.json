@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-10-04",
+  "lastUpdate": "2026-10-08",
   "institutes": [
     {
       "name": "Datafolha",
@@ -147,6 +147,42 @@
     }
   ],
   "polls": [
+    {
+      "institute": "Datafolha",
+      "date": "2026-10-08",
+      "scope": "national",
+      "sample": 2520,
+      "margin": 2,
+      "register": "BR-02949/2026",
+      "reliability": 5,
+      "method": "Presencial",
+      "fieldDates": "2026-10-06 a 2026-10-08",
+      "note": "Datafolha nacional divulgada em 08/Out, a primeira da casa depois do 1º turno, registro BR-02949/2026, 2.520 eleitores de 16 anos ou mais entrevistados de 06 a 08/Out, margem de 2pp com 95% de confiança (Brasil de Fato, CartaCapital, G1 e Valor). ⚖️ NO 2º TURNO FLÁVIO BOLSONARO TEM 49% E LULA 45%, depois de 47% a 46% para Lula na rodada da casa de 03/Out, feita antes da urna; brancos, nulos e nenhum somam 5% e indecisos 1%. Em votos válidos, Flávio Bolsonaro 52% e Lula 48%. Rejeição: 46% não votam em Lula e 43% não votam em Flávio Bolsonaro. A avaliação do governo Lula é negativa para 40% e positiva para 35%.",
+      "scenarios": [],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 45,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 49
+        }
+      ]
+    },
+    {
+      "institute": "PoderData/Aya",
+      "date": "2026-10-08",
+      "scope": "national",
+      "sample": 3000,
+      "margin": 1.8,
+      "register": "BR-08134/2026",
+      "reliability": 3,
+      "method": "Telefônica",
+      "fieldDates": "2026-10-05 a 2026-10-07",
+      "note": "PoderData nacional divulgada em 08/Out em parceria com a Aya, a primeira pesquisa publicada depois do 1º turno, registro BR-08134/2026, 3.000 entrevistas por telefone em 705 municípios das 27 unidades da Federação, de 05 a 07/Out, margem de 1,8pp com 95% de confiança (Poder360). ⚖️ NO 2º TURNO, EM VOTOS VÁLIDOS, FLÁVIO BOLSONARO TEM 53% E LULA 47%. A divulgação traz só votos válidos, sem o total com brancos, nulos e indecisos, e por isso esta pesquisa não entra no grafo de divergência, que compara o preço com o total de votos. Na expectativa de vitória, 54% acham que Flávio Bolsonaro vence e 37% que Lula vence. Rejeição: 46% não votam em Lula e 43% não votam em Flávio Bolsonaro (CNN Brasil).",
+      "scenarios": [],
+      "secondRound": []
+    },
     {
       "institute": "Palver",
       "date": "2026-10-03",
@@ -3449,200 +3485,6 @@
           "percent2": 39
         }
       ]
-    },
-    {
-      "institute": "Quaest/Genial",
-      "date": "2026-09-07",
-      "scope": "national",
-      "sample": 2004,
-      "margin": 2,
-      "register": "BR-01720/2026",
-      "reliability": 5,
-      "method": "Presencial",
-      "fieldDates": "2026-09-03 a 2026-09-06",
-      "note": "Genial/Quaest nacional divulgada em 07/Set, campo de 03 a 06/Set, registro BR-01720/2026 no TSE, 2.004 entrevistados de 16 anos ou mais, margem de 2pp e 95% de confiança (G1, O Globo, Folha de S.Paulo, Estadão, Valor Econômico, UOL, CNN Brasil, Gazeta do Povo, Poder360, Brasil de Fato, Band e Congresso em Foco). ⭐ O 2º TURNO SAIU EMPATADO EM 41% A 41%, e é a primeira vez que a casa não dá o par ao líder. Dentro da própria série da Quaest a distância vinha encolhendo rodada a rodada: 5 pontos em 05/Ago (44% x 39%), 3 pontos em 14/Ago (43% x 40%), 1 ponto em 02/Set (42% x 41%) e agora zero. ⚠️ NO 1º TURNO A CASA SEGUE DANDO 7 PONTOS AO LÍDER, 36% contra 29%, e essa é a maior vantagem entre as três nacionais de campo sobreposto: a BTG/Nexus de 08/Set dá 4 pontos e a Veritá de 06/Set pôs o segundo colocado 0,5 ponto à frente. São 7,5 pontos de amplitude entre casas sobre a mesma pergunta, mais que o dobro da margem de erro que cada uma declara. COMPARAÇÃO DENTRO DA CASA: contra a rodada de 02/Set o líder cedeu 1 ponto, de 37% para 36%, o segundo colocado ficou parado em 29% e Augusto Cury cedeu 2 pontos, de 10% para 8%. ⚠️ AUGUSTO CURY CEDE NAS DUAS CASAS DA SEMANA, de 10% para 8% aqui e de 11% para 9% na BTG/Nexus, cada uma dentro da própria série. A casa publicou dois cenários de 1º turno, com e sem Pablo Marçal, e o segundo colocado fica em 29% nos dois, ou seja a inclusão dele não move o par de cima. ⭐ E O 2º TURNO CONTRA AUGUSTO CURY CONTRADIZ A OUTRA CASA DA SEMANA: aqui o líder vence por 39% a 35%, e a BTG/Nexus de 08/Set dá Cury à frente por 45% a 43%. REJEIÇÃO: Flávio Bolsonaro 55% e Lula 53%, contra 50% e 49% na BTG/Nexus, com as duas casas concordando na ordem e diferindo no nível. APROVAÇÃO DO GOVERNO: 43% aprovam e 50% desaprovam. Dentro da própria casa eram 48% contra 47% em 05/Ago, 46% contra 48% em 14/Ago e 45% contra 48% em 02/Set, ou seja a desaprovação repetiu 48% por três rodadas e agora subiu 2 pontos. 📅 A DIVULGAÇÃO DESTA SEGUNDA JÁ ESTAVA NO REGISTRO DO TSE ingerido pelo painel, e em 07/Set a página registrou que até a captura daquela rodada ela ainda não trazia números. Ela saiu depois, e esta ficha é o registro dela.",
-      "scenarios": [
-        {
-          "name": "Cenário estimulado com Pablo Marçal (1º turno)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 36
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 29
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 8
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 3
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 3
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 2
-            },
-            {
-              "candidate": "Pablo Marçal (PRTB)",
-              "percent": 1
-            },
-            {
-              "candidate": "Samara Martins (UP)",
-              "percent": 1
-            }
-          ]
-        },
-        {
-          "name": "Cenário estimulado sem Pablo Marçal (1º turno)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 36
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 29
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 8
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 3
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 3
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 2
-            },
-            {
-              "candidate": "Samara Martins (UP)",
-              "percent": 1
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 41,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 41
-        },
-        {
-          "matchup": "Lula vs Caiado",
-          "candidate1": "Lula",
-          "percent1": 41,
-          "candidate2": "Ronaldo Caiado",
-          "percent2": 38
-        },
-        {
-          "matchup": "Lula vs Cury",
-          "candidate1": "Lula",
-          "percent1": 39,
-          "candidate2": "Augusto Cury",
-          "percent2": 35
-        },
-        {
-          "matchup": "Lula vs Renan",
-          "candidate1": "Lula",
-          "percent1": 42,
-          "candidate2": "Renan Santos",
-          "percent2": 37
-        },
-        {
-          "matchup": "Lula vs Zema",
-          "candidate1": "Lula",
-          "percent1": 44,
-          "candidate2": "Romeu Zema",
-          "percent2": 33
-        }
-      ]
-    },
-    {
-      "institute": "Veritá",
-      "date": "2026-09-06",
-      "scope": "national",
-      "sample": 3804,
-      "margin": 2,
-      "register": "BR-09426/2026",
-      "reliability": 2,
-      "method": "Telefônica (URA)",
-      "fieldDates": "2026-09-01 a 2026-09-04",
-      "note": "Veritá nacional divulgada em 06/Set, campo de 01 a 04/Set, registro BR-09426/2026 no TSE, com 3.804 entrevistas, margem de 2pp a 95% de confiança e custeio por recursos próprios do instituto. ⭐ FLÁVIO BOLSONARO APARECE NUMERICAMENTE À FRENTE NO 1º TURNO, 38,9% contra 38,4% de Lula. ⚠️ A distância de 0,5 ponto cabe inteira dentro da margem de 2 pontos, então o que a pesquisa mede é EMPATE TÉCNICO e não liderança. É a segunda nacional da janela a trazer essa ordem, depois da Gerp de 26/Ago, que deu 38% a 37%. ⭐ E AUGUSTO CURY VAI DE 2,2% PARA 12,2% ENTRE AS DUAS RODADAS DA CASA QUE O PAINEL GUARDA, a de 21/Ago e esta, uma variação de 10 pontos, com Pablo Marçal fazendo o caminho inverso, de 5,2% para 1,4%. ⭐ O CENÁRIO DE 2º TURNO DESTA MESMA RODADA SAIU DEPOIS, e ele inverte o par: Flávio Bolsonaro 48,5% contra 43,1% de Lula, com 4,9% de brancos e nulos e 3,6% de indecisos. 🏷️ Em 06/Set o painel registrou que este levantamento não trazia cenário de 2º turno, porque no momento da captura ele não trazia: a matéria da CNN Brasil que o publica é de 06/Set às 13:53 e foi atualizada em 07/Set às 00:03. ⚠️ É a PRIMEIRA nacional da janela a dar o 2º turno a Flávio Bolsonaro. As outras duas que testam o par vão no sentido oposto: Datafolha de 03/Set, 46% a 44% para Lula, e Quaest de 02/Set, 42% a 41%, também para Lula. A rejeição medida nesta mesma rodada é de 35% a Lula e 25,8% a Flávio Bolsonaro. 🏷️ A soma das linhas do 1º turno fecha em 100,0% com brancos, nulos e indecisos, o que é coerente. ⚠️ A imprensa publica a amostra como 3.804 e o registro no TSE traz 3.840, e o painel usa o número publicado com o registrado declarado ao lado. ⚠️ A Veritá tem confiabilidade 2 na régua da casa, a mais baixa entre os institutos da janela, e não é dado que se leia sozinho: as demais nacionais da janela seguem dando Lula à frente por margens de 3 a 9,7 pontos. 📌 O método declarado ao TSE é entrevista por unidade automatizada de resposta audível em telefones celulares, com transcrição por inteligência artificial, e não entrevista presencial.",
-      "scenarios": [
-        {
-          "name": "Cenário Principal (1º turno, estimulado)",
-          "results": [
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 38.9
-            },
-            {
-              "candidate": "Lula (PT)",
-              "percent": 38.4
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 12.2
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 3.7
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 1.9
-            },
-            {
-              "candidate": "Pablo Marçal (PRTB)",
-              "percent": 1.4
-            },
-            {
-              "candidate": "Hertz Dias (PSTU)",
-              "percent": 0.4
-            },
-            {
-              "candidate": "Edmilson Costa (PCB)",
-              "percent": 0.3
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 0.3
-            },
-            {
-              "candidate": "Clariana Barão (DC)",
-              "percent": 0.3
-            },
-            {
-              "candidate": "Samara Martins (UP)",
-              "percent": 0.2
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 43.1,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 48.5
-        }
-      ],
-      "source": "Veritá, registro BR-09426/2026 no TSE, noticiada por CNN Brasil e Terra Brasil Notícias em 06/Set e agregada na tabela da Wikipédia, que registra o mesmo campo e os mesmos percentuais. O site do instituto não havia publicado a rodada no momento da conferência."
     }
   ],
   "approvalData": {
@@ -3687,117 +3529,118 @@
     "lastUpdate": "04/10/2026, 21:43"
   },
   "polymarketComparison": {
-    "note": "Preços do Polymarket na leitura confirmada de 04/Out, 21:43 BRT, durante a apuração do 1º turno, com o livro presidencial somando USD 170,31M acumulados em 19 contratos. NO CONTRATO DE VENCEDOR O VÃO DE FLÁVIO BOLSONARO SOBRE LULA VAI DE 29,05pp PARA 68,75pp: Flávio Bolsonaro sobe 19,70pp, para 84,25%, e Lula cai 20,00pp, para 15,50%, com 19,94pp para cada lado no normalizado. 🗳️ Na parcial oficial do TSE das 21:44 BRT de 04/Out, com 99,59% das seções totalizadas, Flávio Bolsonaro tem 47,12% dos votos válidos para presidente e Lula 45,06%, seguidos por Augusto Cury, com 2,89%, Ronaldo Caiado, com 2,19%, e Renan Santos, com 2,25%. Às 20:58 o TSE marcou o resultado presidencial como matematicamente definido: Flávio Bolsonaro e Lula vão ao 2º turno, marcado para 25/Out (Agência Brasil). O lado pesquisa deste grafo segue sendo a Palver de 03/Out, n=5.000, a maior amostra entre as nacionais do dia mais recente, que dá Flávio Bolsonaro 47% a 43% no 1º turno. Nas nove nacionais divulgadas em 03/Out, véspera do 1º turno, Lula fica à frente no 1º turno em cinco (Datafolha, Quaest, PoderData, CNT/MDA e AtlasIntel) e Flávio Bolsonaro em quatro (Palver, Futura e duas da Gerp, que informa que as duas medições compartilham parte das entrevistas).",
-    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. A confirmação é feita contrato a contrato, e os preços desta página são todos da leitura confirmada de 04/Out, 21:43 BRT. Ao lado do movimento cru vai o normalizado pela soma do par binário, ou do livro inteiro quando ele tem mais de dois nomes relevantes. Pesquisas registradas no TSE, com protocolo, casa, campo, amostra e método declarados em cada entrada. Apuração: parcial oficial do TSE, com hora e porcentagem de seções totalizadas. 🗳️ O lado PESQUISA do grafo de divergência usa UMA nacional, não a média: a régua do painel é a nacional mais recente com desempate pela maior amostra, o que dá a Palver de 03/Out, n=5.000, a maior amostra entre as nacionais do dia mais recente. A Palver é um painel online com amostra não probabilística calibrada, e a escolha vai declarada no grafo, com casa e data.",
+    "note": "Preços do Polymarket na leitura confirmada de 08/Out, 20:38 BRT, quarto dia do 2º turno. NO CONTRATO DE VENCEDOR O VÃO DE FLÁVIO BOLSONARO SOBRE LULA VAI DE 70,45pp PARA 72,15pp contra a leitura confirmada de 07/Out às 17:35 BRT, publicada na rodada anterior: Flávio Bolsonaro está em 85,65% e Lula em 13,50%. Os contratos dos outros nomes no livro de vencedor estão fechados desde o 1º turno, resolvidos em zero. 📊 As primeiras nacionais depois da urna saíram em 08/Out. Na Datafolha, com campo de 06 a 08/Out e 2.520 entrevistas, Flávio Bolsonaro tem 49% e Lula 45% no 2º turno, com 5% de brancos, nulos e nenhum e 1% de indecisos; nos válidos, 52% a 48% (G1, Valor, CartaCapital e Brasil de Fato). Na PoderData/Aya, com campo de 05 a 07/Out e 3.000 entrevistas, Flávio Bolsonaro tem 53% e Lula 47% dos votos válidos, e a divulgação não traz o total (Poder360). Nas duas, 46% dizem que não votam em Lula e 43% que não votam em Flávio Bolsonaro. O lado pesquisa deste grafo é a Datafolha de 08/Out, n=2.520, com Flávio Bolsonaro 49% a 45%, a única nacional do dia que publicou o total de votos; a PoderData/Aya do mesmo dia, com amostra maior, publicou só votos válidos e por isso não entra no grafo. Na rodada da Datafolha de 03/Out, feita antes da urna, Lula tinha 47% e Flávio Bolsonaro 46% no 2º turno. As próximas nacionais registradas no TSE saem em 09/Out (AtlasIntel e Vox Brasil), 10/Out (Ipespe), 11/Out (DataTrends) e 13/Out (Gerp, Nexus, 100 Cidades e PoderData).",
+    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. A confirmação é feita contrato a contrato, e os preços desta página são da leitura confirmada de 08/Out, 20:38 BRT. Ao lado do movimento cru vai o normalizado pela soma do par. Pesquisas registradas no TSE, com protocolo, casa, campo, amostra e método declarados em cada entrada. Resultado do 1º turno: totalização oficial do TSE, 100% das seções. 🗳️ O lado PESQUISA do grafo de divergência usa UMA nacional, não a média, e sempre no TOTAL de votos: a régua é o par do 2º turno da nacional mais recente que o mediu, com desempate pela maior amostra entre as que publicaram o total, o que dá a Datafolha de 08/Out, n=2.520, com Flávio Bolsonaro 49% a 45%, a única nacional do dia que publicou o total de votos; a PoderData/Aya do mesmo dia, com amostra maior, publicou só votos válidos e por isso não entra no grafo.",
     "candidates": [
       {
         "name": "Lula",
-        "percentage": 43,
-        "odds": 15.5,
-        "value": 15.5,
-        "polymarket": "15,50%",
-        "pesquisaRange": "34% a 46,7%",
-        "lastUpdate": "04/10/2026, 21:43",
-        "tendenciaPesquisa": "TINHA 43% NO 1º TURNO NA PALVER DE 03/Out, fonte do lado pesquisa deste grafo, 4 pontos atrás de Flávio Bolsonaro. ⭐ Nas nove nacionais de 03/Out liderava o 1º turno em cinco: 42% a 40% na Datafolha, 40% a 38% na Quaest, 42% a 41% na PoderData, 43,1% a 38% na CNT/MDA e 46,7% a 43,8% na AtlasIntel.",
-        "tendenciaPolymarket": "CAI 20,00pp NO CONTRATO DE VENCEDOR, para 15,50% (vol USD 16,52M acumulado), leitura confirmada de 04/Out, 21:43 BRT, e 19,94pp no normalizado. O vão de Flávio Bolsonaro sobre ele vai de 29,05pp para 68,75pp. Na série gravada desde 14 de abril o preço dele fica 19,00pp abaixo do piso gravado, 34,50% de 25/Abr. Na parcial oficial do TSE das 21:44 BRT de 04/Out, com 99,59% das seções totalizadas, tem 45,06% dos votos válidos."
+        "percentage": 45,
+        "odds": 13.5,
+        "value": 13.5,
+        "polymarket": "13,50%",
+        "pesquisaRange": "45% a 45%",
+        "lastUpdate": "08/10/2026, 20:38",
+        "tendenciaPesquisa": "TEM 44% NO 2º TURNO NA PALVER DE 03/Out, fonte do lado pesquisa deste grafo, contra 49% de Flávio Bolsonaro. Na véspera liderava o 2º turno na Datafolha (47% a 46%), na CNT/MDA (47,3% a 43,1%) e na AtlasIntel (47,6% a 47,4%), e empatava na PoderData. Na urna do 1º turno teve 45,16% dos válidos.",
+        "tendenciaPolymarket": "CAI 1,00pp NO CONTRATO DE VENCEDOR, em 13,50% (vol USD 21,00M acumulado), leitura confirmada de 08/Out, 20:38 BRT, contra a leitura confirmada de 07/Out às 17:35 BRT, publicada na rodada anterior. O vão de Flávio Bolsonaro sobre ele vai de 70,45pp para 72,15pp. 📊 Tem 45% na Datafolha de 08/Out. 🏆 Contando os contratos fechados, o dele segue sendo o de maior volume acumulado do livro presidencial."
       },
       {
         "name": "Flávio Bolsonaro",
-        "percentage": 47,
-        "odds": 84.25,
-        "value": 84.25,
-        "polymarket": "84,25%",
-        "pesquisaRange": "29% a 47%",
-        "lastUpdate": "04/10/2026, 21:43",
-        "tendenciaPesquisa": "TINHA 47% NO 1º TURNO NA PALVER DE 03/Out, fonte do lado pesquisa deste grafo, e 49% no 2º. ⭐ Nas nove nacionais de 03/Out liderava o 1º turno em quatro, Palver, Futura e as duas rodadas da Gerp, e nas sete divulgadas na tarde de 03/Out o número dele no 1º turno subia contra a rodada anterior da mesma casa.",
-        "tendenciaPolymarket": "SOBE 19,70pp NO CONTRATO DE VENCEDOR, para 84,25% (vol USD 16,11M acumulado), leitura confirmada de 04/Out, 21:43 BRT, e 19,94pp no normalizado. O vão sobre Lula vai de 29,05pp para 68,75pp. Na série gravada desde 14 de abril o preço dele fica 20,95pp acima do topo gravado, 63,30% de 01/Out. Na parcial oficial do TSE das 21:44 BRT de 04/Out, com 99,59% das seções totalizadas, tem 47,12% dos votos válidos."
+        "percentage": 49,
+        "odds": 85.65,
+        "value": 85.65,
+        "polymarket": "85,65%",
+        "pesquisaRange": "49% a 49%",
+        "lastUpdate": "08/10/2026, 20:38",
+        "tendenciaPesquisa": "TEM 49% NO 2º TURNO NA PALVER DE 03/Out, fonte do lado pesquisa deste grafo, contra 44% de Lula. Na véspera liderava o 2º turno na Quaest (44% a 42%), na Palver, na Futura (48% a 45,1%) e na Gerp (49% a 44%). Na urna do 1º turno teve 47,03% dos válidos.",
+        "tendenciaPolymarket": "SOBE 0,70pp NO CONTRATO DE VENCEDOR, em 85,65% (vol USD 18,50M acumulado), leitura confirmada de 08/Out, 20:38 BRT, contra a leitura confirmada de 07/Out às 17:35 BRT, publicada na rodada anterior. O vão sobre Lula vai de 70,45pp para 72,15pp. 📊 Tem 49% na Datafolha de 08/Out."
       },
       {
         "name": "Augusto Cury",
-        "percentage": 1,
-        "odds": 0.05,
-        "value": 0.05,
-        "polymarket": "0,05%",
+        "odds": 0,
+        "value": 0,
+        "polymarket": "fechado",
         "pesquisaRange": "1% a 12,2%",
-        "lastUpdate": "04/10/2026, 21:43",
-        "tendenciaPesquisa": "TEM 1% NO 1º TURNO NA PALVER DE 03/Out, campo de 30/Set a 03/Out e n=5.000, que é a fonte do lado pesquisa deste grafo, e perde para Lula no 2º turno ali por 36% a 44%. Nas nacionais de 03/Out vai de 1% na Palver a 4% na Gerp, e é o terceiro na CNT/MDA, na Gerp e na Futura.",
-        "tendenciaPolymarket": "ESTÁ NO PISO DO LIVRO DE VENCEDOR, 0,05% (vol USD 5,30M acumulado), leitura confirmada de 04/Out, 21:43 BRT. Na parcial oficial do TSE das 21:44 BRT de 04/Out, com 99,59% das seções totalizadas, tem 2,89% dos votos válidos. Na mesma leitura, o livro de 2º lugar do 1º turno pagava 99,85% por Lula e o de 3º lugar 99,85% por Augusto Cury, a mesma ordem do resultado do TSE."
+        "lastUpdate": "08/10/2026, 20:38",
+        "tendenciaPesquisa": "ELIMINADO: 2,89% dos votos válidos no 1º turno, terceiro colocado. Declarou apoio a Flávio Bolsonaro em 08/Out (G1, Estadão e CNN Brasil).",
+        "tendenciaPolymarket": "Contrato de vencedor fechado pela Polymarket depois do 1º turno e resolvido em zero, com USD 5,51M acumulados.",
+        "percentage": 0
       },
       {
         "name": "Renan Santos",
-        "percentage": 7,
-        "odds": 0.05,
-        "value": 0.05,
-        "polymarket": "0,05%",
+        "odds": 0,
+        "value": 0,
+        "polymarket": "fechado",
         "pesquisaRange": "1,5% a 11%",
-        "lastUpdate": "04/10/2026, 21:43",
-        "tendenciaPesquisa": "TEM 7% NO 1º TURNO NA PALVER DE 03/Out, campo de 30/Set a 03/Out e n=5.000, que é a fonte do lado pesquisa deste grafo, onde é o terceiro colocado, e perde para Lula no 2º turno por 33% a 44%. Nas nacionais de 03/Out vai de 1,5% na CNT/MDA a 7% na Palver.",
-        "tendenciaPolymarket": "CAI PARA O PISO DO LIVRO DE VENCEDOR, 0,05%, leitura confirmada de 04/Out, 21:43 BRT. 🏆 O contrato dele segue sendo o de MAIOR volume acumulado do presidencial, USD 17,10M contra USD 16,52M do de Lula. Na parcial oficial do TSE das 21:44 BRT de 04/Out, com 99,59% das seções totalizadas, tem 2,25% dos votos válidos. Na mesma leitura, o livro de 2º lugar do 1º turno pagava 99,85% por Lula e o de 3º lugar 99,85% por Augusto Cury, a mesma ordem do resultado do TSE."
+        "lastUpdate": "08/10/2026, 20:38",
+        "tendenciaPesquisa": "ELIMINADO: 2,24% dos votos válidos no 1º turno, quarto colocado, na totalização do TSE.",
+        "tendenciaPolymarket": "Contrato de vencedor fechado pela Polymarket depois do 1º turno e resolvido em zero, com USD 17,12M acumulados, o segundo maior do livro presidencial.",
+        "percentage": 0
       },
       {
         "name": "Ronaldo Caiado",
-        "percentage": 1,
-        "odds": 0.05,
-        "value": 0.05,
-        "polymarket": "0,05%",
+        "odds": 0,
+        "value": 0,
+        "polymarket": "fechado",
         "pesquisaRange": "1% a 5,7%",
-        "lastUpdate": "04/10/2026, 21:43",
-        "tendenciaPesquisa": "TEM 1% NO 1º TURNO NA PALVER DE 03/Out, campo de 30/Set a 03/Out e n=5.000, que é a fonte do lado pesquisa deste grafo, e perde para Lula no 2º turno ali por 42% a 43%. Nas nacionais de 03/Out vai de 1% na Palver a 4% na Datafolha, onde é o terceiro colocado.",
-        "tendenciaPolymarket": "ESTÁ NO PISO DO LIVRO DE VENCEDOR, 0,05% (vol USD 7,81M acumulado), leitura confirmada de 04/Out, 21:43 BRT. Na parcial oficial do TSE das 21:44 BRT de 04/Out, com 99,59% das seções totalizadas, tem 2,19% dos votos válidos. Na mesma leitura, o livro de 2º lugar do 1º turno pagava 99,85% por Lula e o de 3º lugar 99,85% por Augusto Cury, a mesma ordem do resultado do TSE."
+        "lastUpdate": "08/10/2026, 20:38",
+        "tendenciaPesquisa": "ELIMINADO: 2,18% dos votos válidos no 1º turno, quinto colocado. Declarou apoio a Flávio Bolsonaro em Goiânia em 06/Out (O Globo e VEJA).",
+        "tendenciaPolymarket": "Contrato de vencedor fechado pela Polymarket depois do 1º turno e resolvido em zero, com USD 7,82M acumulados.",
+        "percentage": 0
       },
       {
         "name": "Pablo Marçal",
-        "percentage": 0,
-        "odds": 0.05,
-        "value": 0.05,
-        "polymarket": "0,05%",
+        "odds": 0,
+        "value": 0,
+        "polymarket": "fechado",
         "pesquisaRange": "1% a 2%",
-        "lastUpdate": "04/10/2026, 21:43",
-        "tendenciaPesquisa": "Fora dos cenários estimulados das nacionais de 03/Out, depois do indeferimento do registro de candidatura em 11/Set.",
-        "tendenciaPolymarket": "Segue em 0,05% no contrato de vencedor. O registro de candidatura dele foi indeferido pelo Tribunal Superior Eleitoral em 11/Set."
+        "lastUpdate": "08/10/2026, 20:38",
+        "tendenciaPesquisa": "Fora da eleição desde o indeferimento do registro de candidatura pelo TSE em 11/Set.",
+        "tendenciaPolymarket": "Contrato de vencedor fechado pela Polymarket depois do 1º turno e resolvido em zero.",
+        "percentage": 0
       },
       {
         "name": "Romeu Zema",
-        "percentage": 0,
-        "odds": 0.05,
-        "value": 0.05,
-        "polymarket": "0,05%",
+        "odds": 0,
+        "value": 0,
+        "polymarket": "fechado",
         "pesquisaRange": "0,3% a 3,5%",
-        "lastUpdate": "04/10/2026, 21:43",
-        "tendenciaPesquisa": "Fica abaixo de 1% no 1º turno NA PALVER DE 03/Out, campo de 30/Set a 03/Out e n=5.000, que é a fonte do lado pesquisa deste grafo, e perde para Lula no 2º turno ali por 42% a 44%. Nas nacionais de 03/Out que o pontuam tem de 0,8% a 1%.",
-        "tendenciaPolymarket": "ESTÁ NO PISO DO LIVRO DE VENCEDOR, 0,05% (vol USD 7,74M acumulado), leitura confirmada de 04/Out, 21:43 BRT. Na parcial oficial do TSE das 21:44 BRT de 04/Out, com 99,59% das seções totalizadas, tem 0,27% dos votos válidos."
+        "lastUpdate": "08/10/2026, 20:38",
+        "tendenciaPesquisa": "ELIMINADO: 0,27% dos votos válidos no 1º turno, na totalização do TSE. Declarou voto em Flávio Bolsonaro em 05/Out, e o Novo declarou apoio a ele em 07/Out (G1 e CartaCapital).",
+        "tendenciaPolymarket": "Contrato de vencedor fechado pela Polymarket depois do 1º turno e resolvido em zero, com USD 7,74M acumulados.",
+        "percentage": 0
       },
       {
         "name": "Tarcísio",
-        "percentage": 0,
-        "odds": 0.05,
-        "value": 0.05,
-        "polymarket": "0,05%",
+        "odds": 0,
+        "value": 0,
+        "polymarket": "fechado",
         "pesquisaRange": "não testado",
-        "lastUpdate": "04/10/2026, 21:43",
-        "tendenciaPesquisa": "As nacionais divulgadas em 03/Out não o incluem em cenário presidencial de 1º turno nem em par de 2º turno.",
-        "tendenciaPolymarket": "Segue em 0,05% no contrato de vencedor, com USD 14,89M acumulados, leitura confirmada de 04/Out, 21:43 BRT, e o contrato dele continua atrás do de Renan Santos em volume acumulado no livro presidencial, que tem USD 17,10M."
+        "lastUpdate": "08/10/2026, 20:38",
+        "tendenciaPesquisa": "Não disputou a Presidência: foi reeleito governador de São Paulo no 1º turno.",
+        "tendenciaPolymarket": "Contrato de vencedor fechado pela Polymarket depois do 1º turno e resolvido em zero, com USD 14,96M acumulados.",
+        "percentage": 0
       },
       {
         "name": "Fernando Haddad",
-        "percentage": 0,
-        "odds": 0.05,
-        "value": 0.05,
-        "polymarket": "0,05%",
+        "odds": 0,
+        "value": 0,
+        "polymarket": "fechado",
         "pesquisaRange": "não testado",
-        "lastUpdate": "04/10/2026, 21:43",
-        "tendenciaPesquisa": "As nacionais divulgadas em 03/Out não o incluem em cenário presidencial de 1º turno nem em par de 2º turno.",
-        "tendenciaPolymarket": "Segue em 0,05% no contrato de vencedor, com USD 7,55M acumulados."
+        "lastUpdate": "08/10/2026, 20:38",
+        "tendenciaPesquisa": "Não disputou a Presidência: disputou o governo de São Paulo e perdeu para Tarcísio de Freitas no 1º turno.",
+        "tendenciaPolymarket": "Contrato de vencedor fechado pela Polymarket depois do 1º turno e resolvido em zero, com USD 7,74M acumulados.",
+        "percentage": 0
       }
     ],
-    "updatedAt": "04/10/2026, 21:43",
+    "updatedAt": "08/10/2026, 20:38",
     "lastUpdate": "25/09/2026, 17:08",
     "pollSource": {
-      "pollster": "Palver",
-      "date": "2026-09-24",
-      "sample": 5000,
-      "register": "BR-09587/2026",
-      "scenario": "Cenário Principal (1º turno, estimulado)"
+      "pollster": "Datafolha",
+      "date": "2026-10-08",
+      "sample": 2520,
+      "register": "BR-02949/2026",
+      "scenario": "2º turno, Lula vs Flávio",
+      "round": 2
     }
   }
 }
