@@ -26,6 +26,7 @@
     "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:scripts": "eslint --no-eslintrc -c .eslintrc.scripts.json \"scripts/**/*.mjs\"",
     "test:e2e": "playwright test",
     "check:locale": "tsx scripts/check-locale-json.ts",
     "check:content": "tsx scripts/validate-polls-data.ts && tsx scripts/check-json-structure.ts && tsx scripts/check-hardcoded-ptbr.ts && tsx scripts/test-json-number-gate.ts && tsx scripts/check-locale-json.ts",
