@@ -298,6 +298,30 @@ O registro é `lib/us-polls/instrumento-medido.mjs`, e ele é **dado declarado c
 
 🧪 `node scripts/testar-instrumento-us.mjs`, 75 casos e no CI, com 11 de 11 mutações reprovadas. Metade dos casos é anti-silêncio (documento ilegível não pode sair `AUSENTE`) e anti-alarme (a ressalva da pergunta SEGUINTE não pode virar ressalva desta).
 
+### 🔴 09/Out/2026: a SEGUNDA casa a trocar, e desta vez é a PEW
+
+A Pew Research Center entrou pelo índice com **D+8.00 sobre n=3.917 eleitores registrados**, campo 28/Set a 04/Out, e levaria a média de D+7.57 sobre 45 para D+7.59 sobre 46. **Aberto o relatório, ela não é generic ballot.**
+
+A pergunta é a **`CONG`**, *"If the November elections for the U.S. House of Representatives were being held today, would you vote for..."*, e as opções são **"Rep/Lean Rep candidate in your district"** e **"Dem/Lean Dem candidate in your district"**. A nota de rodapé 12 fecha:
+
+> *"In the October 2026 survey, **candidate names were inserted into the response options based on the respondent's congressional district**."*
+
+⚠️ **A genérica sobrevive só como EXCEÇÃO declarada**, e exceção por distrito não faz a onda voltar a ser generic ballot: Alasca e partes da Louisiana, onde o distrito pode ter dois candidatos do mesmo partido; Missouri, por disputa judicial sobre o mapa; distritos em que um lado não tem adversário; e **1 (um) eleitor** cujo distrito não foi identificado.
+
+🔑 **A onda de JULHO fica, e é por isso que o corte é por ONDA.** A nota diz *"in the October 2026 survey"*, então a troca é desta onda; a de 06 a 12/Jul (D 43 x R 37) é anterior a `desde` e segue na base. **Excluir a casa apagaria medição legítima.**
+
+📊 **Resultado do dia:** D+7.57 sobre 45 de 32, veredito **`PARADO`**. A única rodada nova não é generic ballot, então a média não se moveu, e isso é a frase honesta.
+
+⚠️ **E a exclusão exige DEPLOY**, porque `collect.mjs` importa o registro na linha 29: sem publicar, o cron das 07:10Z segue incluindo a onda e o Neon passa a discordar do arquivo. Medido no dia: o cron das 07:10Z tinha gravado **46 de 33, D+7.59**, e só voltou a bater depois do deploy mais o Passo 3.
+
+### 🕳️ E a armadilha de leitura do PDF, que eu quase comprei
+
+Procurando `44` e `36` no relatório, **o primeiro casamento não era o generic ballot**: era a linha de **"Artificial intelligence"** numa bateria de **importância de temas**, onde 44 é *"muito importante"* e 36 é *"mais ou menos"*. Os dois números batiam com o índice e o objeto era outro, e o `outros 20` que eu ia deduzir dali seriam as colunas de *não muito* e *nada importante*.
+
+⛔ **Conferir o RÓTULO DA PERGUNTA, nunca o par de números.** Num relatório de 2.870 linhas, qualquer par de inteiros de dois dígitos aparece várias vezes, e o casamento que confirma o que você já espera é o mais fácil de achar.
+
+📌 A âncora certa é o rótulo da Pew (`CONG`, `CONGA`), que fica no começo da linha em maiúsculas, e o bloco `BASED ON REGISTERED VOTERS [N=...]` logo abaixo. O `outros 20` do índice é a soma de **`Another/Lean to another candidate` 5** com **`Not sure` 15**.
+
 🌍 **O `agregadores-us-polls.mjs` responde a pergunta que vem ANTES de todas as outras, criado em 13/Set/2026.** O coletor imprime "atraso da fonte: N dias" e não sabe dizer de quem é o atraso: ou ninguém mediu nada, e a base está completa, ou mediram e o índice não recebeu, e a base está incompleta. A defasagem responde casa por casa, deixa casas sem veredicto e não cobre quem não está no registro.
 
 A resposta está no mesmo host que já lemos: a seção `GenericBallotAgg` do artigo da Câmara na Wikipédia, onde cada agregador declara o intervalo de campo da média dele. ⭐ **Medido no dia: seis de seis declaravam campo até 11/Set e a nossa base parava em 31/Ago, 11 dias.** Isso tinha sido lido UMA vez à mão, em 24/Ago, e nunca virou medidor.
