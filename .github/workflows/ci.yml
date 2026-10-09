@@ -38,6 +38,9 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Lint dos scripts .mjs (no-undef)
+        run: npm run lint:scripts
+
       # Build with placeholder env vars — verifies the project compiles
       # without exposing secrets. Real values are set on Vercel.
       - name: Build (compile only)
