@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-10-08",
+  "lastUpdate": "2026-10-09",
   "institutes": [
     {
       "name": "Datafolha",
@@ -148,6 +148,50 @@
   ],
   "polls": [
     {
+      "institute": "AtlasIntel/Bloomberg",
+      "date": "2026-10-09",
+      "scope": "national",
+      "sample": 5026,
+      "margin": 1,
+      "register": "BR-03663/2026",
+      "reliability": 4,
+      "method": "Online/Big Data",
+      "fieldDates": "2026-10-03 a 2026-10-08",
+      "note": "AtlasIntel national poll released on 09/Oct, commissioned by Bloomberg, the pollster's first after the [first round](/en/glossary#primeiro-turno), registration BR-03663/2026, 5,026 voters through random digital recruitment from 03 to 08/Oct, margin of 1pp with 95% confidence (Estadão, CNN Brasil and CartaCapital). ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) FLÁVIO BOLSONARO HAS 51.1% AND LULA 45.7% in total votes, and blank ballots, spoiled ballots and undecided voters add up to 3.2%, after 47.6% to 47.4% for Lula in the pollster's round of 03/Oct, conducted before the vote. In valid votes, Flávio Bolsonaro 52.8% and Lula 47.2%. Among Augusto Cury's voters, Lula has 50.4% and Flávio Bolsonaro 38.9%; among Ronaldo Caiado's, Flávio Bolsonaro has 54.9% and Lula 26.9%.",
+      "scenarios": [],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 45.7,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 51.1
+        }
+      ]
+    },
+    {
+      "institute": "Vox Brasil",
+      "date": "2026-10-09",
+      "scope": "national",
+      "sample": 2100,
+      "margin": 2.15,
+      "register": "BR-09623/2026",
+      "reliability": 3,
+      "method": "In person",
+      "fieldDates": "2026-10-05 a 2026-10-07",
+      "note": "Vox Brasil national poll released on 09/Oct, the pollster's first after the [first round](/en/glossary#primeiro-turno), registration BR-09623/2026, 2,100 voters interviewed in person from 05 to 07/Oct, margin of 2.15pp with 95% confidence (CartaCapital, CNN Brasil and Poder360). ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) LULA HAS 44.2% AND FLÁVIO BOLSONARO 42.7%, within the margin, with 3.4% blank and spoiled ballots and 9.7% who do not know, after 48.2% to 45.2% for Flávio Bolsonaro in the pollster's round of 02/Oct, conducted before the vote. In valid votes, Lula 50.86% and Flávio Bolsonaro 49.14%. 76.2% of voters say they are fully decided.",
+      "scenarios": [],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 44.2,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 42.7
+        }
+      ]
+    },
+    {
       "institute": "Datafolha",
       "date": "2026-10-08",
       "scope": "national",
@@ -179,9 +223,17 @@
       "reliability": 3,
       "method": "Telephone",
       "fieldDates": "2026-10-05 a 2026-10-07",
-      "note": "PoderData national poll released on 08/Oct in partnership with Aya, the first poll published after the [first round](/en/glossary#primeiro-turno), registration BR-08134/2026, 3,000 telephone interviews in 705 municipalities across the 27 federative units, from 05 to 07/Oct, margin of 1.8pp with 95% confidence (Poder360). ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno), IN VALID VOTES, FLÁVIO BOLSONARO HAS 53% AND LULA 47%. The release includes only valid votes, without the total with blank, null and undecided, and so this poll is not on the divergence chart, which compares the price with the total vote. On expectation of victory, 54% think Flávio Bolsonaro wins and 37% that Lula wins. Rejection: 46% would not vote for Lula and 43% would not vote for Flávio Bolsonaro (CNN Brasil).",
+      "note": "PoderData national poll released on 08/Oct in partnership with Aya, the first poll published after the [first round](/en/glossary#primeiro-turno), registration BR-08134/2026, 3,000 telephone interviews in 705 municipalities across the 27 federative units, from 05 to 07/Oct, margin of 1.8pp with 95% confidence (Poder360 and Jovem Pan). ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) FLÁVIO BOLSONARO HAS 49% AND LULA 44% in total votes, with 5% blank and spoiled ballots and 2% undecided; in valid votes, 53% to 47%. Among Augusto Cury's voters, Flávio Bolsonaro has 56% and Lula 27%; among Ronaldo Caiado's, 57% to 19%; among Renan Santos's, 48% to 25%; among Romeu Zema's, 72% to 10% (Jovem Pan). On expectation of victory, 54% think Flávio Bolsonaro wins and 37% that Lula wins. Rejection: 46% would not vote for Lula and 43% would not vote for Flávio Bolsonaro (CNN Brasil). 📌 Correction of 09/Oct: on 08/Oct this entry said the release included only valid votes; it also included the total, which has been added here.",
       "scenarios": [],
-      "secondRound": []
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 44,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 49
+        }
+      ]
     },
     {
       "institute": "Palver",
@@ -3360,131 +3412,6 @@
         }
       ],
       "source": "Gazeta do Povo, Poder360, Folha de S.Paulo, Valor Econômico, UOL, CartaCapital, VEJA, Exame, JOTA and Congresso em Foco (09/Sep/2026)"
-    },
-    {
-      "institute": "BTG/Nexus",
-      "date": "2026-09-08",
-      "scope": "national",
-      "sample": 2002,
-      "margin": 2,
-      "register": "BR-06790/2026",
-      "reliability": 4,
-      "method": "Phone",
-      "fieldDates": "2026-09-04 a 2026-09-07",
-      "note": "BTG/Nexus national poll released on 08/Sep, fieldwork from 04 to 07/Sep, registration BR-06790/2026 with the [TSE](/en/glossary#tse), 2,002 interviews by telephone on the CATI system, a margin of 2pp and 95% confidence, declared cost of R$ 164,888.89 (Poder360, Gazeta do Povo, Folha de S.Paulo, CNN Brasil, Metrópoles, JOTA, Estadão, VEJA, CartaCapital and Exame). ⭐ IT IS THE FIRST TIME THIS HOUSE HANDS THE [RUNOFF](/en/glossary#segundo-turno) TO FLÁVIO BOLSONARO: 46% against 45% for Lula. ⚠️ The distance of 1 point fits entirely inside the margin of 2 points, so what the poll measures is a [STATISTICAL TIE](/en/glossary#empate-tecnico) and not a lead. In the house's previous round, on 31/Aug (BR-08900/2026, fieldwork 28 to 30/Aug, n=2,005), the same pairing came out 46% to 45% for LULA, that is the same two figures with the sides swapped. ⭐ AND IT IS THE THIRD NATIONAL POLL IN A ROW NOT TO HAND THE PAIRING TO THE LEADER, after Quaest of 07/Sep, which gave a tie at 41% to 41%, and Veritá of 06/Sep, which gave 48.5% to 43.1%. The two before them went the other way: Datafolha of 03/Sep, 46% to 44%, and Quaest of 02/Sep, 42% to 41%, both for Lula. 🏷️ THE HOUSE PUBLISHED TWO PROMPTED [FIRST-ROUND](/en/glossary#primeiro-turno) SCENARIOS AND BOTH ARE CORRECT, which explains why the press reported the runner-up with different figures: 35% in the scenario WITHOUT Pablo Marçal and 34% in the scenario WITH him, with the leader at 39% in both. Pablo Marçal is barred from running and the Superior Electoral Court has until 14/Sep to rule on the presidential candidacies. ⭐ AND THE RUNOFF WITH AUGUSTO CURY IS THE FIGURE THAT STANDS FURTHEST FROM THE BASE: the house puts him numerically ahead of the leader by 45% to 43%, and Quaest of 07/Sep, with fieldwork that all but overlaps, puts the leader ahead in the same pairing by 39% to 35%. That is 6 points of difference between two houses on the same question, and the panel records both without choosing. COMPARISON INSIDE THE HOUSE, which is the only valid one: in the first round without Marçal the leader held 39% for a second consecutive round and the runner-up rose from 33% to 35%, while Augusto Cury gave up from 11% to 9%. REJECTION: Flávio Bolsonaro 50% and Lula 49%, against 55% and 53% measured by Quaest in the same week, that is the two houses agree on the order and differ by 5 and 4 points on the level. GOVERNMENT APPROVAL: 45% approve and 50% disapprove, with 4% giving no answer, and on the management scale 36% excellent or good, 18% fair and 46% poor or terrible. ⚠️ The disapproval matches exactly the 50% Quaest measured on 07/Sep, and approval differs by 2 points. 📅 TODAY'S RELEASE WAS ALREADY IN THE CALENDAR PUBLISHED BY THE PANEL SINCE 03/Sep, with the expected date and the registration number matching what was published. 🏷️ The unprompted scenario released by the house is not in this entry because the panel could not confirm it in two independent sources.",
-      "scenarios": [
-        {
-          "name": "Prompted scenario without Pablo Marçal (first round)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 39
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 35
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 9
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 4
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 4
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 1
-            },
-            {
-              "candidate": "Samara Martins (UP)",
-              "percent": 1
-            },
-            {
-              "candidate": "Rui Costa Pimenta (PCO)",
-              "percent": 1
-            }
-          ]
-        },
-        {
-          "name": "Prompted scenario with Pablo Marçal (first round)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 39
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 34
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 9
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 4
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 4
-            },
-            {
-              "candidate": "Pablo Marçal (PRTB)",
-              "percent": 3
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 2
-            },
-            {
-              "candidate": "Samara Martins (UP)",
-              "percent": 1
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Flávio vs Lula",
-          "candidate1": "Flávio Bolsonaro",
-          "percent1": 46,
-          "candidate2": "Lula",
-          "percent2": 45
-        },
-        {
-          "matchup": "Cury vs Lula",
-          "candidate1": "Augusto Cury",
-          "percent1": 45,
-          "candidate2": "Lula",
-          "percent2": 43
-        },
-        {
-          "matchup": "Lula vs Caiado",
-          "candidate1": "Lula",
-          "percent1": 46,
-          "candidate2": "Ronaldo Caiado",
-          "percent2": 43
-        },
-        {
-          "matchup": "Lula vs Zema",
-          "candidate1": "Lula",
-          "percent1": 47,
-          "candidate2": "Romeu Zema",
-          "percent2": 40
-        },
-        {
-          "matchup": "Lula vs Renan",
-          "candidate1": "Lula",
-          "percent1": 47,
-          "candidate2": "Renan Santos",
-          "percent2": 39
-        }
-      ]
     }
   ],
   "approvalData": {
@@ -3529,30 +3456,30 @@
     "lastUpdate": "04/10/2026, 21:43"
   },
   "polymarketComparison": {
-    "note": "Polymarket prices at the confirmed reading of 08/Oct, 20:38 BRT, fourth day of the [second round](/en/glossary#segundo-turno). IN THE WINNER CONTRACT, FLÁVIO BOLSONARO'S GAP OVER LULA GOES FROM 70.45pp TO 72.15pp against the confirmed reading of 07/Oct at 17:35 BRT, published in the previous update: Flávio Bolsonaro stands at 85.65% and Lula at 13.50%. The contracts for the other names in the winner book have been closed since the [first round](/en/glossary#primeiro-turno), resolved at zero. 📊 The first national polls after the vote came out on 08/Oct. In Datafolha, with fieldwork from 06 to 08/Oct and 2,520 interviews, Flávio Bolsonaro has 49% and Lula 45% in the second round, with 5% blank, null and none and 1% undecided; in valid votes, 52% to 48% (G1, Valor, CartaCapital and Brasil de Fato). In PoderData/Aya, with fieldwork from 05 to 07/Oct and 3,000 interviews, Flávio Bolsonaro has 53% and Lula 47% of the valid votes, and the release does not include the total vote (Poder360). In both, 46% say they would not vote for Lula and 43% that they would not vote for Flávio Bolsonaro. The poll side of this chart is Datafolha of 08/Oct, n=2,520, with Flávio Bolsonaro at 49% to 45%, the only national poll of the day that published the total vote; PoderData/Aya of the same day, with a larger sample, published only valid votes and is therefore not on the chart. In the Datafolha round of 03/Oct, conducted before the vote, Lula had 47% and Flávio Bolsonaro 46% in the second round. The next national polls registered with the [TSE](/en/glossary#tse) come out on 09/Oct (AtlasIntel and Vox Brasil), 10/Oct (Ipespe), 11/Oct (DataTrends) and 13/Oct (Gerp, Nexus, 100 Cidades and PoderData).",
-    "sources": "Polymarket prices via the AFOS proxy, and the panel only publishes a price that two independent readings, taken eight minutes apart, confirm within 0.20pp. Confirmation is done contract by contract, and the prices on this page come from the confirmed reading of 08/Oct, 20:38 BRT. Alongside the raw move comes the move normalized by the pair's sum. Polls registered with the [TSE](/en/glossary#tse), with protocol, pollster, fieldwork, sample and method declared in each entry. [First-round](/en/glossary#primeiro-turno) result: official TSE final tally, 100% of polling sections. 🗳️ The POLL side of the divergence chart uses ONE national poll, not the average, and always in the TOTAL vote: the rule is the second-round pair from the most recent national poll that measured it, with ties broken by the largest sample among those that published the total, which gives Datafolha of 08/Oct, n=2,520, with Flávio Bolsonaro at 49% to 45%, the only national poll of the day that published the total vote; PoderData/Aya of the same day, with a larger sample, published only valid votes and is therefore not on the chart.",
+    "note": "Polymarket prices at the confirmed reading of 09/Oct, 14:06 BRT, fifth day of the [second round](/en/glossary#segundo-turno). IN THE WINNER CONTRACT, FLÁVIO BOLSONARO'S GAP OVER LULA GOES FROM 72.15pp TO 73.65pp against the confirmed reading of 08/Oct at 20:38 BRT, published in the previous update: Flávio Bolsonaro stands at 87.15% and Lula at 13.50%. The contracts for the other names in the winner book have been closed since the [first round](/en/glossary#primeiro-turno), resolved at zero. 📊 Two national polls came out on 09/Oct. In AtlasIntel/Bloomberg, with online fieldwork from 03 to 08/Oct and 5,026 interviews, Flávio Bolsonaro has 51.1% and Lula 45.7% in the second round, with 3.2% blank ballots, spoiled ballots and undecided voters; in valid votes, 52.8% to 47.2% (Estadão, CNN Brasil and CartaCapital). In Vox Brasil, with in-person fieldwork from 05 to 07/Oct and 2,100 interviews, Lula has 44.2% and Flávio Bolsonaro 42.7%, within the margin, with 3.4% blank and spoiled ballots and 9.7% who do not know; in valid votes, Lula gets 50.86% of the votes and Flávio Bolsonaro 49.14% of the votes (CartaCapital, CNN Brasil and Poder360). On 08/Oct, Datafolha gave Flávio Bolsonaro 49% to 45% and PoderData/Aya 49% to 44% in the total vote. The poll side of this chart is AtlasIntel/Bloomberg of 09/Oct, n=5,026, with 51.1% for Flávio Bolsonaro and 45.7% for Lula, the most recent one with the largest sample among the national polls that published the total vote. In the two pollsters' rounds conducted before the vote, AtlasIntel of 03/Oct had Lula at 47.6% and Flávio Bolsonaro at 47.4%, and Vox Brasil of 02/Oct had Flávio Bolsonaro at 48.2% and Lula at 45.2%. The next national polls registered with the [TSE](/en/glossary#tse) come out on 10/Oct (Ipespe), 11/Oct (DataTrends), 13/Oct (PoderData, Gerp, Nexus and 100 Cidades) and 14/Oct ([Quaest](/en/glossary#quaest)). 📌 Correction: on 08/Oct this panel said that PoderData/Aya had published only valid votes. It also published the total, 49% for Flávio Bolsonaro and 44% for Lula, with 5% blank and spoiled ballots and 2% undecided (Jovem Pan), and the total was added to its entry. By the chart's rule, the source for 08/Oct would have been PoderData/Aya, with the larger sample, and not Datafolha: Flávio Bolsonaro's number is the same, 49%, and Lula's is 1 point lower, 44% instead of 45%.",
+    "sources": "Polymarket prices via the AFOS proxy, and the panel only publishes a price that two independent readings, taken eight minutes apart, confirm within 0.20pp. Confirmation is done contract by contract, and the prices on this page come from the confirmed reading of 09/Oct, 14:06 BRT. Alongside the raw move comes the move normalized by the pair's sum. Polls registered with the [TSE](/en/glossary#tse), with protocol, pollster, fieldwork, sample and method declared in each entry. [First-round](/en/glossary#primeiro-turno) result: official TSE final tally, 100% of polling sections. 🗳️ The POLL side of the divergence chart uses ONE national poll, not the average, and always in the TOTAL vote: the rule is the second-round pair from the most recent national poll that measured it, with ties broken by the largest sample among those that published the total, which gives AtlasIntel/Bloomberg of 09/Oct, n=5,026, with 51.1% for Flávio Bolsonaro and 45.7% for Lula, the most recent one with the largest sample among the national polls that published the total vote.",
     "candidates": [
       {
         "name": "Lula",
-        "percentage": 45,
+        "percentage": 45.7,
         "odds": 13.5,
         "value": 13.5,
         "polymarket": "13.50%",
-        "pesquisaRange": "45% to 45%",
-        "lastUpdate": "08/10/2026, 20:38",
+        "pesquisaRange": "44% to 45.7%",
+        "lastUpdate": "09/10/2026, 14:06",
         "tendenciaPesquisa": "HAS 44% IN THE [SECOND ROUND](/en/glossary#segundo-turno) IN PALVER OF 03/Oct, the source of this chart's poll side, against Flávio Bolsonaro's 49%. On the eve he led the second round in Datafolha (47% to 46%), in CNT/MDA (47.3% to 43.1%) and in AtlasIntel (47.6% to 47.4%), and was tied in PoderData. In the [first-round](/en/glossary#primeiro-turno) count he had 45.16% of valid votes.",
-        "tendenciaPolymarket": "DOWN 1.00pp IN THE WINNER CONTRACT, at 13.50% (vol USD 21.00M cumulative), confirmed reading of 08/Oct, 20:38 BRT, against the confirmed reading of 07/Oct at 17:35 BRT, published in the previous update. Flávio Bolsonaro's gap over him goes from 70.45pp to 72.15pp. 📊 He has 45% in Datafolha of 08/Oct. 🏆 Counting the closed contracts, his is still the one with the highest cumulative volume in the presidential book."
+        "tendenciaPolymarket": "HOLDS STEADY IN THE WINNER CONTRACT, at 13.50% (vol USD 21.20M cumulative), confirmed reading of 09/Oct, 14:06 BRT, against the confirmed reading of 08/Oct at 20:38 BRT, published in the previous update. Flávio Bolsonaro's gap over him goes from 72.15pp to 73.65pp. 📊 He has 45.7% in AtlasIntel and 44.2% in Vox Brasil of 09/Oct. 🏆 Counting the closed contracts, his is still the one with the highest cumulative volume in the presidential book."
       },
       {
         "name": "Flávio Bolsonaro",
-        "percentage": 49,
-        "odds": 85.65,
-        "value": 85.65,
-        "polymarket": "85.65%",
-        "pesquisaRange": "49% to 49%",
-        "lastUpdate": "08/10/2026, 20:38",
+        "percentage": 51.1,
+        "odds": 87.15,
+        "value": 87.15,
+        "polymarket": "87.15%",
+        "pesquisaRange": "42.7% to 51.1%",
+        "lastUpdate": "09/10/2026, 14:06",
         "tendenciaPesquisa": "HAS 49% IN THE [SECOND ROUND](/en/glossary#segundo-turno) IN PALVER OF 03/Oct, the source of this chart's poll side, against Lula's 44%. On the eve he led the second round in [Quaest](/en/glossary#quaest) (44% to 42%), in Palver, in Futura (48% to 45.1%) and in Gerp (49% to 44%). In the [first-round](/en/glossary#primeiro-turno) count he had 47.03% of valid votes.",
-        "tendenciaPolymarket": "UP 0.70pp IN THE WINNER CONTRACT, at 85.65% (vol USD 18.50M cumulative), confirmed reading of 08/Oct, 20:38 BRT, against the confirmed reading of 07/Oct at 17:35 BRT, published in the previous update. The gap over Lula goes from 70.45pp to 72.15pp. 📊 He has 49% in Datafolha of 08/Oct."
+        "tendenciaPolymarket": "UP 1.50pp IN THE WINNER CONTRACT, at 87.15% (vol USD 18.88M cumulative), confirmed reading of 09/Oct, 14:06 BRT, against the confirmed reading of 08/Oct at 20:38 BRT, published in the previous update. The gap over Lula goes from 72.15pp to 73.65pp. 📊 He has 51.1% in AtlasIntel and 42.7% in Vox Brasil of 09/Oct."
       },
       {
         "name": "Augusto Cury",
@@ -3560,7 +3487,7 @@
         "value": 0,
         "polymarket": "closed",
         "pesquisaRange": "1% to 12.2%",
-        "lastUpdate": "08/10/2026, 20:38",
+        "lastUpdate": "09/10/2026, 14:06",
         "tendenciaPesquisa": "ELIMINATED: 2.89% of the valid votes in the [first round](/en/glossary#primeiro-turno), third place. Declared support for Flávio Bolsonaro on 08/Oct (G1, Estadão and CNN Brasil).",
         "tendenciaPolymarket": "Winner contract closed by Polymarket after the [first round](/en/glossary#primeiro-turno) and resolved at zero, with USD 5.51M cumulative.",
         "percentage": 0
@@ -3571,7 +3498,7 @@
         "value": 0,
         "polymarket": "closed",
         "pesquisaRange": "1.5% to 11%",
-        "lastUpdate": "08/10/2026, 20:38",
+        "lastUpdate": "09/10/2026, 14:06",
         "tendenciaPesquisa": "ELIMINATED: 2.24% of the valid votes in the [first round](/en/glossary#primeiro-turno), fourth place, in the [TSE](/en/glossary#tse) final tally.",
         "tendenciaPolymarket": "Winner contract closed by Polymarket after the [first round](/en/glossary#primeiro-turno) and resolved at zero, with USD 17.12M cumulative, the second largest in the presidential book.",
         "percentage": 0
@@ -3582,7 +3509,7 @@
         "value": 0,
         "polymarket": "closed",
         "pesquisaRange": "1% to 5.7%",
-        "lastUpdate": "08/10/2026, 20:38",
+        "lastUpdate": "09/10/2026, 14:06",
         "tendenciaPesquisa": "ELIMINATED: 2.18% of the valid votes in the [first round](/en/glossary#primeiro-turno), fifth place. He declared support for Flávio Bolsonaro in Goiânia on 06/Oct (O Globo and VEJA).",
         "tendenciaPolymarket": "Winner contract closed by Polymarket after the [first round](/en/glossary#primeiro-turno) and resolved at zero, with USD 7.82M cumulative.",
         "percentage": 0
@@ -3593,7 +3520,7 @@
         "value": 0,
         "polymarket": "closed",
         "pesquisaRange": "1% to 2%",
-        "lastUpdate": "08/10/2026, 20:38",
+        "lastUpdate": "09/10/2026, 14:06",
         "tendenciaPesquisa": "Out of the election since the [TSE](/en/glossary#tse) rejected his candidacy registration on 11/Sep.",
         "tendenciaPolymarket": "Winner contract closed by Polymarket after the [first round](/en/glossary#primeiro-turno) and resolved at zero.",
         "percentage": 0
@@ -3604,7 +3531,7 @@
         "value": 0,
         "polymarket": "closed",
         "pesquisaRange": "0.3% to 3.5%",
-        "lastUpdate": "08/10/2026, 20:38",
+        "lastUpdate": "09/10/2026, 14:06",
         "tendenciaPesquisa": "ELIMINATED: 0.27% of the valid votes in the [first round](/en/glossary#primeiro-turno), in the [TSE](/en/glossary#tse) final tally. He declared his vote for Flávio Bolsonaro on 05/Oct, and Novo declared support for him on 07/Oct (G1 and CartaCapital).",
         "tendenciaPolymarket": "Winner contract closed by Polymarket after the [first round](/en/glossary#primeiro-turno) and resolved at zero, with USD 7.74M cumulative.",
         "percentage": 0
@@ -3615,7 +3542,7 @@
         "value": 0,
         "polymarket": "closed",
         "pesquisaRange": "not tested",
-        "lastUpdate": "08/10/2026, 20:38",
+        "lastUpdate": "09/10/2026, 14:06",
         "tendenciaPesquisa": "Did not run for President: he was re-elected governor of São Paulo in the [first round](/en/glossary#primeiro-turno).",
         "tendenciaPolymarket": "Winner contract closed by Polymarket after the [first round](/en/glossary#primeiro-turno) and resolved at zero, with USD 14.96M cumulative.",
         "percentage": 0
@@ -3626,19 +3553,19 @@
         "value": 0,
         "polymarket": "closed",
         "pesquisaRange": "not tested",
-        "lastUpdate": "08/10/2026, 20:38",
+        "lastUpdate": "09/10/2026, 14:06",
         "tendenciaPesquisa": "Did not run for President: he ran for governor of São Paulo and lost to Tarcísio de Freitas in the [first round](/en/glossary#primeiro-turno).",
         "tendenciaPolymarket": "Winner contract closed by Polymarket after the [first round](/en/glossary#primeiro-turno) and resolved at zero, with USD 7.74M cumulative.",
         "percentage": 0
       }
     ],
-    "updatedAt": "08/10/2026, 20:38",
+    "updatedAt": "09/10/2026, 14:06",
     "lastUpdate": "25/09/2026, 17:08",
     "pollSource": {
-      "pollster": "Datafolha",
-      "date": "2026-10-08",
-      "sample": 2520,
-      "register": "BR-02949/2026",
+      "pollster": "AtlasIntel/Bloomberg",
+      "date": "2026-10-09",
+      "sample": 5026,
+      "register": "BR-03663/2026",
       "scenario": "Second round, Lula vs Flávio",
       "round": 2
     }

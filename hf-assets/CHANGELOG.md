@@ -2,6 +2,10 @@
 
 All notable changes to this dataset. The data itself is dated and append-only; this log records **structural** changes (new files, schema, coverage).
 
+## 2026-10-09, correction to the 2026-10-08 entry
+
+The 2026-10-08 entry below says PoderData/Aya published valid votes only. **It did not:** it also published the total vote, 49-44 for Flávio Bolsonaro, with 5% blank and spoiled ballots and 2% undecided. The rule stands (the poll side is always a total-vote share, and ties go to the largest sample among polls that published the total), but under it the poll side for 2026-10-08 should have been PoderData/Aya. The dated file is not rewritten; the correction is ERR-2026-004 in `ERRATA.md`. From 2026-10-09 the poll side is AtlasIntel/Bloomberg of 2026-10-09 (n=5,026, 51.1-45.7).
+
 ## 2026-10-08, the second-round poll side is always the TOTAL vote
 
 ### Clarified: `poll_pct` in `data/divergence-second-round-{date}.csv`
