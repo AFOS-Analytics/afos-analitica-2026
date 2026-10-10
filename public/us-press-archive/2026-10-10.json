@@ -1,0 +1,223 @@
+{
+  "lastUpdate": "2026-10-10",
+  "fetchedAt": "2026-10-10T19:20:13.322Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal",
+      "feed": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal",
+      "feed": "https://feeds.washingtonpost.com/rss/politics"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal",
+      "feed": "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada",
+      "feed": "https://rss.politico.com/politics-news.xml"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada",
+      "feed": "https://thehill.com/homenews/feed/"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada",
+      "feed": "https://rollcall.com/feed/"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada",
+      "feed": "https://api.axios.com/feed/"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.npr.org/1014/rss.xml"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio",
+      "feed": "https://abcnews.go.com/abcnews/politicsheadlines"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio",
+      "feed": "https://www.cbsnews.com/latest/rss/politics"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.nbcnews.com/nbcnews/public/politics"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio",
+      "feed": "http://rss.cnn.com/rss/cnn_allpolitics.rss"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio",
+      "feed": "https://moxie.foxnews.com/google-publisher/politics.xml"
+    },
+    {
+      "casa": "NewsNation",
+      "tipo": "tv/rádio",
+      "feed": "https://www.newsnationnow.com/politics/feed/"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião",
+      "feed": "https://www.nationalreview.com/feed/"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião",
+      "feed": "https://www.theguardian.com/us-news/us-politics/rss"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 252,
+    "naLista": 111,
+    "foraDaLista": 141,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 21,
+    "veiculosRepresentados": 8,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": [],
+    "feedsProprios": 16,
+    "lidosEmFeedProprio": 34,
+    "publicadosComLinkCanonico": 5,
+    "publicadosViaGoogleNews": 5,
+    "publicadosPorDisputa": 8,
+    "publicadosPorMetodo": 2
+  },
+  "itens": [
+    {
+      "titulo": "Kalshi investigating bets on White House press secretary pick",
+      "url": "https://www.newsnationnow.com/politics/kalshi-investigating-bets-white-house-press-secretary-pick-trump-katie-zacharia/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-10T17:52:59.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "metodo"
+    },
+    {
+      "titulo": "2026 House Election Results",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5YcFhJTHhOU0Z6QmExdWhXUERnakpwb2JpTFQ1RTZYeFJBaUJLaDlBMGFlaW1kUWtZQWNPSEFUYTdySDV0RFJRbmlMQVdNRzFTb24tYS1pVTRzaDZqM0JtdFdCak9fejJFV3JwRQ?oc=5",
+      "casa": "Fox News",
+      "publicadoEm": "2026-10-10T16:23:55.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Election Dispatches: James Talarico Returns to Campaign Trail in Texas After Absence Raised Questions",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBPc2NOTmVTTjdyM092d2VoNnRrWlNnQjlMQUVlYXJqUE9FWWg0TmNhaFZPZ3o4NVZMSmI0Mk0wRnVHYWc4VVNqcGlPcWhaU2w0TFJGNmdZeXhfamNnN3RvLTllNXYwekUzc1ROVGVR?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-10T16:08:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "2026 Senate Election Results",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBibTJ5Q0RhSk5uM3ZqdGI4QW5PLUFERjdHbEx3ckllbnNDSTVrbGRFc0ZLcXQ2U2xZU29JVmZwSjRFaHpIYzlsbnVUQVhLZlZnWlZKb2t2NmdmVVprZ28xYVNobjd0UWY0cUpkLWt3?oc=5",
+      "casa": "Fox News",
+      "publicadoEm": "2026-10-10T15:51:59.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "2026 Midterm Elections: Early Vote Tracking in Key Senate Battleground States",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOWUNScEZXTjJwYVpIZENZS0txWHd4TTNRUFZvQk1aRUUtTHE2NUhQbWJpb3BTRHpQUTFtdWEybmpFRk9iN1VXY1Y5Q1FjMTNqTEYzdkJZZk9OOUFPNnR3WFV2Qy1KZ3JscGpGT2N0eGdOY2NSaXJSZ2hoLXFORXB1bEhmUGd6QnEtVW9sZzRudW9wQ2pJTTdxVWFCTGpaZDJBaU9LX29oeER4STJrczJsOTRZbG43cHFF?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-10T14:15:43.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Kalshi investigating suspicious bets tied to White house press secretary pick: Report",
+      "url": "https://thehill.com/policy/technology/6140504-kalshi-investigates-press-secretary-bets/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-10-10T14:09:42.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "metodo"
+    },
+    {
+      "titulo": "Republicans’ SNAP changes land in crunch time for midterms",
+      "url": "https://www.politico.com/news/2026/10/10/snap-changes-republicans-midterms-01115721",
+      "casa": "Politico",
+      "publicadoEm": "2026-10-10T14:01:20.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "A small-town Alaska fisherman has Republicans on the defensive as they try to keep US House majority",
+      "url": "https://abcnews.com/Politics/wireStory/small-town-alaska-fisherman-republicans-defensive-us-house-137155928",
+      "casa": "ABC News",
+      "publicadoEm": "2026-10-10T13:34:28.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "New York Midterm Elections 2026: Key Races, Candidates and Past Results",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5TZmdsOV9FVTN2WW16QzNPNUxIVlNWamo1aHdPQ1BWam53UUNzS0lPUzRnX0NiSkdGYkRuM2tEWDdIOVBKSWduVGVyZG5QQmVkcEJfT3VFZDJzZXZBRi1xUHJlRmlxXzFObFlGREtQTWViZw?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-10T13:30:21.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "On the ground in Ohio's 9th District: The battleground shaping next month's midterms",
+      "url": "https://www.npr.org/2026/10/10/nx-s1-5965798/on-the-ground-in-ohios-9th-district-the-battleground-shaping-next-months-midterms",
+      "casa": "NPR",
+      "publicadoEm": "2026-10-10T11:40:46.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    }
+  ]
+}
