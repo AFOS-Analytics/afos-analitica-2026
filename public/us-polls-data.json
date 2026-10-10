@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-09",
-  "fetchedAt": "2026-10-09T16:48:01.528Z",
+  "lastUpdate": "2026-10-10",
+  "fetchedAt": "2026-10-10T22:19:12.153Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,8 +47,8 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-09",
-    "nPesquisas": 45,
+    "desde": "2026-09-10",
+    "nPesquisas": 42,
     "tratamentoDoIndeciso": [
       {
         "serie": "Angus Reid Global",
@@ -478,30 +478,6 @@
         "amostraTipo": "LV",
         "dem": 52,
         "rep": 48
-      },
-      {
-        "key": "Catawba College/YouGov|2026-09-09",
-        "instituto": "Catawba College/YouGov",
-        "campoFim": "2026-09-09",
-        "amostraTipo": "LV",
-        "dem": 49,
-        "rep": 38
-      },
-      {
-        "key": "Marquette University Law School|2026-09-09",
-        "instituto": "Marquette University Law School",
-        "campoFim": "2026-09-09",
-        "amostraTipo": "LV",
-        "dem": 54,
-        "rep": 41
-      },
-      {
-        "key": "Rasmussen Reports (R)|2026-09-09",
-        "instituto": "Rasmussen Reports (R)",
-        "campoFim": "2026-09-09",
-        "amostraTipo": "LV",
-        "dem": 47,
-        "rep": 42
       }
     ],
     "excluidasPorInstrumento": [
@@ -566,10 +542,10 @@
         "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
       }
     ],
-    "nInstitutos": 32,
-    "dem": 49.24,
-    "rep": 41.67,
-    "vantagemDem": 7.57,
+    "nInstitutos": 30,
+    "dem": 49.19,
+    "rep": 41.76,
+    "vantagemDem": 7.43,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
@@ -579,7 +555,6 @@
       "Big Data Poll",
       "CBS News/YouGov",
       "CNN/SSRS",
-      "Catawba College/YouGov",
       "Centerline Research & Strategy",
       "Clarity Campaign Labs (D)",
       "Cygnal (R)",
@@ -591,7 +566,6 @@
       "John Zogby Strategies",
       "KFF",
       "Marist University",
-      "Marquette University Law School",
       "McLaughlin & Associates (R)",
       "Morning Consult",
       "New York Times/Siena College",
