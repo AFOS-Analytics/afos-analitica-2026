@@ -2,6 +2,12 @@
 
 All notable changes to this dataset. The data itself is dated and append-only; this log records **structural** changes (new files, schema, coverage).
 
+## 2026-10-11, the official first-round result enters the dataset
+
+### Added: `results/`
+
+The dataset measured market prices and polls against each other but did not carry the reference both were checked against: the official count. `results/` adds the **final TSE tally of the first round** (100% of sections, generated 2026-10-05 12:51:47), complete: electorate, turnout, abstention, valid, blank and null votes, all twelve candidates with votes, and the **voting machines** of the day (499,248 in use, 50,038 backup, 1,904 replaced, no section voting on paper). It also adds the **eve-of-vote retrospective**, the nine national polls of 2026-10-03 and four Polymarket books against the outcome, item by item and summarized per instrument as the panel card shows it. Every figure is built from the raw TSE tally file kept in the repository, with the address and SHA-256 of both TSE documents recorded next to it, and checked against the panel card. The second round enters in the same format after 2026-10-25.
+
 ## 2026-10-09, correction to the 2026-10-08 entry
 
 The 2026-10-08 entry below says PoderData/Aya published valid votes only. **It did not:** it also published the total vote, 49-44 for Flávio Bolsonaro, with 5% blank and spoiled ballots and 2% undecided. The rule stands (the poll side is always a total-vote share, and ties go to the largest sample among polls that published the total), but under it the poll side for 2026-10-08 should have been PoderData/Aya. The dated file is not rewritten; the correction is ERR-2026-004 in `ERRATA.md`. From 2026-10-09 the poll side is AtlasIntel/Bloomberg of 2026-10-09 (n=5,026, 51.1-45.7).

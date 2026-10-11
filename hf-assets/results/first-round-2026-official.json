@@ -1,0 +1,200 @@
+{
+  "election": "Brazil 2026 presidential election, first round",
+  "election_date": "2026-10-04",
+  "source": {
+    "tally_file": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/br/br-c0001-e006257-u.json",
+    "tally_generated_at": "2026-10-05T12:51:47-03:00",
+    "tally_status": "final (andamento f)",
+    "results_page": "https://resultados.tse.jus.br/oficial/app/index.html",
+    "machines_document": "https://www.tse.jus.br/comunicacao/arquivos/numeros-gerais-eleicoes-2026-1o-turno-coletiva-21h/@@display-file/file/tse-numeros-gerais-eleicoes-2026-1-turno.pdf",
+    "machines_document_title": "TSE, Números gerais, coletiva das 21h, 04/10/2026"
+  },
+  "sections": {
+    "total": 499248,
+    "tallied": 499248,
+    "tallied_pct": 100
+  },
+  "electorate": 158745502,
+  "turnout": {
+    "votes": 125275835,
+    "pct_of_electorate": 78.92
+  },
+  "abstention": {
+    "votes": 33469244,
+    "pct_of_electorate": 21.08
+  },
+  "votes_cast": 125275835,
+  "valid_votes": 119300788,
+  "blank": {
+    "votes": 2300798,
+    "pct_of_votes_cast": 1.84
+  },
+  "null": {
+    "votes": 3674249,
+    "pct_of_votes_cast": 2.93
+  },
+  "candidates": [
+    {
+      "number": 22,
+      "name": "FLAVIO NANTES BOLSONARO",
+      "ballot_name": "FLAVIO BOLSONARO",
+      "party": "PL",
+      "coalition": "PARTIDO LIBERAL",
+      "coalition_parties": "PL",
+      "votes": 56104503,
+      "pct_valid": 47.03,
+      "status": "2º turno"
+    },
+    {
+      "number": 13,
+      "name": "LUIZ INÁCIO LULA DA SILVA",
+      "ballot_name": "LULA",
+      "party": "PT",
+      "coalition": "BRASIL PRONTO PRA MAIS",
+      "coalition_parties": "PSB / PDT / PCDOB / PT / PV / PSOL / REDE",
+      "votes": 53879538,
+      "pct_valid": 45.16,
+      "status": "2º turno"
+    },
+    {
+      "number": 70,
+      "name": "AUGUSTO JORGE CURY",
+      "ballot_name": "ESCRITOR AUGUSTO CURY",
+      "party": "AVANTE",
+      "coalition": "BRASIL DOS NOSSOS SONHOS",
+      "coalition_parties": "AGIR / AVANTE",
+      "votes": 3448569,
+      "pct_valid": 2.89,
+      "status": "Não eleito"
+    },
+    {
+      "number": 14,
+      "name": "RENAN ANTONIO FERREIRA DOS SANTOS",
+      "ballot_name": "RENAN SANTOS",
+      "party": "MISSÃO",
+      "coalition": "PARTIDO MISSÃO",
+      "coalition_parties": "MISSÃO",
+      "votes": 2675887,
+      "pct_valid": 2.24,
+      "status": "Não eleito"
+    },
+    {
+      "number": 55,
+      "name": "RONALDO RAMOS CAIADO",
+      "ballot_name": "RONALDO CAIADO",
+      "party": "PSD",
+      "coalition": "PARTIDO SOCIAL DEMOCRÁTICO",
+      "coalition_parties": "PSD",
+      "votes": 2605148,
+      "pct_valid": 2.18,
+      "status": "Não eleito"
+    },
+    {
+      "number": 30,
+      "name": "ROMEU ZEMA NETO",
+      "ballot_name": "ZEMA",
+      "party": "NOVO",
+      "coalition": "PARTIDO NOVO",
+      "coalition_parties": "NOVO",
+      "votes": 326488,
+      "pct_valid": 0.27,
+      "status": "Não eleito"
+    },
+    {
+      "number": 80,
+      "name": "SAMARA MARTINS DA SILVA FEITOSA",
+      "ballot_name": "SAMARA",
+      "party": "UP",
+      "coalition": "UNIDADE POPULAR",
+      "coalition_parties": "UP",
+      "votes": 122911,
+      "pct_valid": 0.1,
+      "status": "Não eleito"
+    },
+    {
+      "number": 16,
+      "name": "HERTZ DA CONCEICAO DIAS",
+      "ballot_name": "HERTZ DIAS",
+      "party": "PSTU",
+      "coalition": "PARTIDO SOCIALISTA  DOS TRABALHADORES UNIFICADO",
+      "coalition_parties": "PSTU",
+      "votes": 43103,
+      "pct_valid": 0.04,
+      "status": "Não eleito"
+    },
+    {
+      "number": 27,
+      "name": "CLARIANA ZACARKIM BARAO",
+      "ballot_name": "CLARIANA BARAO",
+      "party": "DC",
+      "coalition": "DEMOCRACIA CRISTÃ",
+      "coalition_parties": "DC",
+      "votes": 40043,
+      "pct_valid": 0.03,
+      "status": "Não eleito"
+    },
+    {
+      "number": 21,
+      "name": "EDMILSON SILVA COSTA",
+      "ballot_name": "EDMILSON COSTA",
+      "party": "PCB",
+      "coalition": "PARTIDO COMUNISTA BRASILEIRO",
+      "coalition_parties": "PCB",
+      "votes": 22693,
+      "pct_valid": 0.02,
+      "status": "Não eleito"
+    },
+    {
+      "number": 35,
+      "name": "WILSON GRASSI JUNIOR",
+      "ballot_name": "VETERINÁRIO WILSON GRASSI",
+      "party": "DEMOCRATA",
+      "coalition": "DEMOCRATA",
+      "coalition_parties": "DEMOCRATA",
+      "votes": 16881,
+      "pct_valid": 0.01,
+      "status": "Não eleito"
+    },
+    {
+      "number": 29,
+      "name": "RUI COSTA PIMENTA",
+      "ballot_name": "RUI COSTA PIMENTA",
+      "party": "PCO",
+      "coalition": "PARTIDO DA CAUSA OPERÁRIA",
+      "coalition_parties": "PCO",
+      "votes": 15024,
+      "pct_valid": 0.01,
+      "status": "Não eleito"
+    }
+  ],
+  "other_names": {
+    "candidates": 7,
+    "votes": 587143,
+    "pct_valid": 0.49
+  },
+  "runoff": {
+    "date": "2026-10-25",
+    "candidates": [
+      "FLAVIO BOLSONARO",
+      "LULA"
+    ]
+  },
+  "voting_machines": {
+    "in_use": 499248,
+    "backup": 50038,
+    "total": 549286,
+    "replaced_on_election_day": 1904,
+    "replaced_pct_of_total": 0.35,
+    "sections_voting_on_paper": 0,
+    "reference": "TSE briefing at 21:00 (Brasília) on 2026-10-04",
+    "notes": [
+      "The percentage is over all 549,286 machines (in use plus backup), the same base as the TSE figure of 0.35%. Over the 499,248 machines in use it would be 0.38%.",
+      "According to the TSE, the replacements, mostly caused by power fluctuations, did not affect votes already recorded.",
+      "The TSE term is \"replaced\" (substituídas). The TSE does not publish a count of \"defective\" machines."
+    ]
+  },
+  "notes": [
+    "Candidate percentages are over valid votes. Blank and null are over votes cast. Turnout and abstention are over the electorate.",
+    "Other names: the seven candidates below fifth place, summed by votes (not 100 minus the rounded percentages, which would give 0.50)."
+  ]
+}
