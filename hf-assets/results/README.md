@@ -2,7 +2,7 @@
 
 The official tally that every market price and every poll in this dataset is measured against. The first round (October 4, 2026) is here; the second round (October 25, 2026) will be added in the same format, as `second-round-2026-*`, once the TSE publishes its final tally.
 
-Every number comes from a TSE primary source, and the raw files are kept in the AFOS repository under `data/brz/resultado-oficial-2026/`:
+Every number comes from a TSE primary source. The raw tally file is kept in the AFOS repository under `data/brz/resultado-oficial-2026/`, and `FONTES.md` there records the address and SHA-256 of both documents:
 
 - **Tally:** the final presidential tally file, `br-c0001-e006257-u.json`, with 100% of polling sections, generated on 2026-10-05 at 12:51:47 (Brasília). The panel card "Totalização do TSE" reads the same numbers, and the build script aborts if card and file disagree on any of them.
 - **Voting machines:** the TSE document "Números gerais, coletiva das 21h" of 2026-10-04, section "Urnas e seções".
