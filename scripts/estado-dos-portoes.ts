@@ -26,6 +26,7 @@
  *   npx tsx scripts/estado-dos-portoes.ts                 # leitura ao vivo + serie
  *   npx tsx scripts/estado-dos-portoes.ts --sem-rede      # usa a ultima captura gravada
  *   npx tsx scripts/estado-dos-portoes.ts --soma=governors:94.20,turnout:96.75
+ *   npx tsx scripts/estado-dos-portoes.ts --estatisticas  # a FAIXA da soma de cada livro
  */
 import { config } from 'dotenv'
 config({ path: '.env.local' })
@@ -108,7 +109,12 @@ async function main() {
   console.log(`   soma de agora: ${origemDaSoma}`)
   console.log(`   janela de 24h e serie inteira: backup/neon, tabela marketPrice\n`)
 
-  const linhas: { m: (typeof DISTRIBUICOES_US)[number]; est: EstadoDoPortao | null; nota: string }[] = []
+  const linhas: {
+    m: (typeof DISTRIBUICOES_US)[number]
+    est: EstadoDoPortao | null
+    nota: string
+    capturas: CapturaDaSoma[]
+  }[] = []
 
   for (const m of DISTRIBUICOES_US) {
     const pontos = await prisma.marketPrice.findMany({
@@ -117,7 +123,7 @@ async function main() {
       orderBy: { snapshotAt: 'asc' },
     })
     if (pontos.length === 0) {
-      linhas.push({ m, est: null, nota: 'sem serie gravada para este slug' })
+      linhas.push({ m, est: null, nota: 'sem serie gravada para este slug', capturas: [] })
       continue
     }
 
@@ -139,10 +145,10 @@ async function main() {
 
     const somaAgora = somas[m.key] ?? (capturas.length ? capturas[capturas.length - 1].soma : null)
     if (somaAgora == null) {
-      linhas.push({ m, est: null, nota: 'nenhuma captura completa e nenhuma soma de agora' })
+      linhas.push({ m, est: null, nota: 'nenhuma captura completa e nenhuma soma de agora', capturas })
       continue
     }
-    linhas.push({ m, est: classificarPortao(somaAgora, capturas), nota: '' })
+    linhas.push({ m, est: classificarPortao(somaAgora, capturas), nota: '', capturas })
   }
 
   // ── impressão ───────────────────────────────────────────────────────────
@@ -177,6 +183,43 @@ async function main() {
     console.log(`   🔴 ${eventos.length} para o relatorio: ${eventos.map((e) => e.m.key).join(', ')}`)
   } else {
     console.log('   · nenhuma distribuicao fez hoje o contrario do que faz sempre')
+  }
+
+  // ── --estatisticas: a FAIXA de cada livro, para nao decorar numero ───────
+  // 🔴 POR QUE EXISTE, medido em 11/Out/2026. A skill do /weekly-usa carrega
+  //    "popularVoteMargin: mediana 151.90%, faixa de 144.80% a 154.60%, medido
+  //    em 04/Set sobre 37 dias", e a memoria carrega o mesmo numero. Em 10 e
+  //    11/Out o livro leu 157.30% e 158.10%, ACIMA do maximo registrado nos dois
+  //    lugares. Numero tipico escrito a mao envelhece em silencio, e envelhece
+  //    em DOIS lugares de uma vez.
+  // 📌 Ele le a MESMA serie que o portao acabou de usar, com o mesmo piso de
+  //    completude de faixas: nenhuma conta nova nasce aqui.
+  if (temFlag('--estatisticas')) {
+    const pct = (xs: number[], p: number) => {
+      const s = [...xs].sort((a, b) => a - b)
+      return s[Math.min(s.length - 1, Math.max(0, Math.round((s.length - 1) * p)))]
+    }
+    console.log('')
+    console.log('   📊 FAIXA DA SOMA, por livro, sobre a serie gravada  [USO INTERNO]')
+    console.log('      livro                n      min      p10      p50      p90      max')
+    for (const { m, capturas } of linhas) {
+      if (!capturas.length) {
+        console.log(`      ${m.key.padEnd(18)} (sem captura completa)`)
+        continue
+      }
+      const s = capturas.map((c) => c.soma)
+      const col = (x: number) => `${fmt(x)}%`.padStart(9)
+      console.log(
+        `      ${m.key.padEnd(18)}${String(s.length).padStart(4)}` +
+          col(Math.min(...s)) + col(pct(s, 0.1)) + col(pct(s, 0.5)) + col(pct(s, 0.9)) + col(Math.max(...s)),
+      )
+    }
+    console.log('')
+    console.log('      ⛔ Isto NAO autoriza publicar distribuicao reprovada: a faixa descreve o')
+    console.log('         LIVRO, e livro que nao fecha segue fora da tela. Serve para a ressalva')
+    console.log('         obrigatoria quando o popularVoteMargin e citado, e para saber se a soma')
+    console.log('         de hoje e tipica do livro ou fora da faixa dele.')
+    console.log('      ⚠️ A serie cresce todo dia: este numero se MEDE, nao se decora.')
   }
   if (relerAgora.length) {
     console.log(`   🔁 ${relerAgora.length} RELER antes de relatar: ${relerAgora.map((e) => e.m.key).join(', ')}`)

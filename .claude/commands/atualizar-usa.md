@@ -111,7 +111,25 @@ const arr = (v) => {
 ### O portão das distribuições: 95% a 105%
 Uma distribuição só sobe à tela se as faixas somarem entre 95% e 105%.
 
-⚠️ **E não é só um que reprova, medido em 04/Set sobre 37 dias de série:** `governors` e `turnout` passam **27 de 37 dias cada**, ou seja reprovam cerca de um dia em quatro, e ambos já ficaram a menos de 1pp da borda em 4 e 5 dias. Reprovação intermitente é o estado NORMAL desses dois, não notícia. Quem decide é a série das últimas 24h, não o instante. → `memory/reference_portao_de_corte_duro_em_grandeza_ruidosa.md`
+⚠️ **E não é só um que reprova.** Reprovação intermitente é o estado NORMAL de vários desses livros, não notícia. Quem decide é a série das últimas 24h, não o instante. → `memory/reference_portao_de_corte_duro_em_grandeza_ruidosa.md`
+
+🔴 **E a taxa NÃO se decora, ela se mede. Régua de 11/Out/2026, por eu ter achado este número ERRADO aqui.** Esta linha dizia *"medido em 04/Set sobre 37 dias: `governors` e `turnout` passam 27 de 37 dias cada, ou seja reprovam cerca de um dia em quatro"*. Medido hoje, sobre a série inteira:
+
+```bash
+npx tsx scripts/estado-dos-portoes.ts --estatisticas
+```
+
+| livro | passa em | mediana da soma |
+|---|---|---|
+| `governors` | **82,06%** de 970 | 99,00% |
+| `turnout` | **44,88%** de 938 | 102,80% |
+| `houseSeats` | 40,76% de 817 | **105,80%**, acima do corte |
+| `senateSeats` | 83,20% de 506 | 100,40% |
+| `popularVoteMargin` | **0,00%** de 632 | 153,50% |
+
+⛔ **Os dois nunca foram iguais, e a frase os tratava como par.** O `governors` passa em quatro de cada cinco capturas e o `turnout` em menos da metade: dizer "reprovam um dia em quatro" para os dois errava o `turnout` por quase o dobro. A mediana explica por quê, e ela é o número que importa: livro com mediana **acima** de 105 reprova por desenho, não por acidente.
+
+📌 **A série cresce ~48 pontos por dia**, então qualquer taxa escrita aqui envelhece. O comando acima é a resposta, e o `--estatisticas` existe desde 11/Out exatamente porque este número estava decorado em DOIS lugares, aqui e no `/weekly-usa`, e os dois estavam velhos.
 
 **O `popularVoteMargin` é outro caso: está REPROVADO SEMPRE** e é coletado todo dia mesmo assim, para guardar série. Ele é o mercado que um dia permitiria o cruzamento limpo, porque mede a mesma grandeza da pesquisa. Reportar a soma dele quando perguntarem, e **nunca publicá-lo como se valesse**.
 

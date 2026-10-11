@@ -121,7 +121,7 @@ O corpo é título, TL;DR, `moneyIntro`, os `desc` dos cards, `moneyFootnote`, `
 
 **Específicas dos EUA:**
 - 🔴 **NUNCA subtrair mercado de pesquisa.** O mercado dá probabilidade de controlar a casa; a pesquisa dá vantagem em pontos de voto. A subtração produz número sem unidade. Em 2012 os democratas tiveram mais votos e menos cadeiras: a distância pode ser inteiramente geografia.
-- **Distribuição só entra se as faixas somarem 95% a 105%.** O `popularVoteMargin` está reprovado e é coletado todo dia mesmo assim. **Medido em 04/Set sobre os 37 dias da série: mediana 151.90%, faixa de 144.80% a 154.60%.** O "~145%" que esta linha trazia era o MÍNIMO da série, não o valor típico.
+- **Distribuição só entra se as faixas somarem 95% a 105%.** O `popularVoteMargin` está reprovado e é coletado todo dia mesmo assim. 🔴 **A soma dele NÃO se decora, ela se mede, e esta linha já errou DUAS vezes:** primeiro com "~145%", que era o MÍNIMO da série e não o valor típico, e depois com *"mediana 151.90%, faixa de 144.80% a 154.60%, medido em 04/Set sobre 37 dias"*. Medido em 11/Out sobre **633** capturas: mediana **153,50%**, p90 **159,00%**, máximo **169,30%**. ⛔ O teto registrado, 154,60%, ficava **abaixo do p90 real**, então leitura de 158% parecia anômala e é ordinária. O comando é `npx tsx scripts/estado-dos-portoes.ts --estatisticas`, e ele lê a mesma série que o portão usa.
 - **Medir, nunca julgar** veículo.
 - 🏷️ **Todo número diz DE QUE ele é.** "85,50%" não basta: é a probabilidade de os **democratas** controlarem a **Câmara**.
 
