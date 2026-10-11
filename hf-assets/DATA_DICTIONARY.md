@@ -144,6 +144,18 @@ Per-day snapshot for the **second round** (from 2026-10-05; runoff on 2026-10-25
 
 ---
 
+## `results/` · official result of the election
+
+Source of every value: the TSE. Tally figures come from the final presidential tally file `br-c0001-e006257-u.json` (100% of sections, generated 2026-10-05 12:51:47, Brasília); voting-machine figures come from the TSE document "Números gerais, coletiva das 21h" of 2026-10-04. Raw files are kept in the repository under `data/brz/resultado-oficial-2026/`. Build script: `scripts/build-hf-resultado-oficial.ts`, which checks every figure of the panel card against the raw file and aborts on any difference.
+
+- **`first-round-2026-candidates.csv`**: `rank` (by votes), `number` (ballot number), `name` and `ballot_name` (as registered), `party`, `coalition` and `coalition_parties`, `votes` (integer), `pct_valid` (percent of valid votes, two decimals, as published by the TSE), `status` (TSE label in Portuguese: "2º turno" or "Não eleito").
+- **`first-round-2026-summary.csv`**: `metric`, `value` (integer count), `pct` (percent, when the TSE publishes one), `pct_base` (the denominator: `electorate` for turnout and abstention, `votes_cast` for blank and null, `valid_votes` for the other names, `voting_machines_in_use + voting_machines_backup` for replaced machines), `source` (`tally_file` or `machines_document`).
+- **`first-round-2026-retrospective.csv`**: `instrument` (`national_poll_eve` or `market_{book}`), `market_slug`, `eve_time` (UTC timestamp of the last recorded market point of 2026-10-03, or the release date for polls), `item`, `eve_value` and `unit` (poll margin in points, Flávio Bolsonaro minus Lula, total votes; or market price in percent), `eve_rank`, `outcome`, `item_is_outcome` (`true`, `false`, or empty while the book is open).
+- **`first-round-2026-retrospective-summary.csv`**: one row per instrument, as the panel card shows it. `instrument`, `label`, `market_slug`, `eve_time`, `eve_summary` (the eve reading in words), `outcome`, `matches_outcome` (`yes`, `no` or `open`: whether the item most paid or most measured on the eve was the outcome). For the polls only: `houses_lula_ahead`, `houses_flavio_ahead`, `range_low` and `range_high` (margins in points, Flávio Bolsonaro minus Lula), `majority_matches` (whether most houses had the winner ahead) and `range_contains_outcome` (whether the outcome margin of 1.87 falls inside the range). Market prices are the last point recorded on 2026-10-03, read from the daily backup.
+- **`first-round-2026-official.json`**: the same figures in one document, with `source` (URLs and generation time), `voting_machines` and `notes`.
+
+Percent bases matter here: replaced machines are 0.35% of all 549,286 machines, the TSE base; over the 499,248 in use the share would be 0.38%.
+
 ## `snapshots/analysis-criteriosa/{date}.json`
 
 Daily structured analysis. Key fields: `updatedAt`, `subtitle`, `cruzamento` (the day's cross-source reading), `candidates[]` (per-candidate `header`/`analise`/`fortes`/`fracos`), and `quadroComparativo[]` — the comparison table where `m` = market price string, `p` = poll mentions, `t` = trend reading, `s` = sources.

@@ -1,0 +1,19 @@
+instrument,market_slug,eve_time,item,eve_value,unit,eve_rank,outcome,item_is_outcome
+national_poll_eve,,2026-10-03,Palver,4,"points, Flávio Bolsonaro minus Lula, total votes",1,Flávio Bolsonaro +1.87 (valid votes),true
+national_poll_eve,,2026-10-03,Futura,2,"points, Flávio Bolsonaro minus Lula, total votes",2,Flávio Bolsonaro +1.87 (valid votes),true
+national_poll_eve,,2026-10-03,Gerp (1ª),2,"points, Flávio Bolsonaro minus Lula, total votes",3,Flávio Bolsonaro +1.87 (valid votes),true
+national_poll_eve,,2026-10-03,Gerp (2ª),2,"points, Flávio Bolsonaro minus Lula, total votes",4,Flávio Bolsonaro +1.87 (valid votes),true
+national_poll_eve,,2026-10-03,PoderData,-1,"points, Flávio Bolsonaro minus Lula, total votes",5,Flávio Bolsonaro +1.87 (valid votes),false
+national_poll_eve,,2026-10-03,Datafolha,-2,"points, Flávio Bolsonaro minus Lula, total votes",6,Flávio Bolsonaro +1.87 (valid votes),false
+national_poll_eve,,2026-10-03,Quaest,-2,"points, Flávio Bolsonaro minus Lula, total votes",7,Flávio Bolsonaro +1.87 (valid votes),false
+national_poll_eve,,2026-10-03,AtlasIntel,-2.9,"points, Flávio Bolsonaro minus Lula, total votes",8,Flávio Bolsonaro +1.87 (valid votes),false
+national_poll_eve,,2026-10-03,CNT/MDA,-5.1,"points, Flávio Bolsonaro minus Lula, total votes",9,Flávio Bolsonaro +1.87 (valid votes),false
+market_segundo,brazil-presidential-election-first-round-2nd-place,2026-10-03T23:00:00Z,Flávio Bolsonaro,57.5,"price, percent",1,Lula,false
+market_segundo,brazil-presidential-election-first-round-2nd-place,2026-10-03T23:00:00Z,Lula,42.4,"price, percent",2,Lula,true
+market_terceiro,brazil-presidential-election-first-round-3rd-place,2026-10-03T23:00:00Z,Renan Santos,47.5,"price, percent",1,Augusto Cury,false
+market_terceiro,brazil-presidential-election-first-round-3rd-place,2026-10-03T23:00:00Z,Ronaldo Caiado,30,"price, percent",2,Augusto Cury,false
+market_terceiro,brazil-presidential-election-first-round-3rd-place,2026-10-03T23:00:00Z,Augusto Cury,23.7,"price, percent",3,Augusto Cury,true
+market_senado,next-brazil-senate-election-most-seats-won,2026-10-03T21:00:00Z,PL,95.8,"price, percent",1,PL,true
+market_senado,next-brazil-senate-election-most-seats-won,2026-10-03T21:00:00Z,MDB,1.6,"price, percent",2,PL,false
+market_vencedor,brazil-presidential-election,2026-10-03T23:00:00Z,Flávio Bolsonaro,64.9,"price, percent",1,"open, decided on 2026-10-25",
+market_vencedor,brazil-presidential-election,2026-10-03T23:00:00Z,Lula,35.5,"price, percent",2,"open, decided on 2026-10-25",
