@@ -1,0 +1,226 @@
+{
+  "lastUpdate": "2026-10-11",
+  "fetchedAt": "2026-10-11T19:20:13.594Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal",
+      "feed": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal",
+      "feed": "https://feeds.washingtonpost.com/rss/politics"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal",
+      "feed": "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada",
+      "feed": "https://rss.politico.com/politics-news.xml"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada",
+      "feed": "https://thehill.com/homenews/feed/"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada",
+      "feed": "https://rollcall.com/feed/"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada",
+      "feed": "https://api.axios.com/feed/"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.npr.org/1014/rss.xml"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio",
+      "feed": "https://abcnews.go.com/abcnews/politicsheadlines"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio",
+      "feed": "https://www.cbsnews.com/latest/rss/politics"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.nbcnews.com/nbcnews/public/politics"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio",
+      "feed": "http://rss.cnn.com/rss/cnn_allpolitics.rss"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio",
+      "feed": "https://moxie.foxnews.com/google-publisher/politics.xml"
+    },
+    {
+      "casa": "NewsNation",
+      "tipo": "tv/rádio",
+      "feed": "https://www.newsnationnow.com/politics/feed/"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião",
+      "feed": "https://www.nationalreview.com/feed/"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião",
+      "feed": "https://www.theguardian.com/us-news/us-politics/rss"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 182,
+    "naLista": 95,
+    "foraDaLista": 87,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 38,
+    "veiculosRepresentados": 7,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": [
+      "feed:The Washington Post: HTTP 403",
+      "feed:NBC News: HTTP 403"
+    ],
+    "feedsProprios": 16,
+    "lidosEmFeedProprio": 23,
+    "publicadosComLinkCanonico": 5,
+    "publicadosViaGoogleNews": 5,
+    "publicadosPorDisputa": 10,
+    "publicadosPorMetodo": 0
+  },
+  "itens": [
+    {
+      "titulo": "Election forecaster says 'winds are blowing against Republicans' in midterms",
+      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/political-forecaster-allan-lichtman-midterm-elections/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-11T18:06:24.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Michigan Midterm Elections 2026: Key Races, Candidates and Past Results",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5VWE96aXR0S3I2YjZPYWRXb21UM1lCZXoxbFdDenBTUzdjMmJHUjljRTdFc3hHQm9DTlBiSXIzRGg1c1U4N05MbHk0OFhtSVNpc2RNcWZhMzdpRldLWE5jYzd0cEZQRV8zR1d1VUtWWWlYQQ?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-11T17:30:21.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Abdul El-Sayed: Democrats must ‘win by massive numbers’ to fend off Trump election denial",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOYmV6UUdZa0FpbmhTcHlfR1pPRU1LTHFrQnFaN2R1eHBxajRaeU1HR3hldm5HNGpDZDNCRnNhZy1nM1BLMDNEU1lEemhjWnFZWDZoTVFoUmZERXlJRjl0b0JNU1N3aGwwdkVrWDE2UWFyc2Y1QXhMbm1MczFXeTlxNXVOQjFUXzlleGgxT2dKT0JiRnlOSVk2ekgxTFpVYWlfaXc?oc=5",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-10-11T17:24:00.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Texas Midterm Elections 2026: Key Races, Candidates and Past Results",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5uWFNONTdBQ1dFOUxtbU1pbGVJOXF4LVI1TUFYaTg5SFo2U0YzY1ZRemY4bmxaZ191MHVwbzkyTHhlaXlKWEhtdXdqSFZ5ZFhFMGRSZXRxdVpZRTVFZE1Od2NnTUtMYlFNY1YzNGlB?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-11T17:00:21.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump, Vance blitz Ohio as Democrats look to flip governor's mansion",
+      "url": "https://thehill.com/homenews/campaign/6139956-ohio-governor-election-ramaswamy-acton/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-10-11T16:00:00.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Tracking the Early Vote in the 2026 Midterm Elections",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOWUNScEZXTjJwYVpIZENZS0txWHd4TTNRUFZvQk1aRUUtTHE2NUhQbWJpb3BTRHpQUTFtdWEybmpFRk9iN1VXY1Y5Q1FjMTNqTEYzdkJZZk9OOUFPNnR3WFV2Qy1KZ3JscGpGT2N0eGdOY2NSaXJSZ2hoLXFORXB1bEhmUGd6QnEtVW9sZzRudW9wQ2pJTTdxVWFCTGpaZDJBaU9LX29oeER4STJrczJsOTRZbG43cHFF?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-11T15:27:19.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Steve Bannon on the GOP and the midterms: \"We can't afford to lose\"",
+      "url": "https://www.cbsnews.com/news/steve-bannon-on-the-gop-and-the-midterms-we-cant-afford-to-lose/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-10-11T13:59:00.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Republicans face midterm backlash from factory workers squeezed out of jobs by Trump's tariffs",
+      "url": "https://abcnews.com/Politics/wireStory/republicans-face-midterm-backlash-factory-workers-squeezed-jobs-137171571",
+      "casa": "ABC News",
+      "publicadoEm": "2026-10-11T13:10:54.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Why Abdul El-Sayed might not be winning Black voters in Michigan",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPV1FTaVlHM0JUa0dMaXp1ZWJ2VUtCUVpmUkhPX3pYcTB6Nm02RzF3Yk9BNDNEd3JPRjdJVTljNnNQYUNxNEtZRXotTzctVWlrMzNkajBRYnlaaEUybHl2SFhfaUY1WGswdVo3Q1NrOElfV21KUjI0N0lwVWFscDBPZ1MzZGV3am9JSlp1WG9wbnhRS1VnSUc2bHRUMVE?oc=5",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-10-11T13:07:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Republicans want Abdul El-Sayed to be the main character of the midterms. He's happy to oblige",
+      "url": "https://abcnews.com/Politics/wireStory/republicans-abdul-el-sayed-main-character-midterms-happy-137171198",
+      "casa": "ABC News",
+      "publicadoEm": "2026-10-11T11:45:48.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    }
+  ]
+}
