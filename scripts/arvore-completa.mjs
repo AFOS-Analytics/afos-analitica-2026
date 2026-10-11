@@ -53,7 +53,14 @@
  *       traz a certificação da trava que rodou LÁ para o `.cache` canônico,
  *       porque o bloco 4 COPIA o cache em vez de ligá-lo, e a árvore morre com
  *       a leitura do dia dentro. Só o prefixo da faixa (`--prefixo=us`), e só
- *       o que é mais novo POR CONTEÚDO. Nunca apaga. Rodar ANTES de `--remover`.
+ *       o que é mais novo POR CONTEÚDO. Nunca apaga.
+ *
+ *       🔴 RODAR ANTES de `--remover` E ANTES de recriar a árvore, medido em
+ *       11/Out/2026 usando o próprio atalho. A invocação SEM flag apaga o
+ *       diretório (`rmSync`) e copia o cache da árvore principal de volta por
+ *       cima, então recriar destrói a certificação do dia tão bem quanto
+ *       remover. A ordem certa é: rodar a trava lá, `--devolver-cache`, e só
+ *       então recriar ou remover.
  */
 import { execFileSync, execSync } from 'node:child_process'
 import { copyFileSync, cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmdirSync, rmSync } from 'node:fs'
