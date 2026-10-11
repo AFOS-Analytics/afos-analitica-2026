@@ -48,10 +48,18 @@
  *   node scripts/arvore-completa.mjs --sem-merge     # só HEAD, sem trazer o remoto
  *   node scripts/arvore-completa.mjs --remover       # devolve o espaço e sai
  *   node scripts/arvore-completa.mjs --dir=C:/temp/x
+ *
+ *   node scripts/arvore-completa.mjs --devolver-cache
+ *       traz a certificação da trava que rodou LÁ para o `.cache` canônico,
+ *       porque o bloco 4 COPIA o cache em vez de ligá-lo, e a árvore morre com
+ *       a leitura do dia dentro. Só o prefixo da faixa (`--prefixo=us`), e só
+ *       o que é mais novo POR CONTEÚDO. Nunca apaga. Rodar ANTES de `--remover`.
  */
 import { execFileSync, execSync } from 'node:child_process'
-import { cpSync, existsSync, mkdirSync, readdirSync, rmdirSync, rmSync } from 'node:fs'
+import { copyFileSync, cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmdirSync, rmSync } from 'node:fs'
+import { createHash } from 'node:crypto'
 import { join } from 'node:path'
+import { daFaixa, decidir, escreve, IDENTICO } from './lib/devolucao-de-cache.mjs'
 
 const args = process.argv.slice(2)
 const flag = (n) => args.includes(`--${n}`)
@@ -102,6 +110,90 @@ if (flag('remover')) {
   shq('git worktree prune')
   linha(r.ok ? '✅' : '⚠️', r.ok ? `removida: ${DIR}` : `nada a remover em ${DIR}`)
   if (existsSync(DIR)) rmSync(DIR, { recursive: true, force: true })
+  console.log()
+  process.exit(0)
+}
+
+// ── devolver a certificação e sair ──────────────────────────────────
+/**
+ * 🔴 POR QUE EXISTE, medido em 11/Out/2026. O bloco 4 abaixo COPIA o
+ * `.cache/capture-guard` para a árvore descartável, em vez de ligá-lo. Isso é
+ * deliberado: junction ali seria uma porta para o cache real, e `--remover`
+ * apaga recursivamente. O preço é que a trava rodada LÁ grava a certificação
+ * do dia só lá, e a árvore morre com ela dentro.
+ *
+ * Efeito medido: em 10/Out rodei a trava na árvore completa, e o `.cache`
+ * canônico ficou com a última certificação dos EUA de 09/Out. Quem lê a série
+ * da árvore principal no dia seguinte compara contra uma certificação de dois
+ * dias, e a idade sai impressa mas o operador já leu o número.
+ *
+ * ⛔ AS DUAS TRAVAS, e a segunda é a que importa:
+ *   1. só o prefixo da faixa deste terminal (`us-`, `ultima-us.json`), porque
+ *      a árvore levou uma CÓPIA do `ultima-br.json` e devolvê-la às cegas
+ *      sobrescreveria uma certificação do Brasil MAIS NOVA pela cópia velha.
+ *   2. decide por CONTEÚDO (`fetchedAt` de dentro), nunca por mtime: o
+ *      `cpSync` reescreve mtime, então todo arquivo da árvore parece mais novo.
+ *
+ * Ele nunca apaga, e imprime arquivo por arquivo o que decidiu e por quê.
+ */
+if (flag('devolver-cache')) {
+  const prefixo = valor('prefixo', 'us')
+  const de = join(DIR, '.cache', 'capture-guard')
+  const para = join(RAIZ, '.cache', 'capture-guard')
+  if (!existsSync(de)) {
+    linha('⚠️', `a árvore descartável não tem .cache/capture-guard: nada a devolver (${de})`)
+    console.log()
+    process.exit(0)
+  }
+  mkdirSync(para, { recursive: true })
+  const carimboDe = (caminho) => {
+    try {
+      const j = JSON.parse(readFileSync(caminho, 'utf8'))
+      return j.fetchedAt ?? j.carimbo ?? null
+    } catch {
+      return null
+    }
+  }
+  const sha = (caminho) => createHash('sha256').update(readFileSync(caminho)).digest('hex')
+  // 🔑 A REGRA vive em scripts/lib/devolucao-de-cache.mjs, com 27 asserções no
+  //    CI. Aqui só entra a leitura do disco e a escrita, que é o que orquestração
+  //    pode fazer. Segunda cópia desta decisão é o defeito que a casa persegue.
+  const meus = daFaixa(readdirSync(de), prefixo)
+  let trouxe = 0
+  let pulou = 0
+  for (const nome of meus) {
+    const a = join(de, nome)
+    const b = join(para, nome)
+    const existeCanonico = existsSync(b)
+    const { acao, motivo } = decidir({
+      existeCanonico,
+      shaArvore: sha(a),
+      shaCanonico: existeCanonico ? sha(b) : null,
+      carimboArvore: carimboDe(a),
+      carimboCanonico: existeCanonico ? carimboDe(b) : null,
+    })
+    if (escreve(acao)) {
+      copyFileSync(a, b)
+      trouxe++
+      linha('⬅️', `${nome}: ${motivo}`)
+    } else {
+      pulou++
+      if (acao !== IDENTICO) linha('⛔', `${nome}: ${motivo}`)
+    }
+  }
+  // 🧪 controle positivo: não basta copiar, tem de bater por hash depois
+  let conferidos = 0
+  for (const nome of meus) {
+    const b = join(para, nome)
+    if (existsSync(b) && sha(join(de, nome)) === sha(b)) conferidos++
+  }
+  console.log()
+  linha('📋', `${meus.length} arquivo(s) da faixa "${prefixo}": ${trouxe} trazido(s), ${pulou} pulado(s)`)
+  linha(conferidos === meus.length ? '✅' : '⚠️', `${conferidos} de ${meus.length} idênticos por sha256 ao fim`)
+  if (conferidos !== meus.length) {
+    linha('·', 'quem não bate é o que o canônico tinha mais novo, e isso é o comportamento certo')
+  }
+  linha('⛔', 'nada foi apagado, e a outra faixa não foi tocada')
   console.log()
   process.exit(0)
 }

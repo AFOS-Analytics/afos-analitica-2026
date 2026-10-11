@@ -567,6 +567,22 @@ O André decidiu juntar: `Emerson College/RealClear Opinion Research` e a grafia
 
 📌 **A régua que fica:** quando uma função de leitura ganha um registro como parâmetro, todo caminho que recomputa a mesma conta tem de receber o mesmo registro, ou a segunda cópia nasce sem ninguém escrever uma linha de regra nova.
 
+### 🔴 A TABELA É A AUTORIDADE DA BORDA. Não recalcular à mão (11/Out/2026)
+
+⚠️ **Medido contra mim mesmo em dois dias seguidos.** Em 10 e 11/Out eu escrevi um `node -e` para responder *"quem sai da janela hoje e em quanto fica a média"*, projetei, e só depois rodei a passada. As duas vezes bateram, e as duas vezes foram **segunda cópia de uma regra que o passo 3/9 já implementa**.
+
+🔑 **O passo `projetar` já entrega a tabela dia a dia até a janela esvaziar**, com três colunas que a conta de cabeça não tem: o `n`, o número de **institutos** e a lista nomeada de quem sai, com os recortes agrupados e as ondas excluídas por instrumento declaradas à parte.
+
+```bash
+node scripts/rodada-us-polls.mjs --sem-coleta --sem-rede   # a tabela, sem ir à rede
+```
+
+📊 **E ela responde o que a projeção à mão NUNCA responderia**, porque não é sobre amanhã: em 11/Out a tabela mostrou o `n` caindo de **41 para 16 até 22/Out** e a média **deixando de existir em 05/Nov** se nada entrar. O risco da base parada não é o nível da média, é o `n`.
+
+⛔ **Projetar à mão não é só redundante, é pior:** a conta de cabeça usa a média simples sobre `incluidas` e **ignora** a hierarquia de recorte, a tabela de nomes de casa e as exclusões por instrumento, que são exatamente as três regras que fazem o número da casa ser o que é. Ela acerta enquanto o dia for simples, e erra calada no dia em que não for.
+
+📐 **A régua, então:** a borda da janela se LÊ na tabela do passo 3. Se a tabela não responder o que se precisa, o conserto é nela.
+
 ## 📡 A ActiVote saiu do ponto cego, e o formato novo é SLUG DE RELEASE (26/Set/2026)
 
 ⚖️ **Decisão do André.** A casa entrou na cadência quando as curadas dela se aposentaram, e saía como *"nao esta no registro"* em toda passada: **5 de 13 casas sem listagem utilizável**. Agora são **4 de 13**.
