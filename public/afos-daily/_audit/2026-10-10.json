@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-10",
+  "edicao": "sexto dia do 2o turno, com a Ipespe e o debate da Record cancelado, sobre o painel publicado no commit 5232faaa (merge e4aac3ad)",
+  "refetch": {
+    "certificada": "2026-10-10T22:19:11.061Z",
+    "aoVivo": "2026-10-10T22:39:15Z: Flavio 88,15 (0), Lula 11,50 (0), STF 3,40 (0), total USD 179,88M",
+    "gate": "rebaseline NAO disparou; trava aprovou presidencial e STF"
+  },
+  "factCheck": [
+    { "evento": "Record cancela o debate de 11/10 por incompatibilidade de agendas; restam 15/10 SBT/RedeTV!/CNN Brasil, 18/10 Band e 23/10 Globo", "fontes": ["Gazeta do Povo 10/10 00:35Z (corpo lido, nota da emissora)", "Poder360 10/10 09:03Z (corpo lido)"], "decisao": "incorporar; anuncio de 09/10, depois do envio da daily daquele dia" },
+    { "evento": "Ipespe/Abrapel 49 x 44 total, validos 52,7 x 47,3, n=1.500, campo 06 a 08/10, BR-00933", "fontes": ["O Globo (corpo lido)", "Exame (corpo lido)"], "decisao": "incorporar; vai ao grafo pela regra" },
+    { "evento": "Campanha de Lula acusa a Meta e vai ao TSE", "fontes": ["CartaCapital, Folha, Estadao, Poder360 e G1 (manchetes)"], "decisao": "incorporar como acusacao de campanha" },
+    { "evento": "Emails indicam que Flavio dividia conta com suspeito do INSS", "fontes": ["Folha de S.Paulo 21:53Z, so"], "decisao": "NAO incorporar: fonte unica" }
+  ],
+  "adversarial": {
+    "singleSource": [ "aprovacao 50 x 43 na Ipespe (CNN Brasil, linkada)", "286 deputados e 50 senadores (Poder360, atribuido)", "DataTrends anunciada para 11/10 (Revista Forum, como anuncio)" ],
+    "numerical": "reconcile-claims so acusou pareamento de entidade",
+    "correcoes": [ "link da VEJA de 09/10 por URL direta, porque a materia nao esta no cache de 10/10" ],
+    "links": "12 distintos, 1 ancora e 11 secundarios (92%)",
+    "palavras": "pt 800, en 804, es 844",
+    "decisao": "prosseguir"
+  },
+  "wayback": "pre-check sondou com a pausa cumprida e recebeu 429; nova pausa de 4 dias a partir de 10/10 22:39Z"
+}
