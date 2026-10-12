@@ -1,0 +1,223 @@
+{
+  "lastUpdate": "2026-10-12",
+  "fetchedAt": "2026-10-12T19:20:13.491Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal",
+      "feed": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal",
+      "feed": "https://feeds.washingtonpost.com/rss/politics"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal",
+      "feed": "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada",
+      "feed": "https://rss.politico.com/politics-news.xml"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada",
+      "feed": "https://thehill.com/homenews/feed/"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada",
+      "feed": "https://rollcall.com/feed/"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada",
+      "feed": "https://api.axios.com/feed/"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.npr.org/1014/rss.xml"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio",
+      "feed": "https://abcnews.go.com/abcnews/politicsheadlines"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio",
+      "feed": "https://www.cbsnews.com/latest/rss/politics"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.nbcnews.com/nbcnews/public/politics"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio",
+      "feed": "http://rss.cnn.com/rss/cnn_allpolitics.rss"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio",
+      "feed": "https://moxie.foxnews.com/google-publisher/politics.xml"
+    },
+    {
+      "casa": "NewsNation",
+      "tipo": "tv/rádio",
+      "feed": "https://www.newsnationnow.com/politics/feed/"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião",
+      "feed": "https://www.nationalreview.com/feed/"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião",
+      "feed": "https://www.theguardian.com/us-news/us-politics/rss"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 215,
+    "naLista": 106,
+    "foraDaLista": 109,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 18,
+    "veiculosRepresentados": 6,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": [],
+    "feedsProprios": 16,
+    "lidosEmFeedProprio": 31,
+    "publicadosComLinkCanonico": 7,
+    "publicadosViaGoogleNews": 3,
+    "publicadosPorDisputa": 10,
+    "publicadosPorMetodo": 0
+  },
+  "itens": [
+    {
+      "titulo": "Texas Republicans at odds over GOP Senate nominee Ken Paxton",
+      "url": "https://www.nbcnews.com/now/video/texas-republicans-at-odds-over-gop-senate-nominee-ken-paxton-271453765554",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-12T19:02:17.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Obama rolls out ad for Dem Scott Colom in Mississippi Senate race",
+      "url": "https://thehill.com/homenews/campaign/6143421-barack-obama-scott-colom-mississippi-senate-race-ad/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-10-12T18:40:11.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "US immigration authorities raid Democratic congresswoman Ilhan Omar's home",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOMDJQVmVIaFZGdTRES18xTGZOQTgtMzMyWGVOb2VxOUxpWUpQNDlhXzZIdXU0bE81bHVqZ2dRcnVqeE1NWkhtNXNQMTZHb0RtWUhibjBiVkF5MWdSTHJZLW0yNjJrWFYxRVpHQjBnZHJDWGhwVTBIanpDak5iLWc0Y1NIVjN1VmRhTVV2WXE1X0VHQ2gwZXNwb2FIQlEwaGtDWFVnMGpDTlQzLVd2SlNXcVB6dmpDYzJmMURtbUdQYmVra3dtc0ViRWl6NU4?oc=5",
+      "casa": "Reuters",
+      "publicadoEm": "2026-10-12T18:38:13.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "The bellwether races to watch in November’s midterm elections",
+      "url": "https://www.washingtonpost.com/politics/2026/10/12/bellwether-races-watch-novembers-midterm-elections/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-10-12T18:32:24.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Musk throws $276M behind Republicans in midterms",
+      "url": "https://thehill.com/policy/technology/6143347-musk-donated-millions-gop-midterms/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-10-12T17:50:29.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Inside Elon Musk’s $276 Million Midterm Rescue Mission for Republicans",
+      "url": "https://www.nytimes.com/2026/10/12/us/politics/elon-musk-midterms.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-12T17:24:24.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Elon Musk quietly becomes biggest known donor in midterm contests as he tries to save Republicans",
+      "url": "https://abcnews.com/Politics/wireStory/elon-musk-quietly-biggest-donor-midterm-contests-save-137195978",
+      "casa": "ABC News",
+      "publicadoEm": "2026-10-12T17:24:07.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Many GOP states have imposed new voting rules this year, some mirroring Trump's midterm proposals",
+      "url": "https://abcnews.com/Politics/wireStory/gop-states-imposed-new-voting-rules-year-mirroring-137188408",
+      "casa": "ABC News",
+      "publicadoEm": "2026-10-12T17:23:34.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Tracking the Early Vote in the 2026 Midterm Elections",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOWUNScEZXTjJwYVpIZENZS0txWHd4TTNRUFZvQk1aRUUtTHE2NUhQbWJpb3BTRHpQUTFtdWEybmpFRk9iN1VXY1Y5Q1FjMTNqTEYzdkJZZk9OOUFPNnR3WFV2Qy1KZ3JscGpGT2N0eGdOY2NSaXJSZ2hoLXFORXB1bEhmUGd6QnEtVW9sZzRudW9wQ2pJTTdxVWFCTGpaZDJBaU9LX29oeER4STJrczJsOTRZbG43cHFF?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-12T16:44:33.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Musk has spent $366 million to help Republicans retain control of Congress",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOZWhUR01GVWhzbTNaQnQwQzFIczJfNFdORnVIOTl1bkV1YmtRdC1TcjJrM3ZOeU1peENNenU1SXg3c1ZERDY0T2htbXpVQW5nY2dSQzFMRDR2SzFUNl9iUTVMaG9RakYxeGVXZ1V0UTJxeE1hakJWM256M2pfWTRQNEpOam5uTE9CcEZoa2hnZENJUTdCUWhsNlVKbF84ZVI3TzZVeE1FVVpiMldxdjJYZnlFaEJHX0J1Y2FpeW1BZjYyaVVs?oc=5",
+      "casa": "Reuters",
+      "publicadoEm": "2026-10-12T16:07:43.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    }
+  ]
+}
