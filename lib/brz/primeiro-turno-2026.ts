@@ -39,6 +39,31 @@ export const RESULTADO_1T = {
   nulos: { votos: 3_674_249, pct: 2.93 },
 } as const
 
+/**
+ * 🗳️ As urnas do dia da votação, acrescentadas em 11/Out a pedido do André.
+ *
+ * Fonte: TSE, "Números gerais, coletiva das 21h" de 04/10/2026, seção "Urnas e
+ * seções" (`URNAS_1T.fonte`). A frase de que a substituição não afetou os votos
+ * já registrados é do próprio TSE, na notícia de balanço do 1º turno.
+ *
+ * ⚠️ O "0,35% do total" do TSE é sobre TODAS as urnas, somando as de
+ *    contingência: 1.904 / 549.286 = 0,347%. Sobre as 499.248 de votação seria
+ *    0,38%. O cartão calcula sobre a mesma base do TSE e a declara no rodapé,
+ *    para o leitor que refizer a conta chegar ao mesmo número.
+ *
+ * 🏷️ O TSE não publica "urnas com defeito": publica urnas SUBSTITUÍDAS e seções
+ *    com votação MANUAL. O cartão usa os termos do tribunal.
+ */
+export const URNAS_1T = {
+  fonte:
+    'https://www.tse.jus.br/comunicacao/arquivos/numeros-gerais-eleicoes-2026-1o-turno-coletiva-21h/@@display-file/file/tse-numeros-gerais-eleicoes-2026-1-turno.pdf',
+  votacao: 499_248,
+  contingencia: 50_038,
+  substituidas: 1_904,
+  /** "não há votação manual no país neste momento", no balanço das 21h. */
+  votacaoManual: 0,
+} as const
+
 export type LinhaRetro = {
   id: 'pesquisas' | 'segundo' | 'terceiro' | 'senado' | 'vencedor'
   /** Carimbo do ponto da véspera, em UTC. */
