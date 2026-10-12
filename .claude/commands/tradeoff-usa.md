@@ -169,6 +169,28 @@ npx tsx scripts/persist-afos-tradeoff.ts YYYY-MM-DD --pais=us
 
 Depois: `npx vercel --yes --prod`, e conferir os três idiomas.
 
+### 📮 O BROADCAST, que roda toda semana e NÃO estava escrito aqui (12/Out/2026)
+
+🔴 **Medido na nº12: a trilha de auditoria mostra as edições dos EUA nº8, nº9, nº10 e nº11 DISPARADAS, e esta skill citava o broadcast zero vezes como etapa.** Ou seja, o passo acontecia toda segunda por memória de quem rodava, não por régua. É a mesma classe do `conferir-us-polls` um mês sem rodar e do `semana-do-contrato` fora da skill do produto cuja manchete é o Δ, só com o sinal invertido: aqui o script roda e a régua é que não existe.
+
+```bash
+npx tsx scripts/broadcast-afos-tradeoff.ts YYYY-MM-DD --pais=us --dry-run   # OBRIGATÓRIO antes
+npx tsx scripts/broadcast-afos-tradeoff.ts YYYY-MM-DD --pais=us
+```
+
+⛔ **O `--dry-run` não é opcional**, e ele não grava evento na trilha, por desenho. Conferir nele a contagem e a distribuição por idioma antes de disparar.
+
+| trava | por quê |
+|---|---|
+| `--pais=us` | sem ele o script cai no país padrão e manda a peça do BRASIL para a lista inteira |
+| a edição tem de estar **publicada nos 3** | ele aborta com `EN Tradeoff not published` se faltar idioma, porque o envio é por idioma do lead |
+| conferir a URL do e-mail | ela é `/[idioma]/tradeoff/[pais]/[data]`. 🔴 **A forma SEM país virou 404 em 07/Ago/2026**, então esquecer o país não entrega mais a peça errada, entrega **página morta para a lista inteira**. Medido em 12/Out: `/pt-BR/tradeoff/2026-10-12` responde 404 com `og:title` do Brasil |
+| a trilha sai **por lote**, não no fim | queda no meio do envio não apaga o registro do que já saiu |
+
+📊 **Base medida em 12/Out/2026: 27 leads ativos, TODOS em pt-BR.** Então, na prática, o inglês e o espanhol não chegam a ninguém por e-mail, e isso não muda a obrigação de traduzir antes: o envio é por idioma do lead e o script se recusa a rodar sem os três no ar.
+
+⚖️ **E disparar é decisão do André, não consequência de "publicado".** Aprovar o texto não é autorizar o envio: são 27 e-mails que não se desfazem. A régua é mostrar o `--dry-run` e esperar a palavra.
+
 🔢 **DECIMAL: PONTO nos três idiomas**, inclusive pt-BR e ES, como no Tradeoff do Brasil desde 02/Ago/2026. ⚠️ A **Edição №1 dos EUA usa VÍRGULA** em pt-BR e ES porque foi escrita em 31/Jul, antes da decisão. Não copiar a convenção dela.
 
 ⚠️ **Editar o arquivo com Python em Windows converte a árvore inteira para CRLF**, e aí o `publish-afos-tradeoff.ts` responde `no status line in frontmatter`, porque o `\r` quebra a âncora do regex. Se isso aparecer, normalizar para LF antes de culpar o frontmatter.
