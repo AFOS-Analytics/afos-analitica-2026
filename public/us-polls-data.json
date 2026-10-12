@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-11",
-  "fetchedAt": "2026-10-11T20:16:03.761Z",
+  "lastUpdate": "2026-10-12",
+  "fetchedAt": "2026-10-12T17:14:41.735Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,8 +47,8 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-11",
-    "nPesquisas": 41,
+    "desde": "2026-09-12",
+    "nPesquisas": 40,
     "tratamentoDoIndeciso": [
       {
         "serie": "Angus Reid Global",
@@ -462,14 +462,6 @@
         "amostraTipo": "LV",
         "dem": 51,
         "rep": 42
-      },
-      {
-        "key": "CBS News/YouGov|2026-09-11",
-        "instituto": "CBS News/YouGov",
-        "campoFim": "2026-09-11",
-        "amostraTipo": "LV",
-        "dem": 54,
-        "rep": 46
       }
     ],
     "excluidasPorInstrumento": [
@@ -535,9 +527,9 @@
       }
     ],
     "nInstitutos": 30,
-    "dem": 49.12,
-    "rep": 41.61,
-    "vantagemDem": 7.51,
+    "dem": 49,
+    "rep": 41.5,
+    "vantagemDem": 7.5,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
