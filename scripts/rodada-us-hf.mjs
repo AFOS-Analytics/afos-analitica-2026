@@ -31,6 +31,14 @@
 import { existsSync, readFileSync } from 'node:fs'
 import { gunzipSync } from 'node:zlib'
 import { spawnSync } from 'node:child_process'
+// 🔑 A janela da imprensa NÃO se recalcula aqui: ela é derivada do `vercel.json`
+//    pela regra de `data-corrente.mjs`, que tem 20 casos no CI. Em 03/Out o
+//    `estado:usa` tinha essa conta inline, `>= 19 * 60 + 30`, com um comentário
+//    ao lado APONTANDO para o módulo dono enquanto o código o reimplementava.
+//    Número de horário escrito à mão segue afirmando 19:30Z depois de a agenda
+//    mudar, e erra em silêncio.
+import { ACOES, agendaDaRota, decidirDataCorrente, ultimoCronDoDia } from '../lib/us-press/data-corrente.mjs'
+const ROTA_IMPRENSA = '/api/cron/refresh-us-press'
 
 const argv = process.argv.slice(2)
 const ensaio = argv.includes('--ensaio')
@@ -103,6 +111,60 @@ if (bk.erro) {
   console.log(`      encolhimento NÃO pega isso, porque ele compara contagem de linha.`)
   console.log(`      📌 Não bloqueia: o dataset é cumulativo. Mas a mensagem do commit não pode`)
   console.log(`         prometer o dia de hoje.`)
+}
+
+// ── A IMPRENSA DO DIA, que é a OUTRA espera e não tinha medidor ─────────────
+//
+// 🔴 POR QUE, medido em 12/Out/2026. A régua do `/atualizar-usa` diz, com estas
+//    palavras, que "backup presente não autoriza subir: autoriza subir DEPOIS de
+//    a imprensa estar arquivada", porque o `build-us-2026-dataset.mjs` LÊ
+//    `public/us-press-archive/`. A consequência está medida: em 03/Out o
+//    `press/us-press-timeline.csv` subiu com +10, que são exatamente os 10 itens
+//    arquivados minutos antes; sem a ETAPA 3.1 eles só entrariam na passada
+//    seguinte.
+//
+// ⛔ E a assimetria era esta: o backup acima TEM medidor, e a imprensa não tinha
+//    NENHUM no ponto da ação. O `estado:usa` declara a janela, mas ele é outro
+//    script, rodado em outra hora, e a decisão de subir acontece aqui.
+//
+// 📌 Não bloqueia, pela mesma razão do backup: o dataset é cumulativo. Mas a
+//    diferença de NATUREZA entra no texto, porque muda o que fazer: o backup é
+//    robô que ainda não rodou, e a imprensa é uma etapa MINHA que ficou para
+//    trás. A primeira se espera, a segunda se roda.
+// 🔑 E a DECISÃO não mora aqui: `decidirDataCorrente` já devolve exatamente os
+//    três estados de que este aviso precisa, com o motivo redigido e 20 casos no
+//    CI. Eu escrevi a comparação de minutos à mão primeiro e isso era a segunda
+//    cópia de uma regra existente, o mesmo defeito que este arquivo denuncia no
+//    comentário acima. ACOES.ADIAR é "a janela ainda não abriu", ACOES.CRIAR com
+//    arquivo ausente é "devida e não feita", e ACOES.REGERAR é "já existe".
+function imprensaDoDia() {
+  const hoje = new Date().toISOString().slice(0, 10)
+  const jaExiste = existsSync(`public/us-press-archive/${hoje}.json`)
+  try {
+    const v = JSON.parse(readFileSync('vercel.json', 'utf8'))
+    const ultimoCron = ultimoCronDoDia(agendaDaRota(v, ROTA_IMPRENSA))
+    const d = decidirDataCorrente({ jaExiste, agora: new Date(), ultimoCron })
+    return { hoje, jaExiste, ...d }
+  } catch (e) {
+    return { hoje, jaExiste, erro: String(e.message ?? e) }
+  }
+}
+
+const im = imprensaDoDia()
+if (im.erro) {
+  console.log(`   ⚠️ JANELA DA IMPRENSA: INDETERMINADA (${im.erro}). Não é "está em dia".`)
+} else if (im.jaExiste) {
+  console.log(`   ✅ imprensa de ${im.hoje} ARQUIVADA, o dataset vai levar as matérias do dia`)
+} else if (im.acao === ACOES.ADIAR) {
+  console.log(`   ⏳ imprensa de ${im.hoje} ainda NÃO É DEVIDA: ${im.motivo}`)
+  console.log(`      O dataset vai levar a imprensa até ontem, e isso é correto. A mensagem do`)
+  console.log(`      commit no HF não pode prometer as matérias de hoje.`)
+} else {
+  console.log(`   🔴 IMPRENSA DE ${im.hoje} NÃO ARQUIVADA, e a janela JÁ ABRIU (${im.motivo})`)
+  console.log(`      O press/us-press-timeline.csv vai subir SEM as matérias do dia, e elas só`)
+  console.log(`      entram na passada seguinte. Isto é etapa SUA que ficou para trás, não robô`)
+  console.log(`      atrasado: rodar a ETAPA 3.1 antes.`)
+  console.log(`      📌 node scripts/rodada-us-imprensa.mjs --sem-cron`)
 }
 
 for (const p of passos) {
