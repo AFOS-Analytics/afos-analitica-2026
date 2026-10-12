@@ -135,6 +135,18 @@ Full column-level definitions for every file are in **[`DATA_DICTIONARY.md`](DAT
 | `polls/sample-demographics.csv` | 416 | **Sample-design demographics (layer A)**, long format: each poll's declared sex/age/education/income quota composition parsed from the TSE sampling plan, with explicit per-poll coverage (`full_percentages` 34/83 · `mentioned_no_pct` 49/83). This is sample composition/weighting — **not** vote-by-demographic crosstabs (layer B), which are not part of TSE open data. |
 | `polls/polls-data-{date}.json` | — | Daily snapshot of the national polls referenced on that date. |
 
+### 🗳️ Official result · Resultado oficial · Resultado oficial
+
+| Path | Rows | Content |
+|------|------|---------|
+| `results/first-round-2026-official.json` | 1 | **Final TSE tally of the first round** (100% of sections, generated 2026-10-05 12:51): electorate, turnout, abstention, valid, blank and null votes, all twelve candidates with votes and party, and the **voting machines** of the day (in use, backup, replaced, sections voting on paper), each with its TSE source. |
+| `results/first-round-2026-candidates.csv` | 12 | One row per candidate, with votes, percentage of valid votes, party, coalition and TSE status. |
+| `results/first-round-2026-summary.csv` | 14 | One row per figure, with the denominator of each percentage declared. |
+| `results/first-round-2026-retrospective.csv` | 18 | **What each instrument said on the eve**: the nine national polls of 2026-10-03 and four Polymarket books, item by item, against the outcome. |
+| `results/first-round-2026-retrospective-summary.csv` | 5 | The same comparison one row per instrument, as the panel card shows it: matched or not, and for the polls whether the majority of houses had the winner ahead and whether their range contained the count. |
+
+The **second round** will be added in the same format after 2026-10-25. Details in [`results/README.md`](results/README.md).
+
 ### 📈 Market & divergence time-series
 
 | Path | Content |
