@@ -16,7 +16,7 @@
 import { Card, SectionTitle } from './ui';
 import { useTranslation } from '../i18n/context';
 import { fmtDecimal, fmtMilhar } from '../../lib/i18n/numero';
-import { RESULTADO_1T, RETROSPECTO_1T, FONTE_TSE, type LinhaRetro } from '../../lib/brz/primeiro-turno-2026';
+import { RESULTADO_1T, RETROSPECTO_1T, FONTE_TSE, URNAS_1T, type LinhaRetro } from '../../lib/brz/primeiro-turno-2026';
 
 const POLY = 'https://polymarket.com/event/';
 
@@ -24,6 +24,8 @@ type Textos = {
   secao: string; tse: string; tseSub: string; demais: (v: string) => string
   eleitorado: string; comparecimento: string; abstencao: string; brancos: string; nulos: string
   notaBN: string; fecho: string; vespTitulo: string; vespSub: string
+  urnasVotacao: string; urnasConting: string; urnasSubst: string; manual: string; nenhuma: string
+  notaUrnas: (total: string) => string
   titulo: Record<LinhaRetro['id'], string>
   divulgadas: string; horaUtc: (h: string) => string
   pesquisas: (lula: number, flavio: number, dl: string, df: string) => string
@@ -40,6 +42,8 @@ const TXT: Record<'pt-BR' | 'en' | 'es', Textos> = {
     demais: (v) => `Demais nomes: ${v}.`,
     eleitorado: 'Eleitorado', comparecimento: 'Comparecimento', abstencao: 'Abstenção', brancos: 'Brancos', nulos: 'Nulos',
     notaBN: 'Brancos e nulos sobre os votos comparecidos.',
+    urnasVotacao: 'Urnas eletrônicas de votação', urnasConting: 'Urnas de contingência', urnasSubst: 'Urnas substituídas no dia', manual: 'Seções com votação manual', nenhuma: 'nenhuma',
+    notaUrnas: (total) => `Percentual sobre as ${total} urnas, somando as de contingência, como no balanço do TSE das 21h de 04/10. Segundo o TSE, as substituições, causadas sobretudo por oscilação de energia, não afetaram os votos já registrados.`,
     fecho: '2º turno em 25 de outubro: Flávio Bolsonaro × Lula.',
     vespTitulo: 'O que cada instrumento dizia na véspera',
     vespSub: 'Preços do último ponto gravado de 03/Out, lidos no backup diário e não na interface. As pesquisas medem votos totais e a urna conta votos válidos, então a comparação é de ordem e de distância.',
@@ -71,6 +75,8 @@ const TXT: Record<'pt-BR' | 'en' | 'es', Textos> = {
     demais: (v) => `Other names: ${v}.`,
     eleitorado: 'Electorate', comparecimento: 'Turnout', abstencao: 'Abstention', brancos: 'Blank', nulos: 'Null',
     notaBN: 'Blank and null as a share of votes cast.',
+    urnasVotacao: 'Electronic voting machines', urnasConting: 'Backup machines', urnasSubst: 'Machines replaced on the day', manual: 'Polling stations voting on paper', nenhuma: 'none',
+    notaUrnas: (total) => `Share of the ${total} machines, including backups, as in the TSE briefing at 9 p.m. on 4 Oct. According to the TSE, the replacements, mostly caused by power fluctuations, did not affect votes already recorded.`,
     fecho: 'Second round on 25 October: Flávio Bolsonaro × Lula.',
     vespTitulo: 'What each instrument said on the eve',
     vespSub: 'Prices from the last recorded point of 3 Oct, read from the daily backup and not from the interface. Polls measure total votes and the official count uses valid votes, so the comparison is of order and distance.',
@@ -102,6 +108,8 @@ const TXT: Record<'pt-BR' | 'en' | 'es', Textos> = {
     demais: (v) => `Demás nombres: ${v}.`,
     eleitorado: 'Electorado', comparecimento: 'Participación', abstencao: 'Abstención', brancos: 'En blanco', nulos: 'Nulos',
     notaBN: 'Blancos y nulos sobre los votos emitidos.',
+    urnasVotacao: 'Urnas electrónicas de votación', urnasConting: 'Urnas de contingencia', urnasSubst: 'Urnas sustituidas en el día', manual: 'Secciones con votación manual', nenhuma: 'ninguna',
+    notaUrnas: (total) => `Porcentaje sobre las ${total} urnas, sumando las de contingencia, como en el balance del TSE de las 21 h del 4 de oct. Según el TSE, las sustituciones, causadas sobre todo por oscilaciones de energía, no afectaron los votos ya registrados.`,
     fecho: 'Segunda vuelta el 25 de octubre: Flávio Bolsonaro × Lula.',
     vespTitulo: 'Lo que cada instrumento decía en la víspera',
     vespSub: 'Precios del último punto registrado del 3 de oct, leídos en el respaldo diario y no en la interfaz. Las encuestas miden votos totales y el escrutinio cuenta votos válidos, así que la comparación es de orden y de distancia.',
@@ -133,6 +141,8 @@ export function FirstRoundSection() {
   const tx = TXT[locale === 'en' ? 'en' : locale === 'es' ? 'es' : 'pt-BR'];
   const pc = (n: number, casas = 2) => `${fmtDecimal(n, locale, casas)}%`;
   const R = RESULTADO_1T;
+  const U = URNAS_1T;
+  const urnasTotal = U.votacao + U.contingencia;
   const max = Math.max(...R.candidatos.map((c) => c.pct));
 
   const hora = (iso: string) => (iso.length === 10 ? tx.divulgadas : tx.horaUtc(iso.slice(11, 16)));
@@ -196,6 +206,18 @@ export function FirstRoundSection() {
             <dt>{tx.nulos}</dt><dd className="text-right">{fmtMilhar(R.nulos.votos, locale)} ({pc(R.nulos.pct)})</dd>
           </dl>
           <p className="text-[11px] text-gray-400 mt-2">{tx.notaBN}</p>
+          {/* Urnas do dia da votação, a pedido do André em 11/Out, ACIMA do
+              fecho. Termos e base do percentual são os do TSE: ver URNAS_1T. */}
+          <dl className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-gray-600 mt-4">
+            <dt>{tx.urnasVotacao}</dt><dd className="text-right">{fmtMilhar(U.votacao, locale)}</dd>
+            <dt>{tx.urnasConting}</dt><dd className="text-right">{fmtMilhar(U.contingencia, locale)}</dd>
+            <dt>{tx.urnasSubst}</dt><dd className="text-right">{fmtMilhar(U.substituidas, locale)} ({pc((U.substituidas / urnasTotal) * 100)})</dd>
+            <dt>{tx.manual}</dt><dd className="text-right">{U.votacaoManual === 0 ? tx.nenhuma : fmtMilhar(U.votacaoManual, locale)}</dd>
+          </dl>
+          <p className="text-[11px] text-gray-400 mt-2">
+            {tx.notaUrnas(fmtMilhar(urnasTotal, locale))}{' '}
+            <a href={U.fonte} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">TSE ↗</a>
+          </p>
           {/* Fecho do cartão, a pedido do André em 05/Out: no meio, a frase
               cortava o resultado dos números de comparecimento. */}
           <p className="text-sm text-dark font-semibold mt-4 pt-3 border-t border-light-border">{tx.fecho}</p>
