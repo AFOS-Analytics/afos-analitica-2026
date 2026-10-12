@@ -23,6 +23,7 @@ import {
   fimDoIntervalo,
   lerAgregadores,
   limparCelula,
+  TABELA_VELHA_DIAS,
   TOLERANCIA_DIAS,
   VEREDITOS,
 } from '../lib/us-polls/agregadores.mjs'
@@ -198,6 +199,61 @@ const inline = lerAgregadores([
 ].join('\n'))
 eq('dois agregadores lidos com ||', inline.agregadores.length, 2)
 eq('e com a data certa', inline.agregadores[1]?.campoFim, '2026-09-11')
+
+// -- ALCANCE NO TEMPO: ate quando o veredito sustenta o que diz (12/Out/2026) --
+//
+// O caso real: base com campo parado em 05/Out ha SETE dias, os cinco
+// agregadores declarando o mesmo 05/Out, e a tabela deles de 09/Out. O veredito
+// saia "EM COMPASSO, 0 dia", que se le como "ninguem publicou nada ate hoje". O
+// que ele sustentava era "ate 09/Out": cobria 4 dos 7 dias de parada.
+//
+// Metade dos casos abaixo e ANTI-EXCESSO: declarar o alcance nao pode mudar
+// veredito nenhum, e nao pode inventar janela cega onde ela nao existe.
+console.log('\n\u23f1\ufe0f  o alcance NO TEMPO, e ele nao muda veredito')
+
+const MESMO_DIA = compararComBase(lida, '2026-09-11', '2026-09-13')
+eq('tabela do proprio dia: cegoDias 0', MESMO_DIA.cegoDias, 0)
+eq('e alcanceAte e a data da tabela', MESMO_DIA.alcanceAte, '2026-09-13')
+ok('motivo diz "proprio dia", nao inventa janela cega',
+  MESMO_DIA.motivo.indexOf('tabela do pr\u00f3prio dia') >= 0, MESMO_DIA.motivo)
+ok('e NAO fala de dias nao medidos',
+  MESMO_DIA.motivo.indexOf('N\u00c3O s\u00e3o medidos') < 0, MESMO_DIA.motivo)
+
+const TRES = compararComBase(lida, '2026-09-11', '2026-09-16')
+eq('tabela de 3 dias: cegoDias 3', TRES.cegoDias, 3)
+eq('alcanceAte segue a data da TABELA, nao hoje', TRES.alcanceAte, '2026-09-13')
+eq('e o veredito NAO muda', TRES.veredito, VEREDITOS.COMPASSO)
+ok('motivo NOMEIA a data contra a qual mediu', TRES.motivo.indexOf('2026-09-13') >= 0, TRES.motivo)
+ok('e diz quantos dias ficam sem medicao',
+  TRES.motivo.indexOf('3 dia(s) desde ent\u00e3o') >= 0, TRES.motivo)
+
+// A BORDA do TABELA_VELHA_DIAS nos dois lados: o alcance declarado CONVIVE com
+// a degradacao, nao a substitui.
+const BORDA = compararComBase(lida, '2026-09-11', '2026-09-20')
+eq('tabela na borda ainda e compasso', BORDA.veredito, VEREDITOS.COMPASSO)
+eq('e declara a janela cega inteira', BORDA.cegoDias, TABELA_VELHA_DIAS)
+
+const PASSOU = compararComBase(lida, '2026-09-11', '2026-09-21')
+eq('um dia depois da borda degrada, como antes', PASSOU.veredito, VEREDITOS.INCONCLUSIVO)
+eq('e ainda declara quanto nao mediu', PASSOU.cegoDias, TABELA_VELHA_DIAS + 1)
+
+// ATRASADO tambem tem referencia, entao tambem carrega o alcance.
+const ATR = compararComBase(lida, '2026-08-31', '2026-09-16')
+eq('atraso segue atraso', ATR.veredito, VEREDITOS.ATRASADO)
+eq('e carrega cegoDias', ATR.cegoDias, 3)
+eq('e alcanceAte', ATR.alcanceAte, '2026-09-13')
+
+// ANTI-SILENCIO: veredito COM referencia nunca sai sem o alcance no tempo.
+for (const par of [['compasso', MESMO_DIA], ['compasso velho', TRES], ['atraso', ATR], ['degradado', PASSOU]]) {
+  ok(par[0] + ': cegoDias definido', typeof par[1].cegoDias === 'number', String(par[1].cegoDias))
+  ok(par[0] + ': alcanceAte definido', typeof par[1].alcanceAte === 'string', String(par[1].alcanceAte))
+}
+
+// ANTI-EXCESSO: sem referencia nao se inventa alcance.
+const SEM = compararComBase({ secaoEncontrada: false, agregadores: [] }, '2026-09-11', '2026-09-16')
+eq('sem secao segue inconclusivo', SEM.veredito, VEREDITOS.INCONCLUSIVO)
+ok('e NAO declara alcance no tempo',
+  SEM.cegoDias === undefined || SEM.cegoDias === null, String(SEM.cegoDias))
 
 console.log(`\n${falhas ? '❌' : '✅'} ${passes} passaram, ${falhas} falharam\n`)
 process.exit(falhas ? 1 : 0)
