@@ -1,0 +1,105 @@
+{
+  "date": "2026-10-13",
+  "refetch": {
+    "fetchedAt": "2026-10-13T22:04:10.363Z",
+    "flavio": 86.25,
+    "lula": 13.5,
+    "baselineConfirmada": "2026-10-13T19:14:43.388Z",
+    "flavioBase": 86.45,
+    "lulaBase": 13.5,
+    "volTotalPresidencialUSD": 180940000,
+    "rebaseline": false
+  },
+  "factCheck": [
+    {
+      "evento": "Flávio anuncia voto pelo fim da escala 6x1 depois de visitar o pai",
+      "data": "2026-10-13",
+      "fontes": [
+        "UOL",
+        "Gazeta do Povo",
+        "Valor"
+      ],
+      "decisao": "incorporar"
+    },
+    {
+      "evento": "MDB formaliza apoio de 17 diretórios a Flávio; 10 diretórios do N/NE com Lula",
+      "data": "2026-10-13",
+      "fontes": [
+        "Gazeta do Povo",
+        "Estadão",
+        "Folha de S.Paulo",
+        "UOL"
+      ],
+      "decisao": "incorporar"
+    },
+    {
+      "evento": "Kassio derruba de novo o canal Exército do Lula, exige registro e autoriza retomada só 48h depois do registro",
+      "data": "2026-10-13",
+      "fontes": [
+        "Estadão",
+        "G1",
+        "Metrópoles",
+        "Folha de S.Paulo"
+      ],
+      "decisao": "incorporar com o prazo de 48h"
+    },
+    {
+      "evento": "Mendonça manda remover posts de Lula sobre o tesouraço em 3h, multa de R$ 10 mil",
+      "data": "2026-10-13",
+      "fontes": [
+        "Metrópoles",
+        "O Globo"
+      ],
+      "decisao": "incorporar"
+    },
+    {
+      "evento": "Kassio reúne as campanhas e cobra ações contra confrontos",
+      "data": "2026-10-13",
+      "fontes": [
+        "Poder360",
+        "G1"
+      ],
+      "decisao": "incorporar estreitado (manchetes)"
+    },
+    {
+      "evento": "Flávio diz que não vai ao debate da Band de 18/Out",
+      "data": "2026-10-13",
+      "fontes": [
+        "CartaCapital",
+        "Folha de S.Paulo",
+        "O Globo",
+        "UOL"
+      ],
+      "decisao": "incorporar"
+    },
+    {
+      "evento": "Prospera MEI: perdão estimado em R$ 12,6 bi e Pix até R$ 5 mil, parte a partir de 2027",
+      "data": "2026-10-13",
+      "fontes": [
+        "Poder360",
+        "Estadão"
+      ],
+      "decisao": "incorporar; Pé-de-Meia universitário sem números"
+    }
+  ],
+  "adversarial": {
+    "singleSource": "nenhuma no corpo",
+    "numerical": "OK; reconcile só listou releitura, pesquisas, faixas de inflação e Focus",
+    "fontesInventadas": "3 conferidas no corpo (Gazeta do Povo, Metrópoles, CartaCapital)",
+    "quotes": "só o termo tesouraço da reportagem",
+    "causacao": "nenhuma",
+    "verbos": "OK",
+    "correcoesAntesDoPreview": [
+      "link de rejeição da BTG/Nexus apontava para matéria de avaliação do governo",
+      "frase dizia que Gerp e PoderData tinham campo em grande parte nos mesmos dias; só o dia 12 coincide"
+    ],
+    "decisao": "prosseguir para preview"
+  },
+  "palavras": 1074,
+  "links": {
+    "distintos": 22,
+    "ancora": 7,
+    "secundarios": 15,
+    "pctSecundario": 68
+  }
+}
