@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-12",
-  "fetchedAt": "2026-10-12T17:14:41.735Z",
+  "lastUpdate": "2026-10-13",
+  "fetchedAt": "2026-10-13T18:51:32.776Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,8 +47,8 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-12",
-    "nPesquisas": 40,
+    "desde": "2026-09-13",
+    "nPesquisas": 43,
     "tratamentoDoIndeciso": [
       {
         "serie": "Angus Reid Global",
@@ -140,6 +140,30 @@
       }
     ],
     "incluidas": [
+      {
+        "key": "Morning Consult|2026-10-11",
+        "instituto": "Morning Consult",
+        "campoFim": "2026-10-11",
+        "amostraTipo": "LV",
+        "dem": 50,
+        "rep": 43
+      },
+      {
+        "key": "Cygnal (R)|2026-10-10",
+        "instituto": "Cygnal (R)",
+        "campoFim": "2026-10-10",
+        "amostraTipo": "LV",
+        "dem": 51,
+        "rep": 42
+      },
+      {
+        "key": "Focaldata|2026-10-05",
+        "instituto": "Focaldata",
+        "campoFim": "2026-10-05",
+        "amostraTipo": "LV",
+        "dem": 52,
+        "rep": 44
+      },
       {
         "key": "Reuters/Ipsos|2026-10-05",
         "instituto": "Reuters/Ipsos",
@@ -526,10 +550,10 @@
         "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
       }
     ],
-    "nInstitutos": 30,
-    "dem": 49,
-    "rep": 41.5,
-    "vantagemDem": 7.5,
+    "nInstitutos": 31,
+    "dem": 49.14,
+    "rep": 41.6,
+    "vantagemDem": 7.54,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
@@ -544,6 +568,7 @@
       "Cygnal (R)",
       "Echelon Insights",
       "Emerson College",
+      "Focaldata",
       "Hart Research Associates (D)/ Public Opinion Strategies (R)",
       "Harvard/Harris Poll/HarrisX",
       "Impact Research (D)/National Research Inc. (R)",
@@ -565,18 +590,63 @@
     ]
   },
   "qualidade": {
-    "linhasLidas": 474,
-    "publicadas": 487,
+    "linhasLidas": 477,
+    "publicadas": 490,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 474,
+    "doIndice": 477,
     "curadas": 13,
     "curadasDescartadasPorDuplicidade": 17
   },
   "polls": [
+    {
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-10-05",
+      "campoFim": "2026-10-11",
+      "amostra": 17654,
+      "amostraTipo": "LV",
+      "margemErro": 1,
+      "dem": 50,
+      "rep": 43,
+      "outros": 7,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://pro-assets.morningconsult.com/wp-uploads/2026/09/MCPI-Midterm-Ballot.html",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Cygnal (R)",
+      "campoInicio": "2026-10-07",
+      "campoFim": "2026-10-10",
+      "amostra": 1500,
+      "amostraTipo": "LV",
+      "margemErro": 2.5,
+      "dem": 51,
+      "rep": 42,
+      "outros": 7,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://www.cygn.al/wp-content/uploads/2026/10/Cygnal-National-Poll-on-Foreign-Conflicts-Oct-2026.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Focaldata",
+      "campoInicio": "2026-10-02",
+      "campoFim": "2026-10-05",
+      "amostra": 2201,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 52,
+      "rep": 44,
+      "outros": 4,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://www.focaldata.com/blog/democrats-further-extend-generic-ballot-lead-as-midterms-approach",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
     {
       "instituto": "The Economist/YouGov",
       "campoInicio": "2026-10-02",
