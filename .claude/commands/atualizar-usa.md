@@ -310,6 +310,34 @@ node scripts/serie-do-contrato.mjs --pais=us
 
 Um comando, e ele responde a pergunta inteira: por contrato binário, quantos pontos a série tem, desde quando, qual a faixa, e se o preço de agora é `RECORDE`, `PISO` ou `DENTRO`. Fecha a cauda cega do backup com a leitura certificada da ETAPA 1.7, e **se recusa a chamar de "agora" um carimbo com mais de 2h**. Serve o Brasil também, com `--pais=br`.
 
+### 📍 E ANTES DELE: em qual ÁRVORE a série se mede (13/Out/2026)
+
+```bash
+npm run rodada:usa          # ele entra automaticamente, logo antes do passo 3
+node -e "import('./scripts/lib/onde-medir-a-serie.mjs').then(m=>console.log(m.linhaDoVeredito(m.decidir(m.coletar()))))"
+```
+
+🔴 **A ETAPA 4 lê o `backup/neon` da ÁRVORE EM QUE ELA RODA, e nada conferia se aquela é a árvore com o backup mais novo.** Medido em 13/Out/2026 nesta própria passada: a árvore principal tinha o backup de **09/Out** e a destacada tinha o de **12/Out**, e a ETAPA 4 rodou na principal sem uma palavra sobre isso. Saída: **cinco superlativos sobre série encurtada**, cauda cega de 120 a 123h, e o contrato de calendário saindo `RECORDE_SOBRE_SERIE_CURTA`.
+
+📐 **E o ganho da remedição foi EXATO, não teórico.** Na árvore principal o topo anterior do contrato de calendário aparecia como **98,50 de 07/Out**; com o backup inteiro ele é **98,90 de 09/Out**. O recorde de hoje sobrevive (99,05 supera os dois), mas o ponto de comparação estava errado em **0,40pp** e o veredito saía provisório. Em 09/Out o mesmo padrão produziu um "recorde" **falso**, corrigido por errata depois.
+
+🕳️ **O pior não era a falta de diagnóstico, era o diagnóstico ERRADO que já existia.** O portão de cauda cega mede QUANTO a série está curta e, por isso, manda *"Regerar o backup antes de escrever isto"*. Nesse caso não há **nada** a regerar: o backup está pronto e commitado a um diretório de distância. A frase manda trabalho que não serve e, pior, faz concluir que a coleta está quebrada quando ela está boa.
+
+🔑 **A distinção, e ela é a razão de o módulo existir:** a cauda cega mede o TAMANHO da defasagem, não **SE existe lugar onde a série está inteira**. São perguntas diferentes e as ações são opostas, regerar contra trocar de árvore. **Medida de tamanho não decide ação.**
+
+| estado | o que fazer |
+|---|---|
+| `AQUI` | medir aqui: nenhuma árvore e nem o remoto têm backup mais novo |
+| `OUTRA_ARVORE` | medir no caminho que ele nomeia. ⛔ **Não é caso de regerar backup** |
+| `SO_NO_REMOTO` | criar a árvore destacada. ⛔ `git pull` na compartilhada **ABORTA** por causa do trabalho da outra faixa |
+| `INDETERMINADO` | **não pronunciar** `RECORDE` nem `PISO`: o tamanho da série é desconhecido |
+
+⚠️ **Ele AVISA e não bloqueia**, porque `DENTRO` sobrevive a backup atrasado. Quem não sobrevive é `RECORDE` e `PISO`, e esses o próprio passo 3 já marca. E **empate resolve a favor de `AQUI`**, de propósito: mandar trocar de árvore para ver o MESMO backup é custo sem ganho, e conselho que não paga é conselho que alguém aprende a ignorar.
+
+📌 A data de cada árvore é a do **COMMIT** que tocou `backup/neon`, nunca o mtime, que o OneDrive reescreve ao reidratar arquivo. Mesma régua do "quem decide é o COMMIT, nunca o relógio" da ETAPA 6.1.
+
+🧪 `node scripts/testar-onde-medir-a-serie.mjs`, **37 asserções e no CI**, com **7 de 7 mutações reprovadas**. ⚠️ E o arnês se pagou na estreia: uma mutação **sobreviveu** aos 35 casos iniciais (apagar o filtro de caminho próprio, que sem ele manda "medir em /a" estando em /a), e uma **âncora não foi encontrada**, então aquela mutação não testou nada e não podia contar como reprovada. → `memory/feedback_mutacao_que_nao_aplica_parece_mutacao_que_sobreviveu.md`
+
 ### ⚖️ E desde 07/Set/2026 ele fecha o PAR BINÁRIO, cru e normalizado
 
 ⚠️ **A régua é de 18/Ago e o painel já publicava os dois lado a lado, mas nenhuma ferramenta de linha calculava isso: a conta era refeita à mão toda passada, e é a conta do NÚMERO DA MANCHETE.** Regra decidida que ninguém mede é regra que não roda.
