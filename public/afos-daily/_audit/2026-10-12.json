@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-12",
+  "refetch": {
+    "fetchedAt": "2026-10-12T19:02:26.860Z",
+    "flavio": 87.05,
+    "lula": 12.5,
+    "gap": 74.55,
+    "volTotalPresidencialUSD": 180360000,
+    "rebaseline": false
+  },
+  "factCheck": [
+    {
+      "evento": "Moraes autoriza retomada de visitas de Flávio a Jair Bolsonaro, com veto a manifestação político-eleitoral",
+      "data": "2026-10-12",
+      "fontes": [
+        "G1",
+        "BBC News Brasil",
+        "O Globo"
+      ],
+      "decisao": "incorporar"
+    },
+    {
+      "evento": "Relatório da assessoria de enfrentamento à desinformação do TSE sobre o canal Exército do Lula",
+      "data": "2026-10-12",
+      "fontes": [
+        "Estadão",
+        "Valor"
+      ],
+      "decisao": "incorporar"
+    },
+    {
+      "evento": "Kassio Nunes Marques convoca as campanhas para reunião em 13/Out",
+      "data": "2026-10-12",
+      "fontes": [
+        "UOL",
+        "O Globo",
+        "Estadão"
+      ],
+      "decisao": "incorporar como agendamento"
+    },
+    {
+      "evento": "André Mendonça proíbe impulsionamento de anúncios de Lula sobre a escala 6x1",
+      "data": "2026-10-11",
+      "fontes": [
+        "G1",
+        "Agência Brasil",
+        "UOL"
+      ],
+      "decisao": "incorporar com data de 11/Out"
+    },
+    {
+      "evento": "Eurasia Group eleva de 70% para 80% a chance de Flávio Bolsonaro",
+      "data": "2026-10-11",
+      "fontes": [
+        "Exame",
+        "VEJA"
+      ],
+      "decisao": "incorporar"
+    },
+    {
+      "evento": "Coligação de Lula aciona o TSE contra Flávio Bolsonaro e outros cinco por vídeos sobre o ato",
+      "data": "2026-10-12",
+      "fontes": [
+        "Poder360",
+        "Valor"
+      ],
+      "decisao": "incorporar"
+    }
+  ],
+  "adversarial": {
+    "singleSource": "nenhuma depois da troca: acusação do vídeo do Chile ganhou Poder360 ao lado do Valor",
+    "numerical": "OK; reconcile-claims só listou números de pesquisa, consultoria e faixa de inflação, conferidos",
+    "fontesInventadas": "3 conferidas no corpo (BBC, Estadão, Poder360)",
+    "quotes": "nenhuma aspa literal",
+    "causacao": "nenhuma",
+    "verbos": "OK",
+    "decisao": "prosseguir para preview"
+  },
+  "palavras": 1031,
+  "links": {
+    "distintos": 21,
+    "ancora": 4,
+    "secundarios": 17,
+    "pctSecundario": 81
+  }
+}

@@ -80,6 +80,13 @@ export const CASAS_BRZ = [
 // PESQUISAS SOCIAIS POLITIC"; a imprensa escreve "Ipespe", medido: 4 itens no
 // cache inteiro, 3 deles a InfoMoney de 06/Out anunciando a divulgação da semana.
 { registro: /ipespe/i, nome: 'Ipespe', busca: 'Ipespe', alvos: [palavra('ipespe')] },
+// 13/Out/2026: entrou pelo detector (BR088092026, n=3.999, campo 13 a 16/Out,
+// div 18/Out, 1ª nacional da casa no índice). O ZIP do TSE diz "INSTITUTO PHOENIX
+// & ASSOCIADOS" e a API, pela razão social, "J J COELHO": o registro casa os dois.
+// A imprensa ainda não citou a casa (0 itens em setembro e outubro). ⚠️ Alvo
+// ESTREITO de propósito: "Phoenix" solto é nome comum, e casar por acaso faria a
+// casa sair COBERTA sem estar, que é a direção perigosa do erro aqui.
+{ registro: /phoenix|j ?j coelho/i, nome: 'Phoenix', busca: '"Instituto Phoenix"', alvos: [palavra('instituto phoenix'), palavra('pesquisa phoenix')] },
   { registro: /indexa/i, nome: 'Indexa', busca: '"Instituto Indexa"', alvos: [palavra('indexa')] },
   { registro: /ideia|canal meio/i, nome: 'Ideia/Canal Meio', busca: '"Canal Meio"', alvos: [palavra('ideia'), palavra('canal meio')] },
   // 🔴⭐ A ENTRADA QUE PROVA POR QUE A TABELA É EXPLÍCITA, medida em 18/Set/2026.

@@ -558,6 +558,10 @@ try {
 // ---- artefatos de pesquisa estáticos (registro TSE + resultados nacionais) ----
 console.log(`🗳️  polls estáticos copiados: ${copyDirInto(join(ASSETS, 'polls'), join(STAGING, 'polls'))} arquivos`)
 
+// ---- resultado oficial do TSE (1º turno; o 2º entra depois de 25/Out) ----
+// Gerado por scripts/build-hf-resultado-oficial.ts a partir do arquivo bruto do TSE.
+console.log(`🗳️  resultado oficial copiado: ${copyDirInto(join(ASSETS, 'results'), join(STAGING, 'results'))} arquivos`)
+
 // ---- docs acadêmicos ----
 for (const f of ['DATA_DICTIONARY.md', 'CITATION.cff', 'CHANGELOG.md', 'ERRATA.md']) {
   const src = join(ASSETS, f); if (existsSync(src)) copyFileSync(src, join(STAGING, f))
