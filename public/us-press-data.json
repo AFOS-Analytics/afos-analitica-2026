@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-12",
-  "fetchedAt": "2026-10-12T19:20:13.491Z",
+  "lastUpdate": "2026-10-13",
+  "fetchedAt": "2026-10-13T19:30:44.039Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,109 +113,109 @@
     }
   ],
   "qualidade": {
-    "lidos": 215,
-    "naLista": 106,
-    "foraDaLista": 109,
+    "lidos": 225,
+    "naLista": 93,
+    "foraDaLista": 132,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 18,
-    "veiculosRepresentados": 6,
+    "descartadosPorAcompanhamento": 2,
+    "veiculosRepresentados": 8,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 31,
-    "publicadosComLinkCanonico": 7,
-    "publicadosViaGoogleNews": 3,
-    "publicadosPorDisputa": 10,
-    "publicadosPorMetodo": 0
+    "lidosEmFeedProprio": 38,
+    "publicadosComLinkCanonico": 6,
+    "publicadosViaGoogleNews": 4,
+    "publicadosPorDisputa": 9,
+    "publicadosPorMetodo": 1
   },
   "itens": [
     {
-      "titulo": "Texas Republicans at odds over GOP Senate nominee Ken Paxton",
-      "url": "https://www.nbcnews.com/now/video/texas-republicans-at-odds-over-gop-senate-nominee-ken-paxton-271453765554",
-      "casa": "NBC News",
-      "publicadoEm": "2026-10-12T19:02:17.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Obama rolls out ad for Dem Scott Colom in Mississippi Senate race",
-      "url": "https://thehill.com/homenews/campaign/6143421-barack-obama-scott-colom-mississippi-senate-race-ad/",
+      "titulo": "Democrats lead Republicans on favorability, economy: Gallup",
+      "url": "https://thehill.com/homenews/campaign/6145986-democrats-lead-republicans-on-favorability-economy-gallup/",
       "casa": "The Hill",
-      "publicadoEm": "2026-10-12T18:40:11.000Z",
+      "publicadoEm": "2026-10-13T19:02:06.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "metodo"
+    },
+    {
+      "titulo": "Most voters see Congress as out of touch on spending despite midterm affordability pitch",
+      "url": "https://thehill.com/homenews/campaign/6145799-voters-congress-spending-affordability-poll/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-10-13T18:36:18.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "US immigration authorities raid Democratic congresswoman Ilhan Omar's home",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOMDJQVmVIaFZGdTRES18xTGZOQTgtMzMyWGVOb2VxOUxpWUpQNDlhXzZIdXU0bE81bHVqZ2dRcnVqeE1NWkhtNXNQMTZHb0RtWUhibjBiVkF5MWdSTHJZLW0yNjJrWFYxRVpHQjBnZHJDWGhwVTBIanpDak5iLWc0Y1NIVjN1VmRhTVV2WXE1X0VHQ2gwZXNwb2FIQlEwaGtDWFVnMGpDTlQzLVd2SlNXcVB6dmpDYzJmMURtbUdQYmVra3dtc0ViRWl6NU4?oc=5",
-      "casa": "Reuters",
-      "publicadoEm": "2026-10-12T18:38:13.000Z",
+      "titulo": "Is Terrorism a Midterm Sleeper Issue?",
+      "url": "https://www.nationalreview.com/2026/10/is-terrorism-a-midterm-sleeper-issue/",
+      "casa": "National Review",
+      "publicadoEm": "2026-10-13T17:28:38.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Is the blue wave real? Under-the-radar races that could hand Congress to Democrats",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPT2RWY2Vqc0MzVmpFUlRNa0RuMURrSE1KeFJGdm9GcWh0dG5FV1RFa1d1ckxYMjY0M2hIeTFnal9xckV0Q2lDdlpmelI0ZExvbkRGNnFOZjluNTdwYm5iQjRFU004YnpwTkxoRmlIVFJCcTJ0YlBiLVk1bmxxVUllM3dIYXY0R3cwOWN2TUgyb1JiaHRETmZTbS1BTTBCRzFGUzRUTFE1SV9IVkZ3TVk5WDdNOA?oc=5",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-10-13T17:25:00.000Z",
       "consulta": "midterms",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "The bellwether races to watch in November’s midterm elections",
-      "url": "https://www.washingtonpost.com/politics/2026/10/12/bellwether-races-watch-novembers-midterm-elections/",
+      "titulo": "Elon Musk becomes biggest donor of US midterms cycle with $366m spent",
+      "url": "https://www.theguardian.com/us-news/2026/oct/13/elon-musk-political-donor-midterm-elections",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-10-13T17:13:50.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "GOP governor candidate skips debate against former Biden advisor, replaced by empty podium",
+      "url": "https://www.foxnews.com/politics/gop-governor-candidate-skips-debate-former-biden-advisor-replaced-empty-podium",
+      "casa": "Fox News",
+      "publicadoEm": "2026-10-13T15:57:30.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump to fly 3,400 miles to Alaska in hopes of saving a Senate seat",
+      "url": "https://www.washingtonpost.com/politics/2026/10/13/trump-fly-3400-miles-alaska-hopes-saving-senate-seat/",
       "casa": "The Washington Post",
-      "publicadoEm": "2026-10-12T18:32:24.000Z",
+      "publicadoEm": "2026-10-13T15:37:09.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Musk throws $276M behind Republicans in midterms",
-      "url": "https://thehill.com/policy/technology/6143347-musk-donated-millions-gop-midterms/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-10-12T17:50:29.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
+      "titulo": "New Texas Senate poll shows Republicans gaining as early voting nears",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNMjNFWG1LNGtReml0U1oteXlrQWZOUXU1UU13TnpJQXBSdnZvS2p5bEJGNkQ1MXRsYWtBeGJac0pjQklUUC1qTUdUYkkzY1pNOTN4RGRaM0QwWFQxc1dKM2VCd0RGVmNGa0M1ajFOalJKUW5ZSGc4anBnSDRXZXBHbElLNnQ5bnZmUzVqWXhidnQwTzlQdHdtZFRwcG05ZFMycDY0d2VJRjk3Yk1MZEtPaFF4ek1sNTkxRWR6OGpiT2k2MF9G?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-10-13T15:35:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "Inside Elon Musk’s $276 Million Midterm Rescue Mission for Republicans",
-      "url": "https://www.nytimes.com/2026/10/12/us/politics/elon-musk-midterms.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-10-12T17:24:24.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Elon Musk quietly becomes biggest known donor in midterm contests as he tries to save Republicans",
-      "url": "https://abcnews.com/Politics/wireStory/elon-musk-quietly-biggest-donor-midterm-contests-save-137195978",
-      "casa": "ABC News",
-      "publicadoEm": "2026-10-12T17:24:07.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Many GOP states have imposed new voting rules this year, some mirroring Trump's midterm proposals",
-      "url": "https://abcnews.com/Politics/wireStory/gop-states-imposed-new-voting-rules-year-mirroring-137188408",
-      "casa": "ABC News",
-      "publicadoEm": "2026-10-12T17:23:34.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
+      "titulo": "Iowa Senate candidates prepare to face off in second debate",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOZWRjTDZjaUFQZzR0dzc0QmZHSTVWRlQ0cU1mbjA2QmUxVlQ5aWZuYk1GRmNxdlpUMnpvTUQ1cW5yZjgtRjl2VW5Qd05Gc2sxNnBiNUhzc2J6dWFDUG93bzMzMTJHQzhYc3pPOFlxQV9lSDBYbjZrQ2FtbjVEdWVzVHlEMEd4cGRLaXF4ZUFkTTZZR0lKSlhlSWREUmYyTUkw0gGmAUFVX3lxTE11Sk1vVGdNNHE4WW0zM29jd2w5TVBHTVdLbEZxTzNkaVJtUHJhT2tRNkhsWTRHMDg5SXBrb1FOblVfNDdsbU1iN2tKWFlCM2hnc3E4d1pndkFyazN5UGItSF9mV0N5VGYxSVdSdVAtMFJ3QWN6anBfNHFNM3lQU3EzVVdxMXNaMU9ZdGlxTVN2VkRoZUxKQnZta1BWSTRpWXZuVWZIYmc?oc=5",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-13T15:33:38.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
       "trilho": "disputa"
     },
     {
       "titulo": "Tracking the Early Vote in the 2026 Midterm Elections",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOWUNScEZXTjJwYVpIZENZS0txWHd4TTNRUFZvQk1aRUUtTHE2NUhQbWJpb3BTRHpQUTFtdWEybmpFRk9iN1VXY1Y5Q1FjMTNqTEYzdkJZZk9OOUFPNnR3WFV2Qy1KZ3JscGpGT2N0eGdOY2NSaXJSZ2hoLXFORXB1bEhmUGd6QnEtVW9sZzRudW9wQ2pJTTdxVWFCTGpaZDJBaU9LX29oeER4STJrczJsOTRZbG43cHFF?oc=5",
       "casa": "The New York Times",
-      "publicadoEm": "2026-10-12T16:44:33.000Z",
+      "publicadoEm": "2026-10-13T14:56:04.000Z",
       "consulta": "senate-races",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Musk has spent $366 million to help Republicans retain control of Congress",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOZWhUR01GVWhzbTNaQnQwQzFIczJfNFdORnVIOTl1bkV1YmtRdC1TcjJrM3ZOeU1peENNenU1SXg3c1ZERDY0T2htbXpVQW5nY2dSQzFMRDR2SzFUNl9iUTVMaG9RakYxeGVXZ1V0UTJxeE1hakJWM256M2pfWTRQNEpOam5uTE9CcEZoa2hnZENJUTdCUWhsNlVKbF84ZVI3TzZVeE1FVVpiMldxdjJYZnlFaEJHX0J1Y2FpeW1BZjYyaVVs?oc=5",
-      "casa": "Reuters",
-      "publicadoEm": "2026-10-12T16:07:43.000Z",
-      "consulta": "midterms",
       "origem": "google",
       "trilho": "disputa"
     }

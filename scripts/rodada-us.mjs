@@ -33,6 +33,7 @@
 
 import { spawnSync } from 'node:child_process'
 import { readFileSync, existsSync } from 'node:fs'
+import { ONDE, coletar, decidir, linhaDoVeredito } from './lib/onde-medir-a-serie.mjs'
 
 const argv = process.argv.slice(2)
 const semTrava = argv.includes('--sem-trava')
@@ -87,6 +88,36 @@ if (semTrava) {
     imprimirResumo()
     process.exit(1)
   }
+}
+
+// ─── ANTES do passo 3: EM QUAL ÁRVORE a série se mede (13/Out/2026) ─────────
+//
+// 🔴 O passo 3 lê o `backup/neon` da árvore em que ele roda, e NADA conferia se
+// esta é a árvore com o backup mais novo. Medido em 13/Out: a principal tinha o
+// de 09/Out e a destacada o de 12/Out, e o passo 3 rodou aqui sem uma palavra,
+// devolvendo CINCO superlativos sobre série encurtada e um RECORDE do contrato
+// de calendário com cauda cega de 120h.
+//
+// 🕳️ E o portão que existe diagnostica ERRADO este caso, o que é pior do que não
+// diagnosticar: a cauda cega mede QUANTO a série está curta e por isso manda
+// "regerar o backup". Aqui não há nada a regerar, ele está commitado uma árvore
+// ao lado. Medida de tamanho não decide ação.
+//
+// ⛔ Ele AVISA e não bloqueia, porque DENTRO sobrevive a backup atrasado. Quem
+// não sobrevive é RECORDE e PISO, e esses o próprio passo 3 já marca.
+{
+  const v = decidir(coletar())
+  console.log('')
+  console.log(regua)
+  console.log('📍 ONDE A SÉRIE SE MEDE — antes do passo 3, que lê o backup')
+  console.log(regua)
+  for (const ln of linhaDoVeredito(v).split(String.fromCharCode(10))) console.log(`   ${ln}`)
+  if (v.onde !== ONDE.AQUI) {
+    console.log('')
+    console.log('   ⚠️ O passo 3 abaixo roda de qualquer jeito, e o veredito dele vale para')
+    console.log('      DENTRO. Para RECORDE ou PISO, remedir onde o veredito acima aponta.')
+  }
+  resultados.push({ id: 'onde-medir', codigo: v.onde === ONDE.AQUI ? 0 : null, estado: v.onde })
 }
 
 rodar(

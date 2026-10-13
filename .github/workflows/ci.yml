@@ -152,6 +152,7 @@ jobs:
           node scripts/testar-fonte-conferida.mjs
           node scripts/testar-datas-devidas.mjs
           node scripts/testar-devolucao-de-cache.mjs
+          node scripts/testar-onde-medir-a-serie.mjs
           node scripts/testar-historico-us-polls.mjs
           node scripts/testar-rodadas-curadas.mjs
           node scripts/testar-data-corrente-imprensa.mjs
