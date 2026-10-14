@@ -329,14 +329,20 @@ node -e "import('./scripts/lib/onde-medir-a-serie.mjs').then(m=>console.log(m.li
 |---|---|
 | `AQUI` | medir aqui: nenhuma árvore e nem o remoto têm backup mais novo |
 | `OUTRA_ARVORE` | medir no caminho que ele nomeia. ⛔ **Não é caso de regerar backup** |
-| `SO_NO_REMOTO` | criar a árvore destacada. ⛔ `git pull` na compartilhada **ABORTA** por causa do trabalho da outra faixa |
+| `SO_NO_REMOTO` | **depende de ONDE você está, corrigido em 14/Out/2026.** Na árvore COMPARTILHADA: criar ou recriar a destacada, porque `git pull` ali **ABORTA** pelo trabalho da outra faixa. Numa árvore DESCARTÁVEL: `git pull --no-rebase` nela mesma, que ali não há caminho sujo. Sem saber qual é, ele imprime as **duas** e declara que não sabe |
 | `INDETERMINADO` | **não pronunciar** `RECORDE` nem `PISO`: o tamanho da série é desconhecido |
+
+🔴 **Por que a linha do `SO_NO_REMOTO` mudou, e o caso é instrutivo.** O estado disparou de verdade pela primeira vez em 14/Out, quando o backup do dia chegou ao remoto e nenhuma árvore o tinha. Rodando **de dentro** da destacada, a prescrição antiga mandava *"criar a árvore destacada e medir lá"*, ou seja criar o que já existe e medir onde eu já estava. É a mesma forma do defeito que a mutação do filtro de caminho próprio pegou em 13/Out: **conselho que aponta para o próprio pé.**
+
+🔑 **PRINCIPAL ou VINCULADA é MEDIDO, nunca suposto:** na principal o `--git-dir` e o `--git-common-dir` apontam para o mesmo lugar; numa vinculada o primeiro cai em `.git/worktrees/<nome>`. ⚠️ E quem **decide** é a flag `--path-format=absolute` no `--git-common-dir`: rodando de um subdiretório, sem ela o git devolve `../.git` ali e a principal seria lida como vinculada, invertendo a prescrição.
+
+⚠️ **LIMITE CONHECIDO, e ele não tem conserto automático:** o medidor ordena as árvores por **frescor de backup** e não sabe nada sobre **dono**. Se a outra faixa tiver um worktree com o backup mais novo, ele aponta para lá, e a resposta é factualmente certa e **operacionalmente errada**: não se mede nem se publica de dentro da árvore de trabalho alheia. Nesse caso a ação é trazer o backup para a SUA árvore, não ir medir na dela.
 
 ⚠️ **Ele AVISA e não bloqueia**, porque `DENTRO` sobrevive a backup atrasado. Quem não sobrevive é `RECORDE` e `PISO`, e esses o próprio passo 3 já marca. E **empate resolve a favor de `AQUI`**, de propósito: mandar trocar de árvore para ver o MESMO backup é custo sem ganho, e conselho que não paga é conselho que alguém aprende a ignorar.
 
 📌 A data de cada árvore é a do **COMMIT** que tocou `backup/neon`, nunca o mtime, que o OneDrive reescreve ao reidratar arquivo. Mesma régua do "quem decide é o COMMIT, nunca o relógio" da ETAPA 6.1.
 
-🧪 `node scripts/testar-onde-medir-a-serie.mjs`, **37 asserções e no CI**, com **7 de 7 mutações reprovadas**. ⚠️ E o arnês se pagou na estreia: uma mutação **sobreviveu** aos 35 casos iniciais (apagar o filtro de caminho próprio, que sem ele manda "medir em /a" estando em /a), e uma **âncora não foi encontrada**, então aquela mutação não testou nada e não podia contar como reprovada. → `memory/feedback_mutacao_que_nao_aplica_parece_mutacao_que_sobreviveu.md`
+🧪 `node scripts/testar-onde-medir-a-serie.mjs`, **51 asserções e no CI**, com **12 de 12 mutações reprovadas**, que é a união MEDIDA dos dois conjuntos: as 7 de 13/Out seguem reprovando contra o código de hoje, reconferido em 14/Out, e as 5 do ramo de `ehPrincipal` entraram junto com ele. ⚠️ E o arnês se pagou na estreia: uma mutação **sobreviveu** aos 35 casos iniciais (apagar o filtro de caminho próprio, que sem ele manda "medir em /a" estando em /a), e uma **âncora não foi encontrada**, então aquela mutação não testou nada e não podia contar como reprovada. → `memory/feedback_mutacao_que_nao_aplica_parece_mutacao_que_sobreviveu.md`
 
 ### ⚖️ E desde 07/Set/2026 ele fecha o PAR BINÁRIO, cru e normalizado
 
