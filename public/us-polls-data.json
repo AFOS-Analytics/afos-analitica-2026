@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-13",
-  "fetchedAt": "2026-10-13T18:51:32.776Z",
+  "lastUpdate": "2026-10-14",
+  "fetchedAt": "2026-10-14T18:41:14.431Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,8 +47,8 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-13",
-    "nPesquisas": 43,
+    "desde": "2026-09-14",
+    "nPesquisas": 41,
     "tratamentoDoIndeciso": [
       {
         "serie": "Angus Reid Global",
@@ -154,6 +154,14 @@
         "campoFim": "2026-10-10",
         "amostraTipo": "LV",
         "dem": 51,
+        "rep": 42
+      },
+      {
+        "key": "TrueDot|2026-10-09",
+        "instituto": "TrueDot",
+        "campoFim": "2026-10-09",
+        "amostraTipo": "LV",
+        "dem": 49,
         "rep": 42
       },
       {
@@ -462,30 +470,6 @@
         "amostraTipo": "RV",
         "dem": 48,
         "rep": 42
-      },
-      {
-        "key": "Morning Consult|2026-09-13",
-        "instituto": "Morning Consult",
-        "campoFim": "2026-09-13",
-        "amostraTipo": "LV",
-        "dem": 49,
-        "rep": 43
-      },
-      {
-        "key": "New York Times/Siena College|2026-09-13",
-        "instituto": "New York Times/Siena College",
-        "campoFim": "2026-09-13",
-        "amostraTipo": "LV",
-        "dem": 51,
-        "rep": 43
-      },
-      {
-        "key": "The Honest Poll|2026-09-13",
-        "instituto": "The Honest Poll",
-        "campoFim": "2026-09-13",
-        "amostraTipo": "LV",
-        "dem": 51,
-        "rep": 42
       }
     ],
     "excluidasPorInstrumento": [
@@ -550,10 +534,10 @@
         "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
       }
     ],
-    "nInstitutos": 31,
-    "dem": 49.14,
-    "rep": 41.6,
-    "vantagemDem": 7.54,
+    "nInstitutos": 30,
+    "dem": 49.05,
+    "rep": 41.54,
+    "vantagemDem": 7.51,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
@@ -577,7 +561,6 @@
       "Marist University",
       "McLaughlin & Associates (R)",
       "Morning Consult",
-      "New York Times/Siena College",
       "Quantus Insights (R)",
       "Quinnipiac University",
       "RMG Research",
@@ -585,19 +568,19 @@
       "Reuters/Ipsos",
       "Strength In Numbers/Verasight",
       "The Argument/Verasight",
-      "The Honest Poll",
-      "The Rainey Center"
+      "The Rainey Center",
+      "TrueDot"
     ]
   },
   "qualidade": {
-    "linhasLidas": 477,
-    "publicadas": 490,
+    "linhasLidas": 478,
+    "publicadas": 491,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 477,
+    "doIndice": 478,
     "curadas": 13,
     "curadasDescartadasPorDuplicidade": 17
   },
@@ -629,6 +612,21 @@
       "outros": 7,
       "vantagemDem": 9,
       "fontePrimaria": "https://www.cygn.al/wp-content/uploads/2026/10/Cygnal-National-Poll-on-Foreign-Conflicts-Oct-2026.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "TrueDot",
+      "campoInicio": "2026-10-05",
+      "campoFim": "2026-10-09",
+      "amostra": 974,
+      "amostraTipo": "LV",
+      "margemErro": 3.2,
+      "dem": 49,
+      "rep": 42,
+      "outros": 8,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://thehill.com/homenews/campaign/6143963-democrats-lead-congressional-ballot-ddhq/",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
