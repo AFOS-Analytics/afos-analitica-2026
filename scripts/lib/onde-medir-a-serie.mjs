@@ -19,6 +19,14 @@
  * está inteira. São perguntas diferentes e pedem ações opostas, regerar contra
  * mudar de árvore. Medida de tamanho não decide ação.
  *
+ * ⚠️ LIMITE CONHECIDO, achado em 14/Out/2026: ele ordena as árvores por FRESCOR
+ * de backup e não sabe nada sobre DONO. Se a outra faixa tiver um worktree com
+ * backup mais novo, ele aponta para lá, e a resposta é factualmente certa e
+ * operacionalmente errada: não se mede nem se publica de dentro da árvore de
+ * trabalho alheia. Nesse caso a ação correta é trazer o backup para a MINHA
+ * árvore, não ir medir na dela. Não inventei detecção de dono porque não existe
+ * sinal confiável disso, e supor seria pior do que declarar.
+ *
  * ⛔ Ele NÃO mede série, não lê preço, não pronuncia superlativo e não copia
  * arquivo. Responde ONDE medir, e só.
  *
@@ -62,7 +70,7 @@ export function diaValido(d) {
  * ver o mesmo backup é custo sem ganho, e conselho que não paga é conselho que
  * se aprende a ignorar.
  */
-export function decidir({ aqui, arvores = [], remoto = null } = {}) {
+export function decidir({ aqui, arvores = [], remoto = null, ehPrincipal = null } = {}) {
   const limpa = (e) => ({ caminho: String(e?.caminho ?? '?'), dia: diaValido(e?.dia) ? e.dia : null })
   const eu = limpa(aqui ?? {})
   const outras = (Array.isArray(arvores) ? arvores : []).map(limpa).filter((e) => e.caminho !== eu.caminho)
@@ -119,9 +127,31 @@ export function decidir({ aqui, arvores = [], remoto = null } = {}) {
     // ⚠️ e a ação NÃO é `git pull`: na árvore compartilhada ele ABORTA por causa
     // do trabalho não commitado da outra faixa, que é a razão de a árvore
     // destacada existir.
-    acao: `o backup de ${melhor} está só no remoto: criar a árvore destacada com \`node scripts/arvore-completa.mjs\` e medir lá. ⛔ \`git pull\` na árvore compartilhada aborta`,
+    acao: acaoSoNoRemoto(melhor, ehPrincipal),
     atrasoDias: atraso,
   }
+}
+
+/**
+ * 📍 A prescrição de SO_NO_REMOTO, e ela muda com a árvore em que se está.
+ *
+ * 🔴 Corrigida em 14/Out/2026, na primeira vez que este estado disparou de
+ * verdade. A versão anterior mandava SEMPRE criar a árvore destacada, e rodando
+ * DENTRO dela isso manda criar o que já existe e medir onde eu já estou. É a
+ * mesma forma do defeito que a mutação do filtro de caminho próprio pegou em
+ * 13/Out: conselho que aponta para o próprio pé.
+ *
+ * ⛔ ehPrincipal nulo NÃO escolhe um dos dois: imprime os dois e declara que não
+ * sabe. Chutar aqui daria meia chance de mandar o conserto errado, e o erro
+ * simétrico deste conserto é exatamente um conselho confiante e torto.
+ */
+export function acaoSoNoRemoto(dia, ehPrincipal) {
+  const traga = `trazer para ESTA árvore com ` + "git pull --no-rebase" + ``
+  const crie = `criar ou recriar a árvore destacada com ` + "node scripts/arvore-completa.mjs" + ` e medir lá`
+  const pre = `o backup de ${dia} está só no remoto`
+  if (ehPrincipal === true) return `${pre}: ${crie}. ⛔ ` + "git pull" + ` NESTA árvore aborta, porque a outra faixa mantém arquivo não commitado`
+  if (ehPrincipal === false) return `${pre}, e esta árvore é DESCARTÁVEL: ${traga}, que aqui não há caminho sujo para o merge encostar`
+  return `${pre}, e eu NÃO SEI se esta árvore é a compartilhada: se for, ${crie}; se for descartável, ${traga}`
 }
 
 /** Diferença em dias entre dois dias ISO, pelo UTC, sem fuso no meio. */
@@ -158,8 +188,23 @@ export function coletar({ cwd = process.cwd(), git = gitPadrao } = {}) {
     if (!caminho) continue
     arvores.push({ caminho, dia: dia(caminho) })
   }
+  // 🔑 PRINCIPAL ou VINCULADA, medido e nunca suposto: na principal o --git-dir
+  // e o --git-common-dir apontam para o MESMO lugar, e numa vinculada o primeiro
+  // cai em .git/worktrees/<nome>. Comparo em forma ABSOLUTA, para o .git
+  // relativo da principal nao enganar.
+  // 📐 E quem DECIDE e a flag do --git-common-dir, medido em 14/Out: rodando de
+  // um SUBDIRETORIO, o --git-dir ja vem absoluto sozinho, mas o --git-common-dir
+  // vem como ../.git. Sem a flag nele, a principal seria lida como VINCULADA e
+  // a prescricao inverteria. A flag no --git-dir e redundante hoje, e fica por
+  // simetria: a mutacao que a remove SOBREVIVE, e isso esta declarado de
+  // proposito em vez de virar teste que finge o contrario.
+  const g1 = git(['rev-parse', '--path-format=absolute', '--git-dir'], cwd)
+  const g2 = git(['rev-parse', '--path-format=absolute', '--git-common-dir'], cwd)
+  const ehPrincipal = g1 && g2 ? g1.split(String.fromCharCode(92)).join("/") === g2.split(String.fromCharCode(92)).join("/") : null
+
   return {
     aqui: { caminho: cwd, dia: dia(cwd) },
+    ehPrincipal,
     arvores,
     // ⚠️ sem `fetch` aqui: coletar não vai à rede. Quem quer o remoto fresco
     // dá o fetch antes, e é o que o chamador faz. Medir contra um `origin/main`

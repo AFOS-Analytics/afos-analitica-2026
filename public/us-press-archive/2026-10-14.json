@@ -1,0 +1,225 @@
+{
+  "lastUpdate": "2026-10-14",
+  "fetchedAt": "2026-10-14T21:11:51.474Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal",
+      "feed": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal",
+      "feed": "https://feeds.washingtonpost.com/rss/politics"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal",
+      "feed": "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada",
+      "feed": "https://rss.politico.com/politics-news.xml"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada",
+      "feed": "https://thehill.com/homenews/feed/"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada",
+      "feed": "https://rollcall.com/feed/"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada",
+      "feed": "https://api.axios.com/feed/"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.npr.org/1014/rss.xml"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio",
+      "feed": "https://abcnews.go.com/abcnews/politicsheadlines"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio",
+      "feed": "https://www.cbsnews.com/latest/rss/politics"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.nbcnews.com/nbcnews/public/politics"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio",
+      "feed": "http://rss.cnn.com/rss/cnn_allpolitics.rss"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio",
+      "feed": "https://moxie.foxnews.com/google-publisher/politics.xml"
+    },
+    {
+      "casa": "NewsNation",
+      "tipo": "tv/rádio",
+      "feed": "https://www.newsnationnow.com/politics/feed/"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião",
+      "feed": "https://www.nationalreview.com/feed/"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião",
+      "feed": "https://www.theguardian.com/us-news/us-politics/rss"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 238,
+    "naLista": 91,
+    "foraDaLista": 147,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 2,
+    "veiculosRepresentados": 7,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": [
+      "feed:The Washington Post: HTTP 502"
+    ],
+    "feedsProprios": 16,
+    "lidosEmFeedProprio": 40,
+    "publicadosComLinkCanonico": 7,
+    "publicadosViaGoogleNews": 3,
+    "publicadosPorDisputa": 10,
+    "publicadosPorMetodo": 0
+  },
+  "itens": [
+    {
+      "titulo": "Trump’s stumping in Montana ‘won't make a whole lot of difference’ says Dem House candidate",
+      "url": "https://www.nbcnews.com/meet-the-press/video/trump-s-stumping-in-montana-won-t-make-a-whole-lot-of-difference-says-dem-house-candidate-271586885922",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-14T20:53:14.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Farmers weigh economic struggles ahead of midterms: ‘Rural people don’t want to be ignored’",
+      "url": "https://www.nbcnews.com/meet-the-press/video/farmers-weigh-economic-struggles-ahead-of-midterms-rural-people-don-t-want-to-be-ignored-271584325609",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-14T20:28:09.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Inside the booming market for US midterm election bets",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQamtya0FZUkVIMEc2RS1pWU1tSmtOUlhvQXdEeVR0YTNEektDdVBHVmtqRmtIZlZUVC1vREFBUFRIcTJ4X0tNZDJYczhUUzl0ajUtNDVVcm1lMEl1a01aQVRiMndtZUlQNUdWRHRYWjk3Z2hvZlJsaWE0ckcwcWlNck9HUmxMcUNZSnE0WW1vbXNseDlJeVlCM294SHNXX1Yx?oc=5",
+      "casa": "Reuters",
+      "publicadoEm": "2026-10-14T20:20:38.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Midterm Election Ad Spending Topped $10 Billion, and It’s Still Rising",
+      "url": "https://www.nytimes.com/2026/10/14/us/politics/midterms-ad-spending-10-billion.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-14T19:08:37.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "The most important US midterm trends I’m seeing | Molly Jong-Fast",
+      "url": "https://www.theguardian.com/commentisfree/2026/oct/14/the-most-important-us-midterm-trends-im-seeing",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-10-14T18:47:53.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Vance takes aim at soft-on-crime Dems as GOP faces uphill midterm battle: ‘Lost their minds’",
+      "url": "https://www.foxnews.com/politics/vance-takes-aim-soft-crime-dems-gop-faces-uphill-midterm-battle-lost-their-minds",
+      "casa": "Fox News",
+      "publicadoEm": "2026-10-14T18:27:25.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "‘Paid for the bullets’: Dem challenger hits senator with stunning ICE accusation during fiery Senate debate",
+      "url": "https://www.foxnews.com/politics/paid-bullets-dem-challenger-hits-senator-stunning-ice-accusation-fiery-senate-debate",
+      "casa": "Fox News",
+      "publicadoEm": "2026-10-14T17:18:40.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Kamala Harris to Campaign for Democrats in Mississippi, New Hampshire and Wisconsin Ahead of Midterms",
+      "url": "https://www.nytimes.com/2026/10/14/us/politics/kamala-harris-midterms-democrats-campaign.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-14T16:13:42.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Fox News predicts Democrats will win House in midterms for first time this cycle",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPSXRyT3Bkck91UWtRYmowV2E5bU15RlpqZi1HWE0wV0hLZXpXWXZsXzZhbENLM0oyc2JyRDhlVEFUa2l5aVFOSzFBR2JBdG1veUo4bTdkRkhHQXAyZGFJOXVXbUtvbnp6UmduanJLVUNockY1YTFFOEU1SjVnLTRFeGpQYXpRYTVEdVBB0gGQAUFVX3lxTE92aEdqc3FNelVvcmJ1VVNhZG9ybUdBLUZKV2g2NmtabDZpZDdqVldSSDd1ek5oeGlUcFRPa1ducVBWc1hLN1R0WUV3ZndIeVB0RFBuLTRQS0dHbmRBM0N1ekxGRENrdnQ3eWU5dDY1SlpOWW5NV191ZGNQVjhfSnRqWFhvZXVqNzVjaWZUNHp1dw?oc=5",
+      "casa": "The Hill",
+      "publicadoEm": "2026-10-14T16:07:00.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "New Maine Senate poll reveals a coin toss between Collins, Jackson",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOdmtPb3JaWUE0V0ZHUXpFTTF1bjRSQW5xQkgxS1VBUVptczBrQXdyNTQ1ZlZHcDcyeWk4N3R0SFJnaFJaZ1U5WXczajRwSFdaVTFOck83NEFsNVNzN0lWdktFWS1FOFFSQkRZc20yMTJjNFVPN21GbmFJMFFhNG14dlR3ZURZMlJISjYzdk1XZVkxUEx2US1fc21TVnFjbEJMVjBCdW1rU3F2LVBEWElERWFSNElfZnFQeW1kQ0xSREY?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-10-14T15:47:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    }
+  ]
+}

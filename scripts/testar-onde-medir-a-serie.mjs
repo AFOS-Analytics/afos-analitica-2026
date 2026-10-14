@@ -5,7 +5,7 @@
  * metade anti-excesso, porque o erro simétrico deste conserto é um aviso que
  * dispara sempre e manda trocar de árvore para ver o mesmo backup.
  */
-import { ONDE, decidir, diaValido, diferencaEmDias, linhaDoVeredito } from './lib/onde-medir-a-serie.mjs'
+import { ONDE, coletar, decidir, diaValido, diferencaEmDias, linhaDoVeredito } from './lib/onde-medir-a-serie.mjs'
 
 let ok = 0
 let falhou = 0
@@ -94,13 +94,34 @@ eq('data torta devolve null, nunca 0', diferencaEmDias('ontem', '2026-10-01'), n
   eq('e nao inventa atraso contra si mesma', v.atrasoDias, 0)
 }
 
-// ── SO_NO_REMOTO ───────────────────────────────────────────────────────
+// ── SO_NO_REMOTO, e a PRESCRICAO muda com a arvore (14/Out/2026) ───────
 {
-  const v = decidir({ aqui: { caminho: '/a', dia: '2026-10-09' }, arvores: [{ caminho: '/b', dia: '2026-10-09' }], remoto: '2026-10-13' })
+  const v = decidir({ aqui: { caminho: '/a', dia: '2026-10-09' }, arvores: [{ caminho: '/b', dia: '2026-10-09' }], remoto: '2026-10-13', ehPrincipal: true })
   eq('remoto mais novo que TODAS as arvores', v.onde, ONDE.SO_NO_REMOTO)
   eq('e nao aponta caminho nenhum, porque nao existe', v.caminho, null)
-  contem('⛔ e proibe o `git pull` na arvore compartilhada', v.acao, 'aborta')
-  contem('manda criar a arvore destacada', v.acao, 'arvore-completa.mjs')
+  contem('na PRINCIPAL, proibe o git pull porque ele aborta', v.acao, 'aborta')
+  contem('e manda criar a arvore destacada', v.acao, 'arvore-completa.mjs')
+}
+{
+  // 🔴 O caso que o conserto de 14/Out acrescenta: rodando DENTRO de uma arvore
+  //    descartavel, mandar "criar a arvore destacada" manda criar o que ja existe
+  //    e medir onde eu ja estou. Mesma forma do defeito do filtro de caminho
+  //    proprio, que a mutacao pegou em 13/Out.
+  const v = decidir({ aqui: { caminho: '/a', dia: '2026-10-09' }, arvores: [{ caminho: '/b', dia: '2026-10-09' }], remoto: '2026-10-13', ehPrincipal: false })
+  eq('segue SO_NO_REMOTO', v.onde, ONDE.SO_NO_REMOTO)
+  contem('na DESCARTAVEL, manda trazer para ESTA arvore', v.acao, 'ESTA árvore')
+  contem('e nomeia o comando certo', v.acao, 'git pull --no-rebase')
+  eq('⛔ e NAO manda criar a arvore destacada', /arvore-completa/.test(v.acao), false)
+  eq('⛔ e nao diz que o pull aborta, porque aqui ele nao aborta', /aborta/.test(v.acao), false)
+}
+{
+  // ⛔ anti-excesso: sem saber onde estou, NAO escolher. Chutar daria meia
+  //    chance de mandar o conserto errado com confianca.
+  const v = decidir({ aqui: { caminho: '/a', dia: '2026-10-09' }, arvores: [{ caminho: '/b', dia: '2026-10-09' }], remoto: '2026-10-13' })
+  eq('sem ehPrincipal, segue SO_NO_REMOTO', v.onde, ONDE.SO_NO_REMOTO)
+  contem('declara que NAO SABE', v.acao, 'NÃO SEI')
+  contem('e oferece as DUAS saidas: a destacada', v.acao, 'arvore-completa.mjs')
+  contem('e oferece as DUAS saidas: o pull', v.acao, 'git pull --no-rebase')
 }
 
 // ── INDETERMINADO: nao e "em ordem" ───────────────────────────────────
@@ -125,6 +146,67 @@ eq('data torta devolve null, nunca 0', diferencaEmDias('ontem', '2026-10-01'), n
   const v = decidir({ aqui: { caminho: '/a', dia: '2026-10-12' }, arvores: 'nao e array', remoto: 42 })
   eq('tipos errados nao lancam e nao inventam veredito', v.onde, ONDE.AQUI)
 }
+// ── coletar(): a DETECCAO de principal x vinculada, com git INJETADO ───
+//
+// 🔴 Este bloco existe porque DUAS mutacoes sobreviveram em 14/Out: trocar a
+//    comparacao de caminho por `false` e tirar o `--path-format=absolute`. Os
+//    46 casos anteriores passavam `ehPrincipal` na mao e NUNCA exercitavam a
+//    sondagem, entao o ramo nao tinha teste nenhum. O executor de git e
+//    injetavel exatamente para isto.
+{
+  const falso = (saidas) => (args) => {
+    const k = args.join(' ')
+    for (const [padrao, valor] of saidas) if (k.includes(padrao)) return valor
+    return null
+  }
+  // na PRINCIPAL os dois caminhos coincidem
+  const p = coletar({ cwd: "/repo", git: falso([
+    ['--git-common-dir', '/repo/.git'],
+    ['--git-dir', '/repo/.git'],
+    ['worktree list', 'worktree /repo'],
+    ['log', '2026-10-14'],
+  ]) })
+  eq('principal: os 2 caminhos coincidem', p.ehPrincipal, true)
+  // na VINCULADA o --git-dir cai em .git/worktrees/<nome>
+  const v = coletar({ cwd: "/tmp/arv", git: falso([
+    ['--git-common-dir', '/repo/.git'],
+    ['--git-dir', '/repo/.git/worktrees/arv'],
+    ['worktree list', 'worktree /tmp/arv'],
+    ['log', '2026-10-13'],
+  ]) })
+  eq('vinculada: o git-dir cai em worktrees/', v.ehPrincipal, false)
+  // ⛔ e barra invertida do Windows nao pode decidir sozinha: os mesmos 2
+  //    caminhos, um com barra invertida, SEGUEM sendo o mesmo lugar
+  const w = coletar({ cwd: "C:/repo", git: falso([
+    ['--git-common-dir', 'C:/repo/.git'],
+    ['--git-dir', 'C:' + String.fromCharCode(92) + 'repo' + String.fromCharCode(92) + '.git'],
+    ['worktree list', 'worktree C:/repo'],
+    ['log', '2026-10-14'],
+  ]) })
+  eq('barra invertida nao inventa arvore vinculada', w.ehPrincipal, true)
+  // ⚠️ git mudo NAO vira "principal": vira indeterminado
+  const m = coletar({ cwd: "/x", git: () => null })
+  eq('git mudo devolve ehPrincipal null, nunca true', m.ehPrincipal, null)
+  // 🔴🔑 O CASO QUE TORNA O --path-format=absolute LOAD-BEARING, e ele foi
+  //    MEDIDO em 14/Out rodando de dentro de scripts/ na arvore principal:
+  //    sem a flag, o --git-dir vem ABSOLUTO e o --git-common-dir vem RELATIVO
+  //    (../.git). Eles diferem, e a PRINCIPAL seria lida como VINCULADA,
+  //    invertendo a prescricao. Este stub modela o git de verdade: ele responde
+  //    diferente conforme a flag esteja presente, e por isso ele ENXERGA a
+  //    mutacao que remove a flag. Sem este caso, aquela mutacao sobrevivia.
+  const comoGitDeVerdade = (args) => {
+    const k = args.join(' ')
+    const abs = k.includes('--path-format=absolute')
+    if (k.includes('--git-common-dir')) return abs ? '/repo/.git' : '../.git'
+    if (k.includes('--git-dir')) return '/repo/.git'
+    if (k.includes('worktree list')) return 'worktree /repo/scripts'
+    if (k.includes('log')) return '2026-10-14'
+    return null
+  }
+  const sub = coletar({ cwd: "/repo/scripts", git: comoGitDeVerdade })
+  eq('rodando de SUBDIRETORIO, a principal segue sendo principal', sub.ehPrincipal, true)
+}
+
 
 console.log(falhou === 0 ? `\n✅ ${ok} asserção(ões) passaram, 0 falharam` : `\n❌ ${falhou} falha(s) de ${ok + falhou}`)
 process.exit(falhou === 0 ? 0 : 1)
