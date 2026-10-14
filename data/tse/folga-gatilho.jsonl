@@ -19,3 +19,8 @@
 {"quando":"2026-10-07T20:14:58.105Z","dia":"2026-10-07","dias":15,"servidas":247,"teto":1000,"aFrente":20,"folga":980,"exata":true,"fonte":"medido"}
 {"quando":"2026-10-08T23:24:38.992Z","dia":"2026-10-08","dias":15,"servidas":257,"teto":1000,"aFrente":30,"folga":970,"exata":true,"fonte":"medido"}
 {"quando":"2026-10-09T16:45:11.110Z","dia":"2026-10-09","dias":15,"servidas":261,"teto":1000,"aFrente":27,"folga":973,"exata":true,"fonte":"medido"}
+{"quando":"2026-10-10T22:06:37.390Z","dia":"2026-10-10","dias":15,"servidas":201,"teto":1000,"aFrente":30,"folga":970,"exata":true,"fonte":"medido"}
+{"quando":"2026-10-11T20:15:21.324Z","dia":"2026-10-11","dias":15,"servidas":183,"teto":1000,"aFrente":32,"folga":968,"exata":true,"fonte":"medido"}
+{"quando":"2026-10-12T17:15:26.538Z","dia":"2026-10-12","dias":15,"servidas":111,"teto":1000,"aFrente":29,"folga":971,"exata":true,"fonte":"medido"}
+{"quando":"2026-10-13T18:48:49.950Z","dia":"2026-10-13","dias":15,"servidas":119,"teto":1000,"aFrente":34,"folga":966,"exata":true,"fonte":"medido"}
+{"quando":"2026-10-14T18:35:36.384Z","dia":"2026-10-14","dias":15,"servidas":61,"teto":1000,"aFrente":31,"folga":969,"exata":true,"fonte":"medido"}
