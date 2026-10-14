@@ -39,7 +39,11 @@ export function corpo(txt: string): string {
 /** Número seguido de unidade, normalizado para uma forma comum aos três idiomas. */
 export function numeros(txt: string, locale: string): string[] {
   const semUrl = txt.replace(/\]\([^)]*\)/g, ']').replace(/https?:\/\/\S+/g, '')
-  const re = /(\d[\d.,]*)\s*(%|pp|M\b|K\b|mil\b|thousand\b)/g
+  // `mil` seguido de `millones` é o BILHÃO do espanhol ("R$ 12,6 mil millones" = "R$ 12,6
+  // bilhões" = "R$ 12.6 billion"), e não a unidade de milhar. Sem a exceção, a daily em
+  // espanhol ganhava um número que o pt e o en não têm e reprovava em todo dia com bilhões
+  // (13/Out/2026, Prospera MEI). Bilhão não é unidade contada em nenhum dos três idiomas.
+  const re = /(\d[\d.,]*)\s*(%|pp|M\b|K\b|mil\b(?!\s+millones)|thousand\b)/g
   const out: string[] = []
   let m: RegExpExecArray | null
   while ((m = re.exec(semUrl))) {
