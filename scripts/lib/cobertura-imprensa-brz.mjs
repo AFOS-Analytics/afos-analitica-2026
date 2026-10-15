@@ -87,6 +87,11 @@ export const CASAS_BRZ = [
 // ESTREITO de propósito: "Phoenix" solto é nome comum, e casar por acaso faria a
 // casa sair COBERTA sem estar, que é a direção perigosa do erro aqui.
 { registro: /phoenix|j ?j coelho/i, nome: 'Phoenix', busca: '"Instituto Phoenix"', alvos: [palavra('instituto phoenix'), palavra('pesquisa phoenix')] },
+// 15/Out/2026: entrou pelo detector, gravada pelo cron (BR069572026, n=3.000, URA,
+// div 20/Out registrada antes do campo de 22 e 23/Out). A imprensa escreve "Vetor
+// Arrow" (91 itens no Google News, quase todos do Rio), e o cache de 02 a 15/Out
+// tinha 0. Alvo pelo nome composto: "Vetor" solto é palavra comum.
+{ registro: /vetor arrow/i, nome: 'Vetor Arrow', busca: '"Vetor Arrow"', alvos: [palavra('vetor arrow')] },
   { registro: /indexa/i, nome: 'Indexa', busca: '"Instituto Indexa"', alvos: [palavra('indexa')] },
   { registro: /ideia|canal meio/i, nome: 'Ideia/Canal Meio', busca: '"Canal Meio"', alvos: [palavra('ideia'), palavra('canal meio')] },
   // 🔴⭐ A ENTRADA QUE PROVA POR QUE A TABELA É EXPLÍCITA, medida em 18/Set/2026.
