@@ -118,6 +118,17 @@ export const EDICOES = {
     tese: (q) =>
       `The Senate price hit its series high on Sunday and gave back four points.${q ? ' ' : '<br>'}The House went the other way.`,
   },
+  11: {
+    contrato: 'US House control contract',
+    semana: 'week of October 8 to October 15, 2026',
+    big: '90.50%',
+    bigSub: (q) => `where House Democrats closed on${q ? ' ' : '<br>'}every one of the eight daily closes,${q ? ' ' : '<br>'}across 44 readings`,
+    cardN: '9.50%',
+    cardL: (q) => `where House Republicans closed,${q ? ' ' : '<br>'}the mirror, also unmoved`,
+    cardS: 'the pair sums to 100.00% at both ends of the week',
+    tese: (q) =>
+      `Two pollsters published both voter screens this week.${q ? ' ' : '<br>'}The screen moved them three points, in opposite directions.`,
+  },
 }
 
 /** Os três formatos. `quadrado` liga o refluxo vertical. */

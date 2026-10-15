@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-10-15",
-  "fetchedAt": "2026-10-15T20:17:12.739Z",
+  "fetchedAt": "2026-10-15T22:32:34.514Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -582,6 +582,53 @@
     "doIndice": 482,
     "curadas": 13,
     "curadasDescartadasPorDuplicidade": 17
+  },
+  "recortesAlternativos": {
+    "regra": "Quando o instituto publica um segundo recorte que o ÍNDICE não tabulou, o AFOS continua servindo a linha tabulada e NÃO ingere a outra, porque trocar mudaria a procedência do número servido. O recorte alternativo é publicado aqui, com a prova e o link, para quem quiser refazer a conta.",
+    "hierarquia": "LV > RV > A, aplicada ENTRE as linhas que o índice tabula, nunca contra o índice",
+    "quantos": 2,
+    "itens": [
+      {
+        "instituto": "RMG Research",
+        "campoInicio": "2026-10-13",
+        "campoFim": "2026-10-14",
+        "servido": {
+          "recorte": "RV",
+          "dem": 51,
+          "rep": 43,
+          "vantagemDem": 8
+        },
+        "alternativo": {
+          "recorte": "LV",
+          "dem": 54,
+          "rep": 43,
+          "vantagemDem": 11
+        },
+        "prova": "TÍTULO da citação do índice, não o documento: \"Generic Ballot, Likely Voters: Dem 54, GOP 43\". O host não abre, resolve para 127.0.0.1",
+        "url": "https://napolitannews.org/posts/generic-ballot-likely-voters-dem-54-gop-43",
+        "conferidoEm": "2026-10-15"
+      },
+      {
+        "instituto": "Beacon Research (D)/ Shaw & Co. Research (R)",
+        "campoInicio": "2026-10-09",
+        "campoFim": "2026-10-12",
+        "servido": {
+          "recorte": "RV",
+          "dem": 54,
+          "rep": 45,
+          "vantagemDem": 9
+        },
+        "alternativo": {
+          "recorte": "LV",
+          "dem": 52,
+          "rep": 46,
+          "vantagemDem": 6
+        },
+        "prova": "o artigo diz, sobre os prováveis votantes, aqueles certos de votar: \"52%-46%\" de vantagem democrata, ao lado do resultado principal em eleitores registrados que é 54 x 45",
+        "url": "https://www.foxnews.com/politics/fox-news-poll-cost-living-concerns-weigh-gop-midterms",
+        "conferidoEm": "2026-10-15"
+      }
+    ]
   },
   "polls": [
     {
