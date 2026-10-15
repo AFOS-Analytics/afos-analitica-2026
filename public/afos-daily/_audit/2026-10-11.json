@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-11",
+  "edicao": "setimo dia do 2o turno, com a DataTrends e as decisoes do TSE sobre o canal Exercito do Lula, sobre o painel publicado no commit 1d53811f (merge 9439d672)",
+  "refetch": {
+    "certificada": "2026-10-11T20:33:47.667Z",
+    "aoVivo": "2026-10-11T20:54:42Z: Flavio 86,95 (+0,30), Lula 12,50 (0), STF 3,35 (0), total USD 180,19M",
+    "gate": "rebaseline NAO disparou; trava aprovou presidencial e STF"
+  },
+  "factCheck": [
+    { "evento": "Kassio suspende video da campanha de Lula que cita Flavio e Vorcaro", "fontes": ["Agencia Brasil (corpo lido, decisao de sabado 10/10)", "G1 e UOL (manchetes)"], "decisao": "incorporar com a data de 10/10" },
+    { "evento": "Kassio suspende o canal Exercito do Lula no WhatsApp (~3,3 milhoes), a pedido de Flavio", "fontes": ["Agencia Brasil (corpo lido, domingo 11/10)", "CartaCapital (corpo lido)", "Folha, G1, Estadao, Valor e VEJA (manchetes)"], "decisao": "incorporar" },
+    { "evento": "Corregedor-geral Ricardo Villas Boas Cueva suspende a decisao e reabilita o canal; vai ao plenario", "fontes": ["CartaCapital 11/10 16h14 (corpo lido)", "Agencia Brasil (manchete relacionada)"], "decisao": "incorporar como decisao preliminar" },
+    { "evento": "DataTrends 50 x 44 total, validos 53,1 x 46,9, n=2.000, campo 07 a 09/10, BR-03576", "fontes": ["Poder360 (corpo: SO validos)", "Blog Edmar Lyra, Diario de Sao Paulo e GP1 (corpos: total)"], "decisao": "incorporar; ausencia do total no Poder360 conferida em mais 3 veiculos, a licao da PoderData de 08/10" }
+  ],
+  "adversarial": {
+    "singleSource": [ "aprovacao 53 x 45 na DataTrends (Blog Edmar Lyra)", "PT vai recorrer (Agencia Brasil)" ],
+    "numerical": "reconcile-claims so acusou pareamento de entidade",
+    "superlativo": "maior vantagem entre as seis nacionais pos-urna: DataTrends +6, AtlasIntel +5,4, Ipespe e PoderData +5, Datafolha +4; universo declarado na frase",
+    "links": "12 distintos, 1 ancora (Estadao, trocado da Agencia Brasil para o bloco ancora nao ficar vazio) e 11 secundarios",
+    "palavras": "pt 776, en 787, es 831",
+    "decisao": "prosseguir"
+  },
+  "wayback": "pausa em curso desde o 429 de 10/10 22:39Z; pre-check nao sondou"
+}
