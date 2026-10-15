@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-14",
-  "fetchedAt": "2026-10-14T18:41:14.431Z",
+  "lastUpdate": "2026-10-15",
+  "fetchedAt": "2026-10-15T20:17:12.739Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,7 +47,7 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-14",
+    "desde": "2026-09-15",
     "nPesquisas": 41,
     "tratamentoDoIndeciso": [
       {
@@ -140,6 +140,30 @@
       }
     ],
     "incluidas": [
+      {
+        "key": "ActiVote|2026-10-14",
+        "instituto": "ActiVote",
+        "campoFim": "2026-10-14",
+        "amostraTipo": "LV",
+        "dem": 53,
+        "rep": 47
+      },
+      {
+        "key": "RMG Research|2026-10-14",
+        "instituto": "RMG Research",
+        "campoFim": "2026-10-14",
+        "amostraTipo": "RV",
+        "dem": 51,
+        "rep": 43
+      },
+      {
+        "key": "Beacon Research (D)/ Shaw & Co. Research (R)|2026-10-12",
+        "instituto": "Beacon Research (D)/ Shaw & Co. Research (R)",
+        "campoFim": "2026-10-12",
+        "amostraTipo": "RV",
+        "dem": 54,
+        "rep": 45
+      },
       {
         "key": "Morning Consult|2026-10-11",
         "instituto": "Morning Consult",
@@ -446,33 +470,21 @@
         "amostraTipo": "RV",
         "dem": 51,
         "rep": 43
-      },
-      {
-        "key": "Beacon Research (D)/ Shaw & Co. Research (R)|2026-09-14",
-        "instituto": "Beacon Research (D)/ Shaw & Co. Research (R)",
-        "campoFim": "2026-09-14",
-        "amostraTipo": "RV",
-        "dem": 51,
-        "rep": 44
-      },
-      {
-        "key": "Reuters/Ipsos|2026-09-14",
-        "instituto": "Reuters/Ipsos",
-        "campoFim": "2026-09-14",
-        "amostraTipo": "RV",
-        "dem": 44,
-        "rep": 37
-      },
-      {
-        "key": "The Rainey Center|2026-09-14",
-        "instituto": "The Rainey Center",
-        "campoFim": "2026-09-14",
-        "amostraTipo": "RV",
-        "dem": 48,
-        "rep": 42
       }
     ],
     "excluidasPorInstrumento": [
+      {
+        "instituto": "The Economist/YouGov",
+        "campoInicio": "2026-10-10",
+        "campoFim": "2026-10-12",
+        "amostraTipo": "RV",
+        "dem": 46,
+        "rep": 39,
+        "desde": "2026-09-04",
+        "medidoEm": "2026-09-22",
+        "ressalva": "Asked using the names of candidates running in the respondent’s district of residence",
+        "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
+      },
       {
         "instituto": "The Economist/YouGov",
         "campoInicio": "2026-10-02",
@@ -520,24 +532,12 @@
         "medidoEm": "2026-09-22",
         "ressalva": "Asked using the names of candidates running in the respondent’s district of residence",
         "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
-      },
-      {
-        "instituto": "The Economist/YouGov",
-        "campoInicio": "2026-09-11",
-        "campoFim": "2026-09-14",
-        "amostraTipo": "LV",
-        "dem": 51,
-        "rep": 39,
-        "desde": "2026-09-04",
-        "medidoEm": "2026-09-22",
-        "ressalva": "Asked using the names of candidates running in the respondent’s district of residence",
-        "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
       }
     ],
-    "nInstitutos": 30,
-    "dem": 49.05,
-    "rep": 41.54,
-    "vantagemDem": 7.51,
+    "nInstitutos": 29,
+    "dem": 49.41,
+    "rep": 41.83,
+    "vantagemDem": 7.58,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
@@ -568,23 +568,82 @@
       "Reuters/Ipsos",
       "Strength In Numbers/Verasight",
       "The Argument/Verasight",
-      "The Rainey Center",
       "TrueDot"
     ]
   },
   "qualidade": {
-    "linhasLidas": 478,
-    "publicadas": 491,
+    "linhasLidas": 482,
+    "publicadas": 495,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 478,
+    "doIndice": 482,
     "curadas": 13,
     "curadasDescartadasPorDuplicidade": 17
   },
   "polls": [
+    {
+      "instituto": "RMG Research",
+      "campoInicio": "2026-10-13",
+      "campoFim": "2026-10-14",
+      "amostra": 2000,
+      "amostraTipo": "RV",
+      "margemErro": 2.2,
+      "dem": 51,
+      "rep": 43,
+      "outros": 6,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://napolitannews.org/posts/generic-ballot-likely-voters-dem-54-gop-43",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "ActiVote",
+      "campoInicio": "2026-10-04",
+      "campoFim": "2026-10-14",
+      "amostra": 1000,
+      "amostraTipo": "LV",
+      "margemErro": 3.1,
+      "dem": 53,
+      "rep": 47,
+      "outros": null,
+      "vantagemDem": 6,
+      "fontePrimaria": "https://www.activote.net/polls/generic-ballot/2026-10-14/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "The Economist/YouGov",
+      "campoInicio": "2026-10-10",
+      "campoFim": "2026-10-12",
+      "amostra": 1403,
+      "amostraTipo": "RV",
+      "margemErro": 3.5,
+      "dem": 46,
+      "rep": 39,
+      "outros": 15,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_q6HleZL.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Beacon Research (D)/ Shaw & Co. Research (R)",
+      "campoInicio": "2026-10-09",
+      "campoFim": "2026-10-12",
+      "amostra": 1202,
+      "amostraTipo": "RV",
+      "margemErro": 2.5,
+      "dem": 54,
+      "rep": 45,
+      "outros": 1,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://www.foxnews.com/politics/fox-news-poll-cost-living-concerns-weigh-gop-midterms",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
     {
       "instituto": "Morning Consult",
       "campoInicio": "2026-10-05",
