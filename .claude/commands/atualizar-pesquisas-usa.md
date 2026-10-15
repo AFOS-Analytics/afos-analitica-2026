@@ -382,6 +382,20 @@ node scripts/efeito-do-recorte-us.mjs
 
 Ele importa a hierarquia do coletor em vez de redigitá-la, e lê `mediaAfos.incluidas` em vez de reimplementar a janela. Sai o piso empírico do arquivo inteiro e, para a média servida, quanto UMA troca de recorte a moveria. 📌 Medido em 05/Set/2026: em 265 rodadas, 95 têm mais de um recorte, o |delta| mediano é 1,00pp, e a escolha **trocou o SINAL uma única vez**, na Harvard/Harris de 30/Ago, LV em R+2 contra RV em D+2 na mesma onda. Essa rodada sozinha levou a média de D+5.69 para D+5.14 e a amplitude de 4,00pp para 10,00pp. ⚠️ Saída de USO INTERNO: descreve a sensibilidade do MÉTODO, não é manchete nem ressalva plantada.
 
+
+### ⚖️ E quando o recorte preferido NÃO está no índice: decisão permanente de 16/Out/2026
+
+🔴 **A hierarquia `LV > RV > A` vale ENTRE as linhas que o índice tabula, NUNCA contra o índice.** Se o instituto publica um segundo recorte e o índice tabulou o outro, **serve-se o tabulado e não se troca**. Trocar muda a **procedência** do número servido, que é o produto da casa, e ainda torna sem sentido o `conferir-us-polls.mjs`, que compara o arquivo **contra o índice**.
+
+⛔ **O tamanho do efeito não é o argumento.** No caso fundador ele era de **0.01pp**, e a decisão seria a mesma com 0.80pp. Usar "é pequeno" como razão é aceitar que um dia, sendo grande, valeria trocar.
+
+✅ **E a outra metade da decisão, sem a qual ela seria esconder a escolha:** o `us-polls-data.json` publica **`recortesAlternativos`**, com o recorte servido, o alternativo, a prova, o link e a data da conferência. Antes disso a informação vivia só em `fonte-conferida.mjs` e era lida só pelo medidor acima: **a exposição era medida e invisível para quem lê o arquivo público**.
+
+📌 **O que fazer ao achar um:** declarar `recorteAlternativo` em `lib/us-polls/fonte-conferida.mjs`, com `tipo`, `dem`, `rep` e `prova`, e **não tocar no valor servido**. O arquivo público e o medidor passam a carregar sozinhos, porque os dois reusam `fonteDa`, que casa por VALORES e **caduca sozinho** se o índice reescrever o número.
+
+⛔ O bloco público **não calcula contrafactual**: essa conta é do `efeito-do-recorte-us.mjs`, e duas cópias da mesma regra divergem no dia em que uma é corrigida.
+
+🔑 **Caso fundador, Weekly nº11:** Beacon/Shaw em D+9 RV e D+6 LV, RMG em D+8 RV e D+11 LV, em direções **opostas**. Medido: seguir o LV nas duas moveria a média em 0.01pp, porque quase se cancelam. → `memory/feedback_nao_se_ingere_a_linha_que_o_indice_nao_tabula.md`
 ## Regras que valem aqui
 
 - **Wikipédia é ÍNDICE, o instituto é FONTE.** A página agrega e dá o caminho; o número citado é o do instituto, com link para a fonte primária. Pesquisa sem fonte primária entra na contagem de qualidade e é declarada, não some.
