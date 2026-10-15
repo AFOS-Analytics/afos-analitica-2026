@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-14",
-  "fetchedAt": "2026-10-14T21:11:51.474Z",
+  "lastUpdate": "2026-10-15",
+  "fetchedAt": "2026-10-15T20:30:47.391Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,111 +113,111 @@
     }
   ],
   "qualidade": {
-    "lidos": 238,
-    "naLista": 91,
-    "foraDaLista": 147,
+    "lidos": 249,
+    "naLista": 96,
+    "foraDaLista": 153,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 2,
+    "descartadosPorAcompanhamento": 1,
     "veiculosRepresentados": 7,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [
       "feed:The Washington Post: HTTP 502"
     ],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 40,
-    "publicadosComLinkCanonico": 7,
-    "publicadosViaGoogleNews": 3,
+    "lidosEmFeedProprio": 54,
+    "publicadosComLinkCanonico": 8,
+    "publicadosViaGoogleNews": 2,
     "publicadosPorDisputa": 10,
     "publicadosPorMetodo": 0
   },
   "itens": [
     {
-      "titulo": "Trump’s stumping in Montana ‘won't make a whole lot of difference’ says Dem House candidate",
-      "url": "https://www.nbcnews.com/meet-the-press/video/trump-s-stumping-in-montana-won-t-make-a-whole-lot-of-difference-says-dem-house-candidate-271586885922",
-      "casa": "NBC News",
-      "publicadoEm": "2026-10-14T20:53:14.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Farmers weigh economic struggles ahead of midterms: ‘Rural people don’t want to be ignored’",
-      "url": "https://www.nbcnews.com/meet-the-press/video/farmers-weigh-economic-struggles-ahead-of-midterms-rural-people-don-t-want-to-be-ignored-271584325609",
-      "casa": "NBC News",
-      "publicadoEm": "2026-10-14T20:28:09.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Inside the booming market for US midterm election bets",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQamtya0FZUkVIMEc2RS1pWU1tSmtOUlhvQXdEeVR0YTNEektDdVBHVmtqRmtIZlZUVC1vREFBUFRIcTJ4X0tNZDJYczhUUzl0ajUtNDVVcm1lMEl1a01aQVRiMndtZUlQNUdWRHRYWjk3Z2hvZlJsaWE0ckcwcWlNck9HUmxMcUNZSnE0WW1vbXNseDlJeVlCM294SHNXX1Yx?oc=5",
-      "casa": "Reuters",
-      "publicadoEm": "2026-10-14T20:20:38.000Z",
+      "titulo": "Election Dispatches: Talarico Remains Ahead in Texas Senate Race, Polls Show, but His Lead Has Narrowed",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE4wNmdtWGQxTVkyNlVEWmd2Yldza3pvd0NpYkp3bHFsWlcxbkNUeTdIQi1qWGlnNlkyQ1k4ZlFuUDdEX3FSRnVUNHBGWUt5el8tT0FGbHVaVjNOVU9STHlrZEV6c3M0TmVCakNCVGo2QlFXYWNxZWc?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-15T20:16:00.000Z",
       "consulta": "midterms",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "Midterm Election Ad Spending Topped $10 Billion, and It’s Still Rising",
-      "url": "https://www.nytimes.com/2026/10/14/us/politics/midterms-ad-spending-10-billion.html",
+      "titulo": "Suspicious mailings to election officials, congressional offices under investigation",
+      "url": "https://www.npr.org/2026/10/15/nx-s1-6003857/suspicious-mailings-election-congressional-offices",
+      "casa": "NPR",
+      "publicadoEm": "2026-10-15T19:54:15.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump’s Attacks on Voting Raise Fears He Will Try to Challenge Midterm Results",
+      "url": "https://www.nytimes.com/2026/10/15/us/politics/trumps-attacks-voting-midterms.html",
       "casa": "The New York Times",
-      "publicadoEm": "2026-10-14T19:08:37.000Z",
+      "publicadoEm": "2026-10-15T19:53:48.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "The most important US midterm trends I’m seeing | Molly Jong-Fast",
-      "url": "https://www.theguardian.com/commentisfree/2026/oct/14/the-most-important-us-midterm-trends-im-seeing",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-10-14T18:47:53.000Z",
+      "titulo": "Talarico rallies as his Texas US Senate race against Paxton enters final weeks",
+      "url": "https://abcnews.com/Politics/wireStory/talarico-rallies-texas-us-senate-race-paxton-enters-137299970",
+      "casa": "ABC News",
+      "publicadoEm": "2026-10-15T19:33:06.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Vance takes aim at soft-on-crime Dems as GOP faces uphill midterm battle: ‘Lost their minds’",
-      "url": "https://www.foxnews.com/politics/vance-takes-aim-soft-crime-dems-gop-faces-uphill-midterm-battle-lost-their-minds",
-      "casa": "Fox News",
-      "publicadoEm": "2026-10-14T18:27:25.000Z",
+      "titulo": "2026 midterm could be the most expensive ever: AdImpact",
+      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/2026-midterm-most-expensive-ever-adimpact/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-15T19:17:30.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "‘Paid for the bullets’: Dem challenger hits senator with stunning ICE accusation during fiery Senate debate",
-      "url": "https://www.foxnews.com/politics/paid-bullets-dem-challenger-hits-senator-stunning-ice-accusation-fiery-senate-debate",
-      "casa": "Fox News",
-      "publicadoEm": "2026-10-14T17:18:40.000Z",
+      "titulo": "GOP Iowa Senate candidate says she’s not afraid to push back against Trump",
+      "url": "https://www.newsnationnow.com/politics/ashley-hinson-senate-iowa-trump/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-15T19:02:12.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Kamala Harris to Campaign for Democrats in Mississippi, New Hampshire and Wisconsin Ahead of Midterms",
-      "url": "https://www.nytimes.com/2026/10/14/us/politics/kamala-harris-midterms-democrats-campaign.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-10-14T16:13:42.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Fox News predicts Democrats will win House in midterms for first time this cycle",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPSXRyT3Bkck91UWtRYmowV2E5bU15RlpqZi1HWE0wV0hLZXpXWXZsXzZhbENLM0oyc2JyRDhlVEFUa2l5aVFOSzFBR2JBdG1veUo4bTdkRkhHQXAyZGFJOXVXbUtvbnp6UmduanJLVUNockY1YTFFOEU1SjVnLTRFeGpQYXpRYTVEdVBB0gGQAUFVX3lxTE92aEdqc3FNelVvcmJ1VVNhZG9ybUdBLUZKV2g2NmtabDZpZDdqVldSSDd1ek5oeGlUcFRPa1ducVBWc1hLN1R0WUV3ZndIeVB0RFBuLTRQS0dHbmRBM0N1ekxGRENrdnQ3eWU5dDY1SlpOWW5NV191ZGNQVjhfSnRqWFhvZXVqNzVjaWZUNHp1dw?oc=5",
+      "titulo": "Brit Hume: Republican 'washout' possible in midterms",
+      "url": "https://thehill.com/homenews/campaign/6151939-gop-midterm-washout-risk/",
       "casa": "The Hill",
-      "publicadoEm": "2026-10-14T16:07:00.000Z",
-      "consulta": "midterms",
-      "origem": "google",
+      "publicadoEm": "2026-10-15T18:56:21.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "New Maine Senate poll reveals a coin toss between Collins, Jackson",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOdmtPb3JaWUE0V0ZHUXpFTTF1bjRSQW5xQkgxS1VBUVptczBrQXdyNTQ1ZlZHcDcyeWk4N3R0SFJnaFJaZ1U5WXczajRwSFdaVTFOck83NEFsNVNzN0lWdktFWS1FOFFSQkRZc20yMTJjNFVPN21GbmFJMFFhNG14dlR3ZURZMlJISjYzdk1XZVkxUEx2US1fc21TVnFjbEJMVjBCdW1rU3F2LVBEWElERWFSNElfZnFQeW1kQ0xSREY?oc=5",
-      "casa": "USA Today",
-      "publicadoEm": "2026-10-14T15:47:00.000Z",
-      "consulta": "senate-races",
+      "titulo": "Trump links Michigan Senate candidate Abdul El-Sayed to Muslim Brotherhood: 'He's a con man'",
+      "url": "https://www.foxnews.com/politics/trump-links-michigan-senate-candidate-abdul-el-sayed-muslim-brotherhood-con-man",
+      "casa": "Fox News",
+      "publicadoEm": "2026-10-15T18:45:01.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "RFK Jr.-aligned MAHA group spends big on Iowa governor's race",
+      "url": "https://thehill.com/homenews/campaign/6151882-maha-action-pac-iowa-donation/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-10-15T18:44:16.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Tracking the 2026 Early Vote: Midterm Elections",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5CNDhGdFFLbHU0dnFMZGZ5T2Z4LVNzYk5Mb0lHNXZhQW56U09sX1RmWmRLZmlvRnQtOHNHUlZlS3NZckF2WHF0LXVZOHROTTBCMnQzbkM2X1JCYkY5RGpwamRubEc4M3lPaFE?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-15T18:30:21.000Z",
+      "consulta": "midterms",
       "origem": "google",
       "trilho": "disputa"
     }

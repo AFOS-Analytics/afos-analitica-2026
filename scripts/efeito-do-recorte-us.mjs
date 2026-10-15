@@ -31,6 +31,7 @@
 import { readFileSync } from 'fs'
 import { ORDEM_RECORTE, vantagemDeProducao } from '../lib/us-polls/collect.mjs'
 import { serieDaCasa } from '../lib/us-polls/casas.mjs'
+import { fonteDa } from '../lib/us-polls/fonte-conferida.mjs'
 
 const arg = (n) => process.argv.find((a) => a.startsWith(`--${n}=`))?.slice(n.length + 3)
 const ARQUIVO = arg('arquivo') || 'public/us-polls-data.json'
@@ -150,9 +151,34 @@ if (servida == null) {
   }
 }
 
+// ─── 15/Out/2026: o recorte que existe na FONTE e NAO na base ──────────────
+//
+// 🔴 O defeito que isto conserta: tudo acima monta o grupo a partir de
+// `polls`, ou seja so enxerga recorte que NOS COLETAMOS. Em 15/Out duas das
+// tres rodadas novas tinham recorte de provaveis votantes na FONTE que o
+// indice nao tabulou, e este passo imprimiu "maior deslocamento possivel:
+// +0.12pp" sem ve-las. O numero nao estava errado, estava CEGO: respondia
+// "entre os recortes que eu TENHO" e se lia como "entre os que EXISTEM".
+//
+// ⛔ E a frase do caso vazio era pior: "exposicao ZERO hoje" seria FALSA com
+// duas declaradas em aberto. Ela passou a contar as duas fontes.
+//
+// ✅ A informacao ja estava em fonte-conferida.mjs, em PROSA. Agora tem campo,
+// `recorteAlternativo`, e por isso pode ser MEDIDA. ⏳ A caducidade vem de
+// graca: `fonteDa` casa por `valores`, entao se o indice reescrever o numero
+// a declaracao para de valer sozinha.
+const declaradas = []
+for (const d of dentro) {
+  const e = fonteDa(d.escolhido)
+  if (!e || !e.recorteAlternativo) continue
+  const alt = e.recorteAlternativo
+  if (typeof alt.dem !== "number" || typeof alt.rep !== "number") continue
+  declaradas.push({ d, alt })
+}
+
 const comAlternativa = dentro.filter((d) => d.alternativas.length > 0)
 if (comAlternativa.length === 0) {
-  console.log(`      nenhuma rodada da janela tem recorte alternativo: exposição ZERO hoje`)
+  console.log(`      nenhuma rodada da janela tem recorte alternativo NA BASE${declaradas.length ? ", mas ha " + declaradas.length + " DECLARADA(S) na fonte, logo a exposicao NAO e zero" : ": exposicao ZERO hoje"}`)
 } else {
   console.log(`      ${comAlternativa.length} de ${n} rodadas da janela têm recorte alternativo`)
   let pior = { desloc: 0 }
@@ -172,4 +198,34 @@ if (comAlternativa.length === 0) {
   }
   console.log(`\n      🔑 maior deslocamento possível por UMA troca de recorte: ${pior.desloc >= 0 ? '+' : ''}${pior.desloc.toFixed(2)}pp`)
 }
+if (declaradas.length) {
+  console.log("")
+  console.log(`      ── e ${declaradas.length} rodada(s) têm recorte alternativo DECLARADO NA FONTE e AUSENTE da base`)
+  console.log("         ⚠️ O casamento por grupo NUNCA as veria: o índice não tabulou a outra via.")
+  const ancoraD = contaBase ? contaBase.vantagemDem : soma / n
+  for (const d of declaradas) {
+    const trocada = dentro.map((x) => (x === d.d ? { dem: d.alt.dem, rep: d.alt.rep } : x.i))
+    const contaAlt = vantagemDeProducao(trocada)
+    const nova = contaAlt ? contaAlt.vantagemDem : ancoraD
+    const desloc = Number((nova - ancoraD).toFixed(2))
+    console.log(`         ${d.d.i.instituto} ${d.d.i.campoFim}: trocar ${d.d.escolhido.amostraTipo} por ${d.alt.tipo} levaria a média a D+${nova.toFixed(2)} (${desloc >= 0 ? "+" : ""}${desloc.toFixed(2)}pp)`)
+    console.log(`            prova: ${String(d.alt.prova).slice(0, 140)}`)
+  }
+  // 🔑 E o número que importa NÃO é o maior de uma troca só: é o de seguir a
+  // hierarquia em TODAS, porque elas podem se CANCELAR. Em 15/Out uma
+  // empurrava para cima e a outra para baixo, e o efeito conjunto foi ZERO.
+  const todasTrocadas = dentro.map((x) => {
+    const achou = declaradas.find((q) => q.d === x)
+    return achou ? { dem: achou.alt.dem, rep: achou.alt.rep } : x.i
+  })
+  const contaTodas = vantagemDeProducao(todasTrocadas)
+  if (contaTodas) {
+    const dT = Number((contaTodas.vantagemDem - ancoraD).toFixed(2))
+    console.log("")
+    console.log(`      🔑 seguindo a hierarquia em TODAS de uma vez: D+${ancoraD.toFixed(2)} → D+${contaTodas.vantagemDem.toFixed(2)} (${dT >= 0 ? "+" : ""}${dT.toFixed(2)}pp)`)
+    console.log("      ⚠️ Elas podem se CANCELAR, então o conjunto não é a soma dos maiores.")
+  }
+  console.log("      ⛔ Nada disto foi alterado: ingerir o outro recorte é CURADORIA e muda a procedência.")
+}
+
 console.log()
