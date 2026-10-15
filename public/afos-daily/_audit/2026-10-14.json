@@ -1,0 +1,102 @@
+{
+  "date": "2026-10-14",
+  "refetch": {
+    "fetchedAt": "2026-10-14T21:33:04.463Z",
+    "flavio": 85.05,
+    "lula": 14.5,
+    "baselineConfirmada": "2026-10-14T21:12:55.654Z",
+    "flavioBase": 85,
+    "lulaBase": 14.5,
+    "volTotalPresidencialUSD": 181670000,
+    "rebaseline": false
+  },
+  "factCheck": [
+    {
+      "evento": "Quaest BR-08729: Flávio 46 x Lula 44, b/n 9, indecisos 1, n=2.154 presencial 10-13/Out, Grupo Globo",
+      "fontes": [
+        "Metrópoles",
+        "Exame",
+        "CartaCapital (rejeição)",
+        "CNN Brasil (avaliação)",
+        "O Globo (transferência)"
+      ],
+      "decisao": "incorporar"
+    },
+    {
+      "evento": "Flávio volta atrás e vai ao debate da Band de 18/Out depois de Lula confirmar presença",
+      "data": "2026-10-14",
+      "fontes": [
+        "CartaCapital",
+        "CNN Brasil",
+        "Folha",
+        "Valor",
+        "CBN"
+      ],
+      "decisao": "incorporar; painel corrigido no mesmo dia (commit d931f0b0)"
+    },
+    {
+      "evento": "Calendário de debates: Band 18/Out (o primeiro) e Globo 23/Out, entrevistas Globo 15 e 16/Out; o debate de 15/Out do consórcio (Poder360, 10/Out) não aparece de 13/Out em diante",
+      "fontes": [
+        "Congresso em Foco",
+        "CNN Brasil",
+        "Valor"
+      ],
+      "decisao": "incorporar o calendário atual sem afirmar cancelamento"
+    },
+    {
+      "evento": "Bellizze dá 24h para Nikolas e Flávio removerem vídeo com crianças",
+      "fontes": [
+        "Gazeta do Povo (corpo)",
+        "Estadão",
+        "Agência Brasil"
+      ],
+      "decisao": "incorporar"
+    },
+    {
+      "evento": "Campanha de Lula aciona TSE contra a Meta pela IA do WhatsApp",
+      "fontes": [
+        "CartaCapital",
+        "G1",
+        "Poder360",
+        "Folha"
+      ],
+      "decisao": "incorporar estreitado"
+    },
+    {
+      "evento": "CCJ do Senado aprova PEC da Segurança; plenário inicia votação da PEC da 6x1 sem resultado até 18:30 BRT",
+      "fontes": [
+        "Gazeta do Povo",
+        "Metrópoles",
+        "Folha",
+        "Poder360"
+      ],
+      "decisao": "incorporar"
+    }
+  ],
+  "adversarial": {
+    "singleSource": "rejeição (CartaCapital) e transferência (O Globo) são dados da mesma pesquisa, atribuídos",
+    "numerical": "OK",
+    "fontesInventadas": "3 conferidas no corpo",
+    "quotes": "nenhuma",
+    "causacao": "nenhuma",
+    "verbos": "OK",
+    "correcoesAntesDoPreview": [
+      "início da votação da 6x1 era à tarde, não à noite",
+      "AtlasIntel tirou o registro: atribuição sem prova, trocado por saiu do registro",
+      "superlativo maior rejeição no TL;DR trocado pelos números"
+    ],
+    "decisao": "prosseguir para preview",
+    "correcoesAposTraducao": [
+      "IA da Meta: G1 diz que criou Flávio 22 e não Lula 13 nem Flávio Bolsonaro 22; gerava para Flávio e bloqueava para Lula generalizava (também corrigido no painel, commit dc000226)",
+      "mais rejeitado por 54 x 53 com margem de 2 trocado pelos números com a ressalva da margem",
+      "rodada de 03/Out da Quaest era cenário de 2º turno na véspera do 1º; lede passa a dizer primeira rodada depois do primeiro turno"
+    ]
+  },
+  "palavras": 1011,
+  "links": {
+    "distintos": 17,
+    "ancora": 5,
+    "secundarios": 12,
+    "pctSecundario": 71
+  }
+}

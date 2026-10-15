@@ -205,6 +205,31 @@ if (escopo === 4) {
   console.log('   o escopo na divulgação. Rótulo frágil já vencido é dívida de dataset.')
 }
 
+// 🔴 15/Out/2026: a coleta do cache do dia rodava DEPOIS deste passo, que também
+//    lê o `news-cache`. Na rodada daquele dia, feita num worktree de origin/main
+//    (onde a pasta não existe), o passo 4 saiu "NAO LEU" e só então a coleta rodou.
+//    Na árvore principal o defeito é mais calado: mede sem o dia de hoje. A coleta
+//    agora vem antes dos DOIS leitores.
+const cacheDeHoje = `public/news-cache/${dataCivilBrasil()}.json`
+if (!existsSync(cacheDeHoje) && !semNoticias) {
+  console.log('')
+  console.log(regua)
+  console.log(`▶️  3.9/5 · CACHE DE NOTÍCIAS do dia, que é insumo dos passos 4 e 4.5`)
+  console.log(regua)
+  console.log(`   ${cacheDeHoje} não existe, e sem ele os passos 4 e 4.5 não medem o dia.`)
+  console.log(`   Coletando. Para pular de propósito: --sem-noticias.`)
+  const c = spawnSync(process.execPath, argumentosDeNode('scripts/fetch-google-news.mjs', []), { stdio: 'inherit' })
+  const okCache = !c.error && c.status === 0 && existsSync(cacheDeHoje)
+  resultados.push({ id: 'noticias', codigo: c.error ? null : c.status, estado: okCache ? 'coletado agora' : 'NAO COLETOU' })
+  if (!okCache) {
+    console.log('')
+    console.log(`   ⚠️ a coleta não entregou o cache. O passo abaixo vai declarar NAO MEDIU,`)
+    console.log(`      e isso NÃO é "nenhuma pesquisa saiu".`)
+  }
+} else if (!existsSync(cacheDeHoje)) {
+  resultados.push({ id: 'noticias', codigo: null, estado: 'PULADO (--sem-noticias), e o cache NÃO existe' })
+}
+
 // 4/5 · A COBERTURA DE IMPRENSA, criada em 18/Set/2026.
 //
 // 🔑 POR QUE ELA RODA AQUI, e não é zelo: os passos 2 e 3 dizem QUEM divulga
@@ -285,26 +310,6 @@ if (cobertura === 4) {
 // 📌 Ele não coleta quando o cache já existe, e falha do coletor não vira
 //    silêncio: o passo roda mesmo assim e declara NAO MEDIU. `--sem-noticias`
 //    pula a coleta de propósito.
-const cacheDeHoje = `public/news-cache/${dataCivilBrasil()}.json`
-if (!existsSync(cacheDeHoje) && !semNoticias) {
-  console.log('')
-  console.log(regua)
-  console.log(`▶️  4.4/5 · CACHE DE NOTÍCIAS do dia, que é insumo do próximo passo`)
-  console.log(regua)
-  console.log(`   ${cacheDeHoje} não existe, e sem ele o passo 4.5 não mede.`)
-  console.log(`   Coletando. Para pular de propósito: --sem-noticias.`)
-  const c = spawnSync(process.execPath, argumentosDeNode('scripts/fetch-google-news.mjs', []), { stdio: 'inherit' })
-  const okCache = !c.error && c.status === 0 && existsSync(cacheDeHoje)
-  resultados.push({ id: 'noticias', codigo: c.error ? null : c.status, estado: okCache ? 'coletado agora' : 'NAO COLETOU' })
-  if (!okCache) {
-    console.log('')
-    console.log(`   ⚠️ a coleta não entregou o cache. O passo abaixo vai declarar NAO MEDIU,`)
-    console.log(`      e isso NÃO é "nenhuma pesquisa saiu".`)
-  }
-} else if (!existsSync(cacheDeHoje)) {
-  resultados.push({ id: 'noticias', codigo: null, estado: 'PULADO (--sem-noticias), e o cache NÃO existe' })
-}
-
 const saiu = rodar('saiu', '4.5/5 · PROMESSA x MUNDO — que nacional tem NÚMERO hoje?', 'scripts/pesquisa-saiu-hoje-brz.mjs', [
   `--dias=${dias}`,
 ])

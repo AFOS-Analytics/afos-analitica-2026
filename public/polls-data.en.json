@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-10-09",
+  "lastUpdate": "2026-10-14",
   "institutes": [
     {
       "name": "Datafolha",
@@ -148,6 +148,160 @@
   ],
   "polls": [
     {
+      "institute": "Quaest/Globo",
+      "date": "2026-10-14",
+      "scope": "national",
+      "sample": 2154,
+      "margin": 2,
+      "register": "BR-08729/2026",
+      "reliability": 4,
+      "method": "In person",
+      "fieldDates": "2026-10-10 a 2026-10-13",
+      "note": "Quaest national poll released on 14/Oct, the pollster's first after the first round, registration BR-08729/2026, 2,154 in-person interviews with voters aged 16 or older from 10 to 13/Oct, margin of 2pp with 95% confidence, commissioned by Grupo Globo (Metrópoles, Exame and O Globo). ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 46% AND LULA 44% in total votes, with 9% blank and spoiled ballots and 1% undecided. In the 03/Oct wave it was 44% and 42%.",
+      "scenarios": [],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 44,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 46
+        }
+      ]
+    },
+    {
+      "institute": "PoderData/Aya",
+      "date": "2026-10-13",
+      "scope": "national",
+      "sample": 3000,
+      "margin": 1.8,
+      "register": "BR-01209/2026",
+      "reliability": 3,
+      "method": "Automated telephone (IVR)",
+      "fieldDates": "2026-10-10 a 2026-10-12",
+      "note": "PoderData national poll released on 13/Oct in partnership with Aya, registration BR-01209/2026, 3,000 automated phone interviews from 10 to 12/Oct, margin of 1.8pp with 95% confidence (Jovem Pan and Poder360). ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 48% AND LULA 46% in total votes, with 5% blank and spoiled ballots and 2% who could not answer; in valid votes, 51% to 49%. In the 05 to 07/Oct wave it was 49% to 44% in total votes. 46% say they would not vote for Lula under any circumstances and 44% for Flávio Bolsonaro. The Lula government is disapproved by 50% and approved by 44%.",
+      "scenarios": [],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 48
+        }
+      ]
+    },
+    {
+      "institute": "BTG/Nexus",
+      "date": "2026-10-13",
+      "scope": "national",
+      "sample": 2002,
+      "margin": 2,
+      "register": "BR-07997/2026",
+      "reliability": 4,
+      "method": "Phone (CATI)",
+      "fieldDates": "2026-10-10 a 2026-10-12",
+      "note": "BTG/Nexus national poll released on 13/Oct, the pollster's first after the first round, registration BR-07997/2026, 2,002 voters by phone from 10 to 12/Oct, margin of 2pp with 95% confidence, commissioned by the bank BTG Pactual (Jovem Pan and CNN Brasil). ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 48% AND LULA 45% in total votes, with 5% blank and spoiled ballots and 2% undecided; in valid votes, 52% to 48%. 51% say they would not vote for Lula under any circumstances and 47% for Flávio Bolsonaro. The Lula government is disapproved by 50% and approved by 45%.",
+      "scenarios": [],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 45,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 48
+        }
+      ]
+    },
+    {
+      "institute": "Futura/100% Cidades",
+      "date": "2026-10-13",
+      "scope": "national",
+      "sample": 2000,
+      "margin": 2.2,
+      "register": "BR-00650/2026",
+      "reliability": 3,
+      "method": "Phone (CATI)",
+      "fieldDates": "2026-10-07 a 2026-10-10",
+      "note": "Futura/100% Cidades national poll released on 13/Oct, registration BR-00650/2026, 2,000 voters aged 16 or over by phone from 07 to 10/Oct, margin of 2.2pp with 95% confidence (Transmissão Política, Exame and CNN Brasil). ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 50% AND LULA 46.6% in total votes, with 1.7% blank, spoiled or none and 1.7% who don't know; in valid votes, 51.8% to 48.2%. 48.6% reject Lula and 45.4% reject Flávio Bolsonaro (CNN Brasil).",
+      "scenarios": [],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 46.6,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 50
+        }
+      ]
+    },
+    {
+      "institute": "Gerp",
+      "date": "2026-10-12",
+      "scope": "national",
+      "sample": 2400,
+      "margin": 2,
+      "register": "BR-07877/2026",
+      "reliability": 3,
+      "method": "Telephone",
+      "fieldDates": "2026-10-08 a 2026-10-12",
+      "note": "Gerp national poll released on the night of 12/Oct, with release registered with the TSE for 13/Oct, registration BR-07877/2026, 2,400 voters by phone on 08, 09 and 12/Oct, margin of 2pp with 95.55% confidence, with its own funds (CNN Brasil, Conexão Política and TMC). ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 53% AND LULA 44% in total votes, with 3% who don't know or didn't answer and 1% who would vote for neither; in valid votes, 55% to 45%. The Lula government is disapproved by 49% and approved by 45% (Jovem Pan).",
+      "scenarios": [],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 44,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 53
+        }
+      ]
+    },
+    {
+      "institute": "DataTrends",
+      "date": "2026-10-11",
+      "scope": "national",
+      "sample": 2000,
+      "margin": 2.19,
+      "register": "BR-03576/2026",
+      "reliability": 2,
+      "method": "Automated telephone (IVR)",
+      "fieldDates": "2026-10-07 a 2026-10-09",
+      "note": "DataTrends national poll released on 11/Oct, the pollster's first in the second round, registration BR-03576/2026, 2,000 voters in automated phone interviews from 07 to 09/Oct, margin of 2.19pp with 95% confidence, R$ 25 thousand from its own funds (Poder360, Diário de São Paulo and GP1). ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 50% AND LULA 44% in total votes, with 5% blank and spoiled ballots and 1% who don't know or didn't answer; in valid votes, 53.1% to 46.9%. The Lula government is disapproved by 53% and approved by 45% (Blog Edmar Lyra).",
+      "scenarios": [],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 44,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 50
+        }
+      ]
+    },
+    {
+      "institute": "Ipespe/Abrapel",
+      "date": "2026-10-10",
+      "scope": "national",
+      "sample": 1500,
+      "margin": 2.6,
+      "register": "BR-00933/2026",
+      "reliability": 3,
+      "method": "Online",
+      "fieldDates": "2026-10-06 a 2026-10-08",
+      "note": "Ipespe national poll released on 10/Oct, the first wave of the Ipespe/Abrapel Campaign Tracking in the second round, registration BR-00933/2026, 1,500 voters through random digital recruitment from 06 to 08/Oct, margin of 2.6pp with 95.45% confidence (O Globo and Exame). ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 49% AND LULA 44% in total votes, with 5% blank and spoiled ballots and 3% who don't know or didn't answer. In valid votes, Flávio Bolsonaro 52.7% and Lula 47.3%, a calculation the pollster calls an exercise. Among Augusto Cury's voters, Flávio Bolsonaro has 50% and Lula 29%; among Ronaldo Caiado's, 56% to 15%, and the pollster warns that these groups are small in the sample. 47% say they would certainly vote for Flávio Bolsonaro and 46% that they would not vote for him under any circumstances; for Lula, 43% and 49%.",
+      "scenarios": [],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 44,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 49
+        }
+      ]
+    },
+    {
       "institute": "AtlasIntel/Bloomberg",
       "date": "2026-10-09",
       "scope": "national",
@@ -157,7 +311,7 @@
       "reliability": 4,
       "method": "Online/Big Data",
       "fieldDates": "2026-10-03 a 2026-10-08",
-      "note": "AtlasIntel national poll released on 09/Oct, commissioned by Bloomberg, the pollster's first after the [first round](/en/glossary#primeiro-turno), registration BR-03663/2026, 5,026 voters through random digital recruitment from 03 to 08/Oct, margin of 1pp with 95% confidence (Estadão, CNN Brasil and CartaCapital). ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) FLÁVIO BOLSONARO HAS 51.1% AND LULA 45.7% in total votes, and blank ballots, spoiled ballots and undecided voters add up to 3.2%, after 47.6% to 47.4% for Lula in the pollster's round of 03/Oct, conducted before the vote. In valid votes, Flávio Bolsonaro 52.8% and Lula 47.2%. Among Augusto Cury's voters, Lula has 50.4% and Flávio Bolsonaro 38.9%; among Ronaldo Caiado's, Flávio Bolsonaro has 54.9% and Lula 26.9%.",
+      "note": "AtlasIntel national poll released on 09/Oct, commissioned by Bloomberg, the pollster's first after the first round, registration BR-03663/2026, 5,026 voters through random digital recruitment from 03 to 08/Oct, margin of 1pp with 95% confidence (Estadão, CNN Brasil and CartaCapital). ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 51.1% AND LULA 45.7% in total votes, and blank ballots, spoiled ballots and undecided voters add up to 3.2%, after 47.6% to 47.4% for Lula in the pollster's round of 03/Oct, conducted before the vote. In valid votes, Flávio Bolsonaro 52.8% and Lula 47.2%. Among Augusto Cury's voters, Lula has 50.4% and Flávio Bolsonaro 38.9%; among Ronaldo Caiado's, Flávio Bolsonaro has 54.9% and Lula 26.9%.",
       "scenarios": [],
       "secondRound": [
         {
@@ -179,7 +333,7 @@
       "reliability": 3,
       "method": "In person",
       "fieldDates": "2026-10-05 a 2026-10-07",
-      "note": "Vox Brasil national poll released on 09/Oct, the pollster's first after the [first round](/en/glossary#primeiro-turno), registration BR-09623/2026, 2,100 voters interviewed in person from 05 to 07/Oct, margin of 2.15pp with 95% confidence (CartaCapital, CNN Brasil and Poder360). ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) LULA HAS 44.2% AND FLÁVIO BOLSONARO 42.7%, within the margin, with 3.4% blank and spoiled ballots and 9.7% who do not know, after 48.2% to 45.2% for Flávio Bolsonaro in the pollster's round of 02/Oct, conducted before the vote. In valid votes, Lula 50.86% and Flávio Bolsonaro 49.14%. 76.2% of voters say they are fully decided.",
+      "note": "Vox Brasil national poll released on 09/Oct, the pollster's first after the first round, registration BR-09623/2026, 2,100 voters interviewed in person from 05 to 07/Oct, margin of 2.15pp with 95% confidence (CartaCapital, CNN Brasil and Poder360). ⚖️ IN THE SECOND ROUND LULA HAS 44.2% AND FLÁVIO BOLSONARO 42.7%, within the margin, with 3.4% blank and spoiled ballots and 9.7% who do not know, after 48.2% to 45.2% for Flávio Bolsonaro in the pollster's round of 02/Oct, conducted before the vote. In valid votes, Lula 50.86% and Flávio Bolsonaro 49.14%. 76.2% of voters say they are fully decided.",
       "scenarios": [],
       "secondRound": [
         {
@@ -201,7 +355,7 @@
       "reliability": 5,
       "method": "In person",
       "fieldDates": "2026-10-06 a 2026-10-08",
-      "note": "Datafolha national poll released on 08/Oct, the pollster's first after the [first round](/en/glossary#primeiro-turno), registration BR-02949/2026, 2,520 voters aged 16 or older interviewed from 06 to 08/Oct, margin of 2pp with 95% confidence (Brasil de Fato, CartaCapital, G1 and Valor). ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) FLÁVIO BOLSONARO HAS 49% AND LULA 45%, after 47% to 46% for Lula in the pollster's round of 03/Oct, conducted before the vote; blank, null and none add up to 5% and undecided 1%. In valid votes, Flávio Bolsonaro 52% and Lula 48%. Rejection: 46% would not vote for Lula and 43% would not vote for Flávio Bolsonaro. The Lula government's rating is negative for 40% and positive for 35%.",
+      "note": "Datafolha national poll released on 08/Oct, the pollster's first after the first round, registration BR-02949/2026, 2,520 voters aged 16 or older interviewed from 06 to 08/Oct, margin of 2pp with 95% confidence (Brasil de Fato, CartaCapital, G1 and Valor). ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 49% AND LULA 45%, after 47% to 46% for Lula in the pollster's round of 03/Oct, conducted before the vote; blank, null and none add up to 5% and undecided 1%. In valid votes, Flávio Bolsonaro 52% and Lula 48%. Rejection: 46% would not vote for Lula and 43% would not vote for Flávio Bolsonaro. The Lula government's rating is negative for 40% and positive for 35%.",
       "scenarios": [],
       "secondRound": [
         {
@@ -223,7 +377,7 @@
       "reliability": 3,
       "method": "Telephone",
       "fieldDates": "2026-10-05 a 2026-10-07",
-      "note": "PoderData national poll released on 08/Oct in partnership with Aya, the first poll published after the [first round](/en/glossary#primeiro-turno), registration BR-08134/2026, 3,000 telephone interviews in 705 municipalities across the 27 federative units, from 05 to 07/Oct, margin of 1.8pp with 95% confidence (Poder360 and Jovem Pan). ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) FLÁVIO BOLSONARO HAS 49% AND LULA 44% in total votes, with 5% blank and spoiled ballots and 2% undecided; in valid votes, 53% to 47%. Among Augusto Cury's voters, Flávio Bolsonaro has 56% and Lula 27%; among Ronaldo Caiado's, 57% to 19%; among Renan Santos's, 48% to 25%; among Romeu Zema's, 72% to 10% (Jovem Pan). On expectation of victory, 54% think Flávio Bolsonaro wins and 37% that Lula wins. Rejection: 46% would not vote for Lula and 43% would not vote for Flávio Bolsonaro (CNN Brasil). 📌 Correction of 09/Oct: on 08/Oct this entry said the release included only valid votes; it also included the total, which has been added here.",
+      "note": "PoderData national poll released on 08/Oct in partnership with Aya, the first poll published after the first round, registration BR-08134/2026, 3,000 telephone interviews in 705 municipalities across the 27 federative units, from 05 to 07/Oct, margin of 1.8pp with 95% confidence (Poder360 and Jovem Pan). ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 49% AND LULA 44% in total votes, with 5% blank and spoiled ballots and 2% undecided; in valid votes, 53% to 47%. Among Augusto Cury's voters, Flávio Bolsonaro has 56% and Lula 27%; among Ronaldo Caiado's, 57% to 19%; among Renan Santos's, 48% to 25%; among Romeu Zema's, 72% to 10% (Jovem Pan). On expectation of victory, 54% think Flávio Bolsonaro wins and 37% that Lula wins. Rejection: 46% would not vote for Lula and 43% would not vote for Flávio Bolsonaro (CNN Brasil). 📌 Correction of 09/Oct: on 08/Oct this entry said the release included only valid votes; it also included the total, which has been added here.",
       "scenarios": [],
       "secondRound": [
         {
@@ -245,7 +399,7 @@
       "reliability": 3,
       "method": "Online",
       "fieldDates": "2026-09-30 a 2026-10-03",
-      "note": "Palver national poll released on 03/Oct, the pollster's sixth round, registration BR-00198/2026, 5,000 participants recruited online between 30/Sep and 03/Oct, non-probability sample calibrated with IBGE data, the second round of 2022 and the [TSE](/en/glossary#tse) party membership registry, maximum margin of 2.4pp at 95% confidence (Exame). ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) FLÁVIO BOLSONARO HAS 47% AND LULA 43%, after 44% to 44% in the pollster's round of 29/Sep, with Renan Santos at 7%, Augusto Cury and Ronaldo Caiado at 1% and Romeu Zema below 1%. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) FLÁVIO BOLSONARO HAS 49% AND LULA 44%, after 47% to 45% on 29/Sep. Lula beats Augusto Cury by 44% to 36%, Renan Santos by 44% to 33%, Romeu Zema by 44% to 42% and Ronaldo Caiado by 43% to 42%.",
+      "note": "Palver national poll released on 03/Oct, the pollster's sixth round, registration BR-00198/2026, 5,000 participants recruited online between 30/Sep and 03/Oct, non-probability sample calibrated with IBGE data, the second round of 2022 and the TSE party membership registry, maximum margin of 2.4pp at 95% confidence (Exame). ⭐ IN THE FIRST ROUND FLÁVIO BOLSONARO HAS 47% AND LULA 43%, after 44% to 44% in the pollster's round of 29/Sep, with Renan Santos at 7%, Augusto Cury and Ronaldo Caiado at 1% and Romeu Zema below 1%. ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 49% AND LULA 44%, after 47% to 45% on 29/Sep. Lula beats Augusto Cury by 44% to 36%, Renan Santos by 44% to 33%, Romeu Zema by 44% to 42% and Ronaldo Caiado by 43% to 42%.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -321,7 +475,7 @@
       "reliability": 4,
       "method": "Online/Big Data",
       "fieldDates": "2026-09-27 a 2026-10-02",
-      "note": "AtlasIntel national poll released on the night of 03/Oct (Exame, 22h00 BRT), commissioned by Bloomberg, registration BR-00999/2026, 4,945 voters through random digital recruitment between 27/Sep and 02/Oct, margin of 1pp with 95% confidence. ⭐ IN TOTAL [FIRST-ROUND](/en/glossary#primeiro-turno) VOTES LULA HAS 46.7% AND FLÁVIO BOLSONARO 43.8%, after 45.3% to 42.2% in the pollster's 29/Sep round, with Renan Santos at 4.6%, Augusto Cury at 2.1% and Ronaldo Caiado at 1.4%. In valid votes, Lula 47% and Flávio Bolsonaro 44.1%. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) LULA HAS 47.6% AND FLÁVIO BOLSONARO 47.4% in total votes, and 50.1% to 49.9% in valid votes, after 47.7% to 47.6% for Flávio Bolsonaro on 29/Sep.",
+      "note": "AtlasIntel national poll released on the night of 03/Oct (Exame, 22h00 BRT), commissioned by Bloomberg, registration BR-00999/2026, 4,945 voters through random digital recruitment between 27/Sep and 02/Oct, margin of 1pp with 95% confidence. ⭐ IN TOTAL FIRST-ROUND VOTES LULA HAS 46.7% AND FLÁVIO BOLSONARO 43.8%, after 45.3% to 42.2% in the pollster's 29/Sep round, with Renan Santos at 4.6%, Augusto Cury at 2.1% and Ronaldo Caiado at 1.4%. In valid votes, Lula 47% and Flávio Bolsonaro 44.1%. ⚖️ IN THE SECOND ROUND LULA HAS 47.6% AND FLÁVIO BOLSONARO 47.4% in total votes, and 50.1% to 49.9% in valid votes, after 47.7% to 47.6% for Flávio Bolsonaro on 29/Sep.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -369,7 +523,7 @@
       "reliability": 3,
       "method": "Telephone",
       "fieldDates": "2026-10-01 a 2026-10-03",
-      "note": "Gerp's second national poll released on 03/Oct, registration BR-08168/2026, 2,400 voters by phone between 01 and 03/Oct, margin of 2pp (Jovem Pan). The pollster reports that the measurements of 2 and 3/Oct share part of the interviews with round BR-00509/2026. ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) FLÁVIO BOLSONARO HAS 44% AND LULA 42%, after 43% to 41% in the previous measurement, with Ronaldo Caiado at 4%, Augusto Cury at 3%, Renan Santos at 2% and Romeu Zema at 1%. In valid votes, Flávio Bolsonaro 45% and Lula 43%. This round's second-round numbers were not checked in the body and stay out.",
+      "note": "Gerp's second national poll released on 03/Oct, registration BR-08168/2026, 2,400 voters by phone between 01 and 03/Oct, margin of 2pp (Jovem Pan). The pollster reports that the measurements of 2 and 3/Oct share part of the interviews with round BR-00509/2026. ⭐ IN THE FIRST ROUND FLÁVIO BOLSONARO HAS 44% AND LULA 42%, after 43% to 41% in the previous measurement, with Ronaldo Caiado at 4%, Augusto Cury at 3%, Renan Santos at 2% and Romeu Zema at 1%. In valid votes, Flávio Bolsonaro 45% and Lula 43%. This round's second-round numbers were not checked in the body and stay out.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -413,7 +567,7 @@
       "reliability": 5,
       "method": "In person",
       "fieldDates": "2026-10-03 a 2026-10-03",
-      "note": "Datafolha national poll released on 03/Oct, registration BR-01708/2026, 4,006 voters aged 16 or older interviewed on 03/Oct, margin of 2pp at 95% confidence (Money Times and Valor). ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA HAS 42% AND FLÁVIO BOLSONARO 40%, after 42% to 38% in the pollster's round released on 01/Oct, with Ronaldo Caiado at 4%, Renan Santos and Augusto Cury at 3% and Romeu Zema below 1%; blank, null and none total 4% and undecided 3%. In valid votes, Lula 45% and Flávio Bolsonaro 42%. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) LULA HAS 47% AND FLÁVIO BOLSONARO 46%, after 48% to 45% on 01/Oct.",
+      "note": "Datafolha national poll released on 03/Oct, registration BR-01708/2026, 4,006 voters aged 16 or older interviewed on 03/Oct, margin of 2pp at 95% confidence (Money Times and Valor). ⭐ IN THE FIRST ROUND LULA HAS 42% AND FLÁVIO BOLSONARO 40%, after 42% to 38% in the pollster's round released on 01/Oct, with Ronaldo Caiado at 4%, Renan Santos and Augusto Cury at 3% and Romeu Zema below 1%; blank, null and none total 4% and undecided 3%. In valid votes, Lula 45% and Flávio Bolsonaro 42%. ⚖️ IN THE SECOND ROUND LULA HAS 47% AND FLÁVIO BOLSONARO 46%, after 48% to 45% on 01/Oct.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -461,7 +615,7 @@
       "reliability": 3,
       "method": "Telephone",
       "fieldDates": "2026-09-30 a 2026-10-02",
-      "note": "PoderData/Aya national poll released on 03/Oct, registration BR-03519/2026, 4,000 voters aged 16 or older in 786 municipalities across the 27 federative units, between 30/Sep and 02/Oct, margin of 1.5pp at 95% confidence (SBT News and Gazeta do Povo). ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA HAS 42% AND FLÁVIO BOLSONARO 41%, after 41% to 39% in the pollster's round of 24/Sep, with Augusto Cury and Renan Santos at 3%, Ronaldo Caiado at 2% and Romeu Zema at 1%; blank and null total 4%. In valid votes, Lula 45% and Flávio Bolsonaro 43%. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) THE TWO TIE AT 46%, after 46% to 45% for Flávio Bolsonaro on 24/Sep.",
+      "note": "PoderData/Aya national poll released on 03/Oct, registration BR-03519/2026, 4,000 voters aged 16 or older in 786 municipalities across the 27 federative units, between 30/Sep and 02/Oct, margin of 1.5pp at 95% confidence (SBT News and Gazeta do Povo). ⭐ IN THE FIRST ROUND LULA HAS 42% AND FLÁVIO BOLSONARO 41%, after 41% to 39% in the pollster's round of 24/Sep, with Augusto Cury and Renan Santos at 3%, Ronaldo Caiado at 2% and Romeu Zema at 1%; blank and null total 4%. In valid votes, Lula 45% and Flávio Bolsonaro 43%. ⚖️ IN THE SECOND ROUND THE TWO TIE AT 46%, after 46% to 45% for Flávio Bolsonaro on 24/Sep.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -504,7 +658,7 @@
       ]
     },
     {
-      "institute": "[Quaest](/en/glossary#quaest)/Globo",
+      "institute": "Quaest/Globo",
       "date": "2026-10-03",
       "scope": "national",
       "sample": 3702,
@@ -513,7 +667,7 @@
       "reliability": 4,
       "method": "In person",
       "fieldDates": "2026-10-02 a 2026-10-03",
-      "note": "[Quaest](/en/glossary#quaest) national poll released on 03/Oct, registration BR-02197/2026, 3,702 voters interviewed in person on 02 and 03/Oct, margin of 2pp at 95% confidence (Money Times). ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA HAS 40% AND FLÁVIO BOLSONARO 38%, after 39% to 34% in the pollster's round of 28/Sep, with Augusto Cury, Ronaldo Caiado and Renan Santos at 3%; blank, null and those who will not vote total 10% and undecided 3%. In valid votes, Lula 46% and Flávio Bolsonaro 45%. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) FLÁVIO BOLSONARO HAS 44% AND LULA 42%, after a tie at 42% on 28/Sep. 44% approve and 49% disapprove of the Lula government.",
+      "note": "Quaest national poll released on 03/Oct, registration BR-02197/2026, 3,702 voters interviewed in person on 02 and 03/Oct, margin of 2pp at 95% confidence (Money Times). ⭐ IN THE FIRST ROUND LULA HAS 40% AND FLÁVIO BOLSONARO 38%, after 39% to 34% in the pollster's round of 28/Sep, with Augusto Cury, Ronaldo Caiado and Renan Santos at 3%; blank, null and those who will not vote total 10% and undecided 3%. In valid votes, Lula 46% and Flávio Bolsonaro 45%. ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 44% AND LULA 42%, after a tie at 42% on 28/Sep. 44% approve and 49% disapprove of the Lula government.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -561,7 +715,7 @@
       "reliability": 4,
       "method": "In person",
       "fieldDates": "2026-09-29 a 2026-10-02",
-      "note": "CNT/MDA national poll released on 03/Oct, registration BR-04756/2026, 2,007 in-person interviews, margin of 2.2pp at 95% confidence, cost of R$ 222,453.00 from the pollster's own funds (Poder360). The [TSE](/en/glossary#tse) registry lists fieldwork from 29/Sep to 02/Oct and the report says 30/Sep to 02/Oct. ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA HAS 43.1% AND FLÁVIO BOLSONARO 38%, after 40.5% to 30.4% in the pollster's round of 15/Sep, with Augusto Cury at 3.2%, Ronaldo Caiado at 3%, Renan Santos at 1.5% and Romeu Zema at 0.8%; blank and null total 5%. In valid votes, Lula 47.8% and Flávio Bolsonaro 42.1%. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) LULA HAS 47.3% AND FLÁVIO BOLSONARO 43.1%, after 47.3% to 40% on 15/Sep.",
+      "note": "CNT/MDA national poll released on 03/Oct, registration BR-04756/2026, 2,007 in-person interviews, margin of 2.2pp at 95% confidence, cost of R$ 222,453.00 from the pollster's own funds (Poder360). The TSE registry lists fieldwork from 29/Sep to 02/Oct and the report says 30/Sep to 02/Oct. ⭐ IN THE FIRST ROUND LULA HAS 43.1% AND FLÁVIO BOLSONARO 38%, after 40.5% to 30.4% in the pollster's round of 15/Sep, with Augusto Cury at 3.2%, Ronaldo Caiado at 3%, Renan Santos at 1.5% and Romeu Zema at 0.8%; blank and null total 5%. In valid votes, Lula 47.8% and Flávio Bolsonaro 42.1%. ⚖️ IN THE SECOND ROUND LULA HAS 47.3% AND FLÁVIO BOLSONARO 43.1%, after 47.3% to 40% on 15/Sep.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -613,7 +767,7 @@
       "reliability": 3,
       "method": "Telephone",
       "fieldDates": "2026-09-30 a 2026-10-02",
-      "note": "Gerp national poll released on 03/Oct, registration BR-00509/2026, 2,400 voters interviewed by phone between 30/Sep and 02/Oct, margin of 2pp, cost of R$ 20,000 from the pollster's own funds (Poder360). The [TSE](/en/glossary#tse) registry lists the release on 29/Sep, before the fieldwork. ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) FLÁVIO BOLSONARO HAS 43% AND LULA 41%, after 42% to 40% in the pollster's round released on 29/Sep, with Augusto Cury at 4%, Ronaldo Caiado at 3% and Renan Santos at 2%. In valid votes, Flávio Bolsonaro 46% and Lula 44%. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) FLÁVIO BOLSONARO HAS 49% AND LULA 44%, after 50% to 43% on 29/Sep.",
+      "note": "Gerp national poll released on 03/Oct, registration BR-00509/2026, 2,400 voters interviewed by phone between 30/Sep and 02/Oct, margin of 2pp, cost of R$ 20,000 from the pollster's own funds (Poder360). The TSE registry lists the release on 29/Sep, before the fieldwork. ⭐ IN THE FIRST ROUND FLÁVIO BOLSONARO HAS 43% AND LULA 41%, after 42% to 40% in the pollster's round released on 29/Sep, with Augusto Cury at 4%, Ronaldo Caiado at 3% and Renan Santos at 2%. In valid votes, Flávio Bolsonaro 46% and Lula 44%. ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 49% AND LULA 44%, after 50% to 43% on 29/Sep.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -661,7 +815,7 @@
       "reliability": 3,
       "method": "Phone (CATI)",
       "fieldDates": "2026-09-29 a 2026-10-03",
-      "note": "Futura/100% Cidades national poll released on 03/Oct, registration BR-02431/2026, 2,000 interviews, margin of 2.2pp at 95% confidence (Money Times). The [TSE](/en/glossary#tse) registry lists fieldwork from 29/Sep to 03/Oct and the report says 02 and 03/Oct. ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) FLÁVIO BOLSONARO HAS 42.5% AND LULA 40.5%, after 42.2% to 39.4% in the pollster's round of 30/Sep, with Augusto Cury at 3.9%, Ronaldo Caiado at 3.7%, Renan Santos at 2.6% and Romeu Zema at 0.8%. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) FLÁVIO BOLSONARO HAS 48% AND LULA 45.1%, after 49% to 43.5% on 30/Sep.",
+      "note": "Futura/100% Cidades national poll released on 03/Oct, registration BR-02431/2026, 2,000 interviews, margin of 2.2pp at 95% confidence (Money Times). The TSE registry lists fieldwork from 29/Sep to 03/Oct and the report says 02 and 03/Oct. ⭐ IN THE FIRST ROUND FLÁVIO BOLSONARO HAS 42.5% AND LULA 40.5%, after 42.2% to 39.4% in the pollster's round of 30/Sep, with Augusto Cury at 3.9%, Ronaldo Caiado at 3.7%, Renan Santos at 2.6% and Romeu Zema at 0.8%. ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 48% AND LULA 45.1%, after 49% to 43.5% on 30/Sep.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -713,7 +867,7 @@
       "reliability": 3,
       "method": "In person",
       "fieldDates": "2026-09-29 a 2026-10-01",
-      "note": "Vox Brasil national poll released on 02/Oct, registration BR-00148/2026, 2,100 voters interviewed face to face between 29/Sep and 01/Oct, margin of 2.15pp with 95% confidence, conducted with the institute's own funds (BNews SP, OCP News and GP1). ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) FLÁVIO BOLSONARO HAS 41.2% AND LULA 40.4%, within the margin, after Lula led by 41.1% to 37.8% in the pollster's round released on 29/Sep, with Ronaldo Caiado at 3.3%, Renan Santos at 2.2%, Romeu Zema at 1.3% and Augusto Cury at 1.2%; blank, null and none add up to 3.2% and 7% did not know. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) FLÁVIO BOLSONARO HAS 48.2% AND LULA 45.2%, within the margin, after 45.2% to 44.7% for him on 29/Sep. Lula wins the other two pairings tested: 46.3% to 42.1% against Ronaldo Caiado and 46.8% to 33.1% against Augusto Cury.",
+      "note": "Vox Brasil national poll released on 02/Oct, registration BR-00148/2026, 2,100 voters interviewed face to face between 29/Sep and 01/Oct, margin of 2.15pp with 95% confidence, conducted with the institute's own funds (BNews SP, OCP News and GP1). ⭐ IN THE FIRST ROUND FLÁVIO BOLSONARO HAS 41.2% AND LULA 40.4%, within the margin, after Lula led by 41.1% to 37.8% in the pollster's round released on 29/Sep, with Ronaldo Caiado at 3.3%, Renan Santos at 2.2%, Romeu Zema at 1.3% and Augusto Cury at 1.2%; blank, null and none add up to 3.2% and 7% did not know. ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 48.2% AND LULA 45.2%, within the margin, after 45.2% to 44.7% for him on 29/Sep. Lula wins the other two pairings tested: 46.3% to 42.1% against Ronaldo Caiado and 46.8% to 33.1% against Augusto Cury.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -779,7 +933,7 @@
       "reliability": 5,
       "method": "In person",
       "fieldDates": "2026-09-28 a 2026-10-01",
-      "note": "National Datafolha poll released on 01/Oct at 19h, registration BR-08039/2026, 2,506 interviews from 28/Sep to 01/Oct, margin of 2pp (CartaCapital, Metrópoles and VEJA). It is the pollster's second-to-last round before the first round; the last one is registered for 03/Oct. ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA HAS 42% AND FLÁVIO BOLSONARO 38%, both 2 points above the 24/Sep round, which measured 40% to 36%, with Augusto Cury at 4%, Ronaldo Caiado and Renan Santos at 3% each and Romeu Zema at 1%. In valid votes, Lula has 45% and Flávio Bolsonaro 40%, according to Folha de S.Paulo. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) LULA HAS 48% AND FLÁVIO BOLSONARO 45%, after 47% to 45% on 24/Sep, within the margin. Lula wins the other four pairings tested: 48% to 42% against Ronaldo Caiado, 47% to 42% against Augusto Cury, 49% to 40% against Romeu Zema and 48% to 39% against Renan Santos. Government approval, according to O Globo: 48% against 49% disapproval.",
+      "note": "National Datafolha poll released on 01/Oct at 19h, registration BR-08039/2026, 2,506 interviews from 28/Sep to 01/Oct, margin of 2pp (CartaCapital, Metrópoles and VEJA). It is the pollster's second-to-last round before the first round; the last one is registered for 03/Oct. ⭐ IN THE FIRST ROUND LULA HAS 42% AND FLÁVIO BOLSONARO 38%, both 2 points above the 24/Sep round, which measured 40% to 36%, with Augusto Cury at 4%, Ronaldo Caiado and Renan Santos at 3% each and Romeu Zema at 1%. In valid votes, Lula has 45% and Flávio Bolsonaro 40%, according to Folha de S.Paulo. ⚖️ IN THE SECOND ROUND LULA HAS 48% AND FLÁVIO BOLSONARO 45%, after 47% to 45% on 24/Sep, within the margin. Lula wins the other four pairings tested: 48% to 42% against Ronaldo Caiado, 47% to 42% against Augusto Cury, 49% to 40% against Romeu Zema and 48% to 39% against Renan Santos. Government approval, according to O Globo: 48% against 49% disapproval.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -859,7 +1013,7 @@
       "reliability": 3,
       "method": "Telephone",
       "fieldDates": "2026-09-26 a 2026-09-30",
-      "note": "National Real Time Big Data poll released on 01/Oct, registration BR-09503/2026, 2,000 telephone interviews with human interviewers from 26 to 30/Sep, margin of 2pp at 95% confidence, commissioned by the institute itself (Exame, UOL and Brasil de Fato). 🏷️ This pollster's sampling plan says \"national\" in its state polls too, so the label was checked against the release: the poll includes breakdowns for the Northeast, the South and the Center-West, which only exist in a national sample. ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA HAS 43% AND FLÁVIO BOLSONARO 39%, against 41% to 37% in the pollster's 24/Sep round, with Renan Santos at 4%, Augusto Cury and Ronaldo Caiado at 3% each and Romeu Zema at 1%. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) FLÁVIO BOLSONARO HAS 46% AND LULA 45%, within the margin, after 45% to 44% for him on 24/Sep. Against Ronaldo Caiado Lula has 45% to 43%, against Augusto Cury 45% to 44% and against Romeu Zema 45% to 40%. 🚫 Rejection: Lula and Flávio Bolsonaro at 49% each, Renan Santos at 43%. Government approval: 46% against 52%.",
+      "note": "National Real Time Big Data poll released on 01/Oct, registration BR-09503/2026, 2,000 telephone interviews with human interviewers from 26 to 30/Sep, margin of 2pp at 95% confidence, commissioned by the institute itself (Exame, UOL and Brasil de Fato). 🏷️ This pollster's sampling plan says \"national\" in its state polls too, so the label was checked against the release: the poll includes breakdowns for the Northeast, the South and the Center-West, which only exist in a national sample. ⭐ IN THE FIRST ROUND LULA HAS 43% AND FLÁVIO BOLSONARO 39%, against 41% to 37% in the pollster's 24/Sep round, with Renan Santos at 4%, Augusto Cury and Ronaldo Caiado at 3% each and Romeu Zema at 1%. ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 46% AND LULA 45%, within the margin, after 45% to 44% for him on 24/Sep. Against Ronaldo Caiado Lula has 45% to 43%, against Augusto Cury 45% to 44% and against Romeu Zema 45% to 40%. 🚫 Rejection: Lula and Flávio Bolsonaro at 49% each, Renan Santos at 43%. Government approval: 46% against 52%.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -932,7 +1086,7 @@
       "reliability": 3,
       "method": "Phone (CATI)",
       "fieldDates": "2026-09-24 a 2026-09-29",
-      "note": "Futura Inteligência with 100% Cidades, national poll released on 30/Sep, registration BR-01122/2026, 2,000 computer-assisted telephone interviews, margin of 2.2pp at 95% confidence (Rádio Itatiaia and Exame). 🏷️ Rádio Itatiaia and Exame give fieldwork from 25 to 29/Sep and the [TSE](/en/glossary#tse) registration declares 24 to 29/Sep; the panel keeps the registration's dates and declares the difference. ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) FLÁVIO BOLSONARO HAS 42.2% AND LULA 39.4%, against 40.4% to 38.4% in the 24/Sep round, with Ronaldo Caiado at 4%, Augusto Cury at 3.8%, Renan Santos at 3.2% and Romeu Zema at 1.6%. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) FLÁVIO BOLSONARO HAS 49% AND LULA 43.5%, the only distance outside the margin among the national polls of 30/Sep and 01/Oct. It is also the only pollster among them in which Lula loses to Ronaldo Caiado, by 42.4% to 45.6%, and to Augusto Cury, by 42% to 45.1%; against Romeu Zema he has 45.1% to 42.2% and against Renan Santos 44.6% to 40.7%. 🚫 Rejection: 48.9% for Lula and 45.6% for Flávio Bolsonaro. Government approval: 44.1% against 52.8%.",
+      "note": "Futura Inteligência with 100% Cidades, national poll released on 30/Sep, registration BR-01122/2026, 2,000 computer-assisted telephone interviews, margin of 2.2pp at 95% confidence (Rádio Itatiaia and Exame). 🏷️ Rádio Itatiaia and Exame give fieldwork from 25 to 29/Sep and the TSE registration declares 24 to 29/Sep; the panel keeps the registration's dates and declares the difference. ⭐ IN THE FIRST ROUND FLÁVIO BOLSONARO HAS 42.2% AND LULA 39.4%, against 40.4% to 38.4% in the 24/Sep round, with Ronaldo Caiado at 4%, Augusto Cury at 3.8%, Renan Santos at 3.2% and Romeu Zema at 1.6%. ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 49% AND LULA 43.5%, the only distance outside the margin among the national polls of 30/Sep and 01/Oct. It is also the only pollster among them in which Lula loses to Ronaldo Caiado, by 42.4% to 45.6%, and to Augusto Cury, by 42% to 45.1%; against Romeu Zema he has 45.1% to 42.2% and against Renan Santos 44.6% to 40.7%. 🚫 Rejection: 48.9% for Lula and 45.6% for Flávio Bolsonaro. Government approval: 44.1% against 52.8%.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -1012,7 +1166,7 @@
       "reliability": 3,
       "method": "Ideia for Canal Meio",
       "fieldDates": "2026-09-25 a 2026-09-28",
-      "note": "Ideia for Canal Meio, national poll released on 30/Sep, registration BR-08706/2026, 2,000 interviews from 25 to 28/Sep, margin of 2.2pp at 95% confidence (Gazeta do Povo and Folha de S.Paulo). ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA HAS 39.4% AND FLÁVIO BOLSONARO 38.4%, within the margin, with Augusto Cury at 6.7%, Renan Santos at 4.5%, Ronaldo Caiado at 4.4% and Romeu Zema at 3.5%. In the spontaneous question, Lula has 31.5%, Flávio Bolsonaro 30.5% and 17.5% do not know. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) LULA HAS 48.5% AND FLÁVIO BOLSONARO 48%, after a tie at 46% in the 09/Sep round. Approval, according to CNN Brasil: 49% against 49%.",
+      "note": "Ideia for Canal Meio, national poll released on 30/Sep, registration BR-08706/2026, 2,000 interviews from 25 to 28/Sep, margin of 2.2pp at 95% confidence (Gazeta do Povo and Folha de S.Paulo). ⭐ IN THE FIRST ROUND LULA HAS 39.4% AND FLÁVIO BOLSONARO 38.4%, within the margin, with Augusto Cury at 6.7%, Renan Santos at 4.5%, Ronaldo Caiado at 4.4% and Romeu Zema at 3.5%. In the spontaneous question, Lula has 31.5%, Flávio Bolsonaro 30.5% and 17.5% do not know. ⚖️ IN THE SECOND ROUND LULA HAS 48.5% AND FLÁVIO BOLSONARO 48%, after a tie at 46% in the 09/Sep round. Approval, according to CNN Brasil: 49% against 49%.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -1064,7 +1218,7 @@
       "reliability": 4,
       "method": "Phone",
       "fieldDates": "2026-09-27 a 2026-09-29",
-      "note": "Indexa for Broadcast, from Agência Estado, national poll released on 30/Sep, registration BR-00698/2026, 2,000 interviews from 27 to 29/Sep, margin of 2.2pp at 95% confidence (Gazeta do Povo and CNN Brasil). ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA HAS 39% AND FLÁVIO BOLSONARO 34%, against 38% to 34% in the 15/Sep round, with Ronaldo Caiado and Augusto Cury at 4% each, Renan Santos at 3% and Romeu Zema at 1%. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) LULA HAS 43% AND FLÁVIO BOLSONARO 42%, the same score as on 15/Sep, within the margin. Government approval: 46% against 51% disapproval.",
+      "note": "Indexa for Broadcast, from Agência Estado, national poll released on 30/Sep, registration BR-00698/2026, 2,000 interviews from 27 to 29/Sep, margin of 2.2pp at 95% confidence (Gazeta do Povo and CNN Brasil). ⭐ IN THE FIRST ROUND LULA HAS 39% AND FLÁVIO BOLSONARO 34%, against 38% to 34% in the 15/Sep round, with Ronaldo Caiado and Augusto Cury at 4% each, Renan Santos at 3% and Romeu Zema at 1%. ⚖️ IN THE SECOND ROUND LULA HAS 43% AND FLÁVIO BOLSONARO 42%, the same score as on 15/Sep, within the margin. Government approval: 46% against 51% disapproval.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -1116,7 +1270,7 @@
       "reliability": 4,
       "method": "Online/Big Data",
       "fieldDates": "2026-09-23 a 2026-09-28",
-      "note": "AtlasIntel national poll in partnership with Bloomberg released on 29/Sep, [TSE](/en/glossary#tse) registration BR-04391/2026, 5,005 interviews by random digital recruitment between 23 and 28/Sep, margin of 1.0pp at 95% confidence (Sul 21, Panorama da Bahia, JOTA and Diário de Goiás). ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA HAS 45.3% AND FLÁVIO BOLSONARO 42.2%, with Renan Santos at 5.2%, Augusto Cury at 2.0%, Ronaldo Caiado at 1.8% and Romeu Zema at 0.9%. Against the pollster's 23/Sep round, which measured 45.8% to 43.4%, both slip, and the distance widens from 2.4 to 3.1 points. 🥉 Renan Santos is third, with more than Cury, Caiado and Zema combined. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) FLÁVIO BOLSONARO HAS 47.7% AND LULA 47.6%, after Lula led by 47.7% to 47.4% on 23/Sep; both readings are within the margin. Against Ronaldo Caiado, Lula has 45.9% to 43.4%, and against Renan Santos the opponent has 28.9%. Lula approval: 45.2% against 53.6% disapproval.",
+      "note": "AtlasIntel national poll in partnership with Bloomberg released on 29/Sep, TSE registration BR-04391/2026, 5,005 interviews by random digital recruitment between 23 and 28/Sep, margin of 1.0pp at 95% confidence (Sul 21, Panorama da Bahia, JOTA and Diário de Goiás). ⭐ IN THE FIRST ROUND LULA HAS 45.3% AND FLÁVIO BOLSONARO 42.2%, with Renan Santos at 5.2%, Augusto Cury at 2.0%, Ronaldo Caiado at 1.8% and Romeu Zema at 0.9%. Against the pollster's 23/Sep round, which measured 45.8% to 43.4%, both slip, and the distance widens from 2.4 to 3.1 points. 🥉 Renan Santos is third, with more than Cury, Caiado and Zema combined. ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 47.7% AND LULA 47.6%, after Lula led by 47.7% to 47.4% on 23/Sep; both readings are within the margin. Against Ronaldo Caiado, Lula has 45.9% to 43.4%, and against Renan Santos the opponent has 28.9%. Lula approval: 45.2% against 53.6% disapproval.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -1175,7 +1329,7 @@
       "reliability": 3,
       "method": "Online",
       "fieldDates": "2026-09-24 a 2026-09-28",
-      "note": "Palver national poll released on 29/Sep, registration BR-02990/2026, 5,000 interviews by online questionnaire, margin of 2.4pp at 95% confidence, funded by the institute itself (Correio Braziliense, Estado de Minas and JOTA). 🏷️ Correio Braziliense gives fieldwork from 24 to 27/Sep and the [TSE](/en/glossary#tse) registration declares 24 to 28/Sep; the panel keeps the registration's dates and declares the difference. ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA AND FLÁVIO BOLSONARO TIE AT 44%, with Renan Santos at 8% and Augusto Cury, Ronaldo Caiado and Romeu Zema at 1% each. In the 24/Sep round the tie was at 43%. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) FLÁVIO BOLSONARO HAS 47% AND LULA 45%, after 48% to 45% on 24/Sep, within the margin. 🚫 Rejection: 51% would not vote for Lula under any circumstances and 48% for Flávio Bolsonaro; Romeu Zema has 34%, Renan Santos 33%, Ronaldo Caiado 30% and Augusto Cury 28%.",
+      "note": "Palver national poll released on 29/Sep, registration BR-02990/2026, 5,000 interviews by online questionnaire, margin of 2.4pp at 95% confidence, funded by the institute itself (Correio Braziliense, Estado de Minas and JOTA). 🏷️ Correio Braziliense gives fieldwork from 24 to 27/Sep and the TSE registration declares 24 to 28/Sep; the panel keeps the registration's dates and declares the difference. ⭐ IN THE FIRST ROUND LULA AND FLÁVIO BOLSONARO TIE AT 44%, with Renan Santos at 8% and Augusto Cury, Ronaldo Caiado and Romeu Zema at 1% each. In the 24/Sep round the tie was at 43%. ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 47% AND LULA 45%, after 48% to 45% on 24/Sep, within the margin. 🚫 Rejection: 51% would not vote for Lula under any circumstances and 48% for Flávio Bolsonaro; Romeu Zema has 34%, Renan Santos 33%, Ronaldo Caiado 30% and Augusto Cury 28%.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -1227,7 +1381,7 @@
       "reliability": 3,
       "method": "Telephone",
       "fieldDates": "2026-09-23 a 2026-09-26",
-      "note": "Gerp national poll released on 29/Sep, registration BR-03929/2026, which the [TSE](/en/glossary#tse) listed for release on 27/Sep, 2,400 interviews by telephone, margin of 2.0pp with a 95.55% confidence interval, conducted with the institute's own funds (CNN Brasil, Exame and GP1). 🏷️ CNN Brasil and Exame give fieldwork from 24 to 28/Sep and the TSE registration declares 23 to 26/Sep; the panel keeps the registration's dates and declares the difference. ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) FLÁVIO BOLSONARO HAS 42% AND LULA 40%, with Augusto Cury at 5%, Ronaldo Caiado and Renan Santos at 3% each and Romeu Zema and Samara Martins at 1% each. Against the pollster's previous round, Lula rises from 37% to 40% and Flávio Bolsonaro from 40% to 42%. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) FLÁVIO BOLSONARO HAS 50% AND LULA 43%, the widest distance among the national polls of 28 and 29/Sep, and the only one outside the poll's own margin. 🚫 Rejection, with multiple answers: 50% for Lula and 42% for Flávio Bolsonaro. Government approval: 44% against 51%.",
+      "note": "Gerp national poll released on 29/Sep, registration BR-03929/2026, which the TSE listed for release on 27/Sep, 2,400 interviews by telephone, margin of 2.0pp with a 95.55% confidence interval, conducted with the institute's own funds (CNN Brasil, Exame and GP1). 🏷️ CNN Brasil and Exame give fieldwork from 24 to 28/Sep and the TSE registration declares 23 to 26/Sep; the panel keeps the registration's dates and declares the difference. ⭐ IN THE FIRST ROUND FLÁVIO BOLSONARO HAS 42% AND LULA 40%, with Augusto Cury at 5%, Ronaldo Caiado and Renan Santos at 3% each and Romeu Zema and Samara Martins at 1% each. Against the pollster's previous round, Lula rises from 37% to 40% and Flávio Bolsonaro from 40% to 42%. ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 50% AND LULA 43%, the widest distance among the national polls of 28 and 29/Sep, and the only one outside the poll's own margin. 🚫 Rejection, with multiple answers: 50% for Lula and 42% for Flávio Bolsonaro. Government approval: 44% against 51%.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -1279,7 +1433,7 @@
       "reliability": 3,
       "method": "In person",
       "fieldDates": "2026-09-26 a 2026-09-28",
-      "note": "Vox Brasil national poll released on 29/Sep, registration BR-00895/2026, 2,100 voters in in-person household interviews between 26 and 28/Sep, margin of 2.15pp at 95% confidence, commissioned by the institute itself (Exame, Metrópoles, CNN Brasil and Portal N10). ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA HAS 41.1% AND FLÁVIO BOLSONARO 37.8%, with Ronaldo Caiado at 3.8%, Renan Santos at 2.7%, Augusto Cury at 2.2% and Romeu Zema at 1.8%. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) FLÁVIO BOLSONARO HAS 45.2% AND LULA 44.7%, within the margin, with 6.8% blank, null or none and 3.3% no answer. Lula wins the other three pairings tested: 45.3% to 41.1% against Ronaldo Caiado, 44.8% to 35.1% against Augusto Cury and 46.1% to 30.3% against Romeu Zema.",
+      "note": "Vox Brasil national poll released on 29/Sep, registration BR-00895/2026, 2,100 voters in in-person household interviews between 26 and 28/Sep, margin of 2.15pp at 95% confidence, commissioned by the institute itself (Exame, Metrópoles, CNN Brasil and Portal N10). ⭐ IN THE FIRST ROUND LULA HAS 41.1% AND FLÁVIO BOLSONARO 37.8%, with Ronaldo Caiado at 3.8%, Renan Santos at 2.7%, Augusto Cury at 2.2% and Romeu Zema at 1.8%. ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 45.2% AND LULA 44.7%, within the margin, with 6.8% blank, null or none and 3.3% no answer. Lula wins the other three pairings tested: 45.3% to 41.1% against Ronaldo Caiado, 44.8% to 35.1% against Augusto Cury and 46.1% to 30.3% against Romeu Zema.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -1343,7 +1497,7 @@
       ]
     },
     {
-      "institute": "[Quaest](/en/glossary#quaest)/Globo",
+      "institute": "Quaest/Globo",
       "date": "2026-09-28",
       "scope": "national",
       "sample": 2004,
@@ -1352,7 +1506,7 @@
       "reliability": 4,
       "method": "In person",
       "fieldDates": "2026-09-24 a 2026-09-27",
-      "note": "National [Quaest](/en/glossary#quaest) poll released on 28/Sep, [TSE](/en/glossary#tse) registration BR-06520/2026, 2,004 voters interviewed in person from Thursday to Sunday, 24 to 27/Sep, margin of 2.0pp at 95% confidence, commissioned by Grupo Globo (O Globo, G1, CartaCapital and CNN Brasil). Part of the fieldwork was done after the announcement of the ban on betting sites, on the night of 25/Sep, as the coverage itself notes. ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA HAS 39% AND FLÁVIO BOLSONARO 34%, with Ronaldo Caiado and Augusto Cury at 4% each, Renan Santos at 3% and Romeu Zema at 1%. Against the 21/Sep wave, Lula shifts from 37% to 39% and Flávio Bolsonaro from 33% to 34%. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) THE TWO ARE TIED AT 42%, with 13% blank or null and 3% undecided, after Flávio Bolsonaro was 1 point ahead on 21/Sep; the shift is within the margin. 🔄 THE POLLSTER MEASURED VOTE TRANSFER: of Romeu Zema's first-round voters, 81% would go to Flávio Bolsonaro in the second and 9% to Lula; of Renan Santos's, 48% and 23%; of Ronaldo Caiado's, 42% and 30%; of Augusto Cury's, 34% and 27%, with 38% blank, null or abstention (O Globo). In the spontaneous question Lula has 31% and Flávio Bolsonaro 27%, and 76% say their vote is final. Government approval: 46% against 49%, after 44% against 50% on 21/Sep.",
+      "note": "National Quaest poll released on 28/Sep, TSE registration BR-06520/2026, 2,004 voters interviewed in person from Thursday to Sunday, 24 to 27/Sep, margin of 2.0pp at 95% confidence, commissioned by Grupo Globo (O Globo, G1, CartaCapital and CNN Brasil). Part of the fieldwork was done after the announcement of the ban on betting sites, on the night of 25/Sep, as the coverage itself notes. ⭐ IN THE FIRST ROUND LULA HAS 39% AND FLÁVIO BOLSONARO 34%, with Ronaldo Caiado and Augusto Cury at 4% each, Renan Santos at 3% and Romeu Zema at 1%. Against the 21/Sep wave, Lula shifts from 37% to 39% and Flávio Bolsonaro from 33% to 34%. ⚖️ IN THE SECOND ROUND THE TWO ARE TIED AT 42%, with 13% blank or null and 3% undecided, after Flávio Bolsonaro was 1 point ahead on 21/Sep; the shift is within the margin. 🔄 THE POLLSTER MEASURED VOTE TRANSFER: of Romeu Zema's first-round voters, 81% would go to Flávio Bolsonaro in the second and 9% to Lula; of Renan Santos's, 48% and 23%; of Ronaldo Caiado's, 42% and 30%; of Augusto Cury's, 34% and 27%, with 38% blank, null or abstention (O Globo). In the spontaneous question Lula has 31% and Flávio Bolsonaro 27%, and 76% say their vote is final. Government approval: 46% against 49%, after 44% against 50% on 21/Sep.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -1404,7 +1558,7 @@
       "reliability": 4,
       "method": "Phone (CATI)",
       "fieldDates": "2026-09-25 a 2026-09-27",
-      "note": "National BTG/Nexus poll released on 28/Sep, 16th wave of the pollster's series, registration BR-07557/2026, 2,000 voters by telephone between 25 and 27/Sep, margin of 2.0pp at 95% confidence, commissioned by the bank BTG Pactual (CNN Brasil, Correio Braziliense, Folha de S.Paulo and Estadão). ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA HAS 42% AND FLÁVIO BOLSONARO 37%, with Augusto Cury and Ronaldo Caiado at 5% each, Renan Santos at 4%, Romeu Zema and Samara Martins at 1% each, 3% blank, null or none and 2% no answer. Against the 21/Sep wave, Lula shifts from 40% to 42% and Flávio Bolsonaro stays at 37%. ⚖️ THE POLLSTER TESTED FIVE SECOND-ROUND PAIRINGS AND LULA LEADS ALL FIVE: 46% to 44% against Flávio Bolsonaro, 46% to 42% against Ronaldo Caiado, 46% to 41% against Augusto Cury, 48% to 39% against Romeu Zema and 48% to 37% against Renan Santos. Against Flávio Bolsonaro the distance is within the margin. 🚫 Rejection: 51% would not vote for Flávio Bolsonaro under any circumstances and 48% for Lula, against 50% and 49% on 21/Sep; 7% reject both (Correio Braziliense). Government approval: 46% against 49%.",
+      "note": "National BTG/Nexus poll released on 28/Sep, 16th wave of the pollster's series, registration BR-07557/2026, 2,000 voters by telephone between 25 and 27/Sep, margin of 2.0pp at 95% confidence, commissioned by the bank BTG Pactual (CNN Brasil, Correio Braziliense, Folha de S.Paulo and Estadão). ⭐ IN THE FIRST ROUND LULA HAS 42% AND FLÁVIO BOLSONARO 37%, with Augusto Cury and Ronaldo Caiado at 5% each, Renan Santos at 4%, Romeu Zema and Samara Martins at 1% each, 3% blank, null or none and 2% no answer. Against the 21/Sep wave, Lula shifts from 40% to 42% and Flávio Bolsonaro stays at 37%. ⚖️ THE POLLSTER TESTED FIVE SECOND-ROUND PAIRINGS AND LULA LEADS ALL FIVE: 46% to 44% against Flávio Bolsonaro, 46% to 42% against Ronaldo Caiado, 46% to 41% against Augusto Cury, 48% to 39% against Romeu Zema and 48% to 37% against Renan Santos. Against Flávio Bolsonaro the distance is within the margin. 🚫 Rejection: 51% would not vote for Flávio Bolsonaro under any circumstances and 48% for Lula, against 50% and 49% on 21/Sep; 7% reject both (Correio Braziliense). Government approval: 46% against 49%.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -1484,7 +1638,7 @@
       "reliability": 3,
       "method": "Online",
       "fieldDates": "2026-09-20 a 2026-09-23",
-      "note": "Palver national poll released on 24/Sep, [TSE](/en/glossary#tse) registration BR-09587/2026, 5,000 voters by online questionnaire between 20 and 23/Sep, survey funded by the institute itself, 95% confidence (CNN Brasil, UOL, Gazeta do Povo, CartaCapital and JOTA). ⭐ IN THE PROMPTED [FIRST ROUND](/en/glossary#primeiro-turno) THE TWO TIE AT 43%, and it is the house itself changing sign: on 21/Sep it measured Flávio Bolsonaro 42% and Lula 41%. Lula rises 2 points, Flávio Bolsonaro 1, and the one who gives way is Renan Santos, from 11% to 8%, the largest fall of any name in this wave. Augusto Cury stays at 2%, Ronaldo Caiado and Romeu Zema at 1% each. 🗣️ And the SPONTANEOUS scenario of the same wave gives a different result: Lula 41% against 39%, that is, the lead appears when the respondent says the name with no list in front of him and disappears when the list is read out. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) FLÁVIO BOLSONARO HAS 48% AND LULA 45%, with the gap narrowing from 4 to 3 points against the house wave of 21/Sep, within the margin. Lula wins the other four pairings: 45% to 43% against Romeu Zema, 44% to 42% against Ronaldo Caiado, 44% to 36% against Augusto Cury and 44% to 34% against Renan Santos. 🏷️ THE MARGIN DIVERGES BETWEEN OUTLETS: UOL states 2.5pp and CNN Brasil 3.0pp for the same wave. The panel keeps 2.5pp, which is the figure from the article that reproduces the full technical sheet, and records the divergence instead of choosing in silence. Government approval in the same wave: 44% approve against 55% who disapprove, and voting rejection is 53% for Lula, 48% for Flávio Bolsonaro and 34% for Renan Santos and Romeu Zema.",
+      "note": "Palver national poll released on 24/Sep, TSE registration BR-09587/2026, 5,000 voters by online questionnaire between 20 and 23/Sep, survey funded by the institute itself, 95% confidence (CNN Brasil, UOL, Gazeta do Povo, CartaCapital and JOTA). ⭐ IN THE PROMPTED FIRST ROUND THE TWO TIE AT 43%, and it is the house itself changing sign: on 21/Sep it measured Flávio Bolsonaro 42% and Lula 41%. Lula rises 2 points, Flávio Bolsonaro 1, and the one who gives way is Renan Santos, from 11% to 8%, the largest fall of any name in this wave. Augusto Cury stays at 2%, Ronaldo Caiado and Romeu Zema at 1% each. 🗣️ And the SPONTANEOUS scenario of the same wave gives a different result: Lula 41% against 39%, that is, the lead appears when the respondent says the name with no list in front of him and disappears when the list is read out. ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 48% AND LULA 45%, with the gap narrowing from 4 to 3 points against the house wave of 21/Sep, within the margin. Lula wins the other four pairings: 45% to 43% against Romeu Zema, 44% to 42% against Ronaldo Caiado, 44% to 36% against Augusto Cury and 44% to 34% against Renan Santos. 🏷️ THE MARGIN DIVERGES BETWEEN OUTLETS: UOL states 2.5pp and CNN Brasil 3.0pp for the same wave. The panel keeps 2.5pp, which is the figure from the article that reproduces the full technical sheet, and records the divergence instead of choosing in silence. Government approval in the same wave: 44% approve against 55% who disapprove, and voting rejection is 53% for Lula, 48% for Flávio Bolsonaro and 34% for Renan Santos and Romeu Zema.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -1516,7 +1670,7 @@
           ]
         },
         {
-          "name": "Spontaneous scenario ([first round](/en/glossary#primeiro-turno))",
+          "name": "Spontaneous scenario (first round)",
           "results": [
             {
               "candidate": "Lula (PT)",
@@ -1581,7 +1735,7 @@
       "reliability": 3,
       "method": "Telephone",
       "fieldDates": "2026-09-20 a 2026-09-23",
-      "note": "PoderData in partnership with Aya, national poll released on 24/Sep, [TSE](/en/glossary#tse) registration BR-01739/2026, 3,000 voters by phone between 20 and 23/Sep, margin of 1.8pp with 95% confidence, survey funded by the institute itself (CNN Brasil, Poder360, SBT News, Jovem Pan, ND Mais and Revista Oeste). ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA HAS 41% AND FLÁVIO BOLSONARO 39%, and both rose against the house wave of 17/Sep, which measured 37% and 36%: that is 4 points for Lula and 3 for Flávio Bolsonaro, so the distance WIDENED from 1 to 2 points. Augusto Cury gives up from 8% to 6%, Renan Santos stays at 3%, Ronaldo Caiado falls from 3% to 2% and Romeu Zema stays at 1%. Blank and void votes total 4% and undecided voters 2%. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) FLÁVIO BOLSONARO HAS 46% AND LULA 45%, and the gap narrowed from 2 to 1 point against 17/Sep because Lula rose 1 point and his opponent stood still. 🔑 AND THE HOUSE TESTS A PAIRING ALMOST NO OTHER HOUSE TESTS, with a result that contradicts the first round order: Augusto Cury beats Lula by 45% to 42%, the same score as 17/Sep, and Flávio Bolsonaro beats Augusto Cury by 41% to 39%. Voting rejection in the same wave: 49% for Lula and 47% for Flávio Bolsonaro.",
+      "note": "PoderData in partnership with Aya, national poll released on 24/Sep, TSE registration BR-01739/2026, 3,000 voters by phone between 20 and 23/Sep, margin of 1.8pp with 95% confidence, survey funded by the institute itself (CNN Brasil, Poder360, SBT News, Jovem Pan, ND Mais and Revista Oeste). ⭐ IN THE FIRST ROUND LULA HAS 41% AND FLÁVIO BOLSONARO 39%, and both rose against the house wave of 17/Sep, which measured 37% and 36%: that is 4 points for Lula and 3 for Flávio Bolsonaro, so the distance WIDENED from 1 to 2 points. Augusto Cury gives up from 8% to 6%, Renan Santos stays at 3%, Ronaldo Caiado falls from 3% to 2% and Romeu Zema stays at 1%. Blank and void votes total 4% and undecided voters 2%. ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 46% AND LULA 45%, and the gap narrowed from 2 to 1 point against 17/Sep because Lula rose 1 point and his opponent stood still. 🔑 AND THE HOUSE TESTS A PAIRING ALMOST NO OTHER HOUSE TESTS, with a result that contradicts the first round order: Augusto Cury beats Lula by 45% to 42%, the same score as 17/Sep, and Flávio Bolsonaro beats Augusto Cury by 41% to 39%. Voting rejection in the same wave: 49% for Lula and 47% for Flávio Bolsonaro.",
       "scenarios": [
         {
           "name": "Prompted scenario (first round)",
@@ -1647,7 +1801,7 @@
       "reliability": 2,
       "method": "In person",
       "fieldDates": "2026-09-18 a 2026-09-23",
-      "note": "Alfa Inteligência in partnership with TMC, national poll released on 24/Sep, [TSE](/en/glossary#tse) registration BR-02512/2026, 2,700 voters in face to face interviews between 18 and 23/Sep, margin of 1.8pp with 95% confidence, commissioned by Alfa Inteligência itself (Exame, Gazeta do Povo, CartaCapital, Revista Oeste, GP1 and TMC). 🆕 IT IS THE FIRST WAVE FROM THIS HOUSE IN THE PANEL, and its reliability here is 2, the lowest in the table, because it is a recent institute with no track record from a closed election. ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA HAS 40% AND FLÁVIO BOLSONARO 33%, that is 7 points of distance, against 4 at Datafolha, 4 at Real Time, 2 at PoderData, zero at Palver and 2 the other way at Futura, across the six national polls released on this 24/Sep. And it is still a fall for Lula within the house own series: Exame records that his lead fell from 14 to 7 points against the previous Alfa wave, which is not in this panel. Augusto Cury has 6%, Ronaldo Caiado 5%, Renan Santos 3% and Romeu Zema 1%, with 6% blank and void and 5% undecided. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) THE MAIN PAIRING TIES AT 43% TO 43%, and Lula wins the other four: 46% to 39% against Romeu Zema, 43% to 42% against Ronaldo Caiado, 43% to 37% against Renan Santos and 42% to 39% against Augusto Cury. 🗺️ The house publishes regional breakdowns: Lula has 56% to 24% in the Northeast and 45% to 27% among those earning up to two minimum wages, and Flávio Bolsonaro has 37% to 34% among evangelicals, 42% to 35% in the South and 36% to 33% in the Southeast. Management: 46% approve and 50% disapprove, 55% say Lula does not deserve re-election against 43% who back a new term, and 45% see the country on the wrong track against 37% who see the right one.",
+      "note": "Alfa Inteligência in partnership with TMC, national poll released on 24/Sep, TSE registration BR-02512/2026, 2,700 voters in face to face interviews between 18 and 23/Sep, margin of 1.8pp with 95% confidence, commissioned by Alfa Inteligência itself (Exame, Gazeta do Povo, CartaCapital, Revista Oeste, GP1 and TMC). 🆕 IT IS THE FIRST WAVE FROM THIS HOUSE IN THE PANEL, and its reliability here is 2, the lowest in the table, because it is a recent institute with no track record from a closed election. ⭐ IN THE FIRST ROUND LULA HAS 40% AND FLÁVIO BOLSONARO 33%, that is 7 points of distance, against 4 at Datafolha, 4 at Real Time, 2 at PoderData, zero at Palver and 2 the other way at Futura, across the six national polls released on this 24/Sep. And it is still a fall for Lula within the house own series: Exame records that his lead fell from 14 to 7 points against the previous Alfa wave, which is not in this panel. Augusto Cury has 6%, Ronaldo Caiado 5%, Renan Santos 3% and Romeu Zema 1%, with 6% blank and void and 5% undecided. ⚖️ IN THE SECOND ROUND THE MAIN PAIRING TIES AT 43% TO 43%, and Lula wins the other four: 46% to 39% against Romeu Zema, 43% to 42% against Ronaldo Caiado, 43% to 37% against Renan Santos and 42% to 39% against Augusto Cury. 🗺️ The house publishes regional breakdowns: Lula has 56% to 24% in the Northeast and 45% to 27% among those earning up to two minimum wages, and Flávio Bolsonaro has 37% to 34% among evangelicals, 42% to 35% in the South and 36% to 33% in the Southeast. Management: 46% approve and 50% disapprove, 55% say Lula does not deserve re-election against 43% who back a new term, and 45% see the country on the wrong track against 37% who see the right one.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -1727,7 +1881,7 @@
       "reliability": 5,
       "method": "In person",
       "fieldDates": "2026-09-22 a 2026-09-23",
-      "note": "Datafolha national poll released on 24/Sep at 18:41 BRT, [TSE](/en/glossary#tse) registration BR-00304/2026, 2,002 people aged 16 or over interviewed face to face between 22 and 23/Sep, margin of 2.0pp with 95% confidence (G1, Folha de S.Paulo, Estadão, Valor Econômico, CartaCapital, NSC Total and VEJA). ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA HAS 40% AND FLÁVIO BOLSONARO 36%, and the distance WIDENED from 3 to 4 points against the house wave of 17/Sep: Lula rose 1 point and his opponent stayed at the same 36%. Augusto Cury gives up from 6% to 5%, Ronaldo Caiado stays at 4%, Renan Santos at 3% and Romeu Zema falls from 2% to 1%. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) LULA HAS 47% AND FLÁVIO BOLSONARO 45%, both one point above 17/Sep, and it is the ONLY one of the six national polls of 24/Sep that puts Lula ahead in that pairing. The 4 point distance in the first round sits at the edge of the 2.0pp margin either way, and the house declares a [statistical tie](/en/glossary#empate-tecnico) in both rounds. 🔒 THE VOTE DECISION IS LOCKED IN: 80% say they are fully decided and 20% could change, with 87% decided among Lula voters and 85% among those of Flávio Bolsonaro, ten days from the first round. Rejection of the two ties at 45% each. 🏷️ The TSE registration states fieldwork from 22 to 24/Sep and the house published fieldwork from 22 to 23/Sep; the panel keeps the fieldwork from the release and records both.",
+      "note": "Datafolha national poll released on 24/Sep at 18:41 BRT, TSE registration BR-00304/2026, 2,002 people aged 16 or over interviewed face to face between 22 and 23/Sep, margin of 2.0pp with 95% confidence (G1, Folha de S.Paulo, Estadão, Valor Econômico, CartaCapital, NSC Total and VEJA). ⭐ IN THE FIRST ROUND LULA HAS 40% AND FLÁVIO BOLSONARO 36%, and the distance WIDENED from 3 to 4 points against the house wave of 17/Sep: Lula rose 1 point and his opponent stayed at the same 36%. Augusto Cury gives up from 6% to 5%, Ronaldo Caiado stays at 4%, Renan Santos at 3% and Romeu Zema falls from 2% to 1%. ⚖️ IN THE SECOND ROUND LULA HAS 47% AND FLÁVIO BOLSONARO 45%, both one point above 17/Sep, and it is the ONLY one of the six national polls of 24/Sep that puts Lula ahead in that pairing. The 4 point distance in the first round sits at the edge of the 2.0pp margin either way, and the house declares a statistical tie in both rounds. 🔒 THE VOTE DECISION IS LOCKED IN: 80% say they are fully decided and 20% could change, with 87% decided among Lula voters and 85% among those of Flávio Bolsonaro, ten days from the first round. Rejection of the two ties at 45% each. 🏷️ The TSE registration states fieldwork from 22 to 24/Sep and the house published fieldwork from 22 to 23/Sep; the panel keeps the fieldwork from the release and records both.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -1779,7 +1933,7 @@
       "reliability": 3,
       "method": "Phone + digital recruitment",
       "fieldDates": "2026-09-19 a 2026-09-23",
-      "note": "Real Time Big Data national poll released on 24/Sep, [TSE](/en/glossary#tse) registration BR-04202/2026, 2,000 voters by phone and digital recruitment between 19 and 23/Sep, margin of 2.0pp with 95% confidence (CNN Brasil, Exame, Gazeta do Povo, UOL, VEJA, CartaCapital, Sul 21 and Brasil de Fato). ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA HAS 41% AND FLÁVIO BOLSONARO 37%, and the reading inside the house itself is one of SHRINKING: in its wave of 01/Sep, the last one in the panel, the scenario without Pablo Marçal measured Lula 38% and Flávio Bolsonaro 30%, so the lead fell from 8 to 4 points and the opponent rose 7. Augusto Cury and Renan Santos tie at 6%, Ronaldo Caiado has 2% and Romeu Zema 1%, with 3% blank and void and 3% undecided. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) FLÁVIO BOLSONARO HAS 45% AND LULA 44%, within the margin, after a 44% to 44% tie on 01/Sep. 🏷️ THE NATIONAL LABEL OF THIS REGISTRATION WAS CONFIRMED AT RELEASE, and that matters because it rested only on the sampling plan: the house writes Brazilian electorate in 16 out of 16 state polls in which the methodology settles the scope, which makes that field unable to tell them apart. Two outlets independent of each other, Gazeta do Povo and Exame, published the same registration number, the same 2,000 respondents, the same fieldwork from 19 to 23/Sep and the presidential race with no state breakdown. Voting rejection in the same wave: 50% for Lula and 49% for Flávio Bolsonaro, and 55% say they are discouraged about the presidential election.",
+      "note": "Real Time Big Data national poll released on 24/Sep, TSE registration BR-04202/2026, 2,000 voters by phone and digital recruitment between 19 and 23/Sep, margin of 2.0pp with 95% confidence (CNN Brasil, Exame, Gazeta do Povo, UOL, VEJA, CartaCapital, Sul 21 and Brasil de Fato). ⭐ IN THE FIRST ROUND LULA HAS 41% AND FLÁVIO BOLSONARO 37%, and the reading inside the house itself is one of SHRINKING: in its wave of 01/Sep, the last one in the panel, the scenario without Pablo Marçal measured Lula 38% and Flávio Bolsonaro 30%, so the lead fell from 8 to 4 points and the opponent rose 7. Augusto Cury and Renan Santos tie at 6%, Ronaldo Caiado has 2% and Romeu Zema 1%, with 3% blank and void and 3% undecided. ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 45% AND LULA 44%, within the margin, after a 44% to 44% tie on 01/Sep. 🏷️ THE NATIONAL LABEL OF THIS REGISTRATION WAS CONFIRMED AT RELEASE, and that matters because it rested only on the sampling plan: the house writes Brazilian electorate in 16 out of 16 state polls in which the methodology settles the scope, which makes that field unable to tell them apart. Two outlets independent of each other, Gazeta do Povo and Exame, published the same registration number, the same 2,000 respondents, the same fieldwork from 19 to 23/Sep and the presidential race with no state breakdown. Voting rejection in the same wave: 50% for Lula and 49% for Flávio Bolsonaro, and 55% say they are discouraged about the presidential election.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -1831,7 +1985,7 @@
       "reliability": 3,
       "method": "Phone (CATI)",
       "fieldDates": "2026-09-19 a 2026-09-23",
-      "note": "Futura Inteligência commissioned by 100% Cidades, national poll released on 24/Sep, [TSE](/en/glossary#tse) registration BR-05268/2026, 2,000 voters by phone interview between 19 and 23/Sep, margin of 2.2pp with 95% confidence, survey funded by the institute itself (CNN Brasil, Exame, Portal VV8, Band FM and Diário 360). ⭐ IT IS THE ONLY ONE OF THE SIX NATIONAL POLLS OF 24/Sep THAT PUTS FLÁVIO BOLSONARO AHEAD IN THE [FIRST ROUND](/en/glossary#primeiro-turno), with 40.4% against 38.4%, and the switch happens inside the house itself: on 17/Sep it measured Lula 38.3% and Flávio Bolsonaro 37.7%. Lula stood practically still, 0.1 point higher, and his opponent rose 2.7. Ronaldo Caiado rises from 4.5% to 5.7% and passes Augusto Cury, who falls from 6.5% to 5.6%; Renan Santos gives up from 3.4% to 2.4% and Romeu Zema stays at 0.9%. Undecided voters are 3.2% and blank and void 2.1%. ⚖️ IN THE [SECOND ROUND](/en/glossary#segundo-turno) FLÁVIO BOLSONARO HAS 49.4% AND LULA 43.7%, and the 5.7 points of distance fall OUTSIDE the 2.2pp margin, which the house describes as a statistical advantage. Its gap widened from 4.4 to 5.7 points against 17/Sep, with Lula at exactly the same 43.7%. 📌 AN ADVANTAGE OUTSIDE THE MARGIN IN THAT PAIRING IS NOT NEW IN THIS BASE: of the 34 second round readings between the two already recorded in the panel, 11 fell outside the margin of the poll itself and 8 of them favoured Flávio Bolsonaro, including Gerp on 09 and 17/Sep, Veritá on 06/Sep and this same house on 17/Sep. The house also measures two other pairings in which Lula does not win: Ronaldo Caiado 46.5% to 42.4% and Romeu Zema 43.8% to 43.3%. Government approval in the same wave: 44.2% approve against 53.3% who disapprove.",
+      "note": "Futura Inteligência commissioned by 100% Cidades, national poll released on 24/Sep, TSE registration BR-05268/2026, 2,000 voters by phone interview between 19 and 23/Sep, margin of 2.2pp with 95% confidence, survey funded by the institute itself (CNN Brasil, Exame, Portal VV8, Band FM and Diário 360). ⭐ IT IS THE ONLY ONE OF THE SIX NATIONAL POLLS OF 24/Sep THAT PUTS FLÁVIO BOLSONARO AHEAD IN THE FIRST ROUND, with 40.4% against 38.4%, and the switch happens inside the house itself: on 17/Sep it measured Lula 38.3% and Flávio Bolsonaro 37.7%. Lula stood practically still, 0.1 point higher, and his opponent rose 2.7. Ronaldo Caiado rises from 4.5% to 5.7% and passes Augusto Cury, who falls from 6.5% to 5.6%; Renan Santos gives up from 3.4% to 2.4% and Romeu Zema stays at 0.9%. Undecided voters are 3.2% and blank and void 2.1%. ⚖️ IN THE SECOND ROUND FLÁVIO BOLSONARO HAS 49.4% AND LULA 43.7%, and the 5.7 points of distance fall OUTSIDE the 2.2pp margin, which the house describes as a statistical advantage. Its gap widened from 4.4 to 5.7 points against 17/Sep, with Lula at exactly the same 43.7%. 📌 AN ADVANTAGE OUTSIDE THE MARGIN IN THAT PAIRING IS NOT NEW IN THIS BASE: of the 34 second round readings between the two already recorded in the panel, 11 fell outside the margin of the poll itself and 8 of them favoured Flávio Bolsonaro, including Gerp on 09 and 17/Sep, Veritá on 06/Sep and this same house on 17/Sep. The house also measures two other pairings in which Lula does not win: Ronaldo Caiado 46.5% to 42.4% and Romeu Zema 43.8% to 43.3%. Government approval in the same wave: 44.2% approve against 53.3% who disapprove.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -1897,7 +2051,7 @@
       "reliability": 4,
       "method": "Online/Big Data",
       "fieldDates": "2026-09-17 a 2026-09-22",
-      "note": "AtlasIntel in partnership with Bloomberg, national poll released on 23/Sep, fieldwork from 17 to 22/Sep, [TSE](/en/glossary#tse) registration BR-04739/2026, 5,015 participants by online questionnaire, margin of 1.0pp with 95% confidence (CartaCapital, CNN Brasil, JOTA, Estadão and Brasil de Fato). ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA HAS 45.8% AND FLÁVIO BOLSONARO 43.4%, and the distance between them did NOT move: both rose 1.7pp against the house's previous round, of 17/Sep, when they stood at 44.1% and 41.7%. What gave ground was the whole third way, Renan Santos from 5.1% to 4.5%, Augusto Cury from 3.5% to 2.1%, Ronaldo Caiado from 1.7% to 1.3% and Romeu Zema from 1.1% to 0.9%, plus blank and null from 1.6% to 0.7%. ⭐ THE HOUSE TESTED FIVE [RUNOFF](/en/glossary#segundo-turno) PAIRINGS AND LULA WINS OR TIES ALL FIVE: 47.7% to 47.4% against Flávio Bolsonaro, 47.6% to 42.2% against Romeu Zema, 46.6% to 44.0% against Ronaldo Caiado, 46.2% to 39.4% against Augusto Cury and 46.5% to 31.2% against Renan Santos. 🔑 IN THE MAIN PAIRING THE SIGN FLIPPED inside the house's own series: on 17/Sep Flávio Bolsonaro had 47.2% against 46.8%, and now Lula comes out numerically ahead by 0.3pp, well below the 1.0pp margin. It is the third week running of a [statistical tie](/en/glossary#empate-tecnico) in that pairing. In valid votes the pairing comes out 50.2% to 49.8%. 🏷️ The TSE registration declares 5,000 interviews and the house published 5,015; the panel keeps the realized number.",
+      "note": "AtlasIntel in partnership with Bloomberg, national poll released on 23/Sep, fieldwork from 17 to 22/Sep, TSE registration BR-04739/2026, 5,015 participants by online questionnaire, margin of 1.0pp with 95% confidence (CartaCapital, CNN Brasil, JOTA, Estadão and Brasil de Fato). ⭐ IN THE FIRST ROUND LULA HAS 45.8% AND FLÁVIO BOLSONARO 43.4%, and the distance between them did NOT move: both rose 1.7pp against the house's previous round, of 17/Sep, when they stood at 44.1% and 41.7%. What gave ground was the whole third way, Renan Santos from 5.1% to 4.5%, Augusto Cury from 3.5% to 2.1%, Ronaldo Caiado from 1.7% to 1.3% and Romeu Zema from 1.1% to 0.9%, plus blank and null from 1.6% to 0.7%. ⭐ THE HOUSE TESTED FIVE RUNOFF PAIRINGS AND LULA WINS OR TIES ALL FIVE: 47.7% to 47.4% against Flávio Bolsonaro, 47.6% to 42.2% against Romeu Zema, 46.6% to 44.0% against Ronaldo Caiado, 46.2% to 39.4% against Augusto Cury and 46.5% to 31.2% against Renan Santos. 🔑 IN THE MAIN PAIRING THE SIGN FLIPPED inside the house's own series: on 17/Sep Flávio Bolsonaro had 47.2% against 46.8%, and now Lula comes out numerically ahead by 0.3pp, well below the 1.0pp margin. It is the third week running of a statistical tie in that pairing. In valid votes the pairing comes out 50.2% to 49.8%. 🏷️ The TSE registration declares 5,000 interviews and the house published 5,015; the panel keeps the realized number.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -1977,7 +2131,7 @@
       "reliability": 3,
       "method": "Online",
       "fieldDates": "2026-09-15 a 2026-09-20",
-      "note": "Palver national poll released on 21/Sep, registration BR-00860/2026, 5,000 voters interviewed online, 2.8pp margin at 95% confidence, fieldwork from 15 to 20/Sep (Folha de S.Paulo, UOL, CNN Brasil, JOTA, Gazeta do Povo and Correio Braziliense). ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) FLÁVIO BOLSONARO HAS 42% AND LULA 41%, one point of distance that fits within a single margin, so the firm measures a [statistical tie](/en/glossary#empate-tecnico). ⭐ RENAN SANTOS APPEARS THIRD WITH 11%, against 2% for Augusto Cury, 1% for Ronaldo Caiado and 1% for Romeu Zema. ⭐ THE FIRM TESTED FIVE SECOND-ROUND PAIRINGS AND LULA SCORES 43% IN ALL FIVE: he loses to Flávio Bolsonaro 43% to 47%, to Romeu Zema 43% to 44% and to Ronaldo Caiado 43% to 44%, and beats Augusto Cury 43% to 35% and Renan Santos 43% to 34%. His number does not move with the opponent: all the variation is on the other side. ⚖️ BTG/NEXUS, RELEASED THE SAME DAY AND WITH FIELDWORK CLOSING ON THE SAME 20/Sep, measures the opposite sign in the main pairing and also inverts the order of the third way, with Augusto Cury at 6% and Renan Santos at 3%. 🏷️ The methodology declared in the registration is an online survey through social media ads, with a NON-PROBABILITY sample controlled by quotas and iterative weights anchored in IBGE and [TSE](/en/glossary#tse) data. ⚠️ Gazeta do Povo publishes Lula with 40% in the first round, where Folha and Araripina em Foco publish 41%; the panel keeps 41% and records the divergence between coverages.",
+      "note": "Palver national poll released on 21/Sep, registration BR-00860/2026, 5,000 voters interviewed online, 2.8pp margin at 95% confidence, fieldwork from 15 to 20/Sep (Folha de S.Paulo, UOL, CNN Brasil, JOTA, Gazeta do Povo and Correio Braziliense). ⭐ IN THE FIRST ROUND FLÁVIO BOLSONARO HAS 42% AND LULA 41%, one point of distance that fits within a single margin, so the firm measures a statistical tie. ⭐ RENAN SANTOS APPEARS THIRD WITH 11%, against 2% for Augusto Cury, 1% for Ronaldo Caiado and 1% for Romeu Zema. ⭐ THE FIRM TESTED FIVE SECOND-ROUND PAIRINGS AND LULA SCORES 43% IN ALL FIVE: he loses to Flávio Bolsonaro 43% to 47%, to Romeu Zema 43% to 44% and to Ronaldo Caiado 43% to 44%, and beats Augusto Cury 43% to 35% and Renan Santos 43% to 34%. His number does not move with the opponent: all the variation is on the other side. ⚖️ BTG/NEXUS, RELEASED THE SAME DAY AND WITH FIELDWORK CLOSING ON THE SAME 20/Sep, measures the opposite sign in the main pairing and also inverts the order of the third way, with Augusto Cury at 6% and Renan Santos at 3%. 🏷️ The methodology declared in the registration is an online survey through social media ads, with a NON-PROBABILITY sample controlled by quotas and iterative weights anchored in IBGE and TSE data. ⚠️ Gazeta do Povo publishes Lula with 40% in the first round, where Folha and Araripina em Foco publish 41%; the panel keeps 41% and records the divergence between coverages.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -2057,7 +2211,7 @@
       "reliability": 4,
       "method": "Phone (CATI)",
       "fieldDates": "2026-09-18 a 2026-09-20",
-      "note": "BTG/Nexus national poll released on 21/Sep, the firm's 15th wave in the series, registration BR-00485/2026, 2,006 voters by phone via CATI between 18 and 20/Sep, 2.0pp margin at 95% confidence, commissioned by BTG Pactual bank (UOL, Poder360, CNN Brasil, Gazeta do Povo, Opera Mundi and the firm's own site). ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA HAS 40% AND FLÁVIO BOLSONARO 37%, with Augusto Cury at 6%, Ronaldo Caiado at 5%, Renan Santos at 3%, Romeu Zema at 1% and Samara Martins at 1%, plus 4% blank, null or none and 2% no answer. ⭐ THE FIRM TESTED FIVE SECOND-ROUND PAIRINGS AND LULA WINS OR TIES ALL FIVE: 46% to 45% against Flávio Bolsonaro, 44% to 43% against Augusto Cury, 45% to 45% against Ronaldo Caiado, 47% to 41% against Romeu Zema and 47% to 39% against Renan Santos. His number ranges from 44% to 47% depending on the opponent. ⚖️ PALVER, RELEASED THE SAME DAY AND WITH FIELDWORK CLOSING ON THE SAME 20/Sep, measures the opposite sign in the main pairing and inverts the order of the third way, with Renan Santos at 11% and Augusto Cury at 2%. 🏷️ The [TSE](/en/glossary#tse) registration declares 2,000 interviews and the firm published 2,006; the panel keeps the number actually carried out.",
+      "note": "BTG/Nexus national poll released on 21/Sep, the firm's 15th wave in the series, registration BR-00485/2026, 2,006 voters by phone via CATI between 18 and 20/Sep, 2.0pp margin at 95% confidence, commissioned by BTG Pactual bank (UOL, Poder360, CNN Brasil, Gazeta do Povo, Opera Mundi and the firm's own site). ⭐ IN THE FIRST ROUND LULA HAS 40% AND FLÁVIO BOLSONARO 37%, with Augusto Cury at 6%, Ronaldo Caiado at 5%, Renan Santos at 3%, Romeu Zema at 1% and Samara Martins at 1%, plus 4% blank, null or none and 2% no answer. ⭐ THE FIRM TESTED FIVE SECOND-ROUND PAIRINGS AND LULA WINS OR TIES ALL FIVE: 46% to 45% against Flávio Bolsonaro, 44% to 43% against Augusto Cury, 45% to 45% against Ronaldo Caiado, 47% to 41% against Romeu Zema and 47% to 39% against Renan Santos. His number ranges from 44% to 47% depending on the opponent. ⚖️ PALVER, RELEASED THE SAME DAY AND WITH FIELDWORK CLOSING ON THE SAME 20/Sep, measures the opposite sign in the main pairing and inverts the order of the third way, with Renan Santos at 11% and Augusto Cury at 2%. 🏷️ The TSE registration declares 2,000 interviews and the firm published 2,006; the panel keeps the number actually carried out.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -2128,7 +2282,7 @@
       ]
     },
     {
-      "institute": "[Quaest](/en/glossary#quaest)/Globo",
+      "institute": "Quaest/Globo",
       "date": "2026-09-21",
       "scope": "national",
       "sample": 2004,
@@ -2137,7 +2291,7 @@
       "reliability": 4,
       "method": "In person",
       "fieldDates": "2026-09-17 a 2026-09-20",
-      "note": "[Quaest](/en/glossary#quaest) national poll released on 21/Sep at 18:06 BRT, [TSE](/en/glossary#tse) registration BR-06004/2026, 2,004 voters aged 16 or over interviewed face to face between 17 and 20/Sep, 2.0pp margin with 95% confidence, commissioned by Grupo Globo (CNN Brasil, CartaCapital, Poder360, CBN and Folha de S.Paulo). ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA HAS 37% AND FLÁVIO BOLSONARO 33%, with Augusto Cury at 6%, Ronaldo Caiado at 4%, Renan Santos at 3%, Romeu Zema at 1% and Samara Martins at 1%, plus 7% blank, null or will not vote and 8% undecided. Against the house's previous round, Flávio Bolsonaro moves 2 points up and Lula 1, both inside the margin. ⭐ THE HOUSE TESTED FIVE [RUNOFF](/en/glossary#segundo-turno) PAIRINGS: Flávio Bolsonaro has 42% against 41% for Lula, and Lula wins the other four, 41% to 39% against Ronaldo Caiado, 41% to 38% against Renan Santos, 39% to 35% against Augusto Cury and 46% to 32% against Romeu Zema. ⚖️ IT IS THE THIRD NATIONAL SURVEY WITH FIELDWORK CLOSING ON THE SAME 20/Sep, alongside BTG/Nexus and Palver, and the three use different methods: face to face, telephone and online. In the first round the distance between Lula and Flávio Bolsonaro comes out at 4 points here, 3 points at BTG/Nexus and 1 point in Flávio Bolsonaro's favor at Palver. 📌 The house also measured government approval, 44% against 50% disapproval, and the administration rating, 33% positive, 23% fair and 42% negative. 🏷️ The panel names this round after the commissioner declared at release, Grupo Globo; earlier rounds by the same house are on the panel as Quaest/Genial, and the comparison with the previous round is the one the house itself published.",
+      "note": "Quaest national poll released on 21/Sep at 18:06 BRT, TSE registration BR-06004/2026, 2,004 voters aged 16 or over interviewed face to face between 17 and 20/Sep, 2.0pp margin with 95% confidence, commissioned by Grupo Globo (CNN Brasil, CartaCapital, Poder360, CBN and Folha de S.Paulo). ⭐ IN THE FIRST ROUND LULA HAS 37% AND FLÁVIO BOLSONARO 33%, with Augusto Cury at 6%, Ronaldo Caiado at 4%, Renan Santos at 3%, Romeu Zema at 1% and Samara Martins at 1%, plus 7% blank, null or will not vote and 8% undecided. Against the house's previous round, Flávio Bolsonaro moves 2 points up and Lula 1, both inside the margin. ⭐ THE HOUSE TESTED FIVE RUNOFF PAIRINGS: Flávio Bolsonaro has 42% against 41% for Lula, and Lula wins the other four, 41% to 39% against Ronaldo Caiado, 41% to 38% against Renan Santos, 39% to 35% against Augusto Cury and 46% to 32% against Romeu Zema. ⚖️ IT IS THE THIRD NATIONAL SURVEY WITH FIELDWORK CLOSING ON THE SAME 20/Sep, alongside BTG/Nexus and Palver, and the three use different methods: face to face, telephone and online. In the first round the distance between Lula and Flávio Bolsonaro comes out at 4 points here, 3 points at BTG/Nexus and 1 point in Flávio Bolsonaro's favor at Palver. 📌 The house also measured government approval, 44% against 50% disapproval, and the administration rating, 33% positive, 23% fair and 42% negative. 🏷️ The panel names this round after the commissioner declared at release, Grupo Globo; earlier rounds by the same house are on the panel as Quaest/Genial, and the comparison with the previous round is the one the house itself published.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -2217,7 +2371,7 @@
       "reliability": 4,
       "method": "Online/Big Data",
       "fieldDates": "2026-09-11 a 2026-09-16",
-      "note": "AtlasIntel in partnership with Bloomberg, national poll released on Sep 17, fieldwork from Sep 11 to 16, register BR-06221/2026 at the [TSE](/en/glossary#tse), 5,018 voters by online questionnaire, margin of 1.0pp and 95% confidence, cost declared in the register of R$ 75,000 (Gazeta do Povo, CartaCapital, Brasil de Fato and GPS Brasília). ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) THE DISTANCE WITHIN THE HOUSE NARROWED FROM 5.6 TO 2.4 POINTS: Lula went from 43.0% to 44.1% and Flávio Bolsonaro from 37.4% to 41.7%, against the Sep 10 round. The 2.4 points still fall outside two margins of 1.0. Renan Santos has 5.1%, Augusto Cury 3.5%, Ronaldo Caiado 1.7%, Romeu Zema 1.1% and Samara Martins 0.7%, with 1.6% blank and null and 0.5% no answer. The house does not include Pablo Marçal. ⚖️ IN THE [RUNOFF](/en/glossary#segundo-turno) FLÁVIO BOLSONARO HAS 47.2% AND LULA 46.8%, a distance of 0.4 point inside one margin, and in the Sep 10 round it was 0.2 point, 46.4% to 46.2%. In the other pairs Lula wins all four, all outside two margins: 46.3% to 43.7% against Romeu Zema, who on Sep 10 appeared 0.2 point ahead of him, 46.0% to 41.7% against Ronaldo Caiado, 45.6% to 37.8% against Augusto Cury and 46.1% to 29.7% against Renan Santos. 🏛️ Government evaluation is 45.4% approval against 53.6% disapproval, with 0.9% no answer (Gazeta do Povo and GPS Brasília).",
+      "note": "AtlasIntel in partnership with Bloomberg, national poll released on Sep 17, fieldwork from Sep 11 to 16, register BR-06221/2026 at the TSE, 5,018 voters by online questionnaire, margin of 1.0pp and 95% confidence, cost declared in the register of R$ 75,000 (Gazeta do Povo, CartaCapital, Brasil de Fato and GPS Brasília). ⭐ IN THE FIRST ROUND THE DISTANCE WITHIN THE HOUSE NARROWED FROM 5.6 TO 2.4 POINTS: Lula went from 43.0% to 44.1% and Flávio Bolsonaro from 37.4% to 41.7%, against the Sep 10 round. The 2.4 points still fall outside two margins of 1.0. Renan Santos has 5.1%, Augusto Cury 3.5%, Ronaldo Caiado 1.7%, Romeu Zema 1.1% and Samara Martins 0.7%, with 1.6% blank and null and 0.5% no answer. The house does not include Pablo Marçal. ⚖️ IN THE RUNOFF FLÁVIO BOLSONARO HAS 47.2% AND LULA 46.8%, a distance of 0.4 point inside one margin, and in the Sep 10 round it was 0.2 point, 46.4% to 46.2%. In the other pairs Lula wins all four, all outside two margins: 46.3% to 43.7% against Romeu Zema, who on Sep 10 appeared 0.2 point ahead of him, 46.0% to 41.7% against Ronaldo Caiado, 45.6% to 37.8% against Augusto Cury and 46.1% to 29.7% against Renan Santos. 🏛️ Government evaluation is 45.4% approval against 53.6% disapproval, with 0.9% no answer (Gazeta do Povo and GPS Brasília).",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -2301,7 +2455,7 @@
       "reliability": 3,
       "method": "Telephone (IVR)",
       "fieldDates": "2026-09-13 a 2026-09-16",
-      "note": "PoderData/Aya national poll released on Sep 17, fieldwork from Sep 13 to 16, register BR-00360/2026 at the [TSE](/en/glossary#tse), 3,000 interviews by automated calls to landlines and cell phones, margin of 1.8pp and 95% confidence (CNN Brasil, CartaCapital and Gazeta do Povo, and the TSE register matches sample, fieldwork and method). ⚖️ IN THE [RUNOFF](/en/glossary#segundo-turno) FLÁVIO BOLSONARO HAS 46% AND LULA 44%, the same 2-point distance as the Sep 10 round, when the pair was 47% to 45%. The 2 points fit inside two margins of 1.8, so the house measures a [statistical tie](/en/glossary#empate-tecnico). Against Augusto Cury, Lula loses 42% to 45%, also inside two margins, and in the pair between the two names on the right Flávio Bolsonaro beats Augusto Cury 43% to 36%, outside them. 🗳️ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA HAS 37% AND FLÁVIO BOLSONARO 36%. Augusto Cury has 8%, against 10% in the Sep 10 round, Renan Santos and Ronaldo Caiado 3% each, and Romeu Zema and Pablo Marçal 1% each, with 4% blank and null and 2% who do not know. The house keeps Pablo Marçal in the scenario, although the TSE rejected his candidacy registration on Sep 11.",
+      "note": "PoderData/Aya national poll released on Sep 17, fieldwork from Sep 13 to 16, register BR-00360/2026 at the TSE, 3,000 interviews by automated calls to landlines and cell phones, margin of 1.8pp and 95% confidence (CNN Brasil, CartaCapital and Gazeta do Povo, and the TSE register matches sample, fieldwork and method). ⚖️ IN THE RUNOFF FLÁVIO BOLSONARO HAS 46% AND LULA 44%, the same 2-point distance as the Sep 10 round, when the pair was 47% to 45%. The 2 points fit inside two margins of 1.8, so the house measures a statistical tie. Against Augusto Cury, Lula loses 42% to 45%, also inside two margins, and in the pair between the two names on the right Flávio Bolsonaro beats Augusto Cury 43% to 36%, outside them. 🗳️ IN THE FIRST ROUND LULA HAS 37% AND FLÁVIO BOLSONARO 36%. Augusto Cury has 8%, against 10% in the Sep 10 round, Renan Santos and Ronaldo Caiado 3% each, and Romeu Zema and Pablo Marçal 1% each, with 4% blank and null and 2% who do not know. The house keeps Pablo Marçal in the scenario, although the TSE rejected his candidacy registration on Sep 11.",
       "scenarios": [
         {
           "name": "Prompted scenario (first round)",
@@ -2371,7 +2525,7 @@
       "reliability": 3,
       "method": "Telephone",
       "fieldDates": "2026-09-14 a 2026-09-16",
-      "note": "Gerp national poll released on Sep 17, fieldwork from Sep 14 to 16, register BR-00535/2026 at the [TSE](/en/glossary#tse), 2,400 telephone interviews, margin of 2pp, cost declared in the register of R$ 12,000 (CNN Brasil, Exame and Gazeta do Povo). ⚖️ IN THE [RUNOFF](/en/glossary#segundo-turno) FLÁVIO BOLSONARO HAS 50% AND LULA 43%, the same 7-point distance as the Sep 9 round, when the pair was 47% to 40%. The 7 points fall outside two margins of 2, and this is the only one of the three national polls of Sep 17 in which the runoff leaves the statistical tie. 🗳️ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) FLÁVIO BOLSONARO HAS 40% AND LULA 37%, the same 3-point distance as the Sep 9 round, which fits inside two margins. Augusto Cury has 7%, Ronaldo Caiado 3% and Renan Santos 2%, with 4% blank and null and 4% who do not know. The names below 2% appear in only one of the sources read and stay out of this entry.",
+      "note": "Gerp national poll released on Sep 17, fieldwork from Sep 14 to 16, register BR-00535/2026 at the TSE, 2,400 telephone interviews, margin of 2pp, cost declared in the register of R$ 12,000 (CNN Brasil, Exame and Gazeta do Povo). ⚖️ IN THE RUNOFF FLÁVIO BOLSONARO HAS 50% AND LULA 43%, the same 7-point distance as the Sep 9 round, when the pair was 47% to 40%. The 7 points fall outside two margins of 2, and this is the only one of the three national polls of Sep 17 in which the runoff leaves the statistical tie. 🗳️ IN THE FIRST ROUND FLÁVIO BOLSONARO HAS 40% AND LULA 37%, the same 3-point distance as the Sep 9 round, which fits inside two margins. Augusto Cury has 7%, Ronaldo Caiado 3% and Renan Santos 2%, with 4% blank and null and 4% who do not know. The names below 2% appear in only one of the sources read and stay out of this entry.",
       "scenarios": [
         {
           "name": "Prompted scenario (first round)",
@@ -2419,7 +2573,7 @@
       "reliability": 5,
       "method": "In person",
       "fieldDates": "2026-09-15 a 2026-09-16",
-      "note": "Datafolha national poll released on Sep 17 at 19:04 Brasília time, field Sep 15 to 16 as declared by the firm, register BR-04029/2026 at the [TSE](/en/glossary#tse), 2,002 people aged 16 or over, margin of 2.0pp and 95% confidence (G1, Folha de S.Paulo, Valor Econômico and Brasil de Fato). ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) THE FIRM REPEATS LULA AT 39% AND FLÁVIO BOLSONARO RISES FROM 35% TO 36%, a distance of 3 points that fits inside two margins of 2.0 and is therefore a [technical tie](/en/glossary#empate-tecnico). Augusto Cury has 6%, Ronaldo Caiado 4%, Renan Santos 3%, Romeu Zema 2%, Samara Martins 1% and Rui Costa Pimenta 1%, with 6% blank, void and none and 3% undecided. Among valid votes Lula has 43% and Flávio Bolsonaro 39%. ⚖️ IN THE [RUNOFF](/en/glossary#segundo-turno) LULA HAS 46% AND FLÁVIO BOLSONARO 44%, the same numbers as the firm's two previous waves, meaning three straight measurements with no movement on that pair. 🚫 ON REJECTION THE TWO TIE AT 47%, against 46% each on Sep 11; Renan Santos has 15%, Romeu Zema 14%, Ronaldo Caiado 13% and Augusto Cury 9%. 🏛️ Government assessment is 48% approval against 50% disapproval. 📌 IN THE UNPROMPTED QUESTION, where the firm does not show the names, Lula has 35% and Flávio Bolsonaro 26%, and the undecided fall from 23% to 21%.",
+      "note": "Datafolha national poll released on Sep 17 at 19:04 Brasília time, field Sep 15 to 16 as declared by the firm, register BR-04029/2026 at the TSE, 2,002 people aged 16 or over, margin of 2.0pp and 95% confidence (G1, Folha de S.Paulo, Valor Econômico and Brasil de Fato). ⭐ IN THE FIRST ROUND THE FIRM REPEATS LULA AT 39% AND FLÁVIO BOLSONARO RISES FROM 35% TO 36%, a distance of 3 points that fits inside two margins of 2.0 and is therefore a technical tie. Augusto Cury has 6%, Ronaldo Caiado 4%, Renan Santos 3%, Romeu Zema 2%, Samara Martins 1% and Rui Costa Pimenta 1%, with 6% blank, void and none and 3% undecided. Among valid votes Lula has 43% and Flávio Bolsonaro 39%. ⚖️ IN THE RUNOFF LULA HAS 46% AND FLÁVIO BOLSONARO 44%, the same numbers as the firm's two previous waves, meaning three straight measurements with no movement on that pair. 🚫 ON REJECTION THE TWO TIE AT 47%, against 46% each on Sep 11; Renan Santos has 15%, Romeu Zema 14%, Ronaldo Caiado 13% and Augusto Cury 9%. 🏛️ Government assessment is 48% approval against 50% disapproval. 📌 IN THE UNPROMPTED QUESTION, where the firm does not show the names, Lula has 35% and Flávio Bolsonaro 26%, and the undecided fall from 23% to 21%.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -2475,7 +2629,7 @@
       "reliability": 3,
       "method": "Phone (CATI)",
       "fieldDates": "2026-09-11 a 2026-09-15",
-      "note": "Futura Inteligência contracted by 100% Cidades, national poll released on Sep 17, field Sep 11 to 15 as declared by the firm, register BR-00749/2026 at the [TSE](/en/glossary#tse), 2,000 voters by computer-assisted telephone interview, margin of 2.2pp and 95% confidence (Exame, CNN Brasil, UOL and Itatiaia). 🏷️ THE TSE REGISTERS THIS FIRM AS \"100 CIDADES\" AND THE PRESS CALLS IT \"FUTURA\" OR \"FUTURA/100% CIDADES\", and this record keeps both names on purpose, because the register name alone does not find the release. ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA HAS 38.3% AND FLÁVIO BOLSONARO 37.7%, a distance of 0.6 point inside a margin of 2.2. Augusto Cury has 6.5%, Ronaldo Caiado 4.5%, Renan Santos 3.4%, Pablo Marçal 1.9% and Romeu Zema 1.0%, with 2.7% blank and void and 3.4% undecided. ⚖️ IN THE [RUNOFF](/en/glossary#segundo-turno) FLÁVIO BOLSONARO HAS 48.1% AND LULA 43.7%, a distance of 4.4 points that falls outside two margins. 🔴 THIS IS THE READING THAT INVERTS DATAFOLHA FROM THE SAME DAY, which gives Lula 46% to 44%. 🚫 ON REJECTION LULA HAS 49.7% AND FLÁVIO BOLSONARO 45.3%, with Pablo Marçal at 16.9%, Renan Santos at 16.6% and Romeu Zema at 15.9%. 🏛️ Government assessment is 44.1% approval against 53.1% disapproval, and on the performance scale 36.5% excellent or good, 15.8% fair and 47.2% poor or terrible.",
+      "note": "Futura Inteligência contracted by 100% Cidades, national poll released on Sep 17, field Sep 11 to 15 as declared by the firm, register BR-00749/2026 at the TSE, 2,000 voters by computer-assisted telephone interview, margin of 2.2pp and 95% confidence (Exame, CNN Brasil, UOL and Itatiaia). 🏷️ THE TSE REGISTERS THIS FIRM AS \"100 CIDADES\" AND THE PRESS CALLS IT \"FUTURA\" OR \"FUTURA/100% CIDADES\", and this record keeps both names on purpose, because the register name alone does not find the release. ⭐ IN THE FIRST ROUND LULA HAS 38.3% AND FLÁVIO BOLSONARO 37.7%, a distance of 0.6 point inside a margin of 2.2. Augusto Cury has 6.5%, Ronaldo Caiado 4.5%, Renan Santos 3.4%, Pablo Marçal 1.9% and Romeu Zema 1.0%, with 2.7% blank and void and 3.4% undecided. ⚖️ IN THE RUNOFF FLÁVIO BOLSONARO HAS 48.1% AND LULA 43.7%, a distance of 4.4 points that falls outside two margins. 🔴 THIS IS THE READING THAT INVERTS DATAFOLHA FROM THE SAME DAY, which gives Lula 46% to 44%. 🚫 ON REJECTION LULA HAS 49.7% AND FLÁVIO BOLSONARO 45.3%, with Pablo Marçal at 16.9%, Renan Santos at 16.6% and Romeu Zema at 15.9%. 🏛️ Government assessment is 44.1% approval against 53.1% disapproval, and on the performance scale 36.5% excellent or good, 15.8% fair and 47.2% poor or terrible.",
       "scenarios": [
         {
           "name": "Main scenario (first round, prompted)",
@@ -2531,7 +2685,7 @@
       "reliability": 2,
       "method": "Automated telephone (IVR)",
       "fieldDates": "2026-09-12 a 2026-09-14",
-      "note": "DataTrends national poll released on Sep 16, fieldwork from Sep 12 to 14, register BR-08691/2026 at the [TSE](/en/glossary#tse), 2,000 interviews by telephone with automated answering (IVR) across the 27 federative units, margin of 2.19pp with 95% confidence, declared cost of R$ 25,000.00 (Correio Braziliense, Revista Oeste and Blog do Edmar Lyra, and the TSE register matches sample, fieldwork and cost). ⭐ THE [RUNOFF](/en/glossary#segundo-turno) PAIR AGAINST LULA CAME OUT 45% TO 44% FOR FLÁVIO BOLSONARO, a 1-point difference that fits inside one margin, so the house measures a [statistical tie](/en/glossary#empate-tecnico). ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA HAS 39% AND FLÁVIO BOLSONARO 35%, four points that fit inside two margins of 2.19. Augusto Cury has 6%, Renan Santos 4%, Ronaldo Caiado 3% and Romeu Zema 1%, with 4% blank and null and 8% undecided. The house does not include Pablo Marçal, whose candidacy registration was rejected by the TSE on Sep 11. ⚖️ INDEXA/BROADCAST, RELEASED THE DAY BEFORE and also by telephone, measures the same runoff pair with the same 1-point distance and the opposite sign, 43% to 42% for Lula, and both fall inside one margin. CNT/MDA, in person and released on the same Sep 15, measures 7.3 points for Lula. The panel records all three without choosing. In the other runoff pairs Lula wins the three the sources confirm: 46% to 39% against Romeu Zema and 42% to 37% against Augusto Cury, both outside two margins, and 44% to 41% against Ronaldo Caiado, inside them. The pair against Renan Santos appears in only one of the sources read and stays out of this entry. 📅 Today's release was already on the calendar published by the panel. 🏷️ Approval does not enter this entry because the panel did not confirm it in two independent sources.",
+      "note": "DataTrends national poll released on Sep 16, fieldwork from Sep 12 to 14, register BR-08691/2026 at the TSE, 2,000 interviews by telephone with automated answering (IVR) across the 27 federative units, margin of 2.19pp with 95% confidence, declared cost of R$ 25,000.00 (Correio Braziliense, Revista Oeste and Blog do Edmar Lyra, and the TSE register matches sample, fieldwork and cost). ⭐ THE RUNOFF PAIR AGAINST LULA CAME OUT 45% TO 44% FOR FLÁVIO BOLSONARO, a 1-point difference that fits inside one margin, so the house measures a statistical tie. ⭐ IN THE FIRST ROUND LULA HAS 39% AND FLÁVIO BOLSONARO 35%, four points that fit inside two margins of 2.19. Augusto Cury has 6%, Renan Santos 4%, Ronaldo Caiado 3% and Romeu Zema 1%, with 4% blank and null and 8% undecided. The house does not include Pablo Marçal, whose candidacy registration was rejected by the TSE on Sep 11. ⚖️ INDEXA/BROADCAST, RELEASED THE DAY BEFORE and also by telephone, measures the same runoff pair with the same 1-point distance and the opposite sign, 43% to 42% for Lula, and both fall inside one margin. CNT/MDA, in person and released on the same Sep 15, measures 7.3 points for Lula. The panel records all three without choosing. In the other runoff pairs Lula wins the three the sources confirm: 46% to 39% against Romeu Zema and 42% to 37% against Augusto Cury, both outside two margins, and 44% to 41% against Ronaldo Caiado, inside them. The pair against Renan Santos appears in only one of the sources read and stays out of this entry. 📅 Today's release was already on the calendar published by the panel. 🏷️ Approval does not enter this entry because the panel did not confirm it in two independent sources.",
       "scenarios": [
         {
           "name": "Prompted scenario (first round)",
@@ -2604,7 +2758,7 @@
       "reliability": 4,
       "method": "In person",
       "fieldDates": "2026-09-09 a 2026-09-13",
-      "note": "CNT/MDA national poll released on Sep 15, fieldwork from Sep 9 to 13, register BR-06902/2026 at the [TSE](/en/glossary#tse), 2,002 face-to-face in-person interviews in households and at footfall points with voters aged 16 or over, margin of 2.2pp with 95% confidence, declared cost of R$ 222,453.00 and commissioned by the National Transport Confederation (Gazeta do Povo, Exame and CNN Brasil, and the TSE register matches sample, fieldwork, method and cost). ⭐ LULA LEADS BOTH ROUNDS, with 40.5% to 30.4% in the [first round](/en/glossary#primeiro-turno) and 47.3% to 40% in the [runoff](/en/glossary#segundo-turno) against Flávio Bolsonaro, and both distances, of 10.1 and 7.3 points, fall outside two margins of 2.2. ⚖️ INDEXA/BROADCAST, RELEASED ON THE SAME DAY with fieldwork from Sep 10 to 13 and the same margin, measures the first round at 38% to 34% and the runoff at 43% to 42%. The two houses agree on the sign and diverge on the magnitude: the runoff gap is 7.3 points here and 1 point there, a difference of 6.3 points between houses that measured practically the same days with the same declared margin. The panel records both without choosing which better describes the electorate. In the first round Augusto Cury has 6%, Ronaldo Caiado 3%, Renan Santos 2.7%, Pablo Marçal 1.8% and Romeu Zema 1%, with 1.1% for others, 6% blank or spoiled and 7.5% undecided. This is the only one of the day's two national polls that includes Pablo Marçal in the scenario. In the other runoff pairs Lula wins all four outside two margins: 47.7% to 34.5% against Romeu Zema, 47.3% to 33.9% against Renan Santos, 46.4% to 37.3% against Ronaldo Caiado and 45.3% to 38.4% against Augusto Cury. 📅 Today's release was already on the calendar published by the panel. 🏷️ The house publishes to one decimal place and the panel stores it as the house published it.",
+      "note": "CNT/MDA national poll released on Sep 15, fieldwork from Sep 9 to 13, register BR-06902/2026 at the TSE, 2,002 face-to-face in-person interviews in households and at footfall points with voters aged 16 or over, margin of 2.2pp with 95% confidence, declared cost of R$ 222,453.00 and commissioned by the National Transport Confederation (Gazeta do Povo, Exame and CNN Brasil, and the TSE register matches sample, fieldwork, method and cost). ⭐ LULA LEADS BOTH ROUNDS, with 40.5% to 30.4% in the first round and 47.3% to 40% in the runoff against Flávio Bolsonaro, and both distances, of 10.1 and 7.3 points, fall outside two margins of 2.2. ⚖️ INDEXA/BROADCAST, RELEASED ON THE SAME DAY with fieldwork from Sep 10 to 13 and the same margin, measures the first round at 38% to 34% and the runoff at 43% to 42%. The two houses agree on the sign and diverge on the magnitude: the runoff gap is 7.3 points here and 1 point there, a difference of 6.3 points between houses that measured practically the same days with the same declared margin. The panel records both without choosing which better describes the electorate. In the first round Augusto Cury has 6%, Ronaldo Caiado 3%, Renan Santos 2.7%, Pablo Marçal 1.8% and Romeu Zema 1%, with 1.1% for others, 6% blank or spoiled and 7.5% undecided. This is the only one of the day's two national polls that includes Pablo Marçal in the scenario. In the other runoff pairs Lula wins all four outside two margins: 47.7% to 34.5% against Romeu Zema, 47.3% to 33.9% against Renan Santos, 46.4% to 37.3% against Ronaldo Caiado and 45.3% to 38.4% against Augusto Cury. 📅 Today's release was already on the calendar published by the panel. 🏷️ The house publishes to one decimal place and the panel stores it as the house published it.",
       "scenarios": [
         {
           "name": "Prompted scenario (first round)",
@@ -2688,7 +2842,7 @@
       "reliability": 4,
       "method": "Phone",
       "fieldDates": "2026-09-10 a 2026-09-13",
-      "note": "Indexa/Broadcast national poll released on Sep 15, fieldwork from Sep 10 to 13, register BR-03482/2026 at the [TSE](/en/glossary#tse), 2,000 individual telephone interviews, margin of 2.2pp with 95% confidence, declared cost of R$ 164,000.00 (Gazeta do Povo and JOTA, and the TSE register matches sample, fieldwork, method and cost). ⭐ THE RUNOFF PAIR AGAINST FLÁVIO BOLSONARO CAME OUT 43% TO 42% FOR LULA, a difference of 1 point that fits inside one margin, so the house measures a [statistical tie](/en/glossary#empate-tecnico). In the house's own previous wave, released on Aug 26 with fieldwork from Aug 20 to 23, the pair had come out 46% to 41%: across the two readings the panel holds from this house, the distance fell from 5 points to 1. ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA HAS 38% AND FLÁVIO BOLSONARO 34%, four points that fit inside two margins of 2.2, so in this house neither the first round nor the runoff separates the two with room to spare. Against the Aug 26 wave, Lula gives up 1 point and Flávio stands still. Augusto Cury has 6%, Ronaldo Caiado 4%, Renan Santos 3% and Romeu Zema 1%. The house does not include Pablo Marçal in this wave's scenario. ⚖️ CNT/MDA, RELEASED ON THE SAME DAY with fieldwork from Sep 9 to 13 and the same margin of 2.2, gives Lula the first round by 40.5% to 30.4% and the runoff by 47.3% to 40%: the two houses agree on the sign, with Lula ahead in both rounds, and disagree on the magnitude, because the runoff distance is 1 point here and 7.3 points there. The panel records both without choosing. In the other runoff pairs Lula wins all four: 45% to 35% against Renan Santos and 45% to 34% against Romeu Zema, both outside two margins, 43% to 39% against Ronaldo Caiado and 41% to 39% against Augusto Cury, both inside two margins. 📅 Today's release was already on the calendar published by the panel. 🏷️ Rejection and approval figures do not enter this record because the panel did not confirm them in two independent sources.",
+      "note": "Indexa/Broadcast national poll released on Sep 15, fieldwork from Sep 10 to 13, register BR-03482/2026 at the TSE, 2,000 individual telephone interviews, margin of 2.2pp with 95% confidence, declared cost of R$ 164,000.00 (Gazeta do Povo and JOTA, and the TSE register matches sample, fieldwork, method and cost). ⭐ THE RUNOFF PAIR AGAINST FLÁVIO BOLSONARO CAME OUT 43% TO 42% FOR LULA, a difference of 1 point that fits inside one margin, so the house measures a statistical tie. In the house's own previous wave, released on Aug 26 with fieldwork from Aug 20 to 23, the pair had come out 46% to 41%: across the two readings the panel holds from this house, the distance fell from 5 points to 1. ⭐ IN THE FIRST ROUND LULA HAS 38% AND FLÁVIO BOLSONARO 34%, four points that fit inside two margins of 2.2, so in this house neither the first round nor the runoff separates the two with room to spare. Against the Aug 26 wave, Lula gives up 1 point and Flávio stands still. Augusto Cury has 6%, Ronaldo Caiado 4%, Renan Santos 3% and Romeu Zema 1%. The house does not include Pablo Marçal in this wave's scenario. ⚖️ CNT/MDA, RELEASED ON THE SAME DAY with fieldwork from Sep 9 to 13 and the same margin of 2.2, gives Lula the first round by 40.5% to 30.4% and the runoff by 47.3% to 40%: the two houses agree on the sign, with Lula ahead in both rounds, and disagree on the magnitude, because the runoff distance is 1 point here and 7.3 points there. The panel records both without choosing. In the other runoff pairs Lula wins all four: 45% to 35% against Renan Santos and 45% to 34% against Romeu Zema, both outside two margins, 43% to 39% against Ronaldo Caiado and 41% to 39% against Augusto Cury, both inside two margins. 📅 Today's release was already on the calendar published by the panel. 🏷️ Rejection and approval figures do not enter this record because the panel did not confirm them in two independent sources.",
       "scenarios": [
         {
           "name": "Prompted scenario (first round)",
@@ -2768,7 +2922,7 @@
       "reliability": 5,
       "method": "In person",
       "fieldDates": "2026-09-10 a 2026-09-13",
-      "note": "Genial/Quaest national poll released on 14/Sep, fieldwork from 10 to 13/Sep, registration BR-03607/2026 with the [TSE](/en/glossary#tse), 2,004 face-to-face household interviews with voters aged 16 or older, a margin of 2pp and 95% confidence, declared cost of R$ 314,628.00 (Gazeta do Povo and Poder360, and the TSE registry confirms sample, fieldwork, method and cost). ⭐ THE [RUNOFF](/en/glossary#segundo-turno) CAME OUT FOR FLÁVIO BOLSONARO BY 42% TO 40%, and the 2-point difference fits inside the margin, so the house measures a [statistical tie](/en/glossary#empate-tecnico). Within the house the pairing came out 42% to 41% for Lula on 02/Sep and tied at 41% to 41% on 07/Sep. ⭐ IN THE FIRST ROUND LULA HAS 36% AND FLÁVIO BOLSONARO 31%, a 5-point distance that does not fit inside two margins: the former stayed flat against the 36% of 07/Sep and the latter rose from 29% to 31%. Augusto Cury has 7%, Renan Santos 4%, Ronaldo Caiado 4% and Romeu Zema 1%, with 7% blank, null or not voting and 10% undecided. The house published a single prompted scenario, without Pablo Marçal. ⚖️ BTG/NEXUS, RELEASED ON THE SAME DAY with fieldwork from 11 to 13/Sep, gives the pairing to Lula by 47% to 46%: the two houses agree on the 5 points of the first round and disagree on the sign of the runoff, with both differences inside the margin, and the dashboard records both without choosing. In the other pairings Lula wins all four: 38% to 36% against Augusto Cury and 41% to 39% against Ronaldo Caiado, both inside the margin, 41% to 38% against Renan Santos, inside two margins, and 45% to 33% against Romeu Zema, outside it. GOVERNMENT APPROVAL: 43% approve, 50% disapprove and 7% do not know, the same approval and disapproval figures as the round of 07/Sep, and on the management scale 32% positive rating, 27% regular, 38% negative and 3% no answer. 📅 Today’s release was already on the calendar published by the dashboard on 13/Sep. 🏷️ The spontaneous scenario does not enter this entry because the dashboard did not confirm it in two independent sources.",
+      "note": "Genial/Quaest national poll released on 14/Sep, fieldwork from 10 to 13/Sep, registration BR-03607/2026 with the TSE, 2,004 face-to-face household interviews with voters aged 16 or older, a margin of 2pp and 95% confidence, declared cost of R$ 314,628.00 (Gazeta do Povo and Poder360, and the TSE registry confirms sample, fieldwork, method and cost). ⭐ THE RUNOFF CAME OUT FOR FLÁVIO BOLSONARO BY 42% TO 40%, and the 2-point difference fits inside the margin, so the house measures a statistical tie. Within the house the pairing came out 42% to 41% for Lula on 02/Sep and tied at 41% to 41% on 07/Sep. ⭐ IN THE FIRST ROUND LULA HAS 36% AND FLÁVIO BOLSONARO 31%, a 5-point distance that does not fit inside two margins: the former stayed flat against the 36% of 07/Sep and the latter rose from 29% to 31%. Augusto Cury has 7%, Renan Santos 4%, Ronaldo Caiado 4% and Romeu Zema 1%, with 7% blank, null or not voting and 10% undecided. The house published a single prompted scenario, without Pablo Marçal. ⚖️ BTG/NEXUS, RELEASED ON THE SAME DAY with fieldwork from 11 to 13/Sep, gives the pairing to Lula by 47% to 46%: the two houses agree on the 5 points of the first round and disagree on the sign of the runoff, with both differences inside the margin, and the dashboard records both without choosing. In the other pairings Lula wins all four: 38% to 36% against Augusto Cury and 41% to 39% against Ronaldo Caiado, both inside the margin, 41% to 38% against Renan Santos, inside two margins, and 45% to 33% against Romeu Zema, outside it. GOVERNMENT APPROVAL: 43% approve, 50% disapprove and 7% do not know, the same approval and disapproval figures as the round of 07/Sep, and on the management scale 32% positive rating, 27% regular, 38% negative and 3% no answer. 📅 Today’s release was already on the calendar published by the dashboard on 13/Sep. 🏷️ The spontaneous scenario does not enter this entry because the dashboard did not confirm it in two independent sources.",
       "scenarios": [
         {
           "name": "Prompted scenario (first round)",
@@ -2848,7 +3002,7 @@
       "reliability": 4,
       "method": "Phone",
       "fieldDates": "2026-09-11 a 2026-09-13",
-      "note": "BTG/Nexus national poll released on 14/Sep, fieldwork from 11 to 13/Sep, registration BR-04076/2026 with the [TSE](/en/glossary#tse), 2,003 telephone interviews according to the house (the registry declares a sample of 2,000), a margin of 2pp and 95% confidence, declared cost of R$ 164,888.89 (Nexus website, Gazeta do Povo, Poder360, Correio Braziliense, Seu Dinheiro, Band and Exame, and the TSE registry confirms fieldwork, method and cost). ⭐ THE [RUNOFF](/en/glossary#segundo-turno) RETURNED TO LULA BY 47% TO 46%, after 46% to 45% for Flávio Bolsonaro in the house’s round of 08/Sep, and the 1-point difference fits inside the margin, so the house measures a [statistical tie](/en/glossary#empate-tecnico). In earlier rounds the pairing came out 47% to 44% for Lula on 17/Aug and 46% to 45% for him on 24/Aug and on 31/Aug. 🏷️ THE HOUSE PUBLISHED TWO PROMPTED FIRST-ROUND SCENARIOS: without Pablo Marçal, Lula has 42%, Flávio Bolsonaro 37%, Augusto Cury 6%, Ronaldo Caiado 5%, Renan Santos 2%, Romeu Zema 1% and Samara Martins 1%, with 4% blank and null and 2% no answer; with Pablo Marçal, 40%, 36%, 7%, 4%, 3%, Marçal 2% and Zema 1%. COMPARISON WITHIN THE HOUSE, in the scenario without Marçal: Lula from 39% to 42%, Flávio Bolsonaro from 35% to 37%, Augusto Cury from 9% to 6% and Renan Santos from 4% to 2%. ⚖️ GENIAL/QUAEST, RELEASED ON THE SAME DAY with fieldwork from 10 to 13/Sep, gives the pairing to Flávio Bolsonaro by 42% to 40%: the two houses agree on the 5 points of the first round and disagree on the sign of the runoff. In the other pairings Lula wins all four: 45% to 42% against Augusto Cury, inside two margins, and 47% to 41% against Ronaldo Caiado, 49% to 38% against Romeu Zema and 48% to 37% against Renan Santos, the three outside it. ⚠️ The pairing against Cury FLIPPED within the house: on 08/Sep he appeared ahead by 45% to 43%. GOVERNMENT APPROVAL: 47% approve and 49% disapprove, with 4% no answer, against 45% and 50% on 08/Sep, and on the management scale 37% good or great, 18% regular and 44% bad or terrible, against 36%, 18% and 46%. 🏷️ In the pairing against Romeu Zema one source reports 39% and two report 38%, and the dashboard uses the value of the two.",
+      "note": "BTG/Nexus national poll released on 14/Sep, fieldwork from 11 to 13/Sep, registration BR-04076/2026 with the TSE, 2,003 telephone interviews according to the house (the registry declares a sample of 2,000), a margin of 2pp and 95% confidence, declared cost of R$ 164,888.89 (Nexus website, Gazeta do Povo, Poder360, Correio Braziliense, Seu Dinheiro, Band and Exame, and the TSE registry confirms fieldwork, method and cost). ⭐ THE RUNOFF RETURNED TO LULA BY 47% TO 46%, after 46% to 45% for Flávio Bolsonaro in the house’s round of 08/Sep, and the 1-point difference fits inside the margin, so the house measures a statistical tie. In earlier rounds the pairing came out 47% to 44% for Lula on 17/Aug and 46% to 45% for him on 24/Aug and on 31/Aug. 🏷️ THE HOUSE PUBLISHED TWO PROMPTED FIRST-ROUND SCENARIOS: without Pablo Marçal, Lula has 42%, Flávio Bolsonaro 37%, Augusto Cury 6%, Ronaldo Caiado 5%, Renan Santos 2%, Romeu Zema 1% and Samara Martins 1%, with 4% blank and null and 2% no answer; with Pablo Marçal, 40%, 36%, 7%, 4%, 3%, Marçal 2% and Zema 1%. COMPARISON WITHIN THE HOUSE, in the scenario without Marçal: Lula from 39% to 42%, Flávio Bolsonaro from 35% to 37%, Augusto Cury from 9% to 6% and Renan Santos from 4% to 2%. ⚖️ GENIAL/QUAEST, RELEASED ON THE SAME DAY with fieldwork from 10 to 13/Sep, gives the pairing to Flávio Bolsonaro by 42% to 40%: the two houses agree on the 5 points of the first round and disagree on the sign of the runoff. In the other pairings Lula wins all four: 45% to 42% against Augusto Cury, inside two margins, and 47% to 41% against Ronaldo Caiado, 49% to 38% against Romeu Zema and 48% to 37% against Renan Santos, the three outside it. ⚠️ The pairing against Cury FLIPPED within the house: on 08/Sep he appeared ahead by 45% to 43%. GOVERNMENT APPROVAL: 47% approve and 49% disapprove, with 4% no answer, against 45% and 50% on 08/Sep, and on the management scale 37% good or great, 18% regular and 44% bad or terrible, against 36%, 18% and 46%. 🏷️ In the pairing against Romeu Zema one source reports 39% and two report 38%, and the dashboard uses the value of the two.",
       "scenarios": [
         {
           "name": "Prompted scenario without Pablo Marçal (first round)",
@@ -2954,469 +3108,11 @@
           "percent2": 37
         }
       ]
-    },
-    {
-      "institute": "Datafolha",
-      "date": "2026-09-11",
-      "scope": "national",
-      "sample": 2002,
-      "margin": 2,
-      "register": "BR-01833/2026",
-      "reliability": 5,
-      "method": "In person",
-      "fieldDates": "2026-09-08 a 2026-09-10",
-      "note": "Datafolha national poll released on 11/Sep, fieldwork from 08 to 10/Sep, TSE registration BR-01833/2026, 2,002 face-to-face interviews, a margin of 2.0pp and 95% confidence, commissioned by Folha de S.Paulo and Globo (Folha de S.Paulo, G1, O Globo, Valor Econômico, Estadão, CNN Brasil, Poder360, Metrópoles, Gazeta do Povo and Brasil de Fato). ⭐ IT BREAKS A RUN OF EIGHT: in the runoff pairing Lula comes out ahead by 46% to 44%, and there had been eight straight national polls since 06/Sep in which he did not come out ahead against Flávio Bolsonaro. ⚠️ The 2-point difference fits inside a margin of 2.0, so what the house measures is a TECHNICAL TIE and not a lead, and the 4 points of the first round fit inside two margins. 🔁 INSIDE THE HOUSE ITSELF THE PAIRING IS STILL: 47% to 43% on 21/Aug, 46% to 44% on 03/Sep and 46% to 44% in this round, three readings in which the pairing travelled 1 point on each side. 🗳️ In the other four pairings tested Lula wins them all, and in three of them the distance falls outside the margin: 45% to 43% against Augusto Cury, which is another technical tie, 46% to 41% against Ronaldo Caiado, 48% to 39% against Romeu Zema and 48% to 37% against Renan Santos. 📊 In valid votes in the first round the house records 43% against 38%. 📌 The round also measures 46% rejection for Lula and 46% for Flávio Bolsonaro, and 75% of voters who say they have decided against 25% who may still change.",
-      "scenarios": [
-        {
-          "name": "Prompted scenario (first round)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 39
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 35
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 6
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 4
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 3
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 2
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 46,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 44
-        },
-        {
-          "matchup": "Lula vs Cury",
-          "candidate1": "Lula",
-          "percent1": 45,
-          "candidate2": "Augusto Cury",
-          "percent2": 43
-        },
-        {
-          "matchup": "Lula vs Caiado",
-          "candidate1": "Lula",
-          "percent1": 46,
-          "candidate2": "Ronaldo Caiado",
-          "percent2": 41
-        },
-        {
-          "matchup": "Lula vs Zema",
-          "candidate1": "Lula",
-          "percent1": 48,
-          "candidate2": "Romeu Zema",
-          "percent2": 39
-        },
-        {
-          "matchup": "Lula vs Renan",
-          "candidate1": "Lula",
-          "percent1": 48,
-          "candidate2": "Renan Santos",
-          "percent2": 37
-        }
-      ],
-      "source": "Folha de S.Paulo, G1, O Globo, Valor Econômico, Estadão, CNN Brasil, Poder360, Metrópoles, Gazeta do Povo and Brasil de Fato (11/Sep/2026)"
-    },
-    {
-      "institute": "AtlasIntel/Bloomberg",
-      "date": "2026-09-10",
-      "scope": "national",
-      "sample": 5000,
-      "margin": 1,
-      "register": "BR-01452/2026",
-      "reliability": 4,
-      "method": "Online/Big Data",
-      "fieldDates": "2026-09-04 a 2026-09-09",
-      "note": "AtlasIntel together with Bloomberg, national poll released on 10/Sep, fieldwork from 04 to 09/Sep, TSE registration BR-01452/2026, 5,000 voters by electronic form, margin of 1.0pp and 95% confidence, self-funded at a declared cost of R$ 75,000 (Gazeta do Povo and Poder360). ⭐ THE VALUE OF THIS ROUND IS THAT IT COMES FROM THE SAME HOUSE AS THE ONE ON 31/Aug, with the same method and the same margin, so the comparison does not mix pollsters. In the first round Lula's lead fell from 9.7 points to 5.6: he went from 43.4% to 43.0% and Flávio Bolsonaro rose from 33.7% to 37.4%, up 3.7 points in eleven days. 🔁 AND ALL FOUR RUNOFF PAIRINGS MOVED IN THE SAME DIRECTION, two of them flipping sign: against Flávio, Lula led 47.1% to 42.6% and now trails 46.4% to 46.2%; against Romeu Zema, he led 47.0% to 40.7% and now trails 46.2% to 46.0%; against Ronaldo Caiado, he led 46.6% to 41.0% and now ties at 45.7%; against Renan Santos, he led 47.5% to 26.0% and now leads 46.0% to 33.8%. ⚠️ IN THE FIRST THREE PAIRINGS THE DIFFERENCE FITS INSIDE TWO MARGINS OF 1.0 POINT, so what the house measures there is a statistical tie, not a lead: two tenths against Flávio, two tenths against Zema and an exact tie against Caiado. The two pairings that fall outside the margin are Augusto Cury's, by 2.7 points, and Renan Santos's, by 12.2. 📊 Full first round: Lula 43.0%, Flávio Bolsonaro 37.4%, Augusto Cury 6.6%, Renan Santos 6.5%, Romeu Zema 2.1%, Ronaldo Caiado 1.1%, Samara 1.0%, Pablo Marçal 1.0%, Clariana Barão 0.3%, with 0.6% blank or void and 0.4% no answer. 📌 With it, that makes EIGHT consecutive national polls since 06/Sep in which Lula does not come out ahead in the pairing against Flávio Bolsonaro: Veritá of 06/Sep, Quaest of 07/Sep, BTG/Nexus of 08/Sep, Ideia/Canal Meio, Palver and Gerp of 09/Sep, PoderData/Aya of 10/Sep and this one. The national reading before the sequence is the Datafolha of 03/Sep, which gave Lula 46% to 44%.",
-      "scenarios": [
-        {
-          "name": "Main scenario (first round, prompted)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 43
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 37.4
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 6.6
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 6.5
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 2.1
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 1.1
-            },
-            {
-              "candidate": "Samara (UP)",
-              "percent": 1
-            },
-            {
-              "candidate": "Pablo Marçal (PRTB)",
-              "percent": 1
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Flávio vs Lula",
-          "candidate1": "Flávio Bolsonaro",
-          "percent1": 46.4,
-          "candidate2": "Lula",
-          "percent2": 46.2
-        },
-        {
-          "matchup": "Zema vs Lula",
-          "candidate1": "Romeu Zema",
-          "percent1": 46.2,
-          "candidate2": "Lula",
-          "percent2": 46
-        },
-        {
-          "matchup": "Lula vs Caiado",
-          "candidate1": "Lula",
-          "percent1": 45.7,
-          "candidate2": "Ronaldo Caiado",
-          "percent2": 45.7
-        },
-        {
-          "matchup": "Lula vs Cury",
-          "candidate1": "Lula",
-          "percent1": 43.8,
-          "candidate2": "Augusto Cury",
-          "percent2": 41.1
-        },
-        {
-          "matchup": "Lula vs Renan",
-          "candidate1": "Lula",
-          "percent1": 46,
-          "candidate2": "Renan Santos",
-          "percent2": 33.8
-        }
-      ],
-      "source": "AtlasIntel in partnership with Bloomberg, released on 10/Sep/2026 (fieldwork 04 to 09/Sep, n=5,000, electronic form, margin 1.0pp, TSE registration BR-01452/2026). Figures checked in Gazeta do Povo and Poder360, outlets independent of one another, which agree on every percentage cited."
-    },
-    {
-      "institute": "PoderData/Aya",
-      "date": "2026-09-10",
-      "scope": "national",
-      "sample": 3000,
-      "margin": 1.8,
-      "register": "BR-04914/2026",
-      "reliability": 3,
-      "method": "Telephone (IVR)",
-      "fieldDates": "2026-09-06 a 2026-09-09",
-      "note": "PoderData/Aya national poll released on 10/Sep, fieldwork from 06 to 09/Sep, registration BR-04914/2026 with the [TSE](/en/glossary#tse), 3,000 interviews by automated telephone survey across 623 municipalities in all 27 federal units, a margin of 1.8pp and 95% confidence (Poder360, CNN Brasil, Jovem Pan and Money Times). ⭐ IN THE RUNOFF FLÁVIO BOLSONARO COMES OUT AHEAD BY 47% TO 45%, and this is the SEVENTH consecutive national result since 06/Sep in which Lula does not lead that pairing: Veritá on 06/Sep (48.5% to 43.1%), Quaest on 07/Sep (41% to 41%), BTG/Nexus on 08/Sep (46% to 45%), Ideia/Canal Meio on 09/Sep (46% to 46%), Palver on 09/Sep (46% to 44%), Gerp on 09/Sep (47% to 40%) and this one. The national reading before that run is the Datafolha of 03/Sep, which had Lula at 46% to 44%. ⚠️ A two-point gap fits inside two margins of 1.8, so what the pollster measures in that pairing is a statistical tie rather than a lead. 🆕 AND IT BRINGS A NEW PAIRING: Augusto Cury ahead of Lula by 44% to 43%, the first runoff scenario in this series in which a third name other than Flávio Bolsonaro comes out in front. IN THE FIRST ROUND the gap between the top two is two points, 38% to 36%, with Cury at 10%, his highest figure in the national polls of this window. 📌 SCOPE: the release states 623 municipalities across the 27 federal units, which settles the national label that the TSE registration supported only through this pollster's sampling plan.",
-      "scenarios": [
-        {
-          "name": "Prompted scenario (first round)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 38
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 36
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 10
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 3
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 2
-            },
-            {
-              "candidate": "Pablo Marçal (PRTB)",
-              "percent": 2
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 45,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 47
-        },
-        {
-          "matchup": "Lula vs Cury",
-          "candidate1": "Lula",
-          "percent1": 43,
-          "candidate2": "Augusto Cury",
-          "percent2": 44
-        }
-      ],
-      "source": "Poder360, CNN Brasil, Jovem Pan and Money Times (10/Sep/2026)"
-    },
-    {
-      "institute": "Palver",
-      "date": "2026-09-09",
-      "scope": "national",
-      "sample": 5000,
-      "margin": 3,
-      "register": "BR-05420/2026",
-      "reliability": 3,
-      "method": "Online, funded by the firm itself",
-      "fieldDates": "2026-09-04 a 2026-09-07",
-      "note": "Palver national poll released on 09/Sep, fieldwork from 04 to 07/Sep, registration BR-05420/2026 with the [TSE](/en/glossary#tse), 5,000 voters, a margin of 3pp and 95% confidence, online collection funded by the pollster itself (CNN Brasil, UOL, CartaCapital and JOTA). ⭐ IT IS THE LARGEST SAMPLE AMONG TODAY'S THREE NATIONAL POLLS, 5,000 against 2,400 from Gerp and 1,500 from Ideia/Canal Meio, and it is the one that gives an EXACT TIE in the first round: 40% to 40% in the scenario with Pablo Marçal. 🏷️ THE POLLSTER PUBLISHED TWO FIRST-ROUND SCENARIOS AND BOTH ARE CORRECT: without Marçal, Flávio Bolsonaro sits at 39% and Lula stays at 40%. Pablo Marçal is ineligible and the Superior Electoral Court has until 14/Sep to rule on the presidential registrations. IN THE RUNOFF the pollster gives 46% to 44% for Flávio Bolsonaro, and the 2 points fit inside the margin of 3, so it is a STATISTICAL TIE. ⚠️ COMPARISON WITHIN THE SAME POLLSTER: on 10/Aug Palver had the same pairing tied at 46% to 46%, so the internal movement is 2 points in a month. ⭐ RENAN SANTOS AT 11% IS THE FIGURE THAT DIVERGES MOST AMONG TODAY'S THREE: Ideia/Canal Meio has him at 4% and Gerp also at 4%, with overlapping fieldwork, and the 7 points of difference exceed the sum of the two pollsters' margins. The pollster did not release rejection figures in this round.",
-      "scenarios": [
-        {
-          "name": "Prompted scenario with Pablo Marçal (first round)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 40
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 40
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 11
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 4
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 1
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 1
-            },
-            {
-              "candidate": "Pablo Marçal (PRTB)",
-              "percent": 1
-            }
-          ]
-        },
-        {
-          "name": "Prompted scenario without Pablo Marçal (first round)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 40
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 39
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 11
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 4
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 1
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 1
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Flávio vs Lula",
-          "candidate1": "Flávio Bolsonaro",
-          "percent1": 46,
-          "candidate2": "Lula",
-          "percent2": 44
-        }
-      ],
-      "source": "CNN Brasil, UOL, CartaCapital e JOTA (09/Set/2026)"
-    },
-    {
-      "institute": "Gerp",
-      "date": "2026-09-09",
-      "scope": "national",
-      "sample": 2400,
-      "margin": 2,
-      "register": "BR-00251/2026",
-      "reliability": 3,
-      "method": "Funded by the firm itself",
-      "fieldDates": "2026-09-03 a 2026-09-08",
-      "note": "Gerp national poll released on 09/Sep, fieldwork from 03 to 08/Sep, registration BR-00251/2026 with the [TSE](/en/glossary#tse), 2,400 interviews, a margin of 2pp and 95.55% confidence, funded by the pollster itself (Gazeta do Povo, Exame, CNN Brasil and Jovem Pan). ⭐ IT IS THE ONLY ONE OF TODAY'S THREE NATIONAL POLLS THAT INVERTS THE FIRST ROUND: 37% for Flávio Bolsonaro against 34% for Lula. The 3 points exceed the margin of 2, so inside this pollster it is not a statistical tie, and the Ideia/Canal Meio of the same day measures the opposite sign by 1.1 points. ⚠️ COMPARISON WITHIN THE SAME POLLSTER, which is the only valid one: in the round of 26/Aug the same Gerp had the runoff at 47% to 42%, and now it has 47% to 40%, with Flávio parked at 47% and Lula giving up 2 points. ⭐ THE 7-POINT GAP IN THE RUNOFF IS THE WIDEST AMONG TODAY'S THREE READINGS: Palver gives 2 points and Ideia/Canal Meio gives a tie at 46% to 46%, meaning the three pollsters cover from 0 to 7 points in the same pairing, with overlapping fieldwork. UNPROMPTED: Flávio 33%, Lula 30%, Cury 4%, Renan 3%, Caiado 2%, and 27% do not know. REJECTION: Lula 49% and Flávio 40%, 9 points apart, against 0.9 points that Ideia/Canal Meio measured the same day. IN THE RUNOFF the pollster also records 11% who choose neither of the two and 3% with no answer.",
-      "scenarios": [
-        {
-          "name": "Prompted scenario (first round)",
-          "results": [
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 37
-            },
-            {
-              "candidate": "Lula (PT)",
-              "percent": 34
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 6
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 5
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 4
-            },
-            {
-              "candidate": "Pablo Marçal (PRTB)",
-              "percent": 2
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 1
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Flávio vs Lula",
-          "candidate1": "Flávio Bolsonaro",
-          "percent1": 47,
-          "candidate2": "Lula",
-          "percent2": 40
-        }
-      ],
-      "source": "Gazeta do Povo, Exame, CNN Brasil e Jovem Pan (09/Set/2026)"
-    },
-    {
-      "institute": "Ideia/Canal Meio",
-      "date": "2026-09-09",
-      "scope": "national",
-      "sample": 1500,
-      "margin": 2.5,
-      "register": "BR-07935/2026",
-      "reliability": 3,
-      "method": "Ideia for Canal Meio",
-      "fieldDates": "2026-09-04 a 2026-09-07",
-      "note": "Ideia/Canal Meio national poll released on 09/Sep, fieldwork from 04 to 07/Sep, registration BR-07935/2026 with the [TSE](/en/glossary#tse), 1,500 interviews, a margin of 2.5pp and 95% confidence (Gazeta do Povo, Poder360, Folha de S.Paulo, Valor Econômico, UOL, CartaCapital, VEJA, Exame, JOTA and Congresso em Foco). ⭐ THREE NATIONAL POLLS CAME OUT THE SAME DAY AND THEY DISAGREE ON THE SIGN OF THE FIRST ROUND: this one has Lula ahead by 1.1 points (38.4% to 37.3%), Palver has an exact tie at 40% and Gerp inverts it, with 37% for Flávio Bolsonaro against 34%. That is 4.1 points between the two ends, with margins from 2.0 to 3.0 points, and the fieldwork windows overlap almost entirely, from 03 to 08/Sep. ⚠️ This pollster's 1.1-point gap fits entirely inside the 2.5 margin, so what it measures is a STATISTICAL TIE and not a lead. IN THE RUNOFF the pollster has 46% to 46%, and this is the SIXTH consecutive national result since 06/Sep in which Lula does not come out ahead in that pairing: Veritá on 06/Sep (48.5% to 43.1% for Flávio), Quaest on 07/Sep (41% to 41%), BTG/Nexus on 08/Sep (46% to 45% for Flávio) and the three of today. The national reading before that run is the Datafolha of 03/Sep, which had 46% to 44% for Lula. THE OTHER RUNOFF PAIRINGS from this pollster, all with Lula ahead: 46% to 42% against Ronaldo Caiado, 46% to 40.9% against Augusto Cury, 46% to 40.3% against Renan Santos and 46% to 38% against Romeu Zema. UNPROMPTED: Lula 30.7%, Flávio 28%, Cury 3.2%, Renan 3%, Caiado 2%, Zema 0.8%, Marçal 0.5% and Samara 0.4%. REJECTION: Lula 46.6% and Flávio 45.7%, 0.9 points apart, against 49% and 40% that Gerp measured the same day, meaning the two pollsters agree on the order and differ by 8.1 points on the distance between the two names.",
-      "scenarios": [
-        {
-          "name": "Prompted scenario (first round)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 38.4
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 37.3
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 6.6
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 4
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 4
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 1.5
-            },
-            {
-              "candidate": "Pablo Marçal (PRTB)",
-              "percent": 1.5
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 46,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 46
-        },
-        {
-          "matchup": "Lula vs Caiado",
-          "candidate1": "Lula",
-          "percent1": 46,
-          "candidate2": "Ronaldo Caiado",
-          "percent2": 42
-        },
-        {
-          "matchup": "Lula vs Cury",
-          "candidate1": "Lula",
-          "percent1": 46,
-          "candidate2": "Augusto Cury",
-          "percent2": 40.9
-        },
-        {
-          "matchup": "Lula vs Renan",
-          "candidate1": "Lula",
-          "percent1": 46,
-          "candidate2": "Renan Santos",
-          "percent2": 40.3
-        },
-        {
-          "matchup": "Lula vs Zema",
-          "candidate1": "Lula",
-          "percent1": 46,
-          "candidate2": "Romeu Zema",
-          "percent2": 38
-        }
-      ],
-      "source": "Gazeta do Povo, Poder360, Folha de S.Paulo, Valor Econômico, UOL, CartaCapital, VEJA, Exame, JOTA and Congresso em Foco (09/Sep/2026)"
     }
   ],
   "approvalData": {
-    "note": "🏷️ THE STRUCTURED APPROVAL NUMBERS IN THIS BLOCK ARE FROM [QUAEST](/en/glossary#quaest) OF 03/Oct, registration BR-02197/2026: 44% approval against 49% disapproval. The panel deliberately keeps ONE pollster per block, so that the internal series does not mix methodologies. ⭐ WITHIN QUAEST ITSELF APPROVAL FALLS 2 POINTS AFTER TWO ROUNDS OF INCREASE: it was 48% against 47% on 05/Aug, 46% against 48% on 14/Aug, 45% against 48% on 02/Sep, 43% against 50% on 07/Sep, 43% against 50% on 14/Sep, 44% against 50% on 21/Sep, 46% against 49% on 28/Sep and 44% against 49% on 03/Oct. In the same round's assessment the negative is at 42%, the positive at 33% and the fair rating at 23%. 📌 Palver of 03/Oct measures 43% approval against 56% disapproval, according to Exame. The pollsters' questions differ and do not add up.",
-    "source": "Approval, disapproval and assessment of the administration: [Quaest](/en/glossary#quaest) of 03/Oct/2026 (fieldwork from 02 to 03/Oct, n=3,702 voters, in person, margin of 2.0pp, 95% confidence, [TSE](/en/glossary#tse) registration BR-02197/2026, commissioned by Grupo Globo), released by O Globo and Money Times. This block's assessment of the administration, 33% positive, 23% fair and 42% negative, is from the same round (Money Times), and the whole block has a single date. The pollster's own series: rounds of 05/Aug, 14/Aug, 02/Sep, 07/Sep, 14/Sep, 21/Sep and 28/Sep, already recorded on the panel.",
+    "note": "🏷️ THE STRUCTURED APPROVAL NUMBERS IN THIS BLOCK ARE FROM QUAEST OF 03/Oct, registration BR-02197/2026: 44% approval against 49% disapproval. The panel deliberately keeps ONE pollster per block, so that the internal series does not mix methodologies. ⭐ WITHIN QUAEST ITSELF APPROVAL FALLS 2 POINTS AFTER TWO ROUNDS OF INCREASE: it was 48% against 47% on 05/Aug, 46% against 48% on 14/Aug, 45% against 48% on 02/Sep, 43% against 50% on 07/Sep, 43% against 50% on 14/Sep, 44% against 50% on 21/Sep, 46% against 49% on 28/Sep and 44% against 49% on 03/Oct. In the same round's assessment the negative is at 42%, the positive at 33% and the fair rating at 23%. 📌 Palver of 03/Oct measures 43% approval against 56% disapproval, according to Exame. The pollsters' questions differ and do not add up.",
+    "source": "Approval, disapproval and assessment of the administration: Quaest of 03/Oct/2026 (fieldwork from 02 to 03/Oct, n=3,702 voters, in person, margin of 2.0pp, 95% confidence, TSE registration BR-02197/2026, commissioned by Grupo Globo), released by O Globo and Money Times. This block's assessment of the administration, 33% positive, 23% fair and 42% negative, is from the same round (Money Times), and the whole block has a single date. The pollster's own series: rounds of 05/Aug, 14/Aug, 02/Sep, 07/Sep, 14/Sep, 21/Sep and 28/Sep, already recorded on the panel.",
     "date": "2026-10-03",
     "results": {
       "aprovacao": 44,
@@ -3456,30 +3152,30 @@
     "lastUpdate": "04/10/2026, 21:43"
   },
   "polymarketComparison": {
-    "note": "Polymarket prices at the confirmed reading of 09/Oct, 14:06 BRT, fifth day of the [second round](/en/glossary#segundo-turno). IN THE WINNER CONTRACT, FLÁVIO BOLSONARO'S GAP OVER LULA GOES FROM 72.15pp TO 73.65pp against the confirmed reading of 08/Oct at 20:38 BRT, published in the previous update: Flávio Bolsonaro stands at 87.15% and Lula at 13.50%. The contracts for the other names in the winner book have been closed since the [first round](/en/glossary#primeiro-turno), resolved at zero. 📊 Two national polls came out on 09/Oct. In AtlasIntel/Bloomberg, with online fieldwork from 03 to 08/Oct and 5,026 interviews, Flávio Bolsonaro has 51.1% and Lula 45.7% in the second round, with 3.2% blank ballots, spoiled ballots and undecided voters; in valid votes, 52.8% to 47.2% (Estadão, CNN Brasil and CartaCapital). In Vox Brasil, with in-person fieldwork from 05 to 07/Oct and 2,100 interviews, Lula has 44.2% and Flávio Bolsonaro 42.7%, within the margin, with 3.4% blank and spoiled ballots and 9.7% who do not know; in valid votes, Lula gets 50.86% of the votes and Flávio Bolsonaro 49.14% of the votes (CartaCapital, CNN Brasil and Poder360). On 08/Oct, Datafolha gave Flávio Bolsonaro 49% to 45% and PoderData/Aya 49% to 44% in the total vote. The poll side of this chart is AtlasIntel/Bloomberg of 09/Oct, n=5,026, with 51.1% for Flávio Bolsonaro and 45.7% for Lula, the most recent one with the largest sample among the national polls that published the total vote. In the two pollsters' rounds conducted before the vote, AtlasIntel of 03/Oct had Lula at 47.6% and Flávio Bolsonaro at 47.4%, and Vox Brasil of 02/Oct had Flávio Bolsonaro at 48.2% and Lula at 45.2%. The next national polls registered with the [TSE](/en/glossary#tse) come out on 10/Oct (Ipespe), 11/Oct (DataTrends), 13/Oct (PoderData, Gerp, Nexus and 100 Cidades) and 14/Oct ([Quaest](/en/glossary#quaest)). 📌 Correction: on 08/Oct this panel said that PoderData/Aya had published only valid votes. It also published the total, 49% for Flávio Bolsonaro and 44% for Lula, with 5% blank and spoiled ballots and 2% undecided (Jovem Pan), and the total was added to its entry. By the chart's rule, the source for 08/Oct would have been PoderData/Aya, with the larger sample, and not Datafolha: Flávio Bolsonaro's number is the same, 49%, and Lula's is 1 point lower, 44% instead of 45%.",
-    "sources": "Polymarket prices via the AFOS proxy, and the panel only publishes a price that two independent readings, taken eight minutes apart, confirm within 0.20pp. Confirmation is done contract by contract, and the prices on this page come from the confirmed reading of 09/Oct, 14:06 BRT. Alongside the raw move comes the move normalized by the pair's sum. Polls registered with the [TSE](/en/glossary#tse), with protocol, pollster, fieldwork, sample and method declared in each entry. [First-round](/en/glossary#primeiro-turno) result: official TSE final tally, 100% of polling sections. 🗳️ The POLL side of the divergence chart uses ONE national poll, not the average, and always in the TOTAL vote: the rule is the second-round pair from the most recent national poll that measured it, with ties broken by the largest sample among those that published the total, which gives AtlasIntel/Bloomberg of 09/Oct, n=5,026, with 51.1% for Flávio Bolsonaro and 45.7% for Lula, the most recent one with the largest sample among the national polls that published the total vote.",
+    "note": "Polymarket prices at the confirmed reading of 14/Oct, 18:12 BRT, tenth day of the second round. IN THE WINNER CONTRACT FLÁVIO BOLSONARO'S GAP OVER LULA GOES FROM 70.55pp TO 70.50pp against the confirmed reading of 14/Oct at 15:49 BRT, published in the previous update: Flávio Bolsonaro stands at 85.00% and Lula at 14.50%. The contracts for the other names in the winner book have been closed since the first round, resolved at zero. 📊 Quaest released on 14/Oct the pollster's first wave in the second round: with 2,154 in-person interviews from 10 to 13/Oct, commissioned by Grupo Globo, Flávio Bolsonaro has 46% and Lula 44%, with 9% blank and spoiled ballots and 1% undecided; in the 03/Oct wave it was 44% and 42% (Metrópoles and Exame). Between the night of 12/Oct and 13/Oct, PoderData/Aya gave Flávio Bolsonaro 48% to 46%, BTG/Nexus 48% to 45%, Futura/100% Cidades 50% to 46.6% and Gerp 53% to 44%; DataTrends of 11/Oct gave him 50% to 44%, and Vox Brasil of 09/Oct gave Lula 44.2% to 42.7%. The poll side of this chart is Quaest of 14/Oct, n=2,154, with 46% for Flávio Bolsonaro and 44% for Lula, the most recent national poll that published the total vote. Of the eleven national polls conducted after the vote, ten put Flávio Bolsonaro ahead, by 2 to 9 points in total votes, and Vox Brasil puts Lula ahead by 1.5 points. The next national polls registered with the TSE come out on 15/Oct (Datafolha, Palver and Indexa), 16/Oct (PoderData, MDA, 100 Cidades and Datavero), 17/Oct (Veritá and Ipespe), 18/Oct (Vox Brasil and Phoenix) and 19/Oct (AtlasIntel, PoderData, BTG/Nexus, DataTrends and 100 Cidades).",
+    "sources": "Polymarket prices via the AFOS proxy, and the panel only publishes a price that two independent readings, taken eight minutes apart, confirm within 0.20pp. Confirmation is done contract by contract, and the prices on this page come from the confirmed reading of 14/Oct, 18:12 BRT. Alongside the raw move comes the move normalized by the pair's sum. Polls registered with the TSE, with protocol, pollster, fieldwork, sample and method declared in each entry. First-round result: official TSE final tally, 100% of polling sections. 🗳️ The POLL side of the divergence chart uses ONE national poll, not the average, and always in the TOTAL vote: the benchmark is the second-round pair from the most recent national poll that measured it, with ties broken by the largest sample among those that published the total, which gives Quaest of 14/Oct, n=2,154, with 46% for Flávio Bolsonaro and 44% for Lula, the most recent national poll that published the total vote.",
     "candidates": [
       {
         "name": "Lula",
-        "percentage": 45.7,
-        "odds": 13.5,
-        "value": 13.5,
-        "polymarket": "13.50%",
-        "pesquisaRange": "44% to 45.7%",
-        "lastUpdate": "09/10/2026, 14:06",
+        "percentage": 44,
+        "odds": 14.5,
+        "value": 14.5,
+        "polymarket": "14.50%",
+        "pesquisaRange": "44% to 46.6%",
+        "lastUpdate": "14/10/2026, 18:12",
         "tendenciaPesquisa": "HAS 44% IN THE [SECOND ROUND](/en/glossary#segundo-turno) IN PALVER OF 03/Oct, the source of this chart's poll side, against Flávio Bolsonaro's 49%. On the eve he led the second round in Datafolha (47% to 46%), in CNT/MDA (47.3% to 43.1%) and in AtlasIntel (47.6% to 47.4%), and was tied in PoderData. In the [first-round](/en/glossary#primeiro-turno) count he had 45.16% of valid votes.",
-        "tendenciaPolymarket": "HOLDS STEADY IN THE WINNER CONTRACT, at 13.50% (vol USD 21.20M cumulative), confirmed reading of 09/Oct, 14:06 BRT, against the confirmed reading of 08/Oct at 20:38 BRT, published in the previous update. Flávio Bolsonaro's gap over him goes from 72.15pp to 73.65pp. 📊 He has 45.7% in AtlasIntel and 44.2% in Vox Brasil of 09/Oct. 🏆 Counting the closed contracts, his is still the one with the highest cumulative volume in the presidential book."
+        "tendenciaPolymarket": "HOLDS STEADY IN THE WINNER CONTRACT, at 14.50% (cumulative volume USD 23.09M), confirmed reading of 14/Oct, 18:12 BRT, against the confirmed reading of 14/Oct at 15:49 BRT, published in the previous update. Flávio Bolsonaro's gap over him goes from 70.55pp to 70.50pp. 📊 He has 44% in [Quaest](/en/glossary#quaest) of 14/Oct. 🏆 Counting the closed contracts, his is still the one with the highest cumulative volume in the presidential book."
       },
       {
         "name": "Flávio Bolsonaro",
-        "percentage": 51.1,
-        "odds": 87.15,
-        "value": 87.15,
-        "polymarket": "87.15%",
-        "pesquisaRange": "42.7% to 51.1%",
-        "lastUpdate": "09/10/2026, 14:06",
+        "percentage": 46,
+        "odds": 85,
+        "value": 85,
+        "polymarket": "85.00%",
+        "pesquisaRange": "42.7% to 53%",
+        "lastUpdate": "14/10/2026, 18:12",
         "tendenciaPesquisa": "HAS 49% IN THE [SECOND ROUND](/en/glossary#segundo-turno) IN PALVER OF 03/Oct, the source of this chart's poll side, against Lula's 44%. On the eve he led the second round in [Quaest](/en/glossary#quaest) (44% to 42%), in Palver, in Futura (48% to 45.1%) and in Gerp (49% to 44%). In the [first-round](/en/glossary#primeiro-turno) count he had 47.03% of valid votes.",
-        "tendenciaPolymarket": "UP 1.50pp IN THE WINNER CONTRACT, at 87.15% (vol USD 18.88M cumulative), confirmed reading of 09/Oct, 14:06 BRT, against the confirmed reading of 08/Oct at 20:38 BRT, published in the previous update. The gap over Lula goes from 72.15pp to 73.65pp. 📊 He has 51.1% in AtlasIntel and 42.7% in Vox Brasil of 09/Oct."
+        "tendenciaPolymarket": "FALLS 0.05pp IN THE WINNER CONTRACT, at 85.00% (cumulative volume USD 20.12M), confirmed reading of 14/Oct, 18:12 BRT, against the confirmed reading of 14/Oct at 15:49 BRT, published in the previous update. The gap over Lula goes from 70.55pp to 70.50pp. 📊 He has 46% in [Quaest](/en/glossary#quaest) of 14/Oct."
       },
       {
         "name": "Augusto Cury",
@@ -3487,7 +3183,7 @@
         "value": 0,
         "polymarket": "closed",
         "pesquisaRange": "1% to 12.2%",
-        "lastUpdate": "09/10/2026, 14:06",
+        "lastUpdate": "14/10/2026, 18:12",
         "tendenciaPesquisa": "ELIMINATED: 2.89% of the valid votes in the [first round](/en/glossary#primeiro-turno), third place. Declared support for Flávio Bolsonaro on 08/Oct (G1, Estadão and CNN Brasil).",
         "tendenciaPolymarket": "Winner contract closed by Polymarket after the [first round](/en/glossary#primeiro-turno) and resolved at zero, with USD 5.51M cumulative.",
         "percentage": 0
@@ -3498,7 +3194,7 @@
         "value": 0,
         "polymarket": "closed",
         "pesquisaRange": "1.5% to 11%",
-        "lastUpdate": "09/10/2026, 14:06",
+        "lastUpdate": "14/10/2026, 18:12",
         "tendenciaPesquisa": "ELIMINATED: 2.24% of the valid votes in the [first round](/en/glossary#primeiro-turno), fourth place, in the [TSE](/en/glossary#tse) final tally.",
         "tendenciaPolymarket": "Winner contract closed by Polymarket after the [first round](/en/glossary#primeiro-turno) and resolved at zero, with USD 17.12M cumulative, the second largest in the presidential book.",
         "percentage": 0
@@ -3509,7 +3205,7 @@
         "value": 0,
         "polymarket": "closed",
         "pesquisaRange": "1% to 5.7%",
-        "lastUpdate": "09/10/2026, 14:06",
+        "lastUpdate": "14/10/2026, 18:12",
         "tendenciaPesquisa": "ELIMINATED: 2.18% of the valid votes in the [first round](/en/glossary#primeiro-turno), fifth place. He declared support for Flávio Bolsonaro in Goiânia on 06/Oct (O Globo and VEJA).",
         "tendenciaPolymarket": "Winner contract closed by Polymarket after the [first round](/en/glossary#primeiro-turno) and resolved at zero, with USD 7.82M cumulative.",
         "percentage": 0
@@ -3520,7 +3216,7 @@
         "value": 0,
         "polymarket": "closed",
         "pesquisaRange": "1% to 2%",
-        "lastUpdate": "09/10/2026, 14:06",
+        "lastUpdate": "14/10/2026, 18:12",
         "tendenciaPesquisa": "Out of the election since the [TSE](/en/glossary#tse) rejected his candidacy registration on 11/Sep.",
         "tendenciaPolymarket": "Winner contract closed by Polymarket after the [first round](/en/glossary#primeiro-turno) and resolved at zero.",
         "percentage": 0
@@ -3531,7 +3227,7 @@
         "value": 0,
         "polymarket": "closed",
         "pesquisaRange": "0.3% to 3.5%",
-        "lastUpdate": "09/10/2026, 14:06",
+        "lastUpdate": "14/10/2026, 18:12",
         "tendenciaPesquisa": "ELIMINATED: 0.27% of the valid votes in the [first round](/en/glossary#primeiro-turno), in the [TSE](/en/glossary#tse) final tally. He declared his vote for Flávio Bolsonaro on 05/Oct, and Novo declared support for him on 07/Oct (G1 and CartaCapital).",
         "tendenciaPolymarket": "Winner contract closed by Polymarket after the [first round](/en/glossary#primeiro-turno) and resolved at zero, with USD 7.74M cumulative.",
         "percentage": 0
@@ -3542,7 +3238,7 @@
         "value": 0,
         "polymarket": "closed",
         "pesquisaRange": "not tested",
-        "lastUpdate": "09/10/2026, 14:06",
+        "lastUpdate": "14/10/2026, 18:12",
         "tendenciaPesquisa": "Did not run for President: he was re-elected governor of São Paulo in the [first round](/en/glossary#primeiro-turno).",
         "tendenciaPolymarket": "Winner contract closed by Polymarket after the [first round](/en/glossary#primeiro-turno) and resolved at zero, with USD 14.96M cumulative.",
         "percentage": 0
@@ -3553,19 +3249,19 @@
         "value": 0,
         "polymarket": "closed",
         "pesquisaRange": "not tested",
-        "lastUpdate": "09/10/2026, 14:06",
+        "lastUpdate": "14/10/2026, 18:12",
         "tendenciaPesquisa": "Did not run for President: he ran for governor of São Paulo and lost to Tarcísio de Freitas in the [first round](/en/glossary#primeiro-turno).",
         "tendenciaPolymarket": "Winner contract closed by Polymarket after the [first round](/en/glossary#primeiro-turno) and resolved at zero, with USD 7.74M cumulative.",
         "percentage": 0
       }
     ],
-    "updatedAt": "09/10/2026, 14:06",
+    "updatedAt": "14/10/2026, 18:12",
     "lastUpdate": "25/09/2026, 17:08",
     "pollSource": {
-      "pollster": "AtlasIntel/Bloomberg",
-      "date": "2026-10-09",
-      "sample": 5026,
-      "register": "BR-03663/2026",
+      "pollster": "Quaest/Globo",
+      "date": "2026-10-14",
+      "sample": 2154,
+      "register": "BR-08729/2026",
       "scenario": "Second round, Lula vs Flávio",
       "round": 2
     }
