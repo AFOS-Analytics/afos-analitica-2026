@@ -148,6 +148,28 @@
   ],
   "polls": [
     {
+      "institute": "Datafolha",
+      "date": "2026-10-15",
+      "scope": "national",
+      "sample": 2520,
+      "margin": 2,
+      "register": "BR-00466/2026",
+      "reliability": 5,
+      "method": "Presencial",
+      "fieldDates": "2026-10-13 a 2026-10-15",
+      "note": "Datafolha nacional divulgada em 15/Out, contratada pela Folha de S.Paulo, registro BR-00466/2026, 2.520 eleitores de 16 anos ou mais entrevistados presencialmente de 13 a 15/Out, margem de 2pp com 95% de confiança (Metrópoles, CNN Brasil e Gazeta do Povo). ⚖️ NO 2º TURNO FLÁVIO BOLSONARO TEM 47% E LULA 45%, depois de 49% a 45% na rodada da casa de 08/Out; brancos, nulos e nenhum somam 6% e indecisos 2%. Em votos válidos, Flávio Bolsonaro 51% e Lula 49%, contra 52% e 48% em 08/Out. Rejeição: 46% não votam em Lula e 44% não votam em Flávio Bolsonaro. A avaliação do governo Lula é negativa para 41% e positiva para 35% (Folha de S.Paulo).",
+      "scenarios": [],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 45,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 47
+        }
+      ]
+    },
+    {
       "institute": "Palver",
       "date": "2026-10-15",
       "scope": "national",
@@ -2999,8 +3021,8 @@
     "lastUpdate": "04/10/2026, 21:43"
   },
   "polymarketComparison": {
-    "note": "Preços do Polymarket na leitura confirmada de 15/Out, 17:37 BRT, 11º dia do 2º turno. NO CONTRATO DE VENCEDOR O VÃO DE FLÁVIO BOLSONARO SOBRE LULA VAI DE 70,50pp PARA 54,75pp contra a leitura confirmada de 14/Out às 18:12 BRT, publicada na rodada anterior: Flávio Bolsonaro está em 77,25% e Lula em 22,50%. Os contratos dos outros nomes no livro de vencedor estão fechados desde o 1º turno, resolvidos em zero. 📊 Duas nacionais saíram em 15/Out. A Palver, com 5.000 entrevistas de 10 a 13/Out, dá 50% a Flávio Bolsonaro e 49% a Lula, com 1% de brancos e nulos e nenhum indeciso; na rodada de 03/Out, véspera do 1º turno, eram 49% e 44% (Poder360). A Indexa, encomendada pelo Estadão/Broadcast, com 2.000 entrevistas em 13 e 14/Out, dá 44% a 42% para Flávio Bolsonaro no total e 51% a 49% nos votos válidos; na rodada de 30/Set eram 42% para ele e 43% para Lula (Poder360 e Estadão). A Quaest de 14/Out deu 46% a 44% para Flávio Bolsonaro; entre a noite de 12/Out e 13/Out, a PoderData/Aya deu 48% a 46%, a BTG/Nexus 48% a 45%, a Futura/100% Cidades 50% a 46,6% e a Gerp 53% a 44%, e a Vox Brasil de 09/Out deu 44,2% a 42,7% para Lula. O lado pesquisa deste grafo é a Palver de 15/Out, n=5.000, com 50% para Flávio Bolsonaro e 49% para Lula, a de maior amostra entre as duas nacionais do dia que publicaram o total de votos. Das treze nacionais feitas depois da urna, doze dão Flávio Bolsonaro à frente, por 1 a 9 pontos no total, e a Vox Brasil dá Lula à frente por 1,5 ponto. O Datafolha divulga na noite de 15/Out a rodada de 13 a 15/Out, e as próximas nacionais registradas no TSE saem em 16/Out (PoderData, MDA, 100 Cidades e Datavero), 17/Out (Veritá e Ipespe), 18/Out (Vox Brasil e Phoenix), 19/Out (AtlasIntel, PoderData, BTG/Nexus, DataTrends e 100 Cidades) e 20/Out (Veritá, Real Time Big Data, Alfa e Vetor Arrow).",
-    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. A confirmação é feita contrato a contrato, e os preços desta página são da leitura confirmada de 15/Out, 17:37 BRT. Ao lado do movimento cru vai o normalizado pela soma do par. Pesquisas registradas no TSE, com protocolo, casa, campo, amostra e método declarados em cada entrada. Resultado do 1º turno: totalização oficial do TSE, 100% das seções. 🗳️ O lado PESQUISA do grafo de divergência usa UMA nacional, não a média, e sempre no TOTAL de votos: a régua é o par do 2º turno da nacional mais recente que o mediu, com desempate pela maior amostra entre as que publicaram o total, o que dá a Palver de 15/Out, n=5.000, com 50% para Flávio Bolsonaro e 49% para Lula, a de maior amostra entre as duas nacionais do dia que publicaram o total de votos.",
+    "note": "Preços do Polymarket na leitura confirmada de 15/Out, 17:37 BRT, 11º dia do 2º turno. NO CONTRATO DE VENCEDOR O VÃO DE FLÁVIO BOLSONARO SOBRE LULA VAI DE 70,50pp PARA 54,75pp contra a leitura confirmada de 14/Out às 18:12 BRT, publicada na rodada anterior: Flávio Bolsonaro está em 77,25% e Lula em 22,50%. Os contratos dos outros nomes no livro de vencedor estão fechados desde o 1º turno, resolvidos em zero. 📊 Três nacionais saíram em 15/Out. O Datafolha, com 2.520 entrevistas presenciais de 13 a 15/Out, dá 47% a Flávio Bolsonaro e 45% a Lula no total e 51% a 49% nos votos válidos; na rodada de 08/Out eram 49% e 45% no total e 52% a 48% nos válidos (Metrópoles, CNN Brasil e Gazeta do Povo). A Palver, com 5.000 entrevistas de 10 a 13/Out, dá 50% a Flávio Bolsonaro e 49% a Lula, com 1% de brancos e nulos e nenhum indeciso; na rodada de 03/Out, véspera do 1º turno, eram 49% e 44% (Poder360). A Indexa, encomendada pelo Estadão/Broadcast, com 2.000 entrevistas em 13 e 14/Out, dá 44% a 42% para Flávio Bolsonaro no total e 51% a 49% nos votos válidos; na rodada de 30/Set eram 42% para ele e 43% para Lula (Poder360 e Estadão). A Quaest de 14/Out deu 46% a 44% para Flávio Bolsonaro; entre a noite de 12/Out e 13/Out, a PoderData/Aya deu 48% a 46%, a BTG/Nexus 48% a 45%, a Futura/100% Cidades 50% a 46,6% e a Gerp 53% a 44%, e a Vox Brasil de 09/Out deu 44,2% a 42,7% para Lula. O lado pesquisa deste grafo é a Palver de 15/Out, n=5.000, com 50% para Flávio Bolsonaro e 49% para Lula, a de maior amostra entre as três nacionais do dia, que publicaram o total de votos. Das catorze nacionais feitas depois da urna, treze dão Flávio Bolsonaro à frente, por 1 a 9 pontos no total, e a Vox Brasil dá Lula à frente por 1,5 ponto. As próximas nacionais registradas no TSE saem em 16/Out (PoderData, MDA, 100 Cidades e Datavero), 17/Out (Veritá e Ipespe), 18/Out (Vox Brasil e Phoenix), 19/Out (AtlasIntel, PoderData, BTG/Nexus, DataTrends e 100 Cidades) e 20/Out (Veritá, Real Time Big Data, Alfa e Vetor Arrow).",
+    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. A confirmação é feita contrato a contrato, e os preços desta página são da leitura confirmada de 15/Out, 17:37 BRT. Ao lado do movimento cru vai o normalizado pela soma do par. Pesquisas registradas no TSE, com protocolo, casa, campo, amostra e método declarados em cada entrada. Resultado do 1º turno: totalização oficial do TSE, 100% das seções. 🗳️ O lado PESQUISA do grafo de divergência usa UMA nacional, não a média, e sempre no TOTAL de votos: a régua é o par do 2º turno da nacional mais recente que o mediu, com desempate pela maior amostra entre as que publicaram o total, o que dá a Palver de 15/Out, n=5.000, com 50% para Flávio Bolsonaro e 49% para Lula, a de maior amostra entre as três nacionais do dia, que publicaram o total de votos.",
     "candidates": [
       {
         "name": "Lula",
