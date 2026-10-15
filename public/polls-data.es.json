@@ -148,6 +148,28 @@
   ],
   "polls": [
     {
+      "institute": "Datafolha",
+      "date": "2026-10-15",
+      "scope": "national",
+      "sample": 2520,
+      "margin": 2,
+      "register": "BR-00466/2026",
+      "reliability": 5,
+      "method": "Presencial",
+      "fieldDates": "2026-10-13 a 2026-10-15",
+      "note": "Datafolha nacional divulgada el 15/Oct, contratada por Folha de S.Paulo, registro BR-00466/2026, 2.520 electores de 16 años o más entrevistados presencialmente del 13 al 15/Oct, margen de 2pp con 95% de confianza (Metrópoles, CNN Brasil y Gazeta do Povo). ⚖️ EN LA SEGUNDA VUELTA FLÁVIO BOLSONARO TIENE 47% Y LULA 45%, después de 49% a 45% en la ronda de la casa del 08/Oct; votos en blanco, nulos y ninguno suman 6% e indecisos 2%. En votos válidos, Flávio Bolsonaro 51% y Lula 49%, frente a 52% y 48% el 08/Oct. Rechazo: 46% no votan por Lula y 44% no votan por Flávio Bolsonaro. La evaluación del gobierno Lula es negativa para 41% y positiva para 35% (Folha de S.Paulo).",
+      "scenarios": [],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 45,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 47
+        }
+      ]
+    },
+    {
       "institute": "Palver",
       "date": "2026-10-15",
       "scope": "national",
@@ -2999,8 +3021,8 @@
     "lastUpdate": "04/10/2026, 21:43"
   },
   "polymarketComparison": {
-    "note": "Precios de Polymarket en la lectura confirmada del 15/Oct, 17:37 BRT, 11º día de la segunda vuelta. EN EL CONTRATO DE GANADOR LA BRECHA DE FLÁVIO BOLSONARO SOBRE LULA PASA DE 70,50pp A 54,75pp frente a la lectura confirmada del 14/Oct a las 18:12 BRT, publicada en la ronda anterior: Flávio Bolsonaro está en 77,25% y Lula en 22,50%. Los contratos de los otros nombres en el libro de ganador están cerrados desde la primera vuelta, resueltos en cero. 📊 Dos nacionales salieron el 15/Oct. La Palver, con 5.000 entrevistas del 10 al 13/Oct, da 50% a Flávio Bolsonaro y 49% a Lula, con 1% de votos en blanco y nulos y ningún indeciso; en la ronda del 03/Oct, víspera de la primera vuelta, eran 49% y 44% (Poder360). La Indexa, encargada por Estadão/Broadcast, con 2.000 entrevistas el 13 y el 14/Oct, da 44% a 42% a Flávio Bolsonaro en el total y 51% a 49% en los votos válidos; en la ronda del 30/Sep eran 42% para él y 43% para Lula (Poder360 y Estadão). La Quaest del 14/Oct dio 46% a 44% a Flávio Bolsonaro; entre la noche del 12/Oct y el 13/Oct, la PoderData/Aya dio 48% a 46%, la BTG/Nexus 48% a 45%, la Futura/100% Cidades 50% a 46,6% y la Gerp 53% a 44%, y la Vox Brasil del 09/Oct dio 44,2% a 42,7% a Lula. El lado encuesta de este gráfico es la Palver del 15/Oct, n=5.000, con 50% para Flávio Bolsonaro y 49% para Lula, la de mayor muestra entre las dos nacionales del día que publicaron el total de votos. De las trece nacionales hechas después de las urnas, doce dan a Flávio Bolsonaro al frente, por 1 a 9 puntos en el total, y la Vox Brasil da a Lula al frente por 1,5 puntos. Datafolha divulga en la noche del 15/Oct la ronda del 13 al 15/Oct, y las próximas nacionales registradas en el TSE salen el 16/Oct (PoderData, MDA, 100 Cidades y Datavero), el 17/Oct (Veritá e Ipespe), el 18/Oct (Vox Brasil y Phoenix), el 19/Oct (AtlasIntel, PoderData, BTG/Nexus, DataTrends y 100 Cidades) y el 20/Oct (Veritá, Real Time Big Data, Alfa y Vetor Arrow).",
-    "sources": "Precios de Polymarket vía proxy AFOS, y el panel solo publica precio que dos lecturas independientes, tomadas con ocho minutos de intervalo, confirmen dentro de 0,20pp. La confirmación se hace contrato por contrato, y los precios de esta página son de la lectura confirmada del 15/Oct, 17:37 BRT. Al lado del movimiento crudo va el normalizado por la suma del par. Encuestas registradas en el TSE, con protocolo, casa, trabajo de campo, muestra y método declarados en cada entrada. Resultado de la primera vuelta: totalización oficial del TSE, 100% de las secciones. 🗳️ El lado ENCUESTA del gráfico de divergencia usa UNA nacional, no el promedio, y siempre en el TOTAL de votos: la referencia es el par de la segunda vuelta de la nacional más reciente que lo midió, con desempate por la mayor muestra entre las que publicaron el total, lo que da la Palver del 15/Oct, n=5.000, con 50% para Flávio Bolsonaro y 49% para Lula, la de mayor muestra entre las dos nacionales del día que publicaron el total de votos.",
+    "note": "Precios de Polymarket en la lectura confirmada del 15/Oct, 17:37 BRT, 11º día de la segunda vuelta. EN EL CONTRATO DE GANADOR LA BRECHA DE FLÁVIO BOLSONARO SOBRE LULA PASA DE 70,50pp A 54,75pp frente a la lectura confirmada del 14/Oct a las 18:12 BRT, publicada en la ronda anterior: Flávio Bolsonaro está en 77,25% y Lula en 22,50%. Los contratos de los otros nombres en el libro de ganador están cerrados desde la primera vuelta, resueltos en cero. 📊 Tres nacionales salieron el 15/Oct. El Datafolha, con 2.520 entrevistas presenciales del 13 al 15/Oct, da 47% a Flávio Bolsonaro y 45% a Lula en el total y 51% a 49% en los votos válidos; en la ronda del 08/Oct eran 49% y 45% en el total y 52% a 48% en los válidos (Metrópoles, CNN Brasil y Gazeta do Povo). La Palver, con 5.000 entrevistas del 10 al 13/Oct, da 50% a Flávio Bolsonaro y 49% a Lula, con 1% de votos en blanco y nulos y ningún indeciso; en la ronda del 03/Oct, víspera de la primera vuelta, eran 49% y 44% (Poder360). La Indexa, encargada por Estadão/Broadcast, con 2.000 entrevistas el 13 y el 14/Oct, da 44% a 42% a Flávio Bolsonaro en el total y 51% a 49% en los votos válidos; en la ronda del 30/Sep eran 42% para él y 43% para Lula (Poder360 y Estadão). La Quaest del 14/Oct dio 46% a 44% a Flávio Bolsonaro; entre la noche del 12/Oct y el 13/Oct, la PoderData/Aya dio 48% a 46%, la BTG/Nexus 48% a 45%, la Futura/100% Cidades 50% a 46,6% y la Gerp 53% a 44%, y la Vox Brasil del 09/Oct dio 44,2% a 42,7% a Lula. El lado encuesta de este gráfico es la Palver del 15/Oct, n=5.000, con 50% para Flávio Bolsonaro y 49% para Lula, la de mayor muestra entre las tres nacionales del día, que publicaron el total de votos. De las catorce nacionales hechas después de las urnas, trece dan a Flávio Bolsonaro al frente, por 1 a 9 puntos en el total, y la Vox Brasil da a Lula al frente por 1,5 puntos. Las próximas nacionales registradas en el TSE salen el 16/Oct (PoderData, MDA, 100 Cidades y Datavero), el 17/Oct (Veritá e Ipespe), el 18/Oct (Vox Brasil y Phoenix), el 19/Oct (AtlasIntel, PoderData, BTG/Nexus, DataTrends y 100 Cidades) y el 20/Oct (Veritá, Real Time Big Data, Alfa y Vetor Arrow).",
+    "sources": "Precios de Polymarket vía proxy AFOS, y el panel solo publica precio que dos lecturas independientes, tomadas con ocho minutos de intervalo, confirmen dentro de 0,20pp. La confirmación se hace contrato por contrato, y los precios de esta página son de la lectura confirmada del 15/Oct, 17:37 BRT. Al lado del movimiento crudo va el normalizado por la suma del par. Encuestas registradas en el TSE, con protocolo, casa, trabajo de campo, muestra y método declarados en cada entrada. Resultado de la primera vuelta: totalización oficial del TSE, 100% de las secciones. 🗳️ El lado ENCUESTA del gráfico de divergencia usa UNA nacional, no el promedio, y siempre en el TOTAL de votos: la referencia es el par de la segunda vuelta de la nacional más reciente que lo midió, con desempate por la mayor muestra entre las que publicaron el total, lo que da la Palver del 15/Oct, n=5.000, con 50% para Flávio Bolsonaro y 49% para Lula, la de mayor muestra entre las tres nacionales del día, que publicaron el total de votos.",
     "candidates": [
       {
         "name": "Lula",

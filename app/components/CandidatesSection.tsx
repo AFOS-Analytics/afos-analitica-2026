@@ -28,7 +28,7 @@ const candidates: CandidateProfile[] = [
     polymarket: "77,25%",
     poll: "47,03% na urna do 1º turno",
     position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
-    risk: "CAI 7,75pp NO CONTRATO DE VENCEDOR, em 77,25% (vol USD 20,75M acumulado), leitura confirmada de 15/Out, 17:37 BRT, contra a leitura confirmada de 14/Out às 18:12 BRT, publicada na rodada anterior. Tem 50% contra 49% na Palver de 15/Out e lidera doze das treze nacionais feitas depois da urna.",
+    risk: "CAI 7,75pp NO CONTRATO DE VENCEDOR, em 77,25% (vol USD 20,75M acumulado), leitura confirmada de 15/Out, 17:37 BRT, contra a leitura confirmada de 14/Out às 18:12 BRT, publicada na rodada anterior. Tem 50% contra 49% na Palver de 15/Out e lidera treze das catorze nacionais feitas depois da urna.",
   },
   {
     name: "Renan Santos",
