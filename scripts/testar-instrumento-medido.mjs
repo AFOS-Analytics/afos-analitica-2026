@@ -13,7 +13,7 @@
  *    calar buraco real: a casa segue devendo tudo que é anterior à troca, e
  *    casa sem registro segue devendo tudo.
  */
-import { deveRodada, INSTRUMENTO_TROCADO } from '../lib/us-polls/instrumento-medido.mjs'
+import { deveRodada, ehOutroInstrumento, motivoDoInstrumento, conferirRegistro, TIPOS, INSTRUMENTO_TROCADO } from '../lib/us-polls/instrumento-medido.mjs'
 
 let ok = 0
 let mau = 0
@@ -65,6 +65,65 @@ eq('o motivo nomeia o veredito NOMINAL', /NOMINAL/.test(v.motivo), true)
 eq('o motivo traz a data da medição', v.motivo.includes(reg.medidoEm), true)
 eq('quem deve não carrega motivo', deveRodada(CASA, '2026-08-01').motivo, null)
 eq('o registro viaja para quem não deve', v.registro === reg, true)
+
+
+// ══ O TIPO DECLARADO, de 16/Out/2026 ══════════════════════════════════════
+//
+// 🔴 O defeito guardado aqui: o motivo era a frase SOLDADA "cédula com nomes
+//    do distrito", e a terceira casa do registro, a AP-NORC, não é nominal:
+//    ela pergunta qual partido o eleitor PREFERE que controle a Câmara. Sem
+//    tipo, a exclusão certa sairia com o rótulo errado.
+//
+// ⚖️ Metade anti-silêncio (carga malformada tem de ser acusada) e metade
+//    anti-excesso (entrada sem tipo NÃO pode excluir rodada).
+
+// ── a carga do registro real ──────────────────────────────────────────────
+eq('o registro real passa na conferência de carga', conferirRegistro(), [])
+eq('os dois tipos estão declarados', Object.keys(TIPOS).sort(), ['NOMINAL', 'PREFERENCIA_DE_CONTROLE'])
+
+// ── anti-silêncio: carga malformada é ACUSADA, uma causa por vez ──────────
+const base = { tipo: 'NOMINAL', desde: '2026-01-01', medidoEm: '2026-01-02', ressalva: 'x', prova: 'u' }
+const sem = (campo, valor) => conferirRegistro({ Casa: { ...base, [campo]: valor } })
+eq('sem tipo é acusado', sem('tipo', undefined).length, 1)
+eq('tipo inventado é acusado', sem('tipo', 'CHUTE').length, 1)
+eq('o aviso de tipo NOMEIA o campo', /tipo/.test(sem('tipo', 'CHUTE')[0]), true)
+eq('sem prova é acusado', sem('prova', '').length, 1)
+eq('sem ressalva é acusado', sem('ressalva', '').length, 1)
+eq('desde fora de AAAA-MM-DD é acusado', sem('desde', '01/01/2026').length, 1)
+eq('medidoEm fora de AAAA-MM-DD é acusado', sem('medidoEm', '').length, 1)
+eq('entrada vazia é acusada', conferirRegistro({ Casa: null }).length, 1)
+eq('carga boa não acusa nada', conferirRegistro({ Casa: base }), [])
+
+// ── anti-excesso: tipo não declarado deixa a entrada INERTE ───────────────
+//    A direção do erro se escolhe pela consequência: o lado que PUBLICA é o
+//    que exclui rodada por um motivo que ninguém sabe dizer.
+const torto = { Casa: { ...base, tipo: 'CHUTE' } }
+eq('tipo inventado NÃO exclui a rodada', deveRodada('Casa', '2026-06-01', torto).deve, true)
+eq('tipo inventado não inventa motivo', deveRodada('Casa', '2026-06-01', torto).motivo, null)
+eq('tipo inventado sai DECLARADO', deveRodada('Casa', '2026-06-01', torto).tipoNaoDeclarado, true)
+eq('tipo inventado NÃO tira a rodada da média',
+  ehOutroInstrumento({ instituto: 'Casa', campoInicio: '2026-06-01' }, torto), false)
+eq('tipo declarado TIRA a rodada da média',
+  ehOutroInstrumento({ instituto: 'Casa', campoInicio: '2026-06-01' }, { Casa: base }), true)
+
+// ── o rótulo diz DE QUE a exclusão é, que é o defeito consertado ──────────
+const ap = deveRodada('AP-NORC', '2026-10-08')
+eq('a AP-NORC de 08/Out não deve rodada', ap.deve, false)
+eq('o motivo dela NOMEIA preferência de controle', /PREFERENCIA_DE_CONTROLE/.test(ap.motivo), true)
+eq('🔴 e NÃO diz que ela é nominal', /NOMINAL/.test(ap.motivo), false)
+eq('o motivo dela traz a descrição do tipo', ap.motivo.includes('CONTROLAR'), true)
+eq('a nominal segue dizendo NOMINAL', /NOMINAL/.test(deveRodada(CASA, '2026-09-21').motivo), true)
+
+// ── anti-excesso: o corte segue sendo por ONDA, não por casa ──────────────
+eq('AP-NORC ANTES de 08/Out segue devendo', deveRodada('AP-NORC', '2026-10-07').deve, true)
+eq('casa fora do registro segue devendo', deveRodada('Casa Que Nao Existe', '2026-10-08').deve, true)
+
+// ── o motivo estruturado carrega o tipo, para quem quiser ler sem regex ───
+const mot = motivoDoInstrumento({ instituto: 'AP-NORC', campoInicio: '2026-10-08' })
+eq('motivoDoInstrumento traz o tipo', mot.tipo, 'PREFERENCIA_DE_CONTROLE')
+eq('motivoDoInstrumento traz a descrição', mot.descricao, TIPOS.PREFERENCIA_DE_CONTROLE)
+eq('motivoDoInstrumento traz a prova', mot.prova.startsWith('https://apnorc.org/'), true)
+eq('e a ressalva é a frase LITERAL da MT1', mot.ressalva.startsWith('MT1. Thinking about the outcome'), true)
 
 console.log(`\n${mau ? '❌' : '✅'} ${ok} passaram, ${mau} falharam\n`)
 if (mau) process.exit(1)
