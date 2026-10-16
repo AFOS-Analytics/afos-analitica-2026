@@ -495,6 +495,7 @@ npm run glossario:brz                    # repõe nos campos que ESTA rodada ree
 Execute em sequência:
 0. **VALIDATOR-FIRST (bloqueante):** `npx tsx scripts/validate-polls-data.ts`. Se exit 1, NÃO prosseguir — corrigir entry malformada e rodar de novo. Mais barato que crashar prod (incidente 21/Mai).
 1. `rm -rf .next && npm run build`
+1.5. 🔁 **PARIDADE ANTES DO DEPLOY (instalado 16/Out/2026):** `npm run paridade:prod -- --meus=br`. Saída **1** quer dizer que um JSON que NÃO é seu difere da produção: o merge com `origin/main` trouxe trabalho da outra faixa ainda não publicado (foi o `us-polls-data.json` em 16/Out), ou o seu tree reverteria um publicado. A saída limpa é publicar do seu commit ANTERIOR ao merge e empurrar o merge sem publicá-lo. Depois do deploy, `npm run paridade:prod -- --meus=br --depois` tem de dar 0.
 2. `npx vercel --yes --prod`
 3. `git add app/components/CandidatesSection.tsx public/analysis-data.json public/analysis-criteriosa.json public/polls-data.json` e, se a ETAPA 3.5 gerou algum, `git add public/*.en.json public/*.es.json`
 4. `git commit -m "Atualização AFOS [DATA] — [RESUMO PRINCIPAL]"` com Co-Authored-By
