@@ -139,6 +139,29 @@ writeFileSync(join(OUT, 'DATA_DICTIONARY.md'), `# Data dictionary
 
 📌 **The soundest integrity check is the sum.** In a well-read row, \`dem + rep + other\` lands near 100. A sum far from it is the signature of a shifted column at the source, and it catches errors that a plausibility range cannot.
 
+## \`raw/us-polls-data.json\` → \`recortesAlternativos\`
+
+Some institutes publish the same wave under **two voter screens**, and the aggregating index tabulates only one of them. When that happens the AFOS **keeps serving the tabulated row and does not substitute it**: swapping would change the provenance of the served number, and provenance is what makes this dataset auditable. The declared hierarchy \`LV > RV > A\` applies **between the rows the index tabulates**, never against the index.
+
+So that the choice is visible rather than hidden, the other screen is published here.
+
+| field | type | description |
+|---|---|---|
+| \`regra\` | string | the policy, in full, in Portuguese |
+| \`hierarquia\` | string | where \`LV > RV > A\` applies |
+| \`quantos\` | integer | how many published rounds carry a second screen |
+| \`itens[].instituto\` | string | the institute |
+| \`itens[].campoInicio\` / \`campoFim\` | date | fieldwork window, ISO 8601 |
+| \`itens[].servido\` | object | the row we serve: \`recorte\`, \`dem\`, \`rep\`, \`vantagemDem\` |
+| \`itens[].alternativo\` | object | the row the index did not tabulate, same shape |
+| \`itens[].prova\` | string | the quoted evidence from the source |
+| \`itens[].url\` | string | the source document |
+| \`itens[].conferidoEm\` | date | when a human read that source |
+
+🔑 **This block is the exposure, not a correction.** Nothing in \`polls/us-generic-ballot.csv\` or in the average is affected by it: anyone who disagrees with the policy has everything needed to recompute.
+
+⏳ **The declaration expires by value.** It is matched to the round by \`dem\` and \`rep\`, so if the index rewrites the number the entry stops applying on its own rather than ageing silently.
+
 ## \`data/<market>.csv\`
 
 | column | type | description |
