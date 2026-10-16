@@ -46,6 +46,7 @@
     "fantasmas:brz": "tsx scripts/diff-tse-arquivo-vs-banco.ts",
     "espelho:brz": "node scripts/espelho-brz.mjs",
     "paridade:readme": "node scripts/conferir-paridade-readme.mjs",
+    "paridade:prod": "node scripts/paridade-prod.mjs",
     "calendario:brz": "node scripts/calendario-pesquisas-brz.mjs",
     "rede:afos": "node scripts/rede-afos.mjs",
     "cobertura:brz": "node scripts/conferir-cobertura-imprensa-brz.mjs",
