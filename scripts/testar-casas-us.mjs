@@ -430,6 +430,7 @@ console.log('\n11. INSTRUMENTO: a media mede o que ela diz medir (26/Set/2026)')
   const HOJE = new Date('2026-09-25T12:00:00Z')
   const REG_I = {
     'Casa Nominal': {
+      tipo: 'NOMINAL',
       desde: '2026-09-04',
       medidoEm: '2026-09-22',
       ondas: ['2026-09-04 a 2026-09-08'],

@@ -202,14 +202,19 @@ console.log('\nA rodada que NAO entrava na media nao explica queda (26/Set/2026)
   // NAO caia, porque aquela onda nunca esteve na conta. Coluna que explica queda
   // nomeando quem nao causa queda e numero com rotulo errado.
   const REG_I = {
-    'Casa Nominal': { desde: '2026-09-01', medidoEm: '2026-09-22', ondas: ['2026-09-01 a 2026-09-05'], ressalva: 'cedula com nomes', prova: 'https://x' },
+    'Casa Nominal': { tipo: 'NOMINAL', desde: '2026-09-01', medidoEm: '2026-09-22', ondas: ['2026-09-01 a 2026-09-05'], ressalva: 'cedula com nomes', prova: 'https://x' },
   }
   const base = [
     { instituto: 'Casa A', campoInicio: '2026-09-02', campoFim: '2026-09-04', amostra: 1000, amostraTipo: 'RV', dem: 50, rep: 45 },
     { instituto: 'Casa B', campoInicio: '2026-09-10', campoFim: '2026-09-12', amostra: 1000, amostraTipo: 'RV', dem: 51, rep: 44 },
   ]
   const nominal = { instituto: 'Casa Nominal', campoInicio: '2026-09-03', campoFim: '2026-09-05', amostra: 1000, amostraTipo: 'RV', dem: 60, rep: 30 }
-  const opts = { de: new Date('2026-09-20T12:00:00Z'), dias: 30, horizonte: 30, registroInstrumento: REG_I }
+  // 🔴 `agora`, nunca `de`: a projecao le `opts.agora`, e com o nome errado a
+  //    opcao era IGNORADA, o relogio real entrava no lugar e o fixture de
+  //    setembro saia da janela sozinho. O arnes passava em setembro e ficou
+  //    vermelho quando o calendario andou, sem ninguem ver, porque ele nao
+  //    estava no CI. Medido em 16/Out/2026.
+  const opts = { agora: new Date('2026-09-20T12:00:00Z'), dias: 30, horizonte: 30, registroInstrumento: REG_I }
   const pr = projetarJanela({ polls: [...base, nominal] }, opts)
 
   const comNominal = pr.linhas.filter((l) => !l.vazia && l.saindo.some((s) => s.instituto === 'Casa Nominal'))

@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-15",
-  "fetchedAt": "2026-10-15T22:32:34.514Z",
+  "lastUpdate": "2026-10-16",
+  "fetchedAt": "2026-10-16T19:30:06.124Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,8 +47,8 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-15",
-    "nPesquisas": 41,
+    "desde": "2026-09-16",
+    "nPesquisas": 35,
     "tratamentoDoIndeciso": [
       {
         "serie": "Angus Reid Global",
@@ -420,56 +420,6 @@
         "amostraTipo": "LV",
         "dem": 49,
         "rep": 41
-      },
-      {
-        "key": "Big Data Poll|2026-09-15",
-        "instituto": "Big Data Poll",
-        "institutoNoIndice": "Big Data Poll (R)",
-        "campoFim": "2026-09-15",
-        "amostraTipo": "LV",
-        "dem": 48,
-        "rep": 37
-      },
-      {
-        "key": "Emerson College|2026-09-15",
-        "instituto": "Emerson College",
-        "institutoNoIndice": "Emerson College/ RealClear Opinion Research",
-        "campoFim": "2026-09-15",
-        "amostraTipo": "RV",
-        "dem": 37,
-        "rep": 29
-      },
-      {
-        "key": "Hart Research Associates (D)/ Public Opinion Strategies (R)|2026-09-15",
-        "instituto": "Hart Research Associates (D)/ Public Opinion Strategies (R)",
-        "campoFim": "2026-09-15",
-        "amostraTipo": "RV",
-        "dem": 50,
-        "rep": 45
-      },
-      {
-        "key": "Marist University|2026-09-15",
-        "instituto": "Marist University",
-        "campoFim": "2026-09-15",
-        "amostraTipo": "RV",
-        "dem": 53,
-        "rep": 41
-      },
-      {
-        "key": "Morning Consult|2026-09-15",
-        "instituto": "Morning Consult",
-        "campoFim": "2026-09-15",
-        "amostraTipo": "RV",
-        "dem": 46,
-        "rep": 43
-      },
-      {
-        "key": "RMG Research|2026-09-15",
-        "instituto": "RMG Research",
-        "campoFim": "2026-09-15",
-        "amostraTipo": "RV",
-        "dem": 51,
-        "rep": 43
       }
     ],
     "excluidasPorInstrumento": [
@@ -480,6 +430,8 @@
         "amostraTipo": "RV",
         "dem": 46,
         "rep": 39,
+        "tipo": "NOMINAL",
+        "descricao": "cédula com os NOMES dos candidatos do distrito do entrevistado, e não a pergunta genérica",
         "desde": "2026-09-04",
         "medidoEm": "2026-09-22",
         "ressalva": "Asked using the names of candidates running in the respondent’s district of residence",
@@ -492,6 +444,8 @@
         "amostraTipo": "LV",
         "dem": 51,
         "rep": 40,
+        "tipo": "NOMINAL",
+        "descricao": "cédula com os NOMES dos candidatos do distrito do entrevistado, e não a pergunta genérica",
         "desde": "2026-09-04",
         "medidoEm": "2026-09-22",
         "ressalva": "Asked using the names of candidates running in the respondent’s district of residence",
@@ -504,6 +458,8 @@
         "amostraTipo": "RV",
         "dem": 44,
         "rep": 36,
+        "tipo": "NOMINAL",
+        "descricao": "cédula com os NOMES dos candidatos do distrito do entrevistado, e não a pergunta genérica",
         "desde": "2026-09-28",
         "medidoEm": "2026-10-09",
         "ressalva": "In the October 2026 survey, candidate names were inserted into the response options based on the respondent’s congressional district",
@@ -516,6 +472,8 @@
         "amostraTipo": "LV",
         "dem": 53,
         "rep": 38,
+        "tipo": "NOMINAL",
+        "descricao": "cédula com os NOMES dos candidatos do distrito do entrevistado, e não a pergunta genérica",
         "desde": "2026-09-04",
         "medidoEm": "2026-09-22",
         "ressalva": "Asked using the names of candidates running in the respondent’s district of residence",
@@ -528,23 +486,24 @@
         "amostraTipo": "LV",
         "dem": 52,
         "rep": 38,
+        "tipo": "NOMINAL",
+        "descricao": "cédula com os NOMES dos candidatos do distrito do entrevistado, e não a pergunta genérica",
         "desde": "2026-09-04",
         "medidoEm": "2026-09-22",
         "ressalva": "Asked using the names of candidates running in the respondent’s district of residence",
         "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
       }
     ],
-    "nInstitutos": 29,
-    "dem": 49.41,
-    "rep": 41.83,
-    "vantagemDem": 7.58,
+    "nInstitutos": 26,
+    "dem": 49.74,
+    "rep": 42.2,
+    "vantagemDem": 7.54,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
       "AlphaROC",
       "Angus Reid Global",
       "Beacon Research (D)/ Shaw & Co. Research (R)",
-      "Big Data Poll",
       "CBS News/YouGov",
       "CNN/SSRS",
       "Centerline Research & Strategy",
@@ -553,12 +512,10 @@
       "Echelon Insights",
       "Emerson College",
       "Focaldata",
-      "Hart Research Associates (D)/ Public Opinion Strategies (R)",
       "Harvard/Harris Poll/HarrisX",
       "Impact Research (D)/National Research Inc. (R)",
       "John Zogby Strategies",
       "KFF",
-      "Marist University",
       "McLaughlin & Associates (R)",
       "Morning Consult",
       "Quantus Insights (R)",
