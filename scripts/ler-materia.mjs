@@ -22,7 +22,7 @@
  *   npx tsx scripts/ler-materia.mjs --link=https://g1.globo.com/...
  *   npx tsx scripts/ler-materia.mjs "Real Time Big Data volta a testar"
  *   npx tsx scripts/ler-materia.mjs "Datafolha, 1º turno" --data=2026-09-17
- *   npx tsx scripts/ler-materia.mjs --link=... --texto        # corpo inteiro
+ *   npx tsx scripts/ler-materia.mjs --link=... --texto        # corpo inteiro (a ficha já traz o RESULTADO)
  *   npx tsx scripts/ler-materia.mjs --link=... --sem-base     # não consulta a API
  *
  * ⚠️ Com `tsx`, não com `node`: importa de `wayback-archive.ts`, pelo mesmo
@@ -138,7 +138,8 @@ function frases(texto) {
   return texto
     .split(/(?<=[.!?])\s+|\n+/)
     .map((f) => f.trim())
-    .filter((f) => f.length > 15)
+    // frase curta COM percentual fica: "Indecisos: 5%" tem 13 caracteres e é linha de resultado
+    .filter((f) => f.length > 15 || /\d\s?%/.test(f))
 }
 
 const SONDAS = [
@@ -149,7 +150,15 @@ const SONDAS = [
   ['metodologia', /\b(presencial|telefone|telef[ôo]nico|URA|question[áa]rio|pontos de fluxo|domiciliar|recrutamento digital|painel online)\b/i],
   ['escopo', /\b(em todo o pa[íi]s|nacional|todo o territ[óo]rio|munic[íi]pios|no estado d\w+|eleitores d[oe] [A-ZÁÉÍÓÚÂÊÔÃÕÇ])/],
   ['cargo', /\b(presid\w+|governad\w+|senad\w+|deputad\w+)\b/i],
+  // 🔢 16/Out/2026: a ficha trazia tudo menos o NÚMERO, e cada leitura de resultado
+  //    virava `--texto | grep '%'` à mão (5 vezes numa rodada). O TÍTULO do cenário vem
+  //    junto, na ordem do texto, porque a CNT/MDA listava o espontâneo (45,6 x 44,1)
+  //    antes do estimulado total (46,8 x 45,9) com as mesmas linhas "Flávio (PL): X%".
+  ['resultado', /\b(Lula|Fl[áa]vio|branc\w*|nul\w+|indecis\w*|n[ãa]o sab\w+)\b.{0,90}\d{1,2}(,\d{1,2})?\s?%|\d{1,2}(,\d{1,2})?\s?%.{0,90}\b(Lula|Fl[áa]vio)\b|^(cen[áa]rio|votos (v[áa]lidos|totais)|estimulad\w|espont[âa]ne\w)/i],
 ]
+
+/** Quantas frases cada sonda mostra. O resultado precisa de mais: total, válidos e espontânea. */
+const LIMITE_SONDA = { resultado: 20 }
 
 function normalizarProtocolo(s) {
   const m = s.match(/\bBR[\s-]?(\d{5})\s?[/-]\s?(20\d{2})\b/i)
@@ -210,7 +219,7 @@ for (const alvo of lista) {
   console.log('\n🔍 FICHA, cada achado com a FRASE inteira em volta:')
   const protocolos = new Set()
   for (const [nome, re] of SONDAS) {
-    const hits = fs_.filter((f) => re.test(f)).slice(0, 3)
+    const hits = fs_.filter((f) => re.test(f)).slice(0, LIMITE_SONDA[nome] ?? 3)
     if (hits.length === 0) {
       console.log(`   ${nome.padEnd(12)} ⛔ nada`)
       continue
