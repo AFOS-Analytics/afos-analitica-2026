@@ -127,6 +127,22 @@ rodar(
   ['--pais=us']
 )
 
+// ─── PASSO 3.5, acrescentado em 16/Out/2026 ─────────────────────────────────
+//
+// 🔴 O passo 3 fecha a cauda cega com a leitura CERTIFICADA, que é UM ponto, e
+// um ponto não cobre uma janela. Dois superlativos FALSOS saíram por isso, em
+// 09 e 13/Out: no de 13/Out o topo da série foi tocado 57 minutos ANTES da
+// certificada, então nem o backup nem ela o viram.
+//
+// 🔑 Este passo preenche a cauda com os pontos INTRADIÁRIOS da rota, com
+// controle positivo por série. Saída 2 quer dizer superlativo PROIBIDO.
+rodar(
+  'cauda',
+  '3.5/4 · CAUDA CEGA — o pedaço que o backup e a certificada não cobrem',
+  'scripts/cauda-do-contrato-us.mjs',
+  []
+)
+
 // ─── PASSO 4, acrescentado em 15/Set/2026 ───────────────────────────────────
 //
 // 🔑 O passo 1 imprime ❌ e ✅ para cada distribuição e para aí. A régua do

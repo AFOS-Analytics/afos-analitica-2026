@@ -71,6 +71,32 @@ Faltando qualquer um, PARAR e pedir o `/atualizar-usa` primeiro.
 - **Pesquisas:** `public/us-polls-data.json`, e o que importa é a **dispersão entre institutos**, não a média.
 - **Imprensa:** `public/us-press-archive/{data}.json`.
 
+
+### 🕳️ E ANTES de escrever RECORDE ou PISO: fechar a cauda cega (16/Out/2026)
+
+```bash
+node scripts/cauda-do-contrato-us.mjs      # entra na rodada:usa como passo 3.5/4
+```
+
+🔴 **POR QUE ELE EXISTE, e são DOIS superlativos falsos publicados.** O backup é diário e a série viva cresce o dia inteiro, então entre o último ponto gravado e agora existe uma CAUDA CEGA. O `serie-do-contrato.mjs` já a fechava, mas com a leitura **CERTIFICADA**, que é **UM ponto**, e um ponto não cobre uma janela.
+
+💥 **O caso de 13/Out é o retrato:** o topo da série era **99,10**, tocado às **18:30Z**, **57 minutos ANTES** da certificada das 19:27Z, que marcava 99,05. O backup não tinha e a certificada não viu, então saiu **RECORDE sobre o valor errado**.
+
+⚠️ **E o limiar `CAUDA_CEGA_ESPERADA_H = 26` nunca disparou nos dois casos**, porque as caudas reais moram em ~22h. Ele avisa sobre o **TAMANHO** da cauda; ele **não a FECHA**. São coisas diferentes.
+
+🔑 **Por que a rota de histórico, que a régua proíbe:** a proibição continua valendo e é sobre **outra coisa**, a janela travada em 90 dias que esconde o começo da série do Senado. Para uma cauda de horas esse defeito **não existe**, e a rota é a única fonte com os pontos daquele intervalo.
+
+🧪 **E não é aposta: o CONTROLE POSITIVO roda por série**, comparando rota e backup nas últimas 24h do gravado. Medido em 16/Out na Câmara democrata: **15 pontos de cada lado, mesmos valores e mesmos carimbos**. Série cujo controle não fecha sai `INDETERMINADO`, nunca "fechada".
+
+| saída | o que fazer |
+|---|---|
+| `0` CAUDA FECHADA | o extremo do backup é o extremo de agora. Superlativo liberado |
+| `1` INDETERMINADO | ⛔ **não é "nada novo"**, é não ter enxergado. Não escrever superlativo |
+| `2` EXTREMO NA CAUDA | 🔴 o superlativo tem de usar o **valor da cauda**, não o do backup |
+
+🧪 `node scripts/testar-cauda-cega.mjs`, **39 asserções e no CI**, com **12 de 12 mutações reprovadas**. O caso de 13/Out está plantado como regressão.
+
+
 ## ETAPA 2: Escrever as 7 seções
 
 Frontmatter em `public/afos-weekly/us/{data}.md`, **em inglês**, com `status: draft`.

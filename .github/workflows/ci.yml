@@ -159,6 +159,7 @@ jobs:
           node scripts/testar-instrumento-us.mjs
           node scripts/testar-instrumento-medido.mjs
           node scripts/testar-projecao-janela.mjs
+          node scripts/testar-cauda-cega.mjs
           node scripts/testar-soma-conferida.mjs
           node scripts/testar-tratamento-do-indeciso.mjs
           node scripts/testar-rota-do-backup.mjs

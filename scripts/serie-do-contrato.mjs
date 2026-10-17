@@ -55,7 +55,7 @@ const PAISES = {
 
 const CAPTURA = { us: '.cache/capture-guard/ultima-us.json', br: '.cache/capture-guard/ultima-br.json' }
 
-function lerCsvGz(dir) {
+export function lerCsvGz(dir) {
   const caminho = join(RAIZ, dir)
   if (!existsSync(caminho)) return []
   const linhas = []
@@ -490,4 +490,6 @@ function principal() {
   }
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1]).href) principal()
+// `process.argv[1]` e undefined sob `node -e`, e desde que este arquivo passou
+// a ser IMPORTAVEL isso virou um caminho real. Sem o ?? ele lanca na importacao.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) principal()
