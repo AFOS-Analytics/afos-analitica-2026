@@ -54,6 +54,7 @@
     "check:traducao-brz": "node scripts/conferir-traducao-brz.mjs",
     "leaner:usa": "node scripts/efeito-do-leaner-us.mjs",
     "folga:brz": "node scripts/folga-do-gatilho-brz.mjs",
+    "fora-do-painel:brz": "node scripts/fora-do-painel-brz.mjs",
     "wayback:precheck": "node scripts/wayback-precheck.mjs"
   },
   "dependencies": {

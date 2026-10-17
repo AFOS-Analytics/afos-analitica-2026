@@ -340,6 +340,26 @@ if (saiu === 4) {
   console.log('     npx tsx scripts/ler-materia.mjs "<padrão do título>"')
 }
 
+// 4.7/5 · FORA DO PAINEL, criado em 17/Out/2026.
+//
+// 🔴 POR QUE ELE RODA AQUI: a Gerp BR-05187 saiu na noite de 16/Out com a
+//    divulgação registrada para 13/Out, ANTES do campo. O 📣 do passo 2 nunca a
+//    viu "divulgar hoje", e o 4.5 acusa por CASA, que tinha outra onda no painel.
+//    Nenhum passo comparava o registro com o polls-data PROTOCOLO a protocolo, e
+//    o post do dia seguinte saiu com 17 nacionais quando eram 18.
+//
+// 🔑 Os dias anteriores do news-cache NÃO estão no git: num worktree só existe o
+//    de hoje, e a repercussão do dia já basta para o alarme. `--cache-dir=` lê a
+//    pasta da árvore principal quando se quer a janela inteira.
+const fora = rodar('fora', '4.7/5 · FORA DO PAINEL — nacional encerrada que o polls-data não tem', 'scripts/fora-do-painel-brz.mjs', [])
+if (fora === 1) {
+  resultados.at(-1).estado = 'FALTA NO PAINEL, conferir no corpo'
+} else if (fora === 2) {
+  resultados.at(-1).estado = 'CASA FORA DA TABELA'
+} else if (fora === 4) {
+  resultados.at(-1).estado = 'NAO LEU, sem veredito'
+}
+
 // 5/5 · A SONDA DE FECHAMENTO, e ela AVISA, não desfaz.
 //
 // 🔑 Ela responde a pergunta que o passo 0 não pode responder: a fonte trocou

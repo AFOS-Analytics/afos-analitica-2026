@@ -99,6 +99,21 @@ Teste: **124 asserções**, e **8 de 8 mutações** reprovadas. A do acento do P
 
 🔢 **07/Out/2026: havia um OITAVO leitor com a constante.** O `ler-materia.mjs` pedia pelo `urlApiPolls()` (até 1.000) e julgava o corte com `linhas.length >= 200`, então com 247 linhas servidas imprimia *"a rota parou em 200 linhas"* sobre uma janela inteira, e o "ausência aqui NÃO prova ausência" virava ressalva falsa. Agora lê `bordaDaResposta` e `tetoDaResposta`, e quando a janela vem inteira diz que o protocolo não foi ingerido nos 30 dias. 📌 Varrer pela FORMA da conta: `grep -rn "length >= 200|TETO_API_POLLS" scripts`.
 
+## 🧾 FORA DO PAINEL, passo 4.7, criado em 17/Out/2026
+
+```bash
+npm run fora-do-painel:brz                                   # campo encerrado nos últimos 14 dias
+node scripts/fora-do-painel-brz.mjs --desde=2026-10-05 --cache-dir=<árvore principal>/public/news-cache
+```
+
+🔴 **O furo que ele fecha:** a Gerp BR-05187 (campo 14 a 16/Out, n=2.400) saiu na noite de 16/Out, 50 a 45 no total, e **nenhum passo a apontou como faltando no painel**. A divulgação registrada era 13/Out, ANTES do campo, então o 📣 nunca a viu "divulgar hoje"; o 4.5 acusou "Gerp COM NUMERO" por CASA, e a casa tinha outra onda no painel. O post do dia seguinte saiu com "17 nacionais até 16/Out", e eram 18.
+
+🔑 **A chave é o PROTOCOLO**, a única identidade que o registro e o `polls-data.json` dividem: cada nacional com campo encerrado sai `NO_PAINEL`, `RETIRADA`, `EM_CAMPO`, `FORA_COM_NUMERO` ou `FORA_SEM_NUMERO`. A data de divulgação do registro fica fora da decisão. O protocolo do painel é lido só do `register`, nunca da `note`, que cita onda anterior.
+
+🔁 **Manchete cujos percentuais estão todos numa pesquisa da MESMA casa no painel é REPERCUSSÃO** e sai contada à parte (a Futura de 17/Out com o 50,8 x 49,2 da onda de 16/Out). A casa do painel se acha pelos alvos de imprensa, porque o painel escreve "Futura/100% Cidades" e o regex do registro não casa o "%".
+
+⛔ `FORA_COM_NUMERO` é encaminhamento para o CORPO, nunca ingestão. Saída 1 FALTA, 2 casa fora de `CASAS_BRZ`, 4 não leu. Teste: `node scripts/testar-fora-do-painel-brz.mjs`, 24 asserções no CI, 5 de 5 mutações pegas.
+
 ## 🔍 A SONDA, passos 0 e 4, criada em 11/Set/2026
 
 🔴 **Por que ela existe:** em 10/Set a mesma URL do TSE devolveu **851 e 863 alternando**. Uma retirada foi publicada como fato, depois desafirmada, e as duas vezes com **UMA leitura**. A dupla contagem resolveu o caso, mas ela só fala **depois** de gravar.
