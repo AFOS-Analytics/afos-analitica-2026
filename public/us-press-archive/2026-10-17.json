@@ -1,0 +1,225 @@
+{
+  "lastUpdate": "2026-10-17",
+  "fetchedAt": "2026-10-17T19:20:13.334Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal",
+      "feed": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal",
+      "feed": "https://feeds.washingtonpost.com/rss/politics"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal",
+      "feed": "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada",
+      "feed": "https://rss.politico.com/politics-news.xml"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada",
+      "feed": "https://thehill.com/homenews/feed/"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada",
+      "feed": "https://rollcall.com/feed/"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada",
+      "feed": "https://api.axios.com/feed/"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.npr.org/1014/rss.xml"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio",
+      "feed": "https://abcnews.go.com/abcnews/politicsheadlines"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio",
+      "feed": "https://www.cbsnews.com/latest/rss/politics"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.nbcnews.com/nbcnews/public/politics"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio",
+      "feed": "http://rss.cnn.com/rss/cnn_allpolitics.rss"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio",
+      "feed": "https://moxie.foxnews.com/google-publisher/politics.xml"
+    },
+    {
+      "casa": "NewsNation",
+      "tipo": "tv/rádio",
+      "feed": "https://www.newsnationnow.com/politics/feed/"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião",
+      "feed": "https://www.nationalreview.com/feed/"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião",
+      "feed": "https://www.theguardian.com/us-news/us-politics/rss"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 249,
+    "naLista": 81,
+    "foraDaLista": 168,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 2,
+    "veiculosRepresentados": 7,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": [
+      "feed:The Washington Post: HTTP 502"
+    ],
+    "feedsProprios": 16,
+    "lidosEmFeedProprio": 36,
+    "publicadosComLinkCanonico": 6,
+    "publicadosViaGoogleNews": 4,
+    "publicadosPorDisputa": 10,
+    "publicadosPorMetodo": 0
+  },
+  "itens": [
+    {
+      "titulo": "$137 Million in A.I.-Generated Ads Flood the Midterms",
+      "url": "https://www.nytimes.com/2026/10/16/us/politics/midterm-elections-ai-generated-ads.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-17T18:24:45.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Tracking the 2026 Early Vote: Midterm Elections",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5CNDhGdFFLbHU0dnFMZGZ5T2Z4LVNzYk5Mb0lHNXZhQW56U09sX1RmWmRLZmlvRnQtOHNHUlZlS3NZckF2WHF0LXVZOHROTTBCMnQzbkM2X1JCYkY5RGpwamRubEc4M3lPaFE?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-17T18:00:21.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "A bitter Michigan Senate race rattles Jewish and Muslim voters already on edge over the war in Gaza",
+      "url": "https://abcnews.com/Politics/wireStory/bitter-michigan-senate-race-rattles-jewish-muslim-voters-137345617",
+      "casa": "ABC News",
+      "publicadoEm": "2026-10-17T17:22:18.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Tracking the Early Vote in the 2026 Midterm Elections",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOWUNScEZXTjJwYVpIZENZS0txWHd4TTNRUFZvQk1aRUUtTHE2NUhQbWJpb3BTRHpQUTFtdWEybmpFRk9iN1VXY1Y5Q1FjMTNqTEYzdkJZZk9OOUFPNnR3WFV2Qy1KZ3JscGpGT2N0eGdOY2NSaXJSZ2hoLXFORXB1bEhmUGd6QnEtVW9sZzRudW9wQ2pJTTdxVWFCTGpaZDJBaU9LX29oeER4STJrczJsOTRZbG43cHFF?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-17T15:35:56.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "House Speaker Mike Johnson draws on faith as he fights to hold the Republican majority",
+      "url": "https://abcnews.com/Politics/wireStory/house-speaker-mike-johnson-draws-faith-fights-hold-137344151",
+      "casa": "ABC News",
+      "publicadoEm": "2026-10-17T14:39:36.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Watch live: Decision Desk ‘26 Midterm Preview powered by 2WAY and The Hill",
+      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/watch-live-decision-desk-26-midterm-preview-powered-by-2way-and-the-hill/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-17T14:38:16.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "From handyman to House history: HVAC mogul Joe Strada pushes trade schools, business mindset in Florida race",
+      "url": "https://www.foxnews.com/politics/from-handyman-house-history-hvac-mogul-joe-strada-pushes-trade-schools-business-mindset-florida-race",
+      "casa": "Fox News",
+      "publicadoEm": "2026-10-17T14:00:44.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump faults aides as Republican midterm prospects dim",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQYTNjQm5xUlNLTTVIZHJ5eXBnMUZlY211OWQzdjJSLWFqMDRrMVZlaXFjUmUtVDFkVXYyVUwzajB4TXNQNE1NblU4RFhGeDNyak4tX1FsZXZtTXpYamZValBXUHc0RXNhc2J6Vk4wZEFNV2FxNHBlYmNvOFVEdThjakZ5Q0g3UXpySk9maHZhYTFXSzVMeXdxMXZ5c1M?oc=5",
+      "casa": "Reuters",
+      "publicadoEm": "2026-10-17T13:58:21.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Indiana Midterm Elections 2026: Key Races, Candidates and Past Results",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5TcGM1TS1sTlhJRE0zMkFFVzU4cVRPMTM1Q1hzRlA4RDBjTTBTVGt6SXhJZzVRV3ZfamJwclBiYlJwNWhBSm1Sd3VWN1FPR2tZZmNvYkk4bnVCbWNuTDlYV1lYREdDcDVFa0tIYmhKZ2w?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-17T13:30:21.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "A sleeper Senate battleground has turned into a real Republican liability",
+      "url": "https://www.politico.com/news/2026/10/17/kansas-senate-roger-marshall-struggles-01122060",
+      "casa": "Politico",
+      "publicadoEm": "2026-10-17T11:00:00.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    }
+  ]
+}

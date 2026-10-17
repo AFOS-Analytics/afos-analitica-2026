@@ -1,0 +1,225 @@
+{
+  "lastUpdate": "2026-10-16",
+  "fetchedAt": "2026-10-16T19:20:13.430Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal",
+      "feed": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal",
+      "feed": "https://feeds.washingtonpost.com/rss/politics"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal",
+      "feed": "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada",
+      "feed": "https://rss.politico.com/politics-news.xml"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada",
+      "feed": "https://thehill.com/homenews/feed/"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada",
+      "feed": "https://rollcall.com/feed/"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada",
+      "feed": "https://api.axios.com/feed/"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.npr.org/1014/rss.xml"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio",
+      "feed": "https://abcnews.go.com/abcnews/politicsheadlines"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio",
+      "feed": "https://www.cbsnews.com/latest/rss/politics"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.nbcnews.com/nbcnews/public/politics"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio",
+      "feed": "http://rss.cnn.com/rss/cnn_allpolitics.rss"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio",
+      "feed": "https://moxie.foxnews.com/google-publisher/politics.xml"
+    },
+    {
+      "casa": "NewsNation",
+      "tipo": "tv/rádio",
+      "feed": "https://www.newsnationnow.com/politics/feed/"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião",
+      "feed": "https://www.nationalreview.com/feed/"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião",
+      "feed": "https://www.theguardian.com/us-news/us-politics/rss"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 270,
+    "naLista": 92,
+    "foraDaLista": 178,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 1,
+    "veiculosRepresentados": 6,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": [
+      "feed:The Washington Post: HTTP 502"
+    ],
+    "feedsProprios": 16,
+    "lidosEmFeedProprio": 40,
+    "publicadosComLinkCanonico": 4,
+    "publicadosViaGoogleNews": 6,
+    "publicadosPorDisputa": 10,
+    "publicadosPorMetodo": 0
+  },
+  "itens": [
+    {
+      "titulo": "Ocasio-Cortez Transfers $1 Million to Help El-Sayed in Michigan Senate Race",
+      "url": "https://www.nytimes.com/2026/10/16/us/politics/aoc-el-sayed-million-transfer-midterms.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-16T19:13:21.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "AOC donates $1M to El-Sayed's Michigan Senate campaign: Report",
+      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/aoc-donates-el-sayed-campaign-michigan/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-16T19:11:55.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Live updates: Zacharia exits White House post; Trump heads to Georgia campaign stop",
+      "url": "https://thehill.com/homenews/administration/6152806-live-updates-trump-georgia-midterm-elections-katie-zacharia/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-10-16T18:44:32.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Tracking the 2026 Early Vote: Midterm Elections",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5CNDhGdFFLbHU0dnFMZGZ5T2Z4LVNzYk5Mb0lHNXZhQW56U09sX1RmWmRLZmlvRnQtOHNHUlZlS3NZckF2WHF0LXVZOHROTTBCMnQzbkM2X1JCYkY5RGpwamRubEc4M3lPaFE?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-16T18:30:21.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Brown, Acton both up 6 points in Ohio races: Poll",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBUb2xwRzRvMnFqbmo4X01pSHVkQWI3c2xYbDdqT1VfWnZlTVJBZ3NvVWdnbWhPdUhRbi1kYXctVG9DNkczcDNuSU5zRWdDMEVMaE1jQnNwOS0wczdjWXF1X3kxZXdRV2RCam5mWGdWQjMtQ011Rk1ONXRqTlrSAYIBQVVfeXFMTkNiYzNBRW9QNk1HbXdMT2kwWk1lczItVlJOVE9TQndZYnQ3ejlGMmFRUU9VY1FubTlNNU1lbWFqSXNUSDVIYWkxZUx0bkNuNVFWNzRfNnhKOURZQUtLTUdvdU5tenUyZDMySnZIWTlJV0pJQ2hYMkJraGNtY2FhNGVzZw?oc=5",
+      "casa": "The Hill",
+      "publicadoEm": "2026-10-16T16:57:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Michigan Midterm Elections 2026: Key Races, Candidates and Past Results",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5VWE96aXR0S3I2YjZPYWRXb21UM1lCZXoxbFdDenBTUzdjMmJHUjljRTdFc3hHQm9DTlBiSXIzRGg1c1U4N05MbHk0OFhtSVNpc2RNcWZhMzdpRldLWE5jYzd0cEZQRV8zR1d1VUtWWWlYQQ?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-16T16:30:21.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "In Michigan Senate Race, Ocasio-Cortez Joins El-Sayed on Trail in Trump Country",
+      "url": "https://www.nytimes.com/2026/10/15/us/politics/ocasio-cortez-el-sayed-michigan-vance-trump-senate.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-16T16:19:33.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Guns, F-bombs, fortune cookies. What do wild campaign ads actually say?",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPTENHTFA1TW9XN0pHa0J4cHU3M2ZfWGxTa2ZvR01IemY5ZmhvNWVjd0ZsMWprYjAyeENHTXVFaW5FY1RMbGVucHl5SUMxVWJMU0VUWjJ1bTlPZW9sN1d5T0Z0S3daZGlQVXlLTG9qdS1wczlqTkJLUkxOV3NJTHpWVVJCdkVWSnJ5NW81WlFvZGNZcm1CdDRkdHNzR010MDFrSVVJWXo0T0w?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-10-16T16:05:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Georgia sample ballot for the 2026 midterm election: Here's what you'll be voting on",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxObEZudkVfM3NYM202LW5nY2dicEhxTkdIUW1GVGRuRUFCTkxubG83dThFY3gxcG9Ea0l3T1o4bDhTWDRSTXUyR21XdXRRRGlnaXl5ZThSWWl5U05BUmNEd1djRnd3RElYTTZlR2N6ZlRQLW9TdlBzV2hpbF9ZUkNYZDVjbEMxUUgyUE9mT2NhLTV2M2ZTZjYwamFOVlhCRkpBVWczMEpITQ?oc=5",
+      "casa": "CBS News",
+      "publicadoEm": "2026-10-16T15:59:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Odds of Democrats Winning the Senate 2026 & Where Things Stand on 12 Key Races",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNUXRNczRROXpxTkdjUElxRlc4bFNPX3d5TUFnOTFibXlub2ZFSFdCLTF1OThpN0pwTXBzd0ZqRE8yZHNka1h5ZWFNRmpYVWVmTkhLX01CS1V6NFpMekRrNVZoRi16RWMwcFliUm13X19BRHRpNmNCei1hbndrNk9OZTBkYUpHUXprWnJFQmJseDU5TUJNekdvT2tkZUlNVVZZ?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-10-16T15:55:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    }
+  ]
+}

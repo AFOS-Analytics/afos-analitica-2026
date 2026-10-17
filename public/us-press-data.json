@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-15",
-  "fetchedAt": "2026-10-15T20:30:47.391Z",
+  "lastUpdate": "2026-10-17",
+  "fetchedAt": "2026-10-17T19:20:13.334Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -114,100 +114,28 @@
   ],
   "qualidade": {
     "lidos": 249,
-    "naLista": 96,
-    "foraDaLista": 153,
+    "naLista": 81,
+    "foraDaLista": 168,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 1,
+    "descartadosPorAcompanhamento": 2,
     "veiculosRepresentados": 7,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [
       "feed:The Washington Post: HTTP 502"
     ],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 54,
-    "publicadosComLinkCanonico": 8,
-    "publicadosViaGoogleNews": 2,
+    "lidosEmFeedProprio": 36,
+    "publicadosComLinkCanonico": 6,
+    "publicadosViaGoogleNews": 4,
     "publicadosPorDisputa": 10,
     "publicadosPorMetodo": 0
   },
   "itens": [
     {
-      "titulo": "Election Dispatches: Talarico Remains Ahead in Texas Senate Race, Polls Show, but His Lead Has Narrowed",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE4wNmdtWGQxTVkyNlVEWmd2Yldza3pvd0NpYkp3bHFsWlcxbkNUeTdIQi1qWGlnNlkyQ1k4ZlFuUDdEX3FSRnVUNHBGWUt5el8tT0FGbHVaVjNOVU9STHlrZEV6c3M0TmVCakNCVGo2QlFXYWNxZWc?oc=5",
+      "titulo": "$137 Million in A.I.-Generated Ads Flood the Midterms",
+      "url": "https://www.nytimes.com/2026/10/16/us/politics/midterm-elections-ai-generated-ads.html",
       "casa": "The New York Times",
-      "publicadoEm": "2026-10-15T20:16:00.000Z",
-      "consulta": "midterms",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Suspicious mailings to election officials, congressional offices under investigation",
-      "url": "https://www.npr.org/2026/10/15/nx-s1-6003857/suspicious-mailings-election-congressional-offices",
-      "casa": "NPR",
-      "publicadoEm": "2026-10-15T19:54:15.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Trump’s Attacks on Voting Raise Fears He Will Try to Challenge Midterm Results",
-      "url": "https://www.nytimes.com/2026/10/15/us/politics/trumps-attacks-voting-midterms.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-10-15T19:53:48.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Talarico rallies as his Texas US Senate race against Paxton enters final weeks",
-      "url": "https://abcnews.com/Politics/wireStory/talarico-rallies-texas-us-senate-race-paxton-enters-137299970",
-      "casa": "ABC News",
-      "publicadoEm": "2026-10-15T19:33:06.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "2026 midterm could be the most expensive ever: AdImpact",
-      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/2026-midterm-most-expensive-ever-adimpact/",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-10-15T19:17:30.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "GOP Iowa Senate candidate says she’s not afraid to push back against Trump",
-      "url": "https://www.newsnationnow.com/politics/ashley-hinson-senate-iowa-trump/",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-10-15T19:02:12.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Brit Hume: Republican 'washout' possible in midterms",
-      "url": "https://thehill.com/homenews/campaign/6151939-gop-midterm-washout-risk/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-10-15T18:56:21.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Trump links Michigan Senate candidate Abdul El-Sayed to Muslim Brotherhood: 'He's a con man'",
-      "url": "https://www.foxnews.com/politics/trump-links-michigan-senate-candidate-abdul-el-sayed-muslim-brotherhood-con-man",
-      "casa": "Fox News",
-      "publicadoEm": "2026-10-15T18:45:01.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "RFK Jr.-aligned MAHA group spends big on Iowa governor's race",
-      "url": "https://thehill.com/homenews/campaign/6151882-maha-action-pac-iowa-donation/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-10-15T18:44:16.000Z",
+      "publicadoEm": "2026-10-17T18:24:45.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
@@ -216,9 +144,81 @@
       "titulo": "Tracking the 2026 Early Vote: Midterm Elections",
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5CNDhGdFFLbHU0dnFMZGZ5T2Z4LVNzYk5Mb0lHNXZhQW56U09sX1RmWmRLZmlvRnQtOHNHUlZlS3NZckF2WHF0LXVZOHROTTBCMnQzbkM2X1JCYkY5RGpwamRubEc4M3lPaFE?oc=5",
       "casa": "NBC News",
-      "publicadoEm": "2026-10-15T18:30:21.000Z",
+      "publicadoEm": "2026-10-17T18:00:21.000Z",
       "consulta": "midterms",
       "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "A bitter Michigan Senate race rattles Jewish and Muslim voters already on edge over the war in Gaza",
+      "url": "https://abcnews.com/Politics/wireStory/bitter-michigan-senate-race-rattles-jewish-muslim-voters-137345617",
+      "casa": "ABC News",
+      "publicadoEm": "2026-10-17T17:22:18.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Tracking the Early Vote in the 2026 Midterm Elections",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOWUNScEZXTjJwYVpIZENZS0txWHd4TTNRUFZvQk1aRUUtTHE2NUhQbWJpb3BTRHpQUTFtdWEybmpFRk9iN1VXY1Y5Q1FjMTNqTEYzdkJZZk9OOUFPNnR3WFV2Qy1KZ3JscGpGT2N0eGdOY2NSaXJSZ2hoLXFORXB1bEhmUGd6QnEtVW9sZzRudW9wQ2pJTTdxVWFCTGpaZDJBaU9LX29oeER4STJrczJsOTRZbG43cHFF?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-17T15:35:56.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "House Speaker Mike Johnson draws on faith as he fights to hold the Republican majority",
+      "url": "https://abcnews.com/Politics/wireStory/house-speaker-mike-johnson-draws-faith-fights-hold-137344151",
+      "casa": "ABC News",
+      "publicadoEm": "2026-10-17T14:39:36.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Watch live: Decision Desk ‘26 Midterm Preview powered by 2WAY and The Hill",
+      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/watch-live-decision-desk-26-midterm-preview-powered-by-2way-and-the-hill/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-17T14:38:16.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "From handyman to House history: HVAC mogul Joe Strada pushes trade schools, business mindset in Florida race",
+      "url": "https://www.foxnews.com/politics/from-handyman-house-history-hvac-mogul-joe-strada-pushes-trade-schools-business-mindset-florida-race",
+      "casa": "Fox News",
+      "publicadoEm": "2026-10-17T14:00:44.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump faults aides as Republican midterm prospects dim",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQYTNjQm5xUlNLTTVIZHJ5eXBnMUZlY211OWQzdjJSLWFqMDRrMVZlaXFjUmUtVDFkVXYyVUwzajB4TXNQNE1NblU4RFhGeDNyak4tX1FsZXZtTXpYamZValBXUHc0RXNhc2J6Vk4wZEFNV2FxNHBlYmNvOFVEdThjakZ5Q0g3UXpySk9maHZhYTFXSzVMeXdxMXZ5c1M?oc=5",
+      "casa": "Reuters",
+      "publicadoEm": "2026-10-17T13:58:21.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Indiana Midterm Elections 2026: Key Races, Candidates and Past Results",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5TcGM1TS1sTlhJRE0zMkFFVzU4cVRPMTM1Q1hzRlA4RDBjTTBTVGt6SXhJZzVRV3ZfamJwclBiYlJwNWhBSm1Sd3VWN1FPR2tZZmNvYkk4bnVCbWNuTDlYV1lYREdDcDVFa0tIYmhKZ2w?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-17T13:30:21.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "A sleeper Senate battleground has turned into a real Republican liability",
+      "url": "https://www.politico.com/news/2026/10/17/kansas-senate-roger-marshall-struggles-01122060",
+      "casa": "Politico",
+      "publicadoEm": "2026-10-17T11:00:00.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
       "trilho": "disputa"
     }
   ]
