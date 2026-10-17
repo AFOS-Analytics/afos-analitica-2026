@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-17",
+  "refetch": {
+    "fetchedAt": "2026-10-17T20:25:54Z",
+    "flavio": 76.95,
+    "lula": 23.5,
+    "baselineConfirmada": "2026-10-17T19:59:23.126Z",
+    "flavioBase": 76.95,
+    "lulaBase": 23.5,
+    "volTotalPresidencialUSD": 185340000,
+    "rebaseline": false,
+    "motivo": "ao vivo igual ao painel confirmado das 16:59 BRT"
+  },
+  "factCheck": [
+    { "evento": "Entrevista de Flávio Bolsonaro ao Jornal Nacional, noite de 16/Out: só precisa de um mandato, não disputará a reeleição; Eduardo não será chanceler; nomear o pai 'não está no radar'", "data": "2026-10-16", "fontes": ["Poder360", "UOL", "O Globo", "G1", "Valor", "Folha de S.Paulo", "Estadão"], "decisao": "incorporar só o que tem 2 grupos" },
+    { "evento": "Eurasia Group baixa de 80% para 75% a probabilidade de vitória de Flávio Bolsonaro", "data": "2026-10-17", "fontes": ["Valor", "CNN Brasil"], "decisao": "incorporar; continuidade da citação de 12/Out com dado novo" },
+    { "evento": "Gerp BR-05187 (campo 14 a 16/Out) divulgada na noite de 16/Out, depois da edição de 16/Out", "data": "2026-10-16", "fontes": ["Poder360", "Gazeta do Povo", "CNN Brasil"], "decisao": "incorporar; sem errata na daily de 16/Out (descompasso de minutos)" },
+    { "evento": "Ipespe/Abrapel BR-00223: 48 x 46 total, 51,2 x 48,8 válidos", "data": "2026-10-17", "fontes": ["Exame", "O Globo", "Metrópoles", "CNN Brasil", "Poder360"], "decisao": "incorporar" },
+    { "evento": "Veritá BR-01107: 51,1 x 48,9 só válidos", "data": "2026-10-17", "fontes": ["CNN Brasil", "Exame (método)"], "decisao": "incorporar" },
+    { "evento": "Edinho Silva: Lula quer o confronto no debate da Band", "data": "2026-10-17", "fontes": ["Poder360", "Valor", "O Globo"], "decisao": "incorporar" },
+    { "evento": "Campanha de Flávio cobra a Meta no TSE", "data": "2026-10-17", "fontes": ["Folha de S.Paulo"], "decisao": "incorporar com atribuição; petição de campanha, não decisão" }
+  ],
+  "naoIncorporado": [
+    "STJ abre investigação e exonera servidor suspeito de vazar minutas a advogado amigo de Flávio (só G1 tinha o ato)",
+    "Flávio diz que respeitará o resultado da eleição (só UOL)",
+    "Cargo para o pai: UOL ('não descartou') e O Globo ('evasivo') divergem no enquadramento; ficou só a frase literal 'não está no radar'",
+    "Flávio nega reverter o fim da 6x1 (só Grupo Globo)"
+  ],
+  "adversarial": {
+    "singleSource": "Meta no TSE (Folha), método da Veritá (Exame) e bloco de 30 minutos do debate (Folha), todos atribuídos",
+    "numerical": "reconcile-claims OK; números de mercado batem com o painel",
+    "fontesInventadas": "nenhuma; 3 conferidas no cache",
+    "quotes": "'não está no radar', em G1, Folha, Valor e no corpo do O Globo",
+    "causacao": "nenhuma; Eurasia ao lado do preço, sem ligação",
+    "verbos": "OK",
+    "correcoesAntesDoPreview": [
+      "densidade de links 74% → 80% (Sul 21 no mapa pós-urna, Gazeta no rodada × rodada)",
+      "'quatro dias de estreitamento, de 72,95 em 13/Out a 52,95 em 16/Out' contava três passos: reescrito para não fabricar a janela",
+      "link da Gerp com prefixo de URL antes do marcador, corrigido antes de resolver"
+    ]
+  },
+  "palavras": 1042,
+  "links": { "distintos": 20, "secundarios": 16, "pctSecundario": 80 },
+  "calendario": "gerado por calendario-pesquisas-brz.mjs --peca: 17 nacionais, 3 tiradas (Vetor Arrow e Gerp BR-09327 pela data, Real Time BR-02952 pelo escopo)",
+  "wayback": "pausa de bloqueio em curso (medido 15/Out 22:31Z), não sondado"
+}

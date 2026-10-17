@@ -33,6 +33,16 @@ import { bordaDaResposta, tetoDaResposta, urlApiPolls } from './lib/tse-api-poll
 import { dataCivilBrasil } from './lib/data-civil-brz.mjs'
 import { baseDeLeitura } from './lib/base-afos.mjs'
 import { divulgacaoAntesDoCampo } from '../lib/tse/saiu-hoje-brz.mjs'
+import { conferirEscopoDerivado } from '../lib/tse/poder-discriminante.mjs'
+import { CASAS_BRZ, casaDoRegistro } from './lib/cobertura-imprensa-brz.mjs'
+
+// 📰 --peca, criado em 17/Out/2026: a tabela COMO ELA VAI PARA A DAILY. Até ali a
+//    daily de 16/Out tirou À MÃO duas linhas (a Real Time com rótulo nacional que
+//    a própria casa não sustenta e a Vetor Arrow com divulgação antes de o campo
+//    começar), trocou cinco razões sociais por nome de imprensa e reescreveu o
+//    rodapé. Passo manual diário é passo que um dia sai diferente.
+//    Sem a bandeira, a saída é a de sempre: o registro inteiro, com aviso no stderr.
+const peca = process.argv.includes('--peca')
 
 const MESES_PT = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
 const MESES_EN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -73,7 +83,14 @@ const NOME_CURTO = new Map([
   ['PODERDATA PESQUISA, JORNALISMO E COMUNICACAO LTDA', 'PoderData'],
   ['REAL TIME BIG DATA', 'Real Time Big Data'],
 ])
+// Na peça, o nome é o da IMPRENSA, da mesma tabela que mede a cobertura
+// (CASAS_BRZ), com três ajustes de vitrine já publicados nas dailies.
+const VITRINE = new Map([['Phoenix', 'Instituto Phoenix'], ['Alfa Inteligência (TMC)', 'Alfa'], ['100 Cidades (Futura)', '100 Cidades']])
 const nomeCasa = (bruto) => {
+  if (peca) {
+    const c = casaDoRegistro(bruto) ?? CASAS_BRZ.find((x) => x.alvos.some((re) => re.test(String(bruto ?? ''))))
+    if (c) return VITRINE.get(c.nome) ?? c.nome
+  }
   const s = String(bruto || '').trim()
   if (NOME_CURTO.has(s)) return NOME_CURTO.get(s)
   for (const [longo, curto] of NOME_CURTO) if (s.startsWith(longo.slice(0, 24))) return curto
@@ -108,7 +125,9 @@ const T = {
     escopo: 'nacional',
     vazio: 'Sem pesquisas de escopo nacional com amostra maior ou igual a 1.000 registradas no TSE para os próximos 7 dias.',
     rodape: (n, fora) =>
-      `Fonte: registro público [TSE](${TSE}) via API AFOS. Amostras maiores ou iguais a 3.000 em negrito. A tabela lista as ${n} NACIONAIS e VIVAS da janela; ${fora} registros do mesmo período ficaram de fora por escopo ou por amostra${nacionaisFantasma ? `, e ${nacionaisFantasma} nacional(is) saiu(ram) do registro do TSE depois de registrada(s) e por isso não são compromisso` : ``}. O status é registrada e não publicada.`,
+      peca
+        ? `Fonte: registro público [TSE](${TSE}) via API AFOS. Amostras maiores ou iguais a 3.000 em negrito. A tabela lista ${n} nacionais da janela; ${fora} registros do mesmo período ficaram de fora por escopo ou por amostra${semSustentacao.length ? `, e ${semSustentacao.length} ${semSustentacao.length === 1 ? 'registro marcado como nacional ficou' : 'registros marcados como nacionais ficaram'} de fora porque o próprio registro não sustenta a data de divulgação ou o escopo` : ''}. O status é registrada e não publicada.`
+        : `Fonte: registro público [TSE](${TSE}) via API AFOS. Amostras maiores ou iguais a 3.000 em negrito. A tabela lista as ${n} NACIONAIS e VIVAS da janela; ${fora} registros do mesmo período ficaram de fora por escopo ou por amostra${nacionaisFantasma ? `, e ${nacionaisFantasma} nacional(is) saiu(ram) do registro do TSE depois de registrada(s) e por isso não são compromisso` : ``}. O status é registrada e não publicada.`,
   },
   en: {
     head: '### Polling calendar, next 7 days',
@@ -118,7 +137,7 @@ const T = {
     escopo: 'national',
     vazio: 'No national polls with a sample of 1,000 or more are registered with the TSE for the next 7 days.',
     rodape: (n, fora) =>
-      `Source: public [TSE](${TSE}) record via the AFOS API. Samples of 3,000 or more in bold. The table lists the ${n} NATIONAL polls in the window; ${fora} records from the same period were left out by scope or by sample. The status is registered, not published.`,
+      `Source: public [TSE](${TSE}) record via the AFOS API. Samples of 3,000 or more in bold. The table lists ${peca ? '' : 'the '}${n} ${peca ? 'national polls' : 'NATIONAL polls'} in the window; ${fora} records from the same period were left out by scope or by sample${peca && semSustentacao.length ? `, and ${semSustentacao.length} ${semSustentacao.length === 1 ? 'record marked as national was' : 'records marked as national were'} left out because the record itself does not support the release date or the scope` : ''}. The status is registered, not published.`,
   },
   es: {
     head: '### Calendario de encuestas, próximos 7 días',
@@ -128,7 +147,7 @@ const T = {
     escopo: 'nacional',
     vazio: 'Sin encuestas de ámbito nacional con muestra mayor o igual a 1.000 registradas en el TSE para los próximos 7 días.',
     rodape: (n, fora) =>
-      `Fuente: registro público del [TSE](${TSE}) vía API AFOS. Muestras mayores o iguales a 3.000 en negrita. La tabla lista las ${n} NACIONALES de la ventana; ${fora} registros del mismo período quedaron fuera por ámbito o por muestra. El estado es registrada y no publicada.`,
+      `Fuente: registro público del [TSE](${TSE}) vía API AFOS. Muestras mayores o iguales a 3.000 en negrita. La tabla lista ${peca ? `${n} encuestas nacionales` : `las ${n} NACIONALES`} de la ventana; ${fora} registros del mismo período quedaron fuera por ámbito o por muestra${peca && semSustentacao.length ? `, y ${semSustentacao.length} ${semSustentacao.length === 1 ? 'registro marcado como nacional quedó' : 'registros marcados como nacionales quedaron'} fuera porque el propio registro no sustenta la fecha de divulgación o el ámbito` : ''}. El estado es registrada y no publicada.`,
   },
 }
 
@@ -207,11 +226,32 @@ const fantasmasNaJanela = naJanela.length - vivas.length
 
 // 🔴 O corte de escopo é o SEGUNDO, e `unknown` NÃO entra: quando o registro
 // do TSE não permite inferir, o painel registra a ausência em vez de chutar.
-const entram = vivas
+const candidatas = vivas
   .filter((r) => r.scope === 'national' && (r.sampleSize || 0) >= 1000)
   .sort((a, b) => String(a.publicationDate).localeCompare(String(b.publicationDate)) || b.sampleSize - a.sampleSize)
 
-const fora = vivas.length - entram.length
+// 📰 Só na peça: o que o PRÓPRIO registro não sustenta sai da tabela, com o motivo
+//    no stderr e a contagem no rodapé. Escopo GRAVE vem do mesmo portão que a
+//    rodada roda (`conferirEscopoDerivado`), medido sobre 30 dias, porque o poder
+//    de uma casa se mede na história dela e não na janela de 7.
+let semSustentacao = []
+if (peca) {
+  const r30 = await fetch(urlApiPolls(baseDeLeitura(), 30), { signal: AbortSignal.timeout(30000) })
+  if (!r30.ok) {
+    console.error(`❌ --peca: a leitura de 30 dias para o escopo devolveu ${r30.status}. Tabela NÃO gerada.`)
+    process.exit(1)
+  }
+  const j30 = await r30.json()
+  const { achados } = conferirEscopoDerivado(j30.polls ?? [], { hoje, fantasmas: FANTASMAS })
+  const graves = new Set(achados.filter((a) => a.gravidade === 'GRAVE').map((a) => semProtocolo(a.protocolo)))
+  semSustentacao = candidatas
+    .map((r) => ({ r, motivo: divulgacaoAntesDoCampo(r) ? `data: ${divulgacaoAntesDoCampo(r)}` : graves.has(semProtocolo(r.protocolo)) ? 'escopo: rótulo nacional GRAVE' : null }))
+    .filter((x) => x.motivo)
+}
+const tirar = new Set(semSustentacao.map((x) => x.r))
+const entram = candidatas.filter((r) => !tirar.has(r))
+
+const fora = vivas.length - candidatas.length
 const nacionaisFantasma = naJanela.filter((r) => ehFantasma(r) && r.scope === 'national' && (r.sampleSize || 0) >= 1000).length
 
 // 🔒 Portão de colapso: janela inteira vazia é outra coisa que "nenhuma
@@ -252,6 +292,10 @@ console.log('')
 console.log(t.rodape(entram.length, fora))
 console.log('')
 console.error(`✅ ${entram.length} nacional(is) na janela ${hoje} a ${FIM}, ${fora} fora por escopo ou amostra. Confiança lida do campo \`confidence\` da API.`)
+if (peca) {
+  console.error(`📰 --peca: ${semSustentacao.length} linha(s) tirada(s) porque o próprio registro não as sustenta:`)
+  for (const { r, motivo } of semSustentacao) console.error(`   ${protocoloBonito(r.protocolo)}  ${nomeCasa(r.institute)}  campo ${r.fieldStart} a ${r.fieldEnd}  div ${String(r.publicationDate).slice(0, 10)}  ${motivo}`)
+}
 
 // 📅 A tabela publica a data do REGISTRO, e ela fica. Mas quem escreve a peça tem
 //    de saber quando essa data é impossível pelo próprio registro: em 25/Set/2026
