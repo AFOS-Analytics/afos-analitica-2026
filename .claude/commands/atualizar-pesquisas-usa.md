@@ -540,6 +540,34 @@ Em 07/Out a Cygnal de 02/Out era cobrada como **buraco real** numa casa que bloq
 
 📌 **A régua para ler o passo 7.5 daqui em diante:** margem muito acima da janela é assinatura de **outro instrumento**, não de eleitorado que se moveu. Antes de chamar de buraco, **abrir o documento**. → `memory/feedback_o_conferidor_de_cobertura_conta_buraco_do_que_a_propria_regua_recusa.md`
 
+
+### 🔎 E o buraco que já foi investigado NÃO se reinvestiga: `lib/us-polls/buraco-conhecido.mjs` (17/Out/2026)
+
+```bash
+node scripts/agregador-na-fonte-us.mjs    # o diagnóstico sai embaixo de cada buraco
+```
+
+🔴 **O defeito:** o passo 7.5 imprime "N rodadas que o agregador tem e a nossa base NÃO" **em branco, todo dia**. Em 16/Out isso custou a conferência inteira da AP-NORC e em 17/Out a da Change Research, e as duas voltariam amanhã sem uma palavra do que já se sabe. É o mesmo defeito que criou o `fonte-conferida.mjs`.
+
+⛔ **E ele NÃO é o `instrumento-medido`.** Aquele **remove** a rodada da contagem, porque ela mede outra coisa e nunca foi nossa para ter. Este **não remove nada**: o buraco segue contado como buraco e passa a sair com o diagnóstico ao lado. 🔑 **Anotar não é silenciar**, e um buraco que some porque alguém o explicou uma vez é pior que um buraco barulhento.
+
+| situação | o que ela manda a próxima passada fazer |
+|---|---|
+| `FONTE_INACESSIVEL` | **não** procurar de novo no mesmo caminho até a revisão: bloqueio não se resolve insistindo. Exige `acesso` com status numérico e **controle positivo** |
+| `FONTE_NAO_LOCALIZADA` | procurar de novo na revisão, **por outro caminho** que não o já tentado |
+| `AGUARDANDO_INDICE` | nada a fazer: esperar, ou levar a ingestão curada ao André |
+
+⏳ **`revisarApos` é OBRIGATÓRIO, e é a trava mais importante.** Um 429 é temporário por natureza, e fonte não localizada hoje pode ser publicada amanhã. Passada a data, o diagnóstico sai como **VENCIDO** e manda reconferir, em vez de ser acreditado para sempre. **Diagnóstico sem prazo vira crença.**
+
+📌 **E a caducidade pela ENTRADA vem de graça:** o registro só é consultado para rodada que está FALTANDO. No dia em que o índice a receber, ninguém pergunta mais por ela.
+
+🧪 `node scripts/testar-buraco-conhecido.mjs`, **55 asserções e no CI**, com **12 de 12 mutações reprovadas**. A asserção que mais importa é estrutural: as chaves do diagnóstico são exatamente oito, e **nenhuma delas manda remover**. A mutação que acrescenta uma chave `remover` reprova.
+
+**As duas primeiras entradas, de 16 e 17/Out:**
+
+- **Change Research**, 15-24/Set, 2.021 RV, `FONTE_INACESSIVEL`. 🔴 A casa está em **ZERO linhas de 495**, então não é uma onda que faltou, é a casa inteira que o índice não carrega, e ela **publica generic ballot**. 🧪 Medido com controle positivo: artigo e raiz em **429**, enquanto emersoncollegepolling.com e poll.qu.edu respondem 200 no mesmo cliente e no mesmo minuto. ⚠️ E o `curl -o` **gravou 34.218 bytes** da página de erro: conferir o download pelo tamanho diria que deu certo, então **conferir os primeiros bytes**.
+- **Noble Predictive**, 05-07/Out, 2.527 RV, `FONTE_NAO_LOCALIZADA`. A casa existe na base com duas ondas de ~2.500 RV, e a listagem pública dela mostra só as estaduais. ⛔ Os números que circulam vêm do ecossistema de agregador, que **não é nem índice**.
+
 ## 🧬 O índice renomeou DUAS casas em 24 horas (26/Set/2026)
 
 ⭐ **Prova independente da tese da tabela de casas**, e ela veio sozinha:

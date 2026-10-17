@@ -34,6 +34,7 @@ import { readFileSync } from 'fs'
 import { pathToFileURL } from 'url'
 import { serieDaCasa } from '../lib/us-polls/casas.mjs'
 import { deveRodada } from '../lib/us-polls/instrumento-medido.mjs'
+import { diagnosticoDe, conferirCarga as conferirBuracos } from '../lib/us-polls/buraco-conhecido.mjs'
 
 export const CHAVE_GENERIC_BALLOT = '79287655-1e6e-4a3a-9ca3-13883c9a7496'
 export const BASE_LIVE = 'https://live-data.jifo.co/'
@@ -389,6 +390,16 @@ async function main() {
     else recusadas.push({ ...x, motivo: d.motivo })
   }
 
+  // 🔎 Carga do registro de buracos: entrada malformada fica INERTE e o buraco
+  //    volta a sair sem diagnóstico, que é o estado seguro. Mas ela não pode
+  //    ficar calada.
+  const cargaBuracos = conferirBuracos()
+  if (cargaBuracos.length) {
+    console.log(`
+   ⚠️ registro de buracos conhecidos com ${cargaBuracos.length} problema(s) de carga:`)
+    for (const p of cargaBuracos) console.log(`      ${p}`)
+  }
+
   if (faltando.length) {
     console.log(`\n🔴 ${faltando.length} rodada(s) que o agregador tem e a nossa base NAO:`)
     for (const f of faltando) {
@@ -413,6 +424,17 @@ async function main() {
         nomesNossos.some((n) => n.startsWith(casaCrua) || casaCrua.startsWith(n))
       console.log(`      ${f.campoFim}  ${f.casaNorm.padEnd(28)} ${String(f.amostra ?? '?').padStart(5)} ${f.recorte ?? '??'}   ${noArquivo ? 'a casa existe no arquivo' : '🔴 a casa NAO tem UMA linha no arquivo'}`)
       console.log(`                 «${f.rotulo.slice(0, 74)}»`)
+      // 🔎 O que JÁ se sabe sobre este buraco, se alguém o investigou.
+      //
+      // ⛔ Isto NÃO o tira da contagem: ele segue buraco, e o diagnóstico sai
+      //    ao lado. Anotar não é silenciar, e um buraco que some porque
+      //    alguém o explicou uma vez é pior que um buraco barulhento.
+      const diag = diagnosticoDe(f.casaNorm, f.campoInicio, f.campoFim, undefined, new Date())
+      if (diag) {
+        console.log(`                 ${diag.vencido ? "⏳ DIAGNÓSTICO VENCIDO" : "🔎 já diagnosticado"} em ${diag.medidoEm}: ${diag.situacao}, ${diag.descricao}`)
+        console.log(`                    → ${diag.acao}`)
+        if (diag.acesso) console.log(`                    acesso: HTTP ${diag.acesso.status}${diag.acesso.hostTodo ? " no host todo" : ""}, com controle positivo em ${diag.acesso.medidoEm}`)
+      }
     }
   } else {
     console.log(`\n✅ nenhuma rodada do agregador falta na nossa base, nesta janela.`)

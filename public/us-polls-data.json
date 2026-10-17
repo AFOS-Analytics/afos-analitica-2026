@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-16",
-  "fetchedAt": "2026-10-16T19:30:06.124Z",
+  "lastUpdate": "2026-10-17",
+  "fetchedAt": "2026-10-17T19:48:47.476Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,8 +47,8 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-16",
-    "nPesquisas": 35,
+    "desde": "2026-09-17",
+    "nPesquisas": 33,
     "tratamentoDoIndeciso": [
       {
         "serie": "Angus Reid Global",
@@ -404,22 +404,6 @@
         "amostraTipo": "LV",
         "dem": 46,
         "rep": 40
-      },
-      {
-        "key": "Clarity Campaign Labs (D)|2026-09-16",
-        "instituto": "Clarity Campaign Labs (D)",
-        "campoFim": "2026-09-16",
-        "amostraTipo": "LV",
-        "dem": 50,
-        "rep": 43
-      },
-      {
-        "key": "Rasmussen Reports (R)|2026-09-16",
-        "instituto": "Rasmussen Reports (R)",
-        "campoFim": "2026-09-16",
-        "amostraTipo": "LV",
-        "dem": 49,
-        "rep": 41
       }
     ],
     "excluidasPorInstrumento": [
@@ -494,10 +478,10 @@
         "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
       }
     ],
-    "nInstitutos": 26,
-    "dem": 49.74,
-    "rep": 42.2,
-    "vantagemDem": 7.54,
+    "nInstitutos": 25,
+    "dem": 49.76,
+    "rep": 42.21,
+    "vantagemDem": 7.55,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
@@ -507,7 +491,6 @@
       "CBS News/YouGov",
       "CNN/SSRS",
       "Centerline Research & Strategy",
-      "Clarity Campaign Labs (D)",
       "Cygnal (R)",
       "Echelon Insights",
       "Emerson College",
