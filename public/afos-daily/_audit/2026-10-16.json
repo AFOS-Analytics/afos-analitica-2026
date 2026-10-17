@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-16",
+  "refetch": {
+    "fetchedAt": "2026-10-16T19:53:46Z",
+    "flavio": 76.45,
+    "lula": 23.5,
+    "baselineConfirmada": "2026-10-16T19:35:49.675Z",
+    "flavioBase": 76.75,
+    "lulaBase": 22.5,
+    "volTotalPresidencialUSD": 184800000,
+    "rebaseline": true,
+    "rebaselineConfirmada": "2026-10-16T20:01:58.761Z",
+    "motivo": "Lula +1,00pp contra o painel das 16:35; trava aprovada de novo às 17:01 BRT, painel e daily reescritos para ela"
+  },
+  "factCheck": [
+    { "evento": "Promulgação da PEC do fim da 6x1 em ato com Lula e Motta, sem senadores da oposição", "data": "2026-10-16", "fontes": ["Gazeta do Povo", "G1 (corrigiu às 12h39: nenhum senador da oposição, a URL guarda a versão antiga)", "Valor", "Folha de S.Paulo"], "decisao": "incorporar" },
+    { "evento": "TSE aprova por unanimidade regras de vínculo de canais de WhatsApp às campanhas, relator André Mendonça", "data": "2026-10-16", "fontes": ["Gazeta do Povo", "G1", "Valor"], "decisao": "incorporar" },
+    { "evento": "Cueva nega pedido da campanha de Flávio para restringir sindicatos e estudantes", "data": "2026-10-16", "fontes": ["CartaCapital", "G1", "Estadão", "Agência Brasil"], "decisao": "incorporar; pedido distinto do de cassação de 15/Out" },
+    { "evento": "Nota da Meta (lacuna na IA, problema corrigido, nega interferência) e mensagens internas", "data": "2026-10-16", "fontes": ["O Globo", "G1", "Metrópoles", "Folha de S.Paulo (mensagens internas, atribuído)"], "decisao": "incorporar com atribuição" },
+    { "evento": "Lula defende maioridade penal de 16 anos para crimes hediondos no JN de 15/Out", "data": "2026-10-15", "fontes": ["Agência Brasil", "G1"], "decisao": "incorporar" },
+    { "evento": "Roberto Cláudio, vice de Ciro no Ceará, apoia Flávio", "data": "2026-10-16", "fontes": ["G1"], "decisao": "incorporar atribuído; declaração de campanha" },
+    { "evento": "Pesquisas: CNT/MDA BR-00652, Futura BR-03764 (total 49 x 47,5 em Money Times e Transmissão Política), PoderData BR-04258 (só válidos)", "fontes": ["Gazeta do Povo", "Metrópoles", "CNN Brasil", "Poder360", "Money Times", "Correio Braziliense (parágrafos finais misturam a PoderData, não usados)"], "decisao": "incorporar" }
+  ],
+  "naoIncorporado": ["TSE barra propaganda de Flávio sobre 'exame de toque' (só UOL)", "TSE ordena que Meta trate igual as campanhas (só VEJA)"],
+  "adversarial": {
+    "singleSource": "Roberto Cláudio (G1) e mensagens internas da Meta (Folha), ambos atribuídos",
+    "numerical": "reconcile-claims: 13 falsos positivos de casamento nome-número, conferidos; preços batem com o painel rebaseado",
+    "fontesInventadas": "nenhuma; 3 conferidas no corpo",
+    "quotes": "nenhuma",
+    "causacao": "nenhuma",
+    "verbos": "OK",
+    "correcoesAntesDoPreview": ["densidade de links 63% → 100% sem aviso", "EN: 'Flávio Bolsonaro's interview'", "painel: J J Coelho → Phoenix", "tradução do rebaseline: o STF parado escapou da troca de 'holding steady'"]
+  },
+  "palavras": 1093,
+  "links": { "distintos": 22, "secundarios": 17, "pctSecundario": 77 },
+  "wayback": "pausa de bloqueio em curso (medido 15/Out 22:31Z), não sondado"
+}
