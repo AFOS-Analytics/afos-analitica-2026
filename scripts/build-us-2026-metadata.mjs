@@ -189,6 +189,29 @@ So that the choice is visible rather than hidden, the other screen is published 
 | \`sum_of_buckets_pct\` | number | sum of all bucket prices at that instant |
 | \`passes_95_105_gate\` | boolean | whether the sum falls within the band the AFOS panel requires |
 
+## \`raw/us-press-errata.json\`
+
+A press collection for a given day is normally **frozen once that day closes**, and a frozen day is never silently rewritten. When a past day has to be corrected, the correction is recorded here rather than applied invisibly.
+
+On **5 October 2026** we found that 29 archived days had frozen a **mid-day** collection instead of that day's final one, because a cron run earlier than the last one had set the file. Those days were regenerated from the database record, which is the final collection of each day, and every rewrite is logged below.
+
+| field | type | description |
+|---|---|---|
+| \`regra\` | string | the policy, in full, in Portuguese |
+| \`reescritas[].data\` | date | the archived day that was rewritten |
+| \`reescritas[].regeradaEm\` | datetime | when the rewrite happened, UTC |
+| \`reescritas[].motivo\` | string | why that day was rewritten |
+| \`reescritas[].fetchedAtAntes\` / \`fetchedAtDepois\` | datetime | the collection timestamp before and after. **These two are the proof**: they show the frozen file held an earlier run |
+| \`reescritas[].itensAntes\` / \`itensDepois\` | integer | story count before and after |
+| \`reescritas[].materiasTrocadas\` | integer | how many stories changed |
+| \`reescritas[].urlsRemovidas\` | string[] | the links that left that day |
+
+**29 entries, covering 3 August to 10 September 2026, 118 stories changed in total.**
+
+🔑 **Read this file before treating the press archive as an immutable record.** Any day listed here is a corrected day: the content you get is the final collection, not the one originally served. Days absent from this list were never rewritten.
+
+⛔ **It is deliberately absent from \`press/us-press-timeline.csv\` and from the \`press.collections\` count**, which are built from date-named files only. Counting it as a collection would add a day that does not exist.
+
 ## \`press/us-press-timeline.csv\`
 
 | column | type | description |

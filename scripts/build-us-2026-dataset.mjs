@@ -184,6 +184,23 @@ for (const f of readdirSync(dirPress).filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.
 }
 writeFileSync(join(OUT, 'raw', 'us-press-archive.json'), JSON.stringify(arquivoPress, null, 2))
 
+// 🏛️ A ERRATA entra como arquivo PROPRIO, de propósito, e nunca pela varredura.
+//
+// 🔑 O filtro por FORMA DE DATA logo acima tem de seguir excluindo-a da
+//    timeline, do `us-press-archive.json` e da contagem `press.collections`,
+//    que é número publicado. Incluí-la por extensão somaria 1 coleção que não
+//    existe. Então ela é copiada à parte, com nome próprio.
+//
+// 🔴 POR QUE ELA FALTAVA, medido em 16/Out/2026: ela ficou fora do bundle desde
+//    que nasceu, em 05/Out, como CONSEQUÊNCIA daquele filtro e não por decisão.
+//    Resultado: quem baixava a imprensa de 03/Ago recebia a versão corrigida
+//    sem nenhum sinal de que ela tinha sido corrigida. Ela registra 29 datas
+//    reescritas e 118 matérias trocadas, com o carimbo de coleta de antes e de
+//    depois, que é o que torna a correção auditável em vez de silenciosa.
+const errataPress = join(dirPress, 'ERRATA.json')
+if (existsSync(errataPress)) copyFileSync(errataPress, join(OUT, 'raw', 'us-press-errata.json'))
+else console.warn('⚠️ ERRATA.json não encontrada em public/us-press-archive: o bundle sai SEM a prova das reescritas')
+
 // ── 5. RESUMO PARA O DATASHEET ─────────────────────────────────────────────────
 const datasEleitorais = polls.map((p) => p.campoFim).filter(Boolean).sort()
 const resumo = {
