@@ -99,6 +99,12 @@ Teste: **124 asserções**, e **8 de 8 mutações** reprovadas. A do acento do P
 
 🔢 **07/Out/2026: havia um OITAVO leitor com a constante.** O `ler-materia.mjs` pedia pelo `urlApiPolls()` (até 1.000) e julgava o corte com `linhas.length >= 200`, então com 247 linhas servidas imprimia *"a rota parou em 200 linhas"* sobre uma janela inteira, e o "ausência aqui NÃO prova ausência" virava ressalva falsa. Agora lê `bordaDaResposta` e `tetoDaResposta`, e quando a janela vem inteira diz que o protocolo não foi ingerido nos 30 dias. 📌 Varrer pela FORMA da conta: `grep -rn "length >= 200|TETO_API_POLLS" scripts`.
 
+## 🗂️ O news-cache no WORKTREE, sincronizado pela rodada, criado em 18/Out/2026
+
+🔴 **A pasta `public/news-cache/` é ignorada pelo git**, então o worktree de origin/main em que a rodada roda nasce só com o dia. Em 18/Out a cobertura chamou de **CEGAS** DataTrends, Datavero e Nexus medindo sobre **1 dia**, e com os 14 dias da árvore principal o veredito foi **COBERTURA_OK**. No sentido inverso, o cache do dia sumia na remoção do worktree.
+
+✅ A rodada agora **traz** da árvore principal os 14 dias que faltam e **devolve** o de hoje antes dos passos 4, 4.5 e 4.7. Trazer não sobrescreve o dia que já existe no worktree (é o recém-coletado), e devolver só troca o da principal se o daqui for MAIOR. Fora de worktree não faz nada. Regra em `scripts/lib/cache-do-worktree.mjs`; teste `node scripts/testar-cache-do-worktree.mjs`, 7 asserções no CI, 3 de 3 mutações pegas.
+
 ## 🧾 FORA DO PAINEL, passo 4.7, criado em 17/Out/2026
 
 ```bash
