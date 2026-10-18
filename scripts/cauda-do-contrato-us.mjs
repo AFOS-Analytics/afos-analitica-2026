@@ -55,7 +55,7 @@
 import { lerCsvGz } from './serie-do-contrato.mjs'
 import { serieDe, agruparPorLivro, extremos, instantesSuspeitos } from './lib/serie-contrato.mjs'
 import { baseDeLeitura } from './lib/base-afos.mjs'
-import { vereditoDaCauda, controlePositivo, VEREDITO } from '../lib/us-market/cauda-cega.mjs'
+import { vereditoDaCauda, controlePositivo, gradeDaSerie, VEREDITO } from '../lib/us-market/cauda-cega.mjs'
 
 const arg = (n) => process.argv.find((a) => a.startsWith(`--${n}=`))?.slice(n.length + 3)
 const SO_SLUG = arg('slug')
@@ -140,7 +140,9 @@ async function principal() {
       continue
     }
 
-    const v = vereditoDaCauda(ext, r.pontos, agora)
+    // 🔑 A grade sai do BACKUP da própria série, que é a fonte gravada.
+    const grade = gradeDaSerie(pontos)
+    const v = vereditoDaCauda(ext, r.pontos, agora, { intervaloTipicoH: grade })
     if (v.veredito === VEREDITO.EXTREMO) {
       comExtremo++
       console.log(`   🔴 EXTREMO NA CAUDA  ${rotulo}`)

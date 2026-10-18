@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-17",
-  "fetchedAt": "2026-10-17T19:48:47.476Z",
+  "lastUpdate": "2026-10-18",
+  "fetchedAt": "2026-10-18T19:40:05.260Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,8 +47,8 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-17",
-    "nPesquisas": 33,
+    "desde": "2026-09-18",
+    "nPesquisas": 32,
     "tratamentoDoIndeciso": [
       {
         "serie": "Angus Reid Global",
@@ -293,6 +293,14 @@
         "rep": 34
       },
       {
+        "key": "Change Research (D)|2026-09-24",
+        "instituto": "Change Research (D)",
+        "campoFim": "2026-09-24",
+        "amostraTipo": "RV",
+        "dem": 46,
+        "rep": 39
+      },
+      {
         "key": "Rasmussen Reports (R)|2026-09-23",
         "instituto": "Rasmussen Reports (R)",
         "campoFim": "2026-09-23",
@@ -388,22 +396,6 @@
         "amostraTipo": "LV",
         "dem": 50,
         "rep": 42
-      },
-      {
-        "key": "CNN/SSRS|2026-09-17",
-        "instituto": "CNN/SSRS",
-        "campoFim": "2026-09-17",
-        "amostraTipo": "RV",
-        "dem": 49,
-        "rep": 41
-      },
-      {
-        "key": "John Zogby Strategies|2026-09-17",
-        "instituto": "John Zogby Strategies",
-        "campoFim": "2026-09-17",
-        "amostraTipo": "LV",
-        "dem": 46,
-        "rep": 40
       }
     ],
     "excluidasPorInstrumento": [
@@ -478,10 +470,10 @@
         "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
       }
     ],
-    "nInstitutos": 25,
-    "dem": 49.76,
-    "rep": 42.21,
-    "vantagemDem": 7.55,
+    "nInstitutos": 24,
+    "dem": 49.78,
+    "rep": 42.22,
+    "vantagemDem": 7.56,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
@@ -489,15 +481,14 @@
       "Angus Reid Global",
       "Beacon Research (D)/ Shaw & Co. Research (R)",
       "CBS News/YouGov",
-      "CNN/SSRS",
       "Centerline Research & Strategy",
+      "Change Research (D)",
       "Cygnal (R)",
       "Echelon Insights",
       "Emerson College",
       "Focaldata",
       "Harvard/Harris Poll/HarrisX",
       "Impact Research (D)/National Research Inc. (R)",
-      "John Zogby Strategies",
       "KFF",
       "McLaughlin & Associates (R)",
       "Morning Consult",
@@ -512,14 +503,14 @@
     ]
   },
   "qualidade": {
-    "linhasLidas": 482,
-    "publicadas": 495,
+    "linhasLidas": 483,
+    "publicadas": 496,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 482,
+    "doIndice": 483,
     "curadas": 13,
     "curadasDescartadasPorDuplicidade": 17
   },
@@ -1003,6 +994,21 @@
       "outros": 21,
       "vantagemDem": 11,
       "fontePrimaria": "https://angusreid.us/wp-content/uploads/2026/09/2026.09.28_Trump_Midterms.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Change Research (D)",
+      "campoInicio": "2026-09-15",
+      "campoFim": "2026-09-24",
+      "amostra": 2021,
+      "amostraTipo": "RV",
+      "margemErro": 2.3,
+      "dem": 46,
+      "rep": 39,
+      "outros": 15,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://changeresearch.com/research/2026/2026-10-07-what-voter-motivation-reveals-about-2026",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },

@@ -1,0 +1,225 @@
+{
+  "lastUpdate": "2026-10-18",
+  "fetchedAt": "2026-10-18T19:20:13.496Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal",
+      "feed": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal",
+      "feed": "https://feeds.washingtonpost.com/rss/politics"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal",
+      "feed": "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada",
+      "feed": "https://rss.politico.com/politics-news.xml"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada",
+      "feed": "https://thehill.com/homenews/feed/"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada",
+      "feed": "https://rollcall.com/feed/"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada",
+      "feed": "https://api.axios.com/feed/"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.npr.org/1014/rss.xml"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio",
+      "feed": "https://abcnews.go.com/abcnews/politicsheadlines"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio",
+      "feed": "https://www.cbsnews.com/latest/rss/politics"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.nbcnews.com/nbcnews/public/politics"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio",
+      "feed": "http://rss.cnn.com/rss/cnn_allpolitics.rss"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio",
+      "feed": "https://moxie.foxnews.com/google-publisher/politics.xml"
+    },
+    {
+      "casa": "NewsNation",
+      "tipo": "tv/rádio",
+      "feed": "https://www.newsnationnow.com/politics/feed/"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião",
+      "feed": "https://www.nationalreview.com/feed/"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião",
+      "feed": "https://www.theguardian.com/us-news/us-politics/rss"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 221,
+    "naLista": 92,
+    "foraDaLista": 129,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 4,
+    "veiculosRepresentados": 7,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": [
+      "feed:The Washington Post: HTTP 502"
+    ],
+    "feedsProprios": 16,
+    "lidosEmFeedProprio": 39,
+    "publicadosComLinkCanonico": 5,
+    "publicadosViaGoogleNews": 5,
+    "publicadosPorDisputa": 10,
+    "publicadosPorMetodo": 0
+  },
+  "itens": [
+    {
+      "titulo": "Trump approval hits record low, handing Democrats a clear midterm edge",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPWkJrME56Z1A3aVBwazIzNTA5ekFNUDFtRzAyaTgteUo1cU4yOElmOFJwYzB4WUVkR3hoWk5QYk9kbDRJR3AtWm91VEZfRnUyQzBQeVk1czBkWGhhNXZwWjNtUk1NdVpRcG1DMGZTZ2swcU5lQmFESzR5Y2h6ak1OdWhKQ0kxTERscDBPcGZlWWVleFdPczNVOWdlYkdkQUtick1oanByQlkxXzJKWi1hRDNDYXlFekVlaG1r?oc=5",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-10-18T19:04:31.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "CBS News poll: Talarico-Paxton Senate race is a Texas toss-up",
+      "url": "https://www.cbsnews.com/news/texas-senate-talarico-paxton-poll/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-10-18T18:48:26.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Transcript: Florida Democratic Senate candidate Angie Nixon on \"Face the Nation with Margaret Brennan,\" Oct. 18, 2026",
+      "url": "https://www.cbsnews.com/news/angie-nixon-florida-democratic-senate-candiate-face-the-nation-transcript-10-18-2026/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-10-18T18:17:07.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Idaho Midterm Elections 2026: Key Races, Candidates and Past Results",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9DdS1RZFNwdzZyVThqSUsyNEZQQUNJbWV6VkZDZ182cGRIVGV1ak15UnJRaVhTTWNBSTlnY2Z2YXdjYzVFREdjWWtXUTBjM1hOVmRlZy1yQ3cxRU4weTJEWV8yU0tMVnY5WFdVX3Bn?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-18T17:30:21.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "How Trump’s justice department is shattering practice of political neutrality as midterms loom",
+      "url": "https://www.theguardian.com/us-news/ng-interactive/2026/oct/18/trump-justice-department-us-midterms",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-10-18T17:18:14.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Concerning economic data pose issues for GOP down midterm stretch",
+      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/concerning-economic-data-pose-issues-for-gop-down-midterm-stretch/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-18T16:45:31.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Colorado Midterm Elections 2026: Key Races, Candidates and Past Results",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFA1LUw1X0pTb0hERndfMVFzcmg5Zk44eWlTV3dVRG9ESWs5SFVpdHF5UkU4eGEycm1QWldBS2F6RDlOSS1ub3h3bnhBRktaZEx1RFRpX1FBYW1nSHRiVkJqZ1Z1aXY1XzBSZ09XZFlNRWVnUQ?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-18T16:30:21.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Tracking the Early Vote in the 2026 Midterm Elections",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOWUNScEZXTjJwYVpIZENZS0txWHd4TTNRUFZvQk1aRUUtTHE2NUhQbWJpb3BTRHpQUTFtdWEybmpFRk9iN1VXY1Y5Q1FjMTNqTEYzdkJZZk9OOUFPNnR3WFV2Qy1KZ3JscGpGT2N0eGdOY2NSaXJSZ2hoLXFORXB1bEhmUGd6QnEtVW9sZzRudW9wQ2pJTTdxVWFCTGpaZDJBaU9LX29oeER4STJrczJsOTRZbG43cHFF?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-18T15:07:28.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Getaway cars, affairs, Dubai fugitives: Trump’s pick Ken Paxton brings baggage to Senate race in Texas",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOckdmYTQ2YWgyN0ZmeWRibHJ5eGM0SjlSX0gxTmdVWDY0NVJQTlpKOF95c2Z3MVJhNXhtYWhYZEk0RGNFLTJpUFptUEJEajRuZ0ptbXZ4TDZaWGlpOV9mcGFTd20ydFZMdUNjWU5yVVktOXo2U0JmYjMzd1p1WWFYRjlzNWY4eTVCNi1Oa1p5VExvQQ?oc=5",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-10-18T14:17:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Can Scott Colom win Mississippi Senate? Warnock is making a big bet on it.",
+      "url": "https://www.politico.com/news/2026/10/18/warnock-mississippi-senate-colom-southern-voters-01123450",
+      "casa": "Politico",
+      "publicadoEm": "2026-10-18T14:00:00.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    }
+  ]
+}

@@ -14,7 +14,7 @@
  * ⚖️ Metade dos casos é ANTI-EXCESSO, porque o erro simétrico é um medidor que
  *    grita extremo em toda cauda e vira trava que se aprende a pular.
  */
-import { vereditoDaCauda, controlePositivo, horasEntre, VEREDITO } from '../lib/us-market/cauda-cega.mjs'
+import { vereditoDaCauda, controlePositivo, horasEntre, gradeDaSerie, VEREDITO } from '../lib/us-market/cauda-cega.mjs'
 
 let ok = 0
 let mau = 0
@@ -132,6 +132,91 @@ console.log('⏱️ horasEntre\n')
   eq('conta as horas', horasEntre('2026-10-12T21:00:00.000Z', '2026-10-13T19:30:00.000Z'), 22.5)
   eq('data ilegível devolve null, não zero', horasEntre('nao e data', '2026-10-13T19:30:00.000Z'), null)
   eq('e null não vira 0 na outra ponta', horasEntre('2026-10-12T21:00:00.000Z', undefined), null)
+}
+
+
+console.log('📏 gradeDaSerie e o limiar auto-calibrado\n')
+
+// ══ O DEFEITO DE 18/Out, plantado ════════════════════════════════════════
+// A primeira versão usava 1h fixo, supondo captura de 30 em 30 min. A grade
+// real, medida nos 40 últimos pontos dos cinco livros, é de 4,5h uniformes.
+// Resultado: cauda de 3,4h no livro mais ralo saiu INDETERMINADO sendo normal.
+{
+  const serie = (h, n = 10) => Array.from({ length: n }, (_, i) => p(new Date(Date.UTC(2026, 9, 1) + i * h * 36e5).toISOString(), 90))
+  eq('a grade sai da mediana dos intervalos', gradeDaSerie(serie(4.5)), 4.5)
+  eq('série curta demais devolve null', gradeDaSerie(serie(4.5, 2)), null)
+  eq('série vazia devolve null', gradeDaSerie([]), null)
+  eq('série nula devolve null', gradeDaSerie(null), null)
+
+  // o caso real: cauda de 3.4h com grade de 4.5h
+  const e34 = ext({ fim: '2026-10-13T16:06:00.000Z' })
+  eq('🔴 cauda de 3.4h com grade de 4.5h é VAZIA, não indeterminada',
+    vereditoDaCauda(e34, [], AGORA, { intervaloTipicoH: 4.5 }).veredito, VEREDITO.VAZIA)
+  eq('e o motivo DIZ que o limiar veio da grade medida',
+    /grade medida de 4\.5h/.test(vereditoDaCauda(e34, [], AGORA, { intervaloTipicoH: 4.5 }).motivo), true)
+
+  // ⛔ ANTI-EXCESSO: afrouxar não pode calar cauda longa de verdade
+  const e22 = ext()
+  eq('cauda de 22.5h com grade de 4.5h segue INDETERMINADA',
+    vereditoDaCauda(e22, [], AGORA, { intervaloTipicoH: 4.5 }).veredito, VEREDITO.INDETERMINADO)
+  eq('o limiar é 1,5x a grade', vereditoDaCauda(e22, [], AGORA, { intervaloTipicoH: 4.5 }).limiar, 6.75)
+  // na fronteira: 6h está dentro de 6.75, 7h está fora
+  eq('6h com grade 4.5 ainda é VAZIA',
+    vereditoDaCauda(ext({ fim: '2026-10-13T13:30:00.000Z' }), [], AGORA, { intervaloTipicoH: 4.5 }).veredito, VEREDITO.VAZIA)
+  eq('7h com grade 4.5 já é INDETERMINADA',
+    vereditoDaCauda(ext({ fim: '2026-10-13T12:30:00.000Z' }), [], AGORA, { intervaloTipicoH: 4.5 }).veredito, VEREDITO.INDETERMINADO)
+
+  // ⛔ ANTI-SILÊNCIO: sem grade, o padrão conservador e ele se DECLARA
+  eq('sem grade, volta ao padrão de 1h', vereditoDaCauda(e34, [], AGORA).veredito, VEREDITO.INDETERMINADO)
+  eq('e o motivo DIZ que é padrão, não medição',
+    /padrão conservador/.test(vereditoDaCauda(e34, [], AGORA).motivo), true)
+  eq('grade zero não vira limiar zero', vereditoDaCauda(e34, [], AGORA, { intervaloTipicoH: 0 }).veredito, VEREDITO.INDETERMINADO)
+  eq('grade negativa é ignorada', vereditoDaCauda(e34, [], AGORA, { intervaloTipicoH: -5 }).veredito, VEREDITO.INDETERMINADO)
+  eq('grade NaN é ignorada', vereditoDaCauda(e34, [], AGORA, { intervaloTipicoH: NaN }).veredito, VEREDITO.INDETERMINADO)
+
+  // ⛔ ANTI-EXCESSO: a grade NÃO muda o veredito quando HÁ ponto na cauda
+  eq('com ponto além do extremo, grade não salva',
+    vereditoDaCauda(ext(), [p('2026-10-13T06:00:00.000Z', 99.9)], AGORA, { intervaloTipicoH: 99 }).veredito, VEREDITO.EXTREMO)
+}
+
+
+// ══ Os furos que a MUTAÇÃO achou no próprio arnês, em 18/Out ══════════════
+{
+  // 🔴 1. MEDIANA e não média: com gaps uniformes as duas coincidem, então o
+  //    caso anterior não distinguia. Gaps [1,1,1,10]: mediana 1, média 3,25.
+  const t = (h) => new Date(Date.UTC(2026, 9, 1) + h * 36e5).toISOString()
+  const torta = [p(t(0), 90), p(t(1), 90), p(t(2), 90), p(t(3), 90), p(t(13), 90)]
+  eq('a grade é MEDIANA, imune ao gap gigante', gradeDaSerie(torta), 1)
+
+  // 🔴 2. gap não finito não pode entrar na conta
+  const comLixo = [p(t(0), 90), p('nao e data', 90), p(t(1), 90), p(t(2), 90), p(t(3), 90)]
+  eq('carimbo ilegível não contamina a grade', gradeDaSerie(comLixo), 1)
+  // 🔑 E o caso DETERMINÍSTICO, que não depende de onde o NaN cai na ordenação:
+  //    se TODOS os gaps forem ilegíveis, sobra gap nenhum e a resposta é null.
+  //    Sem o guarda, sobrariam dois NaN e a função devolveria NaN, que é um
+  //    número falso em vez de uma recusa.
+  // 🔑 E o que a guarda filtra ALÉM do ilegível: gap ZERO, de carimbo repetido.
+  //    Com quatro carimbos iguais e dois espaçados, os zeros empurram a mediana
+  //    para o próprio zero se eles entrarem na conta.
+  const repetido = [p(t(0), 90), p(t(0), 90), p(t(0), 90), p(t(0), 90), p(t(4), 90), p(t(8), 90)]
+  eq('carimbo REPETIDO não derruba a grade para zero', gradeDaSerie(repetido), 4)
+
+  eq('série onde todo gap é ilegível devolve null, nunca NaN',
+    gradeDaSerie([p(t(0), 90), p('lixo', 90), p(t(5), 90)]), null)
+
+  // 🔴 3. a FRONTEIRA do limiar: exatamente 1,5x a grade ainda é VAZIA
+  //    Com grade 4.5 o limiar é 6.75, e `caudaH > limiar` deixa o igual passar.
+  const noLimiar = ext({ fim: '2026-10-13T12:45:00.000Z' })   // 6.75h antes de AGORA
+  eq('cauda EXATAMENTE no limiar ainda é VAZIA',
+    vereditoDaCauda(noLimiar, [], AGORA, { intervaloTipicoH: 4.5 }).veredito, VEREDITO.VAZIA)
+
+  // 🔴 4. grade negativa tem de ser IGNORADA, e não virar limiar negativo.
+  //    Limiar negativo deixa TODA cauda acima dele e some com a VAZIA.
+  const curtinha = ext({ fim: '2026-10-13T19:00:00.000Z' })   // 0.5h
+  eq('grade negativa cai no padrão e 0.5h segue VAZIA',
+    vereditoDaCauda(curtinha, [], AGORA, { intervaloTipicoH: -5 }).veredito, VEREDITO.VAZIA)
+  eq('grade zero cai no padrão e 0.5h segue VAZIA',
+    vereditoDaCauda(curtinha, [], AGORA, { intervaloTipicoH: 0 }).veredito, VEREDITO.VAZIA)
 }
 
 console.log(`\n${mau ? '❌ REPROVADO' : '✅ APROVADO'}: ${ok} passaram, ${mau} falharam\n`)
