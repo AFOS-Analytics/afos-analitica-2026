@@ -46,6 +46,7 @@
 import { spawnSync } from 'node:child_process'
 import { existsSync } from 'node:fs'
 import { dataCivilBrasil } from './lib/data-civil-brz.mjs'
+import { sincronizar } from './lib/cache-do-worktree.mjs'
 
 const argv = process.argv.slice(2)
 const aplicar = argv.includes('--apply')
@@ -210,6 +211,14 @@ if (escopo === 4) {
 //    (onde a pasta não existe), o passo 4 saiu "NAO LEU" e só então a coleta rodou.
 //    Na árvore principal o defeito é mais calado: mede sem o dia de hoje. A coleta
 //    agora vem antes dos DOIS leitores.
+// 🗂️ 18/Out/2026: num worktree o news-cache nasce só com o dia (a pasta é ignorada
+//    pelo git), e a cobertura chamou de CEGAS três casas medindo sobre 1 dia.
+//    Traz os 14 dias anteriores da árvore principal; e devolve o de hoje no fim,
+//    porque o worktree some e o cache ia junto. Regras em lib/cache-do-worktree.mjs.
+const trazidos = sincronizar('trazer', { hoje: dataCivilBrasil() })
+if (trazidos) console.log('')
+if (trazidos) console.log(`🗂️  worktree: ${trazidos.lista.length} dia(s) de news-cache trazido(s) da árvore principal${trazidos.lista.length ? ` (${trazidos.lista[0].slice(0, 10)} a ${trazidos.lista.at(-1).slice(0, 10)})` : ''}`)
+
 const cacheDeHoje = `public/news-cache/${dataCivilBrasil()}.json`
 if (!existsSync(cacheDeHoje) && !semNoticias) {
   console.log('')
@@ -229,6 +238,9 @@ if (!existsSync(cacheDeHoje) && !semNoticias) {
 } else if (!existsSync(cacheDeHoje)) {
   resultados.push({ id: 'noticias', codigo: null, estado: 'PULADO (--sem-noticias), e o cache NÃO existe' })
 }
+
+const devolvidos = sincronizar('devolver', { hoje: dataCivilBrasil() })
+if (devolvidos?.lista.length) console.log(`🗂️  worktree: ${devolvidos.lista.join(', ')} devolvido(s) à árvore principal`)
 
 // 4/5 · A COBERTURA DE IMPRENSA, criada em 18/Set/2026.
 //
