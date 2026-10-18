@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-18",
+  "refetch": {
+    "fetchedAt": "2026-10-18T20:36:04Z",
+    "flavio": 79.25,
+    "lula": 20.5,
+    "baselineConfirmada": "2026-10-18T19:53:20.226Z",
+    "flavioBase": 79.85,
+    "lulaBase": 20.5,
+    "volTotalPresidencialUSD": 187290000,
+    "rebaseline": true,
+    "rebaselineConfirmada": "2026-10-18T20:44:21.851Z",
+    "motivo": "Flávio -0,60pp contra o painel das 16:53; trava aprovada de novo às 17:44 BRT, painel e daily reescritos para ela; variação segue contra a confirmada de 17/Out 16:59"
+  },
+  "factCheck": [
+    { "evento": "Vox Brasil BR-04332: Lula 46,4 x 44,6 total, 51 x 49 válidos, campo 15 a 17/Out", "data": "2026-10-18", "fontes": ["Poder360", "Sul 21", "Metrópoles", "CNN Brasil"], "decisao": "incorporar" },
+    { "evento": "Ato de Flávio Bolsonaro na Avenida Paulista; frase sobre o pai colocar a faixa presidencial; 71,9 mil no ápice pela metodologia da USP", "data": "2026-10-18", "fontes": ["Folha de S.Paulo", "G1", "O Globo", "CartaCapital", "Poder360"], "decisao": "incorporar; contagem atribuída ao G1" },
+    { "evento": "Atos pró-Lula em capitais", "data": "2026-10-18", "fontes": ["Folha de S.Paulo", "O Globo"], "decisao": "incorporar" },
+    { "evento": "Debate da Band marcado para a noite de 18/Out", "data": "2026-10-18", "fontes": ["Band", "Jovem Pan", "UOL"], "decisao": "incorporar como marcado" }
+  ],
+  "naoIncorporado": [
+    "Roberta Luchsinger diz em entrevista que quer fazer delação contra Lula e Lulinha (intenção declarada, sem ato de autoridade)",
+    "Áudio do caso Master-BRB com advogado atribuindo 'apoio do presidente' a Vorcaro (só VEJA)",
+    "Phoenix BR-08809, registrada para 18/Out: sem número até a leitura"
+  ],
+  "adversarial": {
+    "singleSource": "contagem de 71,9 mil (G1) e rejeição de 45,3% da Vox (CNN Brasil), ambas atribuídas",
+    "numerical": "reconcile-claims: 4 avisos legítimos (Δ do vão 5,30pp, base 76,95%, rejeição 45,3% da fonte) e pares nome-número de pesquisa",
+    "fontesInventadas": "nenhuma; títulos conferidos no cache",
+    "quotes": "nenhuma aspa literal; a frase da faixa presidencial vai parafraseada com 2 grupos",
+    "causacao": "nenhuma; Vox e ato ao lado do preço",
+    "verbos": "OK; 'delação' fora",
+    "correcoesAntesDoPreview": [
+      "'as três diferenças cabem ou quase cabem nas margens' era juízo: virou a lista das margens declaradas",
+      "densidade de links 76% → acima de 80% (Vox no rodada × rodada e no Em síntese)"
+    ]
+  },
+  "palavras": 843,
+  "links": { "distintos": 14, "secundarios": 12, "pctSecundario": 86 },
+  "calendario": "calendario-pesquisas-brz.mjs --peca: 20 nacionais de 19 a 25/Out, 4 tiradas (Vetor Arrow e Gerp BR-09327 pela data, as duas Real Time pelo escopo)",
+  "wayback": "pausa de bloqueio em curso (medido 15/Out 22:31Z), não sondado"
+}
