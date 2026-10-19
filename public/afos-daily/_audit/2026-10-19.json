@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-19",
+  "refetch": {
+    "fetchedAt": "2026-10-19T18:42:04Z",
+    "flavio": 76.85,
+    "lula": 23.5,
+    "painelAnterior": "19/10/2026, 13:25",
+    "flavioPainel": 75.75,
+    "lulaPainel": 23.5,
+    "baselineConfirmada": "2026-10-18T20:44:21.851Z",
+    "flavioBase": 79.25,
+    "lulaBase": 20.5,
+    "volTotalPresidencialUSD": 188170000,
+    "rebaseline": true,
+    "rebaselineConfirmada": "2026-10-19T18:42:04.300Z",
+    "motivo": "Flávio +1,10pp contra o painel das 13:25; trava aprovada às 15:42 BRT, painel e daily reescritos para ela; variação segue contra a confirmada de 18/Out 17:44"
+  },
+  "factCheck": [
+    { "evento": "Cinco nacionais divulgadas em 19/Out: AtlasIntel/Bloomberg, BTG/Nexus, Futura/100% Cidades, PoderData/Aya, DataTrends", "data": "2026-10-19", "fontes": ["JOTA", "Congresso em Foco", "CNN Brasil", "UOL", "GP1"], "decisao": "incorporar" },
+    { "evento": "Debate da Band em 18/Out: acusações sobre Master e INSS, citação de Roberta Luchsinger e Daniel Vorcaro", "data": "2026-10-18", "fontes": ["G1", "CNN Brasil"], "decisao": "incorporar" },
+    { "evento": "Avaliação qualitativa da Quaest durante o debate: Flávio 82, Lula 79", "data": "2026-10-18", "fontes": ["O Globo", "O Antagonista"], "decisao": "incorporar como avaliação, não intenção de voto" },
+    { "evento": "PF leva ao STF investigação de lavagem envolvendo Willer Tomaz e Flávio Bolsonaro, relator Moraes", "data": "2026-10-18", "fontes": ["O Globo", "G1"], "decisao": "incorporar com as negativas" },
+    { "evento": "Operação Linceu contra Humberto Pradera, ex-secretário de TI do STJ; Flávio não é alvo", "data": "2026-10-19", "fontes": ["Gazeta do Povo", "Metrópoles"], "decisao": "incorporar; corpo lido nos dois" },
+    { "evento": "Bellizze (TSE) dá 24 horas à Meta; ANPD dá cinco dias", "data": "2026-10-19", "fontes": ["Folha de S.Paulo", "Estadão", "G1", "Gazeta do Povo"], "decisao": "incorporar" }
+  ],
+  "naoIncorporado": [
+    "'VEJA nova pesquisa Quaest': calendário ou repercussão; a próxima Quaest nacional é de 21/Out"
+  ],
+  "adversarial": {
+    "singleSource": "Lula fará procuração para abrir os sigilos (UOL), declaração de campanha atribuída; 'com mandado do Supremo' (Metrópoles), a Gazeta do Povo diz que a investigação tramita no STF",
+    "numerical": "reconcile-claims: aviso legítimo de 79,25% (base de 18/Out)",
+    "fontesInventadas": "nenhuma; títulos conferidos no cache",
+    "quotes": "nenhuma aspa literal",
+    "causacao": "nenhuma; pesquisas e debate ao lado do preço",
+    "verbos": "OK; Flávio 'não é alvo' da Linceu",
+    "correcoesAntesDoPreview": [
+      "link do Polymarket sobre 'AtlasIntel' no rascunho removido",
+      "'a primeira nacional com campo inteiro depois do debate é a Gerp' trocado por 100 Cidades (19 e 20/Out), conferido no registro do TSE: o campo da Gerp vai de 17 a 20/Out",
+      "rebaseline das 15:42 aplicado na daily e no painel"
+    ]
+  },
+  "palavras": 1095,
+  "links": { "distintos": 21, "secundarios": 15, "pctSecundario": 71 },
+  "calendario": "calendario-pesquisas-brz.mjs --peca: 15 nacionais de 20 a 23/Out, 4 tiradas (Vetor Arrow e Gerp BR-09327 pela data, as duas Real Time pelo escopo)",
+  "wayback": "pausa de bloqueio em curso, não sondado"
+}
