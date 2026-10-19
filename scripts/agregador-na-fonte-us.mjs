@@ -256,6 +256,19 @@ export const APELIDOS = [
   // as ondas de Jan e Abr e NAO a de 16-21/Set. O apelido conserta o RÓTULO
   // ("a casa existe no arquivo"), e nunca a contagem.
   [/kff/i, 'KFF'],
+  // 🔴 19/Out/2026: o apelido que faltava produzia o alarme MAIS ALTO que este
+  // conferidor sabe dar, e ele era FALSO. A rodada de 29/Set a 01/Out saiu com
+  // "🔴 a casa NAO tem UMA linha no arquivo", e a base tem TRÊS linhas da casa,
+  // sob `I&I/TIPP Insights (R)`, porque o agregador a escreve só como `TIPP`.
+  //
+  // ⚠️ O teste frouxo do rótulo é de prefixo nos dois sentidos, e nenhum lado é
+  // prefixo do outro: "tipp" não começa "i&i/tipp insights (r)" nem o contrário.
+  // Casa cujo nome o índice prefixa com o do PATROCINADOR é invisível a ele.
+  //
+  // ⛔ E o apelido conserta o RÓTULO, nunca a CONTAGEM: as nossas três linhas
+  // são de Jan, Fev e Mai/2026, então o buraco de 01/Out é REAL e CONTINUA
+  // contado. Mesma régua da KFF logo acima.
+  [/\btipp\b|technometrica/i, 'I&I/TIPP Insights (R)'],
 ]
 // 🧬 O apelido mapeia o rótulo do AGREGADOR para o nosso, e a série mapeia o
 // rótulo do ÍNDICE para o nosso: as duas pontas compõem, e compor evita que o
