@@ -187,7 +187,9 @@ npx tsx scripts/broadcast-afos-tradeoff.ts YYYY-MM-DD --pais=us
 | conferir a URL do e-mail | ela é `/[idioma]/tradeoff/[pais]/[data]`. 🔴 **A forma SEM país virou 404 em 07/Ago/2026**, então esquecer o país não entrega mais a peça errada, entrega **página morta para a lista inteira**. Medido em 12/Out: `/pt-BR/tradeoff/2026-10-12` responde 404 com `og:title` do Brasil |
 | a trilha sai **por lote**, não no fim | queda no meio do envio não apaga o registro do que já saiu |
 
-📊 **Base medida em 12/Out/2026: 27 leads ativos, TODOS em pt-BR.** Então, na prática, o inglês e o espanhol não chegam a ninguém por e-mail, e isso não muda a obrigação de traduzir antes: o envio é por idioma do lead e o script se recusa a rodar sem os três no ar.
+📊 **A base NÃO se decora, ela sai do `--dry-run`.** Em 19/Out/2026 o André perguntou se eram 27 ou 28 e eu tinha citado 27 de cabeça, que era o número medido em 12/Out e já estava velho: o dry-run mediu **28 leads ativos**, em 3 lotes de 10, 10 e 8. 🔴 É a mesma família do número decorado que a seção do portão de distribuição já carrega duas vezes neste repositório, e a régua é a mesma: **a contagem vive na saída do script, não nesta linha.**
+
+📌 **O que é ESTÁVEL e vale escrever:** todos os leads estão em **pt-BR**, então na prática o inglês e o espanhol não chegam a ninguém por e-mail. Isso não muda a obrigação de traduzir antes, porque o envio é por idioma do lead e o script se recusa a rodar sem os três no ar.
 
 ⚖️ **E disparar é decisão do André, não consequência de "publicado".** Aprovar o texto não é autorizar o envio: são 27 e-mails que não se desfazem. A régua é mostrar o `--dry-run` e esperar a palavra.
 
