@@ -28,7 +28,7 @@
  * → memory/feedback_rotulo_diz_do_que_o_numero_e.md
  *
  * Uso:
- *   node scripts/conferir-tela.mjs --esperado=87.50,12.50,51.50,49.50,97.15
+ *   node scripts/conferir-tela.mjs --esperado=87.50,12.50,51.50,49.50,97.15,5.14
  *   node scripts/conferir-tela.mjs --esperado=... --base=http://localhost:3000
  *   node scripts/conferir-tela.mjs --esperado=... --locales=en
  *
@@ -51,6 +51,8 @@ import { baseDeLeitura } from './lib/base-afos.mjs'
  *
  * O padrão continua , para não mudar o comportamento de quem já chamava.
  */
+import { CONTRATOS, conferirRegistro } from './lib/rotulos-do-painel-us.mjs'
+
 const PAIS = process.argv.find((a) => a.startsWith('--pais='))?.slice(7) ?? 'us'
 
 const arg = (nome, padrao) => {
@@ -94,6 +96,55 @@ export function achou(texto, valor, locale) {
   return new RegExp('(?<![\\d.,])' + esc + '(?![\\d.,])').test(texto)
 }
 
+/**
+ * O PRIMEIRO número do texto, como a tela o escreve.
+ *
+ * 📌 Ele aceita ponto e vírgula no meio porque o separador muda de idioma, e
+ * devolve o token CRU, sem normalizar: quem compara é quem chamou, que sabe o
+ * idioma. Normalizar aqui esconderia a diferença entre `91,50` e `91.50` numa
+ * tela que escreve o separador errado.
+ */
+export function primeiroNumero(texto) {
+  const m = String(texto ?? "").match(/\d[\d.,]*\d|\d/)
+  return m ? m[0] : null
+}
+
+/**
+ * 🏷️ O NÚMERO ESTÁ SOB O RÓTULO DELE? É o portão que faltava desde 06/Set.
+ *
+ * 🔑 A régua é **o valor é o PRIMEIRO número depois do rótulo**, e ela não é
+ *    proximidade. A medição que escolheu isso, na tela de 19/Out/2026: o valor
+ *    certo está a 1 char do rótulo nos quatro preços de controle, o `no-prazo`
+ *    legítimo está a 25 chars, e o valor REPUBLICANO está a 21 chars do rótulo
+ *    "Democratas". Ou seja 25 tem de passar e 21 tem de reprovar, e nenhuma
+ *    janela de caracteres separa os dois.
+ *
+ * 🧬 A cadeia de âncoras é procurada EM ORDEM, cada uma depois da anterior,
+ *    porque "Democratas" aparece nos dois cartões e só a âncora do cartão
+ *    distingue um do outro.
+ *
+ * ⛔ Âncora ausente é veredito PRÓPRIO e não falta de valor: um manda conferir
+ *    o número, o outro manda consertar o registro de rótulos. Devolver os dois
+ *    como "faltou" mandaria procurar no lugar errado.
+ *
+ * @returns {{ok: boolean, motivo?: string, ancora?: string, encontrado?: string|null, esperado?: string}}
+ */
+export function valorSobOsRotulos(texto, ancoras, valor, locale) {
+  const txt = String(texto ?? "")
+  if (!Array.isArray(ancoras) || !ancoras.length) return { ok: false, motivo: "SEM_ANCORA" }
+  let pos = 0
+  for (const a of ancoras) {
+    const i = txt.indexOf(a, pos)
+    if (i < 0) return { ok: false, motivo: "ANCORA_AUSENTE", ancora: a }
+    pos = i + a.length
+  }
+  const achado = primeiroNumero(txt.slice(pos))
+  if (achado === null) return { ok: false, motivo: "SEM_NUMERO_DEPOIS" }
+  const esperado = naConvencao(valor, locale)
+  if (achado !== esperado) return { ok: false, motivo: "OUTRO_NUMERO", encontrado: achado, esperado }
+  return { ok: true, encontrado: achado }
+}
+
 
 // 🔑 O runner fica GUARDADO para o teste poder importar as funções puras sem
 // abrir navegador. Sem isto, `import` deste arquivo dispararia a conferência.
@@ -107,6 +158,32 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
     console.error('❌ nada a conferir. Passe --esperado=valor1,valor2,...')
     console.error('   Conferidor sem alvo devolve verde sempre, que é pior que não conferir.')
     process.exit(1)
+  }
+
+  /**
+   * 🏷️ O portão de etiqueta só existe para o país que tem registro de rótulos.
+   *
+   * ⛔ E ele exige que a CONTAGEM bata com o registro, porque o `--esperado` é
+   *    POSICIONAL: um valor a mais ou a menos desloca todos os pares e o portão
+   *    passaria a conferir o número certo contra o rótulo do vizinho, que é
+   *    exatamente o defeito que ele existe para pegar.
+   */
+  const temRegistro = PAIS === 'us'
+  const COM_ETIQUETA = temRegistro && ESPERADO.length === CONTRATOS.length
+  if (temRegistro) {
+    const maCarga = conferirRegistro()
+    if (maCarga.length) {
+      console.error('❌ registro de rótulos malformado, e sem ele o portão de etiqueta não roda:')
+      for (const p of maCarga) console.error('   · ' + p)
+      process.exit(1)
+    }
+    if (!COM_ETIQUETA) {
+      console.error(`❌ ${ESPERADO.length} valor(es) em --esperado contra ${CONTRATOS.length} no registro de rótulos.`)
+      console.error('   O --esperado é POSICIONAL: contagem diferente conferiria o número certo')
+      console.error('   contra o rótulo do vizinho. Passar os ' + CONTRATOS.length + ' na ordem:')
+      CONTRATOS.forEach((c, i) => console.error(`     ${i + 1}. ${c.chave.padEnd(15)} ${c.descricao}`))
+      process.exit(1)
+    }
   }
 
   console.log(`\n🖥️  TELA DO PAINEL ${PAIS.toUpperCase()} · ${LOCALES.length} idioma(s) · ${ESPERADO.length} valor(es) esperado(s)`)
@@ -135,19 +212,39 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
       continue
     }
 
+    // 1) o número CHEGOU à tela? (régua de 06/Set)
     const faltando = ESPERADO.filter((v) => !achou(texto, v, locale))
-    const icone = faltando.length ? '🔴' : '✅'
-    console.log(`   ${icone} ${locale.padEnd(6)} HTTP ${status} · ${texto.length} chars renderizados · ${ESPERADO.length - faltando.length}/${ESPERADO.length}`)
+    // 2) 🏷️ e ele está SOB O RÓTULO DELE? (régua de 19/Out)
+    //    ⛔ O segundo não substitui o primeiro: "ausente da tela" e "presente sob
+    //       o rótulo errado" são defeitos diferentes e pedem ações diferentes.
+    const etiquetas = COM_ETIQUETA
+      ? ESPERADO.map((v, i) => ({ chave: CONTRATOS[i].chave, descricao: CONTRATOS[i].descricao, r: valorSobOsRotulos(texto, CONTRATOS[i].ancoras[locale], v, locale) }))
+      : []
+    const etiquetaMa = etiquetas.filter((e) => !e.r.ok)
+    const icone = faltando.length || etiquetaMa.length ? '🔴' : '✅'
+    const sufixo = COM_ETIQUETA ? ` · etiqueta ${etiquetas.length - etiquetaMa.length}/${etiquetas.length}` : ' · etiqueta NÃO conferida'
+    console.log(`   ${icone} ${locale.padEnd(6)} HTTP ${status} · ${texto.length} chars renderizados · ${ESPERADO.length - faltando.length}/${ESPERADO.length}${sufixo}`)
     if (faltando.length) {
-      console.log(`        FALTANDO: ${faltando.join(' · ')}`)
-      idiomasComFalha++
+      console.log(`        FALTANDO na tela: ${faltando.join(' · ')}`)
     }
+    for (const e of etiquetaMa) {
+      if (e.r.motivo === 'ANCORA_AUSENTE') {
+        console.log(`        🏷️ ${e.chave}: ÂNCORA AUSENTE na tela, ${JSON.stringify(e.r.ancora)}`)
+        console.log(`           o rótulo mudou de texto? o registro é scripts/lib/rotulos-do-painel-us.mjs`)
+      } else if (e.r.motivo === 'OUTRO_NUMERO') {
+        console.log(`        🏷️ ${e.chave}: sob o rótulo veio ${e.r.encontrado}, esperado ${e.r.esperado}  (${e.descricao})`)
+      } else {
+        console.log(`        🏷️ ${e.chave}: ${e.r.motivo}`)
+      }
+    }
+    if (faltando.length || etiquetaMa.length) idiomasComFalha++
     await pag.close()
   }
 
   await navegador.close()
 
   const ok = idiomasComFalha === 0
-  console.log(`\n${ok ? '✅' : '🔴'} VEREDITO: ${ok ? 'as ' + LOCALES.length + ' telas trazem todos os valores' : idiomasComFalha + ' idioma(s) com ausência'}\n`)
+  const oQue = COM_ETIQUETA ? 'trazem todos os valores, cada um SOB O RÓTULO dele' : 'trazem todos os valores (etiqueta não conferida neste país)'
+  console.log(`\n${ok ? '✅' : '🔴'} VEREDITO: ${ok ? 'as ' + LOCALES.length + ' telas ' + oQue : idiomasComFalha + ' idioma(s) com problema'}\n`)
   process.exit(ok ? 0 : 1)
 }

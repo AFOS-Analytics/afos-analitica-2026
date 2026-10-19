@@ -165,6 +165,7 @@ jobs:
           node scripts/testar-buraco-conhecido.mjs
           node scripts/testar-faixa-de-cadeiras.mjs
           node scripts/testar-numeros-com-unidade.mjs
+          node scripts/testar-conferir-tela.mjs
           node scripts/testar-soma-conferida.mjs
           node scripts/testar-tratamento-do-indeciso.mjs
           node scripts/testar-rota-do-backup.mjs

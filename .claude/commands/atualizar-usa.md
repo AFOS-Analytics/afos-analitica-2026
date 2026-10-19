@@ -438,7 +438,31 @@ Ele abre as três telas, espera o fetch do cliente pousar e procura cada valor n
 
 ⭐ **Ele nasceu em 06/Set/2026 com dois defeitos que ele mesmo denunciou na estreia**, e os dois estão plantados em `scripts/testar-conferir-tela.mjs`, 20 casos: comparar `87.50` contra tela que escreve `87,50` reprovou DUAS telas corretas, e `includes('51.50')` deu verdadeiro numa tela que nem usa ponto decimal, porque o pedaço estava dentro de outro número. **Falso positivo que manda consertar o que está bom gasta o crédito do portão**, e acerto por acaso é indistinguível de acerto de verdade no relatório.
 
-🏷️ **Ele confere NÚMERO, não etiqueta.** Valor certo com rótulo errado passa por aqui, e essa é a classe de defeito que segue sem portão.
+🏷️ **E desde 19/Out/2026 ele confere a ETIQUETA também, que era o buraco declarado desta etapa.**
+
+De 06/Set a 19/Out a linha aqui dizia *"ele confere NÚMERO, não etiqueta: valor certo com rótulo errado passa por aqui, e essa é a classe de defeito que segue sem portão"*. ⚠️ **E não era hipótese:** a ordem dos valores que o passo acima monta vem da ORDEM em que a API devolve as linhas de cada livro, então no dia em que ela devolver o republicano primeiro o `--esperado` inteiro desloca e o conferidor antigo daria **VERDE**, porque os seis números continuariam todos na tela.
+
+📏 **A régua NÃO é proximidade, e a medição é que decidiu.** Na tela de 19/Out: o valor certo está a **1 char** do rótulo nos quatro preços de controle, o `no-prazo` legítimo está a **25**, e o valor **republicano está a 21 chars** do rótulo "Democratas". Ou seja 25 tem de passar e 21 tem de reprovar: **nenhuma janela de caracteres separa os dois**, e uma janela de 60 deixaria passar a troca entre os dois lados do MESMO cartão.
+
+✅ **A régua é: o valor é o PRIMEIRO número depois do rótulo**, que é como um humano lê um par rótulo-valor. Medida nos **18 casos** (6 valores × 3 idiomas): acerta nos 18, sem constante arbitrária.
+
+🧬 **A cadeia de âncoras é ordenada**, porque `Democratas` aparece nos DOIS cartões e também na linha do normalizado: só a âncora do cartão (`Câmara ↗`, `Senado ↗`) distingue um do outro. O registro é `scripts/lib/rotulos-do-painel-us.mjs`.
+
+| saída | o que quer dizer |
+|---|---|
+| `etiqueta 6/6` | cada número está sob o rótulo dele |
+| `sob o rótulo veio X, esperado Y` | o número está na tela e **no lugar errado**. É o defeito que esta etapa não pegava |
+| `ÂNCORA AUSENTE` | veredito **próprio**: o rótulo mudou de texto. ⛔ Não manda conferir número, manda consertar o registro |
+
+⛔ **E ele exige que a CONTAGEM bata com o registro**, porque o `--esperado` é POSICIONAL: um valor a mais ou a menos deslocaria todos os pares e o portão passaria a conferir o número certo contra o rótulo do vizinho, que é exatamente o defeito que ele existe para pegar. Quando não bate, ele imprime os seis na ordem.
+
+📌 **Medido na estreia, com os dois lados da Câmara TROCADOS entre si:** o contador antigo deu **6/6** e a etiqueta deu **4/6**, nomeando os dois. Com Câmara e Senado trocados de cartão, **2/6** e os quatro nomeados.
+
+🔑 **Por que os rótulos estão num registro e não importados do componente:** o `const T` de `UsMarketSection.tsx` não é exportado, e importar um componente React num script de linha arrastaria JSX e a árvore do Next. **A cópia é aceitável aqui por uma razão só: ela não pode envelhecer em silêncio.** Toda âncora é procurada na tela VIVA em cada passada, e âncora não encontrada REPROVA o idioma nomeando-a. Tradução editada derruba o portão na primeira execução, em vez de deixá-lo verde sobre um rótulo que ninguém mais usa.
+
+🧪 `node scripts/testar-conferir-tela.mjs`, de 20 para **62 asserções**, com **14 de 14 mutações reprovadas**. 🔴 **E ele estava FORA do CI desde 06/Set**, com as 20 asserções originais nunca rodando lá: entrou junto. ⚠️ Uma mutação sobreviveu na primeira rodada e era lacuna real do teste: eu conferia o `motivo` e não o `ok`, então devolver `ok: true` com o motivo certo passava.
+
+🇧🇷 **O `--pais=br` não tem registro e segue conferindo só o número**, declarando `etiqueta NÃO conferida` na saída em vez de dar a impressão de ter conferido.
 
 🔴 **O 6º valor, a média do generic ballot, depende do DEPLOY.** O comando pronto tira a média do arquivo LOCAL; a tela escolhe entre o arquivo PUBLICADO e o registro do Neon, e o arquivo só vence se o `lastUpdate` dele for mais novo (`lib/dashboard/us-static-data.ts`). Medido em 15/Set/2026: com a CBS no disco e sem deploy, a tela servia D+5,09 do Neon e o comando pedia D+5,36. Conferir antes do deploy com o valor do Neon; depois do deploy, com o do arquivo.
 
