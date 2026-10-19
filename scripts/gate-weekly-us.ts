@@ -30,6 +30,7 @@
  */
 import { existsSync } from 'fs'
 import { loadWeekly } from '../lib/afos-weekly/loader'
+import { numerosComUnidade } from './lib/numeros-com-unidade.mjs'
 
 const DATA = process.argv[2] ?? '2026-09-17'
 const TETO = 1100
@@ -51,23 +52,10 @@ const corpo = (d: any) =>
     .join(' ')
     .replace(/https?:\/\/\S+/g, '')
 
-/**
- * Número COM UNIDADE, normalizado para comparação entre idiomas.
- * Decimal é ponto nos três; o separador de MILHAR muda (EN vírgula, pt-BR e ES ponto),
- * então o milhar é removido antes de comparar: 2,633 e 2.633 são o mesmo número.
- */
-function numeros(texto: string) {
-  const achados: string[] = []
-  const re = /(\d[\d.,]*)\s*(%|pp|M\b|USD)/g
-  let m: RegExpExecArray | null
-  while ((m = re.exec(texto))) {
-    let n = m[1]
-    if (/^\d{1,3}([.,]\d{3})+$/.test(n)) n = n.replace(/[.,]/g, '')
-    achados.push(`${n}${m[2] === 'USD' ? 'USD' : m[2]}`)
-  }
-  // "USD 20.49M" casa como 20.49M; o prefixo USD sozinho não conta.
-  return achados.filter((x) => !x.endsWith('USD')).sort()
-}
+// 🔗 A regra do token numerico vive em `scripts/lib/numeros-com-unidade.mjs`,
+// uma copia so, porque ela decide se uma TRADUCAO publica ou nao. O Tradeoff
+// passou a usar a mesma em 19/Out/2026, e ele nunca tinha tido gate numerico.
+const numeros = numerosComUnidade
 
 let falhouTeto = false
 const locs = ['en', 'pt-BR', 'es']

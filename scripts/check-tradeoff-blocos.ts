@@ -46,6 +46,7 @@ import { readdirSync, readFileSync, existsSync } from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
 import { loadTradeoff } from '../lib/afos-tradeoff/loader'
+import { numerosComUnidade, compararNumeros } from './lib/numeros-com-unidade.mjs'
 
 const RAIZ = join(process.cwd(), 'public', 'afos-tradeoff')
 /**
@@ -119,6 +120,21 @@ let arquivosLidos = 0
 
 function conferir(pais: string, data: string): string[] {
   const problemas: string[] = []
+  /**
+   * 🔢 GATE NUMERICO, instalado em 19/Out/2026.
+   *
+   * 🔴 O Tradeoff publica em TRES idiomas desde 31/Jul/2026 e nunca teve gate
+   *    numerico. A regra "todo numero com unidade da multiconjunto identico nos
+   *    tres" estava escrita na skill da Weekly, com medidor; aqui estava escrita
+   *    a convencao do decimal e NADA a media. Medido na primeira execucao, na
+   *    no13: o pt-BR escrevia `USD 276M` no calendario e `USD 276 milhoes` na
+   *    lista de fontes para o MESMO valor, e as traducoes usaram a forma em
+   *    palavras nas duas, entao o token sobrava so no original.
+   *
+   * 📌 A origem do Tradeoff e o pt-BR, ao contrario da Weekly, cuja origem e o
+   *    ingles. A comparacao e sempre CONTRA a origem.
+   */
+  const porLocale = new Map<string, string[]>()
   for (const loc of LOCALES) {
     const arq = arquivoDe(pais, data, loc)
     /**
@@ -161,6 +177,33 @@ function conferir(pais: string, data: string): string[] {
     // 3. campo ESCALAR de texto que o loader nao consumiu
     const perdidos = caminhosDeTexto(cru).filter((c) => pega(carregado, c) == null)
     if (perdidos.length) problemas.push(`${loc}: CAMPO DE TEXTO IGNORADO PELO LOADER: ${perdidos.join(', ')}`)
+
+    // ⛔ O texto medido e o do ARQUIVO e nao o do loader, para pegar tambem
+    //    rotulo e cartao. URL sai antes, senao o id numerico dela entra como
+    //    numero da peca.
+    // ⚠️ `cru` JA E o frontmatter: a linha acima faz `matter(...).data`. Ler
+    //    `cru.data` aqui devolvia `{}` nos tres idiomas, o que deixa o gate
+    //    SEMPRE verde. Quem pegou foi o CONTROLE POSITIVO, plantando 0.75pp no
+    //    ES e exigindo reprovacao. Supor a forma do objeto em vez de ler e a
+    //    mesma familia do `d.house` suposto como array em 07/Set/2026.
+    porLocale.set(loc, numerosComUnidade(JSON.stringify(cru).replace(/https?:[^"\s]+/g, '')))
+  }
+
+  const ORIGEM = 'pt-BR'
+  const daOrigem = porLocale.get(ORIGEM)
+  if (daOrigem) {
+    for (const [loc, tokens] of porLocale) {
+      if (loc === ORIGEM) continue
+      const r = compararNumeros(daOrigem, tokens)
+      if (!r.iguais) {
+        const so = (xs: string[]) => [...new Set(xs)].join(' ')
+        problemas.push(
+          `${loc}: GATE NUMERICO reprovou, o multiconjunto difere do ${ORIGEM}` +
+            (r.falta.length ? `\n        só no ${ORIGEM}: ${so(r.falta)}` : '') +
+            (r.sobra.length ? `\n        só no ${loc}: ${so(r.sobra)}` : '')
+        )
+      }
+    }
   }
   return problemas
 }
