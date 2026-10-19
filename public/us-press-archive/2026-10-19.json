@@ -1,0 +1,225 @@
+{
+  "lastUpdate": "2026-10-19",
+  "fetchedAt": "2026-10-19T21:36:25.289Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal",
+      "feed": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal",
+      "feed": "https://feeds.washingtonpost.com/rss/politics"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal",
+      "feed": "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada",
+      "feed": "https://rss.politico.com/politics-news.xml"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada",
+      "feed": "https://thehill.com/homenews/feed/"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada",
+      "feed": "https://rollcall.com/feed/"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada",
+      "feed": "https://api.axios.com/feed/"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.npr.org/1014/rss.xml"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio",
+      "feed": "https://abcnews.go.com/abcnews/politicsheadlines"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio",
+      "feed": "https://www.cbsnews.com/latest/rss/politics"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.nbcnews.com/nbcnews/public/politics"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio",
+      "feed": "http://rss.cnn.com/rss/cnn_allpolitics.rss"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio",
+      "feed": "https://moxie.foxnews.com/google-publisher/politics.xml"
+    },
+    {
+      "casa": "NewsNation",
+      "tipo": "tv/rádio",
+      "feed": "https://www.newsnationnow.com/politics/feed/"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião",
+      "feed": "https://www.nationalreview.com/feed/"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião",
+      "feed": "https://www.theguardian.com/us-news/us-politics/rss"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 223,
+    "naLista": 80,
+    "foraDaLista": 143,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 1,
+    "veiculosRepresentados": 7,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": [
+      "feed:The Washington Post: HTTP 502"
+    ],
+    "feedsProprios": 16,
+    "lidosEmFeedProprio": 45,
+    "publicadosComLinkCanonico": 8,
+    "publicadosViaGoogleNews": 2,
+    "publicadosPorDisputa": 10,
+    "publicadosPorMetodo": 0
+  },
+  "itens": [
+    {
+      "titulo": "Texas state Rep. Gina Hinojosa, the Democratic nominee for governor, announced a lawsuit Monday against Gov. Greg Abbott over emails between his office and Republican ally Elon Musk.",
+      "url": "https://www.nbcnews.com/politics/2026-election/texas-democrat-gina-hinojosa-sues-review-emails-elon-musk-greg-abbott-rcna604443",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-19T21:30:20.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "‘Good sign’: House Democrat touts Trump & GOP pulling out Ohio battleground race",
+      "url": "https://www.nbcnews.com/meet-the-press/video/-good-sign-house-democrat-touts-trump-gop-pulling-out-ohio-battleground-race-271840837837",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-19T21:22:49.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump Rallies Red States Amid Fears About G.O.P. Voter Enthusiasm as Midterms Near",
+      "url": "https://www.nytimes.com/2026/10/19/us/politics/trump-midterm-rally-red-states.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-19T21:04:40.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Democrats, Republicans shift funds to close midterm races",
+      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/democrats-republicans-shift-funds-midterms/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-19T20:42:46.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Republicans Barely Mention Trump in Political Ads Ahead of the Midterms",
+      "url": "https://www.nytimes.com/2026/10/19/us/politics/trump-midterms-republican-political-ads.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-19T20:35:14.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "EXCLUSIVE: Trump's approval falls to record low of 31% as midterms near, Reuters/Ipsos poll finds",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOT2FjX0hUODU4WlBWVWtBbDJwVTBPdHVBTFpGTEpTcDhUYjQyaEZ2aE1RQkE1YjZlREp5ZkRFMXU2czFFVFFaQWQ2NmlJNzJVNGtQM0R0YW5fWDZ1Xzh3b0FBWHBfWVA5UFkwRUFic0FMQWJRTnRmY2xuU3N2dXZFai1ydGtVTC13QjdVM2txNTIyN1UzaGhPMFA4OG80dl8xbHFsUE90bmViTkdtSVNtRFhWakZkWWtH?oc=5",
+      "casa": "Reuters",
+      "publicadoEm": "2026-10-19T20:34:25.000Z",
+      "consulta": "generic-ballot",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Democrats' long-shot Senate races get a multimillion-dollar boost",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOVE1HSVlwd05BWGFMRG1SVGtVeUtyN25ldVZURVh2cDF1aVhWNm5BZ1VtRXc0N0RUc1ZneG13ajVidGRkSGV5SXBMWC1IeC0zNmk5ZFZHRGc0RzU5dC1NLTFkbGMtY1gzbDBLejhYV3NnQ0R6WHI4NWRBWkxSMFhHeDJEMW9oajRk?oc=5",
+      "casa": "Axios",
+      "publicadoEm": "2026-10-19T19:49:15.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Reporter’s Notebook: Senate sneaks in one last political play before voters have their say",
+      "url": "https://www.foxnews.com/politics/reporters-notebook-senate-sneaks-one-last-political-play-before-voters-have-their-say",
+      "casa": "Fox News",
+      "publicadoEm": "2026-10-19T19:07:35.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Massachusetts lieutenant governor candidate ends campaign after arrest",
+      "url": "https://www.theguardian.com/us-news/2026/oct/19/massachusetts-lieutenant-governor-candidate-shawn-oliver",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-10-19T17:41:23.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "The MAGA Majority: The GOP's new wave of House hopefuls",
+      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/maga-majority-gops-new-wave-house-hopefuls/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-19T16:50:50.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    }
+  ]
+}

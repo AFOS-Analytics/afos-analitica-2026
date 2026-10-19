@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-18",
-  "fetchedAt": "2026-10-18T21:41:43.472Z",
+  "lastUpdate": "2026-10-19",
+  "fetchedAt": "2026-10-19T21:36:25.289Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,110 +113,110 @@
     }
   ],
   "qualidade": {
-    "lidos": 198,
-    "naLista": 93,
-    "foraDaLista": 105,
+    "lidos": 223,
+    "naLista": 80,
+    "foraDaLista": 143,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 7,
+    "descartadosPorAcompanhamento": 1,
     "veiculosRepresentados": 7,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [
       "feed:The Washington Post: HTTP 502"
     ],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 41,
-    "publicadosComLinkCanonico": 6,
-    "publicadosViaGoogleNews": 4,
+    "lidosEmFeedProprio": 45,
+    "publicadosComLinkCanonico": 8,
+    "publicadosViaGoogleNews": 2,
     "publicadosPorDisputa": 10,
     "publicadosPorMetodo": 0
   },
   "itens": [
     {
-      "titulo": "Trump approval hits record low, handing Democrats a clear midterm edge",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPWkJrME56Z1A3aVBwazIzNTA5ekFNUDFtRzAyaTgteUo1cU4yOElmOFJwYzB4WUVkR3hoWk5QYk9kbDRJR3AtWm91VEZfRnUyQzBQeVk1czBkWGhhNXZwWjNtUk1NdVpRcG1DMGZTZ2swcU5lQmFESzR5Y2h6ak1OdWhKQ0kxTERscDBPcGZlWWVleFdPczNVOWdlYkdkQUtick1oanByQlkxXzJKWi1hRDNDYXlFekVlaG1r?oc=5",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-10-18T20:34:31.000Z",
-      "consulta": "midterms",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Newsom campaigns with New Hampshire Democrats ahead of midterms",
-      "url": "https://thehill.com/homenews/campaign/6156885-newsom-nh-campaign-stops/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-10-18T20:25:39.000Z",
+      "titulo": "Texas state Rep. Gina Hinojosa, the Democratic nominee for governor, announced a lawsuit Monday against Gov. Greg Abbott over emails between his office and Republican ally Elon Musk.",
+      "url": "https://www.nbcnews.com/politics/2026-election/texas-democrat-gina-hinojosa-sues-review-emails-elon-musk-greg-abbott-rcna604443",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-19T21:30:20.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Mulvaney predicts Wiles is in a 'powerful place' in the White House but will leave after midterms",
-      "url": "https://thehill.com/homenews/administration/6156830-mulvaney-expects-wiles-departure/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-10-18T19:49:47.000Z",
+      "titulo": "‘Good sign’: House Democrat touts Trump & GOP pulling out Ohio battleground race",
+      "url": "https://www.nbcnews.com/meet-the-press/video/-good-sign-house-democrat-touts-trump-gop-pulling-out-ohio-battleground-race-271840837837",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-19T21:22:49.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "2028 Presidential ‘Shadow Primary’ Descends on the Midterm Elections",
-      "url": "https://www.nytimes.com/2026/10/18/us/politics/midterms-2028-presidential-race-democrats-republicans.html",
+      "titulo": "Trump Rallies Red States Amid Fears About G.O.P. Voter Enthusiasm as Midterms Near",
+      "url": "https://www.nytimes.com/2026/10/19/us/politics/trump-midterm-rally-red-states.html",
       "casa": "The New York Times",
-      "publicadoEm": "2026-10-18T19:47:09.000Z",
+      "publicadoEm": "2026-10-19T21:04:40.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "2026 midterm betting odds. See who's favored to win House, Senate",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNSHdmd21ybmk4SUExU1NLaExWbTFtdmxWbUFtRlkydmJuNTg1MzlvbExQZlM3VElwR2RVaS1CSlFJY0E0YUl3cURuNmUxYTQtT2JqVWxnMXU2VHdXeHlLVnRrWFliVDhtWU82d196TjMxNlAyMDFPY0RGS2hJTHJoUVdrSEdpY1ZRRWdNbGhybjg1d1Z1NzJYVVpn?oc=5",
-      "casa": "USA Today",
-      "publicadoEm": "2026-10-18T19:47:00.000Z",
-      "consulta": "midterms",
+      "titulo": "Democrats, Republicans shift funds to close midterm races",
+      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/democrats-republicans-shift-funds-midterms/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-19T20:42:46.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Republicans Barely Mention Trump in Political Ads Ahead of the Midterms",
+      "url": "https://www.nytimes.com/2026/10/19/us/politics/trump-midterms-republican-political-ads.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-19T20:35:14.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "EXCLUSIVE: Trump's approval falls to record low of 31% as midterms near, Reuters/Ipsos poll finds",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOT2FjX0hUODU4WlBWVWtBbDJwVTBPdHVBTFpGTEpTcDhUYjQyaEZ2aE1RQkE1YjZlREp5ZkRFMXU2czFFVFFaQWQ2NmlJNzJVNGtQM0R0YW5fWDZ1Xzh3b0FBWHBfWVA5UFkwRUFic0FMQWJRTnRmY2xuU3N2dXZFai1ydGtVTC13QjdVM2txNTIyN1UzaGhPMFA4OG80dl8xbHFsUE90bmViTkdtSVNtRFhWakZkWWtH?oc=5",
+      "casa": "Reuters",
+      "publicadoEm": "2026-10-19T20:34:25.000Z",
+      "consulta": "generic-ballot",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "Colorado Midterm Elections 2026: Key Races, Candidates and Past Results",
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFA1LUw1X0pTb0hERndfMVFzcmg5Zk44eWlTV3dVRG9ESWs5SFVpdHF5UkU4eGEycm1QWldBS2F6RDlOSS1ub3h3bnhBRktaZEx1RFRpX1FBYW1nSHRiVkJqZ1Z1aXY1XzBSZ09XZFlNRWVnUQ?oc=5",
-      "casa": "NBC News",
-      "publicadoEm": "2026-10-18T19:30:21.000Z",
-      "consulta": "midterms",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Idaho Midterm Elections 2026: Key Races, Candidates and Past Results",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9DdS1RZFNwdzZyVThqSUsyNEZQQUNJbWV6VkZDZ182cGRIVGV1ak15UnJRaVhTTWNBSTlnY2Z2YXdjYzVFREdjWWtXUTBjM1hOVmRlZy1yQ3cxRU4weTJEWV8yU0tMVnY5WFdVX3Bn?oc=5",
-      "casa": "NBC News",
-      "publicadoEm": "2026-10-18T19:00:21.000Z",
+      "titulo": "Democrats' long-shot Senate races get a multimillion-dollar boost",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOVE1HSVlwd05BWGFMRG1SVGtVeUtyN25ldVZURVh2cDF1aVhWNm5BZ1VtRXc0N0RUc1ZneG13ajVidGRkSGV5SXBMWC1IeC0zNmk5ZFZHRGc0RzU5dC1NLTFkbGMtY1gzbDBLejhYV3NnQ0R6WHI4NWRBWkxSMFhHeDJEMW9oajRk?oc=5",
+      "casa": "Axios",
+      "publicadoEm": "2026-10-19T19:49:15.000Z",
       "consulta": "senate-races",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "CBS News poll: Talarico-Paxton Senate race is a Texas toss-up",
-      "url": "https://www.cbsnews.com/news/texas-senate-talarico-paxton-poll/",
-      "casa": "CBS News",
-      "publicadoEm": "2026-10-18T18:48:26.000Z",
+      "titulo": "Reporter’s Notebook: Senate sneaks in one last political play before voters have their say",
+      "url": "https://www.foxnews.com/politics/reporters-notebook-senate-sneaks-one-last-political-play-before-voters-have-their-say",
+      "casa": "Fox News",
+      "publicadoEm": "2026-10-19T19:07:35.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Transcript: Florida Democratic Senate candidate Angie Nixon on \"Face the Nation with Margaret Brennan,\" Oct. 18, 2026",
-      "url": "https://www.cbsnews.com/news/angie-nixon-florida-democratic-senate-candiate-face-the-nation-transcript-10-18-2026/",
-      "casa": "CBS News",
-      "publicadoEm": "2026-10-18T18:17:07.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "How Trump’s justice department is shattering practice of political neutrality as midterms loom",
-      "url": "https://www.theguardian.com/us-news/ng-interactive/2026/oct/18/trump-justice-department-us-midterms",
+      "titulo": "Massachusetts lieutenant governor candidate ends campaign after arrest",
+      "url": "https://www.theguardian.com/us-news/2026/oct/19/massachusetts-lieutenant-governor-candidate-shawn-oliver",
       "casa": "The Guardian",
-      "publicadoEm": "2026-10-18T17:18:14.000Z",
+      "publicadoEm": "2026-10-19T17:41:23.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "The MAGA Majority: The GOP's new wave of House hopefuls",
+      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/maga-majority-gops-new-wave-house-hopefuls/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-19T16:50:50.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
