@@ -555,18 +555,38 @@ node scripts/agregador-na-fonte-us.mjs    # o diagnóstico sai embaixo de cada b
 |---|---|
 | `FONTE_INACESSIVEL` | **não** procurar de novo no mesmo caminho até a revisão: bloqueio não se resolve insistindo. Exige `acesso` com status numérico e **controle positivo** |
 | `FONTE_NAO_LOCALIZADA` | procurar de novo na revisão, **por outro caminho** que não o já tentado |
+| 🔎 `FONTE_SEM_A_PERGUNTA` | **não** procurar de novo: o caminho já foi LIDO e a pergunta não está nele. O buraco segue contado **contra o agregador**, cujo número não tem publicação atrás. Exige `leitura` com status **2xx** e `oQueTem` |
 | `AGUARDANDO_INDICE` | nada a fazer: esperar, ou levar a ingestão curada ao André |
 
 ⏳ **`revisarApos` é OBRIGATÓRIO, e é a trava mais importante.** Um 429 é temporário por natureza, e fonte não localizada hoje pode ser publicada amanhã. Passada a data, o diagnóstico sai como **VENCIDO** e manda reconferir, em vez de ser acreditado para sempre. **Diagnóstico sem prazo vira crença.**
 
 📌 **E a caducidade pela ENTRADA vem de graça:** o registro só é consultado para rodada que está FALTANDO. No dia em que o índice a receber, ninguém pergunta mais por ela.
 
-🧪 `node scripts/testar-buraco-conhecido.mjs`, **55 asserções e no CI**, com **12 de 12 mutações reprovadas**. A asserção que mais importa é estrutural: as chaves do diagnóstico são exatamente oito, e **nenhuma delas manda remover**. A mutação que acrescenta uma chave `remover` reprova.
+#### 🔎 `FONTE_SEM_A_PERGUNTA`, criada em 19/Out/2026, e o que ela separa
+
+🔴 **"Não localizada" e "achada e sem a pergunta" pedem ações OPOSTAS**, e é só por isso que valem duas situações. A primeira manda procurar de novo; a segunda manda PARAR de procurar neste caminho. É a mesma fronteira que separa `NAO_ENCONTRADO` de `FONTE_INACESSIVEL` no `fonte-conferida.mjs`, por outra porta. 🧪 O teste cobra isso: a ação da nova **não pode** conter "procurar de novo na data", e há mutação que a transforma na ação antiga e reprova.
+
+| trava | por quê |
+|---|---|
+| exige `leitura.oQueTem` | 🧪 **É o CONTROLE POSITIVO desta situação.** "Abri e a pergunta não está lá" sem dizer o que **está** lá é indistinguível de não ter aberto. Mesma lógica do `controlePositivo` do bloqueio |
+| exige `leitura.urls` não vazia | tem de dizer O QUE foi lido, ou a próxima passada relê tudo |
+| 🔴 exige `leitura.status` **entre 200 e 299** | aqui a guarda **É de valor, e de propósito**: `curl -o` **GRAVA** no 403 e no 429, então página de erro lida inteira passaria por documento. Declarar que a pergunta não está no documento exige que o que se leu TENHA sido o documento. ⚠️ É o **oposto** do caso do `status: 0` do bloqueio, onde o valor era a própria medição, e por isso `status: 0` **reprova** aqui |
+| ⛔ `leitura` é **PROIBIDA** nas outras três | simétrico ao `acesso`: anexá-la a situação que não é de documento lido faz o registro declarar leitura que não houve. A pior combinação, `FONTE_INACESSIVEL` **com** `leitura`, tem caso próprio |
+
+🧪 `node scripts/testar-buraco-conhecido.mjs`, **no CI**, com **11 de 11 mutações reprovadas** e controle positivo nas duas pontas: suíte verde no arquivo bom antes de tudo, e cada mutação conferida como **APLICADA** antes de ler o resultado. ⚠️ **A contagem de asserções não se cita aqui**: ela envelhece a cada caso novo, e este arquivo já carregou "55 asserções" e "exatamente oito chaves" depois de os dois números mudarem. O número vive na saída do teste. 📌 O que se cita é a FORMA da asserção estrutural: o teste compara o **conjunto exato** de chaves do diagnóstico, não a contagem delas, e nenhuma pode conter `remover`, `ignorar`, `silenciar` ou `excluir`. A mutação que acrescenta `remover: true` reprova.
 
 **As duas primeiras entradas, de 16 e 17/Out:**
 
 - **Change Research**, 15-24/Set, 2.021 RV, `FONTE_INACESSIVEL`. 🔴 A casa está em **ZERO linhas de 495**, então não é uma onda que faltou, é a casa inteira que o índice não carrega, e ela **publica generic ballot**. 🧪 Medido com controle positivo: artigo e raiz em **429**, enquanto emersoncollegepolling.com e poll.qu.edu respondem 200 no mesmo cliente e no mesmo minuto. ⚠️ E o `curl -o` **gravou 34.218 bytes** da página de erro: conferir o download pelo tamanho diria que deu certo, então **conferir os primeiros bytes**.
-- **Noble Predictive**, 05-07/Out, 2.527 RV, `FONTE_NAO_LOCALIZADA`. A casa existe na base com duas ondas de ~2.500 RV, e a listagem pública dela mostra só as estaduais. ⛔ Os números que circulam vêm do ecossistema de agregador, que **não é nem índice**.
+- **Noble Predictive**, 05-07/Out, 2.527 RV. Entrou em 16/Out como `FONTE_NAO_LOCALIZADA`, porque o blog da casa lista só as estaduais, e a ficha mandou tentar a listagem de **imprensa** em vez do blog.
+
+  ✅ **19/Out: o caminho estava nas NOSSAS PRÓPRIAS LINHAS.** As duas ondas da casa que já servimos citam `thecentersquare.com` em `fontePrimaria`, e é lá que a parceria publica, como *The Center Square Voters' Voice Poll*. A fonte não estava escondida: estava num campo do nosso arquivo. 📌 **A régua que fica: antes de procurar fonte fora, ler a `fontePrimaria` das linhas que a casa JÁ tem na base.**
+
+  🔴 **E a onda de outubro existe: o que não existe é a pergunta.** Campo "Oct. 5-7", n=2.527, publicada em 5 matérias de 14 a 19/Out, nenhuma sobre voto para o Congresso. A série de generic ballot da parceria é um gráfico Datawrapper no painel, `EahTR`, titulado **"Congressional Race"**, e o dado dele termina em **Ago/2026 com R 42% x D 47%**, que é exatamente a onda de 12-16/Ago **que já está na nossa base**. Não há ponto de outubro. Virou `FONTE_SEM_A_PERGUNTA`, revisão em 27/Out.
+
+  ⚠️ **O achado que fecha o caso:** o D 47 x R 42 que circula para a onda de **outubro** é idêntico ao da onda de **agosto** que já servimos. O `n` difere (2.527 contra 2.533), então o agregador tem registro de onda própria e o número dela não tem publicação atrás. ⛔ Isso **não prova** arrasto de valor, e dizer que prova seria inventar medição: prova que o valor é **indistinguível** do que já temos.
+
+  🕳️ **E um defeito MEU no caminho, da família já fichada.** A primeira varredura do painel listou 7 títulos e **não** trouxe o "Congressional Race", porque o meu regex exigia 20 caracteres e ele tem 18. **O filtro que eu escrevi para ACHAR escondeu justamente o que eu procurava**, e por um minuto eu quase escrevi que a pergunta não estava publicada em lugar nenhum. → `memory/feedback_o_grep_que_tira_o_ruido_tira_o_sinal_junto.md`
 
 ## 🧬 O índice renomeou DUAS casas em 24 horas (26/Set/2026)
 

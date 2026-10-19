@@ -434,6 +434,14 @@ async function main() {
         console.log(`                 ${diag.vencido ? "⏳ DIAGNÓSTICO VENCIDO" : "🔎 já diagnosticado"} em ${diag.medidoEm}: ${diag.situacao}, ${diag.descricao}`)
         console.log(`                    → ${diag.acao}`)
         if (diag.acesso) console.log(`                    acesso: HTTP ${diag.acesso.status}${diag.acesso.hostTodo ? " no host todo" : ""}, com controle positivo em ${diag.acesso.medidoEm}`)
+        // 🔑 A leitura é a prova da situação oposta à do bloqueio: o documento
+        //    ABRIU e a pergunta não está nele. Guardá-la no registro e não
+        //    imprimi-la aqui deixaria a próxima passada sem o que poupa o
+        //    trabalho, que é o defeito que este registro existe para matar.
+        if (diag.leitura) {
+          console.log(`                    leitura: HTTP ${diag.leitura.status} em ${diag.leitura.medidoEm}, ${diag.leitura.urls.length} endereço(s) lido(s)`)
+          console.log(`                    o que a fonte TEM: ${diag.leitura.oQueTem}`)
+        }
       }
     }
   } else {

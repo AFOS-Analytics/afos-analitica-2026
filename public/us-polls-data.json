@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-18",
-  "fetchedAt": "2026-10-18T19:40:05.260Z",
+  "lastUpdate": "2026-10-19",
+  "fetchedAt": "2026-10-19T16:16:13.493Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,8 +47,8 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-18",
-    "nPesquisas": 32,
+    "desde": "2026-09-19",
+    "nPesquisas": 31,
     "tratamentoDoIndeciso": [
       {
         "serie": "Angus Reid Global",
@@ -388,14 +388,6 @@
         "amostraTipo": "RV",
         "dem": 43,
         "rep": 35
-      },
-      {
-        "key": "Quantus Insights (R)|2026-09-18",
-        "instituto": "Quantus Insights (R)",
-        "campoFim": "2026-09-18",
-        "amostraTipo": "LV",
-        "dem": 50,
-        "rep": 42
       }
     ],
     "excluidasPorInstrumento": [
@@ -470,10 +462,10 @@
         "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
       }
     ],
-    "nInstitutos": 24,
-    "dem": 49.78,
-    "rep": 42.22,
-    "vantagemDem": 7.56,
+    "nInstitutos": 23,
+    "dem": 49.77,
+    "rep": 42.23,
+    "vantagemDem": 7.54,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
@@ -492,7 +484,6 @@
       "KFF",
       "McLaughlin & Associates (R)",
       "Morning Consult",
-      "Quantus Insights (R)",
       "Quinnipiac University",
       "RMG Research",
       "Rasmussen Reports (R)",
