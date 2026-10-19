@@ -44,7 +44,58 @@ const argv = process.argv.slice(2)
 const ensaio = argv.includes('--ensaio')
 const declarado = argv.find((a) => a.startsWith('--declarado='))
 const mensagem = argv.find((a) => !a.startsWith('--')) || 'Atualiza serie de mercado, imprensa e metadados'
-const PY = process.env.PYTHON || (process.platform === 'win32' ? 'python' : 'python3')
+/**
+ * 🐍 O interpretador, RESOLVIDO por execução e nunca pelo nome.
+ *
+ * 🔴 O DEFEITO, medido em 19/Out/2026: a linha antiga era
+ *    `process.env.PYTHON || 'python'` no Windows, e nesta máquina `python` no
+ *    PATH é o STUB da Microsoft Store. Ele EXISTE, responde, e imprime
+ *    "Python nao foi encontrado; executar sem argumentos para instalar do
+ *    Microsoft Store". O passo 3 parou no portão e os passos 4 e 5 não
+ *    rodaram, com o resumo dizendo apenas "SEM prova de publicação".
+ *
+ * ⚠️ E funcionou em 18/Out porque eu tinha exportado `PYTHON` naquele shell.
+ *    O shell não guarda env entre chamadas, então a passada dependia de eu
+ *    LEMBRAR de exportar, toda vez, e falhava calada quando eu esquecia.
+ *
+ * 🔑 A régua: nome não é identidade, e quem responde "este é o Python?" é o
+ *    próprio binário. Mesma família do `tasklist | grep node` que declarou
+ *    MORTO um guardião que era `powershell` e estava vivo.
+ *    → memory/feedback_o_grep_que_tira_o_ruido_tira_o_sinal_junto.md
+ *       memory/feedback_python_por_stdin_decodifica_cp1252.md
+ */
+function resolverPython() {
+  const candidatos = [
+    process.env.PYTHON,
+    'C:/Users/afos3/AppData/Local/Python/pythoncore-3.14-64/python.exe',
+    process.platform === 'win32' ? 'py' : null,
+    'python3',
+    'python',
+  ].filter(Boolean)
+  const tentados = []
+  for (const c of candidatos) {
+    try {
+      const r = spawnSync(c, ['--version'], { encoding: 'utf8' })
+      const saida = `${r.stdout ?? ''}${r.stderr ?? ''}`
+      // ⛔ A guarda é a FORMA da resposta, não o código de saída: o stub da
+      //    Store sai 0 e imprime o convite para instalar.
+      if (/^Python 3\.\d/m.test(saida)) return { cmd: c, versao: saida.trim().split(/\r?\n/)[0], tentados }
+      tentados.push(`${c}: ${(saida.trim().split(/\r?\n/)[0] || 'sem saída').slice(0, 60)}`)
+    } catch (e) {
+      tentados.push(`${c}: ${String(e.code ?? e.message).slice(0, 40)}`)
+    }
+  }
+  return { cmd: null, versao: null, tentados }
+}
+
+const PY_RESOLVIDO = resolverPython()
+if (!PY_RESOLVIDO.cmd) {
+  console.error('❌ nenhum Python 3 respondeu. Tentados, na ordem:')
+  for (const t of PY_RESOLVIDO.tentados) console.error('   · ' + t)
+  console.error('   📌 Exportar PYTHON com o caminho do interpretador real resolve.')
+  process.exit(1)
+}
+const PY = PY_RESOLVIDO.cmd
 const env = { ...process.env, PYTHONIOENCODING: 'utf-8' }
 const regua = '─'.repeat(72)
 
