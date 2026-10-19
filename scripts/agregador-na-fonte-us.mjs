@@ -276,6 +276,68 @@ export const APELIDOS = [
 // 26/Set/2026, quando a canônica da Focaldata foi invertida.
 const normalizar = (casa) => serieDaCasa((APELIDOS.find(([re]) => re.test(casa)) || [null, casa])[1])
 
+/**
+ * 🏷️ "A casa existe no nosso arquivo?", que é só o RÓTULO ao lado do buraco e
+ * nunca o casamento de rodada.
+ *
+ * 🔴 ELA ESTAVA INLINE NO LAÇO E ERRAVA, medido em 19/Out/2026. O teste era de
+ *    PREFIXO nos dois sentidos, e a ficha de 02/Out deste arquivo afirma que
+ *    ele casa **subcadeia** nos dois sentidos. A frase estava escrita e o
+ *    código nunca a implementou, e a lacuna entre as duas tem nome: casa que o
+ *    índice prefixa com o nome do PATROCINADOR. `tipp` está CONTIDO em
+ *    `i&i/tipp insights (r)` e não o PREFIXA, então a TIPP saiu com o alarme mais
+ *    alto que este conferidor sabe dar, "🔴 a casa NAO tem UMA linha no
+ *    arquivo", com TRÊS linhas nossas da casa.
+ *
+ * 📏 Medido sobre os 72 nomes reais do arquivo e 20 rótulos do agregador:
+ *    prefixo e subcadeia divergem em exatamente 2, `tipp` e `ipsos`, e os dois
+ *    são o mesmo formato de nome. `ap`, `nbc` e `ap-norc` não casam nada pelas
+ *    três réguas, então o medo de sobre-casamento em nome curto é infundado
+ *    contra a base de hoje. ⛔ Mas depender disso é depender de acidente.
+ *
+ * ✅ Por isso a régua escolhida é **subconjunto de TOKENS, simétrico**, e não a
+ *    subcadeia crua: ela dá as MESMAS respostas nos 20 rótulos medidos e não
+ *    pode casar pedaço no meio de uma palavra, que é a única maneira de a
+ *    subcadeia errar quando a base crescer. Token com menos de 3 letras não
+ *    conta, pela mesma régua de 3 letras que a remoção da nota já usa.
+ *
+ * ⛔ Ela NÃO mexe na CONTAGEM de buracos, só no rótulo, que é a mesma régua
+ *    que o comentário da KFF declara na tabela de apelidos.
+ *
+ * 📌 E é frouxa de propósito AQUI e em lugar nenhum mais: o custo de errar
+ *    para mais é mandar conferir uma casa que existe; o de errar para menos é
+ *    mandar abrir cobertura que já temos, que é mais caro.
+ */
+export function casaEstaNoArquivo(nomesNossos, casaNorm) {
+  const alvo = String(casaNorm ?? '').toLowerCase()
+  // 📌 MUTACAO EQUIVALENTE, DECLARADA e nao contornada: remover esta linha
+  //    nao quebra teste nenhum, e esta certo que nao quebre. Alvo vazio produz
+  //    token nenhum, e a guarda de `!ta.length` logo abaixo ja devolve false.
+  //    Ela e saida antecipada, nao regra, e inventar um teste que a exija
+  //    seria testar a FORMA do codigo em vez do comportamento dele.
+  if (!alvo) return false
+  const nossos = (nomesNossos ?? []).map((n) => String(n ?? '').toLowerCase()).filter(Boolean)
+  if (nossos.includes(alvo)) return true
+  // ⛔ O ramo de PREFIXO foi REMOVIDO, e nao por elegancia: ele tambem erra
+  //    para MAIS. `marista research`.startsWith(`marist`) e verdadeiro, e ai um
+  //    instituto diferente era contado como "a casa existe no arquivo", que e o
+  //    erro mais caro dos dois, porque manda NAO conferir cobertura que falta.
+  //    O proprio teste desta funcao foi quem pegou, antes de eu confiar nela.
+  // 📏 Medido: remover este ramo nao muda NENHUMA das 23 respostas reais nem
+  //    nenhum dos 72 nomes do arquivo. Ele so tirava o sobre-casamento.
+  const tokensDe = (s) => s.split(/[^a-z0-9&]+/).filter((x) => x.length >= 3)
+  const ta = tokensDe(alvo)
+  if (!ta.length) return false
+  return nossos.some((n) => {
+    const tn = tokensDe(n)
+    if (!tn.length) return false
+    const sa = new Set(ta)
+    const sn = new Set(tn)
+    // Simétrico: o nome mais curto pode ser o deles OU o nosso.
+    return ta.every((x) => sn.has(x)) || tn.every((x) => sa.has(x))
+  })
+}
+
 /** Morning Consult fica FORA por desenho: o tracker é produto pago. */
 const FORA_POR_DESENHO = [/morning consult/i]
 
@@ -429,12 +491,10 @@ async function main() {
       //    mais: ela nunca entra no casamento de rodada, onde juntaria séries de
       //    casas distintas. Aqui o custo de errar é mandar conferir uma casa que
       //    existe, e o de não ter nada é mandar abrir cobertura que já existe.
-      const casaCrua = String(f.casaNorm).toLowerCase()
       const nomesNossos = [...new Set((dados.polls ?? []).map((p) => String(p.instituto).toLowerCase()))]
       const noArquivo =
-        nomesNossos.includes(casaCrua) ||
         nomesNossos.some((n) => normalizar(n) === f.casaNorm) ||
-        nomesNossos.some((n) => n.startsWith(casaCrua) || casaCrua.startsWith(n))
+        casaEstaNoArquivo(nomesNossos, f.casaNorm)
       console.log(`      ${f.campoFim}  ${f.casaNorm.padEnd(28)} ${String(f.amostra ?? '?').padStart(5)} ${f.recorte ?? '??'}   ${noArquivo ? 'a casa existe no arquivo' : '🔴 a casa NAO tem UMA linha no arquivo'}`)
       console.log(`                 «${f.rotulo.slice(0, 74)}»`)
       // 🔎 O que JÁ se sabe sobre este buraco, se alguém o investigou.

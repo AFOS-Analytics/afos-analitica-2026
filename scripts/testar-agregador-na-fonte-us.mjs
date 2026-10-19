@@ -15,7 +15,7 @@
  *    ainda assim produz número errado no arquivo é o tipo que este repositório
  *    já viu várias vezes.
  */
-import { lerRotulo, APELIDOS, CHAVE_GENERIC_BALLOT, BASE_LIVE, assinaturaBate, pertoNoDia } from './agregador-na-fonte-us.mjs'
+import { lerRotulo, APELIDOS, CHAVE_GENERIC_BALLOT, BASE_LIVE, assinaturaBate, pertoNoDia, casaEstaNoArquivo } from './agregador-na-fonte-us.mjs'
 
 let ok = 0
 let falhas = 0
@@ -310,6 +310,67 @@ eq(pertoNoDia('2026-09-21', '2026-09-21'), true, 'mesmo dia esta perto')
 eq(pertoNoDia('2026-09-21', '2026-09-22'), true, 'um dia esta perto')
 eq(pertoNoDia('2026-09-22', '2026-09-21'), true, 'um dia para tras tambem')
 eq(pertoNoDia('2026-09-21', '2026-09-23'), false, 'dois dias NAO esta perto')
+
+// ══ 🏷️ O RÓTULO "a casa existe no arquivo", extraído em 19/Out/2026 ═════════
+// 🔴 Ele estava inline no laço e era de PREFIXO, enquanto a ficha deste arquivo
+//    afirmava subcadeia. A TIPP saiu como "a casa NAO tem UMA linha" com TRÊS
+//    linhas nossas, porque o índice a prefixa com o nome do patrocinador.
+const NOSSOS = [
+  'i&i/tipp insights (r)',
+  'reuters/ipsos',
+  'the washington post/abc news/ipsos',
+  'emerson college',
+  'kff',
+  'the argument/verasight',
+  'noble predictive',
+]
+
+// ——— ANTI-SILÊNCIO: o caso fundador e os da mesma forma
+eq(casaEstaNoArquivo(NOSSOS, 'tipp'), true, '🔴 TIPP, que o indice prefixa com o patrocinador, E achada')
+eq(casaEstaNoArquivo(NOSSOS, 'ipsos'), true, 'ipsos e achada dentro de reuters/ipsos')
+eq(casaEstaNoArquivo(NOSSOS, 'verasight'), true, 'verasight e achada dentro de the argument/verasight')
+eq(casaEstaNoArquivo(['ipsos'], 'reuters/ipsos'), true, 'simetrico: nome deles maior que o nosso tambem casa')
+
+// ——— o que já funcionava não pode regredir
+eq(casaEstaNoArquivo(NOSSOS, 'emerson college'), true, 'nome identico segue achado')
+eq(casaEstaNoArquivo(NOSSOS, 'kff'), true, 'nome curto identico segue achado')
+eq(casaEstaNoArquivo(NOSSOS, 'noble predictive'), true, 'nome de duas palavras segue achado')
+
+// ——— ANTI-EXCESSO: achar casa que não está lá manda NÃO conferir cobertura
+//     que falta de verdade, que é o erro mais caro dos dois.
+eq(casaEstaNoArquivo(NOSSOS, 'nbc/decision desk'), false, '🔴 NBC/Decision Desk NAO esta no arquivo, e o alarme e verdadeiro')
+eq(casaEstaNoArquivo(NOSSOS, 'ap-norc'), false, 'AP-NORC nao esta no arquivo')
+eq(casaEstaNoArquivo(NOSSOS, 'nbc'), false, 'nbc sozinho nao casa nada')
+eq(casaEstaNoArquivo(NOSSOS, 'ap'), false, 'ap sozinho nao casa nada')
+eq(casaEstaNoArquivo(NOSSOS, 'Instituto Que Nao Existe'), false, 'casa inventada nao casa')
+
+// 🔑 A trava que a SUBCADEIA crua NÃO tem: pedaço no MEIO de uma palavra.
+eq(casaEstaNoArquivo(['marista research'], 'marist'), false, '🔑 pedaco no meio de palavra NAO casa: marist nao e marista')
+eq(casaEstaNoArquivo(['kffx institute'], 'kff'), false, 'e kff nao e kffx')
+
+// ——— entrada degenerada devolve false, nunca estoura
+eq(casaEstaNoArquivo(NOSSOS, ''), false, 'nome vazio devolve false')
+eq(casaEstaNoArquivo(NOSSOS, null), false, 'nome nulo devolve false')
+eq(casaEstaNoArquivo(NOSSOS, undefined), false, 'nome indefinido devolve false')
+eq(casaEstaNoArquivo([], 'ipsos'), false, 'lista vazia devolve false')
+eq(casaEstaNoArquivo(null, 'ipsos'), false, 'lista nula devolve false')
+eq(casaEstaNoArquivo([null, '', 'reuters/ipsos'], 'ipsos'), true, 'lista com buraco nao derruba a leitura')
+eq(casaEstaNoArquivo(NOSSOS, 'a b'), false, 'so tokens de menos de 3 letras devolve false, e nao casa tudo')
+
+// ——— 🧪 OS DOIS CASOS QUE O ARNÊS DE MUTAÇÃO COBROU, e eu não tinha
+// 🔴 Nenhuma das asserções acima distinguia "TODOS os tokens" de "ALGUM
+//    token em comum", porque nenhum par que eu escolhi COMPARTILHA token
+//    sem ser a mesma casa. A mutação para `some` sobreviveu, e o par que a
+//    mata é real: o artigo `the` tem 3 letras e por isso CONTA.
+eq(casaEstaNoArquivo(['the argument/verasight'], 'the economist/yougov'), false, '🔴 compartilhar so o artigo "the" NAO faz a casa existir no arquivo')
+eq(casaEstaNoArquivo(['the washington post/abc news/ipsos'], 'the hill/emerson'), false, 'e nem compartilhar "the" com outro veiculo')
+// 🔑 E o piso de 3 letras tem de ser cobrado por um caso que SÓ ele mata: o
+//    índice sufixa casa com a filiação, `(R)` e `(D)`, então sob piso de 1
+//    letra o rótulo `r` casaria toda casa republicana do arquivo.
+eq(casaEstaNoArquivo(['i&i/tipp insights (r)'], 'r'), false, '🔑 o rotulo de UMA letra nao casa a casa que tem (r) no nome')
+eq(casaEstaNoArquivo(['cygnal (r)', 'rasmussen reports (r)'], 'd'), false, 'e nem o de outra letra casa as republicanas')
+
+
 
 console.log(`\n${falhas === 0 ? '✅' : '❌'} ${ok} asserção(ões) passaram, ${falhas} falharam\n`)
 process.exit(falhas === 0 ? 0 : 1)
