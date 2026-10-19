@@ -25,41 +25,15 @@
 import { config } from 'dotenv'
 config({ path: '.env.local' })
 config({ path: '.env' })
+import { limitesDaFaixa } from './lib/faixa-de-cadeiras.mjs'
 
 const fmt = (n: number) => n.toFixed(2).replace('.', ',')
 const brt = (t: number) => new Date(t - 3 * 3600e3).toISOString().slice(5, 16).replace('T', ' ')
 
-/**
- * Extrai os limites da faixa. Cobre os DOIS formatos, porque eles diferem:
- *   API do Polymarket : "Will ... hold between 190 and 194 House seats ..."
- *   banco (outcomeName): "190–194 cad."  com TRAVESSÃO TIPOGRÁFICO (U+2013), "< 190 cad.", "≥ 230 cad."
- * ⚠️ Ler o formato errado devolve zero faixa legível, e aí este script dá VERDE
- * sem ter medido nada. Foi o que aconteceu na primeira versão, em 11/Ago/2026.
- */
-function limites(nome: string): { lo: number; hi: number } | null {
-  let m = nome.match(/between\s+(\d+)\s+and\s+(\d+)/i)
-  if (m) return { lo: +m[1], hi: +m[2] }
-  m = nome.match(/(\d+)\s*[–—-]\s*(\d+)/) // travessão, meia-risca ou hífen
-  if (m) return { lo: +m[1], hi: +m[2] }
-  m = nome.match(/(?:below|under|fewer than|<)\s*(\d+)/i)
-  if (m) return { lo: -Infinity, hi: +m[1] - 1 }
-  m = nome.match(/(?:≥|at least|>=)\s*(\d+)/i)
-  if (m) return { lo: +m[1], hi: Infinity }
-  m = nome.match(/(?:≤|at most|<=|or fewer)\s*(\d+)/i) || nome.match(/(\d+)\s+or\s+fewer/i)
-  if (m) return { lo: -Infinity, hi: +m[1] }
-  m = nome.match(/(\d+)\s+or\s+more/i)
-  if (m) return { lo: +m[1], hi: Infinity }
-  m = nome.match(/exactly\s+(\d+)/i)
-  if (m) return { lo: +m[1], hi: +m[1] }
-  // rótulo em PAR: "22 ou 23 cad.", "24 or 25". Sem isto, "22 ou 23" vira [22,22]
-  // e o verificador inventa um buraco entre 22 e 24 que não existe.
-  m = nome.match(/(\d+)\s+(?:ou|or)\s+(\d+)/i)
-  if (m) return { lo: +m[1], hi: +m[2] }
-  // faixa de valor ÚNICO: "48 cad.", "50 seats". Só depois de descartar tudo acima,
-  // senão "< 190 cad." casaria aqui e viraria a faixa [190,190].
-  m = nome.match(/^\s*(\d+)\b/)
-  return m ? { lo: +m[1], hi: +m[1] } : null
-}
+// 🔗 A regra dos limites vive em `scripts/lib/faixa-de-cadeiras.mjs`, uma
+// copia so, porque ela DECIDE A CONTA: e quem diz quais faixas ficam abaixo da
+// maioria. A Tradeoff passou a precisar dela em 19/Out/2026.
+const limites = limitesDaFaixa
 
 /** Cauda = faixa aberta de um dos lados. É onde o viés de longshot mora. */
 function ehCauda(nome: string) {

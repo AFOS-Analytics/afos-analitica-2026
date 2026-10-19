@@ -44,6 +44,7 @@ import { readFileSync, readdirSync, existsSync } from 'fs'
 import { gunzipSync } from 'zlib'
 import { join } from 'path'
 import { agruparPorLivro, instantesSuspeitos, parBinario, PAR_MAX, PAR_MIN, serieDe } from './lib/serie-contrato.mjs'
+import { ordenarPorLimite } from './lib/faixa-de-cadeiras.mjs'
 
 const RAIZ = 'backup/neon'
 
@@ -79,6 +80,10 @@ const de = arg('de')
 const ate = arg('ate')
 const filtroNomes = (arg('nomes') ?? '').split(',').map((s) => s.trim()).filter(Boolean)
 const comDistribuicoes = process.argv.includes('--distribuicoes')
+// 🔴 As FAIXAS, uma a uma. Sem isto a Tradeoff lia só a SOMA e fazia a conta
+//    de "quantas faixas ficam abaixo da maioria" À MÃO, toda semana, que é o
+//    defeito que este repositório passa a vida nomeando. Implica --distribuicoes.
+const comFaixas = process.argv.includes('--faixas')
 
 /**
  * A SEGUNDA borda. Sem `--desde`, é a véspera de `de`. Com `--desde=AAAA-MM-DD`,
@@ -116,7 +121,7 @@ const suspeitos = instantesSuspeitos(precos)
 const limpos = suspeitos.size === 0 ? precos : precos.filter((p) => !suspeitos.has(String(p.snapshotAt).slice(0, 19)))
 
 const todos = serieDe(limpos, outcomeDe, mercadoDe, soSlug ? { slug: soSlug } : {})
-const padroes = [...(PAISES[pais] ?? []), ...(comDistribuicoes ? DISTRIBUICOES[pais] ?? [] : [])]
+const padroes = [...(PAISES[pais] ?? []), ...(comDistribuicoes || comFaixas ? DISTRIBUICOES[pais] ?? [] : [])]
 const livros = agruparPorLivro(soSlug ? todos : todos.filter((p) => padroes.some((re) => re.test(p.slug))))
 
 /** Último ponto de CADA dia. Fechamento é o último, não a média nem o primeiro. */
@@ -240,6 +245,29 @@ for (const [slug, lados] of [...porSlug.entries()].sort()) {
     console.log(`   📊 DISTRIBUIÇÃO · ${slug} · ${lados.length} faixas`)
     console.log(`      soma das faixas: fechamento ${ROTULO2} ${r2(soma('abreNaVespera'))} · fechamento de ${de} ${r2(soma('abreNoDia'))} · fechamento de ${ate} ${r2(soma('fecha'))}   (portão 95-105)`)
     console.log(`      dinheiro novo no livro: desde o fechamento de ${de} ${usdLivro(lados, 'novo')} · desde o fechamento ${ROTULO2} ${usdLivro(lados, 'novoVespera')} · acumulado ${acum == null ? 'n/d' : 'USD ' + Math.round(acum).toLocaleString('pt-BR')}\n`)
+    if (comFaixas) {
+      // 🔑 A SOMA normaliza, e o ACUMULADO é o que a peça lê direto: a fatia de
+      //    "tantas cadeiras ou menos" é o acumulado DAQUELA linha, sem nenhuma
+      //    conta minha no meio. É isso que tira a aritmética à mão da esteira.
+      // ⛔ Faixa sem fechamento NÃO vira zero: ela sai como n/d e o acumulado
+      //    PARA ali, porque somar em cima de faltante inventa fatia.
+      const somaFim = soma('fecha')
+      const somaIni = soma('abreNoDia')
+      console.log(`      faixa a faixa no fechamento de ${ate}, normalizada pela soma ${r2(somaFim)}  (na borda de ${de}, soma ${r2(somaIni)})`)
+      let acumulado = 0
+      let truncou = false
+      for (const l of ordenarPorLimite(lados)) {
+        if (l.fecha == null || somaFim == null) { truncou = true; console.log(`         ${String(l.nome).padEnd(16)}  n/d`); continue }
+        const norm = (l.fecha / somaFim) * 100
+        if (!truncou) acumulado += norm
+        const ini = l.abreNoDia != null && somaIni != null ? (l.abreNoDia / somaIni) * 100 : null
+        const dNorm = ini == null ? '   n/d' : fmt(norm - ini)
+        console.log(
+          `         ${String(l.nome).padEnd(16)}  cru ${l.fecha.toFixed(2).padStart(6)}%  norm ${norm.toFixed(2).padStart(6)}%  acum ${truncou ? '   n/d' : acumulado.toFixed(2).padStart(6) + '%'}  dnorm ${dNorm}`
+        )
+      }
+      if (truncou) console.log(`         ⚠️ alguma faixa não tem fechamento: o acumulado PARA ali em vez de somar sobre faltante`)
+    }
   }
 }
 
