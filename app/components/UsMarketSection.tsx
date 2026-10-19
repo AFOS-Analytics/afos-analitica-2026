@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { rotuloDePartido } from '@/lib/dashboard/partido-us'
 import { useTranslation } from '../i18n/context'
 import { SectionTitle, Card } from './ui'
 import { extractCandidateName } from '../lib/utils'
@@ -282,7 +283,7 @@ function ordemFaixa(nome: string): number {
 function BarraFaixa({ nome, pct, max, locale, mostrarValor = true }: { nome: string; pct: number; max: number; locale: string; mostrarValor?: boolean }) {
   return (
     <div className="flex items-center gap-2 text-xs">
-      <span className="w-28 shrink-0 text-right text-gray-600 tabular-nums">{nome}</span>
+      <span className="w-28 shrink-0 text-right text-gray-600 tabular-nums">{rotuloDePartido(nome, locale)}</span>
       <div className="h-3 flex-1 rounded bg-gray-100">
         <div
           className={`h-3 rounded ${mostrarValor ? 'bg-slate-500' : 'bg-slate-300'}`}
@@ -614,7 +615,7 @@ export function UsMarketSection({ data, loading, amplitudes }: { data: UsMarketD
                   {fs.map((f, i) => (
                     <span key={f.nome}>
                       {i > 0 && ' · '}
-                      {f.nome} <span className="font-semibold tabular-nums text-gray-700">{fmt((f.pct / somaPar) * 100, locale)}%</span>
+                      {rotuloDePartido(f.nome, locale)} <span className="font-semibold tabular-nums text-gray-700">{fmt((f.pct / somaPar) * 100, locale)}%</span>
                     </span>
                   ))}
                 </p>

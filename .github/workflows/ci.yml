@@ -166,6 +166,7 @@ jobs:
           node scripts/testar-faixa-de-cadeiras.mjs
           node scripts/testar-numeros-com-unidade.mjs
           node scripts/testar-conferir-tela.mjs
+          npx tsx scripts/testar-partido-us.ts
           node scripts/testar-soma-conferida.mjs
           node scripts/testar-tratamento-do-indeciso.mjs
           node scripts/testar-rota-do-backup.mjs

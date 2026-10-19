@@ -62,13 +62,15 @@ export const CONTRATOS = [
   {
     chave: 'camara-dem',
     descricao: 'probabilidade de os DEMOCRATAS controlarem a CÂMARA',
-    // 🧬 "Democratas" e "Republicanos" NÃO são tradução: vêm do nome do desfecho
-    //    como o banco o guarda, e por isso saem em português nos três idiomas.
-    //    Isso é achado sobre a TELA e está fichado à parte; aqui é só o fato.
+    // 🧬 Até 19/Out/2026 estes dois saíam em PORTUGUÊS no inglês e no espanhol,
+    //    porque eram o nome do desfecho como o banco o guarda, impresso cru. O
+    //    conserto e estas âncoras andaram JUNTOS, de propósito: âncora apontando
+    //    para o rótulo antigo reprovaria a tela certa.
+    //    → lib/dashboard/partido-us.ts
     ancoras: {
       'pt-BR': ['Câmara ↗', 'Democratas'],
-      en: ['House ↗', 'Democratas'],
-      es: ['Cámara ↗', 'Democratas'],
+      en: ['House ↗', 'Democrats'],
+      es: ['Cámara ↗', 'Demócratas'],
     },
   },
   {
@@ -76,7 +78,7 @@ export const CONTRATOS = [
     descricao: 'probabilidade de os REPUBLICANOS controlarem a CÂMARA',
     ancoras: {
       'pt-BR': ['Câmara ↗', 'Republicanos'],
-      en: ['House ↗', 'Republicanos'],
+      en: ['House ↗', 'Republicans'],
       es: ['Cámara ↗', 'Republicanos'],
     },
   },
@@ -85,8 +87,8 @@ export const CONTRATOS = [
     descricao: 'probabilidade de os DEMOCRATAS controlarem o SENADO',
     ancoras: {
       'pt-BR': ['Senado ↗', 'Democratas'],
-      en: ['Senate ↗', 'Democratas'],
-      es: ['Senado ↗', 'Democratas'],
+      en: ['Senate ↗', 'Democrats'],
+      es: ['Senado ↗', 'Demócratas'],
     },
   },
   {
@@ -94,7 +96,7 @@ export const CONTRATOS = [
     descricao: 'probabilidade de os REPUBLICANOS controlarem o SENADO',
     ancoras: {
       'pt-BR': ['Senado ↗', 'Republicanos'],
-      en: ['Senate ↗', 'Republicanos'],
+      en: ['Senate ↗', 'Republicans'],
       es: ['Senado ↗', 'Republicanos'],
     },
   },

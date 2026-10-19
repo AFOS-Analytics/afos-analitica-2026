@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { rotuloDePartido } from '@/lib/dashboard/partido-us'
 import { useTranslation } from '../../../i18n/context';
 import { VisitorStateProvider } from '../../../hooks/useVisitorState';
 import { EmailPopup } from '../../../components/EmailPopup';
@@ -264,8 +265,12 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
       latest_poll: { pollster: '', date: '' },
       headline: {},
       rows: [
-        { candidate: L('Democratas', 'Democrats', 'Demócratas'), poll_pct: media.dem, market_pct: dem, divergence_pp: 0 },
-        { candidate: L('Republicanos', 'Republicans', 'Republicanos'), poll_pct: media.rep, market_pct: rep, divergence_pp: 0 },
+        // 🏷️ A traducao destes dois rotulos vivia AQUI, inline, enquanto os
+        //    cartoes de mercado imprimiam o nome CRU do banco: a mesma pagina
+        //    saia traduzida num bloco e em portugues noutro. Agora os dois leem
+        //    a mesma `lib/dashboard/partido-us`, que e a copia unica.
+        { candidate: rotuloDePartido('Democratas', locale), poll_pct: media.dem, market_pct: dem, divergence_pp: 0 },
+        { candidate: rotuloDePartido('Republicanos', locale), poll_pct: media.rep, market_pct: rep, divergence_pp: 0 },
       ],
     } as CountryDivergence;
   }, [pollsData, marketData, locale]);

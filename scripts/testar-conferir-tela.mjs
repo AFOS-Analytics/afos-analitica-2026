@@ -213,6 +213,50 @@ e('primeiroNumero pega inteiro sozinho', primeiroNumero('n=14 pesquisas') === '1
     conferirRegistro([{ chave: 'x', descricao: 'd', ancoras: { 'pt-BR': [''], en: ['b'], es: ['c'] } }]).length === 1)
 }
 
+
+// ══ 🌐 As âncoras do INGLÊS e do ESPANHOL, travadas em 19/Out/2026 ════════
+// 🔴 Até 19/Out os cartões imprimiam `Democratas` e `Republicanos` em PORTUGUÊS
+//    nesses dois idiomas, porque era o nome do desfecho como o banco o guarda.
+//    O conserto (lib/dashboard/partido-us.ts) e estas âncoras andaram JUNTOS:
+//    âncora apontando para o rótulo antigo reprovaria a tela certa.
+{
+  const telaEn = [
+    'House ↗', '(open on Polymarket)', 'Volume: $18.65M · pair total 100.0%',
+    'Democrats', '91.50%', 'Republicans', '8.50%', '',
+    'normalized: Democrats 91.50% · Republicans 8.50%', '',
+    'Senate ↗', '(open on Polymarket)', 'Volume: $7.20M · pair total 100.0%',
+    'Democrats', '63.50%', 'Republicans', '36.50%', '',
+    'The election happens as scheduled ↗', '(open on Polymarket)', '99.00%', '',
+    'Democratic margin: D+7.54',
+  ].join('\n')
+  const telaEs = [
+    'Cámara ↗', '(abrir en Polymarket)', 'Volumen: $18,65M · suma del par 100,0%',
+    'Demócratas', '91,50%', 'Republicanos', '8,50%', '',
+    'normalizado: Demócratas 91,50% · Republicanos 8,50%', '',
+    'Senado ↗', '(abrir en Polymarket)', 'Volumen: $7,20M · suma del par 100,0%',
+    'Demócratas', '63,50%', 'Republicanos', '36,50%', '',
+    'La elección ocurre en la fecha prevista ↗', '(abrir en Polymarket)', '99,00%', '',
+    'Ventaja demócrata: D+7,54',
+  ].join('\n')
+  const esperados = ['91.50', '8.50', '63.50', '36.50', '99.00', '7.54']
+  for (const [loc, tela] of [['en', telaEn], ['es', telaEs]]) {
+    CONTRATOS.forEach((c, i) => {
+      const r = valorSobOsRotulos(tela, c.ancoras[loc], esperados[i], loc)
+      e(`${loc}: ${c.chave} está sob o rótulo dele`, r.ok === true)
+    })
+  }
+  // 🔴 E a trava que prova que o conserto da tela está refletido aqui: o rótulo
+  //    ANTIGO, em português, não pode mais ser a âncora do inglês.
+  e('🔴 nenhuma âncora do EN usa o rótulo em português', CONTRATOS.every((c) => !c.ancoras.en.includes('Democratas') && !c.ancoras.en.includes('Republicanos')))
+  e('🔴 nem a do ES para Democratas', CONTRATOS.every((c) => !c.ancoras.es.includes('Democratas')))
+  // 📌 E `Republicanos` SEGUE valendo no ES, porque é a mesma palavra em
+  //    espanhol. Tirá-la por simetria seria conserto cosmético que quebra a tela.
+  e('📌 mas `Republicanos` segue sendo a âncora do ES, porque é a mesma palavra', CONTRATOS.find((c) => c.chave === 'senado-rep').ancoras.es.includes('Republicanos'))
+  // ⛔ E o rótulo do inglês aplicado à tela em português REPROVA, que é a prova
+  //    de que a âncora é por idioma e não um texto só.
+  e('⛔ âncora do EN contra a tela pt-BR reprova', valorSobOsRotulos(TELA, CONTRATOS[0].ancoras.en, '91.50', 'en').ok === false)
+}
+
 for (const [rot, ok] of etq) {
   if (!ok) falhas++
   console.log(`${ok ? '✅' : '❌'} ${rot}`)
