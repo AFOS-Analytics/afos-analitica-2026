@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-20",
+  "refetch": {
+    "fetchedAt": "2026-10-20T23:12:07Z",
+    "flavio": 80.1,
+    "lula": 19.5,
+    "baselineConfirmada": "2026-10-20T22:55:09.730Z",
+    "flavioBase": 80.1,
+    "lulaBase": 19.5,
+    "volTotalPresidencialUSD": 189680000,
+    "rebaseline": false,
+    "motivo": "mercado parado contra a confirmada das 19:55 BRT publicada no painel; variação contra a confirmada de 19/Out 15:42"
+  },
+  "factCheck": [
+    { "evento": "Alfa Inteligência BR-00820: 48,8 x 45,9 total, 51,5 x 48,5 válidos, campo 15 a 19/Out", "data": "2026-10-20", "fontes": ["UOL", "Estadão", "CNN Brasil"], "decisao": "incorporar" },
+    { "evento": "Real Time Big Data BR-02952: 48 x 45 total, 52 x 48 válidos, nacional confirmada no corpo", "data": "2026-10-20", "fontes": ["CartaCapital", "CNN Brasil", "Metrópoles"], "decisao": "incorporar" },
+    { "evento": "Lula protocola no TSE e no STF autorização condicional para abrir os sigilos; Mendonça relator no TSE", "data": "2026-10-20", "fontes": ["G1", "Folha de S.Paulo"], "decisao": "incorporar" },
+    { "evento": "Nota técnica da Fazenda: Willer Tomaz maior apostador em bets de 2025, R$ 5 bi", "data": "2026-10-20", "fontes": ["Folha de S.Paulo", "O Globo"], "decisao": "incorporar" },
+    { "evento": "Randolfe colhe assinaturas para representação no Conselho de Ética contra Flávio Bolsonaro", "data": "2026-10-20", "fontes": ["Folha de S.Paulo", "Valor"], "decisao": "incorporar como coleta, não como protocolo" },
+    { "evento": "PF pede prorrogação dos inquéritos sobre Lulinha; Fachin decide", "data": "2026-10-20", "fontes": ["G1", "Estadão"], "decisao": "incorporar" },
+    { "evento": "Meta responde ao TSE e pede reunião com Bellizze", "data": "2026-10-20", "fontes": ["Valor", "JOTA"], "decisao": "incorporar" }
+  ],
+  "naoIncorporado": [
+    "Gerp tracking 15-19/Out (53 x 47 válidos) sem registro no TSE: citado como fora da conta",
+    "Mendonça mantém propaganda de Flávio com PCC e Hamas: fonte única do Grupo Globo",
+    "Relatório da PF sobre Willer Tomaz pagar para remover links: fonte única do Grupo Globo"
+  ],
+  "adversarial": {
+    "singleSource": "aliados de Flávio defendem não aceitar (O Globo), posição de campanha atribuída",
+    "numerical": "reconcile-claims: 76,85% (base de 19/Out) e 22,50% (ponto da série às 13:30 BRT), legítimos",
+    "fontesInventadas": "nenhuma; 19 links resolvidos do cache pelo daily-links-brz",
+    "quotes": "nenhuma aspa literal",
+    "causacao": "nenhuma; o texto diz que o painel não liga o movimento a fato do intervalo",
+    "verbos": "colhe assinaturas, ainda será protocolado, pediu a prorrogação",
+    "correcoesAntesDoPreview": [
+      "1.161 → 1.093 palavras cortando margens repetidas, aprovação da Alfa e a coincidência com a Quaest",
+      "densidade de links 75% → acima de 80% com link na série do contrato e no registro do TSE",
+      "marcador AN da Folha ambíguo com o Valor: desambiguado"
+    ]
+  },
+  "palavras": 1093,
+  "links": { "distintos": 19, "secundarios": 13, "pctSecundario": 68 },
+  "calendario": "calendario-pesquisas-brz.mjs --peca: 26 nacionais de 21 a 25/Out, 2 tiradas (Gerp BR-09327 pela data, Real Time BR-09670 pelo escopo)",
+  "wayback": "pré-check deu 429 em 20/Out 23:0xZ, gravado no ledger; nova pausa de 4 dias, não rodado"
+}
