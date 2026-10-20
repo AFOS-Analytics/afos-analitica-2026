@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-10-19",
+  "lastUpdate": "2026-10-20",
   "institutes": [
     {
       "name": "Datafolha",
@@ -147,6 +147,50 @@
     }
   ],
   "polls": [
+    {
+      "institute": "Alfa Inteligência/TMC",
+      "date": "2026-10-20",
+      "scope": "national",
+      "sample": 2700,
+      "margin": 1.9,
+      "register": "BR-00820/2026",
+      "reliability": 2,
+      "method": "Presencial",
+      "fieldDates": "2026-10-15 a 2026-10-19",
+      "note": "Alfa Inteligência nacional divulgada el 20/Oct, registro BR-00820/2026, 2.700 electores en entrevistas presenciales del 15 al 19/Oct, margen de 1,9pp con 95% de confianza, con recursos propios (UOL, Estadão y CNN Brasil). ⚖️ EN LA SEGUNDA VUELTA FLÁVIO BOLSONARO TIENE 48,8% Y LULA 45,9% en los votos totales, con 3,5% en blanco, nulo o por ninguno y 1,8% que no saben; en votos válidos, 51,5% a 48,5%. En la espontánea, 47% a 43%. 46% no votarían por Lula de ninguna manera y 45% por Flávio Bolsonaro, y el gobierno de Lula es desaprobado por 50% y aprobado por 46%. Es la primera encuesta nacional de la casa después de la primera vuelta; en la del 24/Sep, la simulación de segunda vuelta daba 43% a 43%.",
+      "scenarios": [],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 45.9,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 48.8
+        }
+      ]
+    },
+    {
+      "institute": "Real Time Big Data",
+      "date": "2026-10-20",
+      "scope": "national",
+      "sample": 2000,
+      "margin": 2,
+      "register": "BR-02952/2026",
+      "reliability": 3,
+      "method": "Telefónica",
+      "fieldDates": "2026-10-15 a 2026-10-19",
+      "note": "Real Time Big Data nacional divulgada el 20/Oct, registro BR-02952/2026, 2.000 electores entrevistados por teléfono en todo el territorio nacional del 15 al 19/Oct, margen de 2pp con 95% de confianza (CNN Brasil, CartaCapital y Metrópoles). ⚖️ EN LA SEGUNDA VUELTA FLÁVIO BOLSONARO TIENE 48% Y LULA 45% en los votos totales, con 5% en blanco o nulo y 2% que no saben; en votos válidos, 52% a 48%. 35% rechazan a Lula y 33% a Flávio Bolsonaro. Es la primera encuesta nacional de la casa después de la primera vuelta; en la del 01/Oct, la simulación de segunda vuelta daba 46% a Flávio Bolsonaro y 45% a Lula.",
+      "scenarios": [],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 45,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 48
+        }
+      ]
+    },
     {
       "institute": "AtlasIntel/Bloomberg",
       "date": "2026-10-19",
@@ -2702,30 +2746,30 @@
     "lastUpdate": "04/10/2026, 21:43"
   },
   "polymarketComparison": {
-    "note": "Precios de Polymarket en la lectura confirmada del 19/Oct, 15:42 BRT, 15º día de la segunda vuelta. EN EL CONTRATO DE GANADOR LA BRECHA DE FLÁVIO BOLSONARO SOBRE LULA PASA DE 58,75pp A 53,35pp frente a la lectura confirmada del 18/Oct a las 17:44 BRT, publicada en la ronda anterior: Flávio Bolsonaro está en 76,85% y Lula en 23,50%. Los contratos de los demás nombres en el libro de ganador están cerrados desde la primera vuelta, resueltos en cero. 📊 Cinco nuevas encuestas nacionales salieron el 19/Oct, todas con Flávio Bolsonaro al frente. La AtlasIntel, contratada por Bloomberg, con 4.998 entrevistas del 13 al 18/Oct, le da 49,8% a él y 47,6% a Lula en los votos totales y 51,1% a 48,9% en los válidos (Estadão, Brasil de Fato y Poder360). La BTG/Nexus, con 2.002 entrevistas telefónicas del 16 al 18/Oct, da 46,5% a 45,9% en los votos totales y 50,3% a 49,7% en los válidos (Estadão, Congresso em Foco y UOL). La Futura/100% Cidades, con 2.000 entrevistas telefónicas el 16 y el 17/Oct, da 48,3% a 47,5% en los votos totales y 50,4% a 49,6% en los válidos (Money Times y CNN Brasil). La PoderData/Aya, con 3.000 entrevistas telefónicas automatizadas del 16 al 18/Oct, da 52% a 48% en los válidos (Poder360, UOL y Exame), y la DataTrends, con 2.000 entrevistas telefónicas automatizadas del 15 al 17/Oct, 51,5% a 48,5% en los válidos (blogs de Edmar Lyra y Mário Flávio). El lado encuesta de este gráfico es la AtlasIntel del 19/Oct, n=4.998, con 49,8% para Flávio Bolsonaro y 47,6% para Lula, la de mayor muestra entre las tres encuestas nacionales del día que publicaron el total de votos. De las veintiséis encuestas nacionales hechas después de las urnas, veintitrés dan a Flávio Bolsonaro al frente, veinte de ellas por 0,6 a 9 puntos en los votos totales y tres por 2,2 a 4 puntos en los válidos; las dos de la Vox Brasil, del 09/Oct y del 18/Oct, dan a Lula al frente, por 1,5 y 1,8 puntos, y la PoderData/Aya del 16/Oct midió empate en los votos válidos. Las próximas encuestas nacionales registradas en el TSE salen el 20/Oct (Veritá y Alfa), el 21/Oct (Quaest, Palver, Gerp, 100 Cidades e Ideia), el 22/Oct (Datafolha, PoderData e Indexa) y el 23/Oct (Vox Brasil, Ipespe, Veritá, DataTrends y Alfa).",
-    "sources": "Precios de Polymarket vía proxy AFOS, y el panel solo publica precio que dos lecturas independientes, tomadas con ocho minutos de intervalo, confirmen dentro de 0,20pp. La confirmación se hace contrato por contrato, y los precios de esta página son de la lectura confirmada del 19/Oct, 15:42 BRT. Al lado del movimiento crudo va el normalizado por la suma del par. Encuestas registradas en el TSE, con protocolo, casa, trabajo de campo, muestra y método declarados en cada entrada. Resultado de la primera vuelta: totalización oficial del TSE, 100% de las secciones. 🗳️ El lado ENCUESTA del gráfico de divergencia usa UNA encuesta nacional, no el promedio, y siempre en el TOTAL de votos: la referencia es el par de la segunda vuelta de la encuesta nacional más reciente que lo midió, con desempate por la mayor muestra entre las que publicaron el total, lo que da la AtlasIntel del 19/Oct, n=4.998, con 49,8% para Flávio Bolsonaro y 47,6% para Lula, la de mayor muestra entre las tres encuestas nacionales del día que publicaron el total de votos.",
+    "note": "Precios de Polymarket en la lectura confirmada del 20/Oct, 19:55 BRT, 16º día de la segunda vuelta. EN EL CONTRATO DE GANADOR LA BRECHA DE FLÁVIO BOLSONARO SOBRE LULA PASA DE 53,35pp A 60,60pp frente a la lectura confirmada del 19/Oct a las 15:42 BRT, publicada en la ronda anterior: Flávio Bolsonaro está en 80,10% y Lula en 19,50%. Los contratos de los demás nombres en el libro de ganador están cerrados desde la primera vuelta, resueltos en cero. 📊 Dos nuevas encuestas nacionales salieron el 20/Oct, las dos con Flávio Bolsonaro al frente. La Alfa Inteligência, con 2.700 entrevistas presenciales del 15 al 19/Oct, le da 48,8% a él y 45,9% a Lula en los votos totales y 51,5% a 48,5% en los válidos (UOL, Estadão y CNN Brasil). La Real Time Big Data, con 2.000 entrevistas telefónicas en todo el país del 15 al 19/Oct, da 48% a 45% en los votos totales y 52% a 48% en los válidos (CartaCapital, CNN Brasil y Metrópoles). El trabajo de campo de las dos termina el 19/Oct, el día siguiente al debate de Band. El lado encuesta de este gráfico es la Alfa Inteligência del 20/Oct, n=2.700, con 48,8% para Flávio Bolsonaro y 45,9% para Lula, la de mayor muestra entre las dos encuestas nacionales del día que publicaron el total de votos. De las veintiocho encuestas nacionales hechas después de las urnas, veinticinco dan a Flávio Bolsonaro al frente, veintidós de ellas por 0,6 a 9 puntos en los votos totales y tres por 2,2 a 4 puntos en los votos válidos; las dos de la Vox Brasil, del 09/Oct y del 18/Oct, dan a Lula al frente, por 1,5 y 1,8 puntos, y la PoderData/Aya del 16/Oct midió un empate en los votos válidos. Las próximas encuestas nacionales registradas en el TSE salen el 21/Oct (Palver, Gerp, Quaest, 100 Cidades e Ideia), el 22/Oct (PoderData, Datafolha e Indexa), el 23/Oct (Veritá, Vox Brasil, DataTrends, Ipespe y Alfa) y el 24/Oct, víspera de la votación (Veritá, AtlasIntel, Palver, Datafolha, Phoenix, Quaest, Colectta, MDA, Nexus, 100 Cidades, Datavero y Simplex).",
+    "sources": "Precios de Polymarket vía proxy AFOS, y el panel solo publica precio que dos lecturas independientes, tomadas con ocho minutos de intervalo, confirmen dentro de 0,20pp. La confirmación se hace contrato por contrato, y los precios de esta página son de la lectura confirmada del 20/Oct, 19:55 BRT. Al lado del movimiento crudo va el normalizado por la suma del par. Encuestas registradas en el TSE, con protocolo, casa, trabajo de campo, muestra y método declarados en cada entrada. Resultado de la primera vuelta: totalización oficial del TSE, 100% de las secciones. 🗳️ El lado ENCUESTA del gráfico de divergencia usa UNA encuesta nacional, no el promedio, y siempre en el TOTAL de votos: la referencia es el par de la segunda vuelta de la encuesta nacional más reciente que lo midió, con desempate por la mayor muestra entre las que publicaron el total, lo que da la Alfa Inteligência del 20/Oct, n=2.700, con 48,8% para Flávio Bolsonaro y 45,9% para Lula, la de mayor muestra entre las dos encuestas nacionales del día que publicaron el total de votos.",
     "candidates": [
       {
         "name": "Lula",
-        "percentage": 47.6,
-        "odds": 23.5,
-        "value": 23.5,
-        "polymarket": "23,50%",
+        "percentage": 45.9,
+        "odds": 19.5,
+        "value": 19.5,
+        "polymarket": "19,50%",
         "pesquisaRange": "42% a 49%",
-        "lastUpdate": "19/10/2026, 15:42",
+        "lastUpdate": "20/10/2026, 19:55",
         "tendenciaPesquisa": "TIENE 44% EN LA [SEGUNDA VUELTA](/es/glossary#segundo-turno) EN LA PALVER DEL 03/Oct, fuente del lado encuesta de este gráfico, frente a 49% de Flávio Bolsonaro. En la víspera lideraba la segunda vuelta en la Datafolha (47% a 46%), en la CNT/MDA (47,3% a 43,1%) y en la AtlasIntel (47,6% a 47,4%), y empataba en la PoderData. En la urna de la [primera vuelta](/es/glossary#primeiro-turno) tuvo 45,16% de los válidos.",
-        "tendenciaPolymarket": "SUBE 3,00pp EN EL CONTRATO DE GANADOR, en 23,50% (vol USD 26,66M acumulado), lectura confirmada del 19/Oct, 15:42 BRT, frente a la lectura confirmada del 18/Oct a las 17:44 BRT, publicada en la ronda anterior. La brecha de Flávio Bolsonaro sobre él pasa de 58,75pp a 53,35pp. 📊 Tiene 47,6% en la AtlasIntel del 19/Oct. 🏆 Contando los contratos cerrados, el suyo sigue siendo el de mayor volumen acumulado del libro presidencial."
+        "tendenciaPolymarket": "CAE 4,00pp EN EL CONTRATO DE GANADOR, en 19,50% (vol USD 27,44M acumulado), lectura confirmada del 20/Oct, 19:55 BRT, frente a la lectura confirmada del 19/Oct a las 15:42 BRT, publicada en la ronda anterior. La brecha de Flávio Bolsonaro sobre él pasa de 53,35pp a 60,60pp. 📊 Tiene 45,9% en la Alfa del 20/Oct. 🏆 Contando los contratos cerrados, el suyo sigue siendo el de mayor volumen acumulado del libro presidencial."
       },
       {
         "name": "Flávio Bolsonaro",
-        "percentage": 49.8,
-        "odds": 76.85,
-        "value": 76.85,
-        "polymarket": "76,85%",
+        "percentage": 48.8,
+        "odds": 80.1,
+        "value": 80.1,
+        "polymarket": "80,10%",
         "pesquisaRange": "42,7% a 53%",
-        "lastUpdate": "19/10/2026, 15:42",
+        "lastUpdate": "20/10/2026, 19:55",
         "tendenciaPesquisa": "TIENE 49% EN LA [SEGUNDA VUELTA](/es/glossary#segundo-turno) EN LA PALVER DEL 03/Oct, fuente del lado encuesta de este gráfico, frente a 44% de Lula. En la víspera lideraba la segunda vuelta en la [Quaest](/es/glossary#quaest) (44% a 42%), en la Palver, en la Futura (48% a 45,1%) y en la Gerp (49% a 44%). En la urna de la [primera vuelta](/es/glossary#primeiro-turno) tuvo 47,03% de los válidos.",
-        "tendenciaPolymarket": "CAE 2,40pp EN EL CONTRATO DE GANADOR, en 76,85% (vol USD 23,05M acumulado), lectura confirmada del 19/Oct, 15:42 BRT, frente a la lectura confirmada del 18/Oct a las 17:44 BRT, publicada en la ronda anterior. La brecha sobre Lula pasa de 58,75pp a 53,35pp. 📊 Tiene 49,8% en la AtlasIntel del 19/Oct."
+        "tendenciaPolymarket": "SUBE 3,25pp EN EL CONTRATO DE GANADOR, en 80,10% (vol USD 23,76M acumulado), lectura confirmada del 20/Oct, 19:55 BRT, frente a la lectura confirmada del 19/Oct a las 15:42 BRT, publicada en la ronda anterior. La brecha sobre Lula pasa de 53,35pp a 60,60pp. 📊 Tiene 48,8% en la Alfa del 20/Oct."
       },
       {
         "name": "Augusto Cury",
@@ -2733,7 +2777,7 @@
         "value": 0,
         "polymarket": "cerrado",
         "pesquisaRange": "1% a 12,2%",
-        "lastUpdate": "19/10/2026, 15:42",
+        "lastUpdate": "20/10/2026, 19:55",
         "tendenciaPesquisa": "ELIMINADO: 2,89% de los votos válidos en la [primera vuelta](/es/glossary#primeiro-turno), tercer colocado. Declaró su apoyo a Flávio Bolsonaro el 08/Oct (G1, Estadão y CNN Brasil).",
         "tendenciaPolymarket": "Contrato de ganador cerrado por Polymarket después de la [primera vuelta](/es/glossary#primeiro-turno) y resuelto en cero, con USD 5,51M acumulados.",
         "percentage": 0
@@ -2744,7 +2788,7 @@
         "value": 0,
         "polymarket": "cerrado",
         "pesquisaRange": "1,5% a 11%",
-        "lastUpdate": "19/10/2026, 15:42",
+        "lastUpdate": "20/10/2026, 19:55",
         "tendenciaPesquisa": "ELIMINADO: 2,24% de los votos válidos en la [primera vuelta](/es/glossary#primeiro-turno), cuarto colocado, en la totalización del [TSE](/es/glossary#tse).",
         "tendenciaPolymarket": "Contrato de ganador cerrado por Polymarket después de la [primera vuelta](/es/glossary#primeiro-turno) y resuelto en cero, con USD 17,12M acumulados, el segundo mayor del libro presidencial.",
         "percentage": 0
@@ -2755,7 +2799,7 @@
         "value": 0,
         "polymarket": "cerrado",
         "pesquisaRange": "1% a 5,7%",
-        "lastUpdate": "19/10/2026, 15:42",
+        "lastUpdate": "20/10/2026, 19:55",
         "tendenciaPesquisa": "ELIMINADO: 2,18% de los votos válidos en la [primera vuelta](/es/glossary#primeiro-turno), quinto colocado. Declaró su apoyo a Flávio Bolsonaro en Goiânia el 06/Oct (O Globo y VEJA).",
         "tendenciaPolymarket": "Contrato de ganador cerrado por Polymarket después de la [primera vuelta](/es/glossary#primeiro-turno) y resuelto en cero, con USD 7,82M acumulados.",
         "percentage": 0
@@ -2766,7 +2810,7 @@
         "value": 0,
         "polymarket": "cerrado",
         "pesquisaRange": "1% a 2%",
-        "lastUpdate": "19/10/2026, 15:42",
+        "lastUpdate": "20/10/2026, 19:55",
         "tendenciaPesquisa": "Fuera de la elección desde el rechazo del registro de candidatura por el [TSE](/es/glossary#tse) el 11/Sep.",
         "tendenciaPolymarket": "Contrato de ganador cerrado por Polymarket después de la [primera vuelta](/es/glossary#primeiro-turno) y resuelto en cero.",
         "percentage": 0
@@ -2777,7 +2821,7 @@
         "value": 0,
         "polymarket": "cerrado",
         "pesquisaRange": "0,3% a 3,5%",
-        "lastUpdate": "19/10/2026, 15:42",
+        "lastUpdate": "20/10/2026, 19:55",
         "tendenciaPesquisa": "ELIMINADO: 0,27% de los votos válidos en la [primera vuelta](/es/glossary#primeiro-turno), en la totalización del [TSE](/es/glossary#tse). Declaró su voto por Flávio Bolsonaro el 05/Oct, y el Novo le declaró su apoyo el 07/Oct (G1 y CartaCapital).",
         "tendenciaPolymarket": "Contrato de ganador cerrado por Polymarket después de la [primera vuelta](/es/glossary#primeiro-turno) y resuelto en cero, con USD 7,74M acumulados.",
         "percentage": 0
@@ -2788,7 +2832,7 @@
         "value": 0,
         "polymarket": "cerrado",
         "pesquisaRange": "no medido",
-        "lastUpdate": "19/10/2026, 15:42",
+        "lastUpdate": "20/10/2026, 19:55",
         "tendenciaPesquisa": "No disputó la Presidencia: fue reelegido gobernador de São Paulo en la [primera vuelta](/es/glossary#primeiro-turno).",
         "tendenciaPolymarket": "Contrato de ganador cerrado por Polymarket después de la [primera vuelta](/es/glossary#primeiro-turno) y resuelto en cero, con USD 14,96M acumulados.",
         "percentage": 0
@@ -2799,19 +2843,19 @@
         "value": 0,
         "polymarket": "cerrado",
         "pesquisaRange": "no medido",
-        "lastUpdate": "19/10/2026, 15:42",
+        "lastUpdate": "20/10/2026, 19:55",
         "tendenciaPesquisa": "No disputó la Presidencia: disputó la gobernación de São Paulo y perdió frente a Tarcísio de Freitas en la [primera vuelta](/es/glossary#primeiro-turno).",
         "tendenciaPolymarket": "Contrato de ganador cerrado por Polymarket después de la [primera vuelta](/es/glossary#primeiro-turno) y resuelto en cero, con USD 7,74M acumulados.",
         "percentage": 0
       }
     ],
-    "updatedAt": "19/10/2026, 15:42",
+    "updatedAt": "20/10/2026, 19:55",
     "lastUpdate": "25/09/2026, 17:08",
     "pollSource": {
-      "pollster": "AtlasIntel/Bloomberg",
-      "date": "2026-10-19",
-      "sample": 4998,
-      "register": "BR-02418/2026",
+      "pollster": "Alfa Inteligência/TMC",
+      "date": "2026-10-20",
+      "sample": 2700,
+      "register": "BR-00820/2026",
       "scenario": "Segunda vuelta, Lula vs Flávio",
       "round": 2
     }
