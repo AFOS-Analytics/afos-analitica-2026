@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-19",
-  "fetchedAt": "2026-10-19T16:16:13.493Z",
+  "lastUpdate": "2026-10-20",
+  "fetchedAt": "2026-10-20T22:19:56.730Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,8 +47,8 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-19",
-    "nPesquisas": 31,
+    "desde": "2026-09-20",
+    "nPesquisas": 34,
     "tratamentoDoIndeciso": [
       {
         "serie": "Angus Reid Global",
@@ -157,11 +157,27 @@
         "rep": 43
       },
       {
+        "key": "The Washington Post/ABC News/Ipsos|2026-10-13",
+        "instituto": "The Washington Post/ABC News/Ipsos",
+        "campoFim": "2026-10-13",
+        "amostraTipo": "LV",
+        "dem": 52,
+        "rep": 44
+      },
+      {
         "key": "Beacon Research (D)/ Shaw & Co. Research (R)|2026-10-12",
         "instituto": "Beacon Research (D)/ Shaw & Co. Research (R)",
         "campoFim": "2026-10-12",
         "amostraTipo": "RV",
         "dem": 54,
+        "rep": 45
+      },
+      {
+        "key": "SurveyMonkey|2026-10-12",
+        "instituto": "SurveyMonkey",
+        "campoFim": "2026-10-12",
+        "amostraTipo": "RV",
+        "dem": 55,
         "rep": 45
       },
       {
@@ -242,6 +258,14 @@
         "campoFim": "2026-10-01",
         "amostraTipo": "LV",
         "dem": 50,
+        "rep": 42
+      },
+      {
+        "key": "I&I/TIPP Insights (R)|2026-10-01",
+        "instituto": "I&I/TIPP Insights (R)",
+        "campoFim": "2026-10-01",
+        "amostraTipo": "RV",
+        "dem": 46,
         "rep": 42
       },
       {
@@ -462,10 +486,10 @@
         "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
       }
     ],
-    "nInstitutos": 23,
-    "dem": 49.77,
-    "rep": 42.23,
-    "vantagemDem": 7.54,
+    "nInstitutos": 26,
+    "dem": 49.88,
+    "rep": 42.35,
+    "vantagemDem": 7.53,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
@@ -480,6 +504,7 @@
       "Emerson College",
       "Focaldata",
       "Harvard/Harris Poll/HarrisX",
+      "I&I/TIPP Insights (R)",
       "Impact Research (D)/National Research Inc. (R)",
       "KFF",
       "McLaughlin & Associates (R)",
@@ -489,19 +514,21 @@
       "Rasmussen Reports (R)",
       "Reuters/Ipsos",
       "Strength In Numbers/Verasight",
+      "SurveyMonkey",
       "The Argument/Verasight",
+      "The Washington Post/ABC News/Ipsos",
       "TrueDot"
     ]
   },
   "qualidade": {
-    "linhasLidas": 483,
-    "publicadas": 496,
+    "linhasLidas": 486,
+    "publicadas": 499,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 483,
+    "doIndice": 486,
     "curadas": 13,
     "curadasDescartadasPorDuplicidade": 17
   },
@@ -584,6 +611,21 @@
       "origem": "indice-wikipedia"
     },
     {
+      "instituto": "The Washington Post/ABC News/Ipsos",
+      "campoInicio": "2026-10-09",
+      "campoFim": "2026-10-13",
+      "amostra": 2032,
+      "amostraTipo": "LV",
+      "margemErro": 2.2,
+      "dem": 52,
+      "rep": 44,
+      "outros": 4,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-10/ABC-Post-Ipsos%20Trend%20Topline%2010.18.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
       "instituto": "The Economist/YouGov",
       "campoInicio": "2026-10-10",
       "campoFim": "2026-10-12",
@@ -610,6 +652,21 @@
       "outros": 1,
       "vantagemDem": 9,
       "fontePrimaria": "https://www.foxnews.com/politics/fox-news-poll-cost-living-concerns-weigh-gop-midterms",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "SurveyMonkey",
+      "campoInicio": "2026-09-28",
+      "campoFim": "2026-10-12",
+      "amostra": 17649,
+      "amostraTipo": "RV",
+      "margemErro": 1.6,
+      "dem": 55,
+      "rep": 45,
+      "outros": null,
+      "vantagemDem": 10,
+      "fontePrimaria": "https://www.documentcloud.org/documents/28819497-nbc-news-decision-desk-poll-october-2026-topline-final/",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -805,6 +862,21 @@
       "outros": null,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.activote.net/polls/generic-ballot/2026-10-03/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "I&I/TIPP Insights (R)",
+      "campoInicio": "2026-09-29",
+      "campoFim": "2026-10-01",
+      "amostra": 1328,
+      "amostraTipo": "RV",
+      "margemErro": 2.8,
+      "dem": 46,
+      "rep": 42,
+      "outros": 12,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://issuesinsights.com/2026/10/19/dems-hold-slim-lead-over-gop-in-midterm-vote-but-can-they-keep-it-ii-tipp-poll/",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
