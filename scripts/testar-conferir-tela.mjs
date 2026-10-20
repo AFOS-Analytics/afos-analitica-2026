@@ -21,6 +21,7 @@
  * Uso:  node scripts/testar-conferir-tela.mjs
  */
 import { achou, naConvencao, primeiroNumero, valorSobOsRotulos } from './conferir-tela.mjs'
+import { comoNumero, dentroDaFolga, TOLERANCIA_PP } from './lib/tolerancia-de-preco.mjs'
 import { CONTRATOS, conferirRegistro } from './lib/rotulos-do-painel-us.mjs'
 
 const CASOS = [
@@ -255,6 +256,68 @@ e('primeiroNumero pega inteiro sozinho', primeiroNumero('n=14 pesquisas') === '1
   // ⛔ E o rótulo do inglês aplicado à tela em português REPROVA, que é a prova
   //    de que a âncora é por idioma e não um texto só.
   e('⛔ âncora do EN contra a tela pt-BR reprova', valorSobOsRotulos(TELA, CONTRATOS[0].ancoras.en, '91.50', 'en').ok === false)
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// 🎯 A FOLGA DE OSCILAÇÃO, régua de 20/Out/2026
+//
+// 🔴 O caso: a trava de captura certificou o contrato de calendário em 98.85 às
+//    22:45:16Z e a tela, lida minutos depois com a rota buscando AO VIVO,
+//    trazia 98.80. O conferidor comparava byte a byte e reprovou os 3 idiomas
+//    com nada errado em lugar nenhum. A cadeia tinha DUAS tolerâncias para a
+//    mesma grandeza, 0.20pp na trava e ZERO aqui, com a apertada por último.
+//
+// ⛔ Metade destas asserções é ANTI-EXCESSO, porque o erro simétrico deste
+//    conserto é um portão que aceita qualquer número perto.
+// ══════════════════════════════════════════════════════════════════════════
+
+// ── O caso fundador, nos três idiomas
+e('🎯 98,80 na tela contra 98,85 certificado PASSA (pt-BR)', dentroDaFolga('98,80', '98,85', 'pt-BR').ok === true)
+e('🎯 98.80 contra 98.85 passa no EN', dentroDaFolga('98.80', '98.85', 'en').ok === true)
+e('🎯 e no ES, que escreve vírgula', dentroDaFolga('98,80', '98,85', 'es').ok === true)
+e('📌 e sai marcado como NÃO exato', dentroDaFolga('98,80', '98,85', 'pt-BR').exato === false)
+e('📌 com o drift medido em 0.05pp', Math.abs(dentroDaFolga('98,80', '98,85', 'pt-BR').driftPp - 0.05) < 1e-6)
+e('✅ valor IGUAL sai como exato, com drift zero', dentroDaFolga('98,85', '98,85', 'pt-BR').exato === true && dentroDaFolga('98,85', '98,85', 'pt-BR').driftPp === 0)
+// 🧪 Esta nasceu de uma MUTAÇÃO SOBREVIVENTE: trocar o `exato` de texto para
+//    número (`a === e`) passava a suíte inteira. Ela é distinguível, então é
+//    lacuna do teste e não mutação equivalente, e a régua é que o `exato` mede
+//    a FORMA: `98,8` e `98,80` são o mesmo valor escrito de dois jeitos, e a
+//    tela que perder a segunda decimal tem de aparecer no relatório.
+e('📣 mesmo número com FORMA diferente não é exato', dentroDaFolga('98,8', '98,80', 'pt-BR').exato === false)
+e('📣 e ele passa, com drift zero: é forma, não valor', dentroDaFolga('98,8', '98,80', 'pt-BR').ok === true && dentroDaFolga('98,8', '98,80', 'pt-BR').driftPp === 0)
+
+// ── A BORDA da folga, nos dois lados
+e('⚖️ exatamente 0.20pp PASSA', dentroDaFolga('98,65', '98,85', 'pt-BR').ok === true)
+e('⚖️ 0.21pp REPROVA', dentroDaFolga('98,64', '98,85', 'pt-BR').ok === false)
+e('⚖️ a folga é a MESMA que a trava declara', TOLERANCIA_PP === 0.2)
+
+// ── 🛡️ ANTI-EXCESSO: o que a folga NÃO pode deixar passar
+e('⛔ o valor do VIZINHO não passa por folga', dentroDaFolga('8,50', '91,50', 'pt-BR').ok === false)
+e('⛔ separador ERRADO para o idioma reprova', dentroDaFolga('91.50', '91,50', 'pt-BR').ok === false)
+e('⛔ e reprova na direção inversa', dentroDaFolga('91,50', '91.50', 'en').ok === false)
+e('⛔ 1.00pp, que é o passo dos livros de partido, reprova', dentroDaFolga('90,50', '91,50', 'pt-BR').ok === false)
+e('⛔ texto vazio NÃO é zero', comoNumero('', 'pt-BR') === null && dentroDaFolga('', '98,85', 'pt-BR').ok === false)
+e('⛔ null NÃO é zero', comoNumero(null, 'en') === null && dentroDaFolga(null, '98.85', 'en').ok === false)
+e('⛔ texto que não é número reprova', comoNumero('n/d', 'pt-BR') === null)
+e('⛔ e 0,00 contra 98,85 reprova, que é o que a guarda de tipo protege', dentroDaFolga('0,00', '98,85', 'pt-BR').ok === false)
+
+// ── 🔒 A TRAVA DE DESENHO: a folga vale sob o rótulo e NÃO em texto livre
+//    O painel imprime dezenas de números. Se a busca solta aceitasse folga, o
+//    8,50 do republicano cobriria um 8,60 esperado em qualquer lugar da tela.
+e('🔒 a busca em texto livre segue EXATA, e 8,60 não casa com o 8,50 da tela', achou(TELA, '8.60', 'pt-BR') === false)
+e('🔒 e o valor exato casa', achou(TELA, '8.50', 'pt-BR') === true)
+
+// ── Sob o rótulo, a folga chega e vem declarada
+{
+  const r = sob('no-prazo', '98.85', TELA.replace('99,00%', '98,80%'))
+  e('🏷️ sob o rótulo, a tela oscilada PASSA', r.ok === true)
+  e('🏷️ e vem com exato=false e o drift', r.exato === false && Math.abs(r.driftPp - 0.05) < 1e-6)
+  const r2 = sob('no-prazo', '98.85', TELA.replace('99,00%', '97,00%'))
+  e('🏷️ oscilação de 1.85pp sob o rótulo REPROVA', r2.ok === false && r2.motivo === 'OUTRO_NUMERO')
+  e('🏷️ e a reprovação carrega o drift, para o relatório dizer o TAMANHO', typeof r2.driftPp === 'number' && Math.abs(r2.driftPp - 1.85) < 1e-6)
+  // ⛔ o portão do rótulo errado NÃO pode ser afrouxado pela folga: o valor
+  //    republicano sob o rótulo democrata está a 83pp, e segue reprovando.
+  e('⛔ valor sob o rótulo ERRADO segue reprovando', sob('camara-dem', '8.50').ok === false)
 }
 
 for (const [rot, ok] of etq) {

@@ -49,10 +49,17 @@
  */
 
 import { baseDeLeitura } from './lib/base-afos.mjs'
+// 🎯 A folga tem DONO desde 20/Out/2026, porque o conferidor de tela precisava da
+//    MESMA, e duas cópias da mesma regra é o defeito que a casa persegue.
+import { TOLERANCIA_PP } from './lib/tolerancia-de-preco.mjs'
 const PROXY_BASE = `${baseDeLeitura()}/api/polymarket?fresh=1`
 
-/** Divergência tolerada entre as duas leituras, em pontos percentuais. */
-const TOLERANCIA_PP = 0.20
+/**
+ * 📌 `TOLERANCIA_PP` mora em `lib/tolerancia-de-preco.mjs` desde 20/Out/2026.
+ * O valor não mudou, 0.20pp desde 10/Ago; o que mudou é que agora ele tem um
+ * dono, porque a ETAPA 5 comparava byte a byte e reprovava oscilação de 0.05pp
+ * que ESTA trava já havia chamado de um preço.
+ */
 
 /** Só vale a pena vigiar quem tem preço relevante. Abaixo disso é ruído de book fino. */
 const PISO_RELEVANCIA_PCT = 0.5

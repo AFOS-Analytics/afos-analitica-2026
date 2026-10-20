@@ -431,7 +431,7 @@ for l in pt-BR en es; do curl -s -o /dev/null -w "$l %{http_code}\n" "https://ww
 🔴 **Mas o `curl` só responde o código HTTP, e neste painel isso NÃO é conferir a tela.** O painel dos EUA serve cache e busca o preço no CLIENTE: o número não está no HTML entregue. Grep ali devolve ausência com a tela correta, e o pior é o erro simétrico, porque ele encontraria a cópia dentro do dicionário de tradução mesmo com o componente NÃO montado. Entrega visual se confere com navegador.
 
 ```bash
-node scripts/conferir-tela.mjs --esperado=87.50,12.50,51.50,49.50,97.15,5.14
+node scripts/conferir-tela.mjs --pais=us --esperado=87.50,12.50,51.50,49.50,97.15,5.14
 ```
 
 Ele abre as três telas, espera o fetch do cliente pousar e procura cada valor no TEXTO RENDERIZADO. ⚠️ **Passar os valores na convenção do INGLÊS**, com ponto decimal: ele converte sozinho para vírgula no pt-BR e no ES.
@@ -460,7 +460,41 @@ De 06/Set a 19/Out a linha aqui dizia *"ele confere NÚMERO, não etiqueta: valo
 
 🔑 **Por que os rótulos estão num registro e não importados do componente:** o `const T` de `UsMarketSection.tsx` não é exportado, e importar um componente React num script de linha arrastaria JSX e a árvore do Next. **A cópia é aceitável aqui por uma razão só: ela não pode envelhecer em silêncio.** Toda âncora é procurada na tela VIVA em cada passada, e âncora não encontrada REPROVA o idioma nomeando-a. Tradução editada derruba o portão na primeira execução, em vez de deixá-lo verde sobre um rótulo que ninguém mais usa.
 
-🧪 `node scripts/testar-conferir-tela.mjs`, de 20 para **62 asserções**, com **14 de 14 mutações reprovadas**. 🔴 **E ele estava FORA do CI desde 06/Set**, com as 20 asserções originais nunca rodando lá: entrou junto. ⚠️ Uma mutação sobreviveu na primeira rodada e era lacuna real do teste: eu conferia o `motivo` e não o `ok`, então devolver `ok: true` com o motivo certo passava.
+🧪 `node scripts/testar-conferir-tela.mjs`, de 20 para **104 asserções**, com **14 de 14 mutações reprovadas** no portão da etiqueta e **12 de 12** no da folga. ⚠️ **Na primeira rodada da folga, DUAS não aplicaram** por escape de barra no meu arnês, e mutação não aplicada parece mutação morta: as âncoras passaram a ser recortadas do PRÓPRIO arquivo. 🔴 **E ele estava FORA do CI desde 06/Set**, com as 20 asserções originais nunca rodando lá: entrou junto. ⚠️ Uma mutação sobreviveu na primeira rodada e era lacuna real do teste: eu conferia o `motivo` e não o `ok`, então devolver `ok: true` com o motivo certo passava.
+
+### 🎯 A FOLGA DE OSCILAÇÃO, régua de 20/Out/2026, e ela nasceu de uma REPROVAÇÃO FALSA
+
+🔴 **A ETAPA 5 reprovou os três idiomas sem nada estar errado em lugar nenhum.** A trava da ETAPA 1.7 certificou o contrato de calendário em **98.85** às 22:45:16Z; a tela, lida minutos depois, trazia **98,80**, e o conferidor comparava `achado !== esperado`, byte a byte.
+
+📏 **O diagnóstico, antes de chamar de defeito:** três leituras com `fresh=1` deram 98.85 com o `fetchedAt` andando, e a rota **sem** `fresh=1`, que é a que a tela consome, buscou **ao vivo** (`idade 0.0 min`) e devolveu 98.80. O livro oscilou 0.05pp entre as duas horas. **A tela estava certa e a certificada também.**
+
+🕳️ **O defeito era de FORMA, e é de uma classe que a casa persegue:** a cadeia tinha **duas tolerâncias para a mesma grandeza**, e a apertada era a **última**. A trava declara 0.20pp e, dentro disso, chama duas leituras de *um preço*. O portão seguinte exigia igualdade de byte. Então a trava podia certificar um valor que o portão seguinte reprovaria sempre que o livro respirasse.
+
+⛔ **E a folga NÃO se calibra na série.** A primeira tentativa foi medir o passo do livro no backup, e ela é cega **duas vezes**:
+
+| | medido em 20/Out, série inteira |
+|---|---|
+| intervalo mediano entre capturas | **270 min**, não os 30 que se supõe |
+| passos com até 35 min | **22 de 357**, e todos `0.00pp` |
+| resolução do valor gravado | **0.10pp** (`99.1`, `99.0`, `98.9`) |
+| passo dos 4 livros de partido | granularidade de **1.00pp** |
+| passo do `no-prazo` | p90 **0.20pp**, o único dos 5 abaixo do ponto inteiro |
+
+🔑 **A série não consegue nem REPRESENTAR o 98.85.** Perguntar a ela o que acontece em 15 minutos devolve `0.00pp` sobre 22 pontos, o que se lê como "o livro não oscila" e é **quantização**. É a mesma armadilha do limiar da cauda de 18/Out, que supunha grade de 30 min contra uma grade medida de 4,5h. ✅ **Quem calibrou foi a medição AO VIVO**, e a folga não é número novo: é a que a cadeia já declarava.
+
+✅ **O conserto tem DONO único**, `scripts/lib/tolerancia-de-preco.mjs`, e a trava de captura passou a **importar** dele. Duas cópias da mesma regra é o defeito que esta casa vive evitando, e eu ia criar a segunda.
+
+🔒 **A trava de desenho, que é o que torna isto seguro:** a folga vale **só onde a posição está presa pelo rótulo**. A busca em texto livre segue **EXATA**, de propósito, porque o painel imprime dezenas de números e *"existe algum número a 0.20pp disto em algum lugar da tela"* passa por acaso. A mutação que afrouxa a busca solta está plantada e reprova.
+
+📌 **E passar por folga não passa CALADO:**
+
+| saída | o que quer dizer |
+|---|---|
+| `etiqueta 6/6` sem linha extra | os seis bateram **exatos** |
+| `🎯 tela 98,80 contra certificado, 0.05pp DENTRO da folga` | passou, e o desvio está **impresso**. Desvio que não aparece no relatório vira crença |
+| `sob o rótulo veio X, esperado Y · 1.85pp fora, folga 0.2pp` | reprovou, e a linha diz o **tamanho** |
+
+⚠️ **O `exato` mede a FORMA, não o valor:** `98,8` e `98,80` são o mesmo número escrito de dois jeitos, e a tela que perder a segunda decimal sai marcada. Essa asserção nasceu de uma **mutação sobrevivente**.
 
 🇧🇷 **O `--pais=br` não tem registro e segue conferindo só o número**, declarando `etiqueta NÃO conferida` na saída em vez de dar a impressão de ter conferido.
 

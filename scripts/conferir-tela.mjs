@@ -35,6 +35,7 @@
  * Sai 1 quando algum idioma não traz algum dos valores esperados.
  */
 import { chromium } from 'playwright'
+import { dentroDaFolga, TOLERANCIA_PP } from './lib/tolerancia-de-preco.mjs'
 import { pathToFileURL } from 'url'
 import { baseDeLeitura } from './lib/base-afos.mjs'
 
@@ -141,8 +142,18 @@ export function valorSobOsRotulos(texto, ancoras, valor, locale) {
   const achado = primeiroNumero(txt.slice(pos))
   if (achado === null) return { ok: false, motivo: "SEM_NUMERO_DEPOIS" }
   const esperado = naConvencao(valor, locale)
-  if (achado !== esperado) return { ok: false, motivo: "OUTRO_NUMERO", encontrado: achado, esperado }
-  return { ok: true, encontrado: achado }
+  // 🎯 A folga vive num DONO só, `lib/tolerancia-de-preco.mjs`, e é a MESMA que a
+  //    trava de captura declara. Até 20/Out isto era `achado !== esperado`, byte
+  //    a byte, e a cadeia tinha duas tolerâncias para a mesma grandeza, com a
+  //    apertada por ÚLTIMO: a trava certificou o calendário em 98.85 e a tela
+  //    trazia 98.80, com a rota buscada ao vivo. Nada estava errado.
+  // 🔒 Aqui a folga é segura porque o RÓTULO prende a posição. A busca em texto
+  //    livre segue exata, de propósito: ver `dentroDaFolga`.
+  const f = dentroDaFolga(achado, esperado, locale)
+  if (!f.ok) return { ok: false, motivo: "OUTRO_NUMERO", encontrado: achado, esperado, driftPp: f.driftPp }
+  // ⚠️ Passar por folga não é passar CALADO: o drift sai impresso. Desvio que
+  //    não aparece no relatório é desvio que vira crença.
+  return { ok: true, encontrado: achado, exato: f.exato, driftPp: f.driftPp }
 }
 
 
@@ -212,15 +223,28 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
       continue
     }
 
-    // 1) o número CHEGOU à tela? (régua de 06/Set)
-    const faltando = ESPERADO.filter((v) => !achou(texto, v, locale))
-    // 2) 🏷️ e ele está SOB O RÓTULO DELE? (régua de 19/Out)
-    //    ⛔ O segundo não substitui o primeiro: "ausente da tela" e "presente sob
-    //       o rótulo errado" são defeitos diferentes e pedem ações diferentes.
+    // 1) 🏷️ o número está SOB O RÓTULO DELE? (régua de 19/Out)
+    //    ⛔ Continua portão PRÓPRIO: "ausente da tela" e "presente sob o rótulo
+    //       errado" são defeitos diferentes e pedem ações diferentes.
     const etiquetas = COM_ETIQUETA
       ? ESPERADO.map((v, i) => ({ chave: CONTRATOS[i].chave, descricao: CONTRATOS[i].descricao, r: valorSobOsRotulos(texto, CONTRATOS[i].ancoras[locale], v, locale) }))
       : []
     const etiquetaMa = etiquetas.filter((e) => !e.r.ok)
+    // 🎯 Passou sob o rótulo com o livro OSCILADO. Um fato, uma linha.
+    const porFolga = etiquetas.filter((e) => e.r.ok && e.r.exato === false)
+
+    // 2) o número CHEGOU à tela? (régua de 06/Set)
+    //    ⛔ Esta busca é EXATA e fica exata: em texto livre a folga passaria por
+    //       acaso, porque o painel imprime dezenas de números e algum deles está
+    //       sempre a 0.20pp de alguma coisa.
+    //    🔑 Mas valor já confirmado SOB O RÓTULO não conta como ausente: o rótulo
+    //       prende a posição, então é prova mais forte que a busca solta. Contar
+    //       os dois faria UM fato, o livro ter oscilado, sair como 2 defeitos.
+    const faltando = ESPERADO.filter((v, i) => {
+      if (achou(texto, v, locale)) return false
+      const e = etiquetas[i]
+      return !(e && e.r.ok)
+    })
     const icone = faltando.length || etiquetaMa.length ? '🔴' : '✅'
     const sufixo = COM_ETIQUETA ? ` · etiqueta ${etiquetas.length - etiquetaMa.length}/${etiquetas.length}` : ' · etiqueta NÃO conferida'
     console.log(`   ${icone} ${locale.padEnd(6)} HTTP ${status} · ${texto.length} chars renderizados · ${ESPERADO.length - faltando.length}/${ESPERADO.length}${sufixo}`)
@@ -232,10 +256,14 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
         console.log(`        🏷️ ${e.chave}: ÂNCORA AUSENTE na tela, ${JSON.stringify(e.r.ancora)}`)
         console.log(`           o rótulo mudou de texto? o registro é scripts/lib/rotulos-do-painel-us.mjs`)
       } else if (e.r.motivo === 'OUTRO_NUMERO') {
-        console.log(`        🏷️ ${e.chave}: sob o rótulo veio ${e.r.encontrado}, esperado ${e.r.esperado}  (${e.descricao})`)
+        const dr = e.r.driftPp === null || e.r.driftPp === undefined ? '' : ` · ${e.r.driftPp.toFixed(2)}pp fora, folga ${TOLERANCIA_PP}pp`
+        console.log(`        🏷️ ${e.chave}: sob o rótulo veio ${e.r.encontrado}, esperado ${e.r.esperado}${dr}  (${e.descricao})`)
       } else {
         console.log(`        🏷️ ${e.chave}: ${e.r.motivo}`)
       }
+    }
+    for (const e of porFolga) {
+      console.log(`        🎯 ${e.chave}: tela ${e.r.encontrado} contra certificado, ${e.r.driftPp.toFixed(2)}pp DENTRO da folga de ${TOLERANCIA_PP}pp  (${e.descricao})`)
     }
     if (faltando.length || etiquetaMa.length) idiomasComFalha++
     await pag.close()
