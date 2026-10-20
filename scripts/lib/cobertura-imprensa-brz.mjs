@@ -92,6 +92,13 @@ export const CASAS_BRZ = [
 // Arrow" (91 itens no Google News, quase todos do Rio), e o cache de 02 a 15/Out
 // tinha 0. Alvo pelo nome composto: "Vetor" solto é palavra comum.
 { registro: /vetor arrow/i, nome: 'Vetor Arrow', busca: '"Vetor Arrow"', alvos: [palavra('vetor arrow')] },
+// 20/Out/2026: as duas entraram pelo detector, gravadas pelo cron das 06:00Z.
+// COLECTTA (BR056012026, n=3.000, campo 23/Out, div 24/Out): 0 itens no cache de
+// outubro inteiro. SIMPLEX (BR018232026, n=1.200, campo 19 a 23/Out, div 24/Out):
+// 1 item em outubro, e é da casa ("Simplex chega mais perto do resultado em
+// Pernambuco", Jamildo). "Simplex" solto não colide com nada no cache medido.
+{ registro: /colectta/i, nome: 'Colectta', busca: '"Colectta"', alvos: [palavra('colectta')] },
+{ registro: /simplex/i, nome: 'Simplex', busca: '"Simplex" pesquisa', alvos: [palavra('simplex')] },
   { registro: /indexa/i, nome: 'Indexa', busca: '"Instituto Indexa"', alvos: [palavra('indexa')] },
   { registro: /ideia|canal meio/i, nome: 'Ideia/Canal Meio', busca: '"Canal Meio"', alvos: [palavra('ideia'), palavra('canal meio')] },
   // 🔴⭐ A ENTRADA QUE PROVA POR QUE A TABELA É EXPLÍCITA, medida em 18/Set/2026.
