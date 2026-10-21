@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-20",
-  "fetchedAt": "2026-10-20T22:19:56.730Z",
+  "lastUpdate": "2026-10-21",
+  "fetchedAt": "2026-10-21T18:20:37.621Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,7 +47,7 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-20",
+    "desde": "2026-09-21",
     "nPesquisas": 34,
     "tratamentoDoIndeciso": [
       {
@@ -140,6 +140,14 @@
       }
     ],
     "incluidas": [
+      {
+        "key": "Reuters/Ipsos|2026-10-19",
+        "instituto": "Reuters/Ipsos",
+        "campoFim": "2026-10-19",
+        "amostraTipo": "RV",
+        "dem": 47,
+        "rep": 35
+      },
       {
         "key": "ActiVote|2026-10-14",
         "instituto": "ActiVote",
@@ -325,6 +333,14 @@
         "rep": 39
       },
       {
+        "key": "GBAO (D)|2026-09-24",
+        "instituto": "GBAO (D)",
+        "campoFim": "2026-09-24",
+        "amostraTipo": "RV",
+        "dem": 50,
+        "rep": 41
+      },
+      {
         "key": "Rasmussen Reports (R)|2026-09-23",
         "instituto": "Rasmussen Reports (R)",
         "campoFim": "2026-09-23",
@@ -396,22 +412,6 @@
         "amostraTipo": "LV",
         "dem": 52,
         "rep": 42
-      },
-      {
-        "key": "Morning Consult|2026-09-20",
-        "instituto": "Morning Consult",
-        "campoFim": "2026-09-20",
-        "amostraTipo": "LV",
-        "dem": 50,
-        "rep": 43
-      },
-      {
-        "key": "Reuters/Ipsos|2026-09-20",
-        "instituto": "Reuters/Ipsos",
-        "campoFim": "2026-09-20",
-        "amostraTipo": "RV",
-        "dem": 43,
-        "rep": 35
       }
     ],
     "excluidasPorInstrumento": [
@@ -486,10 +486,10 @@
         "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
       }
     ],
-    "nInstitutos": 26,
-    "dem": 49.88,
-    "rep": 42.35,
-    "vantagemDem": 7.53,
+    "nInstitutos": 27,
+    "dem": 50,
+    "rep": 42.29,
+    "vantagemDem": 7.71,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
@@ -503,6 +503,7 @@
       "Echelon Insights",
       "Emerson College",
       "Focaldata",
+      "GBAO (D)",
       "Harvard/Harris Poll/HarrisX",
       "I&I/TIPP Insights (R)",
       "Impact Research (D)/National Research Inc. (R)",
@@ -521,14 +522,14 @@
     ]
   },
   "qualidade": {
-    "linhasLidas": 486,
-    "publicadas": 499,
+    "linhasLidas": 489,
+    "publicadas": 502,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 486,
+    "doIndice": 489,
     "curadas": 13,
     "curadasDescartadasPorDuplicidade": 17
   },
@@ -580,6 +581,36 @@
     ]
   },
   "polls": [
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-10-16",
+      "campoFim": "2026-10-19",
+      "amostra": 1279,
+      "amostraTipo": "RV",
+      "margemErro": 2.4,
+      "dem": 47,
+      "rep": 35,
+      "outros": 19,
+      "vantagemDem": 12,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-10/Reuters%20Ipsos%20News%20Issue%20Survey%20October%202026%20Topline_2.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-10-16",
+      "campoFim": "2026-10-19",
+      "amostra": 1679,
+      "amostraTipo": "A",
+      "margemErro": 2.8,
+      "dem": 40,
+      "rep": 29,
+      "outros": 31,
+      "vantagemDem": 11,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-10/Reuters%20Ipsos%20News%20Issue%20Survey%20October%202026%20Topline_2.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
     {
       "instituto": "RMG Research",
       "campoInicio": "2026-10-13",
@@ -1057,6 +1088,21 @@
       "outros": 21,
       "vantagemDem": 11,
       "fontePrimaria": "https://angusreid.us/wp-content/uploads/2026/09/2026.09.28_Trump_Midterms.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "GBAO (D)",
+      "campoInicio": "2026-09-17",
+      "campoFim": "2026-09-24",
+      "amostra": 2000,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 50,
+      "rep": 41,
+      "outros": 10,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://www.thirdway.org/memo/voters-are-clear-costs-are-the-signal",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
