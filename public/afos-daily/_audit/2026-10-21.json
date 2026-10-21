@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-21",
+  "refetch": {
+    "fetchedAt": "2026-10-21T21:37:49Z",
+    "flavio": 79.2,
+    "lula": 20.5,
+    "baselineConfirmada": "2026-10-21T21:28:33.543Z",
+    "flavioBase": 78.7,
+    "lulaBase": 21.5,
+    "volTotalPresidencialUSD": 190930000,
+    "rebaseline": false,
+    "motivo": "o gate disparou (Lula -1,00pp contra o painel das 18:28), mas as duas travas seguintes não confirmaram preço novo (21:37-21:45Z e 21:46-21:54Z); pela regra das duas rodadas, a daily publica a confirmada das 18:28 BRT, a mesma do painel; variação contra a confirmada de 20/Out 19:55"
+  },
+  "factCheck": [
+    { "evento": "Quaest BR-08535: 45 x 44 total, campo 17 a 20/Out", "data": "2026-10-21", "fontes": ["G1", "Metrópoles", "Valor"], "decisao": "incorporar" },
+    { "evento": "Meio/Ideia BR-08251: 48 x 46 total, 51,1 x 48,9 válidos, campo 15 a 19/Out", "data": "2026-10-21", "fontes": ["Estadão", "CNN Brasil", "O Globo"], "decisao": "incorporar" },
+    { "evento": "Palver BR-04612: 50 x 48 total, 51 x 49 válidos", "data": "2026-10-21", "fontes": ["Congresso em Foco", "Times Brasil"], "decisao": "incorporar" },
+    { "evento": "Futura/100% Cidades BR-06614: 48,9 x 46,8 total, campo 19 e 20/Out, primeira com campo inteiro pós-debate", "data": "2026-10-21", "fontes": ["Rádio Itatiaia", "Rádio Corredor", "TradeMap"], "decisao": "incorporar" },
+    { "evento": "Veritá BR-06396: 49,7 x 48,2 total, 50,7 x 49,3 válidos", "data": "2026-10-21", "fontes": ["R7", "CNN Brasil", "Jornal Razão"], "decisao": "incorporar" },
+    { "evento": "Flávio aceita abrir sigilos com condições formalizadas no TSE; Marcola = ex-chefe de gabinete de Lula", "data": "2026-10-21", "fontes": ["CartaCapital", "Folha de S.Paulo", "Valor"], "decisao": "incorporar" },
+    { "evento": "Minuta de Mendonça sobre canais de WhatsApp; Kassio diz que não será analisada nesta eleição", "data": "2026-10-21", "fontes": ["Folha de S.Paulo", "O Globo"], "decisao": "incorporar" },
+    { "evento": "Especialistas da ONU sobre a atuação da Meta", "data": "2026-10-21", "fontes": ["CartaCapital", "Estadão"], "decisao": "incorporar como declaração atribuída" }
+  ],
+  "naoIncorporado": [
+    "Gerp tracking 15-19/Out sem registro no TSE: citado como fora da conta",
+    "PF investiga se Flávio é sócio oculto de bet: Folha citando revista",
+    "Campanha de Lula não se opõe às condições: só G1",
+    "TSE vai investigar promessa de prêmio em emendas: só VEJA",
+    "AtlasIntel Lula 49,2 x 42,9 (site de lixo) e Datafolha 52 x 48 (sem corpo)"
+  ],
+  "adversarial": {
+    "singleSource": "nenhuma de ato; atos com fonte única ficaram fora",
+    "numerical": "reconcile-claims: pares nome-número de pesquisa e a base 80,10% de 20/Out, legítimos",
+    "fontesInventadas": "nenhuma; 13 links resolvidos do cache pelo daily-links-brz",
+    "quotes": "nenhuma aspa literal",
+    "causacao": "nenhuma",
+    "verbos": "aceitou com condições, formalizou, redigiu minuta",
+    "correcoesAntesDoPreview": [
+      "Marcola identificado como ex-chefe de gabinete de Lula, não o líder do PCC",
+      "marcador da CartaCapital/ONU era âncora, não secundário",
+      "densidade de links 72% -> acima de 80% com link nas duas divergências sem fonte",
+      "200 mil usuários: EN e ES escritos com 'thousand'/'mil' para o gate numérico"
+    ]
+  },
+  "palavras": 1012,
+  "links": { "distintos": 13, "secundarios": 8, "pctSecundario": 62 },
+  "calendario": "calendario-pesquisas-brz.mjs --peca: 21 nacionais de 22 a 25/Out, 2 tiradas (Gerp BR-09327 pela data, Real Time BR-09670 pelo escopo)",
+  "wayback": "pausa de bloqueio em curso (429 em 20/Out), não sondado"
+}
