@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-20",
-  "fetchedAt": "2026-10-20T22:25:36.910Z",
+  "lastUpdate": "2026-10-21",
+  "fetchedAt": "2026-10-21T19:20:13.466Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,112 +113,112 @@
     }
   ],
   "qualidade": {
-    "lidos": 290,
-    "naLista": 117,
-    "foraDaLista": 173,
+    "lidos": 299,
+    "naLista": 124,
+    "foraDaLista": 175,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 0,
-    "veiculosRepresentados": 8,
+    "descartadosPorAcompanhamento": 5,
+    "veiculosRepresentados": 6,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [
       "feed:The Washington Post: HTTP 502"
     ],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 57,
+    "lidosEmFeedProprio": 56,
     "publicadosComLinkCanonico": 7,
     "publicadosViaGoogleNews": 3,
-    "publicadosPorDisputa": 10,
-    "publicadosPorMetodo": 0
+    "publicadosPorDisputa": 9,
+    "publicadosPorMetodo": 1
   },
   "itens": [
     {
-      "titulo": "Ohio governor’s race takes ugly turn with viral video featuring Acton’s mother",
-      "url": "https://thehill.com/homenews/campaign/6161344-ramaswamy-ohio-governor-race-controversy/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-10-20T22:05:29.000Z",
+      "titulo": "George W. Bush's brother says he voted for Talarico in Texas Senate race",
+      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/neil-bush-voted-for-james-talarico-texas-senate/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-21T19:09:25.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Trump says he will have spent $400m to support Republicans in midterms – US politics live",
-      "url": "https://www.theguardian.com/us-news/live/2026/oct/20/donald-trump-midterms-republicans-democrats-north-carolina-latest-updates",
+      "titulo": "Democrats have 11-point lead among likely voters as Trump’s approval rating craters – live",
+      "url": "https://www.theguardian.com/us-news/live/2026/oct/21/donald-trump-south-carolina-data-centers-midterms-ukraine-witkoff-russia-latest-news-updates",
       "casa": "The Guardian",
-      "publicadoEm": "2026-10-20T21:48:19.000Z",
+      "publicadoEm": "2026-10-21T19:00:57.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "metodo"
+    },
+    {
+      "titulo": "Elon Musk’s Super Pac spends $500,000 to back New York Republican in midterms",
+      "url": "https://www.theguardian.com/us-news/2026/oct/21/elon-musk-super-pac-new-york-midterms",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-10-21T18:55:24.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Analysis | Here’s what’s making the Kansas Senate race so competitive",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPUnlyQktfa0NpVVJ2akROb2hCdG5lV0YyT3d0T0k3S25TMGVNaEhlTGktR1QzTVZ6bEFGY0cxZk9fTk5tZE1LenFscl9yVTlSYUswSTRzXzRDY3VjZlVqVUNBNEo5QUtGV3FuV284bl9kcl9weXJXQjBqWndMVmpWUlJpNkdveWVJNW9ISVNkbV9HN2dfZEhCNjd6S2EtdXBBRzNMRkVIWUNCcUE?oc=5",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-10-20T21:48:03.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "North Carolina mail-in ballot restrictions to remain through midterms, judge rules",
-      "url": "https://thehill.com/homenews/state-watch/6161350-judge-upholds-nc-mailballot-rules/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-10-20T21:39:12.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "If Democrats Win Congress, Could the G.O.P. Refuse to Seat Them?",
-      "url": "https://www.nytimes.com/2026/10/20/us/politics/democrats-republicans-congress-midterm-elections.html",
+      "titulo": "Democrats Have a Wide Lead in Our New Poll as Trump Slides",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNSjlRVzRCNFM3NFMwM05YV1ZpQ2hoSXRKb01WUERQMllIaUhoRVZkcGJrQWEwUlpGY1M0S3dMVnMyT0lfZFpOdHkzT1JlWEpYNENUdzQ1Y0Nacnk5WThtUTlaSmFGRHZLZVo0LXR2X0RpMUR0Ml94ZUxUd2dqSFJwSk9Sczg?oc=5",
       "casa": "The New York Times",
-      "publicadoEm": "2026-10-20T21:32:34.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "U.S. Senate race in Minnesota moves toward GOP in new Cook rating",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNYnB1RGJieHVvWGxMV2RjOXhqOWpaN3cyV1NIYm10TGRaTkZkeFR2cFdiNjhOUklqUEFFRlB2aG9JamRKRTZYWHVVekY5dGF1MmRXeDZzTThqX09ZSW1xWFRDXzNBSGVCUkZhczVNdW01Wm5LaTBvU2RKbzhUdjJzWXFkYXZEeHQ2d1kxc3FQQlBrYmNraXdCS3loOUZFUU1PMHhnYzdqTGdOdmhYUVE?oc=5",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-10-20T21:31:46.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Explainer: Three issues defining the 2026 US midterm elections",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQLWRpTF93cTF0cl9YYWU4bDBNcHRtSmlaR21FemFtZ3BFZkFOWng3NjhtTHhQNWhtSnRUbm5TZTNld3ZUTmxWSDFRVXRzQTNHUElfU0pibVAtQWxPc3NIcjNjWkVnNG5kb24tN0NvU0VCbDl4OFpxRjc3VC1pTlRXb2hrbkVpaGJjRTFSS1p3TTdSclhVX2NF?oc=5",
-      "casa": "Reuters",
-      "publicadoEm": "2026-10-20T21:23:43.000Z",
+      "publicadoEm": "2026-10-21T18:42:16.000Z",
       "consulta": "midterms",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "Republican House candidate looking to flip Ohio seat says there’s an ‘upswell’ for change",
-      "url": "https://www.nbcnews.com/meet-the-press/video/republican-house-candidate-looking-to-flip-ohio-seat-says-there-s-an-upswell-for-change-271919173925",
-      "casa": "NBC News",
-      "publicadoEm": "2026-10-20T21:03:06.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Khanna says Trump will bomb Iran if Democrats win midterms: Sources",
-      "url": "https://www.newsnationnow.com/politics/ro-khanna-trump-bomb-iran-midterms/",
+      "titulo": "Marshall and Hamilton take debate stage in tight Kansas Senate race",
+      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/marshall-hamilton-final-debate-kansas-senate-race/",
       "casa": "NewsNation",
-      "publicadoEm": "2026-10-20T21:00:46.000Z",
+      "publicadoEm": "2026-10-21T18:40:31.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Democrat in Ohio governor's race pushes back against unattributed ad featuring her estranged mother",
-      "url": "https://abcnews.com/Politics/wireStory/democrat-ohio-governors-race-pushes-back-unattributed-ad-137424257",
-      "casa": "ABC News",
-      "publicadoEm": "2026-10-20T20:43:11.000Z",
+      "titulo": "U.S. to Tap Heating Oil Reserves Ahead of Midterm Elections",
+      "url": "https://www.nytimes.com/2026/10/21/business/heating-oil-emergency-reserve-prices.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-21T18:17:57.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "N.Y. congressional candidate Brad Lander says he was detained by IDF soldiers in West Bank",
+      "url": "https://www.nbcnews.com/now/video/n-y-congressional-candidate-brad-lander-says-he-was-detained-by-idf-in-west-bank-271978565751",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-21T17:42:43.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Montana Midterm Elections 2026: Key Races, Candidates and Past Results",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5sRVpNR3ZiQ2RBMEJZSzBrazZneVlmS2VFcERuVDdab190WkJvZ0Z0ek85SUF2TUhheWp1ak1pczBCSDE5MHlaei13WWZNRXk1cXVETHBHOVZ3TEpseDJNYmxVc0FESEw2b1gyckNKbmE?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-21T17:30:21.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Cooper holds 13-point lead over Whatley in NC Senate race: Poll",
+      "url": "https://thehill.com/homenews/campaign/6163192-north-carolina-senate-polling-data/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-10-21T17:04:04.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Troy Jackson lacks charisma. But in Maine’s Senate race, it may not matter.",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOR2k1NXZWSG5NWUxRb0hYeWtHSzBLUjB1Y1pRbUhWb1lCRkRXYVItVlVzWFQ3cm5LdzFUMFJmakpqOHV4RTJxYlRGOU0wdUlRNVlfaVZyZUpOUFl2ZUVMQ1dMVmVJam5PRnNvOHdzQVRzdF9yUjE5QVdlNnc0OE5pQzF3UHg1cHNkVUdpTXRSOXhXTXdBdHp5ODZYM3puMDNuTkVsLUd4SGFJdw?oc=5",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-10-21T16:00:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
       "trilho": "disputa"
     }
   ]
