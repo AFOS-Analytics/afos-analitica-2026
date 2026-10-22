@@ -129,6 +129,17 @@ export const EDICOES = {
     tese: (q) =>
       `Two pollsters published both voter screens this week.${q ? ' ' : '<br>'}The screen moved them three points, in opposite directions.`,
   },
+  12: {
+    contrato: 'US Senate control contract',
+    semana: 'week of October 15 to October 22, 2026',
+    big: '68.50%',
+    bigSub: (q) => `where Senate Democrats stood${q ? ' ' : '<br>'}on October 22, the highest point${q ? ' ' : '<br>'}since the series began on April 14`,
+    cardN: '31.50%',
+    cardL: (q) => `where Senate Republicans stood,${q ? ' ' : '<br>'}the lowest since April 14`,
+    cardS: 'five raw points came in the last two days',
+    tese: (q) =>
+      `The Senate price moved five points in two days.${q ? ' ' : '<br>'}It did it on a third of the House's new money.`,
+  },
 }
 
 /** Os três formatos. `quadrado` liga o refluxo vertical. */
