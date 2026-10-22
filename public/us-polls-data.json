@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-21",
-  "fetchedAt": "2026-10-21T18:20:37.621Z",
+  "lastUpdate": "2026-10-22",
+  "fetchedAt": "2026-10-22T20:34:38.084Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,8 +47,8 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-21",
-    "nPesquisas": 34,
+    "desde": "2026-09-22",
+    "nPesquisas": 32,
     "tratamentoDoIndeciso": [
       {
         "serie": "Angus Reid Global",
@@ -141,12 +141,36 @@
     ],
     "incluidas": [
       {
+        "key": "ActiVote|2026-10-21",
+        "instituto": "ActiVote",
+        "campoFim": "2026-10-21",
+        "amostraTipo": "LV",
+        "dem": 53,
+        "rep": 47
+      },
+      {
         "key": "Reuters/Ipsos|2026-10-19",
         "instituto": "Reuters/Ipsos",
         "campoFim": "2026-10-19",
         "amostraTipo": "RV",
         "dem": 47,
         "rep": 35
+      },
+      {
+        "key": "The New York Times/Siena University|2026-10-19",
+        "instituto": "The New York Times/Siena University",
+        "campoFim": "2026-10-19",
+        "amostraTipo": "LV",
+        "dem": 52,
+        "rep": 41
+      },
+      {
+        "key": "CNN/SSRS|2026-10-18",
+        "instituto": "CNN/SSRS",
+        "campoFim": "2026-10-18",
+        "amostraTipo": "RV",
+        "dem": 49,
+        "rep": 39
       },
       {
         "key": "ActiVote|2026-10-14",
@@ -371,47 +395,6 @@
         "amostraTipo": "LV",
         "dem": 55,
         "rep": 45
-      },
-      {
-        "key": "ActiVote|2026-09-21",
-        "instituto": "ActiVote",
-        "campoFim": "2026-09-21",
-        "amostraTipo": "LV",
-        "dem": 53,
-        "rep": 47
-      },
-      {
-        "key": "Echelon Insights|2026-09-21",
-        "instituto": "Echelon Insights",
-        "campoFim": "2026-09-21",
-        "amostraTipo": "LV",
-        "dem": 51,
-        "rep": 43
-      },
-      {
-        "key": "Impact Research (D)/National Research Inc. (R)|2026-09-21",
-        "instituto": "Impact Research (D)/National Research Inc. (R)",
-        "institutoNoIndice": "Impact Research (D)/ National Research Inc. (R)",
-        "campoFim": "2026-09-21",
-        "amostraTipo": "RV",
-        "dem": 50,
-        "rep": 42
-      },
-      {
-        "key": "KFF|2026-09-21",
-        "instituto": "KFF",
-        "campoFim": "2026-09-21",
-        "amostraTipo": "RV",
-        "dem": 45,
-        "rep": 35
-      },
-      {
-        "key": "Strength In Numbers/Verasight|2026-09-21",
-        "instituto": "Strength In Numbers/Verasight",
-        "campoFim": "2026-09-21",
-        "amostraTipo": "LV",
-        "dem": 52,
-        "rep": 42
       }
     ],
     "excluidasPorInstrumento": [
@@ -470,25 +453,11 @@
         "medidoEm": "2026-09-22",
         "ressalva": "Asked using the names of candidates running in the respondent’s district of residence",
         "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
-      },
-      {
-        "instituto": "The Economist/YouGov",
-        "campoInicio": "2026-09-18",
-        "campoFim": "2026-09-21",
-        "amostraTipo": "LV",
-        "dem": 52,
-        "rep": 38,
-        "tipo": "NOMINAL",
-        "descricao": "cédula com os NOMES dos candidatos do distrito do entrevistado, e não a pergunta genérica",
-        "desde": "2026-09-04",
-        "medidoEm": "2026-09-22",
-        "ressalva": "Asked using the names of candidates running in the respondent’s district of residence",
-        "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
       }
     ],
-    "nInstitutos": 27,
-    "dem": 50,
-    "rep": 42.29,
+    "nInstitutos": 25,
+    "dem": 50.09,
+    "rep": 42.38,
     "vantagemDem": 7.71,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
@@ -497,39 +466,37 @@
       "Angus Reid Global",
       "Beacon Research (D)/ Shaw & Co. Research (R)",
       "CBS News/YouGov",
+      "CNN/SSRS",
       "Centerline Research & Strategy",
       "Change Research (D)",
       "Cygnal (R)",
-      "Echelon Insights",
       "Emerson College",
       "Focaldata",
       "GBAO (D)",
       "Harvard/Harris Poll/HarrisX",
       "I&I/TIPP Insights (R)",
-      "Impact Research (D)/National Research Inc. (R)",
-      "KFF",
       "McLaughlin & Associates (R)",
       "Morning Consult",
       "Quinnipiac University",
       "RMG Research",
       "Rasmussen Reports (R)",
       "Reuters/Ipsos",
-      "Strength In Numbers/Verasight",
       "SurveyMonkey",
       "The Argument/Verasight",
+      "The New York Times/Siena University",
       "The Washington Post/ABC News/Ipsos",
       "TrueDot"
     ]
   },
   "qualidade": {
-    "linhasLidas": 489,
-    "publicadas": 502,
+    "linhasLidas": 493,
+    "publicadas": 506,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 489,
+    "doIndice": 493,
     "curadas": 13,
     "curadasDescartadasPorDuplicidade": 17
   },
@@ -582,6 +549,21 @@
   },
   "polls": [
     {
+      "instituto": "ActiVote",
+      "campoInicio": "2026-10-15",
+      "campoFim": "2026-10-21",
+      "amostra": 1000,
+      "amostraTipo": "LV",
+      "margemErro": 3.1,
+      "dem": 53,
+      "rep": 47,
+      "outros": null,
+      "vantagemDem": 6,
+      "fontePrimaria": "https://www.activote.net/polls/generic-ballot/2026-10-21/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
       "instituto": "Reuters/Ipsos",
       "campoInicio": "2026-10-16",
       "campoFim": "2026-10-19",
@@ -608,6 +590,51 @@
       "outros": 31,
       "vantagemDem": 11,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-10/Reuters%20Ipsos%20News%20Issue%20Survey%20October%202026%20Topline_2.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "The New York Times/Siena University",
+      "campoInicio": "2026-10-12",
+      "campoFim": "2026-10-19",
+      "amostra": 3494,
+      "amostraTipo": "LV",
+      "margemErro": 1.9,
+      "dem": 52,
+      "rep": 41,
+      "outros": 7,
+      "vantagemDem": 11,
+      "fontePrimaria": "https://www.nytimes.com/2026/10/21/upshot/times-siena-poll-trump-midterms.html",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "The New York Times/Siena University",
+      "campoInicio": "2026-10-12",
+      "campoFim": "2026-10-19",
+      "amostra": 3494,
+      "amostraTipo": "RV",
+      "margemErro": 1.9,
+      "dem": 51,
+      "rep": 39,
+      "outros": 10,
+      "vantagemDem": 12,
+      "fontePrimaria": "https://www.nytimes.com/2026/10/21/upshot/times-siena-poll-trump-midterms.html",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "CNN/SSRS",
+      "campoInicio": "2026-10-15",
+      "campoFim": "2026-10-18",
+      "amostra": 1206,
+      "amostraTipo": "RV",
+      "margemErro": 3.3,
+      "dem": 49,
+      "rep": 39,
+      "outros": 11,
+      "vantagemDem": 10,
+      "fontePrimaria": "https://www.documentcloud.org/documents/28825702-cnn-poll-conducted-by-ssrs-trump-midterms/?mode=document&q=candidate#document/",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
