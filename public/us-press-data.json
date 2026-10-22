@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-21",
-  "fetchedAt": "2026-10-21T19:20:13.466Z",
+  "lastUpdate": "2026-10-22",
+  "fetchedAt": "2026-10-22T19:20:13.577Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,110 +113,110 @@
     }
   ],
   "qualidade": {
-    "lidos": 299,
-    "naLista": 124,
-    "foraDaLista": 175,
+    "lidos": 296,
+    "naLista": 128,
+    "foraDaLista": 168,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 5,
+    "descartadosPorAcompanhamento": 3,
     "veiculosRepresentados": 6,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [
       "feed:The Washington Post: HTTP 502"
     ],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 56,
+    "lidosEmFeedProprio": 55,
     "publicadosComLinkCanonico": 7,
     "publicadosViaGoogleNews": 3,
-    "publicadosPorDisputa": 9,
-    "publicadosPorMetodo": 1
+    "publicadosPorDisputa": 10,
+    "publicadosPorMetodo": 0
   },
   "itens": [
     {
-      "titulo": "George W. Bush's brother says he voted for Talarico in Texas Senate race",
-      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/neil-bush-voted-for-james-talarico-texas-senate/",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-10-21T19:09:25.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Democrats have 11-point lead among likely voters as Trump’s approval rating craters – live",
-      "url": "https://www.theguardian.com/us-news/live/2026/oct/21/donald-trump-south-carolina-data-centers-midterms-ukraine-witkoff-russia-latest-news-updates",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-10-21T19:00:57.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "metodo"
-    },
-    {
-      "titulo": "Elon Musk’s Super Pac spends $500,000 to back New York Republican in midterms",
-      "url": "https://www.theguardian.com/us-news/2026/oct/21/elon-musk-super-pac-new-york-midterms",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-10-21T18:55:24.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Democrats Have a Wide Lead in Our New Poll as Trump Slides",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNSjlRVzRCNFM3NFMwM05YV1ZpQ2hoSXRKb01WUERQMllIaUhoRVZkcGJrQWEwUlpGY1M0S3dMVnMyT0lfZFpOdHkzT1JlWEpYNENUdzQ1Y0Nacnk5WThtUTlaSmFGRHZLZVo0LXR2X0RpMUR0Ml94ZUxUd2dqSFJwSk9Sczg?oc=5",
+      "titulo": "Hakeem Jeffries Launches Final Midterm Sprint for House Majority",
+      "url": "https://www.nytimes.com/2026/10/22/us/politics/hakeem-jeffries-hudson-valley-campaign-midterms.html",
       "casa": "The New York Times",
-      "publicadoEm": "2026-10-21T18:42:16.000Z",
+      "publicadoEm": "2026-10-22T18:49:51.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Key Trump Health Adviser Resigns Ahead of Midterm Elections",
+      "url": "https://www.nytimes.com/2026/10/22/us/politics/calley-means-resigns-rfk-trump.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-22T18:34:04.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Midterms 2026: Congress Polls and More",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9qM2xEd3lHR1dpU2xwT1JLcDEyUXlVS0xaeGptQzlscXNJSHc1VVVXQnZpY2FfN0NYdlFLMGZfWW9SSDFLT3NQVEF5cDlKZUlaVGNmZW5VUlR6LXI1MGtGeHJZWU1icGs?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-22T18:32:56.000Z",
       "consulta": "midterms",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "Marshall and Hamilton take debate stage in tight Kansas Senate race",
-      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/marshall-hamilton-final-debate-kansas-senate-race/",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-10-21T18:40:31.000Z",
+      "titulo": "The Methodist pastor who could flip Kansas and the Senate",
+      "url": "https://thehill.com/homenews/campaign/6166006-adam-hamilton-kansas-senate/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-10-22T17:45:26.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "U.S. to Tap Heating Oil Reserves Ahead of Midterm Elections",
-      "url": "https://www.nytimes.com/2026/10/21/business/heating-oil-emergency-reserve-prices.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-10-21T18:17:57.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "N.Y. congressional candidate Brad Lander says he was detained by IDF soldiers in West Bank",
-      "url": "https://www.nbcnews.com/now/video/n-y-congressional-candidate-brad-lander-says-he-was-detained-by-idf-in-west-bank-271978565751",
-      "casa": "NBC News",
-      "publicadoEm": "2026-10-21T17:42:43.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Montana Midterm Elections 2026: Key Races, Candidates and Past Results",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5sRVpNR3ZiQ2RBMEJZSzBrazZneVlmS2VFcERuVDdab190WkJvZ0Z0ek85SUF2TUhheWp1ak1pczBCSDE5MHlaei13WWZNRXk1cXVETHBHOVZ3TEpseDJNYmxVc0FESEw2b1gyckNKbmE?oc=5",
-      "casa": "NBC News",
-      "publicadoEm": "2026-10-21T17:30:21.000Z",
-      "consulta": "senate-races",
+      "titulo": "In reliably blue Minnesota, could Democrats do the unthinkable and lose a Senate seat?",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNRVlMY3hWYjZTcnl6dEhVTzVfQW9iMmhVVTlqaXVnSmxYWDFfanF2bWViSnEwY1EySXV1RkJCSzhhR2NBbGJEM0lwOVZ2WEhiTkZLS0pROVFINTJWYW1ZWmpvMWtNcGtpTWUxWGkwSUpVcWgxN3M0X0VKdHJHVjJqQ1AxMWZMR29QWkl6WVdPTHBBMTVRVFdTQzRsY3h4QVph?oc=5",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-10-22T17:34:00.000Z",
+      "consulta": "midterms",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "Cooper holds 13-point lead over Whatley in NC Senate race: Poll",
-      "url": "https://thehill.com/homenews/campaign/6163192-north-carolina-senate-polling-data/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-10-21T17:04:04.000Z",
+      "titulo": "AOC to campaign with Maine Senate candidate Troy Jackson",
+      "url": "https://www.newsnationnow.com/politics/aoc-campaign-troy-jackson-maine/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-22T17:33:21.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Troy Jackson lacks charisma. But in Maine’s Senate race, it may not matter.",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOR2k1NXZWSG5NWUxRb0hYeWtHSzBLUjB1Y1pRbUhWb1lCRkRXYVItVlVzWFQ3cm5LdzFUMFJmakpqOHV4RTJxYlRGOU0wdUlRNVlfaVZyZUpOUFl2ZUVMQ1dMVmVJam5PRnNvOHdzQVRzdF9yUjE5QVdlNnc0OE5pQzF3UHg1cHNkVUdpTXRSOXhXTXdBdHp5ODZYM3puMDNuTkVsLUd4SGFJdw?oc=5",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-10-21T16:00:00.000Z",
+      "titulo": "Poll chaplains to be deployed to battleground states",
+      "url": "https://www.newsnationnow.com/politics/poll-chaplains-battleground-states/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-22T17:26:17.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "How will Trump’s mass deportation agenda shape the US midterm elections? Your questions answered",
+      "url": "https://www.theguardian.com/us-news/live/2026/oct/21/immigration-ice-mass-deportation-trump-midterm-elections",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-10-22T17:17:44.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Biden-appointed judge blocks voter-fraud probes in battleground states just days before midterms",
+      "url": "https://www.foxnews.com/politics/biden-appointed-judge-blocks-voter-fraud-probes-battleground-states-days-before-midterms",
+      "casa": "Fox News",
+      "publicadoEm": "2026-10-22T16:53:13.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Republicans seek inroads with Black voters in Michigan’s tight Senate race",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNNEVYWDhhbDcySEdSdTkwLVhtZ3JoUWtJbjlyd1RCcVptRkxLZTNGd21GN2ZodjJpVVFva0pKNjRqTkhhUGFQQzFzam8yenRlVFpHTURVVVlsR21ZeUZTeWk2QmMzRjZoQVZOd0VEWWRfcG1NVEdrNWIyNmpYVWVFRTYxQkRKM3BFbU1BdE1RY29mTVhDUEJBSHZUaVN3bE43b1YxRElXaDJtc0pGdERZSw?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-22T15:24:10.000Z",
       "consulta": "senate-races",
       "origem": "google",
       "trilho": "disputa"
