@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-10-21T19:00:35.913Z",
+  "geradoEm": "2026-10-22T18:30:36.238Z",
   "observacao": "geradoEm usa o registro mais recente do banco, nao o relogio da maquina, para o backup ser reproduzivel e o diff ficar vazio quando nada mudou",
   "repositorioPublico": true,
   "tabelasExcluidasPorConterDadoPessoal": {
@@ -16,8 +16,8 @@
     "llmRun": "pode conter prompt com dado de usuário",
     "modelOutput": "pode conter resposta sobre dado de usuário"
   },
-  "totalLinhas": 129564,
-  "totalBytesComprimidos": 13652028,
+  "totalLinhas": 130757,
+  "totalBytesComprimidos": 13756111,
   "arquivos": [
     {
       "arquivo": "marketPrice/2026-04.csv.gz",
@@ -57,39 +57,39 @@
     },
     {
       "arquivo": "marketPrice/2026-10.csv.gz",
-      "linhas": 26644,
-      "sha256": "69faaa339df8ce3c",
-      "bytesGz": 1374226
+      "linhas": 27828,
+      "sha256": "ca302920cdfb2536",
+      "bytesGz": 1435028
     },
     {
       "arquivo": "marketOutcome/2026-04.csv.gz",
       "linhas": 171,
-      "sha256": "658bf7406b3e04cd",
-      "bytesGz": 8674
+      "sha256": "044d61b2bb020b12",
+      "bytesGz": 8650
     },
     {
       "arquivo": "marketOutcome/2026-05.csv.gz",
       "linhas": 5,
-      "sha256": "99f734ccfc79207e",
-      "bytesGz": 475
+      "sha256": "64964454d1516ac0",
+      "bytesGz": 474
     },
     {
       "arquivo": "marketOutcome/2026-06.csv.gz",
       "linhas": 8,
-      "sha256": "f8f3e4d3fb39ec90",
+      "sha256": "f83cacf737d3c4dc",
       "bytesGz": 789
     },
     {
       "arquivo": "marketOutcome/2026-07.csv.gz",
       "linhas": 60,
-      "sha256": "d21c5536160f88a6",
-      "bytesGz": 2544
+      "sha256": "6e1692afae904ad4",
+      "bytesGz": 2542
     },
     {
       "arquivo": "marketOutcome/2026-08.csv.gz",
       "linhas": 9,
-      "sha256": "77870913f302a802",
-      "bytesGz": 731
+      "sha256": "4c0700bbe8fe51a9",
+      "bytesGz": 730
     },
     {
       "arquivo": "marketOutcome/2026-09.csv.gz",
@@ -100,14 +100,14 @@
     {
       "arquivo": "marketOutcome/2026-10.csv.gz",
       "linhas": 3,
-      "sha256": "96d0ad51d2b4d51e",
-      "bytesGz": 355
+      "sha256": "c3bd6c4b541ad530",
+      "bytesGz": 353
     },
     {
       "arquivo": "market/2026-04.csv.gz",
       "linhas": 18,
-      "sha256": "f33a4313eced2441",
-      "bytesGz": 1807
+      "sha256": "bcca4a8607a155e3",
+      "bytesGz": 1810
     },
     {
       "arquivo": "market/2026-06.csv.gz",
@@ -118,14 +118,14 @@
     {
       "arquivo": "market/2026-07.csv.gz",
       "linhas": 7,
-      "sha256": "69c190a76f97501f",
-      "bytesGz": 886
+      "sha256": "74872992401130b8",
+      "bytesGz": 880
     },
     {
       "arquivo": "marketEvent/2026-04.csv.gz",
       "linhas": 8,
-      "sha256": "19757535cd476f51",
-      "bytesGz": 697
+      "sha256": "76f044abb2e95107",
+      "bytesGz": 702
     },
     {
       "arquivo": "marketEvent/2026-06.csv.gz",
@@ -136,8 +136,8 @@
     {
       "arquivo": "marketEvent/2026-07.csv.gz",
       "linhas": 15,
-      "sha256": "4e629518517c42cd",
-      "bytesGz": 1154
+      "sha256": "f8102be829e70d97",
+      "bytesGz": 1160
     },
     {
       "arquivo": "source/2026-04.csv.gz",
@@ -219,9 +219,9 @@
     },
     {
       "arquivo": "researchRun/2026-10.csv.gz",
-      "linhas": 84,
-      "sha256": "e47d0f5bdd325a0e",
-      "bytesGz": 3817
+      "linhas": 88,
+      "sha256": "7b9a4a29af27812a",
+      "bytesGz": 3983
     },
     {
       "arquivo": "researchFinding/2026-04.csv.gz",
@@ -303,9 +303,9 @@
     },
     {
       "arquivo": "analysisReport/2026-10.csv.gz",
-      "linhas": 111,
-      "sha256": "5f4001d81d7f0a6a",
-      "bytesGz": 941808
+      "linhas": 116,
+      "sha256": "79436510f7f5f827",
+      "bytesGz": 984945
     },
     {
       "arquivo": "crossSignalLink.csv.gz",
