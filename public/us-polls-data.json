@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-10-22",
-  "fetchedAt": "2026-10-22T20:34:38.084Z",
+  "fetchedAt": "2026-10-22T22:20:06.722Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -48,7 +48,7 @@
   "mediaAfos": {
     "janelaDias": 30,
     "desde": "2026-09-22",
-    "nPesquisas": 32,
+    "nPesquisas": 31,
     "tratamentoDoIndeciso": [
       {
         "serie": "Angus Reid Global",
@@ -155,14 +155,6 @@
         "amostraTipo": "RV",
         "dem": 47,
         "rep": 35
-      },
-      {
-        "key": "The New York Times/Siena University|2026-10-19",
-        "instituto": "The New York Times/Siena University",
-        "campoFim": "2026-10-19",
-        "amostraTipo": "LV",
-        "dem": 52,
-        "rep": 41
       },
       {
         "key": "CNN/SSRS|2026-10-18",
@@ -399,6 +391,20 @@
     ],
     "excluidasPorInstrumento": [
       {
+        "instituto": "The New York Times/Siena University",
+        "campoInicio": "2026-10-12",
+        "campoFim": "2026-10-19",
+        "amostraTipo": "LV",
+        "dem": 52,
+        "rep": 41,
+        "tipo": "NOMINAL",
+        "descricao": "cédula com os NOMES dos candidatos do distrito do entrevistado, e não a pergunta genérica",
+        "desde": "2026-10-12",
+        "medidoEm": "2026-10-22",
+        "ressalva": "Democrats lead Republicans by 10 points in a Congressional toss-up when we provided the names of every candidate",
+        "prova": "https://sri.siena.edu/2026/10/21/new-york-times-siena-national-survey/"
+      },
+      {
         "instituto": "The Economist/YouGov",
         "campoInicio": "2026-10-10",
         "campoFim": "2026-10-12",
@@ -455,10 +461,10 @@
         "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
       }
     ],
-    "nInstitutos": 25,
-    "dem": 50.09,
-    "rep": 42.38,
-    "vantagemDem": 7.71,
+    "nInstitutos": 24,
+    "dem": 50.03,
+    "rep": 42.42,
+    "vantagemDem": 7.61,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
@@ -483,7 +489,6 @@
       "Reuters/Ipsos",
       "SurveyMonkey",
       "The Argument/Verasight",
-      "The New York Times/Siena University",
       "The Washington Post/ABC News/Ipsos",
       "TrueDot"
     ]
