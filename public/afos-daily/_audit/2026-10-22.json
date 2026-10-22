@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-22",
+  "refetch": {
+    "fetchedAt": "2026-10-22T21:16:33Z",
+    "flavio": 77.65,
+    "lula": 22.5,
+    "baselineConfirmada": "2026-10-22T20:56:46.293Z",
+    "flavioBase": 77.7,
+    "lulaBase": 22.5,
+    "volTotalPresidencialUSD": 191890000,
+    "rebaseline": false,
+    "motivo": "nenhuma variação chegou a 0,50pp contra a confirmada das 17:56 BRT do painel; a daily publica essa confirmada, com volume total e inflação da leitura das 18:16 BRT; variação contra a confirmada de 21/Out 18:28"
+  },
+  "factCheck": [
+    { "evento": "PoderData/Aya BR-07926: 49 x 48 total, 51 x 49 válidos, campo 19 a 21/Out", "data": "2026-10-22", "fontes": ["CNN Brasil", "SBT News", "Exame"], "decisao": "incorporar" },
+    { "evento": "Indexa/Broadcast BR-02348: 45,2 x 44,1 total, 50,6 x 49,4 válidos, campo 20 e 21/Out", "data": "2026-10-22", "fontes": ["Estadão", "Gazeta do Povo", "JOTA"], "decisao": "incorporar" },
+    { "evento": "Gerp BR-03835: 50 x 45 total, 53 x 47 válidos; divulgações dão campo 19 a 21/Out, TSE 17 a 20/Out", "data": "2026-10-21", "fontes": ["Exame", "CNN Brasil", "Diário do Poder"], "decisao": "incorporar" },
+    { "evento": "Lula e Flávio assinam no TSE termo de abertura dos sigilos; liberação depende de Mendonça", "data": "2026-10-22", "fontes": ["Congresso em Foco (corpo lido)", "Valor", "Folha de S.Paulo", "JOTA", "Exame"], "decisao": "incorporar" },
+    { "evento": "Campanha de Flávio escala Deltan Dallagnol para analisar documentos de Lula", "data": "2026-10-22", "fontes": ["Valor", "O Globo"], "decisao": "incorporar atribuído ao Valor (um só grupo)" },
+    { "evento": "Corregedor do TSE, Ricardo Villas Bôas Cueva, nega liminar contra mensagens do governo por WhatsApp e Gov.br", "data": "2026-10-22", "fontes": ["CartaCapital (corpo lido)", "G1", "CNN Brasil", "Estadão"], "decisao": "incorporar" },
+    { "evento": "Kassio Nunes Marques dá 24 horas para a Meta apresentar relatório sobre o canal Exército do Lula", "data": "2026-10-22", "fontes": ["Folha de S.Paulo", "Valor", "Estadão", "CartaCapital"], "decisao": "incorporar" },
+    { "evento": "Parecer da PGE: Meta descumpriu parte das determinações do TSE", "data": "2026-10-22", "fontes": ["Valor"], "decisao": "NÃO incorporar (fonte única)" },
+    { "evento": "Defesa de Lula pede desvinculação do canal Exército do Lula da campanha", "data": "2026-10-22", "fontes": ["G1"], "decisao": "NÃO incorporar (fonte única)" },
+    { "evento": "Datafolha nacional BR-09709 com divulgação registrada para 22/Out", "data": "2026-10-22", "fontes": [], "decisao": "sem número até 18:22 BRT; texto cita só o registro, sem antecipar resultado" }
+  ],
+  "adversarial": {
+    "singleSource": "Dallagnol, atribuído ao Valor (grupo Globo); demais alegações com 2+ grupos",
+    "numerical": "reconcile-claims: só 78,70% (base de 21/Out, citada de propósito); gate de tradução 60/60/60 números",
+    "fontesInventadas": "3 conferidas no corpo: Congresso em Foco, CartaCapital, CNN/SBT",
+    "quotes": "nenhuma",
+    "causacao": "nenhuma",
+    "verbos": "negou em decisão liminar; assinaram; deu 24 horas. Retirado 'sempre perto da margem': na PoderData Lula andou 2 pontos com margem de 1,6",
+    "decisao": "prosseguir"
+  },
+  "palavras": { "pt-BR": 956, "en": 920, "es": 1031 },
+  "links": { "total": 19, "ancora": 3, "secundario": 16, "pctSecundario": 84 },
+  "wayback": "pausa de bloqueio de host em curso (medido 20/Out 23:12Z), não sondado"
+}
