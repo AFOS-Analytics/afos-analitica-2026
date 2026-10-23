@@ -18,7 +18,7 @@ const candidates: CandidateProfile[] = [
     polymarket: "22,50%",
     poll: "45,16% na urna do 1º turno",
     position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
-    risk: "SOBE 1,00pp NO CONTRATO DE VENCEDOR, em 22,50% (vol USD 28,54M acumulado), leitura confirmada de 22/Out, 17:56 BRT, contra a leitura confirmada de 21/Out às 18:28 BRT, publicada na rodada anterior. O vão de Flávio Bolsonaro sobre ele vai de 57,20pp para 55,20pp. Fica atrás nas três nacionais mais recentes, com 48% contra 49% na PoderData/Aya e 44,1% contra 45,2% na Indexa/Broadcast, e as duas Vox Brasil são as únicas nacionais pós-urna com ele à frente.",
+    risk: "NÃO TEM PREÇO NOVO NO CONTRATO DE VENCEDOR, porque esta rodada não publica preço novo para o contrato de vencedor; segue em 22,50% (vol USD 28,54M acumulado), leitura confirmada de 22/Out, 17:56 BRT. O vão de Flávio Bolsonaro sobre ele nessa leitura é de 55,20pp. Lidera a Vox Brasil de 23/Out, 45,4% a 44,3%, e empata em 50% dos válidos na Datafolha de 22/Out; as três Vox Brasil são as únicas nacionais pós-urna com ele à frente.",
   },
   {
     name: "Flávio Bolsonaro",
@@ -28,7 +28,7 @@ const candidates: CandidateProfile[] = [
     polymarket: "77,70%",
     poll: "47,03% na urna do 1º turno",
     position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
-    risk: "CAI 1,00pp NO CONTRATO DE VENCEDOR, em 77,70% (vol USD 24,89M acumulado), leitura confirmada de 22/Out, 17:56 BRT, contra a leitura confirmada de 21/Out às 18:28 BRT, publicada na rodada anterior. Lidera trinta e três das trinta e seis nacionais feitas depois da urna, com 49% contra 48% na PoderData/Aya de 22/Out.",
+    risk: "NÃO TEM PREÇO NOVO NO CONTRATO DE VENCEDOR, porque esta rodada não publica preço novo para o contrato de vencedor; segue em 77,70% (vol USD 24,89M acumulado), leitura confirmada de 22/Out, 17:56 BRT. Lidera trinta e nove das quarenta e três nacionais feitas depois da urna, com 50,2% contra 47,5% na Veritá de 23/Out.",
   },
   {
     name: "Renan Santos",
