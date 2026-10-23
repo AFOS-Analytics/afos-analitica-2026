@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-22",
-  "fetchedAt": "2026-10-22T22:20:06.722Z",
+  "lastUpdate": "2026-10-23",
+  "fetchedAt": "2026-10-23T20:08:59.338Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,8 +47,8 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-22",
-    "nPesquisas": 31,
+    "desde": "2026-09-23",
+    "nPesquisas": 30,
     "tratamentoDoIndeciso": [
       {
         "serie": "Angus Reid Global",
@@ -89,54 +89,6 @@
         "prova": "https://angusreid.us/wp-content/uploads/2026/09/2026.09.28_Trump_Midterms.pdf",
         "conferidoEm": "2026-10-05",
         "decididoEm": "2026-10-05"
-      },
-      {
-        "serie": "The Argument/Verasight",
-        "campoFim": "2026-09-22",
-        "escolha": "LV, duas vias normalizada",
-        "declarado": {
-          "dem": 55,
-          "rep": 45
-        },
-        "estado": "ESCOLHIDA",
-        "quantasCasam": 1,
-        "linhasDaOnda": [
-          {
-            "dem": 55,
-            "rep": 45,
-            "outros": null,
-            "amostra": null,
-            "amostraTipo": "LV",
-            "escolhida": true
-          },
-          {
-            "dem": 50,
-            "rep": 41,
-            "outros": 9,
-            "amostra": null,
-            "amostraTipo": "LV",
-            "escolhida": false
-          },
-          {
-            "dem": 53,
-            "rep": 47,
-            "outros": null,
-            "amostra": 1603,
-            "amostraTipo": "RV",
-            "escolhida": false
-          },
-          {
-            "dem": 48,
-            "rep": 41,
-            "outros": 11,
-            "amostra": 1603,
-            "amostraTipo": "RV",
-            "escolhida": false
-          }
-        ],
-        "prova": "https://www.theargumentmag.com/p/the-least-popular-war-since-vietnam",
-        "conferidoEm": "2026-10-07",
-        "decididoEm": "2026-10-07"
       }
     ],
     "incluidas": [
@@ -163,6 +115,15 @@
         "amostraTipo": "RV",
         "dem": 49,
         "rep": 39
+      },
+      {
+        "key": "Hart Research Associates (D)/ Public Opinion Strategies (R)|2026-10-18",
+        "instituto": "Hart Research Associates (D)/ Public Opinion Strategies (R)",
+        "institutoNoIndice": "Hart Research Associates (D)/Public Opinion Strategies (R)",
+        "campoFim": "2026-10-18",
+        "amostraTipo": "RV",
+        "dem": 52,
+        "rep": 45
       },
       {
         "key": "ActiVote|2026-10-14",
@@ -250,6 +211,14 @@
         "campoFim": "2026-10-04",
         "amostraTipo": "LV",
         "dem": 50,
+        "rep": 43
+      },
+      {
+        "key": "University of Massachusetts Lowell/YouGov|2026-10-04",
+        "instituto": "University of Massachusetts Lowell/YouGov",
+        "campoFim": "2026-10-04",
+        "amostraTipo": "LV",
+        "dem": 52,
         "rep": 43
       },
       {
@@ -363,33 +332,23 @@
         "amostraTipo": "LV",
         "dem": 48,
         "rep": 43
-      },
-      {
-        "key": "Emerson College|2026-09-22",
-        "instituto": "Emerson College",
-        "campoFim": "2026-09-22",
-        "amostraTipo": "LV",
-        "dem": 53,
-        "rep": 42
-      },
-      {
-        "key": "McLaughlin & Associates (R)|2026-09-22",
-        "instituto": "McLaughlin & Associates (R)",
-        "campoFim": "2026-09-22",
-        "amostraTipo": "LV",
-        "dem": 48,
-        "rep": 43
-      },
-      {
-        "key": "The Argument/Verasight|2026-09-22",
-        "instituto": "The Argument/Verasight",
-        "campoFim": "2026-09-22",
-        "amostraTipo": "LV",
-        "dem": 55,
-        "rep": 45
       }
     ],
     "excluidasPorInstrumento": [
+      {
+        "instituto": "The Economist/YouGov",
+        "campoInicio": "2026-10-19",
+        "campoFim": "2026-10-20",
+        "amostraTipo": "LV",
+        "dem": 50,
+        "rep": 43,
+        "tipo": "NOMINAL",
+        "descricao": "cédula com os NOMES dos candidatos do distrito do entrevistado, e não a pergunta genérica",
+        "desde": "2026-09-04",
+        "medidoEm": "2026-09-22",
+        "ressalva": "Asked using the names of candidates running in the respondent’s district of residence",
+        "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
+      },
       {
         "instituto": "The New York Times/Siena University",
         "campoInicio": "2026-10-12",
@@ -461,10 +420,10 @@
         "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
       }
     ],
-    "nInstitutos": 24,
-    "dem": 50.03,
-    "rep": 42.42,
-    "vantagemDem": 7.61,
+    "nInstitutos": 23,
+    "dem": 49.97,
+    "rep": 42.43,
+    "vantagemDem": 7.54,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
@@ -476,32 +435,31 @@
       "Centerline Research & Strategy",
       "Change Research (D)",
       "Cygnal (R)",
-      "Emerson College",
       "Focaldata",
       "GBAO (D)",
+      "Hart Research Associates (D)/ Public Opinion Strategies (R)",
       "Harvard/Harris Poll/HarrisX",
       "I&I/TIPP Insights (R)",
-      "McLaughlin & Associates (R)",
       "Morning Consult",
       "Quinnipiac University",
       "RMG Research",
       "Rasmussen Reports (R)",
       "Reuters/Ipsos",
       "SurveyMonkey",
-      "The Argument/Verasight",
       "The Washington Post/ABC News/Ipsos",
-      "TrueDot"
+      "TrueDot",
+      "University of Massachusetts Lowell/YouGov"
     ]
   },
   "qualidade": {
-    "linhasLidas": 493,
-    "publicadas": 506,
+    "linhasLidas": 498,
+    "publicadas": 511,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 493,
+    "doIndice": 498,
     "curadas": 13,
     "curadasDescartadasPorDuplicidade": 17
   },
@@ -565,6 +523,51 @@
       "outros": null,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.activote.net/polls/generic-ballot/2026-10-21/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "The Economist/YouGov",
+      "campoInicio": "2026-10-19",
+      "campoFim": "2026-10-20",
+      "amostra": 1179,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 52,
+      "rep": 43,
+      "outros": 6,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_AjDiUmp.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "The Economist/YouGov",
+      "campoInicio": "2026-10-19",
+      "campoFim": "2026-10-20",
+      "amostra": 1312,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 50,
+      "rep": 43,
+      "outros": 7,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_AjDiUmp.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "The Economist/YouGov",
+      "campoInicio": "2026-10-19",
+      "campoFim": "2026-10-20",
+      "amostra": 1496,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 45,
+      "rep": 40,
+      "outros": 14,
+      "vantagemDem": 5,
+      "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_AjDiUmp.pdf",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -640,6 +643,21 @@
       "outros": 11,
       "vantagemDem": 10,
       "fontePrimaria": "https://www.documentcloud.org/documents/28825702-cnn-poll-conducted-by-ssrs-trump-midterms/?mode=document&q=candidate#document/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Hart Research Associates (D)/Public Opinion Strategies (R)",
+      "campoInicio": "2026-10-14",
+      "campoFim": "2026-10-18",
+      "amostra": 1000,
+      "amostraTipo": "RV",
+      "margemErro": 3.1,
+      "dem": 52,
+      "rep": 45,
+      "outros": 3,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://www.cnbc.com/2026/10/22/trump-economic-approval-rating-midterms-poll.html",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -850,6 +868,21 @@
       "outros": 33,
       "vantagemDem": 7,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-10/Reuters%20Ipsos%20October%20Large%20Issue%20Topline%2010.5%20release.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "University of Massachusetts Lowell/YouGov",
+      "campoInicio": "2026-10-02",
+      "campoFim": "2026-10-04",
+      "amostra": 1000,
+      "amostraTipo": "LV",
+      "margemErro": 3.84,
+      "dem": 52,
+      "rep": 43,
+      "outros": 6,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://www.uml.edu/docs/2026-October-National-Topline_tcm18-423714.pdf",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
