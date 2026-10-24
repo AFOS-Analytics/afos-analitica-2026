@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-24",
+  "adversarialReview": {
+    "singleSourceClaims": "Lupa (20 inadequadas, 11 totalmente verdadeiras) só na Folha de S.Paulo, parceira da checagem, atribuída no texto; resposta da defesa de Flávio Bolsonaro só na Gazeta do Povo, atribuída como fala da defesa. As demais alegações têm duas fontes de grupos diferentes, com corpo lido.",
+    "numericalErrors": "reconcile-claims: só deltas (7,25pp, 7,00pp), valores da leitura de 23/Out (76,50%, 53,00pp) e números de pesquisa fora do JSON de mercado (36%, 47%, 49,7%). Nenhum preço divergente. Gate de tradução: 98 números com unidade idênticos nas três versões.",
+    "inventedSources": "Conferidas Datafolha (Poder360, Metrópoles, CartaCapital), AtlasIntel (InfoMoney, Metrópoles, CartaCapital) e Gerp (Poder360, InfoMoney, Gazeta do Povo): corpo lido em todas.",
+    "literalQuotes": "nenhuma",
+    "spuriousCausation": "nenhuma. O texto dá a cronologia (83,70% às 17:21, antes das pesquisas da noite; 0,05pp entre 17:21 e 20:06) e declara que a leitura não atribui o movimento ao debate nem às pesquisas.",
+    "criticalVerbs": "quebra de sigilo e bloqueio datados em 23/Out; parecer da PGE e pedido da PGR datados em 24/Out; decisão do TSE sobre Nikolas e Marçal escrita como noticiada em 24/Out.",
+    "decision": "prosseguir para preview"
+  },
+  "factCheck": {
+    "Moraes / Alcazar / Willer Tomaz": "ato de 23/Out; Gazeta do Povo (corpo), O Globo, G1, Folha",
+    "PGE extinção dos sigilos": "24/Out; Folha, Gazeta do Povo, G1, Valor, O Globo, Estadão",
+    "TSE Nikolas e Marçal": "noticiado em 24/Out; Folha (multa), G1, Valor, O Globo (relatórios a cada 6h)",
+    "Kassio e PGR transporte indígena": "pedido de 24/Out; Folha, G1, O Globo, Estadão, Valor",
+    "fora": "G1 'PF suspeita de sociedade' (fontes anônimas, um grupo); despacho do Fachin pedindo informações em 3h (só Valor); Veritá de 24/Out (repercussão da onda de 23/Out, protocolo fora da base)"
+  },
+  "market": { "fetchedAt": "2026-10-24T23:06:54.530Z", "trava": "presidencial aprovado na 2ª passada; STF sem preço novo, mantida a leitura confirmada de 24/Out 17:21 (amplitude do dia INDETERMINADA, 4 pontos)" }
+}
