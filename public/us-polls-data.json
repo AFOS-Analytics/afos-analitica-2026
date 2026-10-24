@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-23",
-  "fetchedAt": "2026-10-23T20:08:59.338Z",
+  "lastUpdate": "2026-10-24",
+  "fetchedAt": "2026-10-24T19:42:03.754Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,8 +47,8 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-23",
-    "nPesquisas": 30,
+    "desde": "2026-09-24",
+    "nPesquisas": 29,
     "tratamentoDoIndeciso": [
       {
         "serie": "Angus Reid Global",
@@ -324,14 +324,6 @@
         "amostraTipo": "RV",
         "dem": 50,
         "rep": 41
-      },
-      {
-        "key": "Rasmussen Reports (R)|2026-09-23",
-        "instituto": "Rasmussen Reports (R)",
-        "campoFim": "2026-09-23",
-        "amostraTipo": "LV",
-        "dem": 48,
-        "rep": 43
       }
     ],
     "excluidasPorInstrumento": [
@@ -421,9 +413,9 @@
       }
     ],
     "nInstitutos": 23,
-    "dem": 49.97,
-    "rep": 42.43,
-    "vantagemDem": 7.54,
+    "dem": 50.03,
+    "rep": 42.41,
+    "vantagemDem": 7.62,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
@@ -452,14 +444,14 @@
     ]
   },
   "qualidade": {
-    "linhasLidas": 498,
-    "publicadas": 511,
+    "linhasLidas": 500,
+    "publicadas": 513,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 498,
+    "doIndice": 500,
     "curadas": 13,
     "curadasDescartadasPorDuplicidade": 17
   },
@@ -1971,6 +1963,36 @@
       "outros": 23,
       "vantagemDem": 7,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_SlcWdVd.pdf#page=32",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Public Religion Research Institute",
+      "campoInicio": "2026-08-20",
+      "campoFim": "2026-09-07",
+      "amostra": null,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 43,
+      "rep": 36,
+      "outros": 21,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://prri.org/research/darkening-mood-and-shifting-political-loyalties-ahead-of-midterm-elections-findings-from-the-2026-american-values-survey/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Public Religion Research Institute",
+      "campoInicio": "2026-08-20",
+      "campoFim": "2026-09-07",
+      "amostra": 5539,
+      "amostraTipo": "A",
+      "margemErro": 1.6,
+      "dem": 36,
+      "rep": 28,
+      "outros": 35,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://prri.org/research/darkening-mood-and-shifting-political-loyalties-ahead-of-midterm-elections-findings-from-the-2026-american-values-survey/",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
