@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-23",
-  "fetchedAt": "2026-10-23T19:20:13.351Z",
+  "lastUpdate": "2026-10-24",
+  "fetchedAt": "2026-10-24T19:20:13.380Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,18 +113,18 @@
     }
   ],
   "qualidade": {
-    "lidos": 293,
-    "naLista": 116,
+    "lidos": 286,
+    "naLista": 109,
     "foraDaLista": 177,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 1,
-    "veiculosRepresentados": 7,
+    "descartadosPorAcompanhamento": 3,
+    "veiculosRepresentados": 5,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [
       "feed:The Washington Post: HTTP 502"
     ],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 45,
+    "lidosEmFeedProprio": 40,
     "publicadosComLinkCanonico": 6,
     "publicadosViaGoogleNews": 4,
     "publicadosPorDisputa": 10,
@@ -132,91 +132,91 @@
   },
   "itens": [
     {
-      "titulo": "Trump Officials Seek Block on Alaska Senate Race Results if the Republican Dan Sullivan Loses",
-      "url": "https://www.nytimes.com/2026/10/23/us/politics/justice-dept-alaska-senate-race-sullivan.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-10-23T19:06:30.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Trump touts lawsuit to block Senate race certification in Alaska: ‘I’m the one that said do it’ – live",
-      "url": "https://www.theguardian.com/us-news/live/2026/oct/23/trump-florida-midterms-ramaswamy-latest-updates",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-10-23T18:51:52.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Ohio could decide control of the Senate. Its rural voters might decide the winner",
-      "url": "https://www.npr.org/2026/10/23/nx-s1-6012809/ohio-senate-governor-election-rural-voters",
-      "casa": "NPR",
-      "publicadoEm": "2026-10-23T18:30:00.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "DOJ seeks to block Alaska Senate result if Republican incumbent narrowly loses",
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNUVJjQ3FsZnpGZkZjQV9rWlNUbUFOVWlJZ0VlV0MxN1YxTG9vaVZyY0F0WktiOVFhTGlzcFJ0eXF2SHlZU091bFpFaFdFSTF0RmZBMi1lV1VKVFA2TGF5ZUNZRmd2ZkJHbEJCMk52TUI4aVIxQ2djWk9nTE5nbFB3RTdHM2dkT3dGTGljNkNhOThNWnVzcG9FME5xM0UzWFdmcDZjbW9IeXg2Vk9La0R4YnRFNDFxcU9NZ3FPSUVEOEpnMnc1SGN5el92TlVQcC1ndEE?oc=5",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-10-23T18:19:52.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "US Justice Dept sues to block possible Alaska election of Democrat to Senate",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOdmhoNXZfaEZSVXU4cVh3dW9tMm54alE4THRoUWNBSzc4QTFvNHl6eE9mOElIeXE1S0pkQlV4Yld6U0t5RjZnbEpjSzVyMkMzQ01MM1hSclViSHVmRDZGTndKTm9GZHZaRUFIZnAxVnM2V0hDMGhUOHVKemxQcFdxc0hmLTJDTTFQWTFTRFhRalM1Y1I3Y0dRTEF6UldFdHg3OVVxd0hkdUFyNTdUN0dDZVRwbTFqbVVyT2FtSw?oc=5",
-      "casa": "Reuters",
-      "publicadoEm": "2026-10-23T18:15:20.000Z",
+      "titulo": "Tracking the 2026 Early Vote: Midterm Elections",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5CNDhGdFFLbHU0dnFMZGZ5T2Z4LVNzYk5Mb0lHNXZhQW56U09sX1RmWmRLZmlvRnQtOHNHUlZlS3NZckF2WHF0LXVZOHROTTBCMnQzbkM2X1JCYkY5RGpwamRubEc4M3lPaFE?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-24T18:00:21.000Z",
       "consulta": "midterms",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "DoJ sues to block certification of Alaska Senate results if Republican incumbent loses",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOdmFWVGdIS19YcFBZczhtNHZ1V1g1MUR4VEQwV0ZheEZXbk40ZEpwdlZRNkM3S2hqaGtuSnlFSkJRODcwQ0FQcG5jTmUtdmNmVkdTVVJNOUtzODRkczg1c2ctUVVBdS1HUUJvaG9fQWY1Y3F5dXRWUzg5YTl3UEZkWkRFSFpIVXBhaW5TMXFOd19YVUtQcWpN?oc=5",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-10-23T18:06:00.000Z",
-      "consulta": "senate-races",
+      "titulo": "Elon Musk-backed PAC sends out 'false' text about Abdul El-Sayed in Senate race",
+      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/elon-musk-pac-false-text-abdul-el-sayed-senate-race-midterms/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-24T17:55:49.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Early voting surges in battleground states as Democrats outpace GOP gains",
+      "url": "https://www.newsnationnow.com/us-news/early-voting-surges-in-battleground-states-as-democrats-outpace-gop-gains/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-24T17:31:51.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Why Democrats Could Find It Hard to Win the Senate Despite Their Strong Polls",
+      "url": "https://www.nytimes.com/2026/10/24/us/politics/democrats-expectations-blue-wave.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-24T17:00:54.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Obama Returns to the Trail, Setting Up Dueling Midterm Appearances With Trump",
+      "url": "https://www.nytimes.com/2026/10/24/us/politics/obama-trump-midterms-campaign.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-24T16:50:50.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Maine Midterm Elections 2026: Key Races, Candidates and Past Results",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9NdHFMY2tJbzM3eWVKNllUWUlJaXpuQl9JalMyOTdlZDIwMWtWd3M1MVRKdHkxM01zZHZtRDYxQ2FCbnVlNlZIUXRMRTJxaGVuWmRwbWJZQndGS2tsZllyYm9uN0E4WEhzQzZBenJR?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-24T16:30:21.000Z",
+      "consulta": "midterms",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "Watch live: Decision Desk ‘26 Midterm Preview powered by 2WAY and The Hill",
-      "url": "https://thehill.com/homenews/6168746-watch-live-decision-desk-26-midterm-preview-powered-by-2way-and-the-hill/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-10-23T17:40:47.000Z",
+      "titulo": "This US House district was once a political battleground. Now it shows why Congress is dysfunctional",
+      "url": "https://abcnews.com/Politics/wireStory/us-house-district-political-battleground-now-shows-congress-137534858",
+      "casa": "ABC News",
+      "publicadoEm": "2026-10-24T15:35:20.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Roy Cooper Has Never Lost an Election. Can He Flip North Carolina’s Senate Seat?",
-      "url": "https://www.nytimes.com/2026/10/23/us/politics/roy-cooper-north-carolina-senate-election.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-10-23T17:18:30.000Z",
+      "titulo": "AOC can draw a crowd. The midterms will test whether her politics can win before 2028",
+      "url": "https://abcnews.com/Politics/wireStory/aoc-draw-crowd-midterms-test-politics-win-2028-137536905",
+      "casa": "ABC News",
+      "publicadoEm": "2026-10-24T15:33:15.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Thune weighs nightmare scenario for GOP as Democrats threaten to flip House",
-      "url": "https://www.foxnews.com/politics/thune-weighs-nightmare-scenario-gop-democrats-threaten-flip-house",
-      "casa": "Fox News",
-      "publicadoEm": "2026-10-23T17:01:37.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
+      "titulo": "Allan Lichtman has predicted presidents. Can he nail the midterms?",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQSkJiT2Q3c2ZkWm9hWGFxd2J1UmlGSENhdmFMaGsyY215OGlTbWRHenAyMTZjYzhEbVdJRFFCV0dpY3VlN0w1eUxTUEtJbExXR1lxamJNcGtVTnREQXNyd2Z5Yk1pZWN3X3RTSEQteklDcDFqQjFpNUQwMjhBS2pQMnB5UWp3M2lNbmlMN0o0QUdYUjBGdWxSczN5VUdUa2NjNGgtSDVwTkVNS3VfZndURl9YWnhWcHlBSTVrY3o3Nno2WDdhQ1lJanF1ckZ0V0E5MHBRaGdvbDlzZw?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-10-24T15:27:00.000Z",
+      "consulta": "midterms",
+      "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "Examining the Muslim Brotherhood claims in Michigan’s Senate race",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQYzlmclBHbllzRzNxVEh1WDJETThRSWx3RXRqd0FmX09NRnpodFNld3pUM3d6Wi04SFZiTEtCMS13Z19HakJtOXdyOWpzN1F6bEU4dnRPSHpXbFhUekM1MzFaaHVscm52clI3dUs1aFZoM2FoYkstOUZ0MGVvUlJ3Vmw0dlFsZFhmVUs1bk11V0FXR3lDZkdGajM5dFVkVzYtWUktTUMxcGZ3VVB4Z2c?oc=5",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-10-23T17:00:00.000Z",
+      "titulo": "Alaska Dem Peltola calls DOJ lawsuit 'corrupt' and 'desperate'",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOb2lTSE4weGRIcUxzekc4d0pPZnd0dVMxVDdRbUVVQzlSR1R3MHJ1MWg3ZzJZWGhsSUkyeS1TQnNQWjJGaHNrc092N181RXU4TW90SzlMaGJnam5WZjIycHRfUkROcWk3ZWZGRkxNSG9fNFBYS2tXeS0wX3dpNGZPelZ5ZXlfaEZUakRVZ203SEtxbGZVRkpEOU12NG01dkFPUjE3SURhaEZDM3FnN3l6UDF4dFFQbFNkVEt3TEg3akdzNU5PRXY4?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-10-24T15:23:00.000Z",
       "consulta": "senate-races",
       "origem": "google",
       "trilho": "disputa"
