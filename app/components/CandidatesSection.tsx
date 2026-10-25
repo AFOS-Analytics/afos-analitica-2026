@@ -18,7 +18,7 @@ const candidates: CandidateProfile[] = [
     polymarket: "16,50%",
     poll: "45,16% na urna do 1º turno",
     position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
-    risk: "FICA PARADO NO CONTRATO DE VENCEDOR, em 16,50% (vol USD 30,28M acumulado), leitura confirmada de 24/Out, 20:06 BRT, contra a leitura confirmada de 24/Out às 17:21 BRT, publicada na rodada anterior. O vão de Flávio Bolsonaro sobre ele vai de 67,20pp para 67,25pp. Lidera a Colectta de 24/Out, 46,5% a 46%, e as três Vox Brasil feitas depois da urna.",
+    risk: "ESTA RODADA NÃO PUBLICA PREÇO NOVO NO CONTRATO DE VENCEDOR, que segue em 16,50% (vol USD 30,28M acumulado), leitura confirmada de 24/Out, 20:06 BRT. O vão de Flávio Bolsonaro sobre ele nessa leitura é de 67,25pp. Lidera a Colectta de 24/Out, 46,5% a 46%, e as três Vox Brasil feitas depois da urna.",
   },
   {
     name: "Flávio Bolsonaro",
@@ -28,7 +28,7 @@ const candidates: CandidateProfile[] = [
     polymarket: "83,75%",
     poll: "47,03% na urna do 1º turno",
     position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
-    risk: "SOBE 0,05pp NO CONTRATO DE VENCEDOR, para 83,75% (vol USD 27,06M acumulado), leitura confirmada de 24/Out, 20:06 BRT, contra a leitura confirmada de 24/Out às 17:21 BRT, publicada na rodada anterior. Lidera quarenta e sete das cinquenta e duas nacionais feitas depois da urna, com 48% contra 47% na Datafolha de 24/Out e 50% contra 49% na Palver de 24/Out.",
+    risk: "ESTA RODADA NÃO PUBLICA PREÇO NOVO NO CONTRATO DE VENCEDOR, que segue em 83,75% (vol USD 27,06M acumulado), leitura confirmada de 24/Out, 20:06 BRT. Lidera cinquenta das cinquenta e cinco nacionais feitas depois da urna, com 49,44% contra 46,46% na Veritá de 24/Out e 51% contra 49% nos válidos na PoderData/Aya de 25/Out.",
   },
   {
     name: "Renan Santos",

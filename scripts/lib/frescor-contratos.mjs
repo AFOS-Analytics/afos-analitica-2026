@@ -169,6 +169,21 @@ export function ehApuracaoEm(texto, pos) {
   return /^\s*%\s+(?:dos\s+votos|das\s+se[çc][õo]es|das\s+urnas)/i.test(depois)
 }
 
+/**
+ * 🗳️ PAR DE PESQUISA com duas casas nao e preco, instalado em 25/Out/2026, dia
+ * da votacao do 2º turno. A regua "preco tem duas casas, pesquisa tem uma"
+ * quebrou com a Veritá BR-03181, que publica 49,44% a 46,46% no total e
+ * 51,56% a 48,44% nos validos: o portao acusou 11 contradicoes falsas nos
+ * cartoes de Lula e Flavio. O que separa e a FORMA do par, que preco nesta casa
+ * nunca usa ("em X%", "de X% para Y%"): "X% a Y%", "X% a Lula", "X% contra Y%".
+ */
+export function ehParDePesquisaEm(texto, pos) {
+  const depois = texto.slice(pos).replace(/^\d+,\d+/, '')
+  if (/^\s*%\s+(?:a|contra)\s+(?:\d|Fl[áa]vio|Lula)/.test(depois)) return true
+  const antes = texto.slice(Math.max(0, pos - 20), pos)
+  return /\d%\s+(?:a|contra)\s+$/.test(antes)
+}
+
 export function precosAfirmados(texto, padrao = 'vencedor') {
   const saida = []
   for (const frase of frasesDe(String(texto ?? ''))) {
@@ -182,6 +197,7 @@ export function precosAfirmados(texto, padrao = 'vencedor') {
       const pos = m.index ?? 0
       if (ehHistoricoEm(frase, pos)) continue
       if (ehApuracaoEm(frase, pos)) continue
+      if (ehParDePesquisaEm(frase, pos)) continue
       saida.push({ contrato, preco: m[1], frase })
     }
   }

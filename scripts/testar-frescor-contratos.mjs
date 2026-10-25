@@ -220,5 +220,19 @@ console.log('\n10. apuração do TSE tem duas casas e NÃO é preço (04/Out/202
   conferir('a lista da parcial fica fora e o preço "durante a apuração" fica', precosAfirmados(d, 'vencedor').map((x) => x.preco).join() === '15,50', JSON.stringify(precosAfirmados(d, 'vencedor').map((x) => x.preco)))
 }
 
+console.log('\n11. par de pesquisa com duas casas NÃO é preço (25/Out/2026, Veritá BR-03181)')
+{
+  const a = 'A Veritá dá 49,44% a Flávio Bolsonaro e 46,46% a Lula no total e 51,56% a 48,44% nos válidos, e Lula está em 16,50% no contrato de vencedor.'
+  const p = precosAfirmados(a, 'vencedor').map((x) => x.preco)
+  conferir('os quatro números do par ficam fora e o preço fica', p.join() === '16,50', JSON.stringify(p))
+  const b = 'PESQUISA: atrás na Veritá de 24/Out, 46,46% a 49,44%, e com 49,44% contra 46,46% na outra leitura.'
+  conferir('"X% a Y%" e "X% contra Y%" ficam fora dos dois lados', precosAfirmados(b, 'vencedor').length === 0, JSON.stringify(precosAfirmados(b, 'vencedor').map((x) => x.preco)))
+  // ⛔ "a" que não é par não pode virar passe livre: preço seguido de "a [palavra]".
+  const c = 'Flávio Bolsonaro está em 83,75% a esta hora no contrato de vencedor.'
+  conferir('"X% a esta hora" NÃO é par de pesquisa', precosAfirmados(c, 'vencedor').map((x) => x.preco).join() === '83,75')
+  const d = 'Lula subiu de 16,50% para 18,25% no contrato de vencedor.'
+  conferir('"de X% para Y%" segue como antes: só o novo fica', precosAfirmados(d, 'vencedor').map((x) => x.preco).join() === '18,25', JSON.stringify(precosAfirmados(d, 'vencedor').map((x) => x.preco)))
+}
+
 console.log(`\n${falhas === 0 ? '✅' : '❌'} ${passes} passaram, ${falhas} falharam.`)
 process.exit(falhas === 0 ? 0 : 1)
