@@ -12,7 +12,9 @@ import { NextResponse } from 'next/server';
  * Segurança (anti-SSRF): bases e endpoints FIXOS; só valores validados passam.
  *   - market: slug do contrato, restrito a [a-z0-9-] (não injeta host);
  *   - tipo:   allowlist (trades | holders);
- *   - limit:  inteiro 1..500.
+ *   - limit:  inteiro 1..500;
+ *   - offset: inteiro 0..10000, para paginar para trás quando a janela de 500
+ *     não alcança a última negociação já gravada (lacuna, medida na noite de 25/Out).
  * O conditionId sai da gamma-api pelo slug, no servidor, e nunca vem do cliente.
  *
  *   GET /api/polymarket/trades?market=<market-slug>[&tipo=trades|holders][&limit=200]
@@ -60,6 +62,10 @@ export async function GET(request: Request) {
   if (!Number.isInteger(limitParam) || limitParam < 1 || limitParam > 500) {
     return NextResponse.json({ error: 'invalid limit (integer 1..500)' }, { status: 400 });
   }
+  const offsetParam = Number(searchParams.get('offset') || '0');
+  if (!Number.isInteger(offsetParam) || offsetParam < 0 || offsetParam > 10000) {
+    return NextResponse.json({ error: 'invalid offset (integer 0..10000)' }, { status: 400 });
+  }
 
   const g = await getJson(`${GAMMA}/markets?slug=${market}&limit=1`);
   if (g.error) return NextResponse.json({ error: g.error, market }, { status: 502 });
@@ -70,7 +76,7 @@ export async function GET(request: Request) {
   }
 
   const url = tipo === 'trades'
-    ? `${DATA}/trades?market=${conditionId}&limit=${limitParam}&takerOnly=false`
+    ? `${DATA}/trades?market=${conditionId}&limit=${limitParam}&offset=${offsetParam}&takerOnly=false`
     : `${DATA}/holders?market=${conditionId}&limit=${Math.min(limitParam, 100)}`;
   const r = await getJson(url);
   if (r.error) return NextResponse.json({ error: r.error, market, conditionId, tipo }, { status: 502 });
@@ -78,7 +84,7 @@ export async function GET(request: Request) {
   const data = r.data;
   const count = Array.isArray(data) ? data.length : null;
   return NextResponse.json(
-    { market, conditionId, tipo, fetchedAt: new Date().toISOString(), count, data },
+    { market, conditionId, tipo, offset: offsetParam, fetchedAt: new Date().toISOString(), count, data },
     { headers: { 'Cache-Control': 'no-store' } },
   );
 }
