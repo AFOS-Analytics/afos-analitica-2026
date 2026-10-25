@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-24",
-  "fetchedAt": "2026-10-24T19:42:03.754Z",
+  "lastUpdate": "2026-10-25",
+  "fetchedAt": "2026-10-25T16:30:56.220Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,8 +47,8 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-24",
-    "nPesquisas": 29,
+    "desde": "2026-09-25",
+    "nPesquisas": 27,
     "tratamentoDoIndeciso": [
       {
         "serie": "Angus Reid Global",
@@ -308,22 +308,6 @@
         "amostraTipo": "A",
         "dem": 45,
         "rep": 34
-      },
-      {
-        "key": "Change Research (D)|2026-09-24",
-        "instituto": "Change Research (D)",
-        "campoFim": "2026-09-24",
-        "amostraTipo": "RV",
-        "dem": 46,
-        "rep": 39
-      },
-      {
-        "key": "GBAO (D)|2026-09-24",
-        "instituto": "GBAO (D)",
-        "campoFim": "2026-09-24",
-        "amostraTipo": "RV",
-        "dem": 50,
-        "rep": 41
       }
     ],
     "excluidasPorInstrumento": [
@@ -412,10 +396,10 @@
         "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
       }
     ],
-    "nInstitutos": 23,
-    "dem": 50.03,
-    "rep": 42.41,
-    "vantagemDem": 7.62,
+    "nInstitutos": 21,
+    "dem": 50.19,
+    "rep": 42.59,
+    "vantagemDem": 7.6,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
@@ -425,10 +409,8 @@
       "CBS News/YouGov",
       "CNN/SSRS",
       "Centerline Research & Strategy",
-      "Change Research (D)",
       "Cygnal (R)",
       "Focaldata",
-      "GBAO (D)",
       "Hart Research Associates (D)/ Public Opinion Strategies (R)",
       "Harvard/Harris Poll/HarrisX",
       "I&I/TIPP Insights (R)",
