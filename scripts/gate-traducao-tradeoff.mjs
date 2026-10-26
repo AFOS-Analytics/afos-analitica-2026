@@ -54,7 +54,9 @@ function numeros(txt, idioma) {
     achados.push(`${m[1].replace(/^\+/, '')}${u}`)
   }
   for (const m of txt.matchAll(/n=(\d[\d.,]*)/g)) achados.push(`n${m[1].replace(/[.,]/g, '')}`)
-  const mil = idioma === 'en' ? /USD\s?(\d+(?:\.\d+)?)\s?thousand/g : /USD\s?(\d+(?:\.\d+)?)\s?mil\b/g
+  // ⛔ "USD 10 mil millones" é 10 BILHÕES em espanhol, e não 10 mil: sem o
+  //    lookahead a №13 dos EUA reprovava com "sobra [10mil×2]" desde 19/Out.
+  const mil = idioma === 'en' ? /USD\s?(\d+(?:\.\d+)?)\s?thousand/g : /USD\s?(\d+(?:\.\d+)?)\s?mil\b(?!\s+mil(?:lones|hões))/g
   for (const m of txt.matchAll(mil)) achados.push(`${m[1]}mil`)
   return achados
 }
