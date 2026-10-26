@@ -291,3 +291,5 @@ node scripts/semana-do-contrato.mjs --pais=us --de=... --ate=... --distribuicoes
 
 ⛔ **E fechamento diário ESCONDE topo e piso.** Na №17 o piso de Lula saiu como 43.50%, que é o fechamento de quinta, e o piso intradiário da semana era **40.50%** na manhã de sexta. Quando a frase for de extremo, usar o piso e o topo que o script imprime, não o fechamento. → `memory/feedback_fechamento_do_dia_esconde_topo_e_piso.md`
 
+🏔️ **E "o mais baixo DESDE QUANDO" sai do mesmo script, desde 26/Out/2026.** Abaixo das leituras de cada desfecho ele imprime `contra a série:` com o piso e o topo da semana e o **último ponto, ANTES da semana, que chegou àquele valor**; sem nenhum, sai `NUNCA, extremo da série gravada desde <data>`. A №14 precisou da frase três vezes (topo do Senado D, piso do Senado R, contrato de calendário no menor valor desde 18/Set) e a resposta saiu de um script avulso. ✅ Calibrado: na semana da №13 ele devolve `NUNCA` para o 99.10 do contrato de calendário, que é o "topo de toda a série" publicado ali. ⚠️ Ele lê o backup: se `--ate` for hoje, o superlativo ainda pede o `cauda-do-contrato-us.mjs`.
+

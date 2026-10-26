@@ -210,6 +210,24 @@ for (const [chave, pontos] of [...livros.entries()].sort()) {
     // Um preço pode aparecer várias vezes na semana: a data impressa é a da 1ª vez.
     const quando = (alvo) => daSemana.find((p) => p.v === alvo).t.slice(5, 16).replace('T', ' ')
     console.log(`      leituras na semana: ${daSemana.length} · piso ${min.toFixed(2)} (1ª em ${quando(min)}) · topo ${max.toFixed(2)} (1ª em ${quando(max)}) · amplitude ${(max - min).toFixed(2)}pp`)
+    /**
+     * 🔑 "O MAIS BAIXO DESDE QUANDO", que a Tradeoff EUA №14 respondeu com um
+     * script avulso. Para o piso e o topo da semana, o ÚLTIMO ponto ANTES de
+     * `de` que chegou àquele valor (igual ou além). Sem nenhum, o extremo da
+     * semana é o extremo da série gravada inteira até ali.
+     *
+     * ⚠️ Vale para a série ATÉ a semana, lida no backup. Se `ate` for hoje, a
+     * cauda cega existe e o superlativo ainda pede o `cauda-do-contrato-us.mjs`.
+     */
+    const antes = pontos.filter((p) => p.t.slice(0, 10) < de)
+    if (antes.length) {
+      const ultimoAbaixo = [...antes].reverse().find((p) => p.v <= min)
+      const ultimoAcima = [...antes].reverse().find((p) => p.v >= max)
+      const desde = antes[0].t.slice(0, 10)
+      const txt = (p, rot) => (p ? `último ponto ${rot} antes da semana em ${p.t.slice(0, 16).replace('T', ' ')} (${Number(p.v).toFixed(2)})` : `NUNCA, extremo da série gravada desde ${desde}`)
+      console.log(`      contra a série: piso ${min.toFixed(2)} · ${txt(ultimoAbaixo, 'igual ou abaixo')}`)
+      console.log(`                      topo ${max.toFixed(2)} · ${txt(ultimoAcima, 'igual ou acima')}`)
+    }
   } else {
     console.log(`      leituras na semana: 0 · o fechamento é HERDADO de antes da semana`)
   }
