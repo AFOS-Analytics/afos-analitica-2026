@@ -15,6 +15,7 @@ import { LazyAboutMessages } from '../../../components/LazyAboutMessages';
 import { PolymarketSection } from '../../../components/PolymarketSection';
 import { PollsSection } from '../../../components/PollsSection';
 import { FirstRoundSection } from '../../../components/FirstRoundSection';
+import { SecondRoundSection } from '../../../components/SecondRoundSection';
 import { CandidatesSection } from '../../../components/CandidatesSection';
 import { NewsSection } from '../../../components/NewsSection';
 import { SentimentSection } from '../../../components/SentimentSection';
@@ -107,6 +108,7 @@ function DashboardContent({ initialPolls, initialAc, initialCrit, brazilContext 
         { id: 'n_metas', label: L('Metas', 'Goals', 'Metas'), action: 'metas' },
       ] },
       { id: 'nav_dash', label: L('Análises do dashboard', 'Dashboard analyses', 'Análisis del panel'), color: '#0d9488', items: [
+        { id: 'n_2t', label: L('Resultado do 2º turno', 'Second-round result', 'Resultado de la 2ª vuelta'), href: '#sec-2turno' },
         { id: 'n_1t', label: L('Resultado do 1º turno', 'First-round result', 'Resultado de la 1ª vuelta'), href: '#sec-1turno' },
         { id: 'n_crit', label: L('Análise criteriosa', 'In-depth analysis', 'Análisis detallado'), href: '#sec-candidatos' },
         { id: 'n_inst', label: L('Institutos monitorados', 'Monitored pollsters', 'Encuestadoras monitoreadas'), href: '#sec-pesquisas' },
@@ -158,6 +160,7 @@ function DashboardContent({ initialPolls, initialAc, initialCrit, brazilContext 
         <AfosTradeoffHeroCard />
 
         <main id="main-content" className="w-full max-w-6xl mx-auto px-3 sm:px-4 md:px-8 py-6 sm:py-8 space-y-8 sm:space-y-12" role="main">
+          <SectionErrorBoundary locale={locale} name="2º turno"><SecondRoundSection /></SectionErrorBoundary>
           <SectionErrorBoundary locale={locale} name="1º turno"><FirstRoundSection /></SectionErrorBoundary>
           <SectionErrorBoundary locale={locale} name="Polymarket"><PolymarketSection poly={poly} loading={polyLoading} /></SectionErrorBoundary>
           {brazilDivergence.rows.length > 0 && (

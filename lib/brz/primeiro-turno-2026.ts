@@ -138,7 +138,9 @@ export const RETROSPECTO_1T: LinhaRetro[] = [
       { nome: 'Flávio Bolsonaro', valor: 64.9 },
       { nome: 'Lula', valor: 35.5 },
     ],
-    urna: null,
-    confere: null,
+    // Resolvido em 25/Out: o 2º turno elegeu Lula (`segundo-turno-2026.ts`).
+    // Até então era `null`, "em aberto"; a véspera de 03/Out não muda.
+    urna: 'Lula',
+    confere: false,
   },
 ]

@@ -29,7 +29,7 @@ type Textos = {
   titulo: Record<LinhaRetro['id'], string>
   divulgadas: string; horaUtc: (h: string) => string
   pesquisas: (lula: number, flavio: number, dl: string, df: string) => string
-  urna: { aberto: string; pesquisas: string; segundo: string; terceiro: string; senado: string }
+  urna: { aberto: string; pesquisas: string; segundo: string; terceiro: string; senado: string; vencedor: string }
   sim: string; nao: string; emAberto: string; maioria: string; intervalo: string; bate: string
   rotVespera: string; rotUrna: string
 }
@@ -63,6 +63,7 @@ const TXT: Record<'pt-BR' | 'en' | 'es', Textos> = {
       segundo: 'Lula em 2º',
       terceiro: 'Augusto Cury em 3º (2,89%), Renan Santos em 4º',
       senado: 'PL, com 19 das 54 vagas',
+      vencedor: 'Lula, eleito no 2º turno de 25/Out',
     },
     sim: 'sim', nao: 'não', emAberto: 'em aberto',
     maioria: 'maioria das casas', intervalo: 'intervalo: contém a urna', bate: 'bate com a urna',
@@ -96,6 +97,7 @@ const TXT: Record<'pt-BR' | 'en' | 'es', Textos> = {
       segundo: 'Lula 2nd',
       terceiro: 'Augusto Cury 3rd (2.89%), Renan Santos 4th',
       senado: 'PL, with 19 of the 54 seats',
+      vencedor: 'Lula, elected in the 25 Oct second round',
     },
     sim: 'yes', nao: 'no', emAberto: 'open',
     maioria: 'majority of pollsters', intervalo: 'range: contains the count', bate: 'matches the count',
@@ -129,6 +131,7 @@ const TXT: Record<'pt-BR' | 'en' | 'es', Textos> = {
       segundo: 'Lula 2º',
       terceiro: 'Augusto Cury 3º (2,89%), Renan Santos 4º',
       senado: 'PL, con 19 de las 54 vacantes',
+      vencedor: 'Lula, elegido en la segunda vuelta del 25 de oct',
     },
     sim: 'sí', nao: 'no', emAberto: 'abierto',
     maioria: 'mayoría de las casas', intervalo: 'intervalo: contiene la urna', bate: 'coincide con el escrutinio',
@@ -163,6 +166,7 @@ export function FirstRoundSection() {
     if (l.id === 'pesquisas') return tx.urna.pesquisas;
     if (l.id === 'segundo') return tx.urna.segundo;
     if (l.id === 'terceiro') return tx.urna.terceiro;
+    if (l.id === 'vencedor') return tx.urna.vencedor;
     return tx.urna.senado;
   };
 
