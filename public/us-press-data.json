@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-24",
-  "fetchedAt": "2026-10-24T19:20:13.380Z",
+  "lastUpdate": "2026-10-25",
+  "fetchedAt": "2026-10-25T19:20:13.457Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,18 +113,18 @@
     }
   ],
   "qualidade": {
-    "lidos": 286,
-    "naLista": 109,
-    "foraDaLista": 177,
+    "lidos": 245,
+    "naLista": 104,
+    "foraDaLista": 141,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 3,
-    "veiculosRepresentados": 5,
+    "descartadosPorAcompanhamento": 2,
+    "veiculosRepresentados": 8,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [
       "feed:The Washington Post: HTTP 502"
     ],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 40,
+    "lidosEmFeedProprio": 42,
     "publicadosComLinkCanonico": 6,
     "publicadosViaGoogleNews": 4,
     "publicadosPorDisputa": 10,
@@ -132,93 +132,93 @@
   },
   "itens": [
     {
+      "titulo": "El-Sayed slams Trump's Canada tariff cuts as 'arbitrary' midterms ploy",
+      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/abdul-el-sayed-trump-canada-tariffs-michigan-mike-rogers-obama/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-25T19:06:35.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Watch live: Decision Desk ‘26 Midterm Preview powered by 2WAY and The Hill",
+      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/watch-live-decision-desk-26-midterm-preview-powered-by-2way-and-the-hill-2/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-25T18:41:22.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Blanche says Trump isn't trying to meddle with Alaska election results by suing over Senate race",
+      "url": "https://abcnews.com/Politics/wireStory/blanche-trump-meddle-alaska-election-results-suing-senate-137555745",
+      "casa": "ABC News",
+      "publicadoEm": "2026-10-25T18:11:02.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Blanche defends DOJ lawsuit blocking Alaska Senate results if Republican loses",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPeTFtSVNpVEV6RTJSb3VhQ1I1WEsyYXBaaWxXV0hBZkZ0R0RkN2Nrdm9lRnM2WWhVd19xTWVMVzcyLUM2SExta29EWVI5Q2JJaWJKSmxSNmhHYmwtVUtPUngxUGhfWld0eW9BaTlQRFZjWHptbE9ocWdjQVBUdTl2Nm5wYTVDdnN4Q21DY254dGFxZ2lGQXNfY21PVG4wVjJwZi1rLWszQkFuMEpnN1A4NnZ0RVYtcTlvWlpHeFVlSXg?oc=5",
+      "casa": "NPR",
+      "publicadoEm": "2026-10-25T17:50:35.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Alaska Senate candidate sustains \"minor injuries\" in car accident",
+      "url": "https://www.cbsnews.com/news/mary-peltola-car-accident-alaska-senate-race/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-10-25T17:32:03.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
       "titulo": "Tracking the 2026 Early Vote: Midterm Elections",
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5CNDhGdFFLbHU0dnFMZGZ5T2Z4LVNzYk5Mb0lHNXZhQW56U09sX1RmWmRLZmlvRnQtOHNHUlZlS3NZckF2WHF0LXVZOHROTTBCMnQzbkM2X1JCYkY5RGpwamRubEc4M3lPaFE?oc=5",
       "casa": "NBC News",
-      "publicadoEm": "2026-10-24T18:00:21.000Z",
+      "publicadoEm": "2026-10-25T17:30:21.000Z",
       "consulta": "midterms",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "Elon Musk-backed PAC sends out 'false' text about Abdul El-Sayed in Senate race",
-      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/elon-musk-pac-false-text-abdul-el-sayed-senate-race-midterms/",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-10-24T17:55:49.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Early voting surges in battleground states as Democrats outpace GOP gains",
-      "url": "https://www.newsnationnow.com/us-news/early-voting-surges-in-battleground-states-as-democrats-outpace-gop-gains/",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-10-24T17:31:51.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Why Democrats Could Find It Hard to Win the Senate Despite Their Strong Polls",
-      "url": "https://www.nytimes.com/2026/10/24/us/politics/democrats-expectations-blue-wave.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-10-24T17:00:54.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Obama Returns to the Trail, Setting Up Dueling Midterm Appearances With Trump",
-      "url": "https://www.nytimes.com/2026/10/24/us/politics/obama-trump-midterms-campaign.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-10-24T16:50:50.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Maine Midterm Elections 2026: Key Races, Candidates and Past Results",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9NdHFMY2tJbzM3eWVKNllUWUlJaXpuQl9JalMyOTdlZDIwMWtWd3M1MVRKdHkxM01zZHZtRDYxQ2FCbnVlNlZIUXRMRTJxaGVuWmRwbWJZQndGS2tsZllyYm9uN0E4WEhzQzZBenJR?oc=5",
+      "titulo": "Texas Midterm Elections 2026: Key Races, Candidates and Past Results",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5uWFNONTdBQ1dFOUxtbU1pbGVJOXF4LVI1TUFYaTg5SFo2U0YzY1ZRemY4bmxaZ191MHVwbzkyTHhlaXlKWEhtdXdqSFZ5ZFhFMGRSZXRxdVpZRTVFZE1Od2NnTUtMYlFNY1YzNGlB?oc=5",
       "casa": "NBC News",
-      "publicadoEm": "2026-10-24T16:30:21.000Z",
+      "publicadoEm": "2026-10-25T17:00:21.000Z",
       "consulta": "midterms",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "This US House district was once a political battleground. Now it shows why Congress is dysfunctional",
-      "url": "https://abcnews.com/Politics/wireStory/us-house-district-political-battleground-now-shows-congress-137534858",
-      "casa": "ABC News",
-      "publicadoEm": "2026-10-24T15:35:20.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "AOC can draw a crowd. The midterms will test whether her politics can win before 2028",
-      "url": "https://abcnews.com/Politics/wireStory/aoc-draw-crowd-midterms-test-politics-win-2028-137536905",
-      "casa": "ABC News",
-      "publicadoEm": "2026-10-24T15:33:15.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Allan Lichtman has predicted presidents. Can he nail the midterms?",
-      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQSkJiT2Q3c2ZkWm9hWGFxd2J1UmlGSENhdmFMaGsyY215OGlTbWRHenAyMTZjYzhEbVdJRFFCV0dpY3VlN0w1eUxTUEtJbExXR1lxamJNcGtVTnREQXNyd2Z5Yk1pZWN3X3RTSEQteklDcDFqQjFpNUQwMjhBS2pQMnB5UWp3M2lNbmlMN0o0QUdYUjBGdWxSczN5VUdUa2NjNGgtSDVwTkVNS3VfZndURl9YWnhWcHlBSTVrY3o3Nno2WDdhQ1lJanF1ckZ0V0E5MHBRaGdvbDlzZw?oc=5",
-      "casa": "USA Today",
-      "publicadoEm": "2026-10-24T15:27:00.000Z",
-      "consulta": "midterms",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Alaska Dem Peltola calls DOJ lawsuit 'corrupt' and 'desperate'",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOb2lTSE4weGRIcUxzekc4d0pPZnd0dVMxVDdRbUVVQzlSR1R3MHJ1MWg3ZzJZWGhsSUkyeS1TQnNQWjJGaHNrc092N181RXU4TW90SzlMaGJnam5WZjIycHRfUkROcWk3ZWZGRkxNSG9fNFBYS2tXeS0wX3dpNGZPelZ5ZXlfaEZUakRVZ203SEtxbGZVRkpEOU12NG01dkFPUjE3SURhaEZDM3FnN3l6UDF4dFFQbFNkVEt3TEg3akdzNU5PRXY4?oc=5",
-      "casa": "USA Today",
-      "publicadoEm": "2026-10-24T15:23:00.000Z",
+      "titulo": "Blanche defends DoJ’s pre-emptive suit to block Alaska Senate results certification",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNbG9YWXRFWEV3SUtKUnVmX1laM1MyaTctemEyZWlFQzVnWm5ISkh4ZlBmZEo0NHk1cHBEc1VGWENsTFgzWWtEMmtKeFlLeGdBYURkeUxNRFBzbDdYVGM0c055RGplSkhPWi1JZlo4d0x5M3FGOTVkRGU5T2NmTURtcmUxdy1vNTlhV1BWNmppQTk0Q2lQbTVRcXJQblh5TlVWRG1fVVFR?oc=5",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-10-25T16:48:00.000Z",
       "consulta": "senate-races",
       "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Libertarian Texas Senate candidate says he's not taking votes away from Paxton, Talarico",
+      "url": "https://thehill.com/homenews/state-watch/6170806-ted-brown-texas-senate/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-10-25T16:41:02.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "In Texas Senate Race, Talarico Leans Into Growing Rivalry With Elon Musk",
+      "url": "https://www.nytimes.com/2026/10/25/us/politics/talarico-musk-texas-senate-paxton-midterms.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-25T16:12:13.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
       "trilho": "disputa"
     }
   ]
