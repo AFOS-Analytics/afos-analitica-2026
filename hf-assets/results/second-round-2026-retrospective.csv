@@ -1,0 +1,16 @@
+instrument,market_slug,eve_time,item,eve_value,unit,eve_rank,outcome,item_is_outcome
+national_poll_eve,,2026-10-24,Gerp,3,"points, Flávio Bolsonaro minus Lula, total votes",1,Lula +3.58 (valid votes),false
+national_poll_eve,,2026-10-24,Veritá,2.98,"points, Flávio Bolsonaro minus Lula, total votes",2,Lula +3.58 (valid votes),false
+national_poll_eve,,2026-10-24,AtlasIntel,1.5,"points, Flávio Bolsonaro minus Lula, total votes",3,Lula +3.58 (valid votes),false
+national_poll_eve,,2026-10-24,CNT/MDA,1.3,"points, Flávio Bolsonaro minus Lula, total votes",4,Lula +3.58 (valid votes),false
+national_poll_eve,,2026-10-24,Datafolha,1,"points, Flávio Bolsonaro minus Lula, total votes",5,Lula +3.58 (valid votes),false
+national_poll_eve,,2026-10-24,Quaest,1,"points, Flávio Bolsonaro minus Lula, total votes",6,Lula +3.58 (valid votes),false
+national_poll_eve,,2026-10-24,Palver,1,"points, Flávio Bolsonaro minus Lula, total votes",7,Lula +3.58 (valid votes),false
+national_poll_eve,,2026-10-24,BTG/Nexus,1,"points, Flávio Bolsonaro minus Lula, total votes",8,Lula +3.58 (valid votes),false
+national_poll_eve,,2026-10-24,Futura/100% Cidades,0.3,"points, Flávio Bolsonaro minus Lula, total votes",9,Lula +3.58 (valid votes),false
+national_poll_eve,,2026-10-24,Colectta,-0.5,"points, Flávio Bolsonaro minus Lula, total votes",10,Lula +3.58 (valid votes),true
+national_polls_since_first_round,,2026-10-08/2026-10-25,Flávio Bolsonaro,50,count of national polls with this leader,1,Lula,false
+national_polls_since_first_round,,2026-10-08/2026-10-25,Lula,4,count of national polls with this leader,2,Lula,true
+national_polls_since_first_round,,2026-10-08/2026-10-25,tie,1,count of national polls with this leader,3,Lula,false
+market_winner,brazil-presidential-election,2026-10-24T22:30:00Z,Flávio Bolsonaro,83.4,"price, percent",1,Lula,false
+market_winner,brazil-presidential-election,2026-10-24T22:30:00Z,Lula,16.5,"price, percent",2,Lula,true

@@ -145,7 +145,13 @@ Full column-level definitions for every file are in **[`DATA_DICTIONARY.md`](DAT
 | `results/first-round-2026-retrospective.csv` | 18 | **What each instrument said on the eve**: the nine national polls of 2026-10-03 and four Polymarket books, item by item, against the outcome. |
 | `results/first-round-2026-retrospective-summary.csv` | 5 | The same comparison one row per instrument, as the panel card shows it: matched or not, and for the polls whether the majority of houses had the winner ahead and whether their range contained the count. |
 
-The **second round** will be added in the same format after 2026-10-25. Details in [`results/README.md`](results/README.md).
+| `results/second-round-2026-official.json` | 1 | **Final TSE tally of the second round** (100% of sections, generated 2026-10-25 23:27): Lula 51.79%, Flávio Bolsonaro 48.21% of valid votes; electorate, turnout, abstention, blank and null votes, and the **voting machines** of the day (499,248 in use, 48,815 backup, 1,551 replaced, no section voting on paper), each with its TSE source. |
+| `results/second-round-2026-candidates.csv` | 2 | The two runoff candidates, with votes, percentage of valid votes, party, coalition and TSE status. |
+| `results/second-round-2026-summary.csv` | 13 | One row per figure, with the denominator of each percentage declared. |
+| `results/second-round-2026-retrospective.csv` | 15 | **What each instrument said on the eve**: the ten national polls of 2026-10-24, the 55 national polls conducted after the first round by leader, and the Polymarket winner contract, item by item, against the outcome. |
+| `results/second-round-2026-retrospective-summary.csv` | 3 | The same comparison one row per instrument, as the panel card shows it. |
+
+Both rounds use the same format. In the first-round files the winner contract, open until the runoff, is now resolved: Lula. Details in [`results/README.md`](results/README.md).
 
 ### 📈 Market & divergence time-series
 

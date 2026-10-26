@@ -15,5 +15,5 @@ market_terceiro,brazil-presidential-election-first-round-3rd-place,2026-10-03T23
 market_terceiro,brazil-presidential-election-first-round-3rd-place,2026-10-03T23:00:00Z,Augusto Cury,23.7,"price, percent",3,Augusto Cury,true
 market_senado,next-brazil-senate-election-most-seats-won,2026-10-03T21:00:00Z,PL,95.8,"price, percent",1,PL,true
 market_senado,next-brazil-senate-election-most-seats-won,2026-10-03T21:00:00Z,MDB,1.6,"price, percent",2,PL,false
-market_vencedor,brazil-presidential-election,2026-10-03T23:00:00Z,Flávio Bolsonaro,64.9,"price, percent",1,"open, decided on 2026-10-25",
-market_vencedor,brazil-presidential-election,2026-10-03T23:00:00Z,Lula,35.5,"price, percent",2,"open, decided on 2026-10-25",
+market_vencedor,brazil-presidential-election,2026-10-03T23:00:00Z,Flávio Bolsonaro,64.9,"price, percent",1,Lula,false
+market_vencedor,brazil-presidential-election,2026-10-03T23:00:00Z,Lula,35.5,"price, percent",2,Lula,true

@@ -1,0 +1,4 @@
+instrument,label,market_slug,eve_time,eve_summary,outcome,matches_outcome,houses_lula_ahead,houses_flavio_ahead,range_low,range_high,majority_matches,range_contains_outcome
+national_poll_eve,National polls released on the eve (10),,2026-10-24,"Flávio Bolsonaro ahead in 9, Lula in 1. Distance from Lula +0.5 to Flávio Bolsonaro +3.0",Lula +3.58,no,1,9,-0.5,3,false,false
+national_polls_since_first_round,National polls conducted after the first round (55),,2026-10-08/2026-10-25,"Flávio Bolsonaro ahead in 50, Lula in 4, tie in 1",Lula,no,4,50,,,false,
+market_winner,Election winner contract,brazil-presidential-election,2026-10-24T22:30:00Z,Flávio Bolsonaro 83.40% · Lula 16.50%,Lula,no,,,,,,

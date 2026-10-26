@@ -28,7 +28,7 @@ import { RESULTADO_1T, RETROSPECTO_1T, URNAS_1T, FONTE_TSE } from '../lib/brz/pr
 
 const ROOT = join(__dirname, '..')
 const turno = (process.argv.find((a) => a.startsWith('--turno=')) ?? '--turno=1').split('=')[1]
-if (turno !== '1') throw new Error('Só o 1º turno existe por enquanto. O 2º entra depois de 25/Out, com o arquivo bruto e as constantes dele.')
+if (turno !== '1') throw new Error('Este script é o do 1º turno. O 2º tem o próprio: npx tsx scripts/build-hf-resultado-oficial-2t.ts')
 
 const BRUTO = join(ROOT, 'data', 'brz', 'resultado-oficial-2026', '1turno', 'br-c0001-e006257-u.json')
 const URL_BRUTO = 'https://resultados.tse.jus.br/oficial/ele2026/6257/dados/br/br-c0001-e006257-u.json'
@@ -192,7 +192,8 @@ const DESFECHO: Record<string, string> = {
   segundo: 'Lula 2nd',
   terceiro: 'Augusto Cury 3rd (2.89%), Renan Santos 4th',
   senado: 'PL, with 19 of the 54 seats',
-  vencedor: 'open, decided on 25 Oct',
+  // Resolvido em 25/Out: o 2º turno elegeu Lula. Até então era 'open, decided on 25 Oct'.
+  vencedor: 'Lula, elected in the 25 Oct second round',
 }
 const URNA_PESQUISAS = 1.87 // Flávio menos Lula nos válidos, da totalização acima
 const resumo: (string | number | boolean | null)[][] = [

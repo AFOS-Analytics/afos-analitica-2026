@@ -2,6 +2,16 @@
 
 All notable changes to this dataset. The data itself is dated and append-only; this log records **structural** changes (new files, schema, coverage).
 
+## 2026-10-26, the official second-round result enters the dataset
+
+### Added: `results/second-round-2026-*`
+
+The **final TSE tally of the second round** (100% of sections, generated 2026-10-25 23:27:02), in the same format as the first round: Lula 51.79% and Flávio Bolsonaro 48.21% of valid votes, electorate, turnout, abstention, blank and null votes, and the **voting machines** of the day (499,248 in use, 48,815 backup, 1,551 replaced, no section voting on paper), from the TSE report of incidents recorded up to 20:00. Also the **eve-of-vote retrospective**: the ten national polls of 2026-10-24, the 55 national polls conducted after the first round, and the Polymarket winner contract, against the outcome. Built from the raw TSE tally file kept in the repository and checked against the panel card.
+
+### Changed: winner contract resolved in the first-round retrospective
+
+`first-round-2026-retrospective.csv` and `-retrospective-summary.csv` carried the winner contract as open until the runoff. It is now resolved: outcome Lula, `matches_outcome` = `no` (Flávio Bolsonaro 64.90%, Lula 35.50% on the eve of the first round).
+
 ## 2026-10-11, the official first-round result enters the dataset
 
 ### Added: `results/`

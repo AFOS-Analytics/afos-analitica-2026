@@ -1,6 +1,6 @@
 # Official result, Brazil 2026 presidential election
 
-The official tally that every market price and every poll in this dataset is measured against. The first round (October 4, 2026) is here; the second round (October 25, 2026) will be added in the same format, as `second-round-2026-*`, once the TSE publishes its final tally.
+The official tally that every market price and every poll in this dataset is measured against. Both rounds are here in the same format: the first round (October 4, 2026) as `first-round-2026-*` and the second round (October 25, 2026) as `second-round-2026-*`.
 
 Every number comes from a TSE primary source. The raw tally file is kept in the AFOS repository under `data/brz/resultado-oficial-2026/`, and `FONTES.md` there records the address and SHA-256 of both documents:
 
@@ -21,4 +21,17 @@ Notes:
 - Candidate percentages are over valid votes; blank and null are over votes cast; turnout and abstention are over the electorate.
 - `other_names_votes` sums the seven candidates below fifth place by votes. Subtracting the five rounded percentages from 100 would give 0.50 instead of 0.49.
 - Replaced voting machines: 1,904, which is 0.35% of all 549,286 machines (in use plus backup), the same base the TSE uses. Over the 499,248 machines in use it would be 0.38%. According to the TSE, the replacements, mostly caused by power fluctuations, did not affect votes already recorded. "Replaced" is the TSE term; the TSE does not publish a count of "defective" machines. No section voted on paper.
-- In the retrospective, poll rows give the margin in points (Flávio Bolsonaro minus Lula, total votes) and `item_is_outcome` is `true` when the house had the same leader as the count. Polls measure total votes and the count reports valid votes, so the comparison is of order and direction, not of size. Market rows give the price in percent and `item_is_outcome` is `true` for the item that won; the winner contract stays open until the runoff.
+- In the retrospective, poll rows give the margin in points (Flávio Bolsonaro minus Lula, total votes) and `item_is_outcome` is `true` when the house had the same leader as the count. Polls measure total votes and the count reports valid votes, so the comparison is of order and direction, not of size. Market rows give the price in percent and `item_is_outcome` is `true` for the item that won. The winner contract stayed open until the runoff and is now resolved: Lula, elected on 2026-10-25.
+
+## Second round (October 25, 2026)
+
+- **Tally:** the final presidential tally file, `br-c0001-e006258-u.json`, with 100% of polling sections, generated on 2026-10-25 at 23:27:02 (Brasília). Lula 51.79% (64,256,232 votes), Flávio Bolsonaro 48.21% (59,826,041). The panel card reads the same numbers, and the build script aborts if card and file disagree.
+- **Voting machines:** the TSE "Relatório de Ocorrências de Urnas Substituídas e Votação Manual" of the 5th election-day bulletin, incidents recorded up to 20:00 (voting closed at 17:00): 499,248 machines in use, 48,815 backup, 1,551 replaced, which is 0.28% of all 548,063 machines, the TSE base (0.31% over the machines in use). No section voted on paper. The TSE had released 1,516 replacements at 18:00.
+
+| file | content |
+|---|---|
+| `second-round-2026-official.json` | everything in one file, as for the first round, plus the elected candidate and the margin in valid votes |
+| `second-round-2026-candidates.csv` | the two candidates, same columns; `status` is "Eleito" or "Não eleito" |
+| `second-round-2026-summary.csv` | one row per figure, same columns |
+| `second-round-2026-retrospective.csv` | the ten national polls released on 2026-10-24 (margin in points, Flávio Bolsonaro minus Lula, total votes), the 55 national polls released from 2026-10-08 to 2026-10-25 counted by leader, and the Polymarket winner contract at its last recorded point of 2026-10-24 (22:30 UTC) |
+| `second-round-2026-retrospective-summary.csv` | the panel card one row per instrument. Eve polls: Flávio Bolsonaro ahead in 9, Lula in 1, range from Lula +0.5 to Flávio Bolsonaro +3.0; the count was Lula +3.58, so neither the majority nor the range matched. Polls since the first round: Flávio Bolsonaro ahead in 50, Lula in 4, tie in 1. Winner contract: Flávio Bolsonaro 83.40%, Lula 16.50% |

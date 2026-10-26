@@ -1,0 +1,82 @@
+{
+  "election": "Brazil 2026 presidential election, second round",
+  "election_date": "2026-10-25",
+  "source": {
+    "tally_file": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/br/br-c0001-e006258-u.json",
+    "tally_generated_at": "2026-10-25T23:27:02-03:00",
+    "tally_status": "final (andamento f)",
+    "results_page": "https://resultados.tse.jus.br/oficial/app/index.html",
+    "machines_document": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/boletim-de-urna-2o-turno/20-00/relatorio_ocorrencias_urnas_substituidas_votacao_manual",
+    "machines_document_title": "TSE, Relatório de Ocorrências de Urnas Substituídas e Votação Manual, 5º Boletim do 2º turno, ocorrências até 20:00 de 25/10/2026"
+  },
+  "sections": {
+    "total": 499248,
+    "tallied": 499248,
+    "tallied_pct": 100
+  },
+  "electorate": 158745502,
+  "turnout": {
+    "votes": 128236074,
+    "pct_of_electorate": 80.78
+  },
+  "abstention": {
+    "votes": 30509005,
+    "pct_of_electorate": 19.22
+  },
+  "votes_cast": 128236074,
+  "valid_votes": 124082273,
+  "blank": {
+    "votes": 1430496,
+    "pct_of_votes_cast": 1.12
+  },
+  "null": {
+    "votes": 2723305,
+    "pct_of_votes_cast": 2.12
+  },
+  "candidates": [
+    {
+      "number": 13,
+      "name": "LUIZ INÁCIO LULA DA SILVA",
+      "ballot_name": "LULA",
+      "party": "PT",
+      "coalition": "BRASIL PRONTO PRA MAIS",
+      "coalition_parties": "PSB / PDT / PCDOB / PT / PV / PSOL / REDE",
+      "votes": 64256232,
+      "pct_valid": 51.79,
+      "status": "Eleito"
+    },
+    {
+      "number": 22,
+      "name": "FLAVIO NANTES BOLSONARO",
+      "ballot_name": "FLAVIO BOLSONARO",
+      "party": "PL",
+      "coalition": "PARTIDO LIBERAL",
+      "coalition_parties": "PL",
+      "votes": 59826041,
+      "pct_valid": 48.21,
+      "status": "Não eleito"
+    }
+  ],
+  "elected": "LULA",
+  "margin_valid_pp": {
+    "value": 3.58,
+    "leader": "LULA"
+  },
+  "voting_machines": {
+    "in_use": 499248,
+    "backup": 48815,
+    "total": 548063,
+    "replaced_on_election_day": 1551,
+    "replaced_pct_of_total": 0.28,
+    "sections_voting_on_paper": 0,
+    "reference": "TSE report of incidents recorded up to 20:00 (Brasília) on 2026-10-25; voting closed at 17:00",
+    "notes": [
+      "The percentage is over all 548,063 machines (in use plus backup), the same base as the TSE figure of 0.28% and as the first round. Over the 499,248 machines in use it would be 0.31%.",
+      "The TSE had released 1,516 replacements at 18:00; the 20:00 report adds 35 more.",
+      "The TSE term is \"replaced\" (substituídas). The TSE does not publish a count of \"defective\" machines."
+    ]
+  },
+  "notes": [
+    "Candidate percentages are over valid votes. Blank and null are over votes cast. Turnout and abstention are over the electorate."
+  ]
+}

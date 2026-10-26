@@ -1,0 +1,14 @@
+metric,value,pct,pct_base,source
+sections_total,499248,,,tally_file
+sections_tallied,499248,100,sections_total,tally_file
+electorate,158745502,,,tally_file
+turnout,128236074,80.78,electorate,tally_file
+abstention,30509005,19.22,electorate,tally_file
+votes_cast,128236074,,,tally_file
+valid_votes,124082273,,,tally_file
+blank,1430496,1.12,votes_cast,tally_file
+null,2723305,2.12,votes_cast,tally_file
+voting_machines_in_use,499248,,,machines_document
+voting_machines_backup,48815,,,machines_document
+voting_machines_replaced,1551,0.28,voting_machines_in_use + voting_machines_backup,machines_document
+sections_voting_on_paper,0,,,machines_document
