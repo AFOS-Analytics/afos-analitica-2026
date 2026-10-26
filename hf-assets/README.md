@@ -153,6 +153,17 @@ Full column-level definitions for every file are in **[`DATA_DICTIONARY.md`](DAT
 
 Both rounds use the same format. In the first-round files the winner contract, open until the runoff, is now resolved: Lula. Details in [`results/README.md`](results/README.md).
 
+### 🌙 Election nights
+
+| Path | Rows | Content |
+|------|------|---------|
+| `election-night/first-round-2026-live.csv` · `.jsonl` | 4 | **First-round night** (2026-10-04): each AFOS edition during the count, with the TSE tally it used and the confirmed Polymarket reading it published. |
+| `election-night/second-round-2026-live.csv` · `.jsonl` | 87 | **Second-round night** (2026-10-25), every three minutes from 19:35 to 23:56 Brasília: TSE tally and winner-contract price and volume at the same minute (single reading). |
+| `election-night/second-round-2026-trades.csv` | 24,784 | Trades in the two winner contracts during the count, **wallets anonymized** (`A1`, `A2`...), with coverage declared per row. |
+| `election-night/second-round-2026-holders.csv` | 16,640 | Top 20 holders of each side of each winner contract, about once a minute, anonymized. |
+
+Details in [`election-night/README.md`](election-night/README.md).
+
 ### 📈 Market & divergence time-series
 
 | Path | Content |

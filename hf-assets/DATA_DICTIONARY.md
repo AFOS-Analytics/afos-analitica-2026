@@ -217,3 +217,12 @@ Poll-level market×poll pairing **anchored on the field midpoint** (vs the publi
 | `polymarket_date` | date | Nearest market date **on or before** the field midpoint (no fabricated contemporaneity; polls predating the market series start, 2026-04-17, have no row). |
 | `naive_gap_pp` | number | `polymarket_pct − poll_pct`, percentage points. |
 | `gap_type` | string | Always `naive_winprob_minus_voteshare` — a **flag, not a metric**: the market prices **P(win)** while the poll reports **vote share**, so the gap is **not scale-reconciled**. Reconciling the scales (e.g. mapping vote share to a win probability) is a modeling choice left to the researcher. |
+
+## `election-night/` · the counts as they happened
+
+- **`first-round-2026-live.{csv,jsonl}`**: one row per AFOS edition on the first-round night (2026-10-04), TSE tally (election 6257) and the confirmed Polymarket reading the edition published, with preview links.
+- **`second-round-2026-live.{csv,jsonl}`**: one row per collector reading on the second-round night (2026-10-25, every three minutes). `collected_at_utc`; TSE: `tse_tally_time_brt`, `tse_sections_tallied`, `tse_sections_tallied_pct`, `tse_mathematically_defined` (empty when the file did not carry the flag), `tse_final`, `valid_lula`, `valid_flavio_bolsonaro` (percent of valid votes), `votes_lula`, `votes_flavio_bolsonaro`, `valid_votes`, `blank_pct`, `null_pct`, `abstention_pct`; market: `market_reading_utc`, `winner_price_lula`, `winner_price_flavio_bolsonaro` (percent), `winner_volume_usd_*` (cumulative USD), `market_confirmation` (always `single reading`).
+- **`second-round-2026-trades.csv`**: `timestamp_utc`, `contract` (`lula`, `flavio_bolsonaro`), `outcome` (`Yes`, `No`), `side` (`BUY`, `SELL`), `shares`, `price` (0 to 1), `notional_usd` (shares times price), `wallet` (anonymous label, `A1` = most money traded that night), `coverage` (`complete` from 23:15:26 UTC for Lula and 23:26:32 UTC for Flávio Bolsonaro, `partial` before).
+- **`second-round-2026-holders.csv`**: `fetched_at_utc`, `contract`, `outcome`, `rank` (1 to 20 by shares), `wallet` (same labels as the trades file), `shares`.
+
+Wallet addresses, names and transaction hashes are never published.

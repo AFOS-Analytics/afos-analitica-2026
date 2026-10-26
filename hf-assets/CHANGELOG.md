@@ -2,6 +2,16 @@
 
 All notable changes to this dataset. The data itself is dated and append-only; this log records **structural** changes (new files, schema, coverage).
 
+## 2026-10-26, the second-round election night
+
+### Added: `election-night/second-round-2026-*`
+
+The night of the count, recorded live: 87 readings every three minutes from 19:35 to 23:56 Brasília with the TSE tally and the winner-contract price at the same minute (`-live`), the 24,784 trades in the two winner contracts (`-trades`) and the top 20 holders of each side about once a minute (`-holders`). Wallets are anonymized as `A1`, `A2`..., and coverage is declared per trade: complete from 23:15:26 UTC (Lula) and 23:26:32 UTC (Flávio Bolsonaro), partial before.
+
+### Changed: `election-night/` is now part of the daily mirror
+
+The first-round night file was uploaded by hand on 2026-10-04 and stayed online only because uploads are cumulative. The export now copies the whole folder.
+
 ## 2026-10-26, the official second-round result enters the dataset
 
 ### Added: `results/second-round-2026-*`

@@ -562,6 +562,11 @@ console.log(`🗳️  polls estáticos copiados: ${copyDirInto(join(ASSETS, 'pol
 // Gerado por scripts/build-hf-resultado-oficial.ts a partir do arquivo bruto do TSE.
 console.log(`🗳️  resultado oficial copiado: ${copyDirInto(join(ASSETS, 'results'), join(STAGING, 'results'))} arquivos`)
 
+// ---- noites da apuração (1º turno, 04/Out; 2º turno, 25/Out) ----
+// O 1º turno subiu à mão em 04/Out e só seguia no ar porque o upload é cumulativo.
+// O 2º é gerado por scripts/build-hf-noite-2turno.mjs dos brutos locais do coletor.
+console.log(`🌙 noites da apuração copiadas: ${copyDirInto(join(ASSETS, 'election-night'), join(STAGING, 'election-night'))} arquivos`)
+
 // ---- docs acadêmicos ----
 for (const f of ['DATA_DICTIONARY.md', 'CITATION.cff', 'CHANGELOG.md', 'ERRATA.md']) {
   const src = join(ASSETS, f); if (existsSync(src)) copyFileSync(src, join(STAGING, f))
