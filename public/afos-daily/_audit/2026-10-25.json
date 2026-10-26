@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-25",
+  "adversarialReview": {
+    "singleSourceClaims": "Pedido da campanha de Flávio Bolsonaro por duas horas a mais em SP, PR e SC só no Estadão, atribuído no texto; eleitores que não conseguiram votar depois das 17h só na Folha de S.Paulo, atribuído. As demais alegações têm duas fontes de grupos diferentes com corpo lido.",
+    "numericalErrors": "reconcile-claims: só os números de pesquisa nos títulos do rodapé (51,56% e 50,1%). Votos e percentuais do TSE saem do arquivo oficial da eleição 6258 (parcial das 21:25 BRT, 99,86% das seções); preços da leitura confirmada de 25/Out 21:22 BRT. Gate de tradução: 73 números com unidade idênticos nas três versões.",
+    "inventedSources": "Corpo lido: Poder360 (resultado e decisão de Zanin), Gazeta do Povo (resultado e Zanin), Estadão (esclarecimento de Zanin e reconsideração do transporte indígena), O Globo e Agência Brasil (transporte indígena), Metrópoles (virada).",
+    "literalQuotes": "nenhuma",
+    "spuriousCausation": "nenhuma. O texto não atribui o movimento do contrato de vencedor à apuração nem à decisão de Zanin; dá as leituras com carimbo de hora.",
+    "criticalVerbs": "prorrogação descrita como decisão liminar de Zanin às 17h01; reconsideração de Kassio datada em 24/Out; reeleição pela parcial oficial com 99,86% das seções e pela imprensa (Poder360, Gazeta do Povo, Agência Brasil, Agência Pública).",
+    "decision": "prosseguir para preview"
+  },
+  "factCheck": {
+    "Resultado do 2º turno": "parcial oficial do TSE 21:25 BRT (99,86% das seções), Lula 51,76% x Flávio 48,24%; Poder360 21:10, Gazeta do Povo 21:10, Metrópoles",
+    "Prorrogação por Zanin": "liminar assinada às 17h01 a pedido da coligação de Lula, até 19h, depois limitada às seções não encerradas; Poder360 (17h11, atualizado 17h39), Estadão (19h05), Gazeta do Povo",
+    "Transporte indígena": "Kassio reconsiderou em 24/Out depois do pedido de Gonet ao STF; Estadão, O Globo, Agência Brasil",
+    "fora": "acatamento do pedido da PGR por Fachin (só Estadão); ordem do TSE à Meta sobre páginas de Flávio e Nikolas (só Estadão); séries de preço intradiárias não confirmadas pela dupla leitura"
+  },
+  "market": { "fetchedAt": "2026-10-26T00:22:30.928Z", "trava": "presidencial aprovado às 21:22 BRT; STF sem preço novo (mantida a leitura confirmada de 25/Out 13:39)" }
+}
