@@ -10,7 +10,7 @@
  * ⚖️ Metade dos casos é ANTI-EXCESSO, porque o erro simétrico deste conserto é
  * juntar duas casas que só coincidiram de medir na mesma janela.
  */
-import { duplicatas, assinatura, normalizarNome, jaConferida, conferirCarga } from '../lib/us-polls/duplicata-de-rodada.mjs'
+import { duplicatas, assinatura, normalizarNome, jaConferida, conferirCarga, nucleoDoNome, casaSobDoisNomes } from '../lib/us-polls/duplicata-de-rodada.mjs'
 
 let ok = 0
 let falhas = 0
@@ -101,6 +101,19 @@ eq(conferirCarga([{ ...entrada, conferidoEm: undefined }]).length > 0, true, 'en
 eq(conferirCarga([{ ...entrada, motivo: undefined }]).length > 0, true, 'entrada sem motivo reprova a carga')
 eq(conferirCarga([{ ...entrada, valores: undefined }]).length > 0, true, 'entrada sem valores reprova: a conferencia nunca caducaria')
 eq(conferirCarga([entrada]).length, 0, 'entrada completa passa')
+
+// ── A MESMA CASA EM ONDAS DIFERENTES (27/Out/2026) ─────────────────────────
+// O caso real: "CBS/YouGov" (onda de 21-23/Out) e "CBS News/YouGov" (02/Out).
+eq(nucleoDoNome('CBS News/YouGov'), nucleoDoNome('CBS/YouGov'), 'nucleo: "News" nao distingue casa')
+eq(casaSobDoisNomes(['CBS News/YouGov', 'CBS/YouGov'], []), [['CBS News/YouGov', 'CBS/YouGov']], 'CASO REAL: sem a tabela, os dois nomes da CBS saem como a mesma casa')
+eq(casaSobDoisNomes(['CBS News/YouGov', 'CBS/YouGov']), [], 'com a grafia declarada em casas.mjs, o par sai resolvido')
+eq(casaSobDoisNomes(['Fox News', 'Fox', 'Reuters/Ipsos'], []), [['Fox', 'Fox News']], 'a regra vale para qualquer veiculo com e sem "News"')
+eq(casaSobDoisNomes(['Cygnal (R)', 'Cygnal'], []), [['Cygnal', 'Cygnal (R)']], 'sufixo de partido nao distingue casa')
+// ⚖️ ANTI-EXCESSO: casas diferentes que dividem executor ou nome-base.
+eq(casaSobDoisNomes(['The Economist/YouGov', 'CBS News/YouGov', 'University of Massachusetts Lowell/YouGov'], []), [], 'dividir o EXECUTOR nao faz duas casas virarem uma')
+eq(casaSobDoisNomes(['Morning Consult', 'Morning Consult/Cato Institute'], []), [], 'produto encomendado de outra casa NAO e grafia: as palavras a mais contam')
+eq(casaSobDoisNomes(['Reuters/Ipsos', 'Reuters/Ipsos', 'Reuters/Ipsos'], []), [], 'o mesmo nome repetido nao e par')
+eq(casaSobDoisNomes([], []), [], 'lista vazia devolve vazio')
 
 console.log(`\n${falhas === 0 ? '✅' : '❌'} ${ok} asserção(ões) passaram, ${falhas} falharam\n`)
 process.exit(falhas === 0 ? 0 : 1)

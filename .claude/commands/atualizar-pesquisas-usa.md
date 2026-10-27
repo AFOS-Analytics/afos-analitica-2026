@@ -190,6 +190,15 @@ node scripts/rodada-duplicada-us.mjs     # entra na rodada como passo 2.5/9
 
 🧪 `node scripts/testar-duplicata-us.mjs`, **24 asserções e no CI**, com **7 de 7 mutações reprovadas**. Metade é anti-excesso: sem amostra declarada, duas casas diferentes na mesma janela colidiriam sozinhas, então ali o par só conta se o nome normalizado bater.
 
+🔤 **E a mesma CASA em ondas DIFERENTES, que a assinatura não vê (27/Out/2026).** Em 26/Out o índice escreveu a onda de 21-23/Out como `CBS/YouGov`, e a de 02/Out segue `CBS News/YouGov`. Ondas diferentes, nenhuma assinatura em comum: o passo 2.5 ficou **verde** e a média publicou **21 institutos onde a regra dá 20**, achado lendo a lista à mão. Agora o mesmo script compara o **núcleo do nome** (sem maiúscula, pontuação, sufixo de partido e palavras neutras como `news` e `the`) de todos os institutos **publicados** na média, e roda **antes** da saída antecipada, porque o caso fundador era um dia sem duplicata de mesma onda.
+
+| saída | o que fazer |
+|---|---|
+| `declarar a grafia em lib/us-polls/casas.mjs` | abrir o documento da onda; se for a mesma casa, declarar a variante (`papel: 'grafia'`) |
+| `a tabela de casas JÁ junta os dois` | o arquivo é que está velho: regerar a coleta e republicar |
+
+⚠️ Compara palavras inteiras, de propósito: não pega abreviação (`UMass` e `University of Massachusetts`) para não juntar casas que só dividem o executor (`The Economist/YouGov` e `CBS News/YouGov`). 🧪 Casos plantados em `testar-duplicata-us.mjs`; a mutação que tira `news` das neutras reprova o caso real.
+
 ## Passo 3: forçar o Neon, se não puder esperar as 07:10 UTC
 
 🔑 **O `$CRON_SECRET` NÃO existe no shell.** Ele vive no `.env.local`, que não é carregado no ambiente. Chamar com `$CRON_SECRET` cru devolve **`{"error":"Unauthorized"}` com HTTP 401**, e o 401 é fácil de confundir com segredo errado ou rota quebrada. Ler do arquivo:

@@ -16,8 +16,8 @@
  * Uso: node scripts/rodada-duplicada-us.mjs [--arquivo=public/us-polls-data.json]
  */
 import { readFileSync } from 'fs'
-import { duplicatas, conferirCarga, DUPLICATA_CONFERIDA } from '../lib/us-polls/duplicata-de-rodada.mjs'
-import { conferirCarga as conferirCasas } from '../lib/us-polls/casas.mjs'
+import { duplicatas, conferirCarga, DUPLICATA_CONFERIDA, casaSobDoisNomes } from '../lib/us-polls/duplicata-de-rodada.mjs'
+import { conferirCarga as conferirCasas, serieDaCasa } from '../lib/us-polls/casas.mjs'
 import { media } from '../lib/us-polls/collect.mjs'
 
 const arg = (n) => process.argv.find((a) => a.startsWith(`--${n}=`))?.slice(n.length + 3)
@@ -51,9 +51,32 @@ const naMedia = new Set(
 )
 const dentro = (l) => naMedia.has(`${l.instituto}|${l.campoFim}|${l.amostraTipo ?? ''}`)
 
+// 🔤 A MESMA CASA EM ONDAS DIFERENTES, que a assinatura de rodada nao ve. Roda
+// ANTES da saida antecipada: o caso fundador, 26/Out, era um dia SEM duplicata
+// de mesma onda, e depois dela esta pergunta nunca seria feita.
+// 🔑 Os nomes COMO PUBLICADOS, com a tabela desligada ([]): o arquivo pode estar
+// contando a casa 2x mesmo depois de a tabela já juntar os dois nomes, enquanto
+// a coleta não é regerada. São duas ações diferentes, e a saída diz qual.
+const sobDoisNomes = casaSobDoisNomes((a.mediaAfos?.incluidas ?? []).map((i) => i.instituto), [])
+if (sobDoisNomes.length) {
+  console.log(`   🔤 a MESMA casa sob dois nomes em ondas DIFERENTES, contada 2x em institutos`)
+  for (const ns of sobDoisNomes) {
+    const jaJunta = new Set(ns.map((n) => serieDaCasa(n))).size === 1
+    console.log(`       🔴 ${ns.map((n) => `"${n}"`).join(' e ')}`)
+    console.log(
+      jaJunta
+        ? `          a tabela de casas JÁ junta os dois: o ARQUIVO é que ainda publica a contagem velha. Regerar a coleta e republicar`
+        : `          conferir no documento da onda; se for a mesma casa, declarar a grafia em lib/us-polls/casas.mjs`
+    )
+  }
+  console.log('')
+} else {
+  console.log('   ✅ nenhuma casa da média aparece sob dois nomes em ondas diferentes.')
+}
+
 if (!grupos.length) {
   console.log('   ✅ nenhuma assinatura de rodada aparece sob mais de um nome de casa.\n')
-  process.exit(0)
+  process.exit(sobDoisNomes.length ? 1 : 0)
 }
 
 // 🔑 DUAS perguntas diferentes, e misturá-las foi o que deixou a saída mentir na
@@ -112,6 +135,8 @@ for (const g of grupos) {
   }
   console.log('')
 }
+
+porConferir += sobDoisNomes.length
 
 // 📊 O PREÇO DA TABELA, medido DESLIGANDO a tabela na propria media, e nunca com
 // um filtro escrito aqui.
