@@ -182,6 +182,18 @@ e('texto nulo não estoura', valorSobOsRotulos(null, A('camara-dem'), '91.50', '
   e('🔑 e REPROVA, porque motivo certo com veredito verde é pior que motivo errado', r.ok === false)
 }
 
+// ── 🔴 FOLGA ZERO na média das pesquisas (27/Out/2026): a tela trazia 7,53 com o
+//    arquivo em 7,60, e a folga de preço deixou passar defasagem real.
+{
+  const gb = CONTRATOS.find((c) => c.chave === 'generic-ballot')
+  e('o generic ballot declara folga ZERO no registro', gb.folgaPp === 0)
+  e('os cinco preços de mercado NÃO declaram folga própria, ficam na do dono', CONTRATOS.filter((c) => c.chave !== 'generic-ballot').every((c) => c.folgaPp === undefined))
+  const tela = 'Vantagem democrata\nD+7,53 sobre 28 pesquisas'
+  e('CASO REAL: 7,53 contra 7.60 com folga zero REPROVA', valorSobOsRotulos(tela, A('generic-ballot'), '7.60', 'pt-BR', gb.folgaPp).ok === false)
+  e('o mesmo 7,53 contra 7.60 passaria pela folga de preço, que é o defeito', valorSobOsRotulos(tela, A('generic-ballot'), '7.60', 'pt-BR').ok === true)
+  e('folga zero aceita o valor EXATO', valorSobOsRotulos(tela, A('generic-ballot'), '7.53', 'pt-BR', gb.folgaPp).ok === true)
+}
+
 // ── O PRIMEIRO NÚMERO, isolado
 e('primeiroNumero pega o decimal com vírgula', primeiroNumero('\n91,50%\nRepublicanos') === '91,50')
 e('primeiroNumero pega o decimal com ponto', primeiroNumero(': D+7.54 sobre') === '7.54')

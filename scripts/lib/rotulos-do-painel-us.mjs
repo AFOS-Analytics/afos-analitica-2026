@@ -112,6 +112,13 @@ export const CONTRATOS = [
   {
     chave: 'generic-ballot',
     descricao: 'vantagem democrata servida no generic ballot',
+    // 🔴 FOLGA ZERO, desde 27/Out/2026. A folga de 0.20pp existe porque o livro
+    //    de mercado RESPIRA entre a leitura certificada e a tela. A média das
+    //    pesquisas não respira: ou a tela serve o arquivo novo, ou serve o
+    //    registro velho do Neon. Em 27/Out a tela trazia D+7,53 com o arquivo
+    //    publicado em D+7,60, e o portão passou "0.07pp DENTRO da folga":
+    //    defasagem real lida como oscilação.
+    folgaPp: 0,
     ancoras: {
       'pt-BR': ['Vantagem democrata'],
       en: ['Democratic margin'],

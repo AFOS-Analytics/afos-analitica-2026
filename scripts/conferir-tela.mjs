@@ -130,7 +130,7 @@ export function primeiroNumero(texto) {
  *
  * @returns {{ok: boolean, motivo?: string, ancora?: string, encontrado?: string|null, esperado?: string}}
  */
-export function valorSobOsRotulos(texto, ancoras, valor, locale) {
+export function valorSobOsRotulos(texto, ancoras, valor, locale, tolerancia = TOLERANCIA_PP) {
   const txt = String(texto ?? "")
   if (!Array.isArray(ancoras) || !ancoras.length) return { ok: false, motivo: "SEM_ANCORA" }
   let pos = 0
@@ -149,11 +149,11 @@ export function valorSobOsRotulos(texto, ancoras, valor, locale) {
   //    trazia 98.80, com a rota buscada ao vivo. Nada estava errado.
   // 🔒 Aqui a folga é segura porque o RÓTULO prende a posição. A busca em texto
   //    livre segue exata, de propósito: ver `dentroDaFolga`.
-  const f = dentroDaFolga(achado, esperado, locale)
-  if (!f.ok) return { ok: false, motivo: "OUTRO_NUMERO", encontrado: achado, esperado, driftPp: f.driftPp }
+  const f = dentroDaFolga(achado, esperado, locale, tolerancia)
+  if (!f.ok) return { ok: false, motivo: "OUTRO_NUMERO", encontrado: achado, esperado, driftPp: f.driftPp, folgaPp: tolerancia }
   // ⚠️ Passar por folga não é passar CALADO: o drift sai impresso. Desvio que
   //    não aparece no relatório é desvio que vira crença.
-  return { ok: true, encontrado: achado, exato: f.exato, driftPp: f.driftPp }
+  return { ok: true, encontrado: achado, exato: f.exato, driftPp: f.driftPp, folgaPp: tolerancia }
 }
 
 
@@ -227,7 +227,7 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
     //    ⛔ Continua portão PRÓPRIO: "ausente da tela" e "presente sob o rótulo
     //       errado" são defeitos diferentes e pedem ações diferentes.
     const etiquetas = COM_ETIQUETA
-      ? ESPERADO.map((v, i) => ({ chave: CONTRATOS[i].chave, descricao: CONTRATOS[i].descricao, r: valorSobOsRotulos(texto, CONTRATOS[i].ancoras[locale], v, locale) }))
+      ? ESPERADO.map((v, i) => ({ chave: CONTRATOS[i].chave, descricao: CONTRATOS[i].descricao, r: valorSobOsRotulos(texto, CONTRATOS[i].ancoras[locale], v, locale, CONTRATOS[i].folgaPp ?? TOLERANCIA_PP) }))
       : []
     const etiquetaMa = etiquetas.filter((e) => !e.r.ok)
     // 🎯 Passou sob o rótulo com o livro OSCILADO. Um fato, uma linha.
@@ -256,14 +256,14 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
         console.log(`        🏷️ ${e.chave}: ÂNCORA AUSENTE na tela, ${JSON.stringify(e.r.ancora)}`)
         console.log(`           o rótulo mudou de texto? o registro é scripts/lib/rotulos-do-painel-us.mjs`)
       } else if (e.r.motivo === 'OUTRO_NUMERO') {
-        const dr = e.r.driftPp === null || e.r.driftPp === undefined ? '' : ` · ${e.r.driftPp.toFixed(2)}pp fora, folga ${TOLERANCIA_PP}pp`
+        const dr = e.r.driftPp === null || e.r.driftPp === undefined ? '' : ` · ${e.r.driftPp.toFixed(2)}pp fora, folga ${e.r.folgaPp ?? TOLERANCIA_PP}pp`
         console.log(`        🏷️ ${e.chave}: sob o rótulo veio ${e.r.encontrado}, esperado ${e.r.esperado}${dr}  (${e.descricao})`)
       } else {
         console.log(`        🏷️ ${e.chave}: ${e.r.motivo}`)
       }
     }
     for (const e of porFolga) {
-      console.log(`        🎯 ${e.chave}: tela ${e.r.encontrado} contra certificado, ${e.r.driftPp.toFixed(2)}pp DENTRO da folga de ${TOLERANCIA_PP}pp  (${e.descricao})`)
+      console.log(`        🎯 ${e.chave}: tela ${e.r.encontrado} contra certificado, ${e.r.driftPp.toFixed(2)}pp DENTRO da folga de ${e.r.folgaPp ?? TOLERANCIA_PP}pp  (${e.descricao})`)
     }
     if (faltando.length || etiquetaMa.length) idiomasComFalha++
     await pag.close()
