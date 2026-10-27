@@ -7,7 +7,7 @@
  *
  * node scripts/testar-fonte-conferida.mjs
  */
-import { FONTE_CONFERIDA, RESULTADOS, conferirCarga, fonteDa, dividasAbertas } from '../lib/us-polls/fonte-conferida.mjs'
+import { FONTE_CONFERIDA, RESULTADOS, conferirCarga, fonteDa, dividasAbertas, campoFimNaFonte } from '../lib/us-polls/fonte-conferida.mjs'
 
 let ok = 0
 let falhou = 0
@@ -223,6 +223,30 @@ caso('linha vazia nao explode', fonteDa(null, REG) === null)
       dividasAbertas([{ ...real, dem: 53 }]).length === 0
     )
   }
+}
+
+// ── 📅 campoNaFonte: o campo que o documento declara contra o do índice (27/Out/2026)
+{
+  const com = (c, extra = {}) => [{ ...base()[0], campoNaFonte: c, ...extra }]
+  const ok1 = { inicio: '2026-09-01', fim: '2026-09-02' }
+  caso('campoNaFonte valido passa', conferirCarga(com(ok1)).length === 0)
+  caso('campoNaFonte igual ao do indice reprova: nao declara divergencia', err(com({ inicio: '2026-09-01', fim: '2026-09-03' }), 'não declara divergência'))
+  caso('campoNaFonte com data malformada reprova', err(com({ inicio: '2026-9-1', fim: '2026-09-02' }), 'AAAA-MM-DD'))
+  caso('campoNaFonte com inicio depois do fim reprova', err(com({ inicio: '2026-09-05', fim: '2026-09-02' }), 'inicio <= fim'))
+  caso('campoNaFonte sem fim reprova', err(com({ inicio: '2026-09-01' }), 'AAAA-MM-DD'))
+  caso(
+    'campoNaFonte em documento NAO lido reprova: so quem leu afirma a data',
+    err(com(ok1, { resultado: 'NAO_ENCONTRADO', confirmado: [], naoConfirmado: ['tudo'] }), 'exige documento LIDO')
+  )
+  const reg = com(ok1)
+  const linha = { instituto: 'Casa A', campoInicio: '2026-09-01', campoFim: '2026-09-03', dem: 50, rep: 40 }
+  caso('campoFimNaFonte devolve a data da FONTE', campoFimNaFonte(linha, reg) === '2026-09-02')
+  caso('campoFimNaFonte CADUCA se o indice reescrever o valor', campoFimNaFonte({ ...linha, dem: 51 }, reg) === null)
+  caso('campoFimNaFonte sem declaracao devolve null', campoFimNaFonte(linha, base()) === null)
+  caso(
+    'o caso real do Marist esta registrado com o fim de campo da fonte',
+    campoFimNaFonte({ instituto: 'NPR/PBS/Marist University', campoInicio: '2026-10-19', campoFim: '2026-10-26', dem: 52, rep: 44 }) === '2026-10-20'
+  )
 }
 
 console.log(`\n${falhou ? '❌' : '✅'} ${ok} asserção(ões) passaram, ${falhou} falharam`)

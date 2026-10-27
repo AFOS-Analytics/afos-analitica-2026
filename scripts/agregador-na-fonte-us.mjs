@@ -35,6 +35,7 @@ import { pathToFileURL } from 'url'
 import { serieDaCasa } from '../lib/us-polls/casas.mjs'
 import { deveRodada } from '../lib/us-polls/instrumento-medido.mjs'
 import { diagnosticoDe, conferirCarga as conferirBuracos } from '../lib/us-polls/buraco-conhecido.mjs'
+import { campoFimNaFonte } from '../lib/us-polls/fonte-conferida.mjs'
 
 export const CHAVE_GENERIC_BALLOT = '79287655-1e6e-4a3a-9ca3-13883c9a7496'
 export const BASE_LIVE = 'https://live-data.jifo.co/'
@@ -375,9 +376,15 @@ async function main() {
   // faltando de casa que já temos, e é o sentido em que o conferidor cala.
   const perto = pertoNoDia
 
+  // 📅 E pela data que a FONTE declara, quando a conferência registrou que o
+  //    índice errou o campo (27/Out/2026, NPR/PBS/Marist: índice 19-26/Out,
+  //    PDF 19-20/Out). Sem isto a data errada abria buraco falso todo dia.
   const temosRodada = (p) =>
-    nossas.some((n) => normalizar(n.instituto) === p.casaNorm && n.campoFim && perto(n.campoFim, p.campoFim)) ||
-    assinaturaBate(p, nossas)
+    nossas.some(
+      (n) =>
+        normalizar(n.instituto) === p.casaNorm &&
+        ((n.campoFim && perto(n.campoFim, p.campoFim)) || (campoFimNaFonte(n) && perto(campoFimNaFonte(n), p.campoFim)))
+    ) || assinaturaBate(p, nossas)
   const nossasCasas = new Set(nossas.map((p) => normalizar(p.instituto)))
 
   const deles = []

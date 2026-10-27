@@ -470,6 +470,14 @@ Ver também `/atualizar-usa`, que roda isto dentro de uma passada completa do pa
 
 🔑 **Casa por casa (pela SÉRIE), campo e VALORES.** Se o índice reescrever D ou R, a conferência **CADUCA** e a linha volta a contar como não conferida. ⛔ Não é portão e não muda veredito: é ledger de dívida, impresso em toda passada pelo `conferir-us-polls`, e a ficha de quem ENTRA já diz se a fonte daquela rodada foi aberta antes.
 
+### 📅 `campoNaFonte`: quando o ÍNDICE erra a DATA de campo (27/Out/2026)
+
+🔴 **O caso:** a NPR/PBS/Marist entrou com campo de **19 a 26/Out**, e o PDF diz *"conducted October 19th through October 20th"* em todas as tabelas (o nome do arquivo ainda carrega 21/10). D, R, recorte e margem batiam. O efeito não era na média, era no **pareamento**: o passo 7.5 casa rodada por casa e data com 1 dia de folga, e acusou o Marist de 19-20/Out como **faltando**, nos dois recortes, e acusaria todo dia até a onda sair da janela.
+
+✅ **O registro aceita `campoNaFonte: { inicio, fim }`**, e o `agregador-na-fonte-us.mjs` pareia também por essa data, via `campoFimNaFonte()`. ⛔ **O `campoFim` servido continua o do índice**: a casa não corrige o índice à mão. A carga reprova `campoNaFonte` em documento NÃO lido, com data malformada, com início depois do fim, e **igual** ao do índice (que não declara divergência nenhuma). E caduca junto com a conferência, se o índice reescrever D ou R.
+
+📌 Medido no dia: lacunas do passo 7.5 de **8 para 6**. 🧪 Casos em `testar-fonte-conferida.mjs`, com duas mutações reprovadas.
+
 ### 🔒 `FONTE_INACESSIVEL`, criado em 08/Out/2026, e ele EXIGE CONTROLE POSITIVO
 
 🔴 **Ele nasceu de uma condição que o registro IRMÃO declarou.** Em 05/Out a Impact Research entrou em `soma-conferida.mjs` com veredito de soma, e a nota dela dizia que aquilo esticava o `FONTE_NAO_SUSTENTA` de *"abri e não sustenta"* para *"não deu para abrir"*, e que **se o caso se repetisse valia veredito próprio**. Repetiu em 08/Out com a Cygnal, e com a soma **fechando em 101**, ou seja sem nenhum pretexto de soma para entrar no registro vizinho. O lugar sempre foi o `fonte-conferida.mjs`, e o que faltava era o nome.

@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-10-27",
-  "fetchedAt": "2026-10-27T02:07:18.532Z",
+  "fetchedAt": "2026-10-27T23:38:10.725Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -48,8 +48,24 @@
   "mediaAfos": {
     "janelaDias": 30,
     "desde": "2026-09-27",
-    "nPesquisas": 28,
+    "nPesquisas": 30,
     "incluidas": [
+      {
+        "key": "NPR/PBS/Marist University|2026-10-26",
+        "instituto": "NPR/PBS/Marist University",
+        "campoFim": "2026-10-26",
+        "amostraTipo": "LV",
+        "dem": 52,
+        "rep": 44
+      },
+      {
+        "key": "Reuters/Ipsos|2026-10-26",
+        "instituto": "Reuters/Ipsos",
+        "campoFim": "2026-10-26",
+        "amostraTipo": "LV",
+        "dem": 53,
+        "rep": 44
+      },
       {
         "key": "CBS News/YouGov|2026-10-23",
         "instituto": "CBS News/YouGov",
@@ -365,10 +381,10 @@
         "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
       }
     ],
-    "nInstitutos": 20,
-    "dem": 50.57,
-    "rep": 43.04,
-    "vantagemDem": 7.53,
+    "nInstitutos": 21,
+    "dem": 50.7,
+    "rep": 43.1,
+    "vantagemDem": 7.6,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
@@ -383,6 +399,7 @@
       "Harvard/Harris Poll/HarrisX",
       "I&I/TIPP Insights (R)",
       "Morning Consult",
+      "NPR/PBS/Marist University",
       "Quinnipiac University",
       "RMG Research",
       "Rasmussen Reports (R)",
@@ -394,14 +411,14 @@
     ]
   },
   "qualidade": {
-    "linhasLidas": 504,
-    "publicadas": 517,
+    "linhasLidas": 508,
+    "publicadas": 521,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 504,
+    "doIndice": 508,
     "curadas": 13,
     "curadasDescartadasPorDuplicidade": 17
   },
@@ -453,6 +470,66 @@
     ]
   },
   "polls": [
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-10-22",
+      "campoFim": "2026-10-26",
+      "amostra": 1164,
+      "amostraTipo": "LV",
+      "margemErro": 2.9,
+      "dem": 53,
+      "rep": 44,
+      "outros": 4,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-10/Reuters%20Ipsos%20October%20Core%20Political%20Topline%2010.26%20release.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-10-22",
+      "campoFim": "2026-10-26",
+      "amostra": 1280,
+      "amostraTipo": "RV",
+      "margemErro": 2.8,
+      "dem": 50,
+      "rep": 41,
+      "outros": 9,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-10/Reuters%20Ipsos%20October%20Core%20Political%20Topline%2010.26%20release.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "NPR/PBS/Marist University",
+      "campoInicio": "2026-10-19",
+      "campoFim": "2026-10-26",
+      "amostra": null,
+      "amostraTipo": "LV",
+      "margemErro": 3.8,
+      "dem": 52,
+      "rep": 44,
+      "outros": 5,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://maristpoll.marist.edu/wp-content/uploads/2026/10/NPR_PBS-News_Marist-Poll_USA-NOS-and-Tables_202610211808AS.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "NPR/PBS/Marist University",
+      "campoInicio": "2026-10-19",
+      "campoFim": "2026-10-26",
+      "amostra": 1289,
+      "amostraTipo": "RV",
+      "margemErro": 3.7,
+      "dem": 52,
+      "rep": 42,
+      "outros": 6,
+      "vantagemDem": 10,
+      "fontePrimaria": "https://maristpoll.marist.edu/wp-content/uploads/2026/10/NPR_PBS-News_Marist-Poll_USA-NOS-and-Tables_202610211808AS.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
     {
       "instituto": "CBS/YouGov",
       "campoInicio": "2026-10-21",
@@ -579,7 +656,7 @@
       "campoFim": "2026-10-19",
       "amostra": 1279,
       "amostraTipo": "RV",
-      "margemErro": 2.4,
+      "margemErro": 2.9,
       "dem": 47,
       "rep": 35,
       "outros": 19,
