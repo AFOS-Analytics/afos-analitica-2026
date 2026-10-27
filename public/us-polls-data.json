@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-25",
-  "fetchedAt": "2026-10-25T16:30:56.220Z",
+  "lastUpdate": "2026-10-27",
+  "fetchedAt": "2026-10-27T02:07:18.532Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,51 +47,18 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-25",
-    "nPesquisas": 27,
-    "tratamentoDoIndeciso": [
-      {
-        "serie": "Angus Reid Global",
-        "campoFim": "2026-09-25",
-        "escolha": "With leaners",
-        "declarado": {
-          "dem": 45,
-          "rep": 34
-        },
-        "estado": "ESCOLHIDA",
-        "quantasCasam": 1,
-        "linhasDaOnda": [
-          {
-            "dem": 56,
-            "rep": 40,
-            "outros": 4,
-            "amostra": 919,
-            "amostraTipo": "RV",
-            "escolhida": false
-          },
-          {
-            "dem": 49,
-            "rep": 35,
-            "outros": 16,
-            "amostra": 1041,
-            "amostraTipo": "RV",
-            "escolhida": false
-          },
-          {
-            "dem": 45,
-            "rep": 34,
-            "outros": 21,
-            "amostra": 1205,
-            "amostraTipo": "A",
-            "escolhida": true
-          }
-        ],
-        "prova": "https://angusreid.us/wp-content/uploads/2026/09/2026.09.28_Trump_Midterms.pdf",
-        "conferidoEm": "2026-10-05",
-        "decididoEm": "2026-10-05"
-      }
-    ],
+    "desde": "2026-09-27",
+    "nPesquisas": 28,
     "incluidas": [
+      {
+        "key": "CBS News/YouGov|2026-10-23",
+        "instituto": "CBS News/YouGov",
+        "institutoNoIndice": "CBS/YouGov",
+        "campoFim": "2026-10-23",
+        "amostraTipo": "LV",
+        "dem": 53,
+        "rep": 45
+      },
       {
         "key": "ActiVote|2026-10-21",
         "instituto": "ActiVote",
@@ -99,6 +66,15 @@
         "amostraTipo": "LV",
         "dem": 53,
         "rep": 47
+      },
+      {
+        "key": "Focaldata|2026-10-20",
+        "instituto": "Focaldata",
+        "institutoNoIndice": "Focaldata/Financial Times",
+        "campoFim": "2026-10-20",
+        "amostraTipo": "LV",
+        "dem": 53,
+        "rep": 44
       },
       {
         "key": "Reuters/Ipsos|2026-10-19",
@@ -192,6 +168,7 @@
       {
         "key": "Focaldata|2026-10-05",
         "instituto": "Focaldata",
+        "institutoNoIndice": "Focaldata/Financial Times",
         "campoFim": "2026-10-05",
         "amostraTipo": "LV",
         "dem": 52,
@@ -300,14 +277,6 @@
         "amostraTipo": "RV",
         "dem": 51,
         "rep": 39
-      },
-      {
-        "key": "Angus Reid Global|2026-09-25",
-        "instituto": "Angus Reid Global",
-        "campoFim": "2026-09-25",
-        "amostraTipo": "A",
-        "dem": 45,
-        "rep": 34
       }
     ],
     "excluidasPorInstrumento": [
@@ -396,15 +365,14 @@
         "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
       }
     ],
-    "nInstitutos": 21,
-    "dem": 50.19,
-    "rep": 42.59,
-    "vantagemDem": 7.6,
+    "nInstitutos": 20,
+    "dem": 50.57,
+    "rep": 43.04,
+    "vantagemDem": 7.53,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
       "AlphaROC",
-      "Angus Reid Global",
       "Beacon Research (D)/ Shaw & Co. Research (R)",
       "CBS News/YouGov",
       "CNN/SSRS",
@@ -426,14 +394,14 @@
     ]
   },
   "qualidade": {
-    "linhasLidas": 500,
-    "publicadas": 513,
+    "linhasLidas": 504,
+    "publicadas": 517,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 500,
+    "doIndice": 504,
     "curadas": 13,
     "curadasDescartadasPorDuplicidade": 17
   },
@@ -485,6 +453,21 @@
     ]
   },
   "polls": [
+    {
+      "instituto": "CBS/YouGov",
+      "campoInicio": "2026-10-21",
+      "campoFim": "2026-10-23",
+      "amostra": 1749,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 53,
+      "rep": 45,
+      "outros": 1,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://assets1.cbsnewsstatic.com/hub/cms/prod_cms_alt/file/2026/10/25/8ad451c3-2d1f-4f7f-a3c8-97f923271e92/cbsnews_20261025_sun.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
     {
       "instituto": "ActiVote",
       "campoInicio": "2026-10-15",
@@ -542,6 +525,51 @@
       "outros": 14,
       "vantagemDem": 5,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_AjDiUmp.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Focaldata/Financial Times",
+      "campoInicio": "2026-10-16",
+      "campoFim": "2026-10-20",
+      "amostra": 1594,
+      "amostraTipo": "LV",
+      "margemErro": 3,
+      "dem": 53,
+      "rep": 44,
+      "outros": 3,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://www.focaldata.com/blog/democrats-hit-new-high-in-penultimate-midterms-poll",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Focaldata/Financial Times",
+      "campoInicio": "2026-10-16",
+      "campoFim": "2026-10-20",
+      "amostra": 1648,
+      "amostraTipo": "RV",
+      "margemErro": 2.8,
+      "dem": 51,
+      "rep": 41,
+      "outros": 8,
+      "vantagemDem": 10,
+      "fontePrimaria": "https://www.focaldata.com/blog/democrats-hit-new-high-in-penultimate-midterms-poll",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Focaldata/Financial Times",
+      "campoInicio": "2026-10-16",
+      "campoFim": "2026-10-20",
+      "amostra": 1845,
+      "amostraTipo": "A",
+      "margemErro": 2.6,
+      "dem": 49,
+      "rep": 40,
+      "outros": 11,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://www.focaldata.com/blog/democrats-hit-new-high-in-penultimate-midterms-poll",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -771,7 +799,7 @@
       "origem": "indice-wikipedia"
     },
     {
-      "instituto": "Focaldata",
+      "instituto": "Focaldata/Financial Times",
       "campoInicio": "2026-10-02",
       "campoFim": "2026-10-05",
       "amostra": 2201,
