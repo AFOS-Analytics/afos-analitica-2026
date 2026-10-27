@@ -1,0 +1,225 @@
+{
+  "lastUpdate": "2026-10-26",
+  "fetchedAt": "2026-10-26T19:20:13.426Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal",
+      "feed": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal",
+      "feed": "https://feeds.washingtonpost.com/rss/politics"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal",
+      "feed": "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada",
+      "feed": "https://rss.politico.com/politics-news.xml"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada",
+      "feed": "https://thehill.com/homenews/feed/"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada",
+      "feed": "https://rollcall.com/feed/"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada",
+      "feed": "https://api.axios.com/feed/"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.npr.org/1014/rss.xml"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio",
+      "feed": "https://abcnews.go.com/abcnews/politicsheadlines"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio",
+      "feed": "https://www.cbsnews.com/latest/rss/politics"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.nbcnews.com/nbcnews/public/politics"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio",
+      "feed": "http://rss.cnn.com/rss/cnn_allpolitics.rss"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio",
+      "feed": "https://moxie.foxnews.com/google-publisher/politics.xml"
+    },
+    {
+      "casa": "NewsNation",
+      "tipo": "tv/rádio",
+      "feed": "https://www.newsnationnow.com/politics/feed/"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião",
+      "feed": "https://www.nationalreview.com/feed/"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião",
+      "feed": "https://www.theguardian.com/us-news/us-politics/rss"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 280,
+    "naLista": 120,
+    "foraDaLista": 160,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 6,
+    "veiculosRepresentados": 7,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": [
+      "feed:The Washington Post: HTTP 502"
+    ],
+    "feedsProprios": 16,
+    "lidosEmFeedProprio": 50,
+    "publicadosComLinkCanonico": 5,
+    "publicadosViaGoogleNews": 5,
+    "publicadosPorDisputa": 10,
+    "publicadosPorMetodo": 0
+  },
+  "itens": [
+    {
+      "titulo": "The races that will decide control of the US Senate",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNaVU2UUJNNDNwTjN1ZGswTlV1R3Uxb2lKYnR6cV9hOVBza2YwT2kzY3l1aERkc2hCR1NaY3JsWlczZ1dlekJZaERWVzMwempGbEozZ3dMVEt6QTZOQnVwNjBtQTNwVDNZcE5yRjFzMDFzUksyU2U4TFBCQ3UxeUt2NzBSdVJVNWU0RWxOOUp4UGhPblRVVDhkdw?oc=5",
+      "casa": "Reuters",
+      "publicadoEm": "2026-10-26T18:53:41.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Republican and Democratic ex-governors issue rare joint endorsement for South Carolina Senate candidate – US politics live",
+      "url": "https://www.theguardian.com/us-news/live/2026/oct/26/donald-trump-abdul-el-sayed-midterms-michigan-rally-space-latest-us-politics-news-updates",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-10-26T18:33:24.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Vance, Harris top early 2028 White House race polling",
+      "url": "https://thehill.com/homenews/campaign/6173025-vance-harris-white-house-polling/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-10-26T17:58:01.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "2026 Senate Battleground Polls: Midterm Primary Trends",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5JVUJocWhHTDlYQ1pMMkt0bWZ2VnNsWXZiOFdsVERnQVRERDFvV0FyanpkRWpKWVlNU3kzT18wcURiWjRWcm8xV01SS3FqV3hWYXcyUFlSZ1lsRzdWcnVDenBWUTY2MGpiWEZZbnpiQS1reDVBZ0ZpclBzWExSZw?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-26T17:52:37.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Massie says he'll move to impeach Hegseth if he's not gone after midterms",
+      "url": "https://thehill.com/homenews/house/6172957-massie-hegseth-impeachment-midterms/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-10-26T17:37:05.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Foreign policy shakes up US midterms",
+      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/trump-world-midterms-election/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-26T17:34:55.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump heads to Mississippi as the two parties prepare for final sprint ahead of midterm Election Day",
+      "url": "https://abcnews.com/Politics/wireStory/trump-heads-mississippi-parties-prepare-final-sprint-ahead-137576849",
+      "casa": "ABC News",
+      "publicadoEm": "2026-10-26T17:30:54.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "2 polls disagree on how close Texas US Senate race really is",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQTlFvOTRsOUNpc0hrOFJxdHBMbmRIazkxaGFPWkVEdnpLNzNWX0NRVElGUFJDb3BrNlN6TmRKbGNpLU5ZMUlUQ2VMNkM2QjZ4bXdPRWJ3d3pzLU5VUGxmSVdEaDMyZHJjV083YVBMUk5WUDNnZXJwY0ZFblB4TVQtZDNKcU04TjZQSURVRHdRSzJNdG40blo5VU1YSS00S3NrM2p1NjlUa0dQUDlkTkpGZmtpT1d6MjgtSGtUUGdrRHNrZE40RC1UaDJfSGZJajVwclE?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-10-26T17:00:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "New poll shows tight Texas races well beyond Senate, governor contests",
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNMlVCYVJyTjUtSGRkemF5T2pRc3VRc01JSnRKR0lSemZLZVJFOEw5WWJLOXJ0TFlNSUFwZFFYbmJHcWtQTTdrUmxmWHl4MXp5QXEwTXVSZG54THpVc0JkVEs5cmYyd0s1UFdmN00yUHV5cVdEaExpdy01aU5YcXdGS0JUZ3FGZGhhTUt3cmlGeVd4b09kQTlXWWxzT21oTDAtREVPN0FDUER1bE9nZjJrLUFXUWp1TlRraENiRm9kblRpOE5RN0Z3cnNuQTJHTXk2eW5hUG9SQm5qM3BkMjFqa3FJZw?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-10-26T16:43:00.000Z",
+      "consulta": "generic-ballot",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Tracking the 2026 Early Vote: Midterm Elections",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5CNDhGdFFLbHU0dnFMZGZ5T2Z4LVNzYk5Mb0lHNXZhQW56U09sX1RmWmRLZmlvRnQtOHNHUlZlS3NZckF2WHF0LXVZOHROTTBCMnQzbkM2X1JCYkY5RGpwamRubEc4M3lPaFE?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-26T16:30:21.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    }
+  ]
+}
