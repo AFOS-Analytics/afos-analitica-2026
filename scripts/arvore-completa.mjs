@@ -65,7 +65,7 @@
 import { execFileSync, execSync } from 'node:child_process'
 import { copyFileSync, cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmdirSync, rmSync } from 'node:fs'
 import { createHash } from 'node:crypto'
-import { join } from 'node:path'
+import { join, resolve } from 'node:path'
 import { daFaixa, decidir, escreve, IDENTICO } from './lib/devolucao-de-cache.mjs'
 
 const args = process.argv.slice(2)
@@ -147,6 +147,19 @@ if (flag('devolver-cache')) {
   const prefixo = valor('prefixo', 'us')
   const de = join(DIR, '.cache', 'capture-guard')
   const para = join(RAIZ, '.cache', 'capture-guard')
+  // 🔴 ORIGEM IGUAL A DESTINO, medido em 27/Out/2026. `RAIZ` é o diretório de
+  //    onde o comando é CHAMADO. Chamado de DENTRO da árvore descartável, `de` e
+  //    `para` são a mesma pasta: cada arquivo é comparado consigo mesmo, a
+  //    saída diz "60 de 60 idênticos" e NADA volta ao cache canônico. Em 25 e
+  //    26/Out foi assim, e as certificações daqueles dias morreram com as
+  //    árvores. O controle por sha256 abaixo não pega: arquivo contra ele mesmo
+  //    sempre bate. Recusar é a única saída honesta.
+  if (resolve(de).toLowerCase() === resolve(para).toLowerCase()) {
+    linha('❌', `origem e destino são a MESMA pasta (${resolve(de)}): o comando foi chamado de dentro da árvore descartável`)
+    linha('·', `chamar da árvore PRINCIPAL: cd <repo principal> && node <arvore>/scripts/arvore-completa.mjs --dir=${DIR} --devolver-cache`)
+    console.log()
+    process.exit(1)
+  }
   if (!existsSync(de)) {
     linha('⚠️', `a árvore descartável não tem .cache/capture-guard: nada a devolver (${de})`)
     console.log()
