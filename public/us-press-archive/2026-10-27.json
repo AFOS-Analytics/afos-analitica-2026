@@ -1,0 +1,225 @@
+{
+  "lastUpdate": "2026-10-27",
+  "fetchedAt": "2026-10-27T19:20:13.915Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal",
+      "feed": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal",
+      "feed": "https://feeds.washingtonpost.com/rss/politics"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal",
+      "feed": "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada",
+      "feed": "https://rss.politico.com/politics-news.xml"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada",
+      "feed": "https://thehill.com/homenews/feed/"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada",
+      "feed": "https://rollcall.com/feed/"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada",
+      "feed": "https://api.axios.com/feed/"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.npr.org/1014/rss.xml"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio",
+      "feed": "https://abcnews.go.com/abcnews/politicsheadlines"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio",
+      "feed": "https://www.cbsnews.com/latest/rss/politics"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.nbcnews.com/nbcnews/public/politics"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio",
+      "feed": "http://rss.cnn.com/rss/cnn_allpolitics.rss"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio",
+      "feed": "https://moxie.foxnews.com/google-publisher/politics.xml"
+    },
+    {
+      "casa": "NewsNation",
+      "tipo": "tv/rádio",
+      "feed": "https://www.newsnationnow.com/politics/feed/"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião",
+      "feed": "https://www.nationalreview.com/feed/"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião",
+      "feed": "https://www.theguardian.com/us-news/us-politics/rss"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 251,
+    "naLista": 107,
+    "foraDaLista": 144,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 1,
+    "veiculosRepresentados": 6,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": [
+      "feed:The Washington Post: HTTP 502"
+    ],
+    "feedsProprios": 16,
+    "lidosEmFeedProprio": 48,
+    "publicadosComLinkCanonico": 8,
+    "publicadosViaGoogleNews": 2,
+    "publicadosPorDisputa": 9,
+    "publicadosPorMetodo": 1
+  },
+  "itens": [
+    {
+      "titulo": "DCCC pushes for ads targeting GOP on AI, data centers in dozens of key House races",
+      "url": "https://thehill.com/policy/technology/6175681-dccc-targets-gop-ai-data-centers/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-10-27T19:01:08.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "How Accurate Are the Midterm Polls? The Bias Varies by State.",
+      "url": "https://www.nytimes.com/2026/10/27/us/politics/midterm-polls-errors-states.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-27T19:00:07.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Kalshi expands protections for users aged 18-20",
+      "url": "https://thehill.com/policy/technology/6175520-kalshi-expands-young-trader-protections/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-10-27T18:57:52.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "metodo"
+    },
+    {
+      "titulo": "Justice Dept. Steps Up Moves on Comey and Others as Midterm Elections Near",
+      "url": "https://www.nytimes.com/2026/10/27/us/politics/trump-blanche-elections-comey.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-27T18:28:43.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "How a Cheesecake Factory jab spurred a midterm spat",
+      "url": "https://www.newsnationnow.com/politics/obama-cheesecake-factory-trump-white-house-renovations/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-27T18:21:48.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "2026 midterms become most expensive election cycle ever",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOTjBCTlBtUUJPbEI4bTIzMjJoQmhoT3dSRzZWZ0ctRWhlWEVlN05xSHdMdmRVUDV0TVJtaE5hMktxWDlPblZ3M0RyWE9YMmdsNlZCcWdRb0lSS2hWQWhWVTJnOVl2OHpyd3R5cmRLMjh6Zmx1TzN5NGd3Ni1Eb0ppS0Fia3E0QzBPVG1fWDF2NnhMbEdNWmZRQ3VCc3Z5akhsTWNtZjdIUnBhRFpQ?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-27T17:49:01.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump accused of trying to 'force' Senate candidate on voters as GOP feud erupts",
+      "url": "https://www.foxnews.com/politics/trump-accused-trying-force-senate-candidate-voters-gop-feud-erupts",
+      "casa": "Fox News",
+      "publicadoEm": "2026-10-27T17:26:02.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Former rival dodges full-throated El-Sayed endorsement after bitter Senate primary",
+      "url": "https://www.foxnews.com/politics/top-michigan-dem-dodges-full-throated-el-sayed-endorsement-bitter-senate-primary",
+      "casa": "Fox News",
+      "publicadoEm": "2026-10-27T17:21:35.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Tracking the 2026 Early Vote: Midterm Elections",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5CNDhGdFFLbHU0dnFMZGZ5T2Z4LVNzYk5Mb0lHNXZhQW56U09sX1RmWmRLZmlvRnQtOHNHUlZlS3NZckF2WHF0LXVZOHROTTBCMnQzbkM2X1JCYkY5RGpwamRubEc4M3lPaFE?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-27T16:30:21.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "The Epstein files are a sledgehammer for the US midterms | Katie Phang",
+      "url": "https://www.theguardian.com/commentisfree/2026/oct/26/epstein-files-midterms-sledgehammer",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-10-27T15:09:15.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    }
+  ]
+}
