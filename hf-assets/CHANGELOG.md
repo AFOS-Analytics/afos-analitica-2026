@@ -2,6 +2,18 @@
 
 All notable changes to this dataset. The data itself is dated and append-only; this log records **structural** changes (new files, schema, coverage).
 
+## 2026-10-26, the national polls of the second-round campaign
+
+### Changed: `polls/` now covers the whole runoff campaign
+
+The poll files had last been regenerated on 2026-10-04. They now include every national poll released between the two rounds (2026-10-08 to 2026-10-25), taken from the platform history like the rest of the series:
+
+- `national-polls.json`: 177 national polls (55 released after the first round).
+- `national-poll-results-secondround.csv`: 346 rows, +49. Each of the 49 post-first-round polls that published the Lula × Flávio Bolsonaro head-to-head in total votes adds one row.
+- The other 6 post-first-round polls (PoderData/Aya of 2026-10-16, 2026-10-19 and 2026-10-25, Veritá of 2026-10-17, DataTrends of 2026-10-19, Alfa Inteligência/TMC of 2026-10-23) did not publish the head-to-head in total votes. They are in `national-polls.json` with the published figures in `note`, and have no row in the CSV.
+- `tse-registry.csv` · `.json`: 1,404 registrations, rebuilt from the TSE open-data file: 115 new and 3 that the TSE itself withdrew.
+- `sample-demographics.csv`: 874 rows, +268, from the registrations above.
+
 ## 2026-10-26, the second-round election night
 
 ### Added: `election-night/second-round-2026-*`

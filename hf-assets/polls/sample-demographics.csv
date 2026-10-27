@@ -605,3 +605,271 @@ BR-00509/2026,BR005092026,Gerp,2026-10-03,2026-10-01,age,"(declared, no % in reg
 BR-00509/2026,BR005092026,Gerp,2026-10-03,2026-10-01,income,"(declared, no % in registry)",,mentioned_no_pct
 BR-02431/2026,BR024312026,Futura/100% Cidades,2026-10-03,2026-10-01,sex,male,47.2,full_percentages
 BR-02431/2026,BR024312026,Futura/100% Cidades,2026-10-03,2026-10-01,sex,female,52.8,full_percentages
+BR-02949/2026,BR029492026,Datafolha,2026-10-08,2026-10-07,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-02949/2026,BR029492026,Datafolha,2026-10-08,2026-10-07,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-02949/2026,BR029492026,Datafolha,2026-10-08,2026-10-07,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-02949/2026,BR029492026,Datafolha,2026-10-08,2026-10-07,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-02949/2026,BR029492026,Datafolha,2026-10-08,2026-10-07,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-08134/2026,BR081342026,PoderData/Aya,2026-10-08,2026-10-06,sex,male,47.2,full_percentages
+BR-08134/2026,BR081342026,PoderData/Aya,2026-10-08,2026-10-06,sex,female,52.8,full_percentages
+BR-08134/2026,BR081342026,PoderData/Aya,2026-10-08,2026-10-06,income,Sem rendimentos até 2 SM,45.8,full_percentages
+BR-03663/2026,BR036632026,AtlasIntel/Bloomberg,2026-10-09,2026-10-05,sex,male,47.2,full_percentages
+BR-03663/2026,BR036632026,AtlasIntel/Bloomberg,2026-10-09,2026-10-05,sex,female,52.8,full_percentages
+BR-03663/2026,BR036632026,AtlasIntel/Bloomberg,2026-10-09,2026-10-05,age,Entre 16 a 24 anos,12.1,full_percentages
+BR-03663/2026,BR036632026,AtlasIntel/Bloomberg,2026-10-09,2026-10-05,age,Entre 25 a 34 anos,19,full_percentages
+BR-03663/2026,BR036632026,AtlasIntel/Bloomberg,2026-10-09,2026-10-05,age,Entre 35 a 44 anos,19.7,full_percentages
+BR-03663/2026,BR036632026,AtlasIntel/Bloomberg,2026-10-09,2026-10-05,age,Entre 45 a 59 anos,25.6,full_percentages
+BR-03663/2026,BR036632026,AtlasIntel/Bloomberg,2026-10-09,2026-10-05,age,60 ou mais,23.6,full_percentages
+BR-03663/2026,BR036632026,AtlasIntel/Bloomberg,2026-10-09,2026-10-05,education,Ensino Fundamental completo ou incompleto,32.1,full_percentages
+BR-03663/2026,BR036632026,AtlasIntel/Bloomberg,2026-10-09,2026-10-05,education,Ensino Médio completo ou incompleto,40.6,full_percentages
+BR-03663/2026,BR036632026,AtlasIntel/Bloomberg,2026-10-09,2026-10-05,education,Ensino Superior completo ou incompleto,27.3,full_percentages
+BR-03663/2026,BR036632026,AtlasIntel/Bloomberg,2026-10-09,2026-10-05,income,Renda familiar mensal até R$ 2.000,18.7,full_percentages
+BR-03663/2026,BR036632026,AtlasIntel/Bloomberg,2026-10-09,2026-10-05,income,de R$ 2.000 a R$ 3.000,11.5,full_percentages
+BR-03663/2026,BR036632026,AtlasIntel/Bloomberg,2026-10-09,2026-10-05,income,de R$ 3.000 a R$ 5.000,26.4,full_percentages
+BR-03663/2026,BR036632026,AtlasIntel/Bloomberg,2026-10-09,2026-10-05,income,de R$ 5.000 a R$ 10.000,26.2,full_percentages
+BR-03663/2026,BR036632026,AtlasIntel/Bloomberg,2026-10-09,2026-10-05,income,mais de R$ 10.000,17.1,full_percentages
+BR-09623/2026,BR096232026,Vox Brasil,2026-10-09,2026-10-06,sex,male,47.18,full_percentages
+BR-09623/2026,BR096232026,Vox Brasil,2026-10-09,2026-10-06,sex,female,52.82,full_percentages
+BR-00933/2026,BR009332026,Ipespe/Abrapel,2026-10-10,2026-10-07,sex,male,47,full_percentages
+BR-00933/2026,BR009332026,Ipespe/Abrapel,2026-10-10,2026-10-07,sex,female,53,full_percentages
+BR-03576/2026,BR035762026,DataTrends,2026-10-11,2026-10-08,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-03576/2026,BR035762026,DataTrends,2026-10-11,2026-10-08,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-03576/2026,BR035762026,DataTrends,2026-10-11,2026-10-08,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-03576/2026,BR035762026,DataTrends,2026-10-11,2026-10-08,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-03576/2026,BR035762026,DataTrends,2026-10-11,2026-10-08,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-07877/2026,BR078772026,Gerp,2026-10-12,2026-10-10,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-07877/2026,BR078772026,Gerp,2026-10-12,2026-10-10,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-07877/2026,BR078772026,Gerp,2026-10-12,2026-10-10,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-01209/2026,BR012092026,PoderData/Aya,2026-10-13,2026-10-11,sex,male,47.2,full_percentages
+BR-01209/2026,BR012092026,PoderData/Aya,2026-10-13,2026-10-11,sex,female,52.8,full_percentages
+BR-01209/2026,BR012092026,PoderData/Aya,2026-10-13,2026-10-11,income,Sem rendimentos até 2 SM,45.8,full_percentages
+BR-01209/2026,BR012092026,PoderData/Aya,2026-10-13,2026-10-11,income,Lula,45.2,full_percentages
+BR-01209/2026,BR012092026,PoderData/Aya,2026-10-13,2026-10-11,income,Escritor Augusto Cury,2.9,full_percentages
+BR-01209/2026,BR012092026,PoderData/Aya,2026-10-13,2026-10-11,income,Renan Santos,2.2,full_percentages
+BR-01209/2026,BR012092026,PoderData/Aya,2026-10-13,2026-10-11,income,Ronaldo Caiado,2.2,full_percentages
+BR-01209/2026,BR012092026,PoderData/Aya,2026-10-13,2026-10-11,income,Outros candidatos,0.48,full_percentages
+BR-07997/2026,BR079972026,BTG/Nexus,2026-10-13,2026-10-11,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-07997/2026,BR079972026,BTG/Nexus,2026-10-13,2026-10-11,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-07997/2026,BR079972026,BTG/Nexus,2026-10-13,2026-10-11,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-07997/2026,BR079972026,BTG/Nexus,2026-10-13,2026-10-11,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-07997/2026,BR079972026,BTG/Nexus,2026-10-13,2026-10-11,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-00650/2026,BR006502026,Futura/100% Cidades,2026-10-13,2026-10-08,sex,male,47.2,full_percentages
+BR-00650/2026,BR006502026,Futura/100% Cidades,2026-10-13,2026-10-08,sex,female,52.8,full_percentages
+BR-08729/2026,BR087292026,Quaest/Globo,2026-10-14,2026-10-11,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-08729/2026,BR087292026,Quaest/Globo,2026-10-14,2026-10-11,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-08729/2026,BR087292026,Quaest/Globo,2026-10-14,2026-10-11,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-08729/2026,BR087292026,Quaest/Globo,2026-10-14,2026-10-11,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-08729/2026,BR087292026,Quaest/Globo,2026-10-14,2026-10-11,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-00466/2026,BR004662026,Datafolha,2026-10-15,2026-10-14,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-00466/2026,BR004662026,Datafolha,2026-10-15,2026-10-14,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-00466/2026,BR004662026,Datafolha,2026-10-15,2026-10-14,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-00466/2026,BR004662026,Datafolha,2026-10-15,2026-10-14,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-00466/2026,BR004662026,Datafolha,2026-10-15,2026-10-14,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-08028/2026,BR080282026,Palver,2026-10-15,2026-10-12,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-08028/2026,BR080282026,Palver,2026-10-15,2026-10-12,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-08028/2026,BR080282026,Palver,2026-10-15,2026-10-12,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-08028/2026,BR080282026,Palver,2026-10-15,2026-10-12,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-08028/2026,BR080282026,Palver,2026-10-15,2026-10-12,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-04629/2026,BR046292026,Indexa/Broadcast,2026-10-15,2026-10-13,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-04629/2026,BR046292026,Indexa/Broadcast,2026-10-15,2026-10-13,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-04629/2026,BR046292026,Indexa/Broadcast,2026-10-15,2026-10-13,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-04629/2026,BR046292026,Indexa/Broadcast,2026-10-15,2026-10-13,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-04629/2026,BR046292026,Indexa/Broadcast,2026-10-15,2026-10-13,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-05187/2026,BR051872026,Gerp,2026-10-16,2026-10-15,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-05187/2026,BR051872026,Gerp,2026-10-16,2026-10-15,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-05187/2026,BR051872026,Gerp,2026-10-16,2026-10-15,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-00652/2026,BR006522026,CNT/MDA,2026-10-16,2026-10-14,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-00652/2026,BR006522026,CNT/MDA,2026-10-16,2026-10-14,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-00652/2026,BR006522026,CNT/MDA,2026-10-16,2026-10-14,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-00652/2026,BR006522026,CNT/MDA,2026-10-16,2026-10-14,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-00652/2026,BR006522026,CNT/MDA,2026-10-16,2026-10-14,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-03764/2026,BR037642026,Futura/100% Cidades,2026-10-16,2026-10-14,sex,male,47.2,full_percentages
+BR-03764/2026,BR037642026,Futura/100% Cidades,2026-10-16,2026-10-14,sex,female,52.8,full_percentages
+BR-04258/2026,BR042582026,PoderData/Aya,2026-10-16,2026-10-14,sex,male,47.2,full_percentages
+BR-04258/2026,BR042582026,PoderData/Aya,2026-10-16,2026-10-14,sex,female,52.8,full_percentages
+BR-04258/2026,BR042582026,PoderData/Aya,2026-10-16,2026-10-14,income,Sem rendimentos até 2 SM,45.8,full_percentages
+BR-04258/2026,BR042582026,PoderData/Aya,2026-10-16,2026-10-14,income,Lula,45.2,full_percentages
+BR-04258/2026,BR042582026,PoderData/Aya,2026-10-16,2026-10-14,income,Escritor Augusto Cury,2.9,full_percentages
+BR-04258/2026,BR042582026,PoderData/Aya,2026-10-16,2026-10-14,income,Renan Santos,2.2,full_percentages
+BR-04258/2026,BR042582026,PoderData/Aya,2026-10-16,2026-10-14,income,Ronaldo Caiado,2.2,full_percentages
+BR-04258/2026,BR042582026,PoderData/Aya,2026-10-16,2026-10-14,income,Outros candidatos,0.48,full_percentages
+BR-00223/2026,BR002232026,Ipespe/Abrapel,2026-10-17,2026-10-14,sex,male,47,full_percentages
+BR-00223/2026,BR002232026,Ipespe/Abrapel,2026-10-17,2026-10-14,sex,female,53,full_percentages
+BR-01107/2026,BR011072026,Veritá,2026-10-17,2026-10-14,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-01107/2026,BR011072026,Veritá,2026-10-17,2026-10-14,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-01107/2026,BR011072026,Veritá,2026-10-17,2026-10-14,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-01107/2026,BR011072026,Veritá,2026-10-17,2026-10-14,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-01107/2026,BR011072026,Veritá,2026-10-17,2026-10-14,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-04332/2026,BR043322026,Vox Brasil,2026-10-18,2026-10-16,sex,male,47.18,full_percentages
+BR-04332/2026,BR043322026,Vox Brasil,2026-10-18,2026-10-16,sex,female,52.82,full_percentages
+BR-02418/2026,BR024182026,AtlasIntel/Bloomberg,2026-10-19,2026-10-15,sex,male,47.2,full_percentages
+BR-02418/2026,BR024182026,AtlasIntel/Bloomberg,2026-10-19,2026-10-15,sex,female,52.8,full_percentages
+BR-02418/2026,BR024182026,AtlasIntel/Bloomberg,2026-10-19,2026-10-15,age,Entre 16 a 24 anos,12.1,full_percentages
+BR-02418/2026,BR024182026,AtlasIntel/Bloomberg,2026-10-19,2026-10-15,age,Entre 25 a 34 anos,19,full_percentages
+BR-02418/2026,BR024182026,AtlasIntel/Bloomberg,2026-10-19,2026-10-15,age,Entre 35 a 44 anos,19.7,full_percentages
+BR-02418/2026,BR024182026,AtlasIntel/Bloomberg,2026-10-19,2026-10-15,age,Entre 45 a 59 anos,25.6,full_percentages
+BR-02418/2026,BR024182026,AtlasIntel/Bloomberg,2026-10-19,2026-10-15,age,60 ou mais,23.6,full_percentages
+BR-02418/2026,BR024182026,AtlasIntel/Bloomberg,2026-10-19,2026-10-15,education,Até Ensino Médio completo ou incompleto (inclui Ensino Fundamental completo/incompleto e pessoas sem instrução),72.7,full_percentages
+BR-02418/2026,BR024182026,AtlasIntel/Bloomberg,2026-10-19,2026-10-15,education,Ensino Superior completo ou incompleto,27.3,full_percentages
+BR-02418/2026,BR024182026,AtlasIntel/Bloomberg,2026-10-19,2026-10-15,income,Renda familiar mensal até R$ 2.000,18.7,full_percentages
+BR-02418/2026,BR024182026,AtlasIntel/Bloomberg,2026-10-19,2026-10-15,income,de R$ 2.000 a R$ 3.000,11.5,full_percentages
+BR-02418/2026,BR024182026,AtlasIntel/Bloomberg,2026-10-19,2026-10-15,income,de R$ 3.000 a R$ 5.000,26.4,full_percentages
+BR-02418/2026,BR024182026,AtlasIntel/Bloomberg,2026-10-19,2026-10-15,income,de R$ 5.000 a R$ 10.000,26.2,full_percentages
+BR-02418/2026,BR024182026,AtlasIntel/Bloomberg,2026-10-19,2026-10-15,income,mais de R$ 10.000,17.1,full_percentages
+BR-04499/2026,BR044992026,BTG/Nexus,2026-10-19,2026-10-17,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-04499/2026,BR044992026,BTG/Nexus,2026-10-19,2026-10-17,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-04499/2026,BR044992026,BTG/Nexus,2026-10-19,2026-10-17,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-04499/2026,BR044992026,BTG/Nexus,2026-10-19,2026-10-17,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-04499/2026,BR044992026,BTG/Nexus,2026-10-19,2026-10-17,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-06715/2026,BR067152026,Futura/100% Cidades,2026-10-19,2026-10-16,sex,male,47.2,full_percentages
+BR-06715/2026,BR067152026,Futura/100% Cidades,2026-10-19,2026-10-16,sex,female,52.8,full_percentages
+BR-02586/2026,BR025862026,PoderData/Aya,2026-10-19,2026-10-17,sex,male,47.2,full_percentages
+BR-02586/2026,BR025862026,PoderData/Aya,2026-10-19,2026-10-17,sex,female,52.8,full_percentages
+BR-02586/2026,BR025862026,PoderData/Aya,2026-10-19,2026-10-17,income,Sem rendimentos até 2 SM,45.8,full_percentages
+BR-02586/2026,BR025862026,PoderData/Aya,2026-10-19,2026-10-17,income,Lula,45.2,full_percentages
+BR-02586/2026,BR025862026,PoderData/Aya,2026-10-19,2026-10-17,income,Escritor Augusto Cury,2.9,full_percentages
+BR-02586/2026,BR025862026,PoderData/Aya,2026-10-19,2026-10-17,income,Renan Santos,2.2,full_percentages
+BR-02586/2026,BR025862026,PoderData/Aya,2026-10-19,2026-10-17,income,Ronaldo Caiado,2.2,full_percentages
+BR-02586/2026,BR025862026,PoderData/Aya,2026-10-19,2026-10-17,income,Outros candidatos,0.48,full_percentages
+BR-04454/2026,BR044542026,DataTrends,2026-10-19,2026-10-16,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-04454/2026,BR044542026,DataTrends,2026-10-19,2026-10-16,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-04454/2026,BR044542026,DataTrends,2026-10-19,2026-10-16,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-04454/2026,BR044542026,DataTrends,2026-10-19,2026-10-16,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-04454/2026,BR044542026,DataTrends,2026-10-19,2026-10-16,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-00820/2026,BR008202026,Alfa Inteligência/TMC,2026-10-20,2026-10-17,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-00820/2026,BR008202026,Alfa Inteligência/TMC,2026-10-20,2026-10-17,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-00820/2026,BR008202026,Alfa Inteligência/TMC,2026-10-20,2026-10-17,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-00820/2026,BR008202026,Alfa Inteligência/TMC,2026-10-20,2026-10-17,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-00820/2026,BR008202026,Alfa Inteligência/TMC,2026-10-20,2026-10-17,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-02952/2026,BR029522026,Real Time Big Data,2026-10-20,2026-10-17,sex,male,47.15,full_percentages
+BR-02952/2026,BR029522026,Real Time Big Data,2026-10-20,2026-10-17,sex,female,52.85,full_percentages
+BR-02952/2026,BR029522026,Real Time Big Data,2026-10-20,2026-10-17,age,16 anos,0.38,full_percentages
+BR-02952/2026,BR029522026,Real Time Big Data,2026-10-20,2026-10-17,education,Analfabeto,3.48,full_percentages
+BR-03835/2026,BR038352026,Gerp,2026-10-21,2026-10-18,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-03835/2026,BR038352026,Gerp,2026-10-21,2026-10-18,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-03835/2026,BR038352026,Gerp,2026-10-21,2026-10-18,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-08535/2026,BR085352026,Quaest/Globo,2026-10-21,2026-10-18,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-08535/2026,BR085352026,Quaest/Globo,2026-10-21,2026-10-18,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-08535/2026,BR085352026,Quaest/Globo,2026-10-21,2026-10-18,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-08535/2026,BR085352026,Quaest/Globo,2026-10-21,2026-10-18,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-08535/2026,BR085352026,Quaest/Globo,2026-10-21,2026-10-18,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-08251/2026,BR082512026,Ideia/Canal Meio,2026-10-21,2026-10-17,sex,male,47,full_percentages
+BR-08251/2026,BR082512026,Ideia/Canal Meio,2026-10-21,2026-10-17,sex,female,53,full_percentages
+BR-08251/2026,BR082512026,Ideia/Canal Meio,2026-10-21,2026-10-17,education,Fundamental,38,full_percentages
+BR-08251/2026,BR082512026,Ideia/Canal Meio,2026-10-21,2026-10-17,education,Médio,40,full_percentages
+BR-08251/2026,BR082512026,Ideia/Canal Meio,2026-10-21,2026-10-17,income,Economicamente Ativo,62,full_percentages
+BR-04612/2026,BR046122026,Palver,2026-10-21,2026-10-18,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-04612/2026,BR046122026,Palver,2026-10-21,2026-10-18,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-04612/2026,BR046122026,Palver,2026-10-21,2026-10-18,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-04612/2026,BR046122026,Palver,2026-10-21,2026-10-18,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-04612/2026,BR046122026,Palver,2026-10-21,2026-10-18,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-06614/2026,BR066142026,Futura/100% Cidades,2026-10-21,2026-10-19,sex,male,47.2,full_percentages
+BR-06614/2026,BR066142026,Futura/100% Cidades,2026-10-21,2026-10-19,sex,female,52.8,full_percentages
+BR-06396/2026,BR063962026,Veritá,2026-10-21,2026-10-17,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-06396/2026,BR063962026,Veritá,2026-10-21,2026-10-17,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-06396/2026,BR063962026,Veritá,2026-10-21,2026-10-17,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-06396/2026,BR063962026,Veritá,2026-10-21,2026-10-17,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-06396/2026,BR063962026,Veritá,2026-10-21,2026-10-17,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-09709/2026,BR097092026,Datafolha,2026-10-22,2026-10-21,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-09709/2026,BR097092026,Datafolha,2026-10-22,2026-10-21,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-09709/2026,BR097092026,Datafolha,2026-10-22,2026-10-21,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-09709/2026,BR097092026,Datafolha,2026-10-22,2026-10-21,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-09709/2026,BR097092026,Datafolha,2026-10-22,2026-10-21,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-07926/2026,BR079262026,PoderData/Aya,2026-10-22,2026-10-20,sex,male,47.2,full_percentages
+BR-07926/2026,BR079262026,PoderData/Aya,2026-10-22,2026-10-20,sex,female,52.8,full_percentages
+BR-07926/2026,BR079262026,PoderData/Aya,2026-10-22,2026-10-20,income,Sem rendimentos até 2 SM,45.8,full_percentages
+BR-07926/2026,BR079262026,PoderData/Aya,2026-10-22,2026-10-20,income,Lula,45.2,full_percentages
+BR-07926/2026,BR079262026,PoderData/Aya,2026-10-22,2026-10-20,income,Escritor Augusto Cury,2.9,full_percentages
+BR-07926/2026,BR079262026,PoderData/Aya,2026-10-22,2026-10-20,income,Renan Santos,2.2,full_percentages
+BR-07926/2026,BR079262026,PoderData/Aya,2026-10-22,2026-10-20,income,Ronaldo Caiado,2.2,full_percentages
+BR-07926/2026,BR079262026,PoderData/Aya,2026-10-22,2026-10-20,income,Outros candidatos,0.48,full_percentages
+BR-02348/2026,BR023482026,Indexa/Broadcast,2026-10-22,2026-10-20,age,Margem de Erro,2.19,full_percentages
+BR-06957/2026,BR069572026,Vetor Arrow,2026-10-23,2026-10-22,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-06957/2026,BR069572026,Vetor Arrow,2026-10-23,2026-10-22,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-06957/2026,BR069572026,Vetor Arrow,2026-10-23,2026-10-22,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-03259/2026,BR032592026,Vox Brasil,2026-10-23,2026-10-21,sex,male,47.18,full_percentages
+BR-03259/2026,BR032592026,Vox Brasil,2026-10-23,2026-10-21,sex,female,52.82,full_percentages
+BR-04350/2026,BR043502026,Ipespe/Abrapel,2026-10-23,2026-10-21,sex,male,47,full_percentages
+BR-04350/2026,BR043502026,Ipespe/Abrapel,2026-10-23,2026-10-21,sex,female,53,full_percentages
+BR-09670/2026,BR096702026,Real Time Big Data,2026-10-23,2026-10-20,sex,male,47.15,full_percentages
+BR-09670/2026,BR096702026,Real Time Big Data,2026-10-23,2026-10-20,sex,female,52.85,full_percentages
+BR-09670/2026,BR096702026,Real Time Big Data,2026-10-23,2026-10-20,age,16 anos,0.38,full_percentages
+BR-09670/2026,BR096702026,Real Time Big Data,2026-10-23,2026-10-20,education,Analfabeto,3.48,full_percentages
+BR-06070/2026,BR060702026,Veritá,2026-10-23,2026-10-20,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-06070/2026,BR060702026,Veritá,2026-10-23,2026-10-20,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-06070/2026,BR060702026,Veritá,2026-10-23,2026-10-20,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-06070/2026,BR060702026,Veritá,2026-10-23,2026-10-20,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-06070/2026,BR060702026,Veritá,2026-10-23,2026-10-20,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-03365/2026,BR033652026,DataTrends,2026-10-23,2026-10-20,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-03365/2026,BR033652026,DataTrends,2026-10-23,2026-10-20,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-03365/2026,BR033652026,DataTrends,2026-10-23,2026-10-20,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-03365/2026,BR033652026,DataTrends,2026-10-23,2026-10-20,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-03365/2026,BR033652026,DataTrends,2026-10-23,2026-10-20,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-08496/2026,BR084962026,Alfa Inteligência/TMC,2026-10-23,2026-10-20,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-08496/2026,BR084962026,Alfa Inteligência/TMC,2026-10-23,2026-10-20,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-08496/2026,BR084962026,Alfa Inteligência/TMC,2026-10-23,2026-10-20,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-08496/2026,BR084962026,Alfa Inteligência/TMC,2026-10-23,2026-10-20,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-08496/2026,BR084962026,Alfa Inteligência/TMC,2026-10-23,2026-10-20,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-03181/2026,BR031812026,Veritá,2026-10-24,2026-10-21,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-03181/2026,BR031812026,Veritá,2026-10-24,2026-10-21,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-03181/2026,BR031812026,Veritá,2026-10-24,2026-10-21,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-03181/2026,BR031812026,Veritá,2026-10-24,2026-10-21,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-03181/2026,BR031812026,Veritá,2026-10-24,2026-10-21,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-09726/2026,BR097262026,Futura/100% Cidades,2026-10-24,2026-10-22,sex,male,47.2,full_percentages
+BR-09726/2026,BR097262026,Futura/100% Cidades,2026-10-24,2026-10-22,sex,female,52.8,full_percentages
+BR-09540/2026,BR095402026,Datafolha,2026-10-24,2026-10-23,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-09540/2026,BR095402026,Datafolha,2026-10-24,2026-10-23,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-09540/2026,BR095402026,Datafolha,2026-10-24,2026-10-23,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-09540/2026,BR095402026,Datafolha,2026-10-24,2026-10-23,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-09540/2026,BR095402026,Datafolha,2026-10-24,2026-10-23,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-09158/2026,BR091582026,Quaest/Globo,2026-10-24,2026-10-23,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-09158/2026,BR091582026,Quaest/Globo,2026-10-24,2026-10-23,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-09158/2026,BR091582026,Quaest/Globo,2026-10-24,2026-10-23,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-09158/2026,BR091582026,Quaest/Globo,2026-10-24,2026-10-23,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-09158/2026,BR091582026,Quaest/Globo,2026-10-24,2026-10-23,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-06380/2026,BR063802026,AtlasIntel/Bloomberg,2026-10-24,2026-10-20,sex,male,47.2,full_percentages
+BR-06380/2026,BR063802026,AtlasIntel/Bloomberg,2026-10-24,2026-10-20,sex,female,52.8,full_percentages
+BR-06380/2026,BR063802026,AtlasIntel/Bloomberg,2026-10-24,2026-10-20,age,Entre 16 a 24 anos,12.1,full_percentages
+BR-06380/2026,BR063802026,AtlasIntel/Bloomberg,2026-10-24,2026-10-20,age,Entre 25 a 34 anos,19,full_percentages
+BR-06380/2026,BR063802026,AtlasIntel/Bloomberg,2026-10-24,2026-10-20,age,Entre 35 a 44 anos,19.7,full_percentages
+BR-06380/2026,BR063802026,AtlasIntel/Bloomberg,2026-10-24,2026-10-20,age,Entre 45 a 59 anos,25.6,full_percentages
+BR-06380/2026,BR063802026,AtlasIntel/Bloomberg,2026-10-24,2026-10-20,age,60 ou mais,23.6,full_percentages
+BR-06380/2026,BR063802026,AtlasIntel/Bloomberg,2026-10-24,2026-10-20,education,Até Ensino Médio completo ou incompleto (inclui Ensino Fundamental completo/incompleto e pessoas sem instrução),72.7,full_percentages
+BR-06380/2026,BR063802026,AtlasIntel/Bloomberg,2026-10-24,2026-10-20,education,Ensino Superior completo ou incompleto,27.3,full_percentages
+BR-06380/2026,BR063802026,AtlasIntel/Bloomberg,2026-10-24,2026-10-20,income,Renda familiar mensal até R$ 2.000,18.7,full_percentages
+BR-06380/2026,BR063802026,AtlasIntel/Bloomberg,2026-10-24,2026-10-20,income,de R$ 2.000 a R$ 3.000,11.5,full_percentages
+BR-06380/2026,BR063802026,AtlasIntel/Bloomberg,2026-10-24,2026-10-20,income,de R$ 3.000 a R$ 5.000,26.4,full_percentages
+BR-06380/2026,BR063802026,AtlasIntel/Bloomberg,2026-10-24,2026-10-20,income,de R$ 5.000 a R$ 10.000,26.2,full_percentages
+BR-06380/2026,BR063802026,AtlasIntel/Bloomberg,2026-10-24,2026-10-20,income,mais de R$ 10.000,17.1,full_percentages
+BR-01794/2026,BR017942026,Palver,2026-10-24,2026-10-23,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-01794/2026,BR017942026,Palver,2026-10-24,2026-10-23,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-01794/2026,BR017942026,Palver,2026-10-24,2026-10-23,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-01794/2026,BR017942026,Palver,2026-10-24,2026-10-23,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-01794/2026,BR017942026,Palver,2026-10-24,2026-10-23,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-08234/2026,BR082342026,BTG/Nexus,2026-10-24,2026-10-23,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-08234/2026,BR082342026,BTG/Nexus,2026-10-24,2026-10-23,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-08234/2026,BR082342026,BTG/Nexus,2026-10-24,2026-10-23,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-08234/2026,BR082342026,BTG/Nexus,2026-10-24,2026-10-23,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-08234/2026,BR082342026,BTG/Nexus,2026-10-24,2026-10-23,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-09327/2026,BR093272026,Gerp,2026-10-24,2026-10-22,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-09327/2026,BR093272026,Gerp,2026-10-24,2026-10-22,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-09327/2026,BR093272026,Gerp,2026-10-24,2026-10-22,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-02136/2026,BR021362026,CNT/MDA,2026-10-24,2026-10-22,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-02136/2026,BR021362026,CNT/MDA,2026-10-24,2026-10-22,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-02136/2026,BR021362026,CNT/MDA,2026-10-24,2026-10-22,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-02136/2026,BR021362026,CNT/MDA,2026-10-24,2026-10-22,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-02136/2026,BR021362026,CNT/MDA,2026-10-24,2026-10-22,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-05601/2026,BR056012026,Colectta,2026-10-24,2026-10-23,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-05601/2026,BR056012026,Colectta,2026-10-24,2026-10-23,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-05601/2026,BR056012026,Colectta,2026-10-24,2026-10-23,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-05601/2026,BR056012026,Colectta,2026-10-24,2026-10-23,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-05601/2026,BR056012026,Colectta,2026-10-24,2026-10-23,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-02828/2026,BR028282026,PoderData/Aya,2026-10-25,2026-10-23,sex,male,47.2,full_percentages
+BR-02828/2026,BR028282026,PoderData/Aya,2026-10-25,2026-10-23,sex,female,52.8,full_percentages
+BR-02828/2026,BR028282026,PoderData/Aya,2026-10-25,2026-10-23,age,Nordeste,28,full_percentages
+BR-02828/2026,BR028282026,PoderData/Aya,2026-10-25,2026-10-23,age,Norte,8,full_percentages
+BR-02828/2026,BR028282026,PoderData/Aya,2026-10-25,2026-10-23,age,Sudeste,42,full_percentages
+BR-02828/2026,BR028282026,PoderData/Aya,2026-10-25,2026-10-23,age,Sul,14,full_percentages
+BR-02828/2026,BR028282026,PoderData/Aya,2026-10-25,2026-10-23,income,Sem rendimentos até 2 SM,45.8,full_percentages
+BR-02828/2026,BR028282026,PoderData/Aya,2026-10-25,2026-10-23,income,Lula,45.2,full_percentages
+BR-02828/2026,BR028282026,PoderData/Aya,2026-10-25,2026-10-23,income,"Cury, Renan Santos, Caiado e outros candidatos, agrupados",7.8,full_percentages
