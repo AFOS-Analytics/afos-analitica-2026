@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-27",
-  "fetchedAt": "2026-10-27T23:38:10.725Z",
+  "lastUpdate": "2026-10-28",
+  "fetchedAt": "2026-10-28T00:59:33.692Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,8 +47,8 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-27",
-    "nPesquisas": 30,
+    "desde": "2026-09-28",
+    "nPesquisas": 28,
     "incluidas": [
       {
         "key": "NPR/PBS/Marist University|2026-10-26",
@@ -277,22 +277,6 @@
         "amostraTipo": "LV",
         "dem": 51,
         "rep": 49
-      },
-      {
-        "key": "Morning Consult|2026-09-27",
-        "instituto": "Morning Consult",
-        "campoFim": "2026-09-27",
-        "amostraTipo": "LV",
-        "dem": 50,
-        "rep": 43
-      },
-      {
-        "key": "Quinnipiac University|2026-09-27",
-        "instituto": "Quinnipiac University",
-        "campoFim": "2026-09-27",
-        "amostraTipo": "RV",
-        "dem": 51,
-        "rep": 39
       }
     ],
     "excluidasPorInstrumento": [
@@ -381,10 +365,10 @@
         "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
       }
     ],
-    "nInstitutos": 21,
-    "dem": 50.7,
-    "rep": 43.1,
-    "vantagemDem": 7.6,
+    "nInstitutos": 20,
+    "dem": 50.71,
+    "rep": 43.25,
+    "vantagemDem": 7.46,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
@@ -400,7 +384,6 @@
       "I&I/TIPP Insights (R)",
       "Morning Consult",
       "NPR/PBS/Marist University",
-      "Quinnipiac University",
       "RMG Research",
       "Rasmussen Reports (R)",
       "Reuters/Ipsos",
