@@ -281,3 +281,66 @@ Este conjunto de datos es **fechado y aditivo**. Los archivos de fechas ya cerra
 **Alcance.** Solo la fila de Lula en esa fecha. El panel y la daily del 08/10/2026 decían lo mismo sobre la PoderData/Aya y se corrigieron el 09/10/2026.
 
 **Prevención.** Afirmar que una encuesta **no** publicó un número es afirmar una ausencia, y ahora eso se verifica en más de un medio, de preferencia uno que reproduzca la tabla completa, antes de entrar en el registro.
+
+---
+
+## EN
+
+### ERR-2026-005 · `data/market-odds-timeseries.csv`, `data/divergence-timeseries.csv`, `data/poll-divergence.csv` · market series published incomplete
+
+| | Value |
+|---|---|
+| **Where** | Hugging Face, intermittently, between 2026-09-03 and 2026-10-05. Harvard Dataverse versions 6.0 (2026-09-10), 7.0 (2026-10-05) and 8.0 (2026-10-28), which carried over the three files of 7.0. |
+| **Published** | A market series with 136 dates, missing 52 days from 2026-04-17. In `poll-divergence`, the market side of 75 rows came from a reading up to 26 days before the poll's fieldwork. Example: Real Time Big Data of 2026-05-05 matched to the market of 2026-04-07 instead of 2026-04-30. |
+| **Correct** | A series with 188 dates. In `poll-divergence`, the market reading is at most 3 days from the fieldwork midpoint. |
+| **Rows affected** | 105 in `market-odds-timeseries`, 45 in `divergence-timeseries`, 75 in `poll-divergence` |
+| **Detected** | 2026-10-28, in the check before Harvard version 8.0 |
+| **Status** | Correct on Hugging Face since 2026-10-05, 21:12 UTC. Corrected on Harvard in version 9.0. |
+
+**Cause.** The dataset was uploaded by two routes. The automated mirror completes the market series with the history of past dashboards. Uploads run from a local machine did not have that history and built a shorter series, with no warning. Between 2026-09-03 and 2026-10-05, 32 local uploads published the short version. Each one was replaced by the next automated mirror after up to 48 hours, about 448 hours online in total. Harvard versions 6.0 and 7.0 were built at moments when the short version was the published one.
+
+**Reach.** Only the market side of these three files. Polls, the TSE registry, the official results, the election nights and the daily divergence files are not affected. On days present in both versions, differing values are readings of the same day at different times, and both are real measurements. The error is in the missing days, which pushed the matching to older dates.
+
+**Prevention.** The upload now refuses to publish a market series with fewer dates than the published one, both locally and in the automated mirror.
+
+---
+
+## PT-BR
+
+### ERR-2026-005 · `data/market-odds-timeseries.csv`, `data/divergence-timeseries.csv`, `data/poll-divergence.csv` · série de mercado publicada incompleta
+
+| | Valor |
+|---|---|
+| **Onde** | Hugging Face, de forma intermitente, entre 03/09 e 05/10/2026. Harvard Dataverse, versões 6.0 (10/09), 7.0 (05/10) e 8.0 (28/10), que repetiu os 3 arquivos da 7.0. |
+| **Publicado** | Série de mercado com 136 datas, sem 52 dias a partir de 17/04/2026. No `poll-divergence`, o lado do mercado de 75 linhas veio de uma leitura até 26 dias anterior ao campo da pesquisa. Exemplo: Real Time Big Data de 05/05 cruzada com o mercado de 07/04, e não de 30/04. |
+| **Correto** | Série com 188 datas. No `poll-divergence`, a leitura de mercado fica a no máximo 3 dias do meio do campo. |
+| **Linhas afetadas** | 105 em `market-odds-timeseries`, 45 em `divergence-timeseries`, 75 em `poll-divergence` |
+| **Detectado** | 28/10/2026, na conferência antes da versão 8.0 do Harvard |
+| **Situação** | Corrigido no Hugging Face desde 05/10/2026, 21h12 UTC. Corrigido no Harvard na versão 9.0. |
+
+**Causa.** O dataset era enviado por dois caminhos. O espelhamento automático completa a série de mercado com o histórico dos painéis antigos. O envio feito da máquina local não tinha esse histórico e montava uma série mais curta, sem avisar. Entre 03/09 e 05/10, 32 envios locais publicaram a versão curta. Cada uma foi substituída pelo espelhamento automático seguinte, depois de até 48 horas, somando cerca de 448 horas no ar. As versões 6.0 e 7.0 do Harvard foram montadas em momentos em que a versão curta estava publicada.
+
+**Alcance.** Só o lado do mercado desses três arquivos. Pesquisas, registro do TSE, resultado oficial, noites de apuração e os arquivos diários de divergência não foram afetados. Nos dias presentes nas duas versões, as diferenças de valor são leituras do mesmo dia em horários diferentes, e as duas são medições reais. O erro está nos dias ausentes, que levaram o cruzamento a datas antigas.
+
+**Prevenção.** O envio agora recusa subir uma série de mercado com menos datas do que a publicada, tanto na máquina local quanto no espelhamento automático.
+
+---
+
+## ES
+
+### ERR-2026-005 · `data/market-odds-timeseries.csv`, `data/divergence-timeseries.csv`, `data/poll-divergence.csv` · serie de mercado publicada incompleta
+
+| | Valor |
+|---|---|
+| **Dónde** | Hugging Face, de forma intermitente, entre el 03/09 y el 05/10/2026. Harvard Dataverse, versiones 6.0 (10/09), 7.0 (05/10) y 8.0 (28/10), que repitió los 3 archivos de la 7.0. |
+| **Publicado** | Serie de mercado con 136 fechas, sin 52 días a partir del 17/04/2026. En `poll-divergence`, el lado del mercado de 75 filas vino de una lectura hasta 26 días anterior al campo de la encuesta. Ejemplo: Real Time Big Data del 05/05 cruzada con el mercado del 07/04, y no del 30/04. |
+| **Correcto** | Serie con 188 fechas. En `poll-divergence`, la lectura de mercado queda a un máximo de 3 días del punto medio del campo. |
+| **Filas afectadas** | 105 en `market-odds-timeseries`, 45 en `divergence-timeseries`, 75 en `poll-divergence` |
+| **Detectado** | 28/10/2026, en la verificación previa a la versión 8.0 de Harvard |
+| **Estado** | Correcto en Hugging Face desde el 05/10/2026, 21:12 UTC. Corregido en Harvard en la versión 9.0. |
+
+**Causa.** El dataset se enviaba por dos caminos. El espejo automático completa la serie de mercado con el historial de los paneles anteriores. El envío hecho desde la máquina local no tenía ese historial y armaba una serie más corta, sin aviso. Entre el 03/09 y el 05/10, 32 envíos locales publicaron la versión corta. Cada una fue reemplazada por el siguiente espejo automático después de hasta 48 horas, con unas 448 horas en línea en total. Las versiones 6.0 y 7.0 de Harvard se armaron en momentos en que la versión corta era la publicada.
+
+**Alcance.** Solo el lado del mercado de estos tres archivos. Encuestas, registro del TSE, resultado oficial, noches de escrutinio y los archivos diarios de divergencia no se ven afectados. En los días presentes en ambas versiones, las diferencias son lecturas del mismo día a distintas horas, y ambas son mediciones reales. El error está en los días ausentes, que llevaron el cruce a fechas antiguas.
+
+**Prevención.** El envío ahora rechaza publicar una serie de mercado con menos fechas que la publicada, tanto en la máquina local como en el espejo automático.

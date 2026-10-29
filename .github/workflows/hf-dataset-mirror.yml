@@ -117,6 +117,12 @@ jobs:
           DATA_DIR: .cache/hf-dataset/data
         run: node scripts/build-poll-enrichment.mjs
 
+      - name: Trava da serie de mercado (ERR-2026-005)
+        # O staging nao pode ter MENOS datas de mercado que a serie publicada.
+        # Entre 03/Set e 05/Out, envios sem o historico do branch archive
+        # publicaram uma serie com ~50 datas a menos, sem aviso. Falha fechado.
+        run: python scripts/hf-mirror-brazil.py conferir-serie
+
       - name: Upload to Hugging Face dataset (cumulativo, sem --delete)
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}

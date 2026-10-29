@@ -24,6 +24,7 @@ Convencao identica a dos outros bundles padrao-ouro (.cache/standardize_dataset.
 Uso:
     python scripts/hf-mirror-brazil.py subir       -> upload do staging
     python scripts/hf-mirror-brazil.py checksums   -> gera e sobe o CHECKSUMS
+    python scripts/hf-mirror-brazil.py conferir-serie -> so a trava da serie de mercado (ERR-2026-005)
 """
 import hashlib
 import os
@@ -79,10 +80,62 @@ def data_do_dia() -> str:
     return ""
 
 
+SERIE_MERCADO = "data/market-odds-timeseries.csv"
+
+
+def datas_da_serie(texto: str) -> set:
+    linhas = [l for l in texto.splitlines()[1:] if l.strip()]
+    return {l.split(",", 1)[0] for l in linhas}
+
+
+def conferir_serie_de_mercado():
+    """
+    TRAVA DE NAO-REGRESSAO da serie de mercado, instalada em 28/Out/2026 (ERR-2026-005).
+
+    O export so completa a serie com o historico dos paineis antigos quando o
+    branch `archive` esta presente (HF_HISTORY_DIR, na esteira). Na maquina ele
+    nao esta, e a serie sai com ~50 datas a menos, SEM AVISO. Entre 03/Set e
+    05/Out, 32 envios locais publicaram essa versao curta, e o poll-divergence
+    passou a cruzar pesquisa com mercado de ate 26 dias antes. As versoes 6.0 e
+    7.0 do Harvard sairam dela.
+
+    A regra: o staging nao pode ter MENOS datas que a serie publicada. Falha
+    FECHADO: sem conseguir ler a publicada, nao sobe.
+    """
+    local = STAGING / SERIE_MERCADO
+    if not local.is_file():
+        print(f"serie de mercado ausente no staging: nada a conferir ({SERIE_MERCADO} nao sera enviado)")
+        return
+    from huggingface_hub import hf_hub_download
+
+    try:
+        texto_pub = Path(hf_hub_download(REPO, SERIE_MERCADO, repo_type="dataset", force_download=True)).read_text(encoding="utf-8")
+    except Exception as e:
+        # Na maquina, o antivirus reassina o TLS e o Python nao confia na raiz dele
+        # (CERTIFICATE_VERIFY_FAILED); o curl do Windows usa o repositorio do
+        # sistema e verifica normalmente. Verificacao de certificado NUNCA e desligada.
+        url = f"https://huggingface.co/datasets/{REPO}/resolve/main/{SERIE_MERCADO}"
+        r = subprocess.run(["curl.exe", "-sfL", url], capture_output=True)
+        if r.returncode != 0 or not r.stdout:
+            sys.exit(f"BLOQUEADO: nao li a serie de mercado publicada ({e}). Nada foi enviado.")
+        texto_pub = r.stdout.decode("utf-8")
+    d_local = datas_da_serie(local.read_text(encoding="utf-8"))
+    d_pub = datas_da_serie(texto_pub)
+    faltam = sorted(d_pub - d_local)
+    print(f"serie de mercado: staging {len(d_local)} datas, publicada {len(d_pub)}")
+    if len(d_local) < len(d_pub) or faltam:
+        sys.exit(
+            f"BLOQUEADO: o staging perderia {len(faltam)} data(s) da serie de mercado "
+            f"(ex.: {', '.join(faltam[:5])}). Rodada local sem o historico do branch archive? "
+            "Use a esteira (gh workflow run hf-dataset-mirror.yml). Nada foi enviado."
+        )
+
+
 def subir():
     api = HfApi(token=token())
     if not STAGING.is_dir():
         sys.exit("staging ausente: rode a sequencia de build antes")
+    conferir_serie_de_mercado()
     # PORTAO FAIL-CLOSED de CPF, instalado em 10/Set/2026. A redacao ja existia
     # em scripts/redigir-cpf-tse-registry.mjs e nada obrigava a rodar: dos 5
     # ultimos espelhos do Brasil ela rodou em 2 e foi esquecida em 3, e o
@@ -230,7 +283,9 @@ if __name__ == "__main__":
     acao = sys.argv[1] if len(sys.argv) > 1 else ""
     if acao == "subir":
         subir()
+    elif acao == "conferir-serie":
+        conferir_serie_de_mercado()
     elif acao == "checksums":
         checksums()
     else:
-        sys.exit("uso: python scripts/hf-mirror-brazil.py [subir|checksums]")
+        sys.exit("uso: python scripts/hf-mirror-brazil.py [subir|checksums|conferir-serie]")
