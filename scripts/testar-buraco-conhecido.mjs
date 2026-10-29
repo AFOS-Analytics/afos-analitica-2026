@@ -208,10 +208,14 @@ console.log('🔎 conferirCarga\n')
   eq('e com controle positivo', /200/.test(cr.acesso.controlePositivo), true)
   const nb = BURACOS_CONHECIDOS.find((e) => e.casa === 'Noble Predictive')
   eq('a Noble Predictive está registrada', Boolean(nb), true)
-  eq('🔴 e ela deixou de ser "não localizada" em 19/Out', nb.situacao, 'FONTE_SEM_A_PERGUNTA')
-  eq('com a leitura medida em 200', nb.leitura.status, 200)
-  eq('e o oQueTem nomeia a série que PARA em Ago', /Ago\/2026/.test(nb.leitura.oQueTem), true)
-  eq('e as 7 URLs lidas estão declaradas', nb.leitura.urls.length, 7)
+  // 🔁 Foi FONTE_SEM_A_PERGUNTA de 19 a 29/Out, e a revisão a pegou mudando: a
+  //    série da casa ganhou o ponto de outubro. O caso de FONTE_SEM_A_PERGUNTA
+  //    segue coberto pelos casos plantados acima; aqui se cobra a EVOLUÇÃO.
+  eq('🔁 e a revisão de 29/Out a passou a AGUARDANDO_INDICE', nb.situacao, 'AGUARDANDO_INDICE')
+  eq('⛔ sem leitura anexada, porque a situação nova a proíbe', 'leitura' in nb, false)
+  eq('e a nota cita a versão do gráfico que trouxe outubro', /EahTR\/3/.test(nb.nota), true)
+  eq('e guarda que o ponto de outubro repete o de agosto', /MESMOS valores/.test(nb.nota), true)
+  eq('e guarda o histórico da situação anterior', /FONTE_SEM_A_PERGUNTA/.test(nb.nota), true)
   eq('⛔ e ela NÃO carrega acesso, porque o host abriu', 'acesso' in nb, false)
 }
 

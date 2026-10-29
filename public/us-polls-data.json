@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-28",
-  "fetchedAt": "2026-10-28T00:59:33.692Z",
+  "lastUpdate": "2026-10-29",
+  "fetchedAt": "2026-10-29T00:11:00.658Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,9 +47,17 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-28",
-    "nPesquisas": 28,
+    "desde": "2026-09-29",
+    "nPesquisas": 31,
     "incluidas": [
+      {
+        "key": "Harvard/Harris Poll/HarrisX|2026-10-26",
+        "instituto": "Harvard/Harris Poll/HarrisX",
+        "campoFim": "2026-10-26",
+        "amostraTipo": "LV",
+        "dem": 52,
+        "rep": 48
+      },
       {
         "key": "NPR/PBS/Marist University|2026-10-26",
         "instituto": "NPR/PBS/Marist University",
@@ -76,6 +84,22 @@
         "rep": 45
       },
       {
+        "key": "Echelon Insights|2026-10-23",
+        "instituto": "Echelon Insights",
+        "campoFim": "2026-10-23",
+        "amostraTipo": "LV",
+        "dem": 51,
+        "rep": 46
+      },
+      {
+        "key": "Prolific|2026-10-22",
+        "instituto": "Prolific",
+        "campoFim": "2026-10-22",
+        "amostraTipo": "LV",
+        "dem": 53,
+        "rep": 42
+      },
+      {
         "key": "ActiVote|2026-10-21",
         "instituto": "ActiVote",
         "campoFim": "2026-10-21",
@@ -90,6 +114,22 @@
         "campoFim": "2026-10-20",
         "amostraTipo": "LV",
         "dem": 53,
+        "rep": 44
+      },
+      {
+        "key": "Morning Consult|2026-10-20",
+        "instituto": "Morning Consult",
+        "campoFim": "2026-10-20",
+        "amostraTipo": "RV",
+        "dem": 48,
+        "rep": 42
+      },
+      {
+        "key": "The Rainey Center|2026-10-20",
+        "instituto": "The Rainey Center",
+        "campoFim": "2026-10-20",
+        "amostraTipo": "RV",
+        "dem": 52,
         "rep": 44
       },
       {
@@ -261,25 +301,23 @@
         "amostraTipo": "LV",
         "dem": 47,
         "rep": 44
-      },
-      {
-        "key": "AlphaROC|2026-09-28",
-        "instituto": "AlphaROC",
-        "campoFim": "2026-09-28",
-        "amostraTipo": "A",
-        "dem": 43,
-        "rep": 37
-      },
-      {
-        "key": "Harvard/Harris Poll/HarrisX|2026-09-28",
-        "instituto": "Harvard/Harris Poll/HarrisX",
-        "campoFim": "2026-09-28",
-        "amostraTipo": "LV",
-        "dem": 51,
-        "rep": 49
       }
     ],
     "excluidasPorInstrumento": [
+      {
+        "instituto": "The Economist/YouGov",
+        "campoInicio": "2026-10-23",
+        "campoFim": "2026-10-26",
+        "amostraTipo": "LV",
+        "dem": 50,
+        "rep": 41,
+        "tipo": "NOMINAL",
+        "descricao": "cédula com os NOMES dos candidatos do distrito do entrevistado, e não a pergunta genérica",
+        "desde": "2026-09-04",
+        "medidoEm": "2026-09-22",
+        "ressalva": "Asked using the names of candidates running in the respondent’s district of residence",
+        "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
+      },
       {
         "instituto": "The Economist/YouGov",
         "campoInicio": "2026-10-19",
@@ -349,59 +387,47 @@
         "medidoEm": "2026-10-09",
         "ressalva": "In the October 2026 survey, candidate names were inserted into the response options based on the respondent’s congressional district",
         "prova": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/10/PP_2026.10.8_midterms_report.pdf"
-      },
-      {
-        "instituto": "The Economist/YouGov",
-        "campoInicio": "2026-09-25",
-        "campoFim": "2026-09-28",
-        "amostraTipo": "LV",
-        "dem": 53,
-        "rep": 38,
-        "tipo": "NOMINAL",
-        "descricao": "cédula com os NOMES dos candidatos do distrito do entrevistado, e não a pergunta genérica",
-        "desde": "2026-09-04",
-        "medidoEm": "2026-09-22",
-        "ressalva": "Asked using the names of candidates running in the respondent’s district of residence",
-        "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
       }
     ],
-    "nInstitutos": 20,
-    "dem": 50.71,
-    "rep": 43.25,
-    "vantagemDem": 7.46,
+    "nInstitutos": 22,
+    "dem": 51.03,
+    "rep": 43.45,
+    "vantagemDem": 7.58,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
-      "AlphaROC",
       "Beacon Research (D)/ Shaw & Co. Research (R)",
       "CBS News/YouGov",
       "CNN/SSRS",
       "Centerline Research & Strategy",
       "Cygnal (R)",
+      "Echelon Insights",
       "Focaldata",
       "Hart Research Associates (D)/ Public Opinion Strategies (R)",
       "Harvard/Harris Poll/HarrisX",
       "I&I/TIPP Insights (R)",
       "Morning Consult",
       "NPR/PBS/Marist University",
+      "Prolific",
       "RMG Research",
       "Rasmussen Reports (R)",
       "Reuters/Ipsos",
       "SurveyMonkey",
+      "The Rainey Center",
       "The Washington Post/ABC News/Ipsos",
       "TrueDot",
       "University of Massachusetts Lowell/YouGov"
     ]
   },
   "qualidade": {
-    "linhasLidas": 508,
-    "publicadas": 521,
+    "linhasLidas": 517,
+    "publicadas": 530,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 508,
+    "doIndice": 517,
     "curadas": 13,
     "curadasDescartadasPorDuplicidade": 17
   },
@@ -453,6 +479,66 @@
     ]
   },
   "polls": [
+    {
+      "instituto": "Harvard/Harris Poll/HarrisX",
+      "campoInicio": "2026-10-24",
+      "campoFim": "2026-10-26",
+      "amostra": null,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 52,
+      "rep": 48,
+      "outros": null,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://harvardharrispoll.com/assets/uploads/2026/09/HHP_Oct2026_KeyResults.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "The Economist/YouGov",
+      "campoInicio": "2026-10-23",
+      "campoFim": "2026-10-26",
+      "amostra": 1123,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 52,
+      "rep": 41,
+      "outros": 8,
+      "vantagemDem": 11,
+      "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_nJaupnc.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "The Economist/YouGov",
+      "campoInicio": "2026-10-23",
+      "campoFim": "2026-10-26",
+      "amostra": 1263,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 50,
+      "rep": 41,
+      "outros": 9,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_nJaupnc.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "The Economist/YouGov",
+      "campoInicio": "2026-10-23",
+      "campoFim": "2026-10-26",
+      "amostra": 1430,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 46,
+      "rep": 40,
+      "outros": 14,
+      "vantagemDem": 6,
+      "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_nJaupnc.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
     {
       "instituto": "Reuters/Ipsos",
       "campoInicio": "2026-10-22",
@@ -525,6 +611,51 @@
       "outros": 1,
       "vantagemDem": 8,
       "fontePrimaria": "https://assets1.cbsnewsstatic.com/hub/cms/prod_cms_alt/file/2026/10/25/8ad451c3-2d1f-4f7f-a3c8-97f923271e92/cbsnews_20261025_sun.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Echelon Insights",
+      "campoInicio": "2026-10-16",
+      "campoFim": "2026-10-23",
+      "amostra": 3644,
+      "amostraTipo": "LV",
+      "margemErro": 3.2,
+      "dem": 51,
+      "rep": 46,
+      "outros": 3,
+      "vantagemDem": 5,
+      "fontePrimaria": "https://netchoice.org/netchoice-echelon-insights-poll-voters-rank-ai-regulation-far-behind-cost-of-living-want-one-national-ai-standard/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Prolific",
+      "campoInicio": "2026-10-21",
+      "campoFim": "2026-10-22",
+      "amostra": 713,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 53,
+      "rep": 42,
+      "outros": 5,
+      "vantagemDem": 11,
+      "fontePrimaria": "https://www.prolific.com/resources/poll-democrats-lead-by-11-points-here-s-how-we-reached-that-number",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Prolific",
+      "campoInicio": "2026-10-21",
+      "campoFim": "2026-10-22",
+      "amostra": 1118,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 50,
+      "rep": 40,
+      "outros": 10,
+      "vantagemDem": 10,
+      "fontePrimaria": "https://www.prolific.com/resources/poll-democrats-lead-by-11-points-here-s-how-we-reached-that-number",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -630,6 +761,36 @@
       "outros": 11,
       "vantagemDem": 9,
       "fontePrimaria": "https://www.focaldata.com/blog/democrats-hit-new-high-in-penultimate-midterms-poll",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "The Rainey Center",
+      "campoInicio": "2026-10-14",
+      "campoFim": "2026-10-20",
+      "amostra": 1279,
+      "amostraTipo": "RV",
+      "margemErro": 3.6,
+      "dem": 52,
+      "rep": 44,
+      "outros": 4,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://www.raineycenter.org/polling/ai-data-centers-energy-and-kids-online",
+      "comLeaners": true,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-10-13",
+      "campoFim": "2026-10-20",
+      "amostra": 2050,
+      "amostraTipo": "RV",
+      "margemErro": 2,
+      "dem": 48,
+      "rep": 42,
+      "outros": 10,
+      "vantagemDem": 6,
+      "fontePrimaria": "https://www.deseret.com/politics/2026/10/27/voters-confidence-trump-approval-iran-war-midterms/",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
