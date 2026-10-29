@@ -35,7 +35,7 @@
 // Uso:
 //   node scripts/harvard-publish-us2026.mjs conferir
 //   node scripts/harvard-publish-us2026.mjs publicar
-import { readFileSync, existsSync, writeFileSync, mkdirSync } from 'node:fs'
+import { readFileSync, existsSync, writeFileSync, mkdirSync, readdirSync } from 'node:fs'
 import { createHash } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
 import { join, dirname } from 'node:path'
@@ -120,14 +120,43 @@ async function main() {
     difere.push({ rel: relLocal, id: f.dataFile.id, dir: f.directoryLabel || '', harvard: buf.length, local: nosso.length })
   }
 
-  console.log('iguais: ' + iguais.length + ' | diferem: ' + difere.length + ' | sem par local: ' + semPar.length)
+  // Regra 8, de 29/Out/2026: arquivo do bundle que o deposito NAO tem. Ate
+  // aqui o script so substituia, e a ERRATA da imprensa (decidida em 16/Out
+  // para a proxima versao maior) nao tinha caminho para entrar. Lista-se pelo
+  // disco, com a mesma regra 2 do outro lado: o .csv local vira .tab la.
+  const noDeposito = new Set(d.files.map((f) => {
+    const label = f.label || f.dataFile.filename
+    return (f.directoryLabel ? f.directoryLabel + '/' : '') + (label.endsWith('.tab') ? label.slice(0, -4) + '.csv' : label)
+  }))
+  const listar = (dir) => readdirSync(join(ORIGEM, dir), { withFileTypes: true }).flatMap((e) =>
+    e.isDirectory() ? listar(dir ? dir + '/' + e.name : e.name) : [dir ? dir + '/' + e.name : e.name])
+  const novos = listar('').filter((rel) => !noDeposito.has(rel))
+
+  console.log('iguais: ' + iguais.length + ' | diferem: ' + difere.length + ' | novos: ' + novos.length + ' | sem par local: ' + semPar.length)
   for (const s of semPar) console.log('   SEM PAR LOCAL: ' + s)
   for (const x of difere) console.log('   DIFERE ' + x.rel.padEnd(46) + ' harvard ' + String(x.harvard).padStart(9) + ' -> local ' + String(x.local).padStart(9))
+  for (const n of novos) console.log('   NOVO   ' + n)
 
   if (semPar.length) { console.error('\nabortando: arquivo no deposito sem par na origem'); process.exit(1) }
-  if (!difere.length) { console.log('\nnada a fazer: o deposito ja reflete o bundle.'); return }
+  if (!difere.length && !novos.length) { console.log('\nnada a fazer: o deposito ja reflete o bundle.'); return }
 
-  if (MODO === 'conferir') { console.log('\n' + difere.length + ' arquivo(s) a substituir. Rode com "publicar".'); return }
+  if (MODO === 'conferir') { console.log('\n' + difere.length + ' a substituir e ' + novos.length + ' a acrescentar. Rode com "publicar".'); return }
+
+  for (const rel of novos) {
+    if (!(await esperarDestravar())) process.exit(1)
+    // A pasta viaja no jsonData, pelo mesmo motivo da regra 7.
+    const dir = rel.includes('/') ? rel.slice(0, rel.lastIndexOf('/')) : ''
+    const meta = dir ? '{"directoryLabel":"' + dir + '"}' : '{}'
+    const saida = execFileSync('curl.exe', [
+      '-s', '-X', 'POST', BASE + '/api/datasets/:persistentId/add?persistentId=' + PID,
+      '-H', 'X-Dataverse-key: ' + TOKEN,
+      '-F', 'file=@' + join(ORIGEM, rel),
+      '-F', 'jsonData=' + meta,
+    ], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 })
+    const ok = /"status":"OK"/.test(saida)
+    console.log((ok ? 'OK   ' : 'ERRO ') + 'novo ' + rel + (ok ? '' : ' · ' + saida.slice(0, 220)))
+    if (!ok) { console.error('abortando antes de publicar'); process.exit(1) }
+  }
 
   for (const { rel, id, dir } of difere) {
     if (!(await esperarDestravar())) process.exit(1)
