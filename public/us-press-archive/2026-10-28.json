@@ -1,0 +1,225 @@
+{
+  "lastUpdate": "2026-10-28",
+  "fetchedAt": "2026-10-28T19:20:13.359Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal",
+      "feed": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal",
+      "feed": "https://feeds.washingtonpost.com/rss/politics"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal",
+      "feed": "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada",
+      "feed": "https://rss.politico.com/politics-news.xml"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada",
+      "feed": "https://thehill.com/homenews/feed/"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada",
+      "feed": "https://rollcall.com/feed/"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada",
+      "feed": "https://api.axios.com/feed/"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.npr.org/1014/rss.xml"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio",
+      "feed": "https://abcnews.go.com/abcnews/politicsheadlines"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio",
+      "feed": "https://www.cbsnews.com/latest/rss/politics"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.nbcnews.com/nbcnews/public/politics"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio",
+      "feed": "http://rss.cnn.com/rss/cnn_allpolitics.rss"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio",
+      "feed": "https://moxie.foxnews.com/google-publisher/politics.xml"
+    },
+    {
+      "casa": "NewsNation",
+      "tipo": "tv/rádio",
+      "feed": "https://www.newsnationnow.com/politics/feed/"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião",
+      "feed": "https://www.nationalreview.com/feed/"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião",
+      "feed": "https://www.theguardian.com/us-news/us-politics/rss"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 238,
+    "naLista": 131,
+    "foraDaLista": 107,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 2,
+    "veiculosRepresentados": 6,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": [
+      "feed:The Washington Post: HTTP 502"
+    ],
+    "feedsProprios": 16,
+    "lidosEmFeedProprio": 59,
+    "publicadosComLinkCanonico": 7,
+    "publicadosViaGoogleNews": 3,
+    "publicadosPorDisputa": 9,
+    "publicadosPorMetodo": 1
+  },
+  "itens": [
+    {
+      "titulo": "Mary Peltola campaign and Dems backed covert scheme to field spoiler candidates in Alaska Senate race: report",
+      "url": "https://www.foxnews.com/politics/mary-peltola-campaign-dems-backed-covert-scheme-field-spoiler-candidates-alaska-senate-race-report",
+      "casa": "Fox News",
+      "publicadoEm": "2026-10-28T19:10:56.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump and Vance rally for Republicans in final midterms push; Senate race in red South Carolina now tossup – live",
+      "url": "https://www.theguardian.com/us-news/live/2026/oct/28/trump-administration-bill-essayli-republicans-flavio-bolsonaro-us-news-latest",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-10-28T18:59:04.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "House Democrat: Paper ballots protect against Musk's potential election hacking",
+      "url": "https://thehill.com/policy/technology/6179059-himes-paper-ballots-prevent-hacking/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-10-28T18:56:47.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Support for reelecting congressional incumbents at record lows: Gallup",
+      "url": "https://thehill.com/homenews/administration/6178743-congress-reelection-poll-record-low/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-10-28T18:35:28.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "metodo"
+    },
+    {
+      "titulo": "Democrats recruited spoilers in Alaska Senate race, NYT says",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNSnVXQlVSTm5hcFNKNWxsc1BUQmREOExydU1iS2c5YmxFSnExVXNTQ0x3LVVqN3hvZ1ZRT29TZUM0V1d6M3g2MF9QS3hjQkZETmhOMy1ENzFFdUxteXFLQXBYQjRrRUpBTWFzVVczMWJFZlQtZDZxcWxUaHZjYjRJbmtxQ3pMTWx5ejFaVW5LSWFpalowU181eVBEdEZmR2RnTUpN?oc=5",
+      "casa": "Reuters",
+      "publicadoEm": "2026-10-28T18:11:43.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Fed holds interest rates steady in last decision before midterms",
+      "url": "https://www.theguardian.com/business/2026/oct/28/fed-interest-rates-midterms",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-10-28T18:07:23.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Iran pressed to make nuke concessions as massive post-midterms strikes loom",
+      "url": "https://www.axios.com/2026/10/28/iran-war-arab-mediators-war-post-midterms",
+      "casa": "Axios",
+      "publicadoEm": "2026-10-28T18:00:24.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Florida Midterm Elections 2026: Key Races, Candidates and Past Results",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9sZERpQkk4QlVNeG9tV3BUWWtuaFFyNVJFMFpwVTVfQjZ4cVFSdHh4U3hGbmxIN0d6ZWQ0Q1R5dXRrZ05YelhGSDVPTkxHQU4yaTdkcHRGX1JiZmxhc3IyOEU5TTgxZ1RjNi1NZlhnZG8?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-28T18:00:21.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "South Carolina Midterm Elections 2026: Key Races, Candidates and Past Results",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9lLXptdXd6bFlTYXl3eU1OV29WUTZ4RW5mREdNVXJCQ3lkVXNRRklTbmdtdUN1ZC1pV0tGaUNVa21rT2steXc3TkxEQ0czTG5OTEZhZWwtTjF3cFJwRXlIUGV4QkhwVGZNYU1pMXUtb0QyZlJRWDl6czVB?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-28T18:00:21.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Democrat House candidate hit with felony summons at campaign event",
+      "url": "https://www.foxnews.com/politics/democrat-house-candidate-hit-felony-summons-campaign-event",
+      "casa": "Fox News",
+      "publicadoEm": "2026-10-28T17:55:19.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    }
+  ]
+}
