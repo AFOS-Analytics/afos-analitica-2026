@@ -195,15 +195,48 @@ function imprimirEsperado() {
   console.log('🖥️  CONFERIDOR DE TELA — comando pronto, para rodar à mão')
   console.log('')
 
-  const r = spawnSync(process.execPath, ['scripts/ler-mercado.mjs', '--json'], { encoding: 'utf8' })
+  // 🔴 30/Out/2026: este bloco RELIA o mercado ao vivo e montava o --esperado
+  //    com essa releitura, não com a leitura que a trava acabou de certificar.
+  //    Medido no dia: a trava certificou Câmara D em 92.50 às 01:11:10Z e o
+  //    comando saiu pedindo 93.50, um preço de passagem que nenhuma das duas
+  //    leituras viu. Agora vale a CERTIFICADA desta rodada, e a releitura ao
+  //    vivo só serve para AVISAR que o livro já andou, nunca para ditar o número.
+  const ordem = [['house', /Democratic/], ['house', /Republican/], ['senate', /Democratic/], ['senate', /Republican/], ['asScheduled', /./]]
+  const doMapa = (mapa) => ordem.map(([livro, re]) => {
+    const k = Object.keys(mapa ?? {}).find((x) => x.startsWith(livro + ':') && re.test(x))
+    return k == null ? null : Number(mapa[k]).toFixed(2)
+  })
   let precos = []
+  let origem = null
+  const cert = '.cache/capture-guard/ultima-us.json'
+  if (existsSync(cert)) {
+    try {
+      const c = JSON.parse(readFileSync(cert, 'utf8'))
+      const idadeMin = (Date.now() - new Date(c.fetchedAt).getTime()) / 60000
+      const p = doMapa(c.precos)
+      if (c.ok && idadeMin >= 0 && idadeMin <= 30 && p.every((v) => v != null)) {
+        precos = p
+        origem = `certificada às ${c.fetchedAt}, há ${idadeMin.toFixed(0)} min`
+      }
+    } catch {}
+  }
+  const r = spawnSync(process.execPath, ['scripts/ler-mercado.mjs', '--json'], { encoding: 'utf8' })
+  let aoVivo = []
   try {
     const j = JSON.parse(r.stdout)
     for (const chave of ['house', 'senate', 'asScheduled']) {
-      for (const linha of j.grupos?.[chave]?.linhas ?? []) precos.push(Number(linha.preco).toFixed(2))
+      for (const linha of j.grupos?.[chave]?.linhas ?? []) aoVivo.push(Number(linha.preco).toFixed(2))
     }
-  } catch {
-    console.log('   ⚠️ não consegui reler o mercado em JSON: montar o --esperado à mão')
+  } catch {}
+  if (!precos.length && aoVivo.length) {
+    precos = aoVivo
+    origem = 'leitura AO VIVO, sem certificada recente: a trava não aprovou nesta rodada, ou foi pulada'
+  }
+  if (!precos.length) console.log('   ⚠️ não consegui ler a certificada nem reler o mercado: montar o --esperado à mão')
+  if (origem) console.log(`   📌 preços: ${origem}`)
+  if (origem?.startsWith('certificada') && aoVivo.length === precos.length && aoVivo.some((v, i) => v !== precos[i])) {
+    console.log(`   ⚠️ o livro JÁ ANDOU depois da certificação: ao vivo ${aoVivo.join(',')}`)
+    console.log('      A tela pode estar mostrando qualquer dos dois. Ler contra a certificada; se reprovar, reler.')
   }
 
   let media = null
