@@ -1,0 +1,225 @@
+{
+  "lastUpdate": "2026-10-29",
+  "fetchedAt": "2026-10-29T19:20:13.284Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal",
+      "feed": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal",
+      "feed": "https://feeds.washingtonpost.com/rss/politics"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal",
+      "feed": "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada",
+      "feed": "https://rss.politico.com/politics-news.xml"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada",
+      "feed": "https://thehill.com/homenews/feed/"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada",
+      "feed": "https://rollcall.com/feed/"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada",
+      "feed": "https://api.axios.com/feed/"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.npr.org/1014/rss.xml"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio",
+      "feed": "https://abcnews.go.com/abcnews/politicsheadlines"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio",
+      "feed": "https://www.cbsnews.com/latest/rss/politics"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.nbcnews.com/nbcnews/public/politics"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio",
+      "feed": "http://rss.cnn.com/rss/cnn_allpolitics.rss"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio",
+      "feed": "https://moxie.foxnews.com/google-publisher/politics.xml"
+    },
+    {
+      "casa": "NewsNation",
+      "tipo": "tv/rádio",
+      "feed": "https://www.newsnationnow.com/politics/feed/"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião",
+      "feed": "https://www.nationalreview.com/feed/"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião",
+      "feed": "https://www.theguardian.com/us-news/us-politics/rss"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 257,
+    "naLista": 143,
+    "foraDaLista": 114,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 1,
+    "veiculosRepresentados": 8,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": [
+      "feed:The Washington Post: HTTP 502"
+    ],
+    "feedsProprios": 16,
+    "lidosEmFeedProprio": 61,
+    "publicadosComLinkCanonico": 5,
+    "publicadosViaGoogleNews": 5,
+    "publicadosPorDisputa": 10,
+    "publicadosPorMetodo": 0
+  },
+  "itens": [
+    {
+      "titulo": "Obama mocks Trump for ‘whole-of-government response’ to Cheesecake Factory joke",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNUDM5UFczdUxtS0llTnRxQjJPWHdTTWtFVVVyMXdUY0ZGWDlkVThnUjRjSWM2QmFiQTVFVV9tNFhkb3gybjhqYzVjTGZjX2Y4Tjd1UzZUOVVPV09PZGIxTkxXTnVaMGNYY25TeEtoMldydVJjMnJxSk93N2UyUWNvWWVvUVVxellJcHdmdVA2YWFCa1AydmZ0cHVQWGFnUmcxVU1R?oc=5",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-10-29T19:09:47.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "As Midterm Ads Focus on Epstein, a Florida Senator Is the Latest Target",
+      "url": "https://www.nytimes.com/2026/10/29/us/politics/epstein-victim-ashley-moody-ad.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-29T18:47:54.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Economy, healthcare, Iran war top voters' concerns ahead of midterms: Gallup",
+      "url": "https://thehill.com/homenews/campaign/6181594-voters-prioritize-economy-healthcare-iran/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-10-29T18:35:47.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "House GOP launches probe into Peltola campaign ballot stacking allegations",
+      "url": "https://thehill.com/homenews/house/6181949-comer-investigates-peltola-senate-allegations/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-10-29T18:20:19.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Libertarians challenge Trump-backed Republicans, look to shake up midterms beyond GOP-Dem duopoly",
+      "url": "https://www.foxnews.com/politics/libertarians-challenge-trump-backed-republicans-look-shake-up-midterms-beyond-gop-dem-duopoly",
+      "casa": "Fox News",
+      "publicadoEm": "2026-10-29T18:08:40.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Michigan Senate race: working-class voters could sway the election",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQUEV3S2RwWUJQVU00bWNtbVl0RzhLaEpzNnlnWTlRQXZqY3J6Z1FaamdzSklYbGtJeG8ydGs4eFpjMDgwb2FlTEtEU2d5ME0wbDFsNkVpck1yNll0akFGcDFqUTQ3Umt5UDg2eDdkbWY2RlZkbHh2cExvTDlZZl9mbV9vQ2RJWG1aYmdRYlFDQ241VnVhM2p5cExqY0ZJMmdzZHdCRjN6WdIBrAFBVV95cUxQV3JJeHFrbFRpZ2JHbEFwU1l3N2NCUmNaV3IyRHVmTG1lR2E3cE1CVTByWFJhdS10Q3V3Y0JwcWYzUjRCX3hkQlpMMnRvaTBDd2RFRERUVUVpWUo2R1lrQy15aEI2WnU2LXB6a1dRUGM5YVUxbVB1VXl6c3Zjdm05UFFXZzYtU0d1VGFnS3FCVko0RmdDWkZnRHRKSld1ZEx3SGdOeEtoVzVaUFct?oc=5",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-29T18:06:43.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "The range of outcomes in the 2026 battle for the Senate is enormous",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNV2tVeFFOWi1JWWRKeDZTMFhNNVlLbXRvQm9ocXFCQWxGTXdKZ21qdXBvUEhvWlczb1pZbnpkaURqaWJSMlhQLTRvLV9UOG1ONlRIdUd4cEp1LTBJNFp5WklDbEZFdDFCaDhTcmNSQTZVNk4yckd5TVlFNGhSckw0bHRUVQ?oc=5",
+      "casa": "CNN",
+      "publicadoEm": "2026-10-29T18:05:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Michigan Senate candidates' campaign to working class families",
+      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/michigan-senate-race-working-class-voters/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-29T18:04:44.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "New Texas Senate poll shows challenge for GOP in final days",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPTE5QS3p1cTRBSC15Z1Ntd3F4Q1ZpR0V4NUhiaFpHZGxBR3BlcC11VEV1TVVhczF2dFpyb2FyUDR1WkcyRk8xVWRWSDAyVkdCOXVfTHVpN2l2US0xWEYxUHpwdF9NekZlbFNtVGx2VjRackFiNWJTSzhab2RaUDFjM0tsVkprcV9fX0pyQk9OTU9NNzJmRV9FMkVEQV9YcXl2UTRoNmt3akYxSVVqVHNKVGYtSFhzUC1KVnA2NE5KbmhSeG5OZEJDT3dWRG5LSGlxVmc?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-10-29T18:00:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Alaska GOP governor orders investigation into Democrats’ ballot-stacking allegations",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPdnJScnpSNTFMSHNfVmwwaUNNNXhtcHNNQUNIX3VJWmVIcDFjUDhuZ3JUb09FSHRZT3NhNEk4SXFsbV9uUTNhU2hrOHlDSVVYMXlJbTdkcWJTN2FuRUozZm0yS2ZTZnNET1FZamF5UkJPZmdqMGN2Z3dtWlNqV3FNemhBbw?oc=5",
+      "casa": "Politico",
+      "publicadoEm": "2026-10-29T17:52:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    }
+  ]
+}
