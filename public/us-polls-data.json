@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-29",
-  "fetchedAt": "2026-10-29T00:11:00.658Z",
+  "lastUpdate": "2026-10-30",
+  "fetchedAt": "2026-10-30T00:25:07.677Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,8 +47,8 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-29",
-    "nPesquisas": 31,
+    "desde": "2026-09-30",
+    "nPesquisas": 33,
     "incluidas": [
       {
         "key": "Harvard/Harris Poll/HarrisX|2026-10-26",
@@ -73,6 +73,14 @@
         "amostraTipo": "LV",
         "dem": 53,
         "rep": 44
+      },
+      {
+        "key": "Cygnal (R)|2026-10-24",
+        "instituto": "Cygnal (R)",
+        "campoFim": "2026-10-24",
+        "amostraTipo": "LV",
+        "dem": 52,
+        "rep": 43
       },
       {
         "key": "CBS News/YouGov|2026-10-23",
@@ -106,6 +114,14 @@
         "amostraTipo": "LV",
         "dem": 53,
         "rep": 47
+      },
+      {
+        "key": "Clarity Campaign Labs|2026-10-21",
+        "instituto": "Clarity Campaign Labs",
+        "campoFim": "2026-10-21",
+        "amostraTipo": "LV",
+        "dem": 52,
+        "rep": 44
       },
       {
         "key": "Focaldata|2026-10-20",
@@ -305,6 +321,20 @@
     ],
     "excluidasPorInstrumento": [
       {
+        "instituto": "Tufts University/YouGov",
+        "campoInicio": "2026-10-23",
+        "campoFim": "2026-10-27",
+        "amostraTipo": "LV",
+        "dem": 52,
+        "rep": 40,
+        "tipo": "NOMINAL",
+        "descricao": "cédula com os NOMES dos candidatos do distrito do entrevistado, e não a pergunta genérica",
+        "desde": "2026-10-23",
+        "medidoEm": "2026-10-30",
+        "ressalva": "Unlike most polls which use a generic house ballot question that only provides the party labels, our House vote question piped in candidate names (with their party labels) to more accurately reflect how people actually vote in these races.",
+        "prova": "https://tufts-pol.medium.com/tufts-public-opinion-lab-national-pre-election-poll-shows-a-big-lead-for-democrats-in-the-race-for-57656e85c738"
+      },
+      {
         "instituto": "The Economist/YouGov",
         "campoInicio": "2026-10-23",
         "campoFim": "2026-10-26",
@@ -389,10 +419,10 @@
         "prova": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/10/PP_2026.10.8_midterms_report.pdf"
       }
     ],
-    "nInstitutos": 22,
-    "dem": 51.03,
+    "nInstitutos": 23,
+    "dem": 51.09,
     "rep": 43.45,
-    "vantagemDem": 7.58,
+    "vantagemDem": 7.64,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
@@ -400,6 +430,7 @@
       "CBS News/YouGov",
       "CNN/SSRS",
       "Centerline Research & Strategy",
+      "Clarity Campaign Labs",
       "Cygnal (R)",
       "Echelon Insights",
       "Focaldata",
@@ -420,14 +451,14 @@
     ]
   },
   "qualidade": {
-    "linhasLidas": 517,
-    "publicadas": 530,
+    "linhasLidas": 522,
+    "publicadas": 535,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 517,
+    "doIndice": 522,
     "curadas": 13,
     "curadasDescartadasPorDuplicidade": 17
   },
@@ -479,6 +510,36 @@
     ]
   },
   "polls": [
+    {
+      "instituto": "Tufts University/YouGov",
+      "campoInicio": "2026-10-23",
+      "campoFim": "2026-10-27",
+      "amostra": 499,
+      "amostraTipo": "LV",
+      "margemErro": 4.6,
+      "dem": 52,
+      "rep": 40,
+      "outros": 8,
+      "vantagemDem": 12,
+      "fontePrimaria": "https://tufts-pol.medium.com/tufts-public-opinion-lab-national-pre-election-poll-shows-a-big-lead-for-democrats-in-the-race-for-57656e85c738",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Tufts University/YouGov",
+      "campoInicio": "2026-10-23",
+      "campoFim": "2026-10-27",
+      "amostra": 1000,
+      "amostraTipo": "A",
+      "margemErro": 3.6,
+      "dem": 47,
+      "rep": 36,
+      "outros": 17,
+      "vantagemDem": 11,
+      "fontePrimaria": "https://tufts-pol.medium.com/tufts-public-opinion-lab-national-pre-election-poll-shows-a-big-lead-for-democrats-in-the-race-for-57656e85c738",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
     {
       "instituto": "Harvard/Harris Poll/HarrisX",
       "campoInicio": "2026-10-24",
@@ -600,6 +661,21 @@
       "origem": "indice-wikipedia"
     },
     {
+      "instituto": "Cygnal (R)",
+      "campoInicio": "2026-10-23",
+      "campoFim": "2026-10-24",
+      "amostra": 1500,
+      "amostraTipo": "LV",
+      "margemErro": 2.5,
+      "dem": 52,
+      "rep": 43,
+      "outros": 5,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://www.cygn.al/wp-content/uploads/2026/10/Cygnal-National-Late-Oct26-NVT-Deck-Public.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
       "instituto": "CBS/YouGov",
       "campoInicio": "2026-10-21",
       "campoFim": "2026-10-23",
@@ -656,6 +732,21 @@
       "outros": 10,
       "vantagemDem": 10,
       "fontePrimaria": "https://www.prolific.com/resources/poll-democrats-lead-by-11-points-here-s-how-we-reached-that-number",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Clarity Campaign Labs",
+      "campoInicio": "2026-10-15",
+      "campoFim": "2026-10-21",
+      "amostra": 1016,
+      "amostraTipo": "LV",
+      "margemErro": 3.1,
+      "dem": 52,
+      "rep": 44,
+      "outros": 5,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://www.claritycampaigns.com/clarity-omnibus-2026-oct",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -1752,6 +1843,21 @@
       "vantagemDem": 6,
       "fontePrimaria": "https://johnzogbystrategies.com/democratic-party-leads-republican-party-48-to-42-in-congressional-generic-ballot-as-race-heats-up/",
       "comLeaners": true,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "The Winston Group (R)",
+      "campoInicio": "2026-09-12",
+      "campoFim": "2026-09-16",
+      "amostra": 1000,
+      "amostraTipo": "RV",
+      "margemErro": 3,
+      "dem": 51,
+      "rep": 42,
+      "outros": 7,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://www.winningtheissues.org/wp-content/uploads/2026/10/September-2026-Winning-the-Issues-Survey.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
