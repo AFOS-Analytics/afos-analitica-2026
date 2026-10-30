@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-29",
-  "fetchedAt": "2026-10-29T19:20:13.284Z",
+  "lastUpdate": "2026-10-30",
+  "fetchedAt": "2026-10-30T19:20:13.350Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,112 +113,112 @@
     }
   ],
   "qualidade": {
-    "lidos": 257,
-    "naLista": 143,
-    "foraDaLista": 114,
+    "lidos": 310,
+    "naLista": 150,
+    "foraDaLista": 160,
     "publicados": 10,
     "descartadosPorAcompanhamento": 1,
-    "veiculosRepresentados": 8,
+    "veiculosRepresentados": 7,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [
       "feed:The Washington Post: HTTP 502"
     ],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 61,
-    "publicadosComLinkCanonico": 5,
-    "publicadosViaGoogleNews": 5,
+    "lidosEmFeedProprio": 62,
+    "publicadosComLinkCanonico": 6,
+    "publicadosViaGoogleNews": 4,
     "publicadosPorDisputa": 10,
     "publicadosPorMetodo": 0
   },
   "itens": [
     {
-      "titulo": "Obama mocks Trump for ‘whole-of-government response’ to Cheesecake Factory joke",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNUDM5UFczdUxtS0llTnRxQjJPWHdTTWtFVVVyMXdUY0ZGWDlkVThnUjRjSWM2QmFiQTVFVV9tNFhkb3gybjhqYzVjTGZjX2Y4Tjd1UzZUOVVPV09PZGIxTkxXTnVaMGNYY25TeEtoMldydVJjMnJxSk93N2UyUWNvWWVvUVVxellJcHdmdVA2YWFCa1AydmZ0cHVQWGFnUmcxVU1R?oc=5",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-10-29T19:09:47.000Z",
+      "titulo": "El-Sayed’s Former Primary Rival Demands Apology Ahead of Joint Midterms Appearance",
+      "url": "https://www.nytimes.com/2026/10/30/us/politics/el-sayed-stevens-michigan-senate-event.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-10-30T19:14:12.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Democrats and Republicans take different paths as they try to win the Senate",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQNHNQSmJsVGwta1BESUg5M2ptU1pXb0ZiSU9vUENxbl90cU50RGl4THJNdWpNT2NsYVFjaXRab3FoZzRObEdKTFNIbDZodzJvbTlBM0VtM21DekZqd1UwUHJ2U05PV1g1TTN2czdkamtWY3JHbjhCUUNsWkF5ZUJBNHd0SW1lYUdnbnVBcmJrdlF5YnE4UUxPWEIyQWNfbWd6dloxRURCc2pxTjVON1lXVkMwTUNsQQ?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-30T18:54:31.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump escalates legal challenges, scrambles schedule as US midterm elections near",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQNFVncVU1VXFVcXp3WmlCZ19iQnpKSUJ0SHByNF9hVkUtZHlOOHBQdGU0ajlrbk5NXzA1QlZLTENGMzJxYkRPZGl6RmhQUmdIc0dlMVhBSHM3SWFvY1k3cTlVZ2hfc2xzRk5CdlpoV3luSHZITW93RzYzYzllUnNpaXJnUFZvTk5nQ0NzRDVEVkFFRHRuTEdEQVVwNTlsN01qd1FsLWZHLVZ1c0RVUmNpVmJIYjJDX0E2dHRZ?oc=5",
+      "casa": "Reuters",
+      "publicadoEm": "2026-10-30T18:43:29.000Z",
       "consulta": "midterms",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "As Midterm Ads Focus on Epstein, a Florida Senator Is the Latest Target",
-      "url": "https://www.nytimes.com/2026/10/29/us/politics/epstein-victim-ashley-moody-ad.html",
+      "titulo": "Democratic Candidate Mary Peltola Says She Didn’t Know About Alaska Ballot Stacking",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPa2ZNYmZJdFVHZ2d5U0lOMFcxUmlWU2F2c3duY00xUURJYUhUZWFsZ3lrWlNMeDVGT3ZfMDZha1ZoX0Y3eU9GOVhxVThWaEVVYS0tZXdLSE8yMmhoYXY2dTdwRldvODBZRVB1RWdZYTFER0dFeElZRnY1eERQV3YwblE3dnFWbXQyZWxTMlFyN0JZNVAwMFVCWTJKdGxfdVlsYk81cDdHT3dZaExS?oc=5",
       "casa": "The New York Times",
-      "publicadoEm": "2026-10-29T18:47:54.000Z",
+      "publicadoEm": "2026-10-30T18:34:55.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "We polled Kansas. Democrats wanted to talk. Republicans, not so much.",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQbURZS01PT3h5Nl9NRS04bVkxTFFQUW5PQjdIcnVyUHVHNklhZ2dJM0Jwd2Q5XzZmc0s5OGV3d19xd0VNbTJHNnUyX3FDYlpWdE5qeXZCbkVTQVhTSEE3TGtfNTNZNGlDTERPcEVKcjR6eTZfUVpOOUVSek1EcF9zUkJZcUgxdFR5T1RSdk9SSHFtNnpRYUpVTEVxcWZad3c1cFlOU2dlMDRaQTZsSklqY1lkRC0?oc=5",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-10-30T18:30:47.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Scoop: Ro Khanna endorses challengers to three fellow California House Democrats",
+      "url": "https://www.axios.com/2026/10/30/ro-khanna-endorse-vang-matsui-jones-gomez-aoc",
+      "casa": "Axios",
+      "publicadoEm": "2026-10-30T18:21:20.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Economy, healthcare, Iran war top voters' concerns ahead of midterms: Gallup",
-      "url": "https://thehill.com/homenews/campaign/6181594-voters-prioritize-economy-healthcare-iran/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-10-29T18:35:47.000Z",
+      "titulo": "The state of the U.S. economy ahead of the midterms in five charts",
+      "url": "https://www.nbcnews.com/video/the-state-of-the-u-s-economy-ahead-of-the-midterms-in-five-charts-272551493843",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-30T17:59:23.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "House GOP launches probe into Peltola campaign ballot stacking allegations",
-      "url": "https://thehill.com/homenews/house/6181949-comer-investigates-peltola-senate-allegations/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-10-29T18:20:19.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Libertarians challenge Trump-backed Republicans, look to shake up midterms beyond GOP-Dem duopoly",
-      "url": "https://www.foxnews.com/politics/libertarians-challenge-trump-backed-republicans-look-shake-up-midterms-beyond-gop-dem-duopoly",
+      "titulo": "Americans 'frustrated' about Iran war going into midterms as Trump admin has decision to make: GOP lawmaker",
+      "url": "https://www.foxnews.com/politics/americans-frustrated-iran-war-midterms-trump-admin-decision-gop-lawmaker",
       "casa": "Fox News",
-      "publicadoEm": "2026-10-29T18:08:40.000Z",
+      "publicadoEm": "2026-10-30T17:49:53.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Michigan Senate race: working-class voters could sway the election",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQUEV3S2RwWUJQVU00bWNtbVl0RzhLaEpzNnlnWTlRQXZqY3J6Z1FaamdzSklYbGtJeG8ydGs4eFpjMDgwb2FlTEtEU2d5ME0wbDFsNkVpck1yNll0akFGcDFqUTQ3Umt5UDg2eDdkbWY2RlZkbHh2cExvTDlZZl9mbV9vQ2RJWG1aYmdRYlFDQ241VnVhM2p5cExqY0ZJMmdzZHdCRjN6WdIBrAFBVV95cUxQV3JJeHFrbFRpZ2JHbEFwU1l3N2NCUmNaV3IyRHVmTG1lR2E3cE1CVTByWFJhdS10Q3V3Y0JwcWYzUjRCX3hkQlpMMnRvaTBDd2RFRERUVUVpWUo2R1lrQy15aEI2WnU2LXB6a1dRUGM5YVUxbVB1VXl6c3Zjdm05UFFXZzYtU0d1VGFnS3FCVko0RmdDWkZnRHRKSld1ZEx3SGdOeEtoVzVaUFct?oc=5",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-10-29T18:06:43.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "The range of outcomes in the 2026 battle for the Senate is enormous",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNV2tVeFFOWi1JWWRKeDZTMFhNNVlLbXRvQm9ocXFCQWxGTXdKZ21qdXBvUEhvWlczb1pZbnpkaURqaWJSMlhQLTRvLV9UOG1ONlRIdUd4cEp1LTBJNFp5WklDbEZFdDFCaDhTcmNSQTZVNk4yckd5TVlFNGhSckw0bHRUVQ?oc=5",
-      "casa": "CNN",
-      "publicadoEm": "2026-10-29T18:05:00.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Michigan Senate candidates' campaign to working class families",
-      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/michigan-senate-race-working-class-voters/",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-10-29T18:04:44.000Z",
+      "titulo": "Midterm Updates: Trump reverses course on canceling rallies",
+      "url": "https://www.cbsnews.com/live-updates/2026-midterm-elections-campaigns-weekend-before/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-10-30T17:14:22.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "New Texas Senate poll shows challenge for GOP in final days",
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPTE5QS3p1cTRBSC15Z1Ntd3F4Q1ZpR0V4NUhiaFpHZGxBR3BlcC11VEV1TVVhczF2dFpyb2FyUDR1WkcyRk8xVWRWSDAyVkdCOXVfTHVpN2l2US0xWEYxUHpwdF9NekZlbFNtVGx2VjRackFiNWJTSzhab2RaUDFjM0tsVkprcV9fX0pyQk9OTU9NNzJmRV9FMkVEQV9YcXl2UTRoNmt3akYxSVVqVHNKVGYtSFhzUC1KVnA2NE5KbmhSeG5OZEJDT3dWRG5LSGlxVmc?oc=5",
-      "casa": "USA Today",
-      "publicadoEm": "2026-10-29T18:00:00.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Alaska GOP governor orders investigation into Democrats’ ballot-stacking allegations",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPdnJScnpSNTFMSHNfVmwwaUNNNXhtcHNNQUNIX3VJWmVIcDFjUDhuZ3JUb09FSHRZT3NhNEk4SXFsbV9uUTNhU2hrOHlDSVVYMXlJbTdkcWJTN2FuRUozZm0yS2ZTZnNET1FZamF5UkJPZmdqMGN2Z3dtWlNqV3FNemhBbw?oc=5",
-      "casa": "Politico",
-      "publicadoEm": "2026-10-29T17:52:00.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
+      "titulo": "Schumer accused of yearlong plot to plant 'decoy' candidate in critical Senate race",
+      "url": "https://www.foxnews.com/politics/schumer-accused-yearlong-plot-plant-decoy-candidate-critical-senate-race",
+      "casa": "Fox News",
+      "publicadoEm": "2026-10-30T17:14:15.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
       "trilho": "disputa"
     }
   ]
