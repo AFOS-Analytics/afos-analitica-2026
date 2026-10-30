@@ -140,6 +140,17 @@ export const EDICOES = {
     tese: (q) =>
       `The Senate price moved five points in two days.${q ? ' ' : '<br>'}It did it on a third of the House's new money.`,
   },
+  13: {
+    contrato: 'US Senate control contract',
+    semana: 'week of October 22 to October 29, 2026',
+    big: '68.50%',
+    bigSub: (q) => `where Senate Democrats stand,${q ? ' ' : '<br>'}back at the series high they${q ? ' ' : '<br>'}held on October 22`,
+    cardN: '64.50%',
+    cardL: (q) => `the low between the two,${q ? ' ' : '<br>'}on October 26`,
+    cardS: 'four points down and four back, on USD 2.98M',
+    tese: (q) =>
+      `The four control prices ended the week where they began.${q ? ' ' : '<br>'}The Senate got there the long way.`,
+  },
 }
 
 /** Os três formatos. `quadrado` liga o refluxo vertical. */
