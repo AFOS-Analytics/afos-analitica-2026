@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-30",
-  "fetchedAt": "2026-10-30T00:25:07.677Z",
+  "lastUpdate": "2026-10-31",
+  "fetchedAt": "2026-10-31T23:27:57.985Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,9 +47,17 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-09-30",
+    "desde": "2026-10-01",
     "nPesquisas": 33,
     "incluidas": [
+      {
+        "key": "Emerson College|2026-10-26",
+        "instituto": "Emerson College",
+        "campoFim": "2026-10-26",
+        "amostraTipo": "LV",
+        "dem": 52,
+        "rep": 42
+      },
       {
         "key": "Harvard/Harris Poll/HarrisX|2026-10-26",
         "instituto": "Harvard/Harris Poll/HarrisX",
@@ -309,14 +317,6 @@
         "amostraTipo": "RV",
         "dem": 46,
         "rep": 42
-      },
-      {
-        "key": "Rasmussen Reports (R)|2026-09-30",
-        "instituto": "Rasmussen Reports (R)",
-        "campoFim": "2026-09-30",
-        "amostraTipo": "LV",
-        "dem": 47,
-        "rep": 44
       }
     ],
     "excluidasPorInstrumento": [
@@ -420,9 +420,9 @@
       }
     ],
     "nInstitutos": 23,
-    "dem": 51.09,
-    "rep": 43.45,
-    "vantagemDem": 7.64,
+    "dem": 51.24,
+    "rep": 43.39,
+    "vantagemDem": 7.85,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
@@ -433,6 +433,7 @@
       "Clarity Campaign Labs",
       "Cygnal (R)",
       "Echelon Insights",
+      "Emerson College",
       "Focaldata",
       "Hart Research Associates (D)/ Public Opinion Strategies (R)",
       "Harvard/Harris Poll/HarrisX",
@@ -441,7 +442,6 @@
       "NPR/PBS/Marist University",
       "Prolific",
       "RMG Research",
-      "Rasmussen Reports (R)",
       "Reuters/Ipsos",
       "SurveyMonkey",
       "The Rainey Center",
@@ -451,14 +451,14 @@
     ]
   },
   "qualidade": {
-    "linhasLidas": 522,
-    "publicadas": 535,
+    "linhasLidas": 523,
+    "publicadas": 536,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 522,
+    "doIndice": 523,
     "curadas": 13,
     "curadasDescartadasPorDuplicidade": 17
   },
@@ -537,6 +537,21 @@
       "outros": 17,
       "vantagemDem": 11,
       "fontePrimaria": "https://tufts-pol.medium.com/tufts-public-opinion-lab-national-pre-election-poll-shows-a-big-lead-for-democrats-in-the-race-for-57656e85c738",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Emerson College",
+      "campoInicio": "2026-10-24",
+      "campoFim": "2026-10-26",
+      "amostra": 1000,
+      "amostraTipo": "LV",
+      "margemErro": 3,
+      "dem": 52,
+      "rep": 42,
+      "outros": 5,
+      "vantagemDem": 10,
+      "fontePrimaria": "https://emersoncollegepolling.com/october-2026-national-poll-democrats-hold-10-point-midterm-advantage/",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
