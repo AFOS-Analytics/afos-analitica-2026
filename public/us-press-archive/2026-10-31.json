@@ -1,0 +1,225 @@
+{
+  "lastUpdate": "2026-10-31",
+  "fetchedAt": "2026-10-31T19:20:13.444Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal",
+      "feed": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal",
+      "feed": "https://feeds.washingtonpost.com/rss/politics"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal",
+      "feed": "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada",
+      "feed": "https://rss.politico.com/politics-news.xml"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada",
+      "feed": "https://thehill.com/homenews/feed/"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada",
+      "feed": "https://rollcall.com/feed/"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada",
+      "feed": "https://api.axios.com/feed/"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.npr.org/1014/rss.xml"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio",
+      "feed": "https://abcnews.go.com/abcnews/politicsheadlines"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio",
+      "feed": "https://www.cbsnews.com/latest/rss/politics"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.nbcnews.com/nbcnews/public/politics"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio",
+      "feed": "http://rss.cnn.com/rss/cnn_allpolitics.rss"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio",
+      "feed": "https://moxie.foxnews.com/google-publisher/politics.xml"
+    },
+    {
+      "casa": "NewsNation",
+      "tipo": "tv/rádio",
+      "feed": "https://www.newsnationnow.com/politics/feed/"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião",
+      "feed": "https://www.nationalreview.com/feed/"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião",
+      "feed": "https://www.theguardian.com/us-news/us-politics/rss"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 287,
+    "naLista": 142,
+    "foraDaLista": 145,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 3,
+    "veiculosRepresentados": 7,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": [
+      "feed:The Washington Post: HTTP 502"
+    ],
+    "feedsProprios": 16,
+    "lidosEmFeedProprio": 61,
+    "publicadosComLinkCanonico": 7,
+    "publicadosViaGoogleNews": 3,
+    "publicadosPorDisputa": 10,
+    "publicadosPorMetodo": 0
+  },
+  "itens": [
+    {
+      "titulo": "US campaign enters final weekend as Alaska, California ballot fights heat up",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWDRaNDJmRmxia1RPY2l4Z1ZIRTFHVU1pNHUydFRRUUhZVlZpUGVnZUVqUm82NFVfZXpsNVdWam5UNTVMc1RNWXZPbjJsTzlucDNWcmJxbjJLSWNwclRrWmFuVVBzb2lYcUFkbDRRc1JjbV94SFh3aG5majlaODVxTFNTUXhNUWZQWmR6bU4wS3hNQjNSUk9mN2hFQURQR1hMUmU5Rw?oc=5",
+      "casa": "Reuters",
+      "publicadoEm": "2026-10-31T18:52:09.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Stocks often rally after midterm elections, but AI spending, rate hikes add risk this time",
+      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/stocks-midterm-elections-rate-hikes/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-31T18:49:35.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "2026 elections live updates: Trump supports Republicans with telerallies",
+      "url": "https://www.cbsnews.com/live-updates/2026-midterm-elections-campaigns-weekend-before/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-10-31T18:33:37.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Healthcare becomes key midterm issue ahead of policy changes",
+      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/healthcare-becomes-key-midterm-issue-ahead-of-policy-changes/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-31T18:08:01.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "District of Columbia Midterm Elections 2026: Key Races, Candidates and Past Results",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOUmZxSjdCLTgxcVp3Qk1RLUJwbEdkMDJmaExkdjdYVjdsOHRrdm5GSkI3bFg0SWpjOEtQV2RTcHRyQVdQdkdhSjJ0UjE1NVFwcTNZR1BJc0kyVFhRenlXQk92TkE3YlFCOEtHcnpKV3FnRGt5dFlRU1lhNXVqYnd4Tm1R?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-31T18:00:21.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Abdul El-Sayed’s campaign asks Haley Stevens not to attend campaign events following clash over Israel",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNbXo2SGlaNURWQ3JBSk96LU5oajJ3VnhBdmRxSnNWbm9Jc0FoUDN0UXYweVJMYUl2RE9ZY2tlU2tTMDFVRWgxZDFwR1BFUzFtSHpobk9RWms1bFJVMzI2cENlUnNVZUhhR3NGTk5CTktobWpRLVIwNjJwSlZZU1B4NXlyQ0pJMmtHM3FjOFNhVWNoeXFBSnpJMFFqS0tRUmJ4MHF1Z2ZIdGNzblRTRXVqSkxxVDdyeWx0cmM3WGZR?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-31T17:28:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Kamala Harris urges a 'too big to rig' turnout for the midterms and tees off on Trump",
+      "url": "https://abcnews.com/Politics/wireStory/kamala-harris-urges-big-rig-turnout-midterms-tees-137734957",
+      "casa": "ABC News",
+      "publicadoEm": "2026-10-31T16:18:24.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "More than 50m Americans cast ballots in early voting with three days to go before midterms",
+      "url": "https://www.theguardian.com/us-news/2026/oct/31/early-voting-midterms",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-10-31T16:13:17.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "The 6 races that could decide Senate control",
+      "url": "https://thehill.com/homenews/campaign/6185470-senate-control-midterm-six-tossups/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-10-31T16:00:00.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "How to watch live 2026 election results on CBS News",
+      "url": "https://www.cbsnews.com/news/where-to-watch-election-2026/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-10-31T15:59:00.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-30",
-  "fetchedAt": "2026-10-30T19:20:13.350Z",
+  "lastUpdate": "2026-10-31",
+  "fetchedAt": "2026-10-31T19:20:13.444Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,110 +113,110 @@
     }
   ],
   "qualidade": {
-    "lidos": 310,
-    "naLista": 150,
-    "foraDaLista": 160,
+    "lidos": 287,
+    "naLista": 142,
+    "foraDaLista": 145,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 1,
+    "descartadosPorAcompanhamento": 3,
     "veiculosRepresentados": 7,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [
       "feed:The Washington Post: HTTP 502"
     ],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 62,
-    "publicadosComLinkCanonico": 6,
-    "publicadosViaGoogleNews": 4,
+    "lidosEmFeedProprio": 61,
+    "publicadosComLinkCanonico": 7,
+    "publicadosViaGoogleNews": 3,
     "publicadosPorDisputa": 10,
     "publicadosPorMetodo": 0
   },
   "itens": [
     {
-      "titulo": "El-Sayed’s Former Primary Rival Demands Apology Ahead of Joint Midterms Appearance",
-      "url": "https://www.nytimes.com/2026/10/30/us/politics/el-sayed-stevens-michigan-senate-event.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-10-30T19:14:12.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Democrats and Republicans take different paths as they try to win the Senate",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQNHNQSmJsVGwta1BESUg5M2ptU1pXb0ZiSU9vUENxbl90cU50RGl4THJNdWpNT2NsYVFjaXRab3FoZzRObEdKTFNIbDZodzJvbTlBM0VtM21DekZqd1UwUHJ2U05PV1g1TTN2czdkamtWY3JHbjhCUUNsWkF5ZUJBNHd0SW1lYUdnbnVBcmJrdlF5YnE4UUxPWEIyQWNfbWd6dloxRURCc2pxTjVON1lXVkMwTUNsQQ?oc=5",
-      "casa": "NBC News",
-      "publicadoEm": "2026-10-30T18:54:31.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Trump escalates legal challenges, scrambles schedule as US midterm elections near",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQNFVncVU1VXFVcXp3WmlCZ19iQnpKSUJ0SHByNF9hVkUtZHlOOHBQdGU0ajlrbk5NXzA1QlZLTENGMzJxYkRPZGl6RmhQUmdIc0dlMVhBSHM3SWFvY1k3cTlVZ2hfc2xzRk5CdlpoV3luSHZITW93RzYzYzllUnNpaXJnUFZvTk5nQ0NzRDVEVkFFRHRuTEdEQVVwNTlsN01qd1FsLWZHLVZ1c0RVUmNpVmJIYjJDX0E2dHRZ?oc=5",
+      "titulo": "US campaign enters final weekend as Alaska, California ballot fights heat up",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWDRaNDJmRmxia1RPY2l4Z1ZIRTFHVU1pNHUydFRRUUhZVlZpUGVnZUVqUm82NFVfZXpsNVdWam5UNTVMc1RNWXZPbjJsTzlucDNWcmJxbjJLSWNwclRrWmFuVVBzb2lYcUFkbDRRc1JjbV94SFh3aG5majlaODVxTFNTUXhNUWZQWmR6bU4wS3hNQjNSUk9mN2hFQURQR1hMUmU5Rw?oc=5",
       "casa": "Reuters",
-      "publicadoEm": "2026-10-30T18:43:29.000Z",
+      "publicadoEm": "2026-10-31T18:52:09.000Z",
       "consulta": "midterms",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "Democratic Candidate Mary Peltola Says She Didn’t Know About Alaska Ballot Stacking",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPa2ZNYmZJdFVHZ2d5U0lOMFcxUmlWU2F2c3duY00xUURJYUhUZWFsZ3lrWlNMeDVGT3ZfMDZha1ZoX0Y3eU9GOVhxVThWaEVVYS0tZXdLSE8yMmhoYXY2dTdwRldvODBZRVB1RWdZYTFER0dFeElZRnY1eERQV3YwblE3dnFWbXQyZWxTMlFyN0JZNVAwMFVCWTJKdGxfdVlsYk81cDdHT3dZaExS?oc=5",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-10-30T18:34:55.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "We polled Kansas. Democrats wanted to talk. Republicans, not so much.",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQbURZS01PT3h5Nl9NRS04bVkxTFFQUW5PQjdIcnVyUHVHNklhZ2dJM0Jwd2Q5XzZmc0s5OGV3d19xd0VNbTJHNnUyX3FDYlpWdE5qeXZCbkVTQVhTSEE3TGtfNTNZNGlDTERPcEVKcjR6eTZfUVpOOUVSek1EcF9zUkJZcUgxdFR5T1RSdk9SSHFtNnpRYUpVTEVxcWZad3c1cFlOU2dlMDRaQTZsSklqY1lkRC0?oc=5",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-10-30T18:30:47.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Scoop: Ro Khanna endorses challengers to three fellow California House Democrats",
-      "url": "https://www.axios.com/2026/10/30/ro-khanna-endorse-vang-matsui-jones-gomez-aoc",
-      "casa": "Axios",
-      "publicadoEm": "2026-10-30T18:21:20.000Z",
+      "titulo": "Stocks often rally after midterm elections, but AI spending, rate hikes add risk this time",
+      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/stocks-midterm-elections-rate-hikes/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-31T18:49:35.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "The state of the U.S. economy ahead of the midterms in five charts",
-      "url": "https://www.nbcnews.com/video/the-state-of-the-u-s-economy-ahead-of-the-midterms-in-five-charts-272551493843",
-      "casa": "NBC News",
-      "publicadoEm": "2026-10-30T17:59:23.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Americans 'frustrated' about Iran war going into midterms as Trump admin has decision to make: GOP lawmaker",
-      "url": "https://www.foxnews.com/politics/americans-frustrated-iran-war-midterms-trump-admin-decision-gop-lawmaker",
-      "casa": "Fox News",
-      "publicadoEm": "2026-10-30T17:49:53.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Midterm Updates: Trump reverses course on canceling rallies",
+      "titulo": "2026 elections live updates: Trump supports Republicans with telerallies",
       "url": "https://www.cbsnews.com/live-updates/2026-midterm-elections-campaigns-weekend-before/",
       "casa": "CBS News",
-      "publicadoEm": "2026-10-30T17:14:22.000Z",
+      "publicadoEm": "2026-10-31T18:33:37.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Schumer accused of yearlong plot to plant 'decoy' candidate in critical Senate race",
-      "url": "https://www.foxnews.com/politics/schumer-accused-yearlong-plot-plant-decoy-candidate-critical-senate-race",
-      "casa": "Fox News",
-      "publicadoEm": "2026-10-30T17:14:15.000Z",
+      "titulo": "Healthcare becomes key midterm issue ahead of policy changes",
+      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/healthcare-becomes-key-midterm-issue-ahead-of-policy-changes/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-10-31T18:08:01.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "District of Columbia Midterm Elections 2026: Key Races, Candidates and Past Results",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOUmZxSjdCLTgxcVp3Qk1RLUJwbEdkMDJmaExkdjdYVjdsOHRrdm5GSkI3bFg0SWpjOEtQV2RTcHRyQVdQdkdhSjJ0UjE1NVFwcTNZR1BJc0kyVFhRenlXQk92TkE3YlFCOEtHcnpKV3FnRGt5dFlRU1lhNXVqYnd4Tm1R?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-31T18:00:21.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Abdul El-Sayed’s campaign asks Haley Stevens not to attend campaign events following clash over Israel",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNbXo2SGlaNURWQ3JBSk96LU5oajJ3VnhBdmRxSnNWbm9Jc0FoUDN0UXYweVJMYUl2RE9ZY2tlU2tTMDFVRWgxZDFwR1BFUzFtSHpobk9RWms1bFJVMzI2cENlUnNVZUhhR3NGTk5CTktobWpRLVIwNjJwSlZZU1B4NXlyQ0pJMmtHM3FjOFNhVWNoeXFBSnpJMFFqS0tRUmJ4MHF1Z2ZIdGNzblRTRXVqSkxxVDdyeWx0cmM3WGZR?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-10-31T17:28:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Kamala Harris urges a 'too big to rig' turnout for the midterms and tees off on Trump",
+      "url": "https://abcnews.com/Politics/wireStory/kamala-harris-urges-big-rig-turnout-midterms-tees-137734957",
+      "casa": "ABC News",
+      "publicadoEm": "2026-10-31T16:18:24.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "More than 50m Americans cast ballots in early voting with three days to go before midterms",
+      "url": "https://www.theguardian.com/us-news/2026/oct/31/early-voting-midterms",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-10-31T16:13:17.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "The 6 races that could decide Senate control",
+      "url": "https://thehill.com/homenews/campaign/6185470-senate-control-midterm-six-tossups/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-10-31T16:00:00.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "How to watch live 2026 election results on CBS News",
+      "url": "https://www.cbsnews.com/news/where-to-watch-election-2026/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-10-31T15:59:00.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
