@@ -29,6 +29,10 @@ type EventName =
   | 'weekly_subscribe_submit'
   | 'weekly_subscribe_success'
   | 'weekly_subscribe_error'
+  // Relatório de fechamento Brasil 2026, acrescentado em 01/Nov/2026
+  | 'relatorio_subscribe_submit'
+  | 'relatorio_subscribe_success'
+  | 'relatorio_subscribe_error'
   | 'tradeoff_subscribe_success'
   | 'tradeoff_subscribe_error';
 

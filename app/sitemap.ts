@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { COUNTRIES_SEO } from '../lib/seo/countries'
+import { RELATORIO_LOCALES, relatorioExiste } from '../lib/relatorio-final/loader'
 import { listPublishedDailies, dailyExists } from '../lib/afos-daily/loader'
 import { listPublishedTradeoffs, tradeoffExists } from '../lib/afos-tradeoff/loader'
 import { listPublishedWeeklies, weeklyExistsStrict } from '../lib/afos-weekly/loader'
@@ -181,6 +182,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
       alternates: { languages: hreflang((l) => `/${l}/white-paper`) },
     })
+  }
+
+  // Relatório de fechamento Brasil 2026: só os idiomas com o HTML publicado
+  {
+    const rel = RELATORIO_LOCALES.filter((l) => relatorioExiste(l))
+    for (const loc of rel) {
+      entries.push({
+        url: `${baseUrl}/${loc}/report/brazil-2026`,
+        lastModified: new Date('2026-10-31T23:59:00-03:00'),
+        changeFrequency: 'monthly',
+        priority: 0.9,
+        alternates: { languages: Object.fromEntries(rel.map((l) => [l, `${baseUrl}/${l}/report/brazil-2026`])) },
+      })
+    }
   }
 
   // AFOS Daily — synthesis index per locale (dynamic — sempre nova daily)

@@ -8,6 +8,7 @@ All notable changes to this dataset. The data itself is dated and append-only; t
 
 - `relatorio-final-brasil-2026-v1.1-31out.pdf`: the closing report of the Brazil 2026 coverage, version 1.1, cutoff 2026-10-31, in Portuguese.
 - `relatorio-final-brasil-2026-v1.0-26out.pdf`: version 1.0 of 2026-10-26, frozen.
+- `brazil-2026-closing-report-v1.1-31oct.pdf` and `informe-de-cierre-brasil-2026-v1.1-31oct.pdf`: the same report in English and in Spanish.
 - `SHA256SUMS.txt` and `README.md`.
 
 The folder is part of the daily mirror.

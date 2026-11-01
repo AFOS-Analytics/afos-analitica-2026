@@ -169,8 +169,9 @@ Details in [`election-night/README.md`](election-night/README.md).
 | Path | Content |
 |------|---------|
 | `final-report/relatorio-final-brasil-2026-v1.1-31out.pdf` | **Relatório de fechamento Brasil 2026**, version 1.1 (cutoff 2026-10-31), in Portuguese: the 186 days of market, polls and press compared with the official result of both rounds (Part I), the complement on the vote extension, the contestation and the reactions in Brazil and abroad (Part II), and an annex with the official results. |
+| `final-report/brazil-2026-closing-report-v1.1-31oct.pdf` · `informe-de-cierre-brasil-2026-v1.1-31oct.pdf` | The same report in English and in Spanish. |
 | `final-report/relatorio-final-brasil-2026-v1.0-26out.pdf` | Version 1.0 of 2026-10-26, frozen. |
-| `final-report/SHA256SUMS.txt` | SHA-256 of both PDFs. |
+| `final-report/SHA256SUMS.txt` | SHA-256 of the four PDFs. |
 
 Details in [`final-report/README.md`](final-report/README.md).
 

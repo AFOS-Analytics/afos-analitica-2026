@@ -8,6 +8,7 @@ import type { PollData, AnalysisData, CritData } from '../../../types';
 import { Header } from '../../../components/Header';
 import { Footer } from '../../../components/Footer';
 import { DailyHeroCard } from '../../../components/DailyHeroCard';
+import { RelatorioFinalHeroCard } from '../../../components/RelatorioFinalHeroCard';
 import { AfosTradeoffHeroCard } from '../../../components/AfosTradeoffHeroCard';
 import { ModalAbout } from '../../../components/ModalAbout';
 import { ModalMetas } from '../../../components/ModalMetas';
@@ -156,6 +157,7 @@ function DashboardContent({ initialPolls, initialAc, initialCrit, brazilContext 
 
         <CountrySelector active="br" />
 
+        <RelatorioFinalHeroCard />
         <DailyHeroCard />
         <AfosTradeoffHeroCard />
 

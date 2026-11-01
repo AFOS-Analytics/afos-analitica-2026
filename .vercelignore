@@ -30,3 +30,7 @@ public/screenshots/dashboard.png
 public/screenshots/global-map.png
 public/screenshots/landing-full.png
 public/demo.gif
+
+# Brutos locais da noite do 2o turno (carteiras do Polymarket sem anonimizar):
+# ficam SO na maquina. O deploy por CLI sobe o diretorio de trabalho inteiro.
+data/brz/noite-2turno-2026/
