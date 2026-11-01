@@ -195,6 +195,57 @@ export function sendDailyTeaser(to: string, data: {
 }
 
 /**
+ * Relatório de fechamento Brasil 2026: disparo ÚNICO aos inscritos ativos (01/Nov/2026),
+ * no mesmo formato dos teasers. Texto fixo aprovado, um por idioma; o link leva à página
+ * do relatório no idioma do inscrito, e o DOI do Harvard vai como segundo link.
+ */
+const RELATORIO_FINAL = {
+  'pt-BR': {
+    subject: 'Relatório de fechamento Brasil 2026',
+    p1: 'Durante 186 dias o AFOS registrou, em paralelo, o preço do contrato de vencedor no Polymarket, as pesquisas nacionais registradas no TSE e a cobertura da imprensa. O relatório compara essas séries com o resultado oficial dos dois turnos e reúne, na Parte II, a prorrogação da votação, a contestação e a repercussão no Brasil e no exterior até 31/10.',
+    p2: 'Está disponível em português, inglês e espanhol, na página do relatório e em PDF. Os dados que o sustentam estão abertos no Harvard Dataverse e no Hugging Face.',
+    cta: 'Ler o relatório', dados: 'Dados no Harvard Dataverse',
+    why: 'Você está recebendo porque se cadastrou em', unsubscribe: 'Cancelar inscrição',
+  },
+  en: {
+    subject: 'Brazil 2026 Closing Report',
+    p1: 'For 186 days AFOS recorded, side by side, the price of the Polymarket winner contract, the national polls registered with the TSE and the press coverage. The report compares those series with the official result of both rounds and gathers, in Part II, the vote extension, the contestation and the reactions in Brazil and abroad up to Oct 31.',
+    p2: 'It is available in English, Portuguese and Spanish, on the report page and as a PDF. The data behind it is open on the Harvard Dataverse and on Hugging Face.',
+    cta: 'Read the report', dados: 'Data on the Harvard Dataverse',
+    why: 'You receive this because you subscribed at', unsubscribe: 'Unsubscribe',
+  },
+  es: {
+    subject: 'Informe de cierre Brasil 2026',
+    p1: 'Durante 186 días AFOS registró, en paralelo, el precio del contrato de ganador en Polymarket, las encuestas nacionales registradas en el TSE y la cobertura de prensa. El informe compara esas series con el resultado oficial de las dos vueltas y reúne, en la Parte II, la prórroga de la votación, la impugnación y la repercusión en Brasil y en el exterior hasta el 31/10.',
+    p2: 'Está disponible en español, portugués e inglés, en la página del informe y en PDF. Los datos que lo sustentan están abiertos en el Harvard Dataverse y en Hugging Face.',
+    cta: 'Leer el informe', dados: 'Datos en el Harvard Dataverse',
+    why: 'Recibe esto porque se suscribió en', unsubscribe: 'Cancelar suscripción',
+  },
+} as const;
+
+export function relatorioFinalEmail(locale: 'pt-BR' | 'en' | 'es', unsubscribeToken?: string): { subject: string; html: string } {
+  const L = RELATORIO_FINAL[locale];
+  const url = `${PUBLIC_URL}/${locale}/report/brazil-2026`;
+  const doi = 'https://doi.org/10.7910/DVN/2D0UK7';
+  const unsubUrl = unsubscribeToken ? `${PUBLIC_URL}/api/unsubscribe?token=${encodeURIComponent(unsubscribeToken)}` : `${PUBLIC_URL}/api/unsubscribe`;
+  const html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:600px;margin:0 auto;padding:24px;color:#1e293b;line-height:1.6;">
+  <h1 style="color:#0F52BA;font-size:1.5rem;margin:0 0 0.75rem;font-weight:700;">${L.subject}</h1>
+  <p style="color:#475569;font-size:0.95rem;margin:0 0 1rem;">${L.p1}</p>
+  <p style="color:#475569;font-size:0.95rem;margin:0 0 1.5rem;">${L.p2}</p>
+  <a href="${url}" style="display:inline-block;padding:12px 24px;background-color:#0F52BA;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;">${L.cta} →</a>
+  <p style="margin:1rem 0 0;font-size:0.85rem;"><a href="${doi}" style="color:#0F52BA;">${L.dados} · DOI 10.7910/DVN/2D0UK7</a></p>
+  <hr style="border:none;border-top:1px solid #e2e8f0;margin:2rem 0 1rem;" />
+  <p style="color:#94a3b8;font-size:0.8rem;margin:0;">${L.why} <a href="${PUBLIC_URL}" style="color:#94a3b8;">afos-analytics.com</a>. <a href="${unsubUrl}" style="color:#94a3b8;">${L.unsubscribe}</a>.</p>
+</div>`;
+  return { subject: L.subject, html };
+}
+
+export function sendRelatorioFinal(to: string, locale: 'pt-BR' | 'en' | 'es', unsubscribeToken?: string): Promise<SendResult> {
+  const { subject, html } = relatorioFinalEmail(locale, unsubscribeToken);
+  return send({ to, subject, html, unsubscribeToken, replyTo: EMAIL_CONTACT });
+}
+
+/**
  * 🌍 Rótulo do país no ASSUNTO, por idioma. O Brasil é string vazia de propósito:
  * os assinantes já receberam dezenas de "AFOS Tradeoff: Edição №N" sem país, e
  * mudar isso agora quebraria o agrupamento por assunto na caixa de entrada deles.
