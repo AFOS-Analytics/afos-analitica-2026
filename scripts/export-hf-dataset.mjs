@@ -567,6 +567,10 @@ console.log(`🗳️  resultado oficial copiado: ${copyDirInto(join(ASSETS, 'res
 // O 2º é gerado por scripts/build-hf-noite-2turno.mjs dos brutos locais do coletor.
 console.log(`🌙 noites da apuração copiadas: ${copyDirInto(join(ASSETS, 'election-night'), join(STAGING, 'election-night'))} arquivos`)
 
+// ---- relatório final (PDFs v1.0 congelada e v1.1, com SHA256SUMS) ----
+// Entra no espelho diário pelo mesmo motivo das noites: upload cumulativo não é garantia.
+console.log(`📕 relatório final copiado: ${copyDirInto(join(ASSETS, 'final-report'), join(STAGING, 'final-report'))} arquivos`)
+
 // ---- docs acadêmicos ----
 for (const f of ['DATA_DICTIONARY.md', 'CITATION.cff', 'CHANGELOG.md', 'ERRATA.md']) {
   const src = join(ASSETS, f); if (existsSync(src)) copyFileSync(src, join(STAGING, f))

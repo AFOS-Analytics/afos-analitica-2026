@@ -40,6 +40,9 @@ next-env.d.ts
 
 # documents (internal — never ship)
 *.pdf
+# excecao: o relatorio final publico (aprovado em 01/Nov/2026), so estas duas pastas
+!hf-assets/final-report/*.pdf
+!public/relatorios/*.pdf
 docs/pipeline-launch-opensource.html
 docs/posicionamento-estrategico-afos.html
 public/pipeline-launch-opensource.html

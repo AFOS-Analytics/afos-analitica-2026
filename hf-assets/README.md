@@ -164,6 +164,16 @@ Both rounds use the same format. In the first-round files the winner contract, o
 
 Details in [`election-night/README.md`](election-night/README.md).
 
+### 📕 Final report · Relatório final · Informe final
+
+| Path | Content |
+|------|---------|
+| `final-report/relatorio-final-brasil-2026-v1.1-31out.pdf` | **Relatório de fechamento Brasil 2026**, version 1.1 (cutoff 2026-10-31), in Portuguese: the 186 days of market, polls and press compared with the official result of both rounds (Part I), the complement on the vote extension, the contestation and the reactions in Brazil and abroad (Part II), and an annex with the official results. |
+| `final-report/relatorio-final-brasil-2026-v1.0-26out.pdf` | Version 1.0 of 2026-10-26, frozen. |
+| `final-report/SHA256SUMS.txt` | SHA-256 of both PDFs. |
+
+Details in [`final-report/README.md`](final-report/README.md).
+
 ### 📈 Market & divergence time-series
 
 | Path | Content |

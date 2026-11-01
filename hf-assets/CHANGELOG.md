@@ -2,6 +2,16 @@
 
 All notable changes to this dataset. The data itself is dated and append-only; this log records **structural** changes (new files, schema, coverage).
 
+## 2026-11-01, the final report
+
+### Added: `final-report/`
+
+- `relatorio-final-brasil-2026-v1.1-31out.pdf`: the closing report of the Brazil 2026 coverage, version 1.1, cutoff 2026-10-31, in Portuguese.
+- `relatorio-final-brasil-2026-v1.0-26out.pdf`: version 1.0 of 2026-10-26, frozen.
+- `SHA256SUMS.txt` and `README.md`.
+
+The folder is part of the daily mirror.
+
 ## 2026-10-26, the national polls of the second-round campaign
 
 ### Changed: `polls/` now covers the whole runoff campaign
