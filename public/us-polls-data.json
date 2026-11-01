@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-11-01",
-  "fetchedAt": "2026-11-01T00:02:11.170Z",
+  "fetchedAt": "2026-11-01T20:17:40.119Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -48,8 +48,24 @@
   "mediaAfos": {
     "janelaDias": 30,
     "desde": "2026-10-02",
-    "nPesquisas": 31,
+    "nPesquisas": 34,
     "incluidas": [
+      {
+        "key": "ActiVote|2026-10-30",
+        "instituto": "ActiVote",
+        "campoFim": "2026-10-30",
+        "amostraTipo": "LV",
+        "dem": 53.5,
+        "rep": 46.5
+      },
+      {
+        "key": "Ipsos|2026-10-28",
+        "instituto": "Ipsos",
+        "campoFim": "2026-10-28",
+        "amostraTipo": "LV",
+        "dem": 50,
+        "rep": 44
+      },
       {
         "key": "Emerson College|2026-10-26",
         "instituto": "Emerson College",
@@ -147,6 +163,14 @@
         "amostraTipo": "RV",
         "dem": 48,
         "rep": 42
+      },
+      {
+        "key": "Pennsylvania State University/YouGov|2026-10-20",
+        "instituto": "Pennsylvania State University/YouGov",
+        "campoFim": "2026-10-20",
+        "amostraTipo": "LV",
+        "dem": 47,
+        "rep": 43
       },
       {
         "key": "The Rainey Center|2026-10-20",
@@ -403,10 +427,10 @@
         "prova": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/10/PP_2026.10.8_midterms_report.pdf"
       }
     ],
-    "nInstitutos": 21,
-    "dem": 51.45,
-    "rep": 43.48,
-    "vantagemDem": 7.97,
+    "nInstitutos": 23,
+    "dem": 51.34,
+    "rep": 43.57,
+    "vantagemDem": 7.77,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
@@ -420,8 +444,10 @@
       "Focaldata",
       "Hart Research Associates (D)/ Public Opinion Strategies (R)",
       "Harvard/Harris Poll/HarrisX",
+      "Ipsos",
       "Morning Consult",
       "NPR/PBS/Marist University",
+      "Pennsylvania State University/YouGov",
       "Prolific",
       "RMG Research",
       "Reuters/Ipsos",
@@ -433,14 +459,14 @@
     ]
   },
   "qualidade": {
-    "linhasLidas": 523,
-    "publicadas": 536,
+    "linhasLidas": 526,
+    "publicadas": 539,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 523,
+    "doIndice": 526,
     "curadas": 13,
     "curadasDescartadasPorDuplicidade": 17
   },
@@ -492,6 +518,36 @@
     ]
   },
   "polls": [
+    {
+      "instituto": "ActiVote",
+      "campoInicio": "2026-10-22",
+      "campoFim": "2026-10-30",
+      "amostra": 2000,
+      "amostraTipo": "LV",
+      "margemErro": 2.2,
+      "dem": 53.5,
+      "rep": 46.5,
+      "outros": 6,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://www.activote.net/polls/generic-ballot/2026-10-30/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Ipsos",
+      "campoInicio": "2026-10-20",
+      "campoFim": "2026-10-28",
+      "amostra": 1209,
+      "amostraTipo": "LV",
+      "margemErro": 3.5,
+      "dem": 50,
+      "rep": 44,
+      "outros": 6,
+      "vantagemDem": 6,
+      "fontePrimaria": "https://www.linkedin.com/posts/courtney-kennedy-15b70419_days-before-the-midterm-the-democratic-party-share-7521962096671252480-ORrE/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
     {
       "instituto": "Tufts University/YouGov",
       "campoInicio": "2026-10-23",
@@ -849,6 +905,21 @@
       "outros": 11,
       "vantagemDem": 9,
       "fontePrimaria": "https://www.focaldata.com/blog/democrats-hit-new-high-in-penultimate-midterms-poll",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Pennsylvania State University/YouGov",
+      "campoInicio": "2026-10-14",
+      "campoFim": "2026-10-20",
+      "amostra": 724,
+      "amostraTipo": "LV",
+      "margemErro": 4.4,
+      "dem": 47,
+      "rep": 43,
+      "outros": 10,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://democracy.psu.edu/poll-report-archive/democrats-have-tiny-edge-in-congressional-generic-ballot/",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },

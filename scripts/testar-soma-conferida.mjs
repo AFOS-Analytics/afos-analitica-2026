@@ -117,10 +117,12 @@ eq('data mal formada reprova', validarRegistro([{ instituto: 'A', campoInicio: '
 // 📌 O tamanho é travado de propósito: registro que cresce sem ninguém notar vira
 //    gaveta. 4 até 23/Set; a 5ª é a Reuters/Ipsos de Fev com FONTE_NAO_SUSTENTA,
 //    as duas abertas em 29/Set. Ao mexer aqui, dizer QUAL entrada entrou e por quê.
-eq('registro real tem 7 entradas', SOMAS_CONFERIDAS.length, 7)
+//    A 8ª, em 01/Nov, é a ActiVote de 22-30/Out com ERRO_DO_INDICE: o índice
+//    gravou outros=6 numa casa que só publica os dois lados (53,5 + 46,5 = 100).
+eq('registro real tem 8 entradas', SOMAS_CONFERIDAS.length, 8)
 eq('e duas sao FONTE_NAO_SUSTENTA', SOMAS_CONFERIDAS.filter((e) => e.veredito === 'FONTE_NAO_SUSTENTA').length, 2)
-eq('uma delas e erro do indice', SOMAS_CONFERIDAS.filter((e) => e.veredito === 'ERRO_DO_INDICE').length, 1)
-eq('o erro do indice e a Marquette', SOMAS_CONFERIDAS.find((e) => e.veredito === 'ERRO_DO_INDICE').instituto, 'Marquette University Law School')
+eq('duas sao erro do indice', SOMAS_CONFERIDAS.filter((e) => e.veredito === 'ERRO_DO_INDICE').length, 2)
+eq('os erros do indice sao a Marquette e a ActiVote', SOMAS_CONFERIDAS.filter((e) => e.veredito === 'ERRO_DO_INDICE').map((e) => e.instituto).join(' + '), 'Marquette University Law School + ActiVote')
 eq('toda entrada real tem decomposicao', SOMAS_CONFERIDAS.every((e) => typeof e.decomposicao === 'string' && e.decomposicao.length > 40), true)
 eq('toda entrada real tem url http', SOMAS_CONFERIDAS.every((e) => /^https:\/\//.test(e.url)), true)
 
