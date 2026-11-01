@@ -1,17 +1,17 @@
 name: Mirror dataset to Hugging Face
 
-# Rotina diária LIGADA (1º run manual validado 05/Jun/2026). Encadeada via workflow_run:
+# Rotina diária de 05/Jun a 01/Nov/2026 (1º run manual validado 05/Jun/2026). Encadeada via workflow_run:
 # dispara na CONCLUSÃO do "Archive Analysis Snapshots" em vez de um cron independente
 # às 14:10. Schedules do GitHub atrasam (best-effort), e o gap de 10min com o archive
 # (14:00) era curto demais → em dias de atraso o mirror publicava sem o snapshot do dia
 # (dataset público incompleto). Agora a ordem archive→mirror é garantida (EVAL 06/Jun).
 # Também disparável manualmente.
+# 🔒 DESLIGADA em 01/Nov/2026: a eleicao do Brasil acabou e o dataset foi FECHADO.
+# O gatilho workflow_run saiu; fica so o disparo manual, para a corrida final e para
+# correcao registrada no ERRATA/CHANGELOG. Religar o gatilho reabre um dataset citado
+# como versao fechada (2.0.0, DOI 10.7910/DVN/2D0UK7).
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows: ["Archive Analysis Snapshots"]
-    types:
-      - completed
 
 concurrency:
   group: hf-dataset-mirror
@@ -53,7 +53,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install Hugging Face CLI
-        run: pip install -q -U "huggingface_hub[cli]"
+        run: pip install -q -U "huggingface_hub[cli]" "frictionless==5.19.0"
 
       - name: Guard — export DEVE ser DB-free (anti-Lead/LGPD, não-negociável)
         run: |

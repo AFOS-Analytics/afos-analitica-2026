@@ -68,15 +68,17 @@ configs:
 
 ## English
 
-Open, auditable daily dataset that cross-references **prediction markets (Polymarket) × polling institutes (TSE-registered) × press coverage** for Brazil's 2026 presidential cycle, with **explicit divergence** between sources instead of smoothed averages.
+Open, auditable dataset that cross-references **prediction markets (Polymarket) × polling institutes (TSE-registered) × press coverage** for Brazil's 2026 presidential election (first round 2026-10-04, runoff 2026-10-25), with **explicit divergence** between sources instead of smoothed averages.
 
-Maintained by **[AFOS Analytics](https://afos-analytics.com)** — open-source civic infrastructure for electoral political-risk intelligence. This is the public mirror of the same data the platform serves live, updated daily. Files are **dated and append-only**: each day adds new files, past dates are never overwritten, and every update is a git commit — so the full history is preserved natively.
+Maintained by **[AFOS Analytics](https://afos-analytics.com)** — open-source civic infrastructure for electoral political-risk intelligence. **Closed on 2026-11-01:** the daily mirror that fed this dataset was switched off after the election, and no files are added after that date. Files are **dated and append-only**: past dates were never overwritten, and every update was a git commit, so the full history is preserved natively.
 
 **🔒 No personal data (privacy / LGPD):** contains **only public electoral data** (market odds, registered polls, news links). **No subscriber data, no emails, no leads, no personal information of any kind.** The export pipeline is database-free by construction and never accesses any user table. Brazil's LGPD and equivalent principles are respected in full.
 
 **License (dual):** **Data** → CC BY 4.0 (`LICENSE-CC-BY-4.0`); **code/scripts** → Apache 2.0 (`LICENSE-APACHE-2.0`). Both **require attribution** to AFOS Analytics.
 
-**Cite:** *AFOS Analytics. Brazil 2026 Electoral Divergence Dataset. Hugging Face, 2026. CC BY 4.0.*
+**Polymarket data:** prices, volumes and trades were read by AFOS from Polymarket's public API and the public Polygon blockchain. AFOS is not affiliated with Polymarket. Polymarket's Terms of Use restrict the use of its data by capital-market firms and market-data distributors without a written agreement with Polymarket; users in those categories should check those terms (`DATASHEET.md`, section 6).
+
+**Cite:** *AFOS Analytics (2026). Brazil 2026 Electoral Divergence Dataset, version 2.0.0. Harvard Dataverse. https://doi.org/10.7910/DVN/2D0UK7. CC BY 4.0.*
 
 **Permanent archive:** also deposited at the **[Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2D0UK7)** — DOI [10.7910/DVN/2D0UK7](https://doi.org/10.7910/DVN/2D0UK7).
 
@@ -86,15 +88,17 @@ Maintained by **[AFOS Analytics](https://afos-analytics.com)** — open-source c
 
 ## Português
 
-Dataset diário aberto e auditável que cruza **mercados de previsão (Polymarket) × institutos de pesquisa (registrados no TSE) × cobertura de imprensa** para o ciclo presidencial brasileiro de 2026, com **divergência explícita** entre as fontes em vez de médias suavizadas.
+Dataset aberto e auditável que cruza **mercados de previsão (Polymarket) × institutos de pesquisa (registrados no TSE) × cobertura de imprensa** para a eleição presidencial brasileira de 2026 (1º turno em 04/10/2026, 2º turno em 25/10/2026), com **divergência explícita** entre as fontes em vez de médias suavizadas.
 
-Mantido pela **[AFOS Analytics](https://afos-analytics.com)** — infraestrutura cívica open-source de inteligência de risco político eleitoral. É o espelho público dos mesmos dados que a plataforma serve ao vivo, atualizado diariamente. Os arquivos são **datados e append-only**: cada dia adiciona novos arquivos, datas passadas nunca são sobrescritas, e cada atualização é um commit git — o histórico completo fica preservado nativamente.
+Mantido pela **[AFOS Analytics](https://afos-analytics.com)** — infraestrutura cívica open-source de inteligência de risco político eleitoral. **Fechado em 01/11/2026:** o espelho diário que alimentava este dataset foi desligado depois da eleição, e nenhum arquivo entra depois dessa data. Os arquivos são **datados e append-only**: datas passadas nunca foram sobrescritas, e cada atualização foi um commit git, então o histórico completo fica preservado.
 
 **🔒 Sem dados pessoais (privacidade / LGPD):** contém **apenas dados eleitorais públicos** (odds de mercado, pesquisas registradas, links de notícia). **Nenhum dado de assinante, nenhum email, nenhum lead, nenhuma informação pessoal.** O pipeline de export é database-free por construção e nunca acessa qualquer tabela de usuário. A LGPD e princípios equivalentes são respeitados integralmente.
 
 **Licença (dual):** **Dados** → CC BY 4.0 (`LICENSE-CC-BY-4.0`); **código/scripts** → Apache 2.0 (`LICENSE-APACHE-2.0`). Ambas **exigem atribuição** à AFOS Analytics.
 
-**Citação:** *AFOS Analytics. Brazil 2026 Electoral Divergence Dataset. Hugging Face, 2026. CC BY 4.0.*
+**Dados do Polymarket:** preços, volumes e negociações foram lidos pelo AFOS na API pública do Polymarket e na blockchain pública Polygon. O AFOS não é afiliado ao Polymarket. Os Termos de Uso do Polymarket restringem o uso dos dados dele por empresas do mercado de capitais e distribuidores de dados de mercado sem acordo por escrito com o Polymarket; quem estiver nesses grupos deve conferir esses termos (`DATASHEET.md`, seção 6).
+
+**Citação:** *AFOS Analytics (2026). Brazil 2026 Electoral Divergence Dataset, versão 2.0.0. Harvard Dataverse. https://doi.org/10.7910/DVN/2D0UK7. CC BY 4.0.*
 
 **Arquivo permanente:** também depositado no **[Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2D0UK7)** — DOI [10.7910/DVN/2D0UK7](https://doi.org/10.7910/DVN/2D0UK7).
 
@@ -104,15 +108,17 @@ Mantido pela **[AFOS Analytics](https://afos-analytics.com)** — infraestrutura
 
 ## Español
 
-Dataset diario abierto y auditable que cruza **mercados de predicción (Polymarket) × encuestadoras (registradas en el TSE) × cobertura de prensa** para el ciclo presidencial brasileño de 2026, con **divergencia explícita** entre las fuentes en lugar de promedios suavizados.
+Dataset abierto y auditable que cruza **mercados de predicción (Polymarket) × encuestadoras (registradas en el TSE) × cobertura de prensa** para la elección presidencial brasileña de 2026 (primera vuelta el 04/10/2026, segunda vuelta el 25/10/2026), con **divergencia explícita** entre las fuentes en lugar de promedios suavizados.
 
-Mantenido por **[AFOS Analytics](https://afos-analytics.com)** — infraestructura cívica open-source de inteligencia de riesgo político electoral. Es el espejo público de los mismos datos que la plataforma sirve en vivo, actualizado diariamente. Los archivos son **fechados y append-only**: cada día agrega archivos nuevos, las fechas pasadas nunca se sobrescriben, y cada actualización es un commit git — el historial completo se preserva de forma nativa.
+Mantenido por **[AFOS Analytics](https://afos-analytics.com)** — infraestructura cívica open-source de inteligencia de riesgo político electoral. **Cerrado el 01/11/2026:** el espejo diario que alimentaba este dataset se apagó después de la elección, y no entra ningún archivo después de esa fecha. Los archivos son **fechados y append-only**: las fechas pasadas nunca se sobrescribieron, y cada actualización fue un commit git, así que el historial completo se preserva.
 
 **🔒 Sin datos personales (privacidad / LGPD):** contiene **solo datos electorales públicos** (odds de mercado, encuestas registradas, enlaces de noticias). **Ningún dato de suscriptor, ningún email, ningún lead, ninguna información personal.** El pipeline de exportación es database-free por construcción y nunca accede a ninguna tabla de usuarios. La LGPD y principios equivalentes se respetan íntegramente.
 
 **Licencia (dual):** **Datos** → CC BY 4.0 (`LICENSE-CC-BY-4.0`); **código/scripts** → Apache 2.0 (`LICENSE-APACHE-2.0`). Ambas **requieren atribución** a AFOS Analytics.
 
-**Citar:** *AFOS Analytics. Brazil 2026 Electoral Divergence Dataset. Hugging Face, 2026. CC BY 4.0.*
+**Datos de Polymarket:** precios, volúmenes y operaciones fueron leídos por AFOS en la API pública de Polymarket y en la blockchain pública Polygon. AFOS no está afiliado a Polymarket. Los Términos de Uso de Polymarket restringen el uso de sus datos por empresas del mercado de capitales y distribuidores de datos de mercado sin acuerdo por escrito con Polymarket; quien esté en esos grupos debe revisar esos términos (`DATASHEET.md`, sección 6).
+
+**Citar:** *AFOS Analytics (2026). Brazil 2026 Electoral Divergence Dataset, versión 2.0.0. Harvard Dataverse. https://doi.org/10.7910/DVN/2D0UK7. CC BY 4.0.*
 
 **Archivo permanente:** también depositado en el **[Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2D0UK7)** — DOI [10.7910/DVN/2D0UK7](https://doi.org/10.7910/DVN/2D0UK7).
 
@@ -196,11 +202,13 @@ Details in [`final-report/README.md`](final-report/README.md).
 ## 🎓 For researchers
 
 - **Start with** `DATA_DICTIONARY.md` (every column, type, unit, provenance) and `polls/` (the registered-poll universe + published results).
-- **Reproducibility:** every value traces to a public primary source — the TSE registry, a named pollster's release, or a live Polymarket contract. Nothing is imputed or smoothed; where a number is missing it is left blank, not filled.
+- **Reproducibility:** every value traces to a public primary source — the TSE registry, a named pollster's release, or a Polymarket contract. Nothing is imputed or smoothed; where a number is missing it is left blank, not filled.
 - **Editorial stance:** AFOS reports *divergence* between sources rather than a single blended average — the spread is treated as signal, not noise.
 - **Demographics:** *sample-design* demographics — the declared composition/weighting of each poll's sample (layer A) — are included (`polls/sample-demographics.csv`). *Vote-by-demographic crosstabs* (layer B — e.g. vote share by sex/age/income) are **not** part of Brazil's TSE open data; institutes publish those separately, so they are intentionally absent here rather than partially scraped.
 - **Scale caveat (market vs poll):** Polymarket prices *probability of winning*; polls report *vote share*. The two divergence files keep both raw values side by side and flag the naive gap accordingly — they are not a like-for-like error metric.
-- **Updates:** dated and append-only; each daily commit preserves the full history natively (see `CHANGELOG.md`). The file for the *current* date may be regenerated during the day; files for dates already closed are never modified.
+- **Updates:** closed on 2026-11-01. The files are dated and append-only, and the full history is preserved in the commits (see `CHANGELOG.md`).
+- **Integrity:** `CHECKSUMS.txt` lists the SHA-256 of every file; `datapackage.json` (Frictionless, validated) and `croissant.json` describe every final table and the report PDFs, each with its SHA-256.
+- **Limitations:** stated in one place, `DATASHEET.md`, section 8.
 - **Known errors:** see **`ERRATA.md`**. When a defect is found in a past date, the file is **not** rewritten — the correction is published in the errata instead, so the record stays as distributed and the defect stays discoverable. *Erros conhecidos em `ERRATA.md`. · Errores conocidos en `ERRATA.md`.*
 
-**Sources / Fontes / Fuentes:** Polymarket (live USD markets) · TSE-registered institutes · 400+ press outlets. Method & source code (Apache 2.0): [github.com/AFOS-Analytics](https://github.com/AFOS-Analytics).
+**Sources / Fontes / Fuentes:** Polymarket (USD markets) · TSE-registered institutes · 400+ press outlets. Method & source code (Apache 2.0): [github.com/AFOS-Analytics](https://github.com/AFOS-Analytics).

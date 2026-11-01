@@ -132,6 +132,11 @@ def conferir_serie_de_mercado():
 
 
 def subir():
+    # DATASET FECHADO em 01/Nov/2026: a eleicao acabou e o espelho diario foi
+    # desligado. Envio local so com --apos-fechamento, e so para correcao com
+    # entrada no ERRATA/CHANGELOG.
+    if "--apos-fechamento" not in sys.argv:
+        sys.exit("dataset Brasil 2026 FECHADO em 2026-11-01: envio bloqueado (use --apos-fechamento so para correcao registrada)")
     api = HfApi(token=token())
     if not STAGING.is_dir():
         sys.exit("staging ausente: rode a sequencia de build antes")
@@ -254,6 +259,23 @@ def checksums():
             commit_message="divergence-daily-timeseries: fatias diarias unidas numa serie navegavel",
         )
         print("divergence-daily-timeseries.csv publicado")
+
+    # Descritores (datapackage.json e croissant.json) regerados da ARVORE
+    # PUBLICADA, com hash de cada tabela final, e validados no Frictionless antes
+    # de subir. Ficam fora do manifesto, pela convencao da colecao (PULAR).
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("descritores", Path(__file__).with_name("build-hf-descritores-brazil.py"))
+    descritores = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(descritores)
+    for d in descritores.gerar(raiz):
+        api.upload_file(
+            path_or_fileobj=str(d),
+            path_in_repo=d.name,
+            repo_id=REPO,
+            repo_type="dataset",
+            commit_message=f"{d.name}: descritor do dataset fechado, regerado da arvore publicada",
+        )
+        print(f"{d.name} publicado")
 
     arquivos = []
     for p in sorted(raiz.rglob("*")):

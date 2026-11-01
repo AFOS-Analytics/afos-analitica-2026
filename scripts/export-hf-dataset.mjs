@@ -572,7 +572,7 @@ console.log(`🌙 noites da apuração copiadas: ${copyDirInto(join(ASSETS, 'ele
 console.log(`📕 relatório final copiado: ${copyDirInto(join(ASSETS, 'final-report'), join(STAGING, 'final-report'))} arquivos`)
 
 // ---- docs acadêmicos ----
-for (const f of ['DATA_DICTIONARY.md', 'CITATION.cff', 'CHANGELOG.md', 'ERRATA.md']) {
+for (const f of ['DATA_DICTIONARY.md', 'DATASHEET.md', 'CITATION.cff', 'CHANGELOG.md', 'ERRATA.md']) {
   const src = join(ASSETS, f); if (existsSync(src)) copyFileSync(src, join(STAGING, f))
 }
 

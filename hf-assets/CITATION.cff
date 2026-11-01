@@ -1,13 +1,15 @@
 cff-version: 1.2.0
 message: "If you use this dataset, please cite it as below."
-title: "AFOS — Brazil 2026 Electoral Divergence Dataset"
+title: "AFOS Brazil 2026 Electoral Divergence Dataset"
 abstract: >-
   Open, auditable dataset cross-referencing prediction markets (Polymarket),
-  TSE-registered electoral polls, and press coverage for Brazil's 2026
-  presidential cycle, with explicit market-versus-poll divergence rather than
-  smoothed averages. Includes the official TSE poll registry, published national
-  poll results, a daily Polymarket odds time-series, and a reconstructed
-  divergence time-series.
+  TSE-registered electoral polls and press coverage for Brazil's 2026
+  presidential election, with explicit market-versus-poll divergence rather
+  than smoothed averages. Includes the official TSE poll registry, published
+  national poll results for both rounds, the Polymarket price series, the
+  divergence series, the official TSE result of the first round (2026-10-04)
+  and the runoff (2026-10-25), the two election nights, and the AFOS closing
+  report in Portuguese, English and Spanish. Closed on 2026-11-01.
 type: dataset
 authors:
   - name: "AFOS Analytics"
@@ -16,6 +18,9 @@ identifiers:
   - type: doi
     value: 10.7910/DVN/2D0UK7
     description: "Harvard Dataverse permanent deposit"
+  - type: url
+    value: "https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence"
+    description: "Hugging Face mirror"
 keywords:
   - elections
   - Brazil
@@ -29,15 +34,17 @@ license:
   - CC-BY-4.0
   - Apache-2.0
 repository: "https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence"
-url: "https://afos-analytics.com"
-version: "2026.06.30"
-date-released: "2026-06-30"
+url: "https://afos-analytics.com/en/report/brazil-2026"
+version: "2.0.0"
+date-released: "2026-11-01"
 preferred-citation:
   type: dataset
-  title: "AFOS — Brazil 2026 Electoral Divergence Dataset"
+  title: "AFOS Brazil 2026 Electoral Divergence Dataset"
   authors:
     - name: "AFOS Analytics"
   year: 2026
+  version: "2.0.0"
+  doi: 10.7910/DVN/2D0UK7
   publisher:
-    name: "Hugging Face"
+    name: "Harvard Dataverse"
   license: CC-BY-4.0

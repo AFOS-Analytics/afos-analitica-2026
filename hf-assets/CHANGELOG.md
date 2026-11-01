@@ -2,6 +2,18 @@
 
 All notable changes to this dataset. The data itself is dated and append-only; this log records **structural** changes (new files, schema, coverage).
 
+## 2026-11-01, the dataset is closed
+
+### Changed: no files are added after this date
+
+Brazil's 2026 election ended with the runoff of 2026-10-25. The daily mirror that fed this dataset was switched off on 2026-11-01, after a last run. The dataset is now version 2.0.0, cited through the Harvard Dataverse DOI 10.7910/DVN/2D0UK7.
+
+### Changed: descriptors, datasheet and citation
+
+- `datapackage.json` and `croissant.json` now describe the 20 final tables (polls, divergence and market series, official result of both rounds, election nights) and the 4 report PDFs, each with its current SHA-256, and are regenerated from the published tree. The package passes `frictionless validate`. The previous descriptors (version 1.1.0, written on 2026-07-25) covered seven tables and carried hashes that no longer matched the files.
+- `DATASHEET.md` is rewritten for the closed dataset: official result, one section of limitations, and a note on Polymarket's Terms of Use. The previous version said the bundle shipped no `CHECKSUMS.txt`, which it has since 2026-08-01, and its accented characters were double-encoded.
+- `CITATION.cff`: version 2.0.0, released 2026-11-01, with the DOI as the preferred citation.
+
 ## 2026-11-01, the final report
 
 ### Added: `final-report/`
