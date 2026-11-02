@@ -1,0 +1,225 @@
+{
+  "lastUpdate": "2026-11-02",
+  "fetchedAt": "2026-11-02T19:20:13.397Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal",
+      "feed": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal",
+      "feed": "https://feeds.washingtonpost.com/rss/politics"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal",
+      "feed": "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada",
+      "feed": "https://rss.politico.com/politics-news.xml"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada",
+      "feed": "https://thehill.com/homenews/feed/"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada",
+      "feed": "https://rollcall.com/feed/"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada",
+      "feed": "https://api.axios.com/feed/"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.npr.org/1014/rss.xml"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio",
+      "feed": "https://abcnews.go.com/abcnews/politicsheadlines"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio",
+      "feed": "https://www.cbsnews.com/latest/rss/politics"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.nbcnews.com/nbcnews/public/politics"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio",
+      "feed": "http://rss.cnn.com/rss/cnn_allpolitics.rss"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio",
+      "feed": "https://moxie.foxnews.com/google-publisher/politics.xml"
+    },
+    {
+      "casa": "NewsNation",
+      "tipo": "tv/rádio",
+      "feed": "https://www.newsnationnow.com/politics/feed/"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião",
+      "feed": "https://www.nationalreview.com/feed/"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião",
+      "feed": "https://www.theguardian.com/us-news/us-politics/rss"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 301,
+    "naLista": 158,
+    "foraDaLista": 143,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 10,
+    "veiculosRepresentados": 7,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": [
+      "feed:The Washington Post: HTTP 502"
+    ],
+    "feedsProprios": 16,
+    "lidosEmFeedProprio": 71,
+    "publicadosComLinkCanonico": 8,
+    "publicadosViaGoogleNews": 2,
+    "publicadosPorDisputa": 10,
+    "publicadosPorMetodo": 0
+  },
+  "itens": [
+    {
+      "titulo": "Michigan Senate race: Where candidates stand on key issues like abortion, transgender issues, immigration",
+      "url": "https://www.newsnationnow.com/religion/michigan-senate-race-candidates-key-issues-abortion-transgender-issues-immigration/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-11-02T19:10:31.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Democrats Are Leading or Tied in 7 Battleground Governor’s Races, Polls Find",
+      "url": "https://www.nytimes.com/2026/11/01/us/politics/times-siena-poll-governor.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-11-02T19:02:37.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Economy, court fights and Dem chaos: Final days of the 2026 midterm race",
+      "url": "https://www.nbcnews.com/video/economy-court-fights-and-dem-chaos-final-days-of-the-2026-midterm-race-272705093545",
+      "casa": "NBC News",
+      "publicadoEm": "2026-11-02T18:38:09.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump Floats Pre-Emptive Pardons for Allies if Democrats Take Congress in Midterms",
+      "url": "https://www.nytimes.com/2026/11/02/us/politics/trump-pardons-democrats-congress-control.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-11-02T18:35:07.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Opinion | A terrible night awaits the GOP, and even that might be an understatement",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZ1l1cWhPcS1XYVc4ZFBiTFoxbVhPQzkxRGhvVmtudFFKRU55ODJiWHBCejYza3k2U0RPaXpiVFJnSkNFbHd6SjFCeV9rT1BpalpNQUx3TGYyYXVCc2t3V2ZWcFprU0pvRWRQbllsZVQ4d3RXb1YxbVJzOW9acllSM0Z1UVYzRzQ0RllSOFlwSHBXYk83dExwNWtObzZsRlBtSEg4SU9IVnE?oc=5",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-11-02T18:34:36.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump predicts GOP victories as Iowa Senate race tightens",
+      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/trump-predicts-gop-victories-iowa-senate-race/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-11-02T18:33:35.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Manufacturing sector marks 10 straight months of growth ahead of midterms",
+      "url": "https://thehill.com/business/6189384-manufacturing-sector-growth-trump-midterms-inflation-employment/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-11-02T18:16:06.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Why did a Democrat endorse a Republican in Michigan senate race? - The Latest",
+      "url": "https://www.theguardian.com/news/audio/2026/nov/02/why-did-a-democrat-endorse-a-republican-in-michigan-senate-race-the-latest",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-11-02T17:53:12.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Republicans, Democrats make midterm closing arguments as Michigan rift roils Senate race",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOOXpJT29GbDlrNG9DZGRweDI2MF9RUUNBQnAzaHRDZEU4WE14NXUzYUE5SHJWVkszN3pqUl9NNGE2OUZWR1h6b3VCWHhQNGl5a0kyWTY3UjlweE9ubTgtZVBuV0c1VTZPTHdsNkwyRWtCZ1lXcjdsWUNGOHMwU0otMk5LTGN5WFBPWXc5UDdrMlA5MGxheUhrbk1TcjV5a24yY0NUQjJEdGRncDFRaG1NYXVYZlhJR051NHNWd2ZfTUo?oc=5",
+      "casa": "Reuters",
+      "publicadoEm": "2026-11-02T17:42:48.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "What are the races to watch in the US midterm elections and why do they matter?",
+      "url": "https://www.theguardian.com/us-news/2026/nov/02/what-are-midterm-elections",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-11-02T17:37:43.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    }
+  ]
+}
