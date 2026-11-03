@@ -1,5 +1,11 @@
 # AFOS Analytics — Atualização de Pesquisas Eleitorais (TSE, BRASIL)
 
+## 🧊⛔ PAINEL DO BRASIL CONGELADO desde 02/Nov/2026: NÃO RODAR sem ordem nova do André
+
+A cobertura do Brasil 2026 terminou em 01/Nov (relatório final publicado, dataset fechado v2.0.0 no HF e Harvard v10.0). Em 02/Nov o André mandou congelar o painel: texto com o resultado final do TSE, aviso de cobertura encerrada, preço fixo da leitura de 02/Nov (`public/brz-congelado/`), notícias de 25/Out, os 6 mercados do Brasil fora da coleta (STF incluso) e o cron do TSE removido.
+
+⛔ Este comando **não roda** sobre o painel do Brasil, não reescreve `analysis-criteriosa`, `analysis-data`, `polls-data` nem `CandidatesSection`, e não publica peça nova do Brasil. Se for pedido, avisar que o painel está congelado e perguntar. → `memory/project_painel_brasil_congelado_02nov.md`
+
 ## 🌐 Rede externa: rodar ANTES, se não estiver na rede de casa (17/Set/2026)
 
 ```bash
