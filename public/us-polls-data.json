@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-11-02",
-  "fetchedAt": "2026-11-02T20:21:34.499Z",
+  "lastUpdate": "2026-11-03",
+  "fetchedAt": "2026-11-03T23:52:52.851Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -47,9 +47,34 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-10-03",
-    "nPesquisas": 32,
+    "desde": "2026-10-04",
+    "nPesquisas": 36,
     "incluidas": [
+      {
+        "key": "John Zogby Strategies|2026-11-02",
+        "instituto": "John Zogby Strategies",
+        "campoFim": "2026-11-02",
+        "amostraTipo": "LV",
+        "dem": 53,
+        "rep": 47
+      },
+      {
+        "key": "Reuters/Ipsos|2026-11-02",
+        "instituto": "Reuters/Ipsos",
+        "campoFim": "2026-11-02",
+        "amostraTipo": "LV",
+        "dem": 52,
+        "rep": 44
+      },
+      {
+        "key": "Focaldata|2026-11-01",
+        "instituto": "Focaldata",
+        "institutoNoIndice": "Focaldata/Financial Times",
+        "campoFim": "2026-11-01",
+        "amostraTipo": "LV",
+        "dem": 52,
+        "rep": 45
+      },
       {
         "key": "ActiVote|2026-10-30",
         "instituto": "ActiVote",
@@ -57,6 +82,22 @@
         "amostraTipo": "LV",
         "dem": 53.5,
         "rep": 46.5
+      },
+      {
+        "key": "Big Data Poll|2026-10-30",
+        "instituto": "Big Data Poll",
+        "campoFim": "2026-10-30",
+        "amostraTipo": "LV",
+        "dem": 51,
+        "rep": 39
+      },
+      {
+        "key": "YouGov|2026-10-30",
+        "instituto": "YouGov",
+        "campoFim": "2026-10-30",
+        "amostraTipo": "LV",
+        "dem": 53,
+        "rep": 44
       },
       {
         "key": "Ipsos|2026-10-28",
@@ -205,15 +246,6 @@
         "rep": 39
       },
       {
-        "key": "Hart Research Associates (D)/ Public Opinion Strategies (R)|2026-10-18",
-        "instituto": "Hart Research Associates (D)/ Public Opinion Strategies (R)",
-        "institutoNoIndice": "Hart Research Associates (D)/Public Opinion Strategies (R)",
-        "campoFim": "2026-10-18",
-        "amostraTipo": "RV",
-        "dem": 52,
-        "rep": 45
-      },
-      {
         "key": "ActiVote|2026-10-14",
         "instituto": "ActiVote",
         "campoFim": "2026-10-14",
@@ -313,6 +345,34 @@
     ],
     "excluidasPorInstrumento": [
       {
+        "instituto": "Hart Research Associates (D)/ Public Opinion Strategies (R)",
+        "campoInicio": "2026-10-28",
+        "campoFim": "2026-10-30",
+        "amostraTipo": "RV",
+        "dem": 52,
+        "rep": 45,
+        "tipo": "PREFERENCIA_DE_CONTROLE",
+        "descricao": "preferência de qual partido deve CONTROLAR a casa, e não em quem o eleitor votaria no distrito dele",
+        "desde": "2026-10-14",
+        "medidoEm": "2026-11-03",
+        "ressalva": "Registered voters prefer a Democratic-controlled Congress by a 7-point margin, with Democrats leading Republicans 52%-45%",
+        "prova": "https://www.nbcnews.com/politics/2026-election/poll-voters-demand-change-check-trump-fueling-steep-democratic-midterm-rcna606183"
+      },
+      {
+        "instituto": "I&I/TIPP Insights (R)",
+        "campoInicio": "2026-10-27",
+        "campoFim": "2026-10-30",
+        "amostraTipo": "LV",
+        "dem": 52,
+        "rep": 42,
+        "tipo": "PREFERENCIA_DE_CONTROLE",
+        "descricao": "preferência de qual partido deve CONTROLAR a casa, e não em quem o eleitor votaria no distrito dele",
+        "desde": "2026-10-27",
+        "medidoEm": "2026-11-03",
+        "ressalva": "Which party do you prefer to control Congress after this year's midterm election?",
+        "prova": "https://tippinsights.com/trumps-voter-approval-strengthens-but-deep-divisions-among-voters-remain-i-i-tipp-poll/"
+      },
+      {
         "instituto": "Tufts University/YouGov",
         "campoInicio": "2026-10-23",
         "campoFim": "2026-10-27",
@@ -369,6 +429,20 @@
         "prova": "https://sri.siena.edu/2026/10/21/new-york-times-siena-national-survey/"
       },
       {
+        "instituto": "Hart Research Associates (D)/ Public Opinion Strategies (R)",
+        "campoInicio": "2026-10-14",
+        "campoFim": "2026-10-18",
+        "amostraTipo": "RV",
+        "dem": 52,
+        "rep": 45,
+        "tipo": "PREFERENCIA_DE_CONTROLE",
+        "descricao": "preferência de qual partido deve CONTROLAR a casa, e não em quem o eleitor votaria no distrito dele",
+        "desde": "2026-10-14",
+        "medidoEm": "2026-11-03",
+        "ressalva": "Registered voters prefer a Democratic-controlled Congress by a 7-point margin, with Democrats leading Republicans 52%-45%",
+        "prova": "https://www.nbcnews.com/politics/2026-election/poll-voters-demand-change-check-trump-fueling-steep-democratic-midterm-rcna606183"
+      },
+      {
         "instituto": "The Economist/YouGov",
         "campoInicio": "2026-10-10",
         "campoFim": "2026-10-12",
@@ -411,14 +485,15 @@
         "prova": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/10/PP_2026.10.8_midterms_report.pdf"
       }
     ],
-    "nInstitutos": 24,
-    "dem": 51.14,
-    "rep": 43.48,
-    "vantagemDem": 7.66,
+    "nInstitutos": 26,
+    "dem": 51.26,
+    "rep": 43.49,
+    "vantagemDem": 7.77,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
       "Beacon Research (D)/ Shaw & Co. Research (R)",
+      "Big Data Poll",
       "CBS News/YouGov",
       "CNN/SSRS",
       "Clarity Campaign Labs",
@@ -426,9 +501,9 @@
       "Echelon Insights",
       "Emerson College",
       "Focaldata",
-      "Hart Research Associates (D)/ Public Opinion Strategies (R)",
       "Harvard/Harris Poll/HarrisX",
       "Ipsos",
+      "John Zogby Strategies",
       "Morning Consult",
       "NPR/PBS/Marist University",
       "Pennsylvania State University/YouGov",
@@ -440,18 +515,19 @@
       "The Rainey Center",
       "The Washington Post/ABC News/Ipsos",
       "TrueDot",
-      "University of Massachusetts Lowell/YouGov"
+      "University of Massachusetts Lowell/YouGov",
+      "YouGov"
     ]
   },
   "qualidade": {
-    "linhasLidas": 527,
-    "publicadas": 540,
+    "linhasLidas": 538,
+    "publicadas": 551,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 527,
+    "doIndice": 538,
     "curadas": 13,
     "curadasDescartadasPorDuplicidade": 17
   },
@@ -503,6 +579,171 @@
     ]
   },
   "polls": [
+    {
+      "instituto": "John Zogby Strategies",
+      "campoInicio": "2026-11-01",
+      "campoFim": "2026-11-02",
+      "amostra": 1001,
+      "amostraTipo": "LV",
+      "margemErro": 3.2,
+      "dem": 53,
+      "rep": 47,
+      "outros": null,
+      "vantagemDem": 6,
+      "fontePrimaria": "https://johnzogbystrategies.com/democrats-lead-republicans-53-47-in-congressional-generic-ballot-new-john-zogby-strategies-election-day-eve-of-election-poll/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-10-28",
+      "campoFim": "2026-11-02",
+      "amostra": 1212,
+      "amostraTipo": "LV",
+      "margemErro": 2.9,
+      "dem": 52,
+      "rep": 44,
+      "outros": 4,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-11/Reuters%20Ipsos%20November%20Midterm%20Survey%20Topline.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-10-28",
+      "campoFim": "2026-11-02",
+      "amostra": 1357,
+      "amostraTipo": "RV",
+      "margemErro": 2.7,
+      "dem": 49,
+      "rep": 42,
+      "outros": 9,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-11/Reuters%20Ipsos%20November%20Midterm%20Survey%20Topline.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Focaldata/Financial Times",
+      "campoInicio": "2026-10-30",
+      "campoFim": "2026-11-01",
+      "amostra": 2090,
+      "amostraTipo": "LV",
+      "margemErro": 2.7,
+      "dem": 52,
+      "rep": 45,
+      "outros": 3,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://www.focaldata.com/blog/democrats-lead-by-7-points-in-final-focaldata-ft-midterms-poll",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Focaldata/Financial Times",
+      "campoInicio": "2026-10-30",
+      "campoFim": "2026-11-01",
+      "amostra": 2163,
+      "amostraTipo": "RV",
+      "margemErro": 2.5,
+      "dem": 50,
+      "rep": 43,
+      "outros": 8,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://www.focaldata.com/blog/democrats-lead-by-7-points-in-final-focaldata-ft-midterms-poll",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Focaldata/Financial Times",
+      "campoInicio": "2026-10-30",
+      "campoFim": "2026-11-01",
+      "amostra": 2444,
+      "amostraTipo": "A",
+      "margemErro": 2.4,
+      "dem": 47,
+      "rep": 41,
+      "outros": 12,
+      "vantagemDem": 6,
+      "fontePrimaria": "https://www.focaldata.com/blog/democrats-lead-by-7-points-in-final-focaldata-ft-midterms-poll",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Hart Research Associates (D)/Public Opinion Strategies (R)",
+      "campoInicio": "2026-10-28",
+      "campoFim": "2026-10-30",
+      "amostra": 1000,
+      "amostraTipo": "RV",
+      "margemErro": 3.1,
+      "dem": 52,
+      "rep": 45,
+      "outros": 3,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://www.nbcnews.com/politics/2026-election/poll-voters-demand-change-check-trump-fueling-steep-democratic-midterm-rcna606183",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "YouGov",
+      "campoInicio": "2026-10-27",
+      "campoFim": "2026-10-30",
+      "amostra": 3915,
+      "amostraTipo": "LV",
+      "margemErro": 1.7,
+      "dem": 53,
+      "rep": 44,
+      "outros": 3,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/national_20261026.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Big Data Poll",
+      "campoInicio": "2026-10-27",
+      "campoFim": "2026-10-30",
+      "amostra": 3214,
+      "amostraTipo": "LV",
+      "margemErro": 1.7,
+      "dem": 51,
+      "rep": 39,
+      "outros": 11,
+      "vantagemDem": 12,
+      "fontePrimaria": "https://www.bigdatapoll.com/blog/democrats-head-into-midterms-with-big-advantage-in-final-poll/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Big Data Poll",
+      "campoInicio": "2026-10-27",
+      "campoFim": "2026-10-30",
+      "amostra": 3418,
+      "amostraTipo": "RV",
+      "margemErro": 1.8,
+      "dem": 50,
+      "rep": 38,
+      "outros": 13,
+      "vantagemDem": 12,
+      "fontePrimaria": "https://www.bigdatapoll.com/blog/democrats-head-into-midterms-with-big-advantage-in-final-poll/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "I&I/TIPP Insights (R)",
+      "campoInicio": "2026-10-27",
+      "campoFim": "2026-10-30",
+      "amostra": 1158,
+      "amostraTipo": "LV",
+      "margemErro": 2.9,
+      "dem": 52,
+      "rep": 42,
+      "outros": 5,
+      "vantagemDem": 10,
+      "fontePrimaria": "https://tippinsights.com/trumps-voter-approval-strengthens-but-deep-divisions-among-voters-remain-i-i-tipp-poll/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
     {
       "instituto": "ActiVote",
       "campoInicio": "2026-10-22",
