@@ -63,15 +63,18 @@ export function getFlagPath(iso3: string): string {
 
 export const ELECTION_REGISTRY: ElectionRegistryEntry[] = [
   // ── Brazil (6 markets) ────────────────
+  // 🧊 DESLIGADOS em 02/Nov/2026: cobertura do Brasil encerrada em 01/Nov, painel
+  // congelado e dataset fechado (v2.0.0). Os seis saem da coleta de 30 min, o STF
+  // junto, por decisão do André. Religar só com nova cobertura.
   // isDistribution desde 03/Set/2026: 19 contratos mutuamente exclusivos que
   // somam ~100%, e a soma é grandeza que a casa publica. Sem o flag a série
   // guardava só os 4 acima de 0,5%.
-  { slug: 'brazil-presidential-election', iso3: 'BRA', countryName: 'Brazil', flag: 'br', electionDate: '2026-10-04', electionType: 'Presidential', isPrimary: true, enabled: true, isDistribution: true },
-  { slug: 'brazil-presidential-election-first-round-2nd-place', iso3: 'BRA', countryName: 'Brazil', flag: 'br', electionDate: '2026-10-04', electionType: 'Presidential 1T — 2nd Place', isPrimary: false, enabled: true },
-  { slug: 'brazil-presidential-election-first-round-3rd-place', iso3: 'BRA', countryName: 'Brazil', flag: 'br', electionDate: '2026-10-04', electionType: 'Presidential 1T — 3rd Place', isPrimary: false, enabled: true },
-  { slug: 'any-brazil-stf-justice-removed-by-impeachment-before-2027', iso3: 'BRA', countryName: 'Brazil', flag: 'br', electionDate: '2027-01-01', electionType: 'STF Impeachment', isPrimary: false, enabled: true },
-  { slug: 'next-brazil-senate-election-most-seats-won', iso3: 'BRA', countryName: 'Brazil', flag: 'br', electionDate: '2026-10-04', electionType: 'Senate', isPrimary: false, enabled: true },
-  { slug: 'brazil-annual-inflation-2026', iso3: 'BRA', countryName: 'Brazil', flag: 'br', electionDate: '2026-12-31', electionType: 'Inflation 2026', isPrimary: false, enabled: true },
+  { slug: 'brazil-presidential-election', iso3: 'BRA', countryName: 'Brazil', flag: 'br', electionDate: '2026-10-04', electionType: 'Presidential', isPrimary: true, enabled: false, isDistribution: true },
+  { slug: 'brazil-presidential-election-first-round-2nd-place', iso3: 'BRA', countryName: 'Brazil', flag: 'br', electionDate: '2026-10-04', electionType: 'Presidential 1T — 2nd Place', isPrimary: false, enabled: false },
+  { slug: 'brazil-presidential-election-first-round-3rd-place', iso3: 'BRA', countryName: 'Brazil', flag: 'br', electionDate: '2026-10-04', electionType: 'Presidential 1T — 3rd Place', isPrimary: false, enabled: false },
+  { slug: 'any-brazil-stf-justice-removed-by-impeachment-before-2027', iso3: 'BRA', countryName: 'Brazil', flag: 'br', electionDate: '2027-01-01', electionType: 'STF Impeachment', isPrimary: false, enabled: false },
+  { slug: 'next-brazil-senate-election-most-seats-won', iso3: 'BRA', countryName: 'Brazil', flag: 'br', electionDate: '2026-10-04', electionType: 'Senate', isPrimary: false, enabled: false },
+  { slug: 'brazil-annual-inflation-2026', iso3: 'BRA', countryName: 'Brazil', flag: 'br', electionDate: '2026-12-31', electionType: 'Inflation 2026', isPrimary: false, enabled: false },
 
   // ── Colombia (2 markets) ──────────────
   { slug: 'colombia-presidential-election', iso3: 'COL', countryName: 'Colombia', flag: 'co', electionDate: '2026-06-21', electionType: 'Presidential', isPrimary: true, enabled: true },

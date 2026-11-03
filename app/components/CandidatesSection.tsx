@@ -18,7 +18,7 @@ const candidates: CandidateProfile[] = [
     polymarket: "99,85%",
     poll: "45,16% na urna do 1º turno",
     position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
-    risk: "SOBE 83,35pp NO CONTRATO DE VENCEDOR, para 99,85% (vol USD 42,96M acumulado), leitura confirmada de 25/Out, 21:22 BRT, contra a leitura confirmada de 24/Out às 20:06 BRT, a última publicada para o contrato de vencedor. O vão do contrato de vencedor vai de 67,25pp a favor de Flávio Bolsonaro para 99,70pp a favor de Lula. Reeleito com 51,76% dos votos válidos na totalização do TSE das 21:25 BRT, com 99,86% das seções.",
+    risk: "SOBE 83,35pp NO CONTRATO DE VENCEDOR, para 99,85% (vol USD 42,96M acumulado), leitura confirmada de 25/Out, 21:22 BRT, contra a leitura confirmada de 24/Out às 20:06 BRT, a última publicada para o contrato de vencedor. O vão do contrato de vencedor vai de 67,25pp a favor de Flávio Bolsonaro para 99,70pp a favor de Lula. Reeleito com 51,79% dos votos válidos na totalização final do TSE, com 100% das seções.",
   },
   {
     name: "Flávio Bolsonaro",
@@ -28,7 +28,7 @@ const candidates: CandidateProfile[] = [
     polymarket: "0,15%",
     poll: "47,03% na urna do 1º turno",
     position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
-    risk: "CAI 83,60pp NO CONTRATO DE VENCEDOR, para 0,15% (vol USD 56,18M acumulado), leitura confirmada de 25/Out, 21:22 BRT, contra a leitura confirmada de 24/Out às 20:06 BRT, a última publicada para o contrato de vencedor. Na véspera, liderava cinquenta das cinquenta e cinco nacionais feitas depois do 1º turno, com 48,24% dos votos válidos na totalização do TSE das 21:25 BRT; na véspera, à frente na Veritá, 49,44% a 46,46%.",
+    risk: "CAI 83,60pp NO CONTRATO DE VENCEDOR, para 0,15% (vol USD 56,18M acumulado), leitura confirmada de 25/Out, 21:22 BRT, contra a leitura confirmada de 24/Out às 20:06 BRT, a última publicada para o contrato de vencedor. Na véspera, liderava cinquenta das cinquenta e cinco nacionais feitas depois do 1º turno, com 48,21% dos votos válidos na totalização final do TSE; na véspera, à frente na Veritá, 49,44% a 46,46%.",
   },
   {
     name: "Renan Santos",

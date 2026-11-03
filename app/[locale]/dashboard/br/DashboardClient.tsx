@@ -9,6 +9,7 @@ import { Header } from '../../../components/Header';
 import { Footer } from '../../../components/Footer';
 import { DailyHeroCard } from '../../../components/DailyHeroCard';
 import { RelatorioFinalHeroCard } from '../../../components/RelatorioFinalHeroCard';
+import { CoberturaEncerradaBanner } from '../../../components/CoberturaEncerradaBanner';
 import { AfosTradeoffHeroCard } from '../../../components/AfosTradeoffHeroCard';
 import { ModalAbout } from '../../../components/ModalAbout';
 import { ModalMetas } from '../../../components/ModalMetas';
@@ -114,7 +115,7 @@ function DashboardContent({ initialPolls, initialAc, initialCrit, brazilContext 
         { id: 'n_crit', label: L('Análise criteriosa', 'In-depth analysis', 'Análisis detallado'), href: '#sec-candidatos' },
         { id: 'n_inst', label: L('Institutos monitorados', 'Monitored pollsters', 'Encuestadoras monitoreadas'), href: '#sec-pesquisas' },
         { id: 'n_cand', label: L('Perfil dos pré-candidatos', 'Pre-candidate profiles', 'Perfil de precandidatos'), href: '#sec-candidatos' },
-        { id: 'n_news', label: L("Live Eleições News 120'", "Live Election News 120'", "Live Noticias 120'"), href: '#sec-news' },
+        { id: 'n_news', label: L('Notícias de 25/Out', 'News of Oct 25', 'Noticias del 25/Oct'), href: '#sec-news' },
         { id: 'n_clima', label: L('Clima Político', 'Political climate', 'Clima político'), href: '#sec-clima' },
         { id: 'n_inss', label: L('Escândalo INSS / Caso Lulinha', 'INSS scandal / Lulinha case', 'Escándalo INSS / Caso Lulinha'), href: '#sec-inss' },
         { id: 'n_master', label: L('Impacto Banco Master', 'Banco Master impact', 'Impacto Banco Master'), href: '#sec-master' },
@@ -157,6 +158,7 @@ function DashboardContent({ initialPolls, initialAc, initialCrit, brazilContext 
 
         <CountrySelector active="br" />
 
+        <CoberturaEncerradaBanner />
         <RelatorioFinalHeroCard />
         <DailyHeroCard />
         <AfosTradeoffHeroCard />

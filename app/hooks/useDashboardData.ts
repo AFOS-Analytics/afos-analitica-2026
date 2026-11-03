@@ -46,11 +46,15 @@ export function useDashboardData({ initialPolls, initialAc, initialCrit }: Initi
         .catch(() => { clearTimeout(timer); return null; });
     };
 
-    fetchWithTimeout('/api/polymarket')
+    // 🧊 Painel do Brasil CONGELADO em 02/Nov/2026 (cobertura encerrada em 01/Nov):
+    // em vez de odds e notícias ao vivo, servem dois arquivos fixos. O preço é a
+    // leitura única de 02/Nov (fetchedAt dentro do arquivo); as notícias são as da
+    // noite da apuração, montadas por scripts/build-brz-noticias-congeladas.mjs.
+    fetchWithTimeout('/brz-congelado/polymarket-2026-11-02.json')
       .then(p => setPoly(p))
       .catch(() => setError('Erro ao carregar dados'))
       .finally(() => setPolyLoading(false));
-    fetchWithTimeout('/api/news')
+    fetchWithTimeout('/brz-congelado/noticias-2026-10-25.json')
       .then(n => setNews(n))
       .finally(() => setNewsLoading(false));
   }, []);

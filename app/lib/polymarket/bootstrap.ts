@@ -154,7 +154,9 @@ export async function aggregateElectionData(): Promise<AggregationResult> {
   const countries: CountryAggregation[] = [];
 
   for (const iso3 of getTrackedCountries()) {
-    const entries = getEntriesByCountry(iso3);
+    // País com todos os mercados desligados (ex.: Brasil desde 02/Nov/2026) sai do
+    // mapa, em vez de aparecer como no-data.
+    const entries = getEntriesByCountry(iso3).filter(e => e.enabled !== false);
     if (entries.length === 0) continue;
 
     const primaryEntry = entries.find(e => e.isPrimary) || entries[0];
