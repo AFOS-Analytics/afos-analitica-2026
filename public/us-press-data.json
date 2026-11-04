@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-11-04",
-  "fetchedAt": "2026-11-04T00:19:06.303Z",
+  "fetchedAt": "2026-11-04T07:20:13.303Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,112 +113,112 @@
     }
   ],
   "qualidade": {
-    "lidos": 319,
-    "naLista": 125,
-    "foraDaLista": 194,
+    "lidos": 348,
+    "naLista": 207,
+    "foraDaLista": 141,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 2,
+    "descartadosPorAcompanhamento": 0,
     "veiculosRepresentados": 7,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [
       "feed:The Washington Post: HTTP 502"
     ],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 74,
-    "publicadosComLinkCanonico": 8,
-    "publicadosViaGoogleNews": 2,
+    "lidosEmFeedProprio": 118,
+    "publicadosComLinkCanonico": 7,
+    "publicadosViaGoogleNews": 3,
     "publicadosPorDisputa": 10,
     "publicadosPorMetodo": 0
   },
   "itens": [
     {
-      "titulo": "First midterm results start coming in as polls close in 6 states — live updates",
-      "url": "https://www.cbsnews.com/live-updates/election-day-2026-midterms/",
-      "casa": "CBS News",
-      "publicadoEm": "2026-11-04T00:14:13.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Senate election results as first polls begin to close",
-      "url": "https://www.cbsnews.com/live-updates/senate-election-results-2026/",
-      "casa": "CBS News",
-      "publicadoEm": "2026-11-04T00:12:01.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "US midterm elections 2026 live updates: polls close in some key states as Americans deliver referendum on Trump’s second term",
-      "url": "https://www.theguardian.com/us-news/live/2026/nov/03/midterm-election-results-live-updates",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-11-04T00:10:12.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "US midterm voting goes smoothly with only a handful of issues nationwide",
-      "url": "https://www.theguardian.com/us-news/2026/nov/03/us-midterm-voting-problems",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-11-04T00:03:52.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "OpenAI and Anthropic Set Up ‘War Rooms’ to Fight Disinfo About Midterm Elections",
-      "url": "https://www.nytimes.com/2026/11/03/business/ai-midterm-election-misinformation.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-11-03T23:39:55.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Kamala Harris has her eye on Tuesday’s gubernatorial races",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQZmtISkZlZG8xUXFYUGRqZ0NpTmc4MnhLY215a1RUUnZsWU1aTkp4WDVPNkZJdWJTZEtBUmowaFJGNXhWeHJPQl9uOEdmMWdidTYxSDNvc0pvS2c3ZlpCZUk0WHZOalo0QlZ6eENpTjFjLUpudnV4ZW4zcFJWeTFDb3h4aUVJSTdybEFyQ0ZKdnlVTlM0Q0p4Ukdqcnp5N2QyX1d5SC1oYw?oc=5",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-11-03T23:30:01.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Trump-backed Kentucky Republican wins Massie House seat",
-      "url": "https://thehill.com/homenews/campaign/6186595-trump-backed-kentucky-republican-wins-house-seat/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-11-03T23:20:09.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Nearly half of voters saw midterm election as a rebuke of Trump, NBC News Exit Poll shows",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQcDQyYlg2UzJDSGdEYmNabGZWUXRYQlNXcFVXVW0taGpzeHA3R1RHSlRXUHkwcEJURlF2bTVGVkd2cVBhRm9iSkNQOWFuTDRkVUp6T2x0UDFaSF9DZmNYYTR5OUpCcDFkcVdUWmM5OWhVR1FJU0ZuVGRDUXVsVzkza3gtZHVuNEM4VHJxQS1tbXpFaTJjZElJQzhRYnhBOGRMRHZ6b09aSzhkdVZYR3c?oc=5",
-      "casa": "NBC News",
-      "publicadoEm": "2026-11-03T23:14:10.000Z",
+      "titulo": "Takeaways: Voters punish Trump, and the GOP suffers historic losses",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOTjkyWmJqMU9FSGNlZDU1XzEzZ2IzTUNlZ25OV1BuYmxTREU5NE41R0tldnU4Z3lCclBGYzltRFJySF9jMldXMDZxTTBaaGtYTU4tbHVJcXNCemdqblJfUXY3QTk0alF6VmJtWjBBS3kwaWVZOV9GTzdrM05aVXFRSlpjZTBPcWY2RHlDbnF6b21kRUVQZDNsUk5ZOUpwNnN0VkNENlhzWnBwQzdzTDkycVpyM1hJa3VYRC1SUWdWbGlGdw?oc=5",
+      "casa": "AP News",
+      "publicadoEm": "2026-11-04T07:11:00.000Z",
       "consulta": "midterms",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "Who is James Talarico? What to know about Texas Senate candidate's policies",
-      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/who-is-james-talarico/",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-11-03T23:13:25.000Z",
+      "titulo": "Democrats score major upsets and take control of Senate",
+      "url": "https://www.cbsnews.com/live-updates/senate-election-results-2026/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-11-04T07:09:40.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Carville predicts 'astronomical' Black turnout will drive midterm results",
-      "url": "https://thehill.com/homenews/campaign/6194361-carville-predicts-strong-black-turnout-midterms/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-11-03T23:06:38.000Z",
+      "titulo": "Historic Midterm Rout Serves as a Sweeping Rebuke of Trump Era",
+      "url": "https://www.nytimes.com/2026/11/04/us/politics/midterm-election-rebuke-of-trump-era.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-11-04T07:08:41.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "US voters rebuke Trump as Democrats win control of Congress in ‘blue wave’",
+      "url": "https://www.theguardian.com/us-news/2026/nov/04/democrats-house-midterm-elections-results",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-11-04T07:08:25.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Forstag flips Montana House seat, beating Trump-backed opponent",
+      "url": "https://thehill.com/homenews/campaign/6182002-forstag-wins-montana-house-race/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-11-04T07:07:48.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "US midterm elections 2026 live updates: Democrats win control of Congress as voters reject Donald Trump’s agenda",
+      "url": "https://www.theguardian.com/us-news/live/2026/nov/03/midterm-election-results-live-updates",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-11-04T07:05:17.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Missouri voters reject new GOP-friendly House map",
+      "url": "https://thehill.com/homenews/campaign/6191198-missouri-voters-redistricting-gop-house-map-rejected-2026/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-11-04T06:55:05.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Democrats win big in midterm elections",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNMFMyWVA4MThqMWhrYm1VeVZNTFNJSzJjOGFOZHliaVZSWEdTV1JkTWdNMEdacDRwZ1I3dURLcC02eEJDbXY0RFVOUDFwQVhDUzlFRnZqYmNjV1I4MC1WeDdwRlhSUHE5ZFVyOGthQ3RBNXhvU295aHV3SnRsVUo3aUtXOTVwVG8?oc=5",
+      "casa": "NPR",
+      "publicadoEm": "2026-11-04T06:51:00.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump says he'll work with Dems as they win Congress in major upset",
+      "url": "https://www.cbsnews.com/live-updates/election-day-2026-midterms/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-11-04T06:28:00.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Hakeem Jeffries poised to become speaker of US House of Representatives",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPdV85RkhlZ3psbks1UlVEVWxGZkx2SVBMS3YxZnFUNVRiVVJBXzdkVWkxTWRleUJPcVA4ek4xb0ZIYllReHBNQ2dFVkVZR2pSdHB4b2ROQ0NYRGdwYk1NUDlCb0VkTF9ybWE4WG5abUlTWUtjS2NJZEZidEpvR2VvS25fQW80SThrR1V1Wm9iekxKNzktTGN0UHM0dzE4NmpSVHgybXoyeThNSFZxX2pYT2VWNXFUZw?oc=5",
+      "casa": "Reuters",
+      "publicadoEm": "2026-11-04T06:25:00.000Z",
+      "consulta": "midterms",
+      "origem": "google",
       "trilho": "disputa"
     }
   ]

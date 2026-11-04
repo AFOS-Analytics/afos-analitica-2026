@@ -241,11 +241,20 @@ function TituloQuadro({ texto, href, abrirEm }: { texto: string; href: string | 
 // nos pontos de chamada; a REGRA de separador por idioma vive num lugar so.
 const fmt = (n: number, locale: string, casas = 2): string => fmtDecimal(n, locale, casas)
 
-/** Faixas de um evento, já com o rótulo legível e o preço em pontos percentuais. */
+/**
+ * Faixas de um evento, já com o rótulo legível e o preço em pontos percentuais.
+ *
+ * 🔴 04/Nov/2026: o filtro era `!m.closed`, e mercado RESOLVIDO sumia da tela.
+ *    No dia seguinte à eleição o cartão "no prazo" desapareceu, a Câmara perdeu
+ *    a linha republicana e o Senado, resolvido em D=100, ia sumir na renovação
+ *    seguinte do cache. Fechado com preço e com volume continua na tela, com o
+ *    preço final. Os placeholders do Polymarket ("Party A" a "F") ganham preço
+ *    na resolução mas têm volume ZERO, e é o volume que os mantém fora.
+ */
 function faixas(ev: PolyEvento | null): { nome: string; pct: number }[] {
   if (!ev?.markets?.length) return []
   return ev.markets
-    .filter((m) => !m.closed && Array.isArray(m.outcomePrices) && m.outcomePrices.length > 0)
+    .filter((m) => (!m.closed || (m.volumeNum ?? 0) > 0) && Array.isArray(m.outcomePrices) && m.outcomePrices.length > 0)
     .map((m) => ({
       nome: extractCandidateName(m.question),
       pct: Number(m.outcomePrices![0]) * 100,
