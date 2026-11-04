@@ -206,6 +206,22 @@ function imprimirEsperado() {
     const k = Object.keys(mapa ?? {}).find((x) => x.startsWith(livro + ':') && re.test(x))
     return k == null ? null : Number(mapa[k]).toFixed(2)
   })
+  // 🔴 04/Nov/2026: a releitura ao vivo empilhava TODA linha com preço, na ordem
+  //    da API. Com o Senado resolvido, os placeholders "Party A" a "C" ganharam
+  //    preço 0 e o comando saiu com 9 valores para um registro de 6. Agora a
+  //    releitura passa pela MESMA ordem rotulada da certificada.
+  const r = spawnSync(process.execPath, ['scripts/ler-mercado.mjs', '--json'], { encoding: 'utf8' })
+  let aoVivo = []
+  try {
+    const j = JSON.parse(r.stdout)
+    const mapa = {}
+    for (const chave of ['house', 'senate', 'asScheduled']) {
+      for (const linha of j.grupos?.[chave]?.linhas ?? []) mapa[`${chave}:${linha.pergunta}`] = linha.preco
+    }
+    const p = doMapa(mapa)
+    if (p.every((v) => v != null)) aoVivo = p
+  } catch {}
+
   let precos = []
   let origem = null
   const cert = '.cache/capture-guard/ultima-us.json'
@@ -213,21 +229,20 @@ function imprimirEsperado() {
     try {
       const c = JSON.parse(readFileSync(cert, 'utf8'))
       const idadeMin = (Date.now() - new Date(c.fetchedAt).getTime()) / 60000
-      const p = doMapa(c.precos)
+      let p = doMapa(c.precos)
+      // 🔒 Contrato FECHADO sai da certificação por desenho, um a um (o lado R
+      //    da Câmara fechou antes do D) ou o livro inteiro (`livrosResolvidos`):
+      //    não há o que confirmar em 8 minutos. Com a trava APROVADA, a lacuna é
+      //    isso e não reprovação, e o preço final vem da releitura.
+      const lacunas = c.ok && aoVivo.length ? p.map((v, i) => (v == null ? ordem[i][0] : null)).filter(Boolean) : []
+      if (lacunas.length) p = p.map((v, i) => v ?? aoVivo[i])
       if (c.ok && idadeMin >= 0 && idadeMin <= 30 && p.every((v) => v != null)) {
         precos = p
         origem = `certificada às ${c.fetchedAt}, há ${idadeMin.toFixed(0)} min`
+        if (lacunas.length) origem += `; ${lacunas.length} contrato(s) FECHADO(S) fora da certificação (${[...new Set(lacunas)].join(', ')}), com o preço final da releitura`
       }
     } catch {}
   }
-  const r = spawnSync(process.execPath, ['scripts/ler-mercado.mjs', '--json'], { encoding: 'utf8' })
-  let aoVivo = []
-  try {
-    const j = JSON.parse(r.stdout)
-    for (const chave of ['house', 'senate', 'asScheduled']) {
-      for (const linha of j.grupos?.[chave]?.linhas ?? []) aoVivo.push(Number(linha.preco).toFixed(2))
-    }
-  } catch {}
   if (!precos.length && aoVivo.length) {
     precos = aoVivo
     origem = 'leitura AO VIVO, sem certificada recente: a trava não aprovou nesta rodada, ou foi pulada'
