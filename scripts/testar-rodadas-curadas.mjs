@@ -87,11 +87,18 @@ checar(
 // e essa afirmação não tinha teste, que é a régua escrita sem medidor.
 const CROSSTAB_EM_HTML = [/^https:\/\/www\.activote\.net\/polls\/generic-ballot\/\d{4}-\d{2}-\d{2}$/]
 const DOCUMENTO_SEM_EXTENSAO = [new RegExp('^https://scholarworks[.]bgsu[.]edu/cgi/viewcontent[.]cgi[?]article=[0-9]+&context=depo$')]
+// 🔒 TOPLINE PAGO (03/Nov/2026): a Rasmussen guarda topline e crosstabs em
+// /platinum, que devolve 401 "You need a Platinum account" (controle positivo:
+// poll.qu.edu em 200 no mesmo minuto). O que ela publica aberto é a MATÉRIA,
+// com D, R, outros, n, recorte, margem e campo, e a página de questões. Vale a
+// matéria do generic ballot, e só ela: home, arquivo e /platinum seguem recusados.
+const TOPLINE_PAGO = [new RegExp('^https://www[.]rasmussenreports[.]com/public_content/politics/mood_of_america/generic_congressional_ballot_[a-z]+[0-9]+$')]
 const ehDocumentoDe = (u) =>
   /^https:\/\/.+\.(pdf|xlsx?|csv)$/.test(u ?? '') ||
   /^https:\/\/drive\.google\.com\/file\/d\/[\w-]+/.test(u ?? '') ||
   CROSSTAB_EM_HTML.some((re) => re.test(u ?? '')) ||
-  DOCUMENTO_SEM_EXTENSAO.some((re) => re.test(u ?? ''))
+  DOCUMENTO_SEM_EXTENSAO.some((re) => re.test(u ?? '')) ||
+  TOPLINE_PAGO.some((re) => re.test(u ?? ''))
 
 for (const p of RODADAS_CURADAS) {
   const id = `${p.campoFim} ${p.amostraTipo}`
@@ -242,6 +249,7 @@ console.log('\n🔗 a exceção do link é ESTREITA, e agora isso tem medidor (2
     ['PDF comum', 'https://exemplo.org/topline.pdf'],
     ['XLSX da Focaldata', 'https://landing.focaldata.com/hubfs/x/tabelas.xlsx'],
     ['arquivo no Drive', 'https://drive.google.com/file/d/abc123DEF/view'],
+    ['matéria da Rasmussen, topline pago', 'https://www.rasmussenreports.com/public_content/politics/mood_of_america/generic_congressional_ballot_nov02'],
   ]
   for (const [nome, u] of aceita) checar(`aceita: ${nome}`, ehDocumentoDe(u), u)
 
@@ -254,6 +262,10 @@ console.log('\n🔗 a exceção do link é ESTREITA, e agora isso tem medidor (2
     ['listagem da ActiVote, sem a data', 'https://www.activote.net/polls/generic-ballot/'],
     ['post do instituto em vez da tabela', 'https://exemplo.org/blog/nossa-pesquisa-de-setembro'],
     ['pasta do Drive em vez do arquivo', 'https://drive.google.com/drive/folders/abc123'],
+    ['home da Rasmussen', 'https://www.rasmussenreports.com/'],
+    ['topline pago da Rasmussen', 'https://www.rasmussenreports.com/platinum/political_tracking_crosstabs/november_2026/toplines/toplines_generic_congressional_ballot_october_22_and_25_27_2026'],
+    ['outra matéria da Rasmussen', 'https://www.rasmussenreports.com/public_content/politics/trump_administration/trump_approval_index_history'],
+    ['matéria da Rasmussen com sufixo', 'https://www.rasmussenreports.com/public_content/politics/mood_of_america/generic_congressional_ballot_nov02/extra'],
     ['http sem TLS', 'http://exemplo.org/topline.pdf'],
     ['vazio', ''],
   ]

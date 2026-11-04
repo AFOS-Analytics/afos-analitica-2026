@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-11-03",
-  "fetchedAt": "2026-11-03T23:52:52.851Z",
+  "lastUpdate": "2026-11-04",
+  "fetchedAt": "2026-11-04T00:03:54.697Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -25,11 +25,12 @@
     ],
     "motivoIgnorar": "são modelos de terceiros; o AFOS calcula a própria média simples e não republica modelo alheio",
     "rodadasCuradas": {
-      "quantas": 13,
+      "quantas": 14,
       "regra": "Rodada que o instituto publicou e o índice não recebeu entra lida na CROSSTAB do próprio instituto, com o link dela, e vem etiquetada com origem \"listagem-do-instituto\". É exceção declarada, não caminho normal: o índice continua sendo a via padrão e sempre vence a duplicata.",
       "institutos": [
         "BGSU/YouGov",
         "Quantus Insights (R)",
+        "Rasmussen Reports (R)",
         "Reuters/Ipsos",
         "The Economist/YouGov",
         "The Honest Poll"
@@ -47,8 +48,8 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-10-04",
-    "nPesquisas": 36,
+    "desde": "2026-10-05",
+    "nPesquisas": 35,
     "incluidas": [
       {
         "key": "John Zogby Strategies|2026-11-02",
@@ -106,6 +107,14 @@
         "amostraTipo": "LV",
         "dem": 50,
         "rep": 44
+      },
+      {
+        "key": "Rasmussen Reports (R)|2026-10-27",
+        "instituto": "Rasmussen Reports (R)",
+        "campoFim": "2026-10-27",
+        "amostraTipo": "LV",
+        "dem": 49,
+        "rep": 43
       },
       {
         "key": "Emerson College|2026-10-26",
@@ -325,22 +334,6 @@
         "amostraTipo": "RV",
         "dem": 44,
         "rep": 37
-      },
-      {
-        "key": "Morning Consult|2026-10-04",
-        "instituto": "Morning Consult",
-        "campoFim": "2026-10-04",
-        "amostraTipo": "LV",
-        "dem": 50,
-        "rep": 43
-      },
-      {
-        "key": "University of Massachusetts Lowell/YouGov|2026-10-04",
-        "instituto": "University of Massachusetts Lowell/YouGov",
-        "campoFim": "2026-10-04",
-        "amostraTipo": "LV",
-        "dem": 52,
-        "rep": 43
       }
     ],
     "excluidasPorInstrumento": [
@@ -469,26 +462,12 @@
         "medidoEm": "2026-09-22",
         "ressalva": "Asked using the names of candidates running in the respondent’s district of residence",
         "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
-      },
-      {
-        "instituto": "Pew Research Center",
-        "campoInicio": "2026-09-28",
-        "campoFim": "2026-10-04",
-        "amostraTipo": "RV",
-        "dem": 44,
-        "rep": 36,
-        "tipo": "NOMINAL",
-        "descricao": "cédula com os NOMES dos candidatos do distrito do entrevistado, e não a pergunta genérica",
-        "desde": "2026-09-28",
-        "medidoEm": "2026-10-09",
-        "ressalva": "In the October 2026 survey, candidate names were inserted into the response options based on the respondent’s congressional district",
-        "prova": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/10/PP_2026.10.8_midterms_report.pdf"
       }
     ],
     "nInstitutos": 26,
-    "dem": 51.26,
-    "rep": 43.49,
-    "vantagemDem": 7.77,
+    "dem": 51.21,
+    "rep": 43.5,
+    "vantagemDem": 7.71,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
@@ -509,26 +488,26 @@
       "Pennsylvania State University/YouGov",
       "Prolific",
       "RMG Research",
+      "Rasmussen Reports (R)",
       "Reuters/Ipsos",
       "SurveyMonkey",
       "Targoz Market Research",
       "The Rainey Center",
       "The Washington Post/ABC News/Ipsos",
       "TrueDot",
-      "University of Massachusetts Lowell/YouGov",
       "YouGov"
     ]
   },
   "qualidade": {
     "linhasLidas": 538,
-    "publicadas": 551,
+    "publicadas": 552,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
     "doIndice": 538,
-    "curadas": 13,
+    "curadas": 14,
     "curadasDescartadasPorDuplicidade": 17
   },
   "recortesAlternativos": {
@@ -803,6 +782,25 @@
       "fontePrimaria": "https://tufts-pol.medium.com/tufts-public-opinion-lab-national-pre-election-poll-shows-a-big-lead-for-democrats-in-the-race-for-57656e85c738",
       "comLeaners": false,
       "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Rasmussen Reports (R)",
+      "campoInicio": "2026-10-22",
+      "campoFim": "2026-10-27",
+      "amostra": 1442,
+      "amostraTipo": "LV",
+      "margemErro": 2,
+      "dem": 49,
+      "rep": 43,
+      "outros": 8,
+      "vantagemDem": 6,
+      "fontePrimaria": "https://www.rasmussenreports.com/public_content/politics/mood_of_america/generic_congressional_ballot_nov02",
+      "opcoes": {
+        "outroCandidato": 3,
+        "naoSabe": 5
+      },
+      "notas": "Final da casa. Pergunta 1 em /public_content/politics/questions/questions/november_2026/questions_generic_congressional_ballot_october_22_and_25_27_2026. Materia diz campo ate 28/Out, questoes ate 27/Out; vale o 27.",
+      "origem": "listagem-do-instituto"
     },
     {
       "instituto": "Emerson College",
