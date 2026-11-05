@@ -1,0 +1,225 @@
+{
+  "lastUpdate": "2026-11-04",
+  "fetchedAt": "2026-11-04T19:20:14.189Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal",
+      "feed": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal",
+      "feed": "https://feeds.washingtonpost.com/rss/politics"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal",
+      "feed": "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada",
+      "feed": "https://rss.politico.com/politics-news.xml"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada",
+      "feed": "https://thehill.com/homenews/feed/"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada",
+      "feed": "https://rollcall.com/feed/"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada",
+      "feed": "https://api.axios.com/feed/"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.npr.org/1014/rss.xml"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio",
+      "feed": "https://abcnews.go.com/abcnews/politicsheadlines"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio",
+      "feed": "https://www.cbsnews.com/latest/rss/politics"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.nbcnews.com/nbcnews/public/politics"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio",
+      "feed": "http://rss.cnn.com/rss/cnn_allpolitics.rss"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio",
+      "feed": "https://moxie.foxnews.com/google-publisher/politics.xml"
+    },
+    {
+      "casa": "NewsNation",
+      "tipo": "tv/rádio",
+      "feed": "https://www.newsnationnow.com/politics/feed/"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião",
+      "feed": "https://www.nationalreview.com/feed/"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião",
+      "feed": "https://www.theguardian.com/us-news/us-politics/rss"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 349,
+    "naLista": 230,
+    "foraDaLista": 119,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 1,
+    "veiculosRepresentados": 7,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": [
+      "feed:The Washington Post: HTTP 502"
+    ],
+    "feedsProprios": 16,
+    "lidosEmFeedProprio": 119,
+    "publicadosComLinkCanonico": 9,
+    "publicadosViaGoogleNews": 1,
+    "publicadosPorDisputa": 9,
+    "publicadosPorMetodo": 1
+  },
+  "itens": [
+    {
+      "titulo": "Jeffries taunts Speaker Johnson for saying polls were wrong",
+      "url": "https://thehill.com/homenews/6198897-jeffries-ribs-johnson-midterms/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-11-04T19:14:34.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "metodo"
+    },
+    {
+      "titulo": "Sen. Amy Klobuchar wins Minnesota governor's race, CBS News projects",
+      "url": "https://www.cbsnews.com/news/klobuchar-wins-minnesota-governor-race-cbs-news-projects/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-11-04T19:13:55.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Who won redistricted House seats?",
+      "url": "https://thehill.com/homenews/campaign/6198650-election-day-2026-gop-democrat-redistricting-war-outcomes/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-11-04T19:09:42.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "US midterm elections 2026 live updates: Trump defiant about brutal Republican losses and acknowledges Iran war’s unpopularity",
+      "url": "https://www.theguardian.com/us-news/live/2026/nov/04/midterm-elections-results-senate-house-michigan-maine-mississippi-latest-updates",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-11-04T19:09:39.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Midterm fallout begins after Democrats win control of Congress",
+      "url": "https://www.cbsnews.com/live-updates/election-day-2026-midterms/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-11-04T19:09:33.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Analysis | Winners and losers from the 2026 midterm elections",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNYm15bVNFV2htWGRYRFBQVlZNYzRFZHVKd0wyTWdmRkpJODN4SHpWd3I3MVBrdUFjdFZZclhDcHJ6dFBIbWtXV1hQVnRLVGZtSmlWd0tfTVNUdGNWWDF6WEhfWEFSUVYwM1ozZ01qWXdCTWhYTndvR09JVEVUcFlzX09UMjJlSEtwTFYwUVJPS2pvRTg?oc=5",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-11-04T19:05:53.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "‘Wellness is on the ballot’: Why did so many pilates studios tell me to vote in the midterms?",
+      "url": "https://www.theguardian.com/us-news/2026/nov/04/pilates-politics-fitness-studios-midterms-voting",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-11-04T18:53:31.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Democrats' midterm gains could sideline Electoral College by 2028",
+      "url": "https://www.axios.com/2026/11/04/democrats-electoral-college-popular-vote-2028",
+      "casa": "Axios",
+      "publicadoEm": "2026-11-04T18:50:32.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump brags about the White House ballroom in his first post-election appearance",
+      "url": "https://www.nbcnews.com/politics/donald-trump/trump-election-white-house-ballroom-iran-rcna607487",
+      "casa": "NBC News",
+      "publicadoEm": "2026-11-04T18:36:28.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Hakeem Jeffries touts historic midterm victories",
+      "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/hakeem-jeffries-touts-historic-midterm-victories/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-11-04T18:35:28.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    }
+  ]
+}

@@ -111,6 +111,34 @@ lanca(() => localizarFonteDaTabela('==Federal elections==\ntexto'), 'sem a secao
 lanca(() => localizarFonteDaTabela(['==Polling==', 'texto solto', '==Outra=='].join('\n')), 'secao sem tabela e sem transclusao, lanca')
 lanca(() => localizarFonteDaTabela(''), 'wikitext vazio lanca')
 
+// ── O caso REAL de 05/Nov/2026: a pagina DEDICADA, lida pela abertura ───────
+// 🔴 Depois da eleicao o artigo geral trocou `==Polling==` por um {{See|...}} e
+//    pelas tabelas de BOCA DE URNA. A secao ainda existia e tinha `{|`, entao a
+//    ancora antiga a dava como INLINE e a tabela lida era a de boca de urna:
+//    0 linhas, e o portao de colapso reprovou. A transclusao foi para o artigo
+//    dedicado, na abertura dele, sem cabecalho nenhum.
+const dedicada = [
+  'These are the pre-election polling results of the [[2026 United States elections]].',
+  '{{2026 United States elections/polling}}',
+  '',
+  '== Notes ==',
+  '{{Notelist}}',
+  '== References ==',
+  '{{Reflist}}',
+].join('\n')
+const rl = localizarFonteDaTabela(dedicada, { ancora: null })
+eq(rl.modo, 'transclusao', '05/Nov: a abertura da pagina dedicada e transclusao')
+eq(rl.titulo, 'Template:2026 United States elections/polling', '05/Nov: e o titulo e o de sempre')
+
+// ⛔ ANTI-EXCESSO: a abertura termina no primeiro cabecalho de nivel 2, e uma
+//    tabela de secao posterior nao a faz parecer inline.
+const aberturaComTabelaDepois = ['{{2026 United States elections/polling}}', '== Exit polling ==', '{| class="wikitable"', '|-', '|}'].join('\n')
+eq(localizarFonteDaTabela(aberturaComTabelaDepois, { ancora: null }).modo, 'transclusao', 'tabela DEPOIS da abertura nao a faz inline')
+
+// ⛔ ANTI-SILENCIO: abertura sem tabela e sem transclusao LANCA, e so moldura tambem.
+lanca(() => localizarFonteDaTabela(['Texto solto.', '== Notes ==', '{{2026 United States elections/polling}}'].join('\n'), { ancora: null }), 'abertura sem fonte lanca, mesmo com transclusao depois')
+lanca(() => localizarFonteDaTabela('{{Short description|x}}\n== Notes ==', { ancora: null }), 'abertura com so moldura lanca')
+
 // ── Resolucao de namespace ───────────────────────────────────────────────────
 eq(paginaDaTransclusao('2026 United States elections/polling'), 'Template:2026 United States elections/polling', '{{X}} e Template:X')
 eq(paginaDaTransclusao(':2026 United States elections'), '2026 United States elections', '{{:X}} e o artigo X')

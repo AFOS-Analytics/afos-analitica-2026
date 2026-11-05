@@ -149,6 +149,7 @@ jobs:
           node scripts/testar-congelamento-do-campo-us.mjs
           node scripts/testar-agregador-na-fonte-us.mjs
           node scripts/testar-fonte-da-tabela-us.mjs
+          node scripts/testar-janela-fechada-us.mjs
           node scripts/testar-portao-gravacao-us.mjs
           node scripts/testar-duplicata-us.mjs
           node scripts/testar-fonte-conferida.mjs

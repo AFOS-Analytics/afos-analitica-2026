@@ -1,0 +1,225 @@
+{
+  "lastUpdate": "2026-11-05",
+  "fetchedAt": "2026-11-05T19:20:13.334Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal",
+      "feed": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal",
+      "feed": "https://feeds.washingtonpost.com/rss/politics"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal",
+      "feed": "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada",
+      "feed": "https://rss.politico.com/politics-news.xml"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada",
+      "feed": "https://thehill.com/homenews/feed/"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada",
+      "feed": "https://rollcall.com/feed/"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada",
+      "feed": "https://api.axios.com/feed/"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.npr.org/1014/rss.xml"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio",
+      "feed": "https://abcnews.go.com/abcnews/politicsheadlines"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio",
+      "feed": "https://www.cbsnews.com/latest/rss/politics"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.nbcnews.com/nbcnews/public/politics"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio",
+      "feed": "http://rss.cnn.com/rss/cnn_allpolitics.rss"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio",
+      "feed": "https://moxie.foxnews.com/google-publisher/politics.xml"
+    },
+    {
+      "casa": "NewsNation",
+      "tipo": "tv/rádio",
+      "feed": "https://www.newsnationnow.com/politics/feed/"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião",
+      "feed": "https://www.nationalreview.com/feed/"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião",
+      "feed": "https://www.theguardian.com/us-news/us-politics/rss"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 341,
+    "naLista": 220,
+    "foraDaLista": 121,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 2,
+    "veiculosRepresentados": 7,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": [
+      "feed:The Washington Post: HTTP 502"
+    ],
+    "feedsProprios": 16,
+    "lidosEmFeedProprio": 115,
+    "publicadosComLinkCanonico": 7,
+    "publicadosViaGoogleNews": 3,
+    "publicadosPorDisputa": 10,
+    "publicadosPorMetodo": 0
+  },
+  "itens": [
+    {
+      "titulo": "Did Republican efforts to redistrict the House turn into a dummymander?",
+      "url": "https://www.cbsnews.com/news/dummymander-republican-redistricting-congress-trump/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-11-05T19:19:26.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "2026 Midterm Election Results: Senate, House and Governor Races",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9EUEZoM3MzbXBaSnZQREppaHRmbDRQWnNQbUdhNFVqNi1qdHUtT01SWHJKTnE0MDU1aHE1dWhya1BWbGg0NWxJRzF1aktwbjVFVUpEaC1R?oc=5",
+      "casa": "AP News",
+      "publicadoEm": "2026-11-05T19:15:44.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Watch live: Hinojosa speaks after midterm win against Abbott",
+      "url": "https://thehill.com/video-clips/6201860-watch-live-gina-hinojosa-texas-governors-race-presser-midterms/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-11-05T19:12:58.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "US midterm voters responded in a thunderous voice. This is just the beginning | Betsy Reed",
+      "url": "https://www.theguardian.com/us-news/2026/nov/05/us-midterm-election-free-press",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-11-05T19:09:42.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Cruz on midterms: 'It was an a-- kicking'",
+      "url": "https://thehill.com/homenews/campaign/6201759-democrats-flip-texas-statewide-races/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-11-05T19:08:00.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Black candidates for governor make history with midterm victories",
+      "url": "https://www.cbsnews.com/news/2026-midterm-elections-governors-races-bottoms-donalds-crowley-moore-ford/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-11-05T19:07:09.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "US elections 2026 live: Democrats flip four more House seats as Republicans trade blame for brutal midterms losses",
+      "url": "https://www.theguardian.com/us-news/live/2026/nov/05/midterm-elections-live-latest-updates-mississippi-senate-race",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-11-05T19:06:09.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "The Pollwatcher: How accurate were the midterm polls?",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPa0hVaTRuOWhleWZiVG1wQU55NWFkZzA3RUtraF9TeXZIeE4xN3VvYy1oMWhDTzlQbFo1M1E2bXYwZEptQjVYYXlnOXA2aENBOXJRMVZrZkNXSzhSRmx3M2xFdEpKOUhqTktKTm5yVjJ4WFdZT0ZQd3E4enRpUkNqRl9kUnFwMXMtajJmODRIQzAwbG1UamVOTzBfQQ?oc=5",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-11-05T19:04:13.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Scott Colom criticizes Democrats for writing off Mississippi amid close Senate vote count",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQMlYta2xuVlh1aWFrSXFnNDV1OXRCeU1lUmdabVlYMlV5RW5RT29oaERQOHNKV3ZtT1hDV3gzcnRBaFFXM0xMQTlueFNWaU9fZDlxajlocmRpalNrUmZvMmFaTTR2UkZ1ZXhBMDBfcGR6ZUJuZGVkb2twRFlpSmR2aENtZGdQaE5iNXpFRmRHVm91ZzZ0T0ZMcWdDZ2NDMkpCdTllbndGdXg3Q0FvckZmSjVsYjhlR2wxLUdUY3dPbE5sZFZIeWxz?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-11-05T18:59:34.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "U.S. Finds Subdued Foreign Meddling Operations in Midterm Elections",
+      "url": "https://www.nytimes.com/2026/11/05/us/politics/midterm-elections-foreign-meddling.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-11-05T18:43:01.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    }
+  ]
+}
