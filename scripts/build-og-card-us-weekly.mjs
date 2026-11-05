@@ -151,6 +151,17 @@ export const EDICOES = {
     tese: (q) =>
       `The four control prices ended the week where they began.${q ? ' ' : '<br>'}The Senate got there the long way.`,
   },
+  14: {
+    contrato: 'US Senate control contract',
+    semana: 'eve reading of November 2, set next to the result',
+    big: '76.50%',
+    bigSub: (q) => `where Senate Democrats stood${q ? ' ' : '<br>'}on the eve, certified November 2${q ? ' ' : '<br>'}at 22:06 UTC`,
+    cardN: '100%',
+    cardL: (q) => `where the contract settled,${q ? ' ' : '<br>'}on November 4`,
+    cardS: 'Democratic side, on USD 17.13M',
+    tese: (q) =>
+      `Democrats won both chambers.${q ? ' ' : '<br>'}The eve record was written before the vote.`,
+  },
 }
 
 /** Os três formatos. `quadrado` liga o refluxo vertical. */
