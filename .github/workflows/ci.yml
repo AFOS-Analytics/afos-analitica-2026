@@ -178,6 +178,7 @@ jobs:
           node scripts/testar-vantagem-de-producao.mjs
           npx --no-install tsx scripts/testar-estado-do-portao.ts
           npx --no-install tsx scripts/testar-mercados-us.ts
+          npx --no-install tsx scripts/testar-livros-da-trava.ts
           python3 scripts/testar-hf-upload-us2026.py
 
       # A trava que decide se o backup vai a um repositorio PUBLICO. Ate

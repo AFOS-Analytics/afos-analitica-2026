@@ -24,8 +24,10 @@
  *   npx tsx scripts/capture-guard.ts --json          # saída JSON para pipeline
  *
  * SAÍDA
- *   Última linha  = `VEREDITO: APROVADO` ou `VEREDITO: BLOQUEADO`
+ *   Última linha  = `VEREDITO: APROVADO`, `BLOQUEADO` ou `RESOLVIDO`
  *   exit 0 = as duas leituras concordam, pode publicar a SEGUNDA
+ *   exit 0 = RESOLVIDO: todos os livros vigiados fechados, nada a certificar
+ *            (05/Nov/2026, ver `lib/us-market/livros-da-trava.ts`)
  *   exit 1 = discordam ou proxy degradado, NÃO publicar
  *
  * 🔴 A LINHA `VEREDITO:` É A FONTE DE VERDADE. O exit code é confirmação.
@@ -52,6 +54,7 @@ import { baseDeLeitura } from './lib/base-afos.mjs'
 // 🎯 A folga tem DONO desde 20/Out/2026, porque o conferidor de tela precisava da
 //    MESMA, e duas cópias da mesma regra é o defeito que a casa persegue.
 import { TOLERANCIA_PP } from './lib/tolerancia-de-preco.mjs'
+import { classificarLivros, leituraVazia, vereditoDaTrava } from '../lib/us-market/livros-da-trava'
 const PROXY_BASE = `${baseDeLeitura()}/api/polymarket?fresh=1`
 
 /**
@@ -220,7 +223,9 @@ async function main() {
   // ⛔ Falha fechada: sem book nenhum não há o que confirmar. Sem isto, um erro
   // no nome de um book faria a trava ler zero preços, achar zero divergências e
   // APROVAR com exit 0, que é o pior desfecho possível para uma trava.
-  if (a.precos.size === 0) {
+  // 🗳️ 05/Nov/2026: com contratos FECHADOS, zero preço é mercado resolvido e não
+  // leitor quebrado. Quem decide é `classificarLivros`, livro a livro.
+  if (leituraVazia(a)) {
     motivos.push(`a 1a leitura não trouxe preço nenhum de ${books.join('/')}. A trava não tem o que confirmar.`)
   }
 
@@ -337,13 +342,9 @@ async function main() {
    *   - nenhum contrato, nem aberto nem fechado: é o LEITOR que falhou (nome de
    *     livro errado, livro sumido do proxy). Bloqueia o livro.
    */
-  const precosDe = (l: Leitura, book: string) => [...l.precos.keys()].filter(k => k.startsWith(`${book}:`)).length
-  const livrosResolvidos: string[] = []
-  for (const book of books) {
-    if (precosDe(a, book) > 0 || precosDe(b, book) > 0) continue
-    if ((a.fechados.get(book) ?? 0) > 0 && (b.fechados.get(book) ?? 0) > 0) livrosResolvidos.push(book)
-    else motivos.push(`${book}: nenhum contrato, nem aberto nem fechado, nas duas leituras. O livro não foi medido.`)
-  }
+  const classificacao = classificarLivros(books, a, b)
+  const livrosResolvidos = classificacao.livrosResolvidos
+  motivos.push(...classificacao.motivos)
   if (livrosResolvidos.length) {
     log(`  livros RESOLVIDOS, com todos os contratos fechados, fora da certificação: ${livrosResolvidos.join(', ')}`)
   }
@@ -361,10 +362,12 @@ async function main() {
   if (motivosGlobais.length) for (const book of Object.keys(livros)) livros[book] = { ok: false, motivos: motivosGlobais }
 
   const ok = motivos.length === 0
+  const veredito = vereditoDaTrava(books, livrosResolvidos, motivos)
   const livrosOk = Object.entries(livros).filter(([, v]) => v.ok).map(([k]) => k)
 
   const certificado = {
     ok,
+    veredito,
     livros,
     livrosOk,
     livrosResolvidos,
@@ -417,7 +420,10 @@ async function main() {
     console.log(JSON.stringify(certificado, null, 2))
   } else {
     log('')
-    if (ok) {
+    if (veredito === 'RESOLVIDO') {
+      log(`RESOLVIDO. Todos os livros vigiados (${books.join(', ')}) têm todos os contratos fechados nas duas leituras.`)
+      log('Nada a certificar: o preço final é o de resolução, e não há book instável a registrar.')
+    } else if (ok) {
       log(`APROVADO. As duas leituras concordam dentro de ${TOLERANCIA_PP}pp.`)
       log(`Publicar os valores da 2a leitura (fetchedAt=${b.fetchedAt}).`)
     } else {
@@ -435,7 +441,7 @@ async function main() {
     // pode se perder no invólucro e virar 1 sem bloqueio nenhum. Esta linha
     // não se perde, e é o que se deve grepar.
     log('')
-    log(`VEREDITO: ${ok ? 'APROVADO' : 'BLOQUEADO'}`)
+    log(`VEREDITO: ${veredito}`)
   }
 
   process.exit(ok ? 0 : 1)

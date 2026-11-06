@@ -198,6 +198,7 @@ Ela faz duas leituras separadas por 8 minutos e só libera se concordarem dentro
 ⚠️ **Desempate rápido, sem esperar outros 8 minutos:** rodar `true` no mesmo shell. Se `true` também "falha", o exit code do ambiente não vale nada e vale a linha `VEREDITO:`.
 
 - **exit 0**: usar os valores da **segunda** leitura, que é a mais recente e sobreviveu à confirmação.
+- 🏁 **`VEREDITO: RESOLVIDO`** (exit 0, desde 05/Nov/2026): os três livros vigiados têm todos os contratos fechados nas duas leituras. Nada a certificar e **nada instável a registrar**: o preço final é o de resolução. Antes dele a trava saía BLOQUEADO nesse caso e mandava registrar book instável, o que era falso. Regra em `lib/us-market/livros-da-trava.ts`, 🧪 `npx tsx scripts/testar-livros-da-trava.ts` (21 asserções, no CI, 7 de 7 mutações pegas). Leitura degradada ou com o mesmo `fetchedAt` segue BLOQUEADA mesmo com tudo resolvido.
 - **exit 1**: NÃO publicar. Recapturar. Persistindo em duas rodadas, o correto é registrar que o book está instável, não publicar número.
 - **Ela falha fechada:** se as duas leituras vierem com o mesmo `fetchedAt`, ou se nenhum preço for lido, ela bloqueia e avisa. Tratar como bloqueio de verdade.
 
