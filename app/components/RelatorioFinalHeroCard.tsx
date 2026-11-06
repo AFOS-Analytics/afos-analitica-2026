@@ -4,9 +4,49 @@
 // do AFOS Daily e no mesmo padrão visual dele. O card inteiro leva à página do
 // relatório; a pílula do Harvard Dataverse é um link à parte, posto acima do link
 // esticado (link dentro de link não é HTML válido).
+//
+// 🇺🇸 Desde 06/11/2026 o mesmo card serve o Relatório de fechamento EUA 2026, no
+// topo do painel dos EUA, com `pais="us"`: textos, página, DOI e a cor do país
+// (verde-azulada, a mesma dos cards da Weekly e do Tradeoff dos EUA).
 import { useTranslation } from '../i18n/context'
 
-const HARVARD_DOI_URL = 'https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2D0UK7'
+const HARVARD = {
+  br: 'https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2D0UK7',
+  us: 'https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/XRUT8U',
+}
+
+const T_US = {
+  'pt-BR': {
+    eyebrow: 'Relatório final',
+    titulo: 'Eleições EUA 2026',
+    texto: 'De abril à eleição de 3 de novembro, o AFOS registrou lado a lado os preços do Polymarket sobre o controle da Câmara e do Senado, as pesquisas nacionais e a cobertura da imprensa. O relatório põe essas séries ao lado do resultado e da repercussão no mundo.',
+    cta: 'Ler relatório',
+    updatedAt: 'Atualizado:',
+    data: '06/11/2026',
+    versao: 'versão 1.0',
+    aria: 'Ler o Relatório de fechamento EUA 2026',
+  },
+  en: {
+    eyebrow: 'Final report',
+    titulo: 'US 2026 midterms',
+    texto: 'From April to the November 3 election, AFOS recorded side by side the Polymarket prices on control of the House and the Senate, the national polls and the press coverage. The report sets those series next to the result and the reaction around the world.',
+    cta: 'Read the report',
+    updatedAt: 'Updated:',
+    data: 'Nov 6, 2026',
+    versao: 'version 1.0',
+    aria: 'Read the US 2026 Closing Report',
+  },
+  es: {
+    eyebrow: 'Informe final',
+    titulo: 'Elecciones EE. UU. 2026',
+    texto: 'De abril a la elección del 3 de noviembre, AFOS registró lado a lado los precios de Polymarket sobre el control de la Cámara y del Senado, las encuestas nacionales y la cobertura de prensa. El informe pone esas series junto al resultado y a la repercusión en el mundo.',
+    cta: 'Leer el informe',
+    updatedAt: 'Actualizado:',
+    data: '06/11/2026',
+    versao: 'versión 1.0',
+    aria: 'Leer el Informe de cierre EE. UU. 2026',
+  },
+}
 
 const T = {
   'pt-BR': {
@@ -41,20 +81,21 @@ const T = {
   },
 }
 
-export function RelatorioFinalHeroCard() {
+export function RelatorioFinalHeroCard({ pais = 'br', semContainer = false }: { pais?: 'br' | 'us'; semContainer?: boolean }) {
   const { locale } = useTranslation()
   const tKey = (locale === 'en' || locale === 'es' ? locale : 'pt-BR') as keyof typeof T
-  const t = T[tKey]
-  const href = `/${tKey}/report/brazil-2026`
+  const t = (pais === 'us' ? T_US : T)[tKey]
+  const href = `/${tKey}/report/${pais === 'us' ? 'usa-2026' : 'brazil-2026'}`
+  const cor = pais === 'us' ? 'bg-teal-50 hover:bg-teal-100 border-teal-100' : 'bg-orange-50 hover:bg-orange-100 border-orange-100'
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-3 sm:px-4 md:px-8 mt-5 sm:mt-6">
-      <div className="relative bg-orange-50 hover:bg-orange-100 border border-orange-100 rounded-xl p-4 md:p-5 transition-colors group">
+    <div className={semContainer ? 'w-full' : 'w-full max-w-6xl mx-auto px-3 sm:px-4 md:px-8 mt-5 sm:mt-6'}>
+      <div className={`relative ${cor} border rounded-xl p-4 md:p-5 transition-colors group`}>
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2">
           <span className="text-base md:text-lg font-extrabold text-primary uppercase tracking-[0.12em]">{t.eyebrow}</span>
           <span className="text-base md:text-lg font-bold text-dark">{t.titulo}</span>
           <a
-            href={HARVARD_DOI_URL}
+            href={HARVARD[pais]}
             target="_blank"
             rel="noopener noreferrer"
             className="relative z-10 inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-0.5 rounded-full border bg-primary/10 text-primary hover:bg-primary/20 border-primary/15 transition-colors"

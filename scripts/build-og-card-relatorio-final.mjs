@@ -14,11 +14,19 @@
  *
  * 🔢 Decimal no formato de cada versão do relatório: vírgula em PT e ES, ponto em EN.
  *
- * Uso: node scripts/build-og-card-relatorio-final.mjs [destino]
+ * 🇺🇸 Desde 06/11/2026 o mesmo script gera os cartões do Relatório de fechamento
+ * EUA 2026 (versão 1.0) com `--pais=us`: textos em `TEXTOS_US`, bandeira americana
+ * e prefixo `og-relatorio-final-us-2026-`. Sem o parâmetro, segue sendo o Brasil.
+ *
+ * Uso: node scripts/build-og-card-relatorio-final.mjs [destino] [--pais=us]
  */
 import { chromium } from 'playwright'
 import { writeFileSync } from 'fs'
-import { bandeira } from './lib/bandeira-br.mjs'
+import { bandeira as bandeiraBr } from './lib/bandeira-br.mjs'
+import { bandeira as bandeiraUs } from './build-og-cards-us.mjs'
+
+const PAIS = process.argv.includes('--pais=us') ? 'us' : 'br'
+const bandeira = PAIS === 'us' ? bandeiraUs : bandeiraBr
 
 const TEXTOS = {
   pt: {
@@ -59,10 +67,51 @@ const TEXTOS = {
   },
 }
 
+// Todo número sai do relatório aprovado em 06/11/2026 (versão 1.0): o preço
+// certificado da véspera no Senado e o achado 3 do Resumo, nas palavras dele.
+const TEXTOS_US = {
+  pt: {
+    prod: 'EUA 2026',
+    pill: 'RELATÓRIO FINAL &middot; VERSÃO 1.0',
+    big: 'Midterms',
+    sub: (q) => `mercado, pesquisas e imprensa${q ? ' ' : '<br>'}registrados lado a lado e${q ? ' ' : '<br>'}comparados com o resultado`,
+    cardN: '76,50',
+    cardL: (q) => `preço dos democratas no Senado${q ? ' ' : '<br>'}na véspera, certificado em 02/11`,
+    cardS: 'resolvido em 100 em 04/11',
+    tese: (q) => `Mercado e pesquisas apontaram para o mesmo lado,${q ? ' ' : '<br>'}e o resultado foi esse lado.`,
+    meta: 'Relatório de fechamento EUA 2026 &middot; versão 1.0, 06/11/2026 &middot; Harvard Dataverse',
+    trio: 'Mercado de previsão &middot; Pesquisas &middot; Imprensa',
+  },
+  en: {
+    prod: 'US 2026',
+    pill: 'FINAL REPORT &middot; VERSION 1.0',
+    big: 'Midterms',
+    sub: (q) => `market, polls and press${q ? ' ' : '<br>'}recorded side by side and set${q ? ' ' : '<br>'}next to the result`,
+    cardN: '76.50',
+    cardL: (q) => `the Senate Democrats price${q ? ' ' : '<br>'}on the eve, certified Nov 2`,
+    cardS: 'settled at 100 on Nov 4',
+    tese: (q) => `Market and polls pointed the same way,${q ? ' ' : '<br>'}and the result went that way.`,
+    meta: 'US 2026 Closing Report &middot; version 1.0, Nov 6, 2026 &middot; Harvard Dataverse',
+    trio: 'Prediction markets &middot; Polls &middot; Press',
+  },
+  es: {
+    prod: 'EE. UU. 2026',
+    pill: 'INFORME FINAL &middot; VERSIÓN 1.0',
+    big: 'Midterms',
+    sub: (q) => `mercado, encuestas y prensa${q ? ' ' : '<br>'}registrados lado a lado y puestos${q ? ' ' : '<br>'}junto al resultado`,
+    cardN: '76,50',
+    cardL: (q) => `precio de los demócratas en el Senado${q ? ' ' : '<br>'}en la víspera, certificado el 02/11`,
+    cardS: 'liquidado en 100 el 04/11',
+    tese: (q) => `Mercado y encuestas apuntaron al mismo lado,${q ? ' ' : '<br>'}y el resultado fue ese lado.`,
+    meta: 'Informe de cierre EE. UU. 2026 &middot; versión 1.0, 06/11/2026 &middot; Harvard Dataverse',
+    trio: 'Mercados de predicción &middot; Encuestas &middot; Prensa',
+  },
+}
+
 const FORMATOS = (l) => [
-  { nome: `og-relatorio-final-br-2026-${l}-1200x627.png`, W: 1200, H: 627, s: 1.0, quadrado: false },
-  { nome: `og-relatorio-final-br-2026-${l}-1200x1200.png`, W: 1200, H: 1200, s: 1.18, quadrado: true },
-  { nome: `og-relatorio-final-br-2026-${l}-1600x900.png`, W: 1600, H: 900, s: 1.34, quadrado: false },
+  { nome: `og-relatorio-final-${PAIS}-2026-${l}-1200x627.png`, W: 1200, H: 627, s: 1.0, quadrado: false },
+  { nome: `og-relatorio-final-${PAIS}-2026-${l}-1200x1200.png`, W: 1200, H: 1200, s: 1.18, quadrado: true },
+  { nome: `og-relatorio-final-${PAIS}-2026-${l}-1600x900.png`, W: 1600, H: 900, s: 1.34, quadrado: false },
 ]
 
 const px = (n, s) => `${(n * s).toFixed(1)}px`
@@ -134,9 +183,9 @@ const html = (f, t) => `<!DOCTYPE html><html><head><meta charset="utf-8"><style>
 </div></body></html>`
 
 const browser = await chromium.launch()
-const DEST = process.argv[2] || 'public/brand'
+const DEST = process.argv.slice(2).find((a) => !a.startsWith('--')) || 'public/brand'
 let falhou = false
-for (const [l, t] of Object.entries(TEXTOS)) {
+for (const [l, t] of Object.entries(PAIS === 'us' ? TEXTOS_US : TEXTOS)) {
   for (const f of FORMATOS(l)) {
     const ctx = await browser.newContext({ viewport: { width: f.W, height: f.H }, deviceScaleFactor: 1 })
     const page = await ctx.newPage()

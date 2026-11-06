@@ -1,5 +1,6 @@
 'use client'
-// Página do Relatório de fechamento Brasil 2026, no padrão da página do AFOS Daily:
+// Página dos Relatórios de fechamento (Brasil 2026 e, desde 06/11/2026, EUA 2026),
+// no padrão da página do AFOS Daily:
 // mesmos dois temas (claro e azul Sapphire), mesma escolha de tema guardada, mesmo
 // seletor de idioma e a pílula do Harvard Dataverse. O corpo é o HTML aprovado do
 // relatório; a tela troca só as variáveis de cor dele por tema, e os gráficos
@@ -13,10 +14,26 @@ const THEME_KEY = 'afos-daily-theme'
 
 type Loc = 'pt-BR' | 'en' | 'es'
 
-const T: Record<Loc, { eyebrow: string; pdf: string; themeAria: string; lightAria: string; blueAria: string; home: string; dash: string; version: string }> = {
-  'pt-BR': { eyebrow: 'Relatório final · Eleição Brasil 2026', pdf: 'Baixar PDF', themeAria: 'Tema da página', lightAria: 'Tema claro', blueAria: 'Tema azul', home: 'Página inicial da AFOS Analytics', dash: '← Acessar o Dashboard', version: 'Versão 1.1 · corte 31/10/2026' },
-  en: { eyebrow: 'Final report · Brazil 2026 election', pdf: 'Download PDF', themeAria: 'Page theme', lightAria: 'Light theme', blueAria: 'Blue theme', home: 'AFOS Analytics home page', dash: '← Access the Dashboard', version: 'Version 1.1 · cutoff Oct 31, 2026' },
-  es: { eyebrow: 'Informe final · Elección Brasil 2026', pdf: 'Descargar PDF', themeAria: 'Tema de la página', lightAria: 'Tema claro', blueAria: 'Tema azul', home: 'Página de inicio de AFOS Analytics', dash: '← Acceder al Dashboard', version: 'Versión 1.1 · corte 31/10/2026' },
+type Slug = 'brazil-2026' | 'usa-2026'
+
+const T: Record<Loc, { pdf: string; themeAria: string; lightAria: string; blueAria: string; home: string; dash: string }> = {
+  'pt-BR': { pdf: 'Baixar PDF', themeAria: 'Tema da página', lightAria: 'Tema claro', blueAria: 'Tema azul', home: 'Página inicial da AFOS Analytics', dash: '← Acessar o Dashboard' },
+  en: { pdf: 'Download PDF', themeAria: 'Page theme', lightAria: 'Light theme', blueAria: 'Blue theme', home: 'AFOS Analytics home page', dash: '← Access the Dashboard' },
+  es: { pdf: 'Descargar PDF', themeAria: 'Tema de la página', lightAria: 'Tema claro', blueAria: 'Tema azul', home: 'Página de inicio de AFOS Analytics', dash: '← Acceder al Dashboard' },
+}
+
+// O que muda de um relatório para o outro: o rótulo do topo, a versão e o painel de volta.
+const REL: Record<Slug, { dash: string; eyebrow: Record<Loc, string>; version: Record<Loc, string> }> = {
+  'brazil-2026': {
+    dash: 'br',
+    eyebrow: { 'pt-BR': 'Relatório final · Eleição Brasil 2026', en: 'Final report · Brazil 2026 election', es: 'Informe final · Elección Brasil 2026' },
+    version: { 'pt-BR': 'Versão 1.1 · corte 31/10/2026', en: 'Version 1.1 · cutoff Oct 31, 2026', es: 'Versión 1.1 · corte 31/10/2026' },
+  },
+  'usa-2026': {
+    dash: 'us',
+    eyebrow: { 'pt-BR': 'Relatório final · Eleições EUA 2026', en: 'Final report · US 2026 midterms', es: 'Informe final · Elecciones EE. UU. 2026' },
+    version: { 'pt-BR': 'Versão 1.0 · 06/11/2026', en: 'Version 1.0 · Nov 6, 2026', es: 'Versión 1.0 · 06/11/2026' },
+  },
 }
 
 const LANG_LABEL: Record<Loc, string> = { 'pt-BR': 'PT', en: 'EN', es: 'ES' }
@@ -27,6 +44,8 @@ const CSS = `
 .rel-doc{--tinta:#17212b;--suave:#5c6672;--grade:#e4e7eb;--zero:#9aa3ad;--lula:#b8322a;--flavio:#1f4e9e;--faixa:rgba(31,78,158,.09);--neutro:#5c6f7e;--fio:#d8dce1;--nota:#eef1f5;
   color:var(--tinta);font-family:var(--rel-sans),'Source Sans 3',Arial,sans-serif;font-size:16.5px;line-height:1.6;overflow-wrap:break-word}
 [data-theme="blue"] .rel-doc{--tinta:#ffffff;--suave:#bfdbfe;--grade:rgba(191,219,254,.22);--zero:rgba(191,219,254,.5);--lula:#ff8f85;--flavio:#9cc3ff;--faixa:rgba(156,195,255,.16);--neutro:#cbd5e1;--fio:rgba(191,219,254,.25);--nota:rgba(7,30,80,.45)}
+.rel-doc[data-rel="usa-2026"]{--dem:#1f4e9e;--camara:#4f8fd6;--rep:#b8322a;--faixa:rgba(184,50,42,.08)}
+[data-theme="blue"] .rel-doc[data-rel="usa-2026"]{--dem:#9cc3ff;--camara:#e0ecff;--rep:#ff8f85;--faixa:rgba(255,143,133,.14)}
 .rel-doc h1,.rel-doc h2,.rel-doc h3{font-family:var(--rel-serif),'Source Serif 4',Georgia,serif;text-wrap:balance;margin:0;color:var(--tinta)}
 .rel-doc h1{font-size:clamp(30px,5vw,42px);line-height:1.12;font-weight:700}
 .rel-doc h2{font-size:clamp(22px,3.2vw,26px);margin:0 0 10px;padding-top:6px;line-height:1.25}
@@ -78,7 +97,9 @@ function ThemeToggle({ theme, onChoose, labels }: { theme: Theme; onChoose: (t: 
   )
 }
 
-export function RelatorioFinalTemplate({ locale, corpo, pdf, harvardUrl, idiomas, fontClass }: {
+export function RelatorioFinalTemplate({ slug = 'brazil-2026', locale, corpo, pdf, harvardUrl, harvardDoi = '10.7910/DVN/2D0UK7', idiomas, fontClass }: {
+  slug?: Slug
+  harvardDoi?: string
   locale: Loc
   corpo: string
   pdf: string
@@ -87,6 +108,7 @@ export function RelatorioFinalTemplate({ locale, corpo, pdf, harvardUrl, idiomas
   fontClass: string
 }) {
   const t = T[locale]
+  const rel = REL[slug]
   const [theme, setTheme] = useState<Theme>('light')
   useEffect(() => {
     try {
@@ -118,12 +140,12 @@ export function RelatorioFinalTemplate({ locale, corpo, pdf, harvardUrl, idiomas
         <ThemeToggle theme={theme} onChoose={chooseTheme} labels={{ group: t.themeAria, light: t.lightAria, blue: t.blueAria }} />
 
         <nav className="mb-10 text-sm flex flex-wrap items-center justify-between gap-3 pr-20">
-          <a href={`/${locale}/dashboard/br`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${ctaBg}`}>Dashboard</a>
+          <a href={`/${locale}/dashboard/${rel.dash}`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${ctaBg}`}>Dashboard</a>
           <div className="flex items-center gap-2 text-xs">
             {idiomas.map((loc, i) => (
               <span key={loc} className="flex items-center gap-2">
                 {i > 0 && <span className={isBlue ? 'text-blue-400/50' : 'text-gray-300'}>·</span>}
-                <a href={`/${loc}/report/brazil-2026`} hrefLang={loc} className={loc === locale ? activeBase : linkBase}>{LANG_LABEL[loc]}</a>
+                <a href={`/${loc}/report/${slug}`} hrefLang={loc} className={loc === locale ? activeBase : linkBase}>{LANG_LABEL[loc]}</a>
               </span>
             ))}
           </div>
@@ -134,8 +156,8 @@ export function RelatorioFinalTemplate({ locale, corpo, pdf, harvardUrl, idiomas
             <span className={`text-3xl md:text-4xl font-extrabold tracking-tight ${wordmarkColor}`}>AFOS Analytics</span>
           </a>
         </div>
-        <p className={`text-center text-xs font-extrabold uppercase tracking-[0.25em] mb-2 ${eyebrowColor}`}>{t.eyebrow}</p>
-        <p className={`text-center text-sm font-medium mb-5 ${subColor}`}>{t.version}</p>
+        <p className={`text-center text-xs font-extrabold uppercase tracking-[0.25em] mb-2 ${eyebrowColor}`}>{rel.eyebrow[locale]}</p>
+        <p className={`text-center text-sm font-medium mb-5 ${subColor}`}>{rel.version[locale]}</p>
 
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           <a href={pdf} download className={`inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-xs font-semibold transition-colors ${ctaBg}`}>
@@ -147,16 +169,16 @@ export function RelatorioFinalTemplate({ locale, corpo, pdf, harvardUrl, idiomas
             <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 shrink-0" fill="currentColor" aria-hidden="true">
               <path d="M4 10 H7 V17 H4 Z M10 10 H13 V17 H10 Z M16 10 H19 V17 H16 Z M2 19 H21 V22 H2 Z M11.5 1 L2 6 V8 H21 V6 Z" />
             </svg>
-            Harvard Dataverse · DOI 10.7910/DVN/2D0UK7
+            Harvard Dataverse · DOI {harvardDoi}
           </a>
         </div>
 
-        <div className="rel-doc" dangerouslySetInnerHTML={{ __html: corpo }} />
+        <div className="rel-doc" data-rel={slug} dangerouslySetInnerHTML={{ __html: corpo }} />
 
         <InlineSubscribe locale={locale} isBlue={isBlue} product="relatorio" />
 
         <div className="mt-12 text-center">
-          <a href={`/${locale}/dashboard/br`} className={`inline-block px-8 py-3 rounded-xl font-semibold transition-colors text-sm ${ctaBg}`}>
+          <a href={`/${locale}/dashboard/${rel.dash}`} className={`inline-block px-8 py-3 rounded-xl font-semibold transition-colors text-sm ${ctaBg}`}>
             {t.dash}
           </a>
         </div>

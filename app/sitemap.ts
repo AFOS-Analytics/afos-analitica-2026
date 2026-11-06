@@ -198,6 +198,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
+  // Relatório de fechamento EUA 2026 (06/11/2026): só os idiomas com o HTML publicado
+  {
+    const rel = RELATORIO_LOCALES.filter((l) => relatorioExiste(l, 'usa-2026'))
+    for (const loc of rel) {
+      entries.push({
+        url: `${baseUrl}/${loc}/report/usa-2026`,
+        lastModified: new Date('2026-11-06T18:00:00-03:00'),
+        changeFrequency: 'monthly',
+        priority: 0.9,
+        alternates: { languages: Object.fromEntries(rel.map((l) => [l, `${baseUrl}/${l}/report/usa-2026`])) },
+      })
+    }
+  }
+
   // AFOS Daily — synthesis index per locale (dynamic — sempre nova daily)
   for (const loc of locales) {
     entries.push({

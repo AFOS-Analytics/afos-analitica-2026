@@ -18,6 +18,7 @@ import { UsPressSection } from '../../../components/UsPressSection';
 import { UsIntroCard } from '../../../components/UsIntroCard';
 import { AfosTradeoffHeroCard } from '../../../components/AfosTradeoffHeroCard';
 import { AfosWeeklyHeroCard } from '../../../components/AfosWeeklyHeroCard';
+import { RelatorioFinalHeroCard } from '../../../components/RelatorioFinalHeroCard';
 import type { UsPressLeitura } from '../../../../lib/dashboard/us-press-data';
 import { CountryGraph } from '../../../components/CountryGraph';
 import { SectionTitle } from '../../../components/ui';
@@ -305,6 +306,10 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
             EUA não existia; a Edição №1 destravou. O cartão de apresentação
             desceu uma posição e continua: ele diz o que o painel é, e isso o
             Tradeoff não diz. */}
+        {/* Relatório de fechamento EUA 2026 (06/11/2026): acima de tudo, como o do
+            Brasil no painel do Brasil. */}
+        <RelatorioFinalHeroCard pais="us" semContainer />
+
         <AfosTradeoffHeroCard country="us" semContainer />
 
         {/* 🆕 Cartão do AFOS Weekly, o produto editorial para o eleitor comum,

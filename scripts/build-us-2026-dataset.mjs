@@ -201,6 +201,15 @@ const errataPress = join(dirPress, 'ERRATA.json')
 if (existsSync(errataPress)) copyFileSync(errataPress, join(OUT, 'raw', 'us-press-errata.json'))
 else console.warn('⚠️ ERRATA.json não encontrada em public/us-press-archive: o bundle sai SEM a prova das reescritas')
 
+// ── 4.5 RELATÓRIO DE FECHAMENTO (06/11/2026) ───────────────────────────────────
+// Os PDFs do relatório e o README da pasta vivem em hf-assets/us-final-report/,
+// versionados como os do Brasil, e entram no bundle em final-report/.
+const dirRelatorio = join(ROOT, 'hf-assets', 'us-final-report')
+if (existsSync(dirRelatorio)) {
+  mkdirSync(join(OUT, 'final-report'), { recursive: true })
+  for (const f of readdirSync(dirRelatorio)) copyFileSync(join(dirRelatorio, f), join(OUT, 'final-report', f))
+}
+
 // ── 5. RESUMO PARA O DATASHEET ─────────────────────────────────────────────────
 const datasEleitorais = polls.map((p) => p.campoFim).filter(Boolean).sort()
 const resumo = {
