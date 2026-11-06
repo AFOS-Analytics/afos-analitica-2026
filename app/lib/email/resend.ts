@@ -223,25 +223,60 @@ const RELATORIO_FINAL = {
   },
 } as const;
 
-export function relatorioFinalEmail(locale: 'pt-BR' | 'en' | 'es', unsubscribeToken?: string): { subject: string; html: string } {
-  const L = RELATORIO_FINAL[locale];
-  const url = `${PUBLIC_URL}/${locale}/report/brazil-2026`;
-  const doi = 'https://doi.org/10.7910/DVN/2D0UK7';
+/**
+ * Relatório de fechamento EUA 2026, v1.0 (06/Nov/2026): mesmo e-mail, texto próprio.
+ * Origem em português; a v1.0 usa o resultado projetado e o texto diz isso.
+ */
+const RELATORIO_FINAL_EUA = {
+  'pt-BR': {
+    subject: 'Relatório de fechamento EUA 2026',
+    p1: 'De abril à eleição de 3 de novembro o AFOS registrou, em paralelo, os preços do Polymarket sobre o controle da Câmara e do Senado, as pesquisas nacionais e a cobertura da imprensa. O relatório põe essas séries ao lado do resultado projetado, em que os democratas venceram as duas casas, e reúne, na Parte II, a reação do presidente, das lideranças do Congresso, de 18 governos estrangeiros, da imprensa internacional e dos mercados.',
+    p2: 'Está disponível em português, inglês e espanhol, na página do relatório e em PDF. Esta versão 1.0 usa o resultado projetado; a 1.1 virá com a contagem oficial. Os dados que o sustentam estão abertos no Harvard Dataverse e no Hugging Face.',
+    cta: 'Ler o relatório', dados: 'Dados no Harvard Dataverse',
+    why: 'Você está recebendo porque se cadastrou em', unsubscribe: 'Cancelar inscrição',
+  },
+  en: {
+    subject: 'US 2026 Closing Report',
+    p1: 'From April to the November 3 election AFOS recorded, side by side, the Polymarket prices on control of the House and the Senate, the national polls and the press coverage. The report sets those series next to the projected result, in which Democrats won both chambers, and gathers, in Part II, the reaction of the president, the Congress leadership, 18 foreign governments, the international press and the markets.',
+    p2: 'It is available in English, Portuguese and Spanish, on the report page and as a PDF. This version 1.0 uses the projected result; version 1.1 will follow with the official count. The data behind it is open on the Harvard Dataverse and on Hugging Face.',
+    cta: 'Read the report', dados: 'Data on the Harvard Dataverse',
+    why: 'You receive this because you subscribed at', unsubscribe: 'Unsubscribe',
+  },
+  es: {
+    subject: 'Informe de cierre EE. UU. 2026',
+    p1: 'De abril a la elección del 3 de noviembre AFOS registró, en paralelo, los precios de Polymarket sobre el control de la Cámara y del Senado, las encuestas nacionales y la cobertura de prensa. El informe pone esas series junto al resultado proyectado, en el que los demócratas ganaron las dos cámaras, y reúne, en la Parte II, la reacción del presidente, de los líderes del Congreso, de 18 gobiernos extranjeros, de la prensa internacional y de los mercados.',
+    p2: 'Está disponible en español, portugués e inglés, en la página del informe y en PDF. Esta versión 1.0 usa el resultado proyectado; la 1.1 llegará con el conteo oficial. Los datos que lo sustentan están abiertos en el Harvard Dataverse y en Hugging Face.',
+    cta: 'Leer el informe', dados: 'Datos en el Harvard Dataverse',
+    why: 'Recibe esto porque se suscribió en', unsubscribe: 'Cancelar suscripción',
+  },
+} as const;
+
+export type RelatorioFinalSlug = 'brazil-2026' | 'usa-2026';
+const RELATORIO_FINAL_DEF: Record<RelatorioFinalSlug, { textos: typeof RELATORIO_FINAL | typeof RELATORIO_FINAL_EUA; doi: string }> = {
+  'brazil-2026': { textos: RELATORIO_FINAL, doi: '10.7910/DVN/2D0UK7' },
+  'usa-2026': { textos: RELATORIO_FINAL_EUA, doi: '10.7910/DVN/XRUT8U' },
+};
+
+export function relatorioFinalEmail(locale: 'pt-BR' | 'en' | 'es', unsubscribeToken?: string, slug: RelatorioFinalSlug = 'brazil-2026'): { subject: string; html: string } {
+  const def = RELATORIO_FINAL_DEF[slug];
+  const L = def.textos[locale];
+  const url = `${PUBLIC_URL}/${locale}/report/${slug}`;
+  const doi = `https://doi.org/${def.doi}`;
   const unsubUrl = unsubscribeToken ? `${PUBLIC_URL}/api/unsubscribe?token=${encodeURIComponent(unsubscribeToken)}` : `${PUBLIC_URL}/api/unsubscribe`;
   const html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:600px;margin:0 auto;padding:24px;color:#1e293b;line-height:1.6;">
   <h1 style="color:#0F52BA;font-size:1.5rem;margin:0 0 0.75rem;font-weight:700;">${L.subject}</h1>
   <p style="color:#475569;font-size:0.95rem;margin:0 0 1rem;">${L.p1}</p>
   <p style="color:#475569;font-size:0.95rem;margin:0 0 1.5rem;">${L.p2}</p>
   <a href="${url}" style="display:inline-block;padding:12px 24px;background-color:#0F52BA;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;">${L.cta} →</a>
-  <p style="margin:1rem 0 0;font-size:0.85rem;"><a href="${doi}" style="color:#0F52BA;">${L.dados} · DOI 10.7910/DVN/2D0UK7</a></p>
+  <p style="margin:1rem 0 0;font-size:0.85rem;"><a href="${doi}" style="color:#0F52BA;">${L.dados} · DOI ${def.doi}</a></p>
   <hr style="border:none;border-top:1px solid #e2e8f0;margin:2rem 0 1rem;" />
   <p style="color:#94a3b8;font-size:0.8rem;margin:0;">${L.why} <a href="${PUBLIC_URL}" style="color:#94a3b8;">afos-analytics.com</a>. <a href="${unsubUrl}" style="color:#94a3b8;">${L.unsubscribe}</a>.</p>
 </div>`;
   return { subject: L.subject, html };
 }
 
-export function sendRelatorioFinal(to: string, locale: 'pt-BR' | 'en' | 'es', unsubscribeToken?: string): Promise<SendResult> {
-  const { subject, html } = relatorioFinalEmail(locale, unsubscribeToken);
+export function sendRelatorioFinal(to: string, locale: 'pt-BR' | 'en' | 'es', unsubscribeToken?: string, slug: RelatorioFinalSlug = 'brazil-2026'): Promise<SendResult> {
+  const { subject, html } = relatorioFinalEmail(locale, unsubscribeToken, slug);
   return send({ to, subject, html, unsubscribeToken, replyTo: EMAIL_CONTACT });
 }
 
