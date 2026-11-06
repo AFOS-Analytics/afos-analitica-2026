@@ -257,13 +257,13 @@ ${yamlConfigs}
 
 ![AFOS — US 2026 Midterms Divergence](banner.png)
 
-# AFOS — US 2026 Midterms Divergence (v${VERSAO}, pre-electoral)
+# AFOS — US 2026 Midterms Divergence (v${VERSAO}, post-election, awaiting certified result)
 
 [![Harvard Dataverse DOI](https://img.shields.io/badge/Harvard%20Dataverse-10.7910%2FDVN%2FXRUT8U-a51c30)](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/XRUT8U)
 
 What the **market** priced and what the **polls** measured about the same election, day by day, before it happened.
 
-> ⚠️ **Pre-electoral bundle.** The election is on **November 3, 2026**. There is no certified result to score these forecasts against, so this is **not** the gold-standard version. See \`DATASHEET.md\`. The v2, after certification, closes the cycle.
+> ⚠️ **Post-election, awaiting the certified result.** The vote was held on **November 3, 2026**, and every price and poll in here was recorded before it. Democrats won control of both the House and the Senate in the **projected** result. On the eve of the vote the market priced Democratic control at **94.50%** for the House and **76.50%** for the Senate, and the AFOS generic-ballot average stood at **D+7.66**. States are still certifying, two Senate races were uncalled and the national House vote is still being counted, so the bundle carries no \`official-result.json\` yet. See \`DATASHEET.md\`. The v2, with the certified result and the comparison of the polling average with the national House vote, closes the cycle.
 
 ## What is inside
 
@@ -271,6 +271,7 @@ What the **market** priced and what the **polls** measured about the same electi
 - **${mercadoLinhas} market price rows** across **${resumo.markets.length} Polymarket contracts**: chamber control, seat distributions, turnout, popular-vote margin, and whether the election happens on schedule
 - **${resumo.press.rows} headlines** from ${resumo.press.collections} daily collections over a fixed list of 23 outlets
 - One **already decided race** with its verified outcome: the Texas Republican Senate primary runoff
+- The **US 2026 Closing Report**, version 1.0 of November 6, 2026, in English, Portuguese and Spanish, with SHA-256 checksums (\`final-report/\`)
 
 ## The one case that is already scored
 
@@ -297,7 +298,7 @@ Both read only files versioned in the AFOS repository. \`CHECKSUMS.txt\` carries
 
 ## Citation
 
-See \`CITATION.cff\`. Harvard Dataverse DOI: **[10.7910/DVN/XRUT8U](https://doi.org/10.7910/DVN/XRUT8U)**. Cite: *Felipe, Andre, 2026, "AFOS · USA 2026 Midterms Electoral Divergence Dataset (v1, pre-electoral)", https://doi.org/10.7910/DVN/XRUT8U, Harvard Dataverse.*
+See \`CITATION.cff\`. Harvard Dataverse DOI: **[10.7910/DVN/XRUT8U](https://doi.org/10.7910/DVN/XRUT8U)**. Cite: *Felipe, Andre, 2026, "AFOS · USA 2026 Midterms Electoral Divergence Dataset (v1, post-election, awaiting certified result)", https://doi.org/10.7910/DVN/XRUT8U, Harvard Dataverse.*
 
 ⚠️ The citation above names NO version number on purpose: the DOI resolves to the latest release, and a hard-coded version goes stale the next time any file changes.
 
@@ -374,9 +375,9 @@ for (const sub of ['data', 'polls', 'press']) {
 writeFileSync(join(OUT, 'datapackage.json'), JSON.stringify({
   profile: 'tabular-data-package',
   name: 'afos-usa-2026-midterms-divergence',
-  title: 'AFOS — US 2026 Midterms Divergence (pre-electoral)',
+  title: 'AFOS — US 2026 Midterms Divergence (post-election, awaiting certified result)',
   version: VERSAO,
-  description: 'Prediction-market prices and published polls for the 2026 US midterms, side by side, before the election. Pre-electoral: no certified result to validate against.',
+  description: 'Prediction-market prices and published polls for the 2026 US midterms, recorded side by side before the vote of 2026-11-03. Post-election version: the result is projected and not yet certified, so there is no official result to validate against yet.',
   licenses: [{ name: 'CC-BY-4.0', path: 'https://creativecommons.org/licenses/by/4.0/', title: 'Creative Commons Attribution 4.0' }],
   homepage: `https://huggingface.co/datasets/${REPO}`,
   contributors: [{ title: 'AFOS Analytics', path: 'https://afos-analytics.com', role: 'author' }],
@@ -388,7 +389,7 @@ writeFileSync(join(OUT, 'croissant.json'), JSON.stringify({
   '@context': { '@vocab': 'https://schema.org/', cr: 'http://mlcommons.org/croissant/' },
   '@type': 'Dataset',
   name: 'afos-usa-2026-midterms-divergence',
-  description: 'Prediction-market prices and published polls for the 2026 US midterms. Pre-electoral version: the election is on 2026-11-03 and no certified result is available.',
+  description: 'Prediction-market prices and published polls for the 2026 US midterms, recorded before the vote of 2026-11-03. Post-election version: the result is projected and no certified result is available yet.',
   license: 'https://creativecommons.org/licenses/by/4.0/',
   url: `https://huggingface.co/datasets/${REPO}`,
   version: VERSAO,
@@ -398,7 +399,7 @@ writeFileSync(join(OUT, 'croissant.json'), JSON.stringify({
 
 // ── CITATION ───────────────────────────────────────────────────────────────────
 writeFileSync(join(OUT, 'CITATION.cff'), `cff-version: 1.2.0
-title: "AFOS — US 2026 Midterms Divergence (pre-electoral)"
+title: "AFOS — US 2026 Midterms Divergence (post-election, awaiting certified result)"
 message: "If you use this dataset, please cite it."
 type: dataset
 version: "${VERSAO}"
@@ -408,9 +409,9 @@ authors:
   - name: "AFOS Analytics"
 abstract: >-
   Prediction-market prices and published opinion polls for the 2026 United States
-  midterm elections, recorded side by side before the vote. Pre-electoral version:
-  the election is held on 2026-11-03 and there is no certified result to validate
-  the forecasts against. One race in the bundle, the Texas Republican Senate primary
+  midterm elections, recorded side by side before the vote of 2026-11-03. Post-election
+  version: the result is projected and not yet certified, so there is no official result
+  to validate the forecasts against yet. One race in the bundle, the Texas Republican Senate primary
   runoff of 2026-05-26, is already decided and carries its verified outcome.
 `)
 
