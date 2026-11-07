@@ -29,6 +29,9 @@ const PAIS = process.argv.includes('--pais=us') ? 'us' : 'br'
 const bandeira = PAIS === 'us' ? bandeiraUs : bandeiraBr
 // A bandeira dos EUA saiu maior a pedido do André (06/Nov/2026); a do Brasil fica como estava.
 const LARGURA_BANDEIRA = PAIS === 'us' ? 104 : 62
+// Nos EUA a linha pequena do cartão carrega as cadeiras projetadas, e foi aumentada a pedido
+// do André (06/Nov/2026): maior e mais clara. No Brasil fica como estava.
+const LINHA_S = PAIS === 'us' ? { tam: 23, cor: 'rgba(255,255,255,.88)', peso: 600, lh: '1.35' } : { tam: 18, cor: 'rgba(255,255,255,.6)', peso: 400, lh: 'normal' }
 
 const TEXTOS = {
   pt: {
@@ -79,7 +82,7 @@ const TEXTOS_US = {
     sub: (q) => `mercado, pesquisas e imprensa${q ? ' ' : '<br>'}registrados lado a lado e${q ? ' ' : '<br>'}comparados com o resultado`,
     cardN: '76,50',
     cardL: (q) => `preço dos democratas no Senado${q ? ' ' : '<br>'}na véspera, certificado em 02/11`,
-    cardS: 'Senado 54 D × 44 R · Câmara 250 D × 162 R<br>cadeiras projetadas pela NBC em 06/11',
+    cardS: (q) => q ? 'Senado 54 D × 44 R · Câmara 250 D × 162 R<br><span class="nota">cadeiras projetadas pela NBC em 06/11</span>' : 'Senado 54 D × 44 R<br>Câmara 250 D × 162 R<br><span class="nota">projeção NBC, 06/11</span>',
     tese: (q) => `Mercado e pesquisas apontaram para o mesmo lado,${q ? ' ' : '<br>'}e o resultado foi esse lado.`,
     meta: 'Relatório de fechamento EUA 2026 &middot; versão 1.0, 06/11/2026 &middot; Harvard Dataverse',
     trio: 'Mercado de previsão &middot; Pesquisas &middot; Imprensa',
@@ -91,7 +94,7 @@ const TEXTOS_US = {
     sub: (q) => `market, polls and press${q ? ' ' : '<br>'}recorded side by side and set${q ? ' ' : '<br>'}next to the result`,
     cardN: '76.50',
     cardL: (q) => `the Senate Democrats price${q ? ' ' : '<br>'}on the eve, certified Nov 2`,
-    cardS: 'Senate 54 D × 44 R · House 250 D × 162 R<br>seats projected by NBC, Nov 6',
+    cardS: (q) => q ? 'Senate 54 D × 44 R · House 250 D × 162 R<br><span class="nota">seats projected by NBC, Nov 6</span>' : 'Senate 54 D × 44 R<br>House 250 D × 162 R<br><span class="nota">NBC projection, Nov 6</span>',
     tese: (q) => `Market and polls pointed the same way,${q ? ' ' : '<br>'}and the result went that way.`,
     meta: 'US 2026 Closing Report &middot; version 1.0, Nov 6, 2026 &middot; Harvard Dataverse',
     trio: 'Prediction markets &middot; Polls &middot; Press',
@@ -102,8 +105,8 @@ const TEXTOS_US = {
     big: 'Midterms',
     sub: (q) => `mercado, encuestas y prensa${q ? ' ' : '<br>'}registrados lado a lado y puestos${q ? ' ' : '<br>'}junto al resultado`,
     cardN: '76,50',
-    cardL: (q) => `precio de los demócratas en el Senado${q ? ' ' : '<br>'}en la víspera, certificado el 02/11`,
-    cardS: 'Senado 54 D × 44 R · Cámara 250 D × 162 R<br>escaños proyectados por NBC el 06/11',
+    cardL: (q) => q ? 'precio de los demócratas en el Senado en la víspera, certificado el 02/11' : 'precio demócrata en el Senado<br>en la víspera, certificado el 02/11',
+    cardS: (q) => q ? 'Senado 54 D × 44 R · Cámara 250 D × 162 R<br><span class="nota">escaños proyectados por NBC el 06/11</span>' : 'Senado 54 D × 44 R<br>Cámara 250 D × 162 R<br><span class="nota">proyección NBC, 06/11</span>',
     tese: (q) => `Mercado y encuestas apuntaron al mismo lado,${q ? ' ' : '<br>'}y el resultado fue ese lado.`,
     meta: 'Informe de cierre EE. UU. 2026 &middot; versión 1.0, 06/11/2026 &middot; Harvard Dataverse',
     trio: 'Mercados de predicción &middot; Encuestas &middot; Prensa',
@@ -149,7 +152,8 @@ body { width: ${W}px; height: ${H}px; }
          border-radius: ${px(16, s)}; padding: ${px(22, s)} ${px(28, s)}; }
 .card .n { font-size: ${px(58, s)}; font-weight: 800; color: #93C5FD; line-height: 1; }
 .card .l { font-size: ${px(23, s)}; color: #DBEAFE; line-height: 1.32; margin-top: ${px(8, s)}; }
-.card .s { font-size: ${px(18, s)}; color: rgba(255,255,255,.6); margin-top: ${px(10, s)}; }
+.card .s { font-size: ${px(LINHA_S.tam, s)}; color: ${LINHA_S.cor}; font-weight: ${LINHA_S.peso}; line-height: ${LINHA_S.lh}; margin-top: ${px(10, s)}; }
+.card .s .nota { font-size: ${px(17, s)}; font-weight: 400; color: rgba(255,255,255,.65); }
 .thesis { font-size: ${px(quadrado ? 32 : 27, s)}; font-weight: 700; line-height: 1.28; margin-top: ${px(quadrado ? 24 : 18, s)}; }
 .meta { font-size: ${px(20, s)}; color: rgba(255,255,255,.62); margin-top: ${px(12, s)}; }
 .foot { display: flex; justify-content: space-between; align-items: baseline;
@@ -175,7 +179,7 @@ const html = (f, t) => `<!DOCTYPE html><html><head><meta charset="utf-8"><style>
       <div class="card">
         <div class="n">${t.cardN}</div>
         <div class="l">${t.cardL(f.quadrado)}</div>
-        <div class="s">${t.cardS}</div>
+        <div class="s">${typeof t.cardS === 'function' ? t.cardS(f.quadrado) : t.cardS}</div>
       </div>
     </div>
     <div class="thesis">${t.tese(f.quadrado)}</div>
