@@ -27,6 +27,8 @@ import { bandeira as bandeiraUs } from './build-og-cards-us.mjs'
 
 const PAIS = process.argv.includes('--pais=us') ? 'us' : 'br'
 const bandeira = PAIS === 'us' ? bandeiraUs : bandeiraBr
+// A bandeira dos EUA saiu maior a pedido do André (06/Nov/2026); a do Brasil fica como estava.
+const LARGURA_BANDEIRA = PAIS === 'us' ? 104 : 62
 
 const TEXTOS = {
   pt: {
@@ -77,7 +79,7 @@ const TEXTOS_US = {
     sub: (q) => `mercado, pesquisas e imprensa${q ? ' ' : '<br>'}registrados lado a lado e${q ? ' ' : '<br>'}comparados com o resultado`,
     cardN: '76,50',
     cardL: (q) => `preço dos democratas no Senado${q ? ' ' : '<br>'}na véspera, certificado em 02/11`,
-    cardS: 'resolvido em 100 em 04/11',
+    cardS: 'Senado 54 D × 44 R · Câmara 250 D × 162 R<br>cadeiras projetadas pela NBC em 06/11',
     tese: (q) => `Mercado e pesquisas apontaram para o mesmo lado,${q ? ' ' : '<br>'}e o resultado foi esse lado.`,
     meta: 'Relatório de fechamento EUA 2026 &middot; versão 1.0, 06/11/2026 &middot; Harvard Dataverse',
     trio: 'Mercado de previsão &middot; Pesquisas &middot; Imprensa',
@@ -89,7 +91,7 @@ const TEXTOS_US = {
     sub: (q) => `market, polls and press${q ? ' ' : '<br>'}recorded side by side and set${q ? ' ' : '<br>'}next to the result`,
     cardN: '76.50',
     cardL: (q) => `the Senate Democrats price${q ? ' ' : '<br>'}on the eve, certified Nov 2`,
-    cardS: 'settled at 100 on Nov 4',
+    cardS: 'Senate 54 D × 44 R · House 250 D × 162 R<br>seats projected by NBC, Nov 6',
     tese: (q) => `Market and polls pointed the same way,${q ? ' ' : '<br>'}and the result went that way.`,
     meta: 'US 2026 Closing Report &middot; version 1.0, Nov 6, 2026 &middot; Harvard Dataverse',
     trio: 'Prediction markets &middot; Polls &middot; Press',
@@ -101,7 +103,7 @@ const TEXTOS_US = {
     sub: (q) => `mercado, encuestas y prensa${q ? ' ' : '<br>'}registrados lado a lado y puestos${q ? ' ' : '<br>'}junto al resultado`,
     cardN: '76,50',
     cardL: (q) => `precio de los demócratas en el Senado${q ? ' ' : '<br>'}en la víspera, certificado el 02/11`,
-    cardS: 'liquidado en 100 el 04/11',
+    cardS: 'Senado 54 D × 44 R · Cámara 250 D × 162 R<br>escaños proyectados por NBC el 06/11',
     tese: (q) => `Mercado y encuestas apuntaron al mismo lado,${q ? ' ' : '<br>'}y el resultado fue ese lado.`,
     meta: 'Informe de cierre EE. UU. 2026 &middot; versión 1.0, 06/11/2026 &middot; Harvard Dataverse',
     trio: 'Mercados de predicción &middot; Encuestas &middot; Prensa',
@@ -161,7 +163,7 @@ const html = (f, t) => `<!DOCTYPE html><html><head><meta charset="utf-8"><style>
 <body><div class="og">
   <div class="head">
     <div class="mark">AFOS ANALYTICS</div>
-    <div class="pais">${bandeira(62 * f.s)}<div class="prod">${t.prod}</div></div>
+    <div class="pais">${bandeira(LARGURA_BANDEIRA * f.s)}<div class="prod">${t.prod}</div></div>
   </div>
   <div class="body">
     <div class="pill">${t.pill}</div>
