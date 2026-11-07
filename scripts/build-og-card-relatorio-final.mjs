@@ -77,6 +77,7 @@ const TEXTOS = {
 const TEXTOS_US = {
   pt: {
     prod: 'EUA 2026',
+    placar: { senado: 'Senado', camara: 'Câmara', maioria: 'maioria', nota: 'projeção NBC, 06/11; 2 e 23 cadeiras em aberto', vespera: 'Na véspera, o <b>Polymarket</b> pagava <strong>76,50</strong> nos democratas no Senado e <strong>94,50</strong> na Câmara' },
     pill: 'RELATÓRIO FINAL &middot; VERSÃO 1.0',
     big: 'Midterms',
     sub: (q) => `mercado, pesquisas e imprensa${q ? ' ' : '<br>'}registrados lado a lado e${q ? ' ' : '<br>'}comparados com o resultado`,
@@ -89,6 +90,7 @@ const TEXTOS_US = {
   },
   en: {
     prod: 'US 2026',
+    placar: { senado: 'Senate', camara: 'House', maioria: 'majority', nota: 'NBC projection, Nov 6; 2 and 23 seats uncalled', vespera: 'On the eve, <b>Polymarket</b> paid <strong>76.50</strong> on Democrats in the Senate and <strong>94.50</strong> in the House' },
     pill: 'FINAL REPORT &middot; VERSION 1.0',
     big: 'Midterms',
     sub: (q) => `market, polls and press${q ? ' ' : '<br>'}recorded side by side and set${q ? ' ' : '<br>'}next to the result`,
@@ -101,6 +103,7 @@ const TEXTOS_US = {
   },
   es: {
     prod: 'EE. UU. 2026',
+    placar: { senado: 'Senado', camara: 'Cámara', maioria: 'mayoría', nota: 'proyección NBC, 06/11; 2 y 23 escaños sin definir', vespera: 'En la víspera, <b>Polymarket</b> pagaba <strong>76,50</strong> por los demócratas en el Senado y <strong>94,50</strong> en la Cámara' },
     pill: 'INFORME FINAL &middot; VERSIÓN 1.0',
     big: 'Midterms',
     sub: (q) => `mercado, encuestas y prensa${q ? ' ' : '<br>'}registrados lado a lado y puestos${q ? ' ' : '<br>'}junto al resultado`,
@@ -121,7 +124,7 @@ const FORMATOS = (l) => [
 
 const px = (n, s) => `${(n * s).toFixed(1)}px`
 
-function css({ W, H, s, quadrado }) {
+function css({ W, H, s, quadrado }, comPlacar = false) {
   return `
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { width: ${W}px; height: ${H}px; }
@@ -143,7 +146,7 @@ body { width: ${W}px; height: ${H}px; }
 .pill { display: inline-block; align-self: flex-start; font-size: ${px(20, s)}; font-weight: 700;
         letter-spacing: ${px(2.4, s)}; color: #BFDBFE; border: ${px(2, s)} solid rgba(255,255,255,.3);
         border-radius: 999px; padding: ${px(7, s)} ${px(18, s)}; margin-bottom: ${px(16, s)}; }
-.big  { font-size: ${px(quadrado ? 150 : 112, s)}; font-weight: 800; letter-spacing: ${px(-4, s)}; line-height: ${quadrado ? 1.14 : 1.06}; }
+.big  { font-size: ${px(quadrado ? (comPlacar ? 112 : 150) : (comPlacar ? 100 : 112), s)}; font-weight: 800; letter-spacing: ${px(-4, s)}; line-height: ${quadrado ? 1.14 : 1.06}; }
 .sub  { font-size: ${px(27, s)}; font-weight: 600; color: #BFDBFE; line-height: 1.32; margin-top: ${px(10, s)}; }
 .split { display: flex; ${quadrado ? 'flex-direction: column;' : ''} gap: ${px(quadrado ? 28 : 40, s)}; align-items: ${quadrado ? 'stretch' : 'flex-start'}; }
 .left  { flex: 1; }
@@ -153,6 +156,30 @@ body { width: ${W}px; height: ${H}px; }
 .card .n { font-size: ${px(58, s)}; font-weight: 800; color: #93C5FD; line-height: 1; }
 .card .l { font-size: ${px(23, s)}; color: #DBEAFE; line-height: 1.32; margin-top: ${px(8, s)}; }
 .card .s { font-size: ${px(LINHA_S.tam, s)}; color: ${LINHA_S.cor}; font-weight: ${LINHA_S.peso}; line-height: ${LINHA_S.lh}; margin-top: ${px(10, s)}; }
+.card.placar { background: #FFFFFF; border-color: rgba(255,255,255,.9); box-shadow: 0 ${px(10, s)} ${px(30, s)} rgba(0,0,0,.28); }
+.placar .casa + .casa { margin-top: ${px(quadrado ? 14 : 12, s)}; }
+.placar .cl { display: flex; justify-content: space-between; font-size: ${px(19, s)}; font-weight: 700; letter-spacing: ${px(1.5, s)}; color: #1E293B; text-transform: uppercase; }
+.placar .cl span { font-weight: 400; letter-spacing: 0; text-transform: none; color: #64748B; }
+.placar .nums { display: flex; justify-content: space-between; align-items: center; margin-top: ${px(4, s)}; }
+.placar .nums span { display: flex; align-items: center; gap: ${px(10, s)}; font-size: ${px(quadrado ? 54 : 44, s)}; font-weight: 800; line-height: 1.05; }
+.placar .pd { color: #1D4ED8; } .placar .pr { color: #DC2626; }
+.placar .dot { display: inline-flex; align-items: center; justify-content: center; font-style: normal;
+  width: ${px(quadrado ? 42 : 34, s)}; height: ${px(quadrado ? 42 : 34, s)}; border-radius: 50%;
+  font-size: ${px(quadrado ? 22 : 18, s)}; font-weight: 800; color: #fff; }
+.placar .dot.d { background: #2563EB; } .placar .dot.r { background: #DC2626; }
+.placar .bar { position: relative; display: flex; height: ${px(quadrado ? 14 : 11, s)}; margin-top: ${px(8, s)}; border-radius: ${px(3, s)}; overflow: visible; }
+.placar .bar b { display: block; height: 100%; }
+.placar .bar .bd { background: #2563EB; border-radius: ${px(3, s)} 0 0 ${px(3, s)}; }
+.placar .bar .bo { background: #CBD5E1; }
+.placar .bar .br { background: #DC2626; border-radius: 0 ${px(3, s)} ${px(3, s)} 0; }
+.placar .bar em { position: absolute; top: ${px(-5, s)}; bottom: ${px(-5, s)}; width: ${px(3, s)}; background: #0F172A; }
+.placar .pn { font-size: ${px(16, s)}; color: #64748B; margin-top: ${px(quadrado ? 14 : 10, s)}; }
+.placar .pv { font-size: ${px(quadrado ? 20 : 18, s)}; color: #1E293B; line-height: 1.35; margin-top: ${px(quadrado ? 12 : 8, s)};
+  background: #EAF2FF; border-left: ${px(5, s)} solid #0F52BA; border-radius: ${px(6, s)}; padding: ${px(quadrado ? 10 : 7, s)} ${px(14, s)}; }
+.placar .pv b { font-weight: 700; color: #0F172A; }
+.placar .pv strong { font-weight: 800; color: #0F52BA; font-size: 1.22em; }
+.thesis.lado { font-size: ${px(22, s)}; margin-top: ${px(16, s)}; }
+.meta.lado { font-size: ${px(15, s)}; margin-top: ${px(8, s)}; }
 .card .s .nota { font-size: ${px(17, s)}; font-weight: 400; color: rgba(255,255,255,.65); }
 .thesis { font-size: ${px(quadrado ? 32 : 27, s)}; font-weight: 700; line-height: 1.28; margin-top: ${px(quadrado ? 24 : 18, s)}; }
 .meta { font-size: ${px(20, s)}; color: rgba(255,255,255,.62); margin-top: ${px(12, s)}; }
@@ -163,7 +190,25 @@ body { width: ${W}px; height: ${H}px; }
 `
 }
 
-const html = (f, t) => `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${css(f)}</style></head>
+// Placar das cadeiras projetadas (EUA): democratas à esquerda, republicanos à direita,
+// sem projeção no meio, e a marca da maioria sobre a barra. Números do anexo do relatório.
+const CASAS = [
+  { k: 'senado', d: 54, r: 44, total: 100, maioria: 51 },
+  { k: 'camara', d: 250, r: 162, total: 435, maioria: 218 },
+]
+function placar(P) {
+  const pct = (n, t) => `${(100 * n / t).toFixed(2)}%`
+  return CASAS.map((c) => `
+        <div class="casa">
+          <div class="cl">${P[c.k]}<span>${P.maioria} ${c.maioria}</span></div>
+          <div class="nums"><span class="pd"><i class="dot d">D</i>${c.d}</span><span class="pr">${c.r}<i class="dot r">R</i></span></div>
+          <div class="bar"><b class="bd" style="width:${pct(c.d, c.total)}"></b><b class="bo" style="width:${pct(c.total - c.d - c.r, c.total)}"></b><b class="br" style="width:${pct(c.r, c.total)}"></b><em style="left:${pct(c.maioria, c.total)}"></em></div>
+        </div>`).join('') + `
+        <div class="pn">${P.nota}</div>
+        <div class="pv">${P.vespera}</div>`
+}
+
+const html = (f, t) => `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${css(f, !!t.placar)}</style></head>
 <body><div class="og">
   <div class="head">
     <div class="mark">AFOS ANALYTICS</div>
@@ -174,16 +219,18 @@ const html = (f, t) => `<!DOCTYPE html><html><head><meta charset="utf-8"><style>
     <div class="split">
       <div class="left">
         <div class="big">${t.big}</div>
-        <div class="sub">${t.sub(f.quadrado)}</div>
+        <div class="sub">${t.sub(f.quadrado)}</div>${t.placar && !f.quadrado ? `
+        <div class="thesis lado">${t.tese(true)}</div>
+        <div class="meta lado">${t.meta}</div>` : ''}
       </div>
-      <div class="card">
+      <div class="card${t.placar ? ' placar' : ''}">${t.placar ? placar(t.placar) : `
         <div class="n">${t.cardN}</div>
         <div class="l">${t.cardL(f.quadrado)}</div>
-        <div class="s">${typeof t.cardS === 'function' ? t.cardS(f.quadrado) : t.cardS}</div>
+        <div class="s">${typeof t.cardS === 'function' ? t.cardS(f.quadrado) : t.cardS}</div>`}
       </div>
     </div>
-    <div class="thesis">${t.tese(f.quadrado)}</div>
-    <div class="meta">${t.meta}</div>
+${t.placar && !f.quadrado ? '' : `    <div class="thesis">${t.tese(f.quadrado)}</div>
+    <div class="meta">${t.meta}</div>`}
   </div>
   <div class="foot"><div class="url">afos-analytics.com</div><div class="trio">${t.trio}</div></div>
 </div></body></html>`
