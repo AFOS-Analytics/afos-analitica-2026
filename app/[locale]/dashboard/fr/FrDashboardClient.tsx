@@ -86,16 +86,19 @@ function Conteudo(props: FrDashboardProps) {
       .then((d) => { if (vivo) setPoly(d) })
       .catch(() => { if (vivo) setPoly(null) })
       .finally(() => { if (vivo) setPolyLoading(false) })
-    // A Kalshi só é lida quando já pode aparecer: antes disso, nenhum preço
-    // dela chega ao navegador.
-    if (props.kalshiPronto) {
-      fetch('/api/kalshi?country=fra')
-        .then((r) => (r.ok ? r.json() : null))
-        .then((d) => { if (vivo) setKalshi(d) })
-        .catch(() => { if (vivo) setKalshi(null) })
-    }
+    // 🔁 08/Nov/2026, decisão do André: a Kalshi vai para a tela já, sem esperar
+    // os 14 dias. A tela usa a LEITURA DA HORA, não a série; quem decide se ela
+    // aparece é a avaliação dessa leitura (kalshiOk abaixo). Os 14 dias seguem
+    // valendo para a SÉRIE (variação, superlativo), em scripts/kalshi-prontidao.ts.
+    fetch('/api/kalshi?country=fra')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => { if (vivo) setKalshi(d) })
+      .catch(() => { if (vivo) setKalshi(null) })
     return () => { vivo = false }
-  }, [silencio.silencio, props.kalshiPronto])
+  }, [silencio.silencio])
+
+  /** A coluna da Kalshi só aparece se a leitura da hora passou na avaliação (soma, livro do líder). */
+  const kalshiOk = kalshi?.winner?.avaliacao?.ok === true
 
   /** Mercado por nome, num contrato. Só contrato aberto e com negócio (enchimento fora). */
   const precoPorNome = (ev: EventoPoly | undefined, re: RegExp) => {
@@ -115,11 +118,11 @@ function Conteudo(props: FrDashboardProps) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   ), [poly, props.polls.medias])
   const kalshiPorNome = useMemo(() => {
-    if (!props.kalshiPronto) return null
+    if (!kalshiOk) return null
     const m = new Map<string, number>()
     for (const c of kalshi?.winner?.contratos ?? []) if (c.ultimo !== null) m.set(c.candidato, c.ultimo)
     return m
-  }, [kalshi, props.kalshiPronto])
+  }, [kalshi, kalshiOk])
 
   const L = (pt: string, en: string, es: string) => (locale === 'en' ? en : locale === 'es' ? es : pt)
 
@@ -245,7 +248,7 @@ function Conteudo(props: FrDashboardProps) {
           <>
             <div id="sec-mercado" className="scroll-mt-20">
               <SectionErrorBoundary locale={locale} name="Mercado">
-                <FrMarketSection poly={poly} polyLoading={polyLoading} kalshi={kalshi} kalshiPronto={props.kalshiPronto} kalshiProntoEm={props.kalshiProntoEm} comLinkDeFonte={comLinkDeFonte} />
+                <FrMarketSection poly={poly} polyLoading={polyLoading} kalshi={kalshi} kalshiPronto={kalshiOk} kalshiProntoEm={props.kalshiProntoEm} comLinkDeFonte={comLinkDeFonte} />
               </SectionErrorBoundary>
             </div>
             <div id="sec-pesquisas" className="scroll-mt-20">

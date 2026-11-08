@@ -33,13 +33,9 @@ Faltando qualquer um, PARAR e pedir primeiro.
 ## ETAPA 1: Coletar
 
 - **Polymarket:** `curl -s "https://www.afos-analytics.com/api/polymarket?country=fra&fresh=1"`. Sem `&fresh=1` vem o cache. Conferir o `fetchedAt`.
-- **Kalshi:** `curl -s "https://www.afos-analytics.com/api/kalshi?country=fra&fresh=1"`. 🔴 **Só entra na peça se a prontidão estiver PRONTA:**
+- **Kalshi:** `curl -s "https://www.afos-analytics.com/api/kalshi?country=fra&fresh=1"`.
 
-  ```bash
-  npx tsx scripts/kalshi-prontidao.ts --pais=fra      # VEREDITO: PRONTO PARA A TELA | AINDA NÃO
-  ```
-
-  `AINDA NÃO` = a Kalshi **não aparece com número** na edição, igual à tela. Pode ser citada como "segundo livro em coleta" sem preço.
+  🔁 **Regra desde 08/Nov/2026 (decisão do André):** a Kalshi entra com o PREÇO DA HORA sempre que a leitura passa na avaliação (`avaliacao.ok` na resposta da rota: soma 85 a 120, líder com oferta de compra e de venda). A prontidão de 14 dias (`npx tsx scripts/kalshi-prontidao.ts --pais=fra`) passou a valer só para a SÉRIE: antes de `PRONTO`, nada de variação semanal nem superlativo da Kalshi, e qualquer "desde" diz "desde 08/11/2026".
   ⚠️ O volume da Kalshi é em **CONTRATOS**, nunca em dólares. O `cadastroAtualizadoEm` é do cadastro do contrato, **não** do preço; frescor é `ultimaNegociacaoEm`.
 - **Δ da semana:** `node scripts/semana-do-contrato.mjs --pais=fr --de=AAAA-MM-DD --ate=AAAA-MM-DD`. Lê o backup do Neon. Os 4 livros: vencedor, vai ao 2º turno, mais votado no 1º turno, cédula. A série da Polymarket da França começa em **08/Nov/2026, 18:30 UTC**; a da Kalshi em **08/Nov/2026, 18:25 UTC**. Superlativo é "desde" essas datas.
 - **Pesquisas:** o registro `fr-polls` mais recente do Neon (o mesmo que a tela lê). Usar **só `publicavel: true`**. Divergência de ficha e ficha pendente não viram número na peça.

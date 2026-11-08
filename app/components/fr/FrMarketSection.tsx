@@ -37,7 +37,7 @@ const T = {
     kalshiSemData: 'em coleta',
     nota: 'Preços em pontos de 0 a 100: a probabilidade implícita que o contrato paga. Dado de medição, não é convite a apostar. A Polymarket é bloqueada na França pela ANJ desde 17/07/2026 e a Kalshi também não é autorizada no país, então os preços são formados por quem negocia fora da França.',
     notaDist: 'Distância = Polymarket menos Kalshi, em pontos. Os dois livros nunca são somados nem tirados em média: taxas, liquidez e público são diferentes, e a distância é justamente o que se mede.',
-    notaKalshi: 'A Kalshi está sendo coletada desde 08/11/2026 e só aparece aqui depois de 14 dias de captura sem defeito e sem buraco.',
+    notaKalshi: 'Kalshi lida desde 08/11/2026. O volume dela é contado em contratos, não em dólares.',
     volume: (v: string) => `Giro acumulado do contrato principal na Polymarket: ${v}. É soma de negócios desde a abertura, não dinheiro em jogo hoje.`,
     confira: 'Confira o dado bruto que o AFOS leu:',
     brutoPoly: 'Polymarket (JSON) ↗',
@@ -62,7 +62,7 @@ const T = {
     kalshiSemData: 'collecting',
     nota: 'Prices in points from 0 to 100: the implied probability the contract pays. This is measurement data, not an invitation to bet. Polymarket has been blocked in France by the ANJ since 07/17/2026 and Kalshi is not licensed there either, so prices are set by traders outside France.',
     notaDist: 'Gap = Polymarket minus Kalshi, in points. The two books are never added or averaged: fees, liquidity and users differ, and the gap is exactly what is being measured.',
-    notaKalshi: 'Kalshi has been collected since 11/08/2026 and appears here only after 14 days of capture with no defect and no gap.',
+    notaKalshi: 'Kalshi read since 11/08/2026. Its volume is counted in contracts, not dollars.',
     volume: (v: string) => `Cumulative turnover of the main Polymarket contract: ${v}. It is the sum of trades since opening, not money at stake today.`,
     confira: 'Check the raw data AFOS read:',
     brutoPoly: 'Polymarket (JSON) ↗',
@@ -87,7 +87,7 @@ const T = {
     kalshiSemData: 'en recolección',
     nota: 'Precios en puntos de 0 a 100: la probabilidad implícita que paga el contrato. Es un dato de medición, no una invitación a apostar. Polymarket está bloqueada en Francia por la ANJ desde el 17/07/2026 y Kalshi tampoco está autorizada en el país, así que los precios los forman quienes operan fuera de Francia.',
     notaDist: 'Distancia = Polymarket menos Kalshi, en puntos. Los dos libros nunca se suman ni se promedian: comisiones, liquidez y público son distintos, y la distancia es justamente lo que se mide.',
-    notaKalshi: 'Kalshi se recolecta desde el 08/11/2026 y solo aparece aquí tras 14 días de captura sin defecto y sin huecos.',
+    notaKalshi: 'Kalshi leída desde el 08/11/2026. Su volumen se cuenta en contratos, no en dólares.',
     volume: (v: string) => `Volumen acumulado del contrato principal en Polymarket: ${v}. Es la suma de operaciones desde la apertura, no dinero en juego hoy.`,
     confira: 'Revise el dato bruto que leyó el AFOS:',
     brutoPoly: 'Polymarket (JSON) ↗',
@@ -214,7 +214,6 @@ export function FrMarketSection({
   if (kalshiPronto) {
     for (const c of kalshi?.winner?.contratos ?? []) if (c.ultimo !== null) kalshiPorNome.set(chave(c.candidato), c.ultimo)
   }
-  const prontoEmTxt = kalshiProntoEm ? fmtDataHora(kalshiProntoEm, locale).slice(0, 5) : null
   const volumeTotal = (poly.winner.markets ?? []).reduce((s, m) => s + (Number(m.volumeNum) || 0), 0)
 
   return (
@@ -245,9 +244,7 @@ export function FrMarketSection({
                     <td className="py-1.5 pr-3 text-dark">{l.nome}</td>
                     <td className="py-1.5 px-3 text-right tabular-nums font-medium">{fmtDecimal(l.pontos, locale, 2)}</td>
                     <td className="py-1.5 px-3 text-right tabular-nums text-gray-600">
-                      {kalshiPronto ? (ka !== undefined ? fmtDecimal(ka, locale, 2) : '–') : (
-                        <span className="text-[11px] text-gray-400">{prontoEmTxt ? t.kalshiEspera(prontoEmTxt) : t.kalshiSemData}</span>
-                      )}
+                      {kalshiPronto && ka !== undefined ? fmtDecimal(ka, locale, 2) : '–'}
                     </td>
                     {kalshiPronto && (
                       <td className="py-1.5 pl-3 text-right tabular-nums text-gray-600">{dist !== null ? fmtDecimal(dist, locale, 2) : '–'}</td>
@@ -267,7 +264,8 @@ export function FrMarketSection({
 
         <div className="mt-5 space-y-1.5 border-t border-light-border pt-3 text-[11px] leading-snug text-gray-500">
           <p>{t.nota}</p>
-          <p>{kalshiPronto ? t.notaDist : t.notaKalshi}</p>
+          {kalshiPronto && <p>{t.notaDist}</p>}
+          {kalshiPronto && <p>{t.notaKalshi}</p>}
           <p>{t.volume(fmtVolumeUsd(volumeTotal, locale))}</p>
           {poly.fetchedAt && <p>{t.lido(fmtDataHora(poly.fetchedAt, locale))}</p>}
           {/* 🔎 Verificação pelo leitor: o JSON que a própria tela leu, servido pelo
