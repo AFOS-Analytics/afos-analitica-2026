@@ -26,7 +26,7 @@ import matter from 'gray-matter'
 import { lerStatusDoArquivo } from '../frontmatter/status'
 import { str, num, arr, coerceDate } from '../frontmatter/coerce'
 
-export const PAISES_WEEKLY = ['us'] as const
+export const PAISES_WEEKLY = ['us', 'fr'] as const
 export type PaisWeekly = (typeof PAISES_WEEKLY)[number]
 
 export function isValidCountry(c: string): c is PaisWeekly {

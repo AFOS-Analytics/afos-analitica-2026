@@ -31,7 +31,7 @@ interface WeeklyMeta {
   firstEditionDate?: string
 }
 
-const T = {
+const T_US = {
   en: {
     eyebrow: 'AFOS Weekly',
     badge: 'Weekly · Thursdays',
@@ -76,10 +76,47 @@ const T = {
   },
 }
 
+/**
+ * 🇫🇷 França (08/Nov/2026): Weekly às SEGUNDAS, presidencial de 2027.
+ * Era um único `T` com "midterms" e "quintas" escritos, e a França sairia
+ * anunciada como peça das midterms no dia errado.
+ */
+const T_FR: typeof T_US = {
+  en: {
+    ...T_US.en,
+    badge: 'Weekly · Mondays',
+    subtitle: 'The crossing, explained for voters · Every Monday',
+    preDesc: 'Where the prediction markets, the polls and the press disagree about the 2027 French presidential election, and what each one actually measures. Written for voters, not for trading desks.',
+  },
+  'pt-BR': {
+    ...T_US['pt-BR'],
+    badge: 'Semanal · Segundas',
+    subtitle: 'O cruzamento, explicado para o eleitor · Toda segunda',
+    preDesc: 'Onde os mercados de previsão, as pesquisas e a imprensa discordam sobre a presidencial francesa de 2027, e o que cada um mede de fato. Escrito para o eleitor, não para mesa de operação.',
+  },
+  es: {
+    ...T_US.es,
+    badge: 'Semanal · Lunes',
+    subtitle: 'El cruce, explicado para el votante · Cada lunes',
+    preDesc: 'Dónde los mercados de predicción, las encuestas y la prensa discrepan sobre la presidencial francesa de 2027, y qué mide cada uno en realidad. Escrito para el votante, no para una mesa de operaciones.',
+  },
+}
+
+const TEXTOS_POR_PAIS: Record<string, typeof T_US> = { us: T_US, fr: T_FR }
+
+/** Cor por país, a mesma do cartão do Tradeoff: EUA verde-azulado, França violeta. */
+const COR_POR_PAIS: Record<string, { caixa: string; pilula: string }> = {
+  us: { caixa: 'border-teal-100 bg-teal-50 group-hover:bg-teal-100', pilula: 'bg-teal-200/60' },
+  fr: { caixa: 'border-violet-100 bg-violet-50 group-hover:bg-violet-100', pilula: 'bg-violet-200/60' },
+}
+
 export function AfosWeeklyHeroCard({ country = 'us', semContainer = false }: { country?: string; semContainer?: boolean }) {
   const { locale } = useTranslation()
   const k = (locale === 'pt-BR' || locale === 'es' ? locale : 'en') as keyof typeof T
-  const t = T[k]
+  // País sem texto próprio não ganha cartão: melhor nada do que o texto de outro país.
+  const T = TEXTOS_POR_PAIS[country]
+  const cor = COR_POR_PAIS[country]
+  const t = T?.[k]
   const [meta, setMeta] = useState<WeeklyMeta | null>(null)
 
   useEffect(() => {
@@ -91,7 +128,7 @@ export function AfosWeeklyHeroCard({ country = 'us', semContainer = false }: { c
     return () => ctrl.abort()
   }, [k, country])
 
-  if (!meta) return null
+  if (!meta || !t || !cor) return null
 
   const href = meta.hasEdition ? `/${locale}/weekly/${meta.country ?? country}/${meta.date}` : null
 
@@ -112,12 +149,12 @@ export function AfosWeeklyHeroCard({ country = 'us', semContainer = false }: { c
   ) : null
 
   const corpo = (
-    <div className="block rounded-xl border border-teal-100 bg-teal-50 p-4 transition-colors group-hover:bg-teal-100 md:p-5">
+    <div className={`block rounded-xl border p-4 transition-colors md:p-5 ${cor.caixa}`}>
       <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1.5">
         <span className="text-base font-extrabold uppercase tracking-[0.12em] text-primary md:text-lg">
           {t.eyebrow}
         </span>
-        <span className="whitespace-nowrap rounded bg-teal-200/60 px-2 py-0.5 text-xs font-semibold uppercase tracking-wider text-dark">
+        <span className={`whitespace-nowrap rounded px-2 py-0.5 text-xs font-semibold uppercase tracking-wider text-dark ${cor.pilula}`}>
           {t.badge}
         </span>
         {meta.status === 'draft' && (

@@ -33,7 +33,7 @@ import { PrismaNeon } from '@prisma/adapter-neon'
 import { sendWeeklyTeaser } from '../app/lib/email/resend'
 import { registrarBroadcast, type ResultadoEnvio } from './lib/broadcast-audit'
 
-const PAISES_VALIDOS = ['us']
+const PAISES_VALIDOS = ['us', 'fr']
 
 /** Todo país tem subpasta, inclusive o primeiro. Sem a assimetria do Tradeoff. */
 function dirDoPais(pais: string): string {

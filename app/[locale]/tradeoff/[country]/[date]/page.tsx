@@ -27,12 +27,14 @@ import { feedPath, type FeedLocale, type FeedCountry } from '../../../../../lib/
 const TAGS_POR_PAIS: Record<PaisTradeoff, string[]> = {
   br: ['Brazil 2026 election', 'prediction markets', 'electoral polls', 'political risk', 'weekly analysis'],
   us: ['US 2026 midterms', 'prediction markets', 'electoral polls', 'political risk', 'weekly analysis'],
+  fr: ['France 2027 presidential election', 'prediction markets', 'electoral polls', 'political risk', 'weekly analysis'],
 }
 
 /** 🔒 08/Nov/2026: era `pais === 'br' ? '' : ' US'`, e QUALQUER terceiro país sairia "US". */
 const SUFIXO_FEED_POR_PAIS: Record<PaisTradeoff, string> = {
   br: '',
   us: ' US',
+  fr: ' France',
 }
 
 interface PageProps {

@@ -192,7 +192,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       // ⚠️ COM O PAÍS, pelo mesmo motivo do hreflang acima. Até 10/Ago/2026
       // esta linha era fixa no feed do BRASIL, então a página dos EUA anunciava
       // aos leitores de RSS um feed que nunca traria as edições dela.
-      types: { 'application/rss+xml': [{ url: `${BASE}${feedPath('tradeoff', loc as FeedLocale, pais as FeedCountry)}`, title: `AFOS Tradeoff${pais === 'br' ? '' : ' US'}, RSS feed` }] },
+      types: { 'application/rss+xml': [{ url: `${BASE}${feedPath('tradeoff', loc as FeedLocale, pais as FeedCountry)}`, title: `AFOS Tradeoff${({ br: '', us: ' US', fr: ' France' } as Record<string, string>)[pais] ?? ''}, RSS feed` }] },
     },
     openGraph: {
       type: 'website',

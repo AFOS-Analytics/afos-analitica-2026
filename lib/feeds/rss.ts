@@ -41,7 +41,7 @@ const SITE = 'https://www.afos-analytics.com'
 export type FeedLocale = 'pt-BR' | 'en' | 'es'
 export type FeedKind = 'daily' | 'tradeoff'
 /** Países com edição de Tradeoff própria. O Daily só existe para o Brasil. */
-export type FeedCountry = 'br' | 'us'
+export type FeedCountry = 'br' | 'us' | 'fr'
 
 /**
  * Caminho do feed RSS. O Daily não tem país; o Tradeoff EXIGE país.
@@ -88,12 +88,18 @@ const TRADEOFF_DESC: Record<FeedCountry, Record<FeedLocale, string>> = {
     en: 'Weekly technical reading cross-referencing prediction markets, generic ballot polling, and news, no smoothed averages. AFOS Analytics, United States midterm elections, Nov 3, 2026.',
     es: 'Lectura técnica semanal que cruza mercados de predicción, encuestas de intención de voto y noticias, sin promedios suavizados. AFOS Analytics, elecciones de medio término de Estados Unidos, 03/Nov/2026.',
   },
+  fr: {
+    'pt-BR': 'Leitura técnica semanal cruzando dois mercados de previsão, pesquisas de intenção de voto conferidas com a ficha oficial e a imprensa francesa. AFOS Analytics, eleição presidencial da França, 18/Abr e 02/Mai/2027.',
+    en: 'Weekly technical reading cross-referencing two prediction markets, voting-intention polls checked against the official notice, and the French press. AFOS Analytics, French presidential election, Apr 18 and May 2, 2027.',
+    es: 'Lectura técnica semanal que cruza dos mercados de predicción, encuestas de intención de voto cotejadas con la ficha oficial y la prensa francesa. AFOS Analytics, elección presidencial de Francia, 18/Abr y 02/May/2027.',
+  },
 }
 
 /** Título do canal e categoria geográfica dos itens, por país. */
 const TRADEOFF_CANAL: Record<FeedCountry, { titulo: string; categoria: string }> = {
   br: { titulo: 'AFOS Tradeoff', categoria: 'Brazil 2026' },
   us: { titulo: 'AFOS Tradeoff US', categoria: 'US Midterms 2026' },
+  fr: { titulo: 'AFOS Tradeoff France', categoria: 'France Presidential 2027' },
 }
 
 function channel(opts: {

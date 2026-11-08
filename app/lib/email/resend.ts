@@ -288,6 +288,7 @@ export function sendRelatorioFinal(to: string, locale: 'pt-BR' | 'en' | 'es', un
 const PAIS_NO_ASSUNTO: Record<string, Record<'pt-BR' | 'en' | 'es', string>> = {
   br: { 'pt-BR': '', en: '', es: '' },
   us: { 'pt-BR': ' EUA', en: ' US', es: ' EE.UU.' },
+  fr: { 'pt-BR': ' França', en: ' France', es: ' Francia' },
 };
 
 export function sendTradeoffTeaser(to: string, data: {
@@ -308,7 +309,11 @@ export function sendTradeoffTeaser(to: string, data: {
   pais: string;
 }, unsubscribeToken?: string): Promise<SendResult> {
   const pais = data.pais;
-  const p = (PAIS_NO_ASSUNTO[pais] ?? PAIS_NO_ASSUNTO.br)[data.locale];
+  // 🔒 08/Nov/2026: era `?? PAIS_NO_ASSUNTO.br`, e um país fora do mapa iria
+  // com assunto do BRASIL para a lista inteira. País desconhecido LANÇA.
+  const rotulo = PAIS_NO_ASSUNTO[pais];
+  if (!rotulo) throw new Error(`sendTradeoffTeaser: país sem rótulo de assunto: "${pais}"`);
+  const p = rotulo[data.locale];
   // Sem travessão no assunto (regra anti-AI): usar dois-pontos.
   const localeLabels = {
     'pt-BR': { subject: `AFOS Tradeoff${p}: Edição №${data.issueNumber}`, cta: 'Ler o Tradeoff', why: 'Você está recebendo porque se cadastrou em', unsubscribe: 'Cancelar inscrição' },
@@ -391,8 +396,12 @@ export function sendWeeklyTeaser(to: string, data: {
 }, unsubscribeToken?: string): Promise<SendResult> {
   const rotuloPais: Record<string, Record<'pt-BR' | 'en' | 'es', string>> = {
     us: { 'pt-BR': ' EUA', en: ' US', es: ' EE.UU.' },
+    fr: { 'pt-BR': ' França', en: ' France', es: ' Francia' },
   };
-  const p = (rotuloPais[data.pais] ?? { 'pt-BR': '', en: '', es: '' })[data.locale];
+  // 🔒 08/Nov/2026: era um assunto SEM país para qualquer país fora do mapa.
+  const rotulo = rotuloPais[data.pais];
+  if (!rotulo) throw new Error(`Weekly: país sem rótulo de assunto: "${data.pais}"`);
+  const p = rotulo[data.locale];
   // Sem travessão no assunto (regra anti-AI): usar dois-pontos.
   const localeLabels = {
     'pt-BR': { subject: `AFOS Weekly${p}: Edição №${data.issueNumber}`, cta: 'Ler a edição', why: 'Você está recebendo porque se cadastrou em', unsubscribe: 'Cancelar inscrição' },

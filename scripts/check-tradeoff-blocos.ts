@@ -210,7 +210,7 @@ function conferir(pais: string, data: string): string[] {
 
 const posicionais = process.argv.slice(2).filter((a) => !a.startsWith('--'))
 const [dataArg, paisArg] = posicionais
-const paises = paisArg ? [paisArg] : ['br', 'us']
+const paises = paisArg ? [paisArg] : ['br', 'us', 'fr']
 let falhas = 0
 let conferidas = 0
 

@@ -50,6 +50,8 @@ const RAIZ = 'backup/neon'
  */
 const PAISES = {
   us: [/^which-party-will-win-the-(house|senate)-in-2026$/, /^will-the-2026-midterm-elections-happen-as-scheduled$/],
+  // 🇫🇷 08/Nov/2026: os 4 livros da presidencial francesa (lib/fr-market/mercados.ts).
+  fr: [/^next-french-presidential-election$/, /^next-french-presidential-election-who-will-advance-to-the-2nd-round$/, /^french-presidential-election-first-round-winner$/, /^2027-french-presidential-election-who-will-be-on-the-ballot$/],
   br: [/^brazil-presidential-election$/, /^any-brazil-stf-justice-removed-by-impeachment-before-2027$/, /^next-brazil-senate-election-most-seats-won$/],
 }
 

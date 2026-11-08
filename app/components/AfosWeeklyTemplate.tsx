@@ -173,10 +173,12 @@ function ThemeToggle({ theme, onChoose, labels }: { theme: Theme; onChoose: (t: 
  */
 const PAIS_EYEBROW: Record<string, string> = {
   us: 'AFOS Weekly · USA-2026 midterms Political Risk Weekly',
+  fr: 'AFOS Weekly · France-2027 presidential Political Risk Weekly',
 }
 
 const PAIS_ROTULO: Record<string, Record<string, string>> = {
   us: { 'pt-BR': 'Estados Unidos', en: 'United States', es: 'Estados Unidos' },
+  fr: { 'pt-BR': 'França', en: 'France', es: 'Francia' },
 }
 
 /**

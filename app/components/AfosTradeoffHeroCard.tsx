@@ -117,10 +117,14 @@ export function AfosTradeoffHeroCard({ country = 'br', semContainer = false }: {
    * da semana, que já estão à vista. É coerente com a régua de que as duas
    * eleições são independentes uma da outra.
    */
-  const eUS = country === 'us'
-  const c = eUS
-    ? { fundo: 'bg-teal-50', hover: 'hover:bg-teal-100', borda: 'border-teal-100', pilula: 'bg-teal-200/60', esqueleto: 'bg-teal-100', esqueletoFraco: 'bg-teal-100/70', fundoFraco: 'bg-teal-50/60' }
-    : { fundo: 'bg-orange-50', hover: 'hover:bg-orange-100', borda: 'border-orange-100', pilula: 'bg-orange-200/60', esqueleto: 'bg-orange-100', esqueletoFraco: 'bg-orange-100/70', fundoFraco: 'bg-orange-50/60' }
+  // 🎨 Cor por PAÍS: Brasil âmbar, EUA verde-azulado, França violeta (08/Nov/2026).
+  // Era `country === 'us' ? teal : âmbar`, e a França sairia com a cor do Brasil.
+  const CORES: Record<string, { fundo: string; hover: string; borda: string; pilula: string; esqueleto: string; esqueletoFraco: string; fundoFraco: string }> = {
+    br: { fundo: 'bg-orange-50', hover: 'hover:bg-orange-100', borda: 'border-orange-100', pilula: 'bg-orange-200/60', esqueleto: 'bg-orange-100', esqueletoFraco: 'bg-orange-100/70', fundoFraco: 'bg-orange-50/60' },
+    us: { fundo: 'bg-teal-50', hover: 'hover:bg-teal-100', borda: 'border-teal-100', pilula: 'bg-teal-200/60', esqueleto: 'bg-teal-100', esqueletoFraco: 'bg-teal-100/70', fundoFraco: 'bg-teal-50/60' },
+    fr: { fundo: 'bg-violet-50', hover: 'hover:bg-violet-100', borda: 'border-violet-100', pilula: 'bg-violet-200/60', esqueleto: 'bg-violet-100', esqueletoFraco: 'bg-violet-100/70', fundoFraco: 'bg-violet-50/60' },
+  }
+  const c = CORES[country] ?? CORES.br
   const [meta, setMeta] = useState<TradeoffMeta | null>(null)
 
   useEffect(() => {

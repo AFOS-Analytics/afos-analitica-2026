@@ -23,7 +23,7 @@ const TRADEOFF_DIR = join(process.cwd(), 'public', 'afos-tradeoff')
  * funcionando sem tocar em nada.
  */
 export const PAIS_PADRAO = 'br'
-export const PAISES_TRADEOFF = ['br', 'us'] as const
+export const PAISES_TRADEOFF = ['br', 'us', 'fr'] as const
 export type PaisTradeoff = (typeof PAISES_TRADEOFF)[number]
 
 export function isValidCountry(c: string): c is PaisTradeoff {

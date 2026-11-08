@@ -6,6 +6,18 @@ const SITE = 'https://www.afos-analytics.com'
 const ORG_LOGO = `${SITE}/brand/logo-icon-512.png`
 const OG_IMAGE = `${SITE}/brand/footer-preview.png`
 
+const PALAVRAS_POR_PAIS: Record<string, string[]> = {
+  br: ['Brazil 2026 election', 'Brazilian politics'],
+  us: ['US 2026 midterms', 'US Senate', 'US House'],
+  fr: ['France 2027 presidential election', 'French politics'],
+}
+
+function palavrasDoPais(pais: string): string[] {
+  const p = PALAVRAS_POR_PAIS[pais]
+  if (!p) throw new Error(`schema do Tradeoff: país sem palavras-chave: "${pais}"`)
+  return p
+}
+
 function parseUpdatedAt(updatedAt: string, dateIso: string): string {
   // Regra única em lib/frontmatter/updated-at.ts. Esta cópia local devolvia
   // `2026-16-08T...`, mês 16, para um updatedAt escrito em MM/DD.
@@ -90,9 +102,9 @@ export function buildArticleSchema(data: AfosTradeoffData, locale: string, pais:
     // anunciava ao crawler a eleição errada, no mesmo objeto em que a URL já
     // apontava para o Brasil. Espelha o TAGS_POR_PAIS da página da edição.
     keywords: [
-      ...(pais === 'us'
-        ? ['US 2026 midterms', 'US Senate', 'US House']
-        : ['Brazil 2026 election', 'Brazilian politics']),
+      // 🔒 08/Nov/2026: era `pais === 'us' ? EUA : Brasil`, e a França sairia
+      // anunciada como eleição brasileira. País fora do mapa LANÇA.
+      ...palavrasDoPais(pais),
       'prediction markets',
       'electoral polls',
       'political risk',

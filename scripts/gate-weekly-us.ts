@@ -33,6 +33,14 @@ import { loadWeekly } from '../lib/afos-weekly/loader'
 import { numerosComUnidade } from './lib/numeros-com-unidade.mjs'
 
 const DATA = process.argv[2] ?? '2026-09-17'
+// 🇫🇷 08/Nov/2026: o portão serve à Weekly da França também. O país vem por
+// `--pais=` em LISTA FECHADA; sem a flag segue os EUA (como o /weekly-usa chama).
+// País fora da lista LANÇA, e o país sai na 1ª linha, para quem lê saber o que
+// foi conferido (regra: script imprime o país antes de tudo).
+const PAIS_PEDIDO = process.argv.find((a) => a.startsWith('--pais='))?.split('=')[1] ?? 'us'
+if (!['us', 'fr'].includes(PAIS_PEDIDO)) throw new Error(`--pais=${PAIS_PEDIDO} desconhecido. Aceitos: us, fr.`)
+const PAIS = PAIS_PEDIDO as 'us' | 'fr'
+console.log(`🌍 Weekly · país = ${PAIS.toUpperCase()} · edição ${DATA}`)
 const TETO = 1100
 const corpo = (d: any) =>
   [
@@ -61,7 +69,7 @@ let falhouTeto = false
 const locs = ['en', 'pt-BR', 'es']
 const por: Record<string, string[]> = {}
 for (const loc of locs) {
-  const d: any = loadWeekly(DATA, loc, 'us')
+  const d: any = loadWeekly(DATA, loc, PAIS)
   if (!d) {
     console.log(`❌ ${loc}: loader devolveu null`)
     process.exit(1)
@@ -101,7 +109,7 @@ console.log(falhou ? '\n❌ GATE NUMÉRICO REPROVADO' : '\n✅ gate numérico: m
 // frontmatter estava bem formado e a página respondia 200.
 let semArte = false
 for (const loc of locs) {
-  const img = (loadWeekly(DATA, loc, 'us') as any)?.ogImage
+  const img = (loadWeekly(DATA, loc, PAIS) as any)?.ogImage
   if (!img) continue
   const caminho = `public${String(img).split('?')[0]}`
   if (existsSync(caminho)) continue
