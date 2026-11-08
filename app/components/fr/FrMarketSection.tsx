@@ -136,8 +136,8 @@ function ColunaLivro({ livro, href, titulo }: { livro: string; href: string | nu
   if (!href) return <span className="font-bold text-dark">{livro}</span>
   return (
     <a href={href} target="_blank" rel="nofollow noopener noreferrer" title={titulo} aria-label={titulo}
-      className="group inline-flex items-center gap-0.5 font-bold text-dark hover:text-primary hover:underline underline-offset-2">
-      {livro}<span aria-hidden="true" className="text-[10px] font-normal text-gray-400 group-hover:text-primary">↗</span>
+      className="group inline-flex items-center gap-0.5 font-bold text-primary hover:underline underline-offset-2">
+      {livro}<span aria-hidden="true" className="text-[10px] font-normal text-primary">↗</span>
     </a>
   )
 }
