@@ -27,7 +27,25 @@ const CTEXTS: Record<string, { title: string; gov: string; eco: string; edu: str
   },
 }
 
-function fmtUsdCompact(v: number, tag: string) { return new Intl.NumberFormat(tag, { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 }).format(v) }
+/**
+ * 🔴 ESPANHOL COM REGRA PRÓPRIA (08/Nov/2026). A notação compacta de moeda do
+ * `Intl` em es-ES muda entre versões do ICU: o Node da Vercel escreve
+ * "28,75 B US$" e o Chrome 147 (e o Node 25) "28,75 BUS$", sem espaço. O
+ * servidor e o navegador desenhavam textos diferentes, e TODA página de painel
+ * em /es/ dava o erro de hidratação React #418 (EUA, França e Brasil). Escrito à
+ * mão, o texto é o mesmo nos dois lados. "B" é billón = 10¹² (régua de tradução
+ * da casa); "mil M" é o milhar de milhões do próprio CLDR espanhol.
+ * PT-BR e EN saem iguais nos dois ICU (medido) e seguem no Intl.
+ */
+function fmtUsdCompactEs(v: number): string {
+  const num = (x: number) => new Intl.NumberFormat('es-ES', { maximumFractionDigits: 2 }).format(x)
+  const a = Math.abs(v)
+  if (a >= 1e12) return `${num(v / 1e12)} B US$`
+  if (a >= 1e9) return `${num(v / 1e9)} mil M US$`
+  if (a >= 1e6) return `${num(v / 1e6)} M US$`
+  return `${num(v)} US$`
+}
+function fmtUsdCompact(v: number, tag: string) { return tag === 'es-ES' ? fmtUsdCompactEs(v) : new Intl.NumberFormat(tag, { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 }).format(v) }
 function fmtUsd(v: number, tag: string) { return new Intl.NumberFormat(tag, { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(v) }
 function fmtPct(v: number, tag: string) { return new Intl.NumberFormat(tag, { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(v) + '%' }
 function fmtCountCompact(v: number, tag: string) { return new Intl.NumberFormat(tag, { notation: 'compact', maximumFractionDigits: 1 }).format(v) }
