@@ -1,0 +1,210 @@
+{
+  "geradoEm": "2026-11-08",
+  "fontes": {
+    "resultado2022": {
+      "rotulo": "Ministère de l'Intérieur, data.gouv.fr",
+      "url": "https://www.data.gouv.fr/datasets/election-presidentielle-des-10-et-24-avril-2022-resultats-definitifs-du-1er-tour"
+    },
+    "pesquisas2022": {
+      "rotulo": "nsppolls (GitHub)",
+      "url": "https://github.com/nsppolls/nsppolls"
+    },
+    "commission": {
+      "rotulo": "Commission des sondages, communiqués",
+      "url": "https://www.commission-des-sondages.fr/hist/communiques/index.htm"
+    }
+  },
+  "resultado2022": {
+    "Nathalie Arthaud": 0.56,
+    "Fabien Roussel": 2.28,
+    "Emmanuel Macron": 27.85,
+    "Jean Lassalle": 3.13,
+    "Marine Le Pen": 23.15,
+    "Eric Zemmour": 7.07,
+    "Jean-Luc Mélenchon": 21.95,
+    "Anne Hidalgo": 1.75,
+    "Yannick Jadot": 4.63,
+    "Valérie Pécresse": 4.78,
+    "Philippe Poutou": 0.77,
+    "Nicolas Dupont-Aignan": 2.06
+  },
+  "institutos": {
+    "ifop": {
+      "nome": "Ifop",
+      "em2022": [
+        {
+          "nome": "Ifop",
+          "campoFim": "2022-04-08",
+          "amostra": 2833,
+          "rolling": true,
+          "erroMedio": 1.34,
+          "erroLePen": 0.85,
+          "erroMelenchon": -4.95,
+          "erroMacron": -1.85
+        }
+      ]
+    },
+    "harris interactive": {
+      "nome": "Toluna Harris Interactive",
+      "em2022": [
+        {
+          "nome": "Harris Interactive",
+          "campoFim": "2022-04-08",
+          "amostra": 1889,
+          "rolling": false,
+          "erroMedio": 1.03,
+          "erroLePen": 0.85,
+          "erroMelenchon": -3.95,
+          "erroMacron": -0.85
+        }
+      ],
+      "nota2022": "harris"
+    },
+    "elabe": {
+      "nome": "Elabe",
+      "em2022": [
+        {
+          "nome": "Elabe",
+          "campoFim": "2022-04-08",
+          "amostra": 1318,
+          "rolling": false,
+          "erroMedio": 1.27,
+          "erroLePen": 1.85,
+          "erroMelenchon": -4.45,
+          "erroMacron": -1.85
+        }
+      ]
+    },
+    "ipsos bva": {
+      "nome": "Ipsos BVA",
+      "em2022": [
+        {
+          "nome": "Ipsos",
+          "campoFim": "2022-04-08",
+          "amostra": 7547,
+          "rolling": false,
+          "erroMedio": 1.27,
+          "erroLePen": -0.65,
+          "erroMelenchon": -4.45,
+          "erroMacron": -1.35
+        },
+        {
+          "nome": "BVA",
+          "campoFim": "2022-04-07",
+          "amostra": 1188,
+          "rolling": false,
+          "erroMedio": 1.22,
+          "erroLePen": -0.15,
+          "erroMelenchon": -4.45,
+          "erroMacron": -1.85
+        }
+      ],
+      "nota2022": "ipsosbva"
+    },
+    "opinionway": {
+      "nome": "OpinionWay",
+      "em2022": [
+        {
+          "nome": "Opinion Way",
+          "campoFim": "2022-04-08",
+          "amostra": 2041,
+          "rolling": true,
+          "erroMedio": 1.36,
+          "erroLePen": -1.15,
+          "erroMelenchon": -4.95,
+          "erroMacron": -1.85
+        }
+      ]
+    },
+    "cluster17": {
+      "nome": "Cluster17",
+      "em2022": [
+        {
+          "nome": "Cluster17",
+          "campoFim": "2022-04-08",
+          "amostra": 3218,
+          "rolling": false,
+          "erroMedio": 1.46,
+          "erroLePen": -2.15,
+          "erroMelenchon": -3.95,
+          "erroMacron": -1.85
+        }
+      ]
+    },
+    "yougov": {
+      "nome": "YouGov",
+      "em2022": [
+        {
+          "nome": "YouGov",
+          "campoFim": "2022-03-31",
+          "amostra": 1883,
+          "rolling": false,
+          "erroMedio": 1.52,
+          "erroLePen": 1.85,
+          "erroMelenchon": -6.95,
+          "erroMacron": -0.85
+        }
+      ],
+      "nota2022": "yougov"
+    },
+    "odoxa": {
+      "nome": "Odoxa",
+      "em2022": [
+        {
+          "nome": "Odoxa",
+          "campoFim": "2022-04-06",
+          "amostra": 1897,
+          "rolling": false,
+          "erroMedio": 1.03,
+          "erroLePen": 0.85,
+          "erroMelenchon": -5.95,
+          "erroMacron": 0.15
+        }
+      ]
+    },
+    "verian": {
+      "nome": "Verian",
+      "em2022": [
+        {
+          "nome": "Kantar Public",
+          "campoFim": "2022-04-05",
+          "amostra": 1394,
+          "rolling": false,
+          "erroMedio": 1.53,
+          "erroLePen": -0.15,
+          "erroMelenchon": -5.95,
+          "erroMacron": -2.85
+        }
+      ],
+      "nota2022": "kantar"
+    }
+  },
+  "acoes": {
+    "cluster17": [
+      {
+        "data": "2022-02-04",
+        "tipo": "miseAuPoint",
+        "eleicao": "presidentielle2022",
+        "motivo": "representatividade",
+        "superadaEm": "2026-09-08",
+        "url": "https://www.commission-des-sondages.fr/hist/communiques/mise-au-point-sondages-elections-presidentielles-4-fevrier-2022.htm"
+      },
+      {
+        "data": "2024-06-27",
+        "tipo": "avertissement",
+        "eleicao": "legislatives2024",
+        "motivo": "apresentacao",
+        "url": "https://www.commission-des-sondages.fr/hist/communiques/avertissement-sondages-elections-legislatives-27-juin-2024.htm"
+      }
+    ],
+    "yougov": [
+      {
+        "data": "2024-04-02",
+        "tipo": "miseAuPoint",
+        "eleicao": "europeennes2024",
+        "motivo": "metodoDeclarado",
+        "url": "https://www.commission-des-sondages.fr/hist/communiques/mise-au-point-sondages-elections-europeennes-2-avril-2024.htm"
+      }
+    ]
+  }
+}

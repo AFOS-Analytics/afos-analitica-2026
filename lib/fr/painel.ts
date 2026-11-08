@@ -188,3 +188,55 @@ export function duelosSegundoTurno(pesquisas: readonly FrPesquisa[], agora: Date
     .map((p) => ({ instituto: p.instituto, fim: p.campo.fim, ficha: p.ficha, a: p.intencoes[0], b: p.intencoes[1] }))
     .sort((x, y) => y.fim.localeCompare(x.fim) || x.instituto.localeCompare(y.instituto))
 }
+
+// ─── Institutos: o que cada um mediu NESTE ciclo ─────────────────────────────
+
+export interface EstatInstituto {
+  /** chave = nome em minúsculas, como na base (ex.: "ipsos bva") */
+  chave: string
+  nome: string
+  /** rodadas (instituto + campo) publicáveis no ciclo, 1º e 2º turno */
+  rodadas: number
+  primeiroCampo: string
+  ultimoCampo: string
+  /** mediana da amostra das rodadas */
+  amostraMediana: number | null
+  clientes: string[]
+}
+
+/**
+ * Por instituto, sobre as pesquisas PUBLICÁVEIS (ficha confere): quantas rodadas
+ * fez no ciclo, de quando a quando, amostra mediana e para quem. Ordem: mais
+ * rodadas primeiro (atividade), nunca por erro: ordenar por erro seria um
+ * ranking de qualidade, e isso o AFOS não faz.
+ */
+export function estatisticasInstitutos(pesquisas: readonly FrPesquisa[]): EstatInstituto[] {
+  const porInst = new Map<string, Map<string, FrPesquisa>>()
+  for (const p of pesquisas) {
+    if (!p.publicavel) continue
+    const k = p.instituto.trim().toLowerCase()
+    const r = porInst.get(k) ?? new Map<string, FrPesquisa>()
+    r.set(rodadaDe(p.pollId), p)
+    porInst.set(k, r)
+  }
+  const out: EstatInstituto[] = []
+  for (const [chave, rodadas] of porInst) {
+    const ps = [...rodadas.values()]
+    const amostras = ps.map((p) => p.amostra).filter((n): n is number => typeof n === 'number' && n > 0).sort((a, b) => a - b)
+    const meio = Math.floor(amostras.length / 2)
+    const mediana = amostras.length === 0 ? null : amostras.length % 2 ? amostras[meio] : Math.round((amostras[meio - 1] + amostras[meio]) / 2)
+    // Mesmo cliente com grafia diferente na base (maiúscula e apóstrofo reto ou curvo) conta uma vez.
+    const clientes = new Map<string, string>()
+    for (const p of ps) for (const c of p.cliente.split(',')) { const n = c.trim(); const k = n.toLowerCase().replace(/[’‘ʼ]/g, "'"); if (n && !clientes.has(k)) clientes.set(k, n) }
+    out.push({
+      chave,
+      nome: ps[0].instituto,
+      rodadas: rodadas.size,
+      primeiroCampo: ps.map((p) => p.campo.fim).sort()[0],
+      ultimoCampo: ps.map((p) => p.campo.fim).sort().at(-1) as string,
+      amostraMediana: mediana,
+      clientes: [...clientes.values()].slice(0, 4),
+    })
+  }
+  return out.sort((a, b) => b.rodadas - a.rodadas)
+}

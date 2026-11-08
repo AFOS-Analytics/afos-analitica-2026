@@ -20,6 +20,8 @@ import { FrPollsSection, type FrPollsView } from '../../../components/fr/FrPolls
 import { FrPressSection } from '../../../components/fr/FrPressSection'
 import { FrSilencioBanner } from '../../../components/fr/FrSilencioBanner'
 import { FrCandidatosSection, type FrCandidatos } from '../../../components/fr/FrCandidatosSection'
+import { FrInstitutosSection, type FrInstitutos } from '../../../components/fr/FrInstitutosSection'
+import type { EstatInstituto } from '../../../../lib/fr/painel'
 import { montarMedidas, type EstatCandidato } from '../../../../lib/fr/candidatos'
 import { emSilencioEleitoral } from '../../../../lib/fr/silencio-eleitoral'
 import type { FrPressData } from '../../../../lib/fr/painel'
@@ -48,6 +50,10 @@ export interface FrDashboardProps {
   candidatos: FrCandidatos | null
   /** contagens de listas e duelos por candidato, feitas no servidor */
   estat: EstatCandidato[]
+  /** erro de 2022 e ações da Commission (public/fr/institutos.json) */
+  institutos: FrInstitutos | null
+  /** o que cada instituto fez neste ciclo, calculado no servidor */
+  estatInst: EstatInstituto[]
 }
 
 function Conteudo(props: FrDashboardProps) {
@@ -244,6 +250,9 @@ function Conteudo(props: FrDashboardProps) {
             </div>
             <div id="sec-pesquisas" className="scroll-mt-20">
               <SectionErrorBoundary locale={locale} name="Pesquisas"><FrPollsSection v={props.polls} /></SectionErrorBoundary>
+            </div>
+            <div className="scroll-mt-20">
+              <SectionErrorBoundary locale={locale} name="Institutos"><FrInstitutosSection dados={props.institutos} estat={props.estatInst} /></SectionErrorBoundary>
             </div>
           </>
         )}

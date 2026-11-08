@@ -13,7 +13,10 @@ import {
   listaPrincipalPorInstituto,
   mediaPorCandidato,
   rodadaDe,
+  estatisticasInstitutos,
+  type EstatInstituto,
 } from '../../../../lib/fr/painel'
+import type { FrInstitutos } from '../../../components/fr/FrInstitutosSection'
 import { emSilencioEleitoral } from '../../../../lib/fr/silencio-eleitoral'
 import { estatisticasPorCandidato, type EstatCandidato } from '../../../../lib/fr/candidatos'
 import type { FrCandidatos } from '../../../components/fr/FrCandidatosSection'
@@ -70,6 +73,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 // 30 min: o mesmo ritmo das coletas de pesquisa e de imprensa basta.
 export const revalidate = 1800
 
+function lerInstitutos(): FrInstitutos | null {
+  try {
+    const p = join(process.cwd(), 'public', 'fr', 'institutos.json')
+    return existsSync(p) ? (JSON.parse(readFileSync(p, 'utf-8')) as FrInstitutos) : null
+  } catch (e) {
+    console.error('[fr] institutos ilegível:', e)
+    return null
+  }
+}
+
 function lerCandidatos(locale: string): FrCandidatos | null {
   const loc = locale === 'en' || locale === 'es' ? locale : 'pt-BR'
   for (const l of [loc, 'pt-BR']) {
@@ -109,6 +122,7 @@ export default async function FrDashboardPage({ params }: { params: Promise<{ lo
   }
   let polls = vazio
   let estat: EstatCandidato[] = []
+  let estatInst: EstatInstituto[] = []
   // 🔇 Em silêncio eleitoral os números de pesquisa nem saem do servidor.
   if (pesq.estado === 'ok' && !silencio) {
     const d = pesq.data
@@ -134,6 +148,7 @@ export default async function FrDashboardPage({ params }: { params: Promise<{ lo
       fetchedAt: d.fetchedAt,
     }
     estat = estatisticasPorCandidato(d.pesquisas, agora, DIAS_PRINCIPAL)
+    estatInst = estatisticasInstitutos(d.pesquisas)
   }
 
   return (
@@ -145,6 +160,8 @@ export default async function FrDashboardPage({ params }: { params: Promise<{ lo
       kalshiProntoEm={prontidao.prontoEm ? prontidao.prontoEm.toISOString() : null}
       candidatos={lerCandidatos(locale)}
       estat={estat}
+      institutos={lerInstitutos()}
+      estatInst={estatInst}
       context={((franceCase as { context?: unknown }).context as CountryContext | undefined) ?? null}
     />
   )
