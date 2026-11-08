@@ -6,6 +6,7 @@ import { zoom as d3zoom, zoomIdentity } from 'd3-zoom'
 import { forceSimulation, forceLink, forceManyBody, forceCenter, forceCollide, forceX, forceY } from 'd3-force'
 import { drag as d3drag } from 'd3-drag'
 import type { CountryDivergence } from '../../lib/country-data'
+import { fmtUsdCompacto } from '../../lib/i18n/numero'
 import { ELECTION_WINNER } from '../../lib/country-data'
 
 // Grafo "estilo Obsidian" do cruzamento AFOS para um país: a eleição no centro, camadas (mercados,
@@ -242,7 +243,8 @@ function buildGraph(d: CountryDivergence, electionLabel: string, lbl: Lbl, tag: 
     for (const t of ['g_gov', 'g_eco', 'g_edu']) links.push({ source: 'L_ctx', target: t, kind: 'tree' })
 
     const usd0 = new Intl.NumberFormat(tag, { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })
-    const usdC = new Intl.NumberFormat(tag, { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 })
+    // Regra única em lib/i18n/numero.ts (o espanhol tem formatação própria).
+    const usdC = { format: (v: number) => fmtUsdCompacto(v, tag) }
     const cnt = new Intl.NumberFormat(tag, { notation: 'compact', maximumFractionDigits: 1 })
     const pct1 = new Intl.NumberFormat(tag, { minimumFractionDigits: 1, maximumFractionDigits: 1 })
 

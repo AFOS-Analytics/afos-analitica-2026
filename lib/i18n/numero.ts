@@ -63,3 +63,31 @@ export function fmtVolumeUsd(usd: number | null | undefined, locale: string | un
   if (usd >= 1_000) return `$${fmtDecimal(usd / 1_000, locale, 0)}K`
   return `$${Math.round(usd)}`
 }
+
+/**
+ * Dólar em notação compacta (PIB: "US$ 3,16 tri", "$3.16T", "3,16 B US$").
+ *
+ * 🔴 O ESPANHOL TEM REGRA PRÓPRIA (08/Nov/2026). A notação compacta de moeda do
+ * `Intl` em es-ES muda entre versões do ICU: o Node da Vercel escreve
+ * "28,75 B US$" e o Chrome 147 (e o Node 25) "28,75 BUS$", sem espaço. No
+ * contexto estrutural, servidor e navegador desenhavam textos diferentes e TODO
+ * painel em /es/ dava o erro de hidratação React #418. Escrito à mão, o texto é
+ * o mesmo nos dois lados. "B" é billón = 10¹² (régua de tradução da casa); "mil
+ * M" é o milhar de milhões do próprio CLDR espanhol. PT-BR e EN saem iguais nos
+ * dois ICU (medido) e seguem no Intl.
+ *
+ * Usado pelo StructuralContext e pelo CountryGraph: duas cópias da mesma regra
+ * divergem, e a primeira correção deixou o grafo com "BUS$" ao lado do quadro
+ * já certo.
+ */
+export function fmtUsdCompacto(v: number, tag: string): string {
+  if (tag !== 'es-ES') {
+    return new Intl.NumberFormat(tag, { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 2 }).format(v)
+  }
+  const n = (x: number) => new Intl.NumberFormat('es-ES', { maximumFractionDigits: 2 }).format(x)
+  const a = Math.abs(v)
+  if (a >= 1e12) return `${n(v / 1e12)}\u00a0B\u00a0US$`
+  if (a >= 1e9) return `${n(v / 1e9)}\u00a0mil\u00a0M\u00a0US$`
+  if (a >= 1e6) return `${n(v / 1e6)}\u00a0M\u00a0US$`
+  return `${n(v)}\u00a0US$`
+}
