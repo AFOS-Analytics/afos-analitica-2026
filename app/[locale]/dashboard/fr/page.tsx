@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
   }
   return {
-    ...buildMetadata({ ...SEO[loc], path: 'dashboard/fr', image: '/brand/og-fr-panel-1200x627.png' }, loc),
+    ...buildMetadata({ ...SEO[loc], path: 'dashboard/fr', image: `/brand/og-fr-panel-${loc === 'pt-BR' ? 'pt' : loc}-1200x627.png` }, loc),
     // 🚧 Fora dos buscadores até o André publicar (ver o comentário do topo).
     robots: { index: false, follow: false },
   }

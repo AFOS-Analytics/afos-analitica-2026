@@ -56,7 +56,7 @@ Quando a seção de perfis existir, os textos dela também moram em JSON nos 3 i
 node scripts/build-og-card-fr-panel.mjs
 ```
 
-Lê preço e pesquisas na hora e carimba dia e hora. **Falha se a leitura de mercado vier degradada.** Conferir a imagem `public/brand/og-fr-panel-1200x627.png` antes de publicar.
+Lê preço e pesquisas na hora e carimba dia e hora. **Falha se a leitura de mercado vier degradada.** Gera os 3 cartões da MESMA leitura (`public/brand/og-fr-panel-{en,pt,es}-1200x627.png`), um por idioma, cada um ligado à sua versão da página. Conferir as três imagens antes de publicar.
 
 ## ETAPA 6: Conferir, publicar, conferir de novo
 

@@ -19,7 +19,7 @@
  * lado a lado, sem subtrair um do outro (grandezas diferentes).
  *
  * Uso: node scripts/build-og-card-fr-panel.mjs [pasta-destino]   (padrão public/brand)
- * Gera og-fr-panel-1200x627.png. Regerar antes de publicar a tela e a cada
+ * Gera og-fr-panel-{en,pt,es}-1200x627.png, um por idioma. Regerar antes de publicar a tela e a cada
  * vez que o cartão for anexado a um post.
  */
 import { chromium } from 'playwright'
@@ -69,10 +69,28 @@ async function lerPesquisas(agora) {
   return { listas: listas.length, primeira }
 }
 
-const MESES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-function carimbo(iso) {
+/**
+ * 🌐 TRÊS IDIOMAS (08/Nov/2026), da MESMA leitura: os números são lidos uma
+ * vez e entram nos três cartões, então PT, EN e ES nunca discordam entre si.
+ * Decimal: ponto em EN, vírgula em PT e ES (a régua do painel, lib/i18n/numero.ts).
+ */
+const MESES = {
+  en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+  pt: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+  es: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
+}
+function carimbo(iso, l) {
   const d = new Date(iso)
-  return `${MESES[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()}, ${String(d.getUTCHours()).padStart(2, '0')}:${String(d.getUTCMinutes()).padStart(2, '0')} UTC`
+  const hm = `${String(d.getUTCHours()).padStart(2, '0')}:${String(d.getUTCMinutes()).padStart(2, '0')} UTC`
+  const m = MESES[l][d.getUTCMonth()]
+  return l === 'en' ? `${m} ${d.getUTCDate()}, ${d.getUTCFullYear()}, ${hm}` : `${d.getUTCDate()} de ${m} de ${d.getUTCFullYear()}, ${hm}`
+}
+const fmt = (v, l) => (l === 'en' ? v.toFixed(2) : v.toFixed(2).replace('.', ','))
+
+const T = {
+  en: { prod: 'FRANCE 2027 PRESIDENTIAL', pill: 'FRANCE PANEL', sub: 'what the market pays on<br>Marine Le Pen winning<br>the presidency', l: 'that she will be on<br>the ballot at all', s: 'Cour de cassation ruling due by early April 2027', tese: (p, n) => `The polls put her first in ${p} of ${n}<br>first-round lists of the past ${DIAS} days.`, meta: (c) => `Polymarket, reading of ${c} &middot; polls checked against official notices`, trio: 'Prediction markets &middot; Polls &middot; Press' },
+  pt: { prod: 'FRANÇA 2027 · PRESIDENCIAL', pill: 'PAINEL FRANÇA', sub: 'o que o mercado paga<br>pela vitória de<br>Marine Le Pen', l: 'por ela estar<br>na cédula', s: 'Cour de cassation decide até o início de abril de 2027', tese: (p, n) => `As pesquisas a põem em 1º em ${p} de ${n}<br>listas de 1º turno dos últimos ${DIAS} dias.`, meta: (c) => `Polymarket, leitura de ${c} &middot; pesquisas conferidas na ficha oficial`, trio: 'Mercados de previsão &middot; Pesquisas &middot; Imprensa' },
+  es: { prod: 'FRANCIA 2027 · PRESIDENCIAL', pill: 'PANEL FRANCIA', sub: 'lo que paga el mercado<br>por la victoria de<br>Marine Le Pen', l: 'por que esté<br>en la papeleta', s: 'La Cour de cassation decide antes de inicios de abril de 2027', tese: (p, n) => `Las encuestas la ubican 1ª en ${p} de ${n}<br>listas de 1ª vuelta de los últimos ${DIAS} días.`, meta: (c) => `Polymarket, lectura del ${c} &middot; encuestas cotejadas con la ficha oficial`, trio: 'Mercados de predicción &middot; Encuestas &middot; Prensa' },
 }
 
 const CSS = `
@@ -106,27 +124,27 @@ body { width: ${W}px; height: ${H}px; }
 .trio { font-size: 23px; color: rgba(255,255,255,.62); }
 `
 
-function html({ vence, cedula, lidoEm, listas, primeira }) {
-  const f2 = (v) => v.toFixed(2)
-  return `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${CSS}</style></head><body><div class="og">
-  <div class="head"><div class="mark">AFOS ANALYTICS</div><div class="pais">${bandeira(60)}<div class="prod">FRANCE 2027 PRESIDENTIAL</div></div></div>
+function html({ vence, cedula, lidoEm, listas, primeira }, l) {
+  const t = T[l]
+  return `<!DOCTYPE html><html lang="${l}"><head><meta charset="utf-8"><style>${CSS}</style></head><body><div class="og">
+  <div class="head"><div class="mark">AFOS ANALYTICS</div><div class="pais">${bandeira(60)}<div class="prod">${t.prod}</div></div></div>
   <div class="body">
-    <div class="pill">FRANCE PANEL</div>
+    <div class="pill">${t.pill}</div>
     <div class="split">
       <div class="left">
-        <div class="big">${f2(vence)}%</div>
-        <div class="sub">what the market pays on<br>Marine Le Pen winning<br>the presidency</div>
+        <div class="big">${fmt(vence, l)}%</div>
+        <div class="sub">${t.sub}</div>
       </div>
       <div class="card">
-        <div class="n">${f2(cedula)}%</div>
-        <div class="l">that she will be on<br>the ballot at all</div>
-        <div class="s">Cour de cassation ruling due by early April 2027</div>
+        <div class="n">${fmt(cedula, l)}%</div>
+        <div class="l">${t.l}</div>
+        <div class="s">${t.s}</div>
       </div>
     </div>
-    <div class="thesis">The polls put her first in ${primeira} of ${listas}<br>first-round lists of the past ${DIAS} days.</div>
-    <div class="meta">Polymarket, reading of ${carimbo(lidoEm)} &middot; polls checked against official notices</div>
+    <div class="thesis">${t.tese(primeira, listas)}</div>
+    <div class="meta">${t.meta(carimbo(lidoEm, l))}</div>
   </div>
-  <div class="foot"><div class="url">afos-analytics.com</div><div class="trio">Prediction markets &middot; Polls &middot; Press</div></div>
+  <div class="foot"><div class="url">afos-analytics.com</div><div class="trio">${t.trio}</div></div>
 </div></body></html>`
 }
 
@@ -135,9 +153,11 @@ const [mercado, pesq] = await Promise.all([lerMercado(), lerPesquisas(agora)])
 console.log(`🇫🇷 cartão do painel FR · vence ${mercado.vence.toFixed(2)} · cédula ${mercado.cedula.toFixed(2)} · ${pesq.primeira}/${pesq.listas} listas · lido ${mercado.lidoEm}`)
 const browser = await chromium.launch()
 const page = await (await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 1 })).newPage()
-await page.setContent(html({ ...mercado, ...pesq }), { waitUntil: 'load' })
-const buf = await page.locator('.og').screenshot({ type: 'png' })
 const DEST = process.argv[2] || 'public/brand'
-writeFileSync(`${DEST}/og-fr-panel-1200x627.png`, buf)
-console.log(`  ${DEST}/og-fr-panel-1200x627.png  ${(buf.length / 1024).toFixed(0)} KB`)
+for (const l of ['en', 'pt', 'es']) {
+  await page.setContent(html({ ...mercado, ...pesq }, l), { waitUntil: 'load' })
+  const buf = await page.locator('.og').screenshot({ type: 'png' })
+  writeFileSync(`${DEST}/og-fr-panel-${l}-1200x627.png`, buf)
+  console.log(`  ${DEST}/og-fr-panel-${l}-1200x627.png  ${(buf.length / 1024).toFixed(0)} KB`)
+}
 await browser.close()
