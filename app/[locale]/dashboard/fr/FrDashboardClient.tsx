@@ -156,7 +156,9 @@ function Conteudo(props: FrDashboardProps) {
       iso3: 'FR27',
       hf: '',
       election: { first_round: '2027-04-18', runoff: '2027-05-02', matchup: L('Presidencial', 'Presidential', 'Presidencial'), status: 'active' },
-      polls_count: props.polls.total,
+      // Rodadas que entram na média (30 dias), não as listas do ciclo inteiro:
+      // o nó dizia "369 pesquisas" contando listas desde 2024.
+      polls_count: props.polls.rodadasDaMedia,
       market_candidates: rows.length,
       latest_poll: { pollster: '', date: '' },
       headline: {},
@@ -221,7 +223,7 @@ function Conteudo(props: FrDashboardProps) {
             <section>
               <SectionTitle>{tGrafo.titulo}</SectionTitle>
               <p className="mb-3 text-xs text-gray-500">{tGrafo.nota}</p>
-              <CountryGraph data={divergencia} electionLabel={tGrafo.eleicao} locale={locale} navGroups={navGroups} onNav={onNav} dataLinks={dataLinks} divergenciaMuda />
+              <CountryGraph data={divergencia} electionLabel={tGrafo.eleicao} locale={locale} navGroups={navGroups} onNav={onNav} dataLinks={dataLinks} divergenciaMuda rotuloMercadoMudo={L('vitória', 'win', 'victoria')} />
             </section>
           </SectionErrorBoundary>
         )}

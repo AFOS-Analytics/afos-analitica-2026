@@ -293,7 +293,7 @@ function buildGraph(d: CountryDivergence, electionLabel: string, lbl: Lbl, tag: 
  * única sem número, ela chama atenção justamente para a explicação. Foi assim
  * que o André aprovou no mockup de 27/Jul.
  */
-export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = false, navGroups = [], onNav, dataLinks = {}, dim = false, divergenciaMuda = false }: { data: CountryDivergence; electionLabel: string; locale?: string; isBlue?: boolean; navGroups?: NavGroup[]; onNav?: (action: string) => void; dataLinks?: DataLinks; dim?: boolean; divergenciaMuda?: boolean }) {
+export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = false, navGroups = [], onNav, dataLinks = {}, dim = false, divergenciaMuda = false, rotuloMercadoMudo }: { data: CountryDivergence; electionLabel: string; locale?: string; isBlue?: boolean; navGroups?: NavGroup[]; onNav?: (action: string) => void; dataLinks?: DataLinks; dim?: boolean; divergenciaMuda?: boolean; /** O que o MERCADO mede, no rótulo do candidato com `divergenciaMuda`. Padrão: "controle" (EUA). A França passa "vitória" (08/Nov/2026). */ rotuloMercadoMudo?: string }) {
   const ref = useRef<SVGSVGElement | null>(null)
   const navCount = navGroups.reduce((a, g) => a + g.items.length, 0)
   // "candDense" = grafo de PAÍS com muitos candidatos (5+) e poucos nós de navegação:
@@ -308,7 +308,8 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
 
   useEffect(() => {
     if (!ref.current) return
-    const lbl = LBL[locale] || LBL['en']
+    const base = LBL[locale] || LBL['en']
+    const lbl = rotuloMercadoMudo ? { ...base, mktMudo: (v: string) => `${rotuloMercadoMudo} ${v}` } : base
     const tag = TAG[locale] || 'en-US'
     const dec = (v: number | string) => locale === 'en' ? String(v) : String(v).replace('.', ',')
     const { nodes, links } = buildGraph(data, electionLabel, lbl, tag, dec, navGroups, dataLinks, divergenciaMuda)
@@ -495,7 +496,7 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
     nodeSel.on('mouseover', (_e, n) => highlight(n.id, true)).on('mouseout', () => highlight('', false))
 
     return () => { sim.stop() }
-  }, [data, electionLabel, locale, isBlue, navGroups, onNav, dataLinks, divergenciaMuda])
+  }, [data, electionLabel, locale, isBlue, navGroups, onNav, dataLinks, divergenciaMuda, rotuloMercadoMudo])
 
   const lbl = LBL[locale] || LBL['en']
   return (

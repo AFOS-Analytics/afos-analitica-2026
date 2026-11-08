@@ -114,6 +114,8 @@ export interface FrPollsView {
   principais: ListaPrincipal[]
   medias: MediaCandidato[]
   diasDaMedia: number
+  /** rodadas de pesquisa (instituto + campo) que entram na média; é o que o nó do grafo conta */
+  rodadasDaMedia: number
   duelos: Duelo[]
   publicaveis: number
   total: number

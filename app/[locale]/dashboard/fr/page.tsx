@@ -12,6 +12,7 @@ import {
   duelosSegundoTurno,
   listaPrincipalPorInstituto,
   mediaPorCandidato,
+  rodadaDe,
 } from '../../../../lib/fr/painel'
 import { emSilencioEleitoral } from '../../../../lib/fr/silencio-eleitoral'
 import type { FrAnalise } from '../../../components/fr/FrAnaliseSection'
@@ -88,7 +89,7 @@ export default async function FrDashboardPage({ params }: { params: Promise<{ lo
   const [pesq, press, prontidao] = await Promise.all([carregarPesquisasFr(), carregarImprensaFr(), carregarProntidaoKalshi(agora)])
 
   const vazio: FrPollsView = {
-    estado: pesq.estado, principais: [], medias: [], diasDaMedia: DIAS_MEDIA, duelos: [],
+    estado: pesq.estado, principais: [], medias: [], diasDaMedia: DIAS_MEDIA, rodadasDaMedia: 0, duelos: [],
     publicaveis: 0, total: 0, divergencias: [], pendentes: [], fetchedAt: null,
   }
   let polls = vazio
@@ -101,6 +102,11 @@ export default async function FrDashboardPage({ params }: { params: Promise<{ lo
       principais: listaPrincipalPorInstituto(d.pesquisas, agora, DIAS_PRINCIPAL),
       medias: mediaPorCandidato(d.pesquisas, agora, DIAS_MEDIA),
       diasDaMedia: DIAS_MEDIA,
+      rodadasDaMedia: new Set(
+        d.pesquisas
+          .filter((p) => p.publicavel && p.turno === 1 && p.campo.fim >= new Date(agora.getTime() - DIAS_MEDIA * 864e5).toISOString().slice(0, 10))
+          .map((p) => rodadaDe(p.pollId)),
+      ).size,
       duelos: duelosSegundoTurno(d.pesquisas, agora, DIAS_PRINCIPAL),
       publicaveis: d.qualidade.publicaveis,
       total: d.qualidade.pesquisas,
