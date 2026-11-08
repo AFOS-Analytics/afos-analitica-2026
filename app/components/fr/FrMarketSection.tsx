@@ -44,6 +44,7 @@ const T = {
     brutoKalshi: 'Kalshi (JSON) ↗',
     semLinkDeAposta: 'Para quem acessa da França não há link para as páginas de negociação: lá, exibir cotação com link para o site é tratado como promoção de jogo não autorizado.',
     fonte: 'fonte ↗',
+    abrirFonte: (livro: string) => `Abrir o contrato na ${livro} (nova aba)`,
     comLink: 'Cada "fonte" abre a página do contrato na própria plataforma, para conferir o preço na origem. Não é convite a apostar.',
     carregando: 'Carregando preços…',
     indisponivel: 'Não foi possível ler o mercado agora. Isto é falha de leitura, não ausência de preço.',
@@ -69,6 +70,7 @@ const T = {
     brutoKalshi: 'Kalshi (JSON) ↗',
     semLinkDeAposta: 'Visitors in France get no link to the trading pages: there, showing odds with a link to the site is treated as promoting unlicensed gambling.',
     fonte: 'source ↗',
+    abrirFonte: (livro: string) => `Open the contract on ${livro} (new tab)`,
     comLink: 'Each "source" opens the contract page on the platform itself, so the price can be checked at origin. Not an invitation to bet.',
     carregando: 'Loading prices…',
     indisponivel: 'The market could not be read right now. This is a read failure, not a missing price.',
@@ -94,6 +96,7 @@ const T = {
     brutoKalshi: 'Kalshi (JSON) ↗',
     semLinkDeAposta: 'Para quien accede desde Francia no hay enlace a las páginas de negociación: allí, mostrar cotizaciones con enlace al sitio se considera promoción de juego no autorizado.',
     fonte: 'fuente ↗',
+    abrirFonte: (livro: string) => `Abrir el contrato en ${livro} (nueva pestaña)`,
     comLink: 'Cada "fuente" abre la página del contrato en la propia plataforma, para cotejar el precio en el origen. No es una invitación a apostar.',
     carregando: 'Cargando precios…',
     indisponivel: 'No fue posible leer el mercado ahora. Es una falla de lectura, no ausencia de precio.',
@@ -119,6 +122,22 @@ function LinkFonte({ href, rotulo }: { href: string; rotulo: string }) {
   return (
     <a href={href} target="_blank" rel="nofollow noopener noreferrer" className="ml-2 text-[11px] font-normal text-primary underline decoration-dotted underline-offset-2 hover:decoration-solid">
       {rotulo}
+    </a>
+  )
+}
+
+/**
+ * Cabeçalho de coluna do livro (decisão do André, 08/Nov/2026): o NOME do livro,
+ * em negrito, é o link para o contrato na fonte. A seta discreta fica sempre à
+ * vista, porque no celular não existe hover. Visitante na França (ANJ): só o
+ * nome em negrito, sem seta e sem link.
+ */
+function ColunaLivro({ livro, href, titulo }: { livro: string; href: string | null; titulo: string }) {
+  if (!href) return <span className="font-bold text-dark">{livro}</span>
+  return (
+    <a href={href} target="_blank" rel="nofollow noopener noreferrer" title={titulo} aria-label={titulo}
+      className="group inline-flex items-center gap-0.5 font-bold text-dark hover:text-primary hover:underline underline-offset-2">
+      {livro}<span aria-hidden="true" className="text-[10px] font-normal text-gray-400 group-hover:text-primary">↗</span>
     </a>
   )
 }
@@ -222,16 +241,14 @@ export function FrMarketSection({
       <Card>
         <h3 className="text-sm font-semibold text-dark mb-2">
           {t.vencedor}
-          {comLinkDeFonte && <LinkFonte href={FONTE.winner} rotulo={`Polymarket ${t.fonte}`} />}
-          {comLinkDeFonte && kalshiPronto && <LinkFonte href={FONTE.kalshi} rotulo={`Kalshi ${t.fonte}`} />}
         </h3>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="text-left text-[11px] uppercase tracking-wider text-gray-500">
                 <th className="py-1.5 pr-3 font-semibold">{t.colCand}</th>
-                <th className="py-1.5 px-3 font-semibold text-right">Polymarket</th>
-                <th className="py-1.5 px-3 font-semibold text-right">Kalshi</th>
+                <th className="py-1.5 px-3 text-right"><ColunaLivro livro="Polymarket" href={comLinkDeFonte ? FONTE.winner : null} titulo={t.abrirFonte('Polymarket')} /></th>
+                <th className="py-1.5 px-3 text-right"><ColunaLivro livro="Kalshi" href={comLinkDeFonte && kalshiPronto ? FONTE.kalshi : null} titulo={t.abrirFonte('Kalshi')} /></th>
                 {kalshiPronto && <th className="py-1.5 pl-3 font-semibold text-right">{t.colDist}</th>}
               </tr>
             </thead>
