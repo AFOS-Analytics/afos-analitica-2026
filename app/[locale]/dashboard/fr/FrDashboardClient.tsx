@@ -47,6 +47,18 @@ function Conteudo(props: FrDashboardProps) {
   const [poly, setPoly] = useState<PolyFra>(null)
   const [polyLoading, setPolyLoading] = useState(true)
   const [kalshi, setKalshi] = useState<KalshiFra>(null)
+  // 🌍 Link para a página do contrato na plataforma: só com visitante FORA da
+  // França, confirmado pela Vercel. Desconhecido (falha, dev local) = sem link.
+  const [comLinkDeFonte, setComLinkDeFonte] = useState(false)
+
+  useEffect(() => {
+    let vivo = true
+    fetch('/api/geo', { cache: 'no-store' })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d: { pais?: string | null } | null) => { if (vivo) setComLinkDeFonte(!!d?.pais && d.pais !== 'FR') })
+      .catch(() => { if (vivo) setComLinkDeFonte(false) })
+    return () => { vivo = false }
+  }, [])
 
   useEffect(() => {
     if (silencio.silencio) return
@@ -86,7 +98,7 @@ function Conteudo(props: FrDashboardProps) {
           <>
             <div id="sec-mercado" className="scroll-mt-20">
               <SectionErrorBoundary locale={locale} name="Mercado">
-                <FrMarketSection poly={poly} polyLoading={polyLoading} kalshi={kalshi} kalshiPronto={props.kalshiPronto} kalshiProntoEm={props.kalshiProntoEm} />
+                <FrMarketSection poly={poly} polyLoading={polyLoading} kalshi={kalshi} kalshiPronto={props.kalshiPronto} kalshiProntoEm={props.kalshiProntoEm} comLinkDeFonte={comLinkDeFonte} />
               </SectionErrorBoundary>
             </div>
             <div id="sec-pesquisas" className="scroll-mt-20">

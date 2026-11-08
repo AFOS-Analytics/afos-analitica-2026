@@ -42,7 +42,9 @@ const T = {
     confira: 'Confira o dado bruto que o AFOS leu:',
     brutoPoly: 'Polymarket (JSON) ↗',
     brutoKalshi: 'Kalshi (JSON) ↗',
-    semLinkDeAposta: 'Não há link para as páginas de negociação: na França, exibir cotação com link para o site é tratado como promoção de jogo não autorizado.',
+    semLinkDeAposta: 'Para quem acessa da França não há link para as páginas de negociação: lá, exibir cotação com link para o site é tratado como promoção de jogo não autorizado.',
+    fonte: 'fonte ↗',
+    comLink: 'Cada "fonte" abre a página do contrato na própria plataforma, para conferir o preço na origem. Não é convite a apostar.',
     carregando: 'Carregando preços…',
     indisponivel: 'Não foi possível ler o mercado agora. Isto é falha de leitura, não ausência de preço.',
     lido: (d: string) => `Lido em ${d}`,
@@ -65,7 +67,9 @@ const T = {
     confira: 'Check the raw data AFOS read:',
     brutoPoly: 'Polymarket (JSON) ↗',
     brutoKalshi: 'Kalshi (JSON) ↗',
-    semLinkDeAposta: 'There is no link to the trading pages: in France, showing odds with a link to the site is treated as promoting unlicensed gambling.',
+    semLinkDeAposta: 'Visitors in France get no link to the trading pages: there, showing odds with a link to the site is treated as promoting unlicensed gambling.',
+    fonte: 'source ↗',
+    comLink: 'Each "source" opens the contract page on the platform itself, so the price can be checked at origin. Not an invitation to bet.',
     carregando: 'Loading prices…',
     indisponivel: 'The market could not be read right now. This is a read failure, not a missing price.',
     lido: (d: string) => `Read at ${d}`,
@@ -88,7 +92,9 @@ const T = {
     confira: 'Revise el dato bruto que leyó el AFOS:',
     brutoPoly: 'Polymarket (JSON) ↗',
     brutoKalshi: 'Kalshi (JSON) ↗',
-    semLinkDeAposta: 'No hay enlace a las páginas de negociación: en Francia, mostrar cotizaciones con enlace al sitio se considera promoción de juego no autorizado.',
+    semLinkDeAposta: 'Para quien accede desde Francia no hay enlace a las páginas de negociación: allí, mostrar cotizaciones con enlace al sitio se considera promoción de juego no autorizado.',
+    fonte: 'fuente ↗',
+    comLink: 'Cada "fuente" abre la página del contrato en la propia plataforma, para cotejar el precio en el origen. No es una invitación a apostar.',
     carregando: 'Cargando precios…',
     indisponivel: 'No fue posible leer el mercado ahora. Es una falla de lectura, no ausencia de precio.',
     lido: (d: string) => `Leído el ${d}`,
@@ -96,6 +102,27 @@ const T = {
 }
 
 /** Contrato de enchimento ("Candidate A", "Person B") e contrato sem negócio não são preço. */
+/**
+ * Página do contrato NA PLATAFORMA, para o leitor conferir na origem. Só
+ * aparece para visitante fora da França (decisão do André, 08/Nov/2026, opção B;
+ * ver app/api/geo/route.ts). `nofollow`: não é recomendação nem parceria.
+ */
+const FONTE = {
+  winner: 'https://polymarket.com/event/next-french-presidential-election',
+  secondRound: 'https://polymarket.com/event/next-french-presidential-election-who-will-advance-to-the-2nd-round',
+  firstRoundWinner: 'https://polymarket.com/event/french-presidential-election-first-round-winner',
+  onBallot: 'https://polymarket.com/event/2027-french-presidential-election-who-will-be-on-the-ballot',
+  kalshi: 'https://kalshi.com/markets/kxfrenchpres',
+} as const
+
+function LinkFonte({ href, rotulo }: { href: string; rotulo: string }) {
+  return (
+    <a href={href} target="_blank" rel="nofollow noopener noreferrer" className="ml-2 text-[11px] font-normal text-primary underline decoration-dotted underline-offset-2 hover:decoration-solid">
+      {rotulo}
+    </a>
+  )
+}
+
 const ENCHIMENTO = /^(candidate|person|player)\s+[a-z]$/i
 
 function nomeDaPergunta(q: string | undefined): string | null {
@@ -129,10 +156,10 @@ function fmtDataHora(iso: string | null | undefined, locale: string): string {
   return locale === 'en' ? `${mm}/${dd} ${hh}` : `${dd}/${mm} ${hh}`
 }
 
-function Tabela({ titulo, linhas, max, locale }: { titulo: string; linhas: Linha[]; max: number; locale: string }) {
+function Tabela({ titulo, linhas, max, locale, fonte }: { titulo: string; linhas: Linha[]; max: number; locale: string; fonte?: { href: string; rotulo: string } }) {
   return (
     <div>
-      <h3 className="text-sm font-semibold text-dark mb-2">{titulo}</h3>
+      <h3 className="text-sm font-semibold text-dark mb-2">{titulo}{fonte && <LinkFonte href={fonte.href} rotulo={fonte.rotulo} />}</h3>
       <ul className="divide-y divide-light-border text-sm">
         {linhas.slice(0, max).map((l) => (
           <li key={l.nome} className="flex justify-between py-1.5">
@@ -151,12 +178,15 @@ export function FrMarketSection({
   kalshi,
   kalshiPronto,
   kalshiProntoEm,
+  comLinkDeFonte,
 }: {
   poly: PolyFra
   polyLoading: boolean
   kalshi: KalshiFra
   kalshiPronto: boolean
   kalshiProntoEm: string | null
+  /** true só com visitante FORA da França, confirmado pela rota /api/geo. */
+  comLinkDeFonte: boolean
 }) {
   const { locale } = useTranslation()
   const k = (locale === 'en' || locale === 'es' ? locale : 'pt-BR') as keyof typeof T
@@ -191,7 +221,11 @@ export function FrMarketSection({
     <section>
       <SectionTitle>{t.titulo}</SectionTitle>
       <Card>
-        <h3 className="text-sm font-semibold text-dark mb-2">{t.vencedor}</h3>
+        <h3 className="text-sm font-semibold text-dark mb-2">
+          {t.vencedor}
+          {comLinkDeFonte && <LinkFonte href={FONTE.winner} rotulo={`Polymarket ${t.fonte}`} />}
+          {comLinkDeFonte && kalshiPronto && <LinkFonte href={FONTE.kalshi} rotulo={`Kalshi ${t.fonte}`} />}
+        </h3>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
@@ -226,9 +260,9 @@ export function FrMarketSection({
         </div>
 
         <div className="mt-6 grid gap-6 md:grid-cols-3">
-          <Tabela titulo={t.segundo} linhas={linhasDe(poly.secondRound ?? null, t.outro)} max={6} locale={locale} />
-          <Tabela titulo={t.primeiro} linhas={linhasDe(poly.firstRoundWinner ?? null, t.outro)} max={5} locale={locale} />
-          <Tabela titulo={t.cedula} linhas={linhasDe(poly.onBallot ?? null, t.outro)} max={8} locale={locale} />
+          <Tabela titulo={t.segundo} linhas={linhasDe(poly.secondRound ?? null, t.outro)} max={6} locale={locale} fonte={comLinkDeFonte ? { href: FONTE.secondRound, rotulo: t.fonte } : undefined} />
+          <Tabela titulo={t.primeiro} linhas={linhasDe(poly.firstRoundWinner ?? null, t.outro)} max={5} locale={locale} fonte={comLinkDeFonte ? { href: FONTE.firstRoundWinner, rotulo: t.fonte } : undefined} />
+          <Tabela titulo={t.cedula} linhas={linhasDe(poly.onBallot ?? null, t.outro)} max={8} locale={locale} fonte={comLinkDeFonte ? { href: FONTE.onBallot, rotulo: t.fonte } : undefined} />
         </div>
 
         <div className="mt-5 space-y-1.5 border-t border-light-border pt-3 text-[11px] leading-snug text-gray-500">
@@ -237,13 +271,14 @@ export function FrMarketSection({
           <p>{t.volume(fmtVolumeUsd(volumeTotal, locale))}</p>
           {poly.fetchedAt && <p>{t.lido(fmtDataHora(poly.fetchedAt, locale))}</p>}
           {/* 🔎 Verificação pelo leitor: o JSON que a própria tela leu, servido pelo
-              AFOS. Nunca a página de negociação (ANJ, lei 2010-476, art. 57). */}
+              AFOS, para todos. A página do contrato na plataforma só para quem
+              está fora da França (ANJ, lei 2010-476, art. 57). */}
           <p>
             {t.confira}{' '}
             <a href="/api/polymarket?country=fra" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-dotted underline-offset-2">{t.brutoPoly}</a>
             {kalshiPronto && (<>{' · '}<a href="/api/kalshi?country=fra" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-dotted underline-offset-2">{t.brutoKalshi}</a></>)}
           </p>
-          <p>{t.semLinkDeAposta}</p>
+          <p>{comLinkDeFonte ? t.comLink : t.semLinkDeAposta}</p>
         </div>
       </Card>
     </section>
