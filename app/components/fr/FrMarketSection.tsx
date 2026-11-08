@@ -39,6 +39,10 @@ const T = {
     notaDist: 'Distância = Polymarket menos Kalshi, em pontos. Os dois livros nunca são somados nem tirados em média: taxas, liquidez e público são diferentes, e a distância é justamente o que se mede.',
     notaKalshi: 'A Kalshi está sendo coletada desde 08/11/2026 e só aparece aqui depois de 14 dias de captura sem defeito e sem buraco.',
     volume: (v: string) => `Giro acumulado do contrato principal na Polymarket: ${v}. É soma de negócios desde a abertura, não dinheiro em jogo hoje.`,
+    confira: 'Confira o dado bruto que o AFOS leu:',
+    brutoPoly: 'Polymarket (JSON) ↗',
+    brutoKalshi: 'Kalshi (JSON) ↗',
+    semLinkDeAposta: 'Não há link para as páginas de negociação: na França, exibir cotação com link para o site é tratado como promoção de jogo não autorizado.',
     carregando: 'Carregando preços…',
     indisponivel: 'Não foi possível ler o mercado agora. Isto é falha de leitura, não ausência de preço.',
     lido: (d: string) => `Lido em ${d}`,
@@ -58,6 +62,10 @@ const T = {
     notaDist: 'Gap = Polymarket minus Kalshi, in points. The two books are never added or averaged: fees, liquidity and users differ, and the gap is exactly what is being measured.',
     notaKalshi: 'Kalshi has been collected since 11/08/2026 and appears here only after 14 days of capture with no defect and no gap.',
     volume: (v: string) => `Cumulative turnover of the main Polymarket contract: ${v}. It is the sum of trades since opening, not money at stake today.`,
+    confira: 'Check the raw data AFOS read:',
+    brutoPoly: 'Polymarket (JSON) ↗',
+    brutoKalshi: 'Kalshi (JSON) ↗',
+    semLinkDeAposta: 'There is no link to the trading pages: in France, showing odds with a link to the site is treated as promoting unlicensed gambling.',
     carregando: 'Loading prices…',
     indisponivel: 'The market could not be read right now. This is a read failure, not a missing price.',
     lido: (d: string) => `Read at ${d}`,
@@ -77,6 +85,10 @@ const T = {
     notaDist: 'Distancia = Polymarket menos Kalshi, en puntos. Los dos libros nunca se suman ni se promedian: comisiones, liquidez y público son distintos, y la distancia es justamente lo que se mide.',
     notaKalshi: 'Kalshi se recolecta desde el 08/11/2026 y solo aparece aquí tras 14 días de captura sin defecto y sin huecos.',
     volume: (v: string) => `Volumen acumulado del contrato principal en Polymarket: ${v}. Es la suma de operaciones desde la apertura, no dinero en juego hoy.`,
+    confira: 'Revise el dato bruto que leyó el AFOS:',
+    brutoPoly: 'Polymarket (JSON) ↗',
+    brutoKalshi: 'Kalshi (JSON) ↗',
+    semLinkDeAposta: 'No hay enlace a las páginas de negociación: en Francia, mostrar cotizaciones con enlace al sitio se considera promoción de juego no autorizado.',
     carregando: 'Cargando precios…',
     indisponivel: 'No fue posible leer el mercado ahora. Es una falla de lectura, no ausencia de precio.',
     lido: (d: string) => `Leído el ${d}`,
@@ -224,6 +236,14 @@ export function FrMarketSection({
           <p>{kalshiPronto ? t.notaDist : t.notaKalshi}</p>
           <p>{t.volume(fmtVolumeUsd(volumeTotal, locale))}</p>
           {poly.fetchedAt && <p>{t.lido(fmtDataHora(poly.fetchedAt, locale))}</p>}
+          {/* 🔎 Verificação pelo leitor: o JSON que a própria tela leu, servido pelo
+              AFOS. Nunca a página de negociação (ANJ, lei 2010-476, art. 57). */}
+          <p>
+            {t.confira}{' '}
+            <a href="/api/polymarket?country=fra" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-dotted underline-offset-2">{t.brutoPoly}</a>
+            {kalshiPronto && (<>{' · '}<a href="/api/kalshi?country=fra" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-dotted underline-offset-2">{t.brutoKalshi}</a></>)}
+          </p>
+          <p>{t.semLinkDeAposta}</p>
         </div>
       </Card>
     </section>

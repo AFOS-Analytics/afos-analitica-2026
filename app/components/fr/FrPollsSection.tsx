@@ -28,7 +28,10 @@ const T = {
     campo: (a: string, b: string) => `campo ${a} a ${b}`,
     amostra: (n: string) => `${n} entrevistados`,
     listas: (n: number) => (n === 1 ? '1 lista nesta rodada' : `${n} listas nesta rodada`),
-    ficha: (n: string) => `ficha ${n}`,
+    ficha: (n: string) => `ficha oficial ${n} ↗`,
+    confira: 'Confira você mesmo:',
+    listagem: 'todas as fichas da presidencial na Commission des sondages ↗',
+    base: 'base aberta com cada lista (CSV) ↗',
     titulo2: '2º turno: duelos testados',
     duelosNota: 'A rodada mais recente de cada instituto, nos últimos 45 dias.',
     transparencia: 'Conferência com as fichas oficiais',
@@ -54,7 +57,10 @@ const T = {
     campo: (a: string, b: string) => `fieldwork ${a} to ${b}`,
     amostra: (n: string) => `${n} respondents`,
     listas: (n: number) => (n === 1 ? '1 list in this wave' : `${n} lists in this wave`),
-    ficha: (n: string) => `notice ${n}`,
+    ficha: (n: string) => `official notice ${n} ↗`,
+    confira: 'Check it yourself:',
+    listagem: 'every presidential notice at the Commission des sondages ↗',
+    base: 'open database with every list (CSV) ↗',
     titulo2: 'Runoff: matchups tested',
     duelosNota: 'Each pollster’s latest wave in the past 45 days.',
     transparencia: 'Check against the official notices',
@@ -80,7 +86,10 @@ const T = {
     campo: (a: string, b: string) => `campo ${a} a ${b}`,
     amostra: (n: string) => `${n} entrevistados`,
     listas: (n: number) => (n === 1 ? '1 lista en esta ronda' : `${n} listas en esta ronda`),
-    ficha: (n: string) => `ficha ${n}`,
+    ficha: (n: string) => `ficha oficial ${n} ↗`,
+    confira: 'Compruébelo usted mismo:',
+    listagem: 'todas las fichas de la presidencial en la Commission des sondages ↗',
+    base: 'base abierta con cada lista (CSV) ↗',
     titulo2: '2ª vuelta: duelos probados',
     duelosNota: 'La ronda más reciente de cada encuestadora, en los últimos 45 días.',
     transparencia: 'Cotejo con las fichas oficiales',
@@ -153,7 +162,7 @@ export function FrPollsSection({ v }: { v: FrPollsView }) {
                       {t.campo(dm(p.campo.inicio, locale), dm(p.campo.fim, locale))}
                       {p.amostra ? ` · ${t.amostra(fmtMilhar(p.amostra, locale))}` : ''} · {t.listas(p.listasNaRodada)}
                       {p.ficha.numero && p.ficha.url ? (
-                        <> · <a href={p.ficha.url} target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:underline">{t.ficha(p.ficha.numero)}</a></>
+                        <> · <a href={p.ficha.url} target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-dotted underline-offset-2 hover:decoration-solid">{t.ficha(p.ficha.numero)}</a></>
                       ) : null}
                     </div>
                     <div className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1 text-sm">
@@ -245,7 +254,10 @@ export function FrPollsSection({ v }: { v: FrPollsView }) {
             </div>
           )}
           <p className="mt-3 border-t border-light-border pt-2 text-[11px] text-gray-500">
-            {t.fonte}{v.fetchedAt ? ` ${t.lido(dm(v.fetchedAt, locale))}.` : ''}
+            {t.fonte}{v.fetchedAt ? ` ${t.lido(dm(v.fetchedAt, locale))}.` : ''}{' '}
+            {t.confira}{' '}
+            <a href="https://www.commission-des-sondages.fr/notices/medias/fichiers/bytag/14/2027-Presidentielle" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-dotted underline-offset-2">{t.listagem}</a>{' · '}
+            <a href="https://github.com/MieuxVoter/presidentielle2027/blob/main/presidentielle2027.csv" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-dotted underline-offset-2">{t.base}</a>
           </p>
         </Card>
       </section>
