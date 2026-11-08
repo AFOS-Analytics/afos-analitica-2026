@@ -16,6 +16,10 @@ import {
 import { emSilencioEleitoral } from '../../../../lib/fr/silencio-eleitoral'
 import type { FrAnalise } from '../../../components/fr/FrAnaliseSection'
 import type { FrPollsView } from '../../../components/fr/FrPollsSection'
+// WGI e WDI vêm do caso validado França 2024: indicador é do PAÍS, não da eleição,
+// e duas cópias só criariam chance de divergirem (mesma decisão dos EUA).
+import franceCase from '../../../../lib/country-data/france.json'
+import type { CountryContext } from '../../../../lib/country-data'
 
 /**
  * Painel da FRANÇA, presidencial 2027. Criado 08/Nov/2026.
@@ -116,6 +120,7 @@ export default async function FrDashboardPage({ params }: { params: Promise<{ lo
       press={press}
       kalshiPronto={prontidao.pronto}
       kalshiProntoEm={prontidao.prontoEm ? prontidao.prontoEm.toISOString() : null}
+      context={((franceCase as { context?: unknown }).context as CountryContext | undefined) ?? null}
     />
   )
 }
