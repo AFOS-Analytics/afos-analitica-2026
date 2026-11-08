@@ -35,7 +35,9 @@ Sem `--pais=fr`, publish, persist e broadcast do Tradeoff caem no **Brasil** (pa
 ## Pré-requisitos
 
 1. **Mercado fresco:** `curl -s "https://www.afos-analytics.com/api/polymarket?country=fra&fresh=1"` e `curl -s "https://www.afos-analytics.com/api/kalshi?country=fra&fresh=1"`.
-2. **Trava aprovada:** `npx tsx scripts/capture-guard.ts --pais=fra` → `VEREDITO: APROVADO` na última linha.
+2. **Trava aprovada:** `npx tsx scripts/capture-guard.ts --pais=fra` → `VEREDITO: APROVADO` na última linha, ou, se BLOQUEADO, só o que a certificação por livro e por contrato liberar.
+
+   🎯 **Certificação (decisão do André, 08/Nov/2026):** vencer e 1º colocado são livros de resultado exclusivo e se certificam **por livro** (`CERTIFICAÇÃO POR LIVRO`). Vai ao 2º turno e estará na cédula são contratos independentes e se certificam **por contrato** (`CERTIFICAÇÃO POR CONTRATO`): com o livro bloqueado, publica-se só o contrato listado como certificado, com o valor da 2ª leitura (`.cache/capture-guard/ultima-fra.json`, campo `contratosOk`). Nada que não esteja em uma das duas listas entra no texto.
 3. **Kalshi:** 🔁 **Regra desde 08/Nov/2026 (decisão do André):** a Kalshi entra com o PREÇO DA HORA sempre que a leitura passa na avaliação (`avaliacao.ok` na resposta da rota: soma 85 a 120, líder com oferta de compra e de venda). A prontidão de 14 dias (`npx tsx scripts/kalshi-prontidao.ts --pais=fra`) passou a valer só para a SÉRIE: antes de `PRONTO`, nada de variação semanal nem superlativo da Kalshi, e qualquer "desde" diz "desde 08/11/2026".
 4. **Pesquisas:** registro `fr-polls` do Neon, só `publicavel: true`.
 5. **Δ da semana:** `node scripts/semana-do-contrato.mjs --pais=fr --de=... --ate=...` (lê o backup; série desde 08/Nov/2026).

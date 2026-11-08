@@ -20,7 +20,7 @@ curl -s "https://www.afos-analytics.com/api/polymarket?country=fra&fresh=1"
 curl -s "https://www.afos-analytics.com/api/kalshi?country=fra&fresh=1"   # entra se avaliacao.ok
 ```
 
-- `BLOQUEADO` = não publicar número de mercado nesta rodada.
+- 🎯 **Certificação (decisão do André, 08/Nov/2026):** vencer e 1º colocado são livros de resultado exclusivo e se certificam **por livro** (`CERTIFICAÇÃO POR LIVRO`). Vai ao 2º turno e estará na cédula são contratos independentes e se certificam **por contrato** (`CERTIFICAÇÃO POR CONTRATO`): com o livro bloqueado, publica-se só o contrato listado como certificado, com o valor da 2ª leitura (`.cache/capture-guard/ultima-fra.json`, campo `contratosOk`). Nada que não esteja em uma das duas listas entra no texto.
 - 🔁 **Regra desde 08/Nov/2026 (decisão do André):** a Kalshi entra com o PREÇO DA HORA sempre que a leitura passa na avaliação (`avaliacao.ok` na resposta da rota: soma 85 a 120, líder com oferta de compra e de venda). A prontidão de 14 dias (`npx tsx scripts/kalshi-prontidao.ts --pais=fra`) passou a valer só para a SÉRIE: antes de `PRONTO`, nada de variação semanal nem superlativo da Kalshi, e qualquer "desde" diz "desde 08/11/2026".
 - Kalshi: volume em **contratos**, nunca em dólares; frescor é `ultimaNegociacaoEm`, não `cadastroAtualizadoEm`.
 - Polymarket: volume é **giro acumulado** (inflado por candidatos a 0.05), nunca "dinheiro em jogo".

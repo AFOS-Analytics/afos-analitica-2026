@@ -86,16 +86,28 @@ const BOOKS_US = ['house', 'senate', 'asScheduled'] as const
 const BOOKS_FRA = ['winner', 'secondRound', 'firstRoundWinner', 'onBallot'] as const
 
 /**
+ * 🎯 CERTIFICAÇÃO POR CONTRATO, decisão do André em 08/Nov/2026. Só nos livros
+ * de contratos INDEPENDENTES: em "vai ao 2º turno" e "estará na cédula" cada
+ * contrato é um sim/não próprio, e os preços não dividem 100% entre si. Ali, um
+ * contrato marginal que anda (Bertrand 3,00 -> 3,80 em 08/Nov) não diz nada sobre
+ * o preço de Le Pen, e bloqueava o livro inteiro duas rodadas seguidas.
+ * A garantia por número publicado NÃO muda: cada contrato certificado teve as
+ * duas leituras dele concordando dentro da tolerância e está acima do piso.
+ * Livros de resultado exclusivo (vencer, 1º colocado) seguem certificados por livro.
+ */
+const POR_CONTRATO_FRA = ['secondRound', 'onBallot'] as const
+
+/**
  * País da trava, LISTA FECHADA (08/Nov/2026). Antes era
  * `=== 'us' ? 'us' : 'br'`, e `--pais=fra` rodaria a trava do BRASIL e
  * imprimiria APROVADO sobre o país errado. Sem `--pais` segue o Brasil, como
  * sempre; `--pais` desconhecido LANÇA.
  */
-const TRAVA_POR_PAIS: Record<string, { rotulo: string; country: string | null; books: readonly string[] }> = {
+const TRAVA_POR_PAIS: Record<string, { rotulo: string; country: string | null; books: readonly string[]; porContrato?: readonly string[] }> = {
   br: { rotulo: 'br', country: null, books: BOOKS_BR },
   us: { rotulo: 'us', country: 'us', books: BOOKS_US },
-  fra: { rotulo: 'fra', country: 'fra', books: BOOKS_FRA },
-  fr: { rotulo: 'fra', country: 'fra', books: BOOKS_FRA },
+  fra: { rotulo: 'fra', country: 'fra', books: BOOKS_FRA, porContrato: POR_CONTRATO_FRA },
+  fr: { rotulo: 'fra', country: 'fra', books: BOOKS_FRA, porContrato: POR_CONTRATO_FRA },
 }
 
 interface Leitura {
@@ -116,6 +128,9 @@ function limpaNome(q: string): string {
     .replace(/^Will\s+/i, '')
     .replace(/\s+win the.*$/i, '')
     .replace(/\s+finish in .*$/i, '')
+    // 🇫🇷 08/Nov/2026: livros de contrato independente da França
+    .replace(/\s+advance to the second round.*$/i, '')
+    .replace(/\s+be on the ballot.*$/i, '')
     .replace(/\?$/, '')
     .trim()
 }
@@ -386,11 +401,23 @@ async function main() {
   const veredito = vereditoDaTrava(books, livrosResolvidos, motivos)
   const livrosOk = Object.entries(livros).filter(([, v]) => v.ok).map(([k]) => k)
 
+  // 🎯 Por contrato (ver POR_CONTRATO_FRA): presente nas DUAS leituras, acima do
+  // piso, sem divergência. Motivo global (leitura degradada, mesmo carimbo) zera tudo.
+  const divergentes = new Set(divergencias.map(d => d.nome))
+  const contratosOk: Record<string, string[]> = {}
+  for (const book of (trava.porContrato ?? []).filter(bk => bk in livros)) {
+    contratosOk[book] = motivosGlobais.length ? [] : [...b.precos.entries()]
+      .filter(([k, p2]) => k.startsWith(`${book}:`) && a.precos.has(k) && !divergentes.has(k)
+        && Math.max(p2, a.precos.get(k) as number) >= PISO_RELEVANCIA_PCT)
+      .map(([k]) => k.slice(book.length + 1))
+  }
+
   const certificado = {
     ok,
     veredito,
     livros,
     livrosOk,
+    contratosOk,
     livrosResolvidos,
     motivos,
     pais,
@@ -457,6 +484,13 @@ async function main() {
       }
       log('')
       log('Publicar os livros APROVADOS com os valores da 2a leitura. Os bloqueados, não.')
+      const pc = Object.entries(contratosOk).filter(([bk]) => !livros[bk]?.ok)
+      if (pc.length) {
+        log('')
+        log('CERTIFICAÇÃO POR CONTRATO (livros de contratos independentes, decisão de 08/Nov/2026):')
+        for (const [bk, cs] of pc) log(`  ${bk}: ${cs.length} contrato(s) certificado(s): ${cs.map(c => `${c} ${b.precos.get(`${bk}:${c}`)?.toFixed(2)}`).join(' | ') || 'nenhum'}`)
+        log('Nesses livros, publicar SÓ os contratos certificados acima, com o valor da 2a leitura.')
+      }
     }
     // 🔑 ÚLTIMA LINHA, E É A FONTE DE VERDADE. Ver o cabeçalho: o exit code
     // pode se perder no invólucro e virar 1 sem bloqueio nenhum. Esta linha
