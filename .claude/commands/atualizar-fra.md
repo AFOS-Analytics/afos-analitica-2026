@@ -70,14 +70,16 @@ npx vercel --prod --yes --cwd <worktree>         # conferir depois com vercel in
 
 **Depois do deploy, com navegador (playwright), nos 3 idiomas:** a página responde 200; o texto novo aparece; nenhuma palavra em português em EN/ES; o mercado carrega; a Kalshi segue oculta ou aparece conforme a prontidão; os links "fonte ↗" aparecem fora da França. Entrega visual se confere com navegador, não com grep.
 
-## 🚧 Enquanto a tela não for pública
+## ✅ A tela é PÚBLICA desde 08/Nov/2026
 
-Hoje a página é **oculta** (noindex, fora do sitemap, do `llms-txt.ts`, do IndexNow e do seletor de país). Ela vira pública no dia da **Weekly №1 (segunda 23/Nov/2026)**, virando as 5 chaves no mesmo commit:
-1. `robots` em `app/[locale]/dashboard/fr/page.tsx` (tirar o noindex);
+O André decidiu publicar duas semanas antes da Weekly №1 (opção B). As 5 chaves foram viradas no mesmo commit; despublicar é desvirar as mesmas 5:
+1. `robots` em `app/[locale]/dashboard/fr/page.tsx` (indexável);
 2. `app/sitemap.ts` (painel, e as edições de Weekly e Tradeoff da França);
 3. `lib/llms/llms-txt.ts`;
 4. `scripts/indexnow-ping.mjs` depois do deploy;
-5. `CountrySelector`: `fr` com `ready: true` e sem `oculto`.
+5. `CountrySelector`: `fr` com `ready: true`.
+
+Depois de cada deploy que mexe na tela, `node scripts/indexnow-ping.mjs` (a lista já inclui `/dashboard/fr` nos 3 idiomas).
 
 ## Memórias relacionadas
 

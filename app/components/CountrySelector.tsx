@@ -33,7 +33,8 @@ interface CountryEntry {
 const COUNTRIES: CountryEntry[] = [
   { code: 'br', ready: true, label: { 'pt-BR': 'Brasil', en: 'Brazil', es: 'Brasil' } },
   { code: 'us', ready: true, label: { 'pt-BR': 'Estados Unidos', en: 'United States', es: 'Estados Unidos' } },
-  { code: 'fr', ready: false, oculto: true, label: { 'pt-BR': 'França', en: 'France', es: 'Francia' } },
+  // 🇫🇷 PUBLICADA em 08/Nov/2026 (decisão do André, opção B): as 5 chaves viradas juntas.
+  { code: 'fr', ready: true, label: { 'pt-BR': 'França', en: 'France', es: 'Francia' } },
 ]
 
 const T = {

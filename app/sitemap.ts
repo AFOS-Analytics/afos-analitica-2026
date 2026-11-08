@@ -81,6 +81,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages: hreflang((l) => `/${l}/dashboard/us`) },
     })
   }
+  // 🇫🇷 Painel da França, presidencial 2027. Publicado em 08/Nov/2026; coleta de
+  // mercado a cada 30 min, pesquisas 2x e imprensa 3x ao dia.
+  for (const loc of locales) {
+    entries.push({
+      url: `${baseUrl}/${loc}/dashboard/fr`,
+      lastModified: dynamicLastMod,
+      changeFrequency: 'daily',
+      priority: 0.9,
+      alternates: { languages: hreflang((l) => `/${l}/dashboard/fr`) },
+    })
+  }
 
   // Global map: /pt-BR/global (dynamic — cron 30min)
   for (const loc of locales) {

@@ -30,10 +30,10 @@ import type { CountryContext } from '../../../../lib/country-data'
 /**
  * Painel da FRANÇA, presidencial 2027. Criado 08/Nov/2026.
  *
- * 🚧 NÃO PUBLICADO. As 5 chaves dos EUA continuam DESLIGADAS de propósito:
- * `robots` noindex aqui, fora do `sitemap.ts`, fora do `llms-txt.ts`, sem
- * IndexNow e oculto no `CountrySelector`. A página existe para o André revisar
- * pelo endereço direto. Publicar = virar as 5 no mesmo commit.
+ * ✅ PUBLICADO em 08/Nov/2026 (decisão do André, opção B, duas semanas antes da
+ * Weekly №1): as 5 chaves viradas no mesmo commit, como nos EUA: `robots`
+ * indexável aqui, `sitemap.ts`, `llms-txt.ts`, IndexNow depois do deploy e
+ * `CountrySelector` com `ready: true`. Despublicar = as mesmas 5.
  *
  * O canônico é declarado aqui com 'dashboard/fr' (o layout embrulha os países e
  * não pode fixar caminho).
@@ -63,11 +63,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: 'Panel de la elección presidencial francesa de 2027: dos mercados de predicción lado a lado, encuestas cotejadas con la ficha oficial y la prensa francesa.',
     },
   }
-  return {
-    ...buildMetadata({ ...SEO[loc], path: 'dashboard/fr', image: `/brand/og-fr-panel-${loc === 'pt-BR' ? 'pt' : loc}-1200x627.png` }, loc),
-    // 🚧 Fora dos buscadores até o André publicar (ver o comentário do topo).
-    robots: { index: false, follow: false },
-  }
+  return buildMetadata({ ...SEO[loc], path: 'dashboard/fr', image: `/brand/og-fr-panel-${loc === 'pt-BR' ? 'pt' : loc}-1200x627.png` }, loc)
 }
 
 // 30 min: o mesmo ritmo das coletas de pesquisa e de imprensa basta.
