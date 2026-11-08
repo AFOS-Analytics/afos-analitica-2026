@@ -15,17 +15,25 @@ import { useTranslation } from '../i18n/context'
  * sitemap, llms.txt e IndexNow — a flag sozinha só resolve o caminho humano.
  */
 
-type CountryCode = 'br' | 'us'
+type CountryCode = 'br' | 'us' | 'fr'
 
 interface CountryEntry {
   code: CountryCode
   ready: boolean
+  /**
+   * 🚧 `oculto`: o país NÃO aparece nem como "em breve" nas outras páginas.
+   * Só se mostra na própria página, para ela se marcar como a atual. Existe
+   * para a França (08/Nov/2026): "em breve" já anunciaria um painel que o
+   * André ainda não aprovou.
+   */
+  oculto?: boolean
   label: { 'pt-BR': string; en: string; es: string }
 }
 
 const COUNTRIES: CountryEntry[] = [
   { code: 'br', ready: true, label: { 'pt-BR': 'Brasil', en: 'Brazil', es: 'Brasil' } },
   { code: 'us', ready: true, label: { 'pt-BR': 'Estados Unidos', en: 'United States', es: 'Estados Unidos' } },
+  { code: 'fr', ready: false, oculto: true, label: { 'pt-BR': 'França', en: 'France', es: 'Francia' } },
 ]
 
 const T = {
@@ -49,7 +57,7 @@ export function CountrySelector({ active }: { active: CountryCode }) {
           {t.heading}
         </span>
 
-        {COUNTRIES.map((c) => {
+        {COUNTRIES.filter((c) => !c.oculto || c.code === active).map((c) => {
           const name = c.label[tKey]
           const isActive = c.code === active
           const flag = (
