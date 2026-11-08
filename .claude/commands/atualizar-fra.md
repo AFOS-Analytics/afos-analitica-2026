@@ -1,6 +1,6 @@
 # AFOS Analytics — Atualização Completa (FRANÇA 2027)
 
-Atualiza o **painel da França** (`/[idioma]/dashboard/fr`): confere o mercado nos dois livros, confere as coletas automáticas de pesquisa e de imprensa, reescreve o texto do painel nos 3 idiomas, regera o cartão social e publica.
+Atualiza o **painel da França** (`/[idioma]/dashboard/fr`): confere o mercado nos dois livros, confere as coletas automáticas de pesquisa e de imprensa, reescreve o texto do painel nos 3 idiomas, e publica.
 
 Criado em 08/Nov/2026. Molde: `/atualizar-brz` (painel com texto) e `/atualizar-usa` (trava, imprensa). Onde este arquivo não fala, valem as regras daqueles dois.
 
@@ -50,13 +50,9 @@ Arquivos: `public/fr/analise.pt-BR.json` (ORIGEM, como no painel do Brasil), `.e
 
 Quando a seção de perfis existir, os textos dela também moram em JSON nos 3 idiomas e seguem as regras da ETAPA 3. São os **8 candidatos com mais de 5 pontos no mercado ou na média das pesquisas** (decisão do André, 08/Nov/2026). Candidato que cair abaixo dos dois limites sai na rodada seguinte; quem passar entra.
 
-## ETAPA 5: Cartão social
+## ETAPA 5: Cartão social (NÃO se regera)
 
-```bash
-node scripts/build-og-card-fr-panel.mjs
-```
-
-Lê preço e pesquisas na hora e carimba dia e hora. **Falha se a leitura de mercado vier degradada.** Gera os 3 cartões da MESMA leitura (`public/brand/og-fr-panel-{en,pt,es}-1200x627.png`), um por idioma, cada um ligado à sua versão da página. Conferir as três imagens antes de publicar.
+Desde 08/Nov/2026 (decisão do André) o cartão do painel é **permanente e sem número**: descreve o que o painel mede, nos 3 idiomas (`public/brand/og-fr-panel-{en,pt,es}-1200x627.png`). O link do painel circula por semanas e WhatsApp, LinkedIn e X guardam a imagem do primeiro compartilhamento, então número no cartão envelheceria sem conserto. **Esta rodada não mexe no cartão.** Regerar (`node scripts/build-og-card-fr-panel.mjs`) só quando o TEXTO do cartão mudar. Número em cartão é das edições (Weekly, Tradeoff), que têm endereço próprio.
 
 ## ETAPA 6: Conferir, publicar, conferir de novo
 

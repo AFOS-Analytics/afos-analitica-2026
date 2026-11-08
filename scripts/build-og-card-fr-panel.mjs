@@ -1,35 +1,28 @@
 /**
- * Cartão social (OG) do PAINEL DA FRANÇA. Criado 08/Nov/2026.
+ * Cartão social (OG) do PAINEL DA FRANÇA, nos 3 idiomas. Criado 08/Nov/2026.
  *
- * Moldura dos EUA (`build-og-cards-us.mjs`): safira da casa, e quem diz o país
- * é a BANDEIRA mais o rótulo escrito, não a cor.
+ * 🧊 CARTÃO PERMANENTE, SEM NÚMERO (decisão do André, 08/Nov/2026). A primeira
+ * versão trazia o preço de Le Pen lido na hora, com carimbo. Saiu por duas razões:
+ *  1. o link do painel é PERMANENTE e circula por semanas; número em cartão
+ *     envelhece no dia seguinte;
+ *  2. WhatsApp, LinkedIn e X guardam a imagem do primeiro compartilhamento de
+ *     cada link e não buscam de novo, então nenhuma atualização chega a quem já
+ *     recebeu o link.
+ * Número vai no cartão das EDIÇÕES (Weekly, Tradeoff), que têm endereço próprio
+ * e para as quais o número daquele dia é o certo para sempre.
  *
- * 🔢 DIFERENÇA DELIBERADA EM RELAÇÃO AOS EUA: nenhum número é digitado. O
- * cartão dos EUA tinha o preço escrito à mão e precisava ser regerado e
- * reescrito quando o preço andava. Aqui os três números saem na hora da
- * geração:
- *   - preço da Polymarket de Le Pen VENCER e de ela ESTAR NA CÉDULA, lidos na
- *     rota do AFOS (`/api/polymarket?country=fra&fresh=1`, com carimbo);
- *   - quantas listas de 1º turno dos últimos 45 dias a põem em primeiro, do
- *     coletor de pesquisas conferido contra as fichas oficiais.
- * O carimbo declara dia e HORA da leitura, para o cartão continuar verdadeiro
- * depois que o preço andar.
+ * ⛔ Não pôr aqui nada que mude: preço, contagem de pesquisas, número de
+ * veículos. As datas dos turnos podem (fixadas por decreto).
  *
- * ⛔ Descreve medição, não tese: dois números do mercado e um das pesquisas,
- * lado a lado, sem subtrair um do outro (grandezas diferentes).
- *
- * Uso: node scripts/build-og-card-fr-panel.mjs [pasta-destino]   (padrão public/brand)
- * Gera og-fr-panel-{en,pt,es}-1200x627.png, um por idioma. Regerar antes de publicar a tela e a cada
- * vez que o cartão for anexado a um post.
+ * Moldura dos EUA (safira da casa, bandeira e país escritos). Regerar só quando
+ * o TEXTO mudar: node scripts/build-og-card-fr-panel.mjs [pasta]   (padrão public/brand)
+ * Gera og-fr-panel-{en,pt,es}-1200x627.png.
  */
 import { chromium } from 'playwright'
 import { writeFileSync } from 'fs'
-import { baseDeLeitura } from './lib/base-afos.mjs'
-import { coletarPesquisasFr } from '../lib/fr-polls/collect.mjs'
 
 const W = 1200
 const H = 627
-const DIAS = 45
 
 /** Tricolor desenhada em SVG: o LinkedInBot só busca o arquivo declarado, nada externo. */
 function bandeira(w) {
@@ -42,55 +35,28 @@ function bandeira(w) {
   </svg>`
 }
 
-async function lerMercado() {
-  const res = await fetch(`${baseDeLeitura()}/api/polymarket?country=fra&fresh=1`, { signal: AbortSignal.timeout(60000) })
-  if (!res.ok) throw new Error(`rota de mercado devolveu HTTP ${res.status}`)
-  const j = await res.json()
-  if (j.degraded) throw new Error('leitura de mercado DEGRADADA: não gerar cartão com número incompleto')
-  const preco = (ev, re) => {
-    const m = (ev?.markets ?? []).find((x) => !x.closed && re.test(x.question ?? ''))
-    const p = Number(m?.outcomePrices?.[0])
-    if (!Number.isFinite(p)) throw new Error(`contrato não encontrado: ${re}`)
-    return p * 100
-  }
-  return {
-    vence: preco(j.winner, /^Will Marine Le Pen win\b/),
-    cedula: preco(j.onBallot, /^Will Marine Le Pen be on the ballot\b/),
-    lidoEm: j.fetchedAt,
-  }
-}
-
-async function lerPesquisas(agora) {
-  const d = await coletarPesquisasFr({ agora })
-  if (d.qualidade.falhas.length) throw new Error(`pesquisas: ${d.qualidade.falhas.join(' | ')}`)
-  const corte = new Date(agora.getTime() - DIAS * 864e5).toISOString().slice(0, 10)
-  const listas = d.pesquisas.filter((p) => p.publicavel && p.turno === 1 && p.campo.fim >= corte)
-  const primeira = listas.filter((p) => p.intencoes[0]?.candidato === 'Marine Le Pen').length
-  return { listas: listas.length, primeira }
-}
-
-/**
- * 🌐 TRÊS IDIOMAS (08/Nov/2026), da MESMA leitura: os números são lidos uma
- * vez e entram nos três cartões, então PT, EN e ES nunca discordam entre si.
- * Decimal: ponto em EN, vírgula em PT e ES (a régua do painel, lib/i18n/numero.ts).
- */
-const MESES = {
-  en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-  pt: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
-  es: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
-}
-function carimbo(iso, l) {
-  const d = new Date(iso)
-  const hm = `${String(d.getUTCHours()).padStart(2, '0')}:${String(d.getUTCMinutes()).padStart(2, '0')} UTC`
-  const m = MESES[l][d.getUTCMonth()]
-  return l === 'en' ? `${m} ${d.getUTCDate()}, ${d.getUTCFullYear()}, ${hm}` : `${d.getUTCDate()} de ${m} de ${d.getUTCFullYear()}, ${hm}`
-}
-const fmt = (v, l) => (l === 'en' ? v.toFixed(2) : v.toFixed(2).replace('.', ','))
-
 const T = {
-  en: { prod: 'FRANCE 2027 PRESIDENTIAL', pill: 'FRANCE PANEL', sub: 'what the market pays on<br>Marine Le Pen winning<br>the presidency', l: 'that she will be on<br>the ballot at all', s: 'Cour de cassation ruling due by early April 2027', tese: (p, n) => `The polls put her first in ${p} of ${n}<br>first-round lists of the past ${DIAS} days.`, meta: (c) => `Polymarket, reading of ${c} &middot; polls checked against official notices`, trio: 'Prediction markets &middot; Polls &middot; Press' },
-  pt: { prod: 'FRANÇA 2027 · PRESIDENCIAL', pill: 'PAINEL FRANÇA', sub: 'o que o mercado paga<br>pela vitória de<br>Marine Le Pen', l: 'por ela estar<br>na cédula', s: 'Cour de cassation decide até o início de abril de 2027', tese: (p, n) => `As pesquisas a põem em 1º em ${p} de ${n}<br>listas de 1º turno dos últimos ${DIAS} dias.`, meta: (c) => `Polymarket, leitura de ${c} &middot; pesquisas conferidas na ficha oficial`, trio: 'Mercados de previsão &middot; Pesquisas &middot; Imprensa' },
-  es: { prod: 'FRANCIA 2027 · PRESIDENCIAL', pill: 'PANEL FRANCIA', sub: 'lo que paga el mercado<br>por la victoria de<br>Marine Le Pen', l: 'por que esté<br>en la papeleta', s: 'La Cour de cassation decide antes de inicios de abril de 2027', tese: (p, n) => `Las encuestas la ubican 1ª en ${p} de ${n}<br>listas de 1ª vuelta de los últimos ${DIAS} días.`, meta: (c) => `Polymarket, lectura del ${c} &middot; encuestas cotejadas con la ficha oficial`, trio: 'Mercados de predicción &middot; Encuestas &middot; Prensa' },
+  en: {
+    prod: 'FRANCE 2027 · PRESIDENTIAL', pill: 'LIVE PANEL',
+    titulo: 'Two prediction markets,<br>the polls and the press,<br>side by side',
+    itens: ['Polymarket and Kalshi, never averaged', 'Polls checked against the official notice', 'French press from a fixed list of outlets'],
+    datas: 'First round April 18 &middot; runoff May 2, 2027',
+    trio: 'Prediction markets &middot; Polls &middot; Press',
+  },
+  pt: {
+    prod: 'FRANÇA 2027 · PRESIDENCIAL', pill: 'PAINEL AO VIVO',
+    titulo: 'Dois mercados de previsão,<br>as pesquisas e a imprensa,<br>lado a lado',
+    itens: ['Polymarket e Kalshi, nunca em média', 'Pesquisas conferidas na ficha oficial', 'Imprensa francesa de lista fixa'],
+    datas: '1º turno em 18 de abril &middot; 2º turno em 2 de maio de 2027',
+    trio: 'Mercados de previsão &middot; Pesquisas &middot; Imprensa',
+  },
+  es: {
+    prod: 'FRANCIA 2027 · PRESIDENCIAL', pill: 'PANEL EN VIVO',
+    titulo: 'Dos mercados de predicción,<br>las encuestas y la prensa,<br>lado a lado',
+    itens: ['Polymarket y Kalshi, nunca promediados', 'Encuestas cotejadas con la ficha oficial', 'Prensa francesa de lista fija'],
+    datas: '1ª vuelta el 18 de abril &middot; 2ª vuelta el 2 de mayo de 2027',
+    trio: 'Mercados de predicción &middot; Encuestas &middot; Prensa',
+  },
 }
 
 const CSS = `
@@ -108,54 +74,36 @@ body { width: ${W}px; height: ${H}px; }
 .prod { font-size: 22px; font-weight: 700; letter-spacing: 2.2px; }
 .body { flex: 1; display: flex; flex-direction: column; justify-content: center; }
 .pill { display: inline-block; align-self: flex-start; font-size: 20px; font-weight: 700; letter-spacing: 2.4px; color: #BFDBFE;
-        border: 2px solid rgba(255,255,255,.3); border-radius: 999px; padding: 7px 18px; margin-bottom: 16px; }
-.split { display: flex; gap: 40px; align-items: flex-start; }
-.left { flex: 1; }
-.big { font-size: 118px; font-weight: 800; letter-spacing: -4px; line-height: 1; }
-.sub { font-size: 29px; font-weight: 600; color: #BFDBFE; line-height: 1.32; margin-top: 12px; }
-.card { width: 420px; background: rgba(255,255,255,.09); border: 2px solid rgba(255,255,255,.24); border-radius: 16px; padding: 22px 28px; }
-.card .n { font-size: 58px; font-weight: 800; color: #93C5FD; line-height: 1; }
-.card .l { font-size: 25px; color: #DBEAFE; line-height: 1.32; margin-top: 8px; }
-.card .s { font-size: 19px; color: rgba(255,255,255,.6); margin-top: 10px; }
-.thesis { font-size: 32px; font-weight: 700; line-height: 1.28; margin-top: 24px; }
-.meta { font-size: 21px; color: rgba(255,255,255,.62); margin-top: 16px; }
+        border: 2px solid rgba(255,255,255,.3); border-radius: 999px; padding: 7px 18px; margin-bottom: 20px; }
+.titulo { font-size: 52px; font-weight: 800; line-height: 1.12; letter-spacing: -1px; }
+.itens { margin-top: 22px; display: flex; flex-direction: column; gap: 6px; }
+.itens div { font-size: 25px; font-weight: 600; color: #BFDBFE; }
+.itens div span { color: #93C5FD; margin-right: 12px; font-size: 18px; vertical-align: 3px; }
+.datas { font-size: 22px; color: rgba(255,255,255,.7); margin-top: 18px; }
 .foot { display: flex; justify-content: space-between; align-items: baseline; padding-top: 14px; border-top: 2px solid rgba(255,255,255,.22); }
 .url { font-size: 23px; font-weight: 600; color: #93C5FD; }
 .trio { font-size: 23px; color: rgba(255,255,255,.62); }
 `
 
-function html({ vence, cedula, lidoEm, listas, primeira }, l) {
+function html(l) {
   const t = T[l]
   return `<!DOCTYPE html><html lang="${l}"><head><meta charset="utf-8"><style>${CSS}</style></head><body><div class="og">
   <div class="head"><div class="mark">AFOS ANALYTICS</div><div class="pais">${bandeira(60)}<div class="prod">${t.prod}</div></div></div>
   <div class="body">
     <div class="pill">${t.pill}</div>
-    <div class="split">
-      <div class="left">
-        <div class="big">${fmt(vence, l)}%</div>
-        <div class="sub">${t.sub}</div>
-      </div>
-      <div class="card">
-        <div class="n">${fmt(cedula, l)}%</div>
-        <div class="l">${t.l}</div>
-        <div class="s">${t.s}</div>
-      </div>
-    </div>
-    <div class="thesis">${t.tese(primeira, listas)}</div>
-    <div class="meta">${t.meta(carimbo(lidoEm, l))}</div>
+    <div class="titulo">${t.titulo}</div>
+    <div class="itens">${t.itens.map((i) => `<div><span>&#9679;</span>${i}</div>`).join('')}</div>
+    <div class="datas">${t.datas}</div>
   </div>
   <div class="foot"><div class="url">afos-analytics.com</div><div class="trio">${t.trio}</div></div>
 </div></body></html>`
 }
 
-const agora = new Date()
-const [mercado, pesq] = await Promise.all([lerMercado(), lerPesquisas(agora)])
-console.log(`🇫🇷 cartão do painel FR · vence ${mercado.vence.toFixed(2)} · cédula ${mercado.cedula.toFixed(2)} · ${pesq.primeira}/${pesq.listas} listas · lido ${mercado.lidoEm}`)
 const browser = await chromium.launch()
 const page = await (await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 1 })).newPage()
 const DEST = process.argv[2] || 'public/brand'
 for (const l of ['en', 'pt', 'es']) {
-  await page.setContent(html({ ...mercado, ...pesq }, l), { waitUntil: 'load' })
+  await page.setContent(html(l), { waitUntil: 'load' })
   const buf = await page.locator('.og').screenshot({ type: 'png' })
   writeFileSync(`${DEST}/og-fr-panel-${l}-1200x627.png`, buf)
   console.log(`  ${DEST}/og-fr-panel-${l}-1200x627.png  ${(buf.length / 1024).toFixed(0)} KB`)
