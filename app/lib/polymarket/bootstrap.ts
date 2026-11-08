@@ -88,6 +88,9 @@ export function extractCandidateName(question: string): string {
 const PISO_RUIDO_CANDIDATO = 0.005;
 const PISO_RUIDO_DISTRIBUICAO = 0.0005;
 
+/** Nome de contrato reservado pela Polymarket para um candidato futuro. */
+const ENCHIMENTO = /^(?:Candidate|Person|Player|Option) [A-Z]$/;
+
 function extractCandidates(markets: ParsedMarket[], isDistribution = false): CandidateSummary[] {
   const candidates: CandidateSummary[] = [];
   const piso = isDistribution ? PISO_RUIDO_DISTRIBUICAO : PISO_RUIDO_CANDIDATO;
@@ -96,8 +99,17 @@ function extractCandidates(markets: ParsedMarket[], isDistribution = false): Can
     if (m.closed) continue;
     if (m.yesPrice < piso) continue; // Filter noise
 
+    // 🧱 CONTRATO DE ENCHIMENTO não é preço (08/Nov/2026). O livro "first round
+    // winner" da França tem 19 contratos "Candidate A" a "Candidate S", cravados
+    // em 0,50 e sem negócio. Gravados, eles fizeram 21 de 86 preços do instante
+    // ficarem perto de 50, e a quarentena (`instantesSuspeitos`) descartou o
+    // INSTANTE INTEIRO, com os preços reais junto. Só sai o que é enchimento E
+    // não tem negócio: contrato novo de verdade, mesmo sem volume, continua.
+    const nome = extractCandidateName(m.question);
+    if (ENCHIMENTO.test(nome) && !(m.volume > 0)) continue;
+
     candidates.push({
-      name: extractCandidateName(m.question),
+      name: nome,
       probability: Math.round(m.yesPrice * 1000) / 10, // e.g. 0.42 → 42.0
       volumeUsd: Math.round(m.volume),
     });

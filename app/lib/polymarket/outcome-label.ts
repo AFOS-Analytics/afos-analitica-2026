@@ -130,8 +130,13 @@ export function extractOutcomeLabel(question: string, opcoes: OpcoesRotulo = {})
   // STF / impeachment
   if (/STF|Justice.*removed.*impeachment/i.test(q)) return rotuloStf;
 
-  // Candidato: "Will X win/finish/be ..."
-  const candMatch = q.match(/Will (.+?) (?:win|finish|be)/);
+  // Candidato: "Will X win/finish/be/advance ..."
+  // 🇫🇷 `advance` entrou em 08/Nov/2026: o livro "who will advance to the 2nd
+  // round" da França caía no nome de emergência ("Will Jean-Luc Mélenchon
+  // advance to the s…#temw2") na 1ª captura. Corrigido com a série de 1 ponto,
+  // antes que o mesmo candidato ganhasse dois nomes. Nenhuma outra série usava
+  // "advance" (conferido no backup: só as 10 da França).
+  const candMatch = q.match(/Will (.+?) (?:win|finish|be|advance)/);
   if (candMatch) {
     const name = candMatch[1];
     if (name.includes('Carlos Roberto Massa')) return 'Ratinho Jr.';
