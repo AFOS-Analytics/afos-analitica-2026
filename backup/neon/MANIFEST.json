@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-11-08T23:00:36.024Z",
+  "geradoEm": "2026-11-08T23:15:17.566Z",
   "observacao": "geradoEm usa o registro mais recente do banco, nao o relogio da maquina, para o backup ser reproduzivel e o diff ficar vazio quando nada mudou",
   "repositorioPublico": true,
   "tabelasExcluidasPorConterDadoPessoal": {
@@ -16,8 +16,8 @@
     "llmRun": "pode conter prompt com dado de usuário",
     "modelOutput": "pode conter resposta sobre dado de usuário"
   },
-  "totalLinhas": 150621,
-  "totalBytesComprimidos": 15353183,
+  "totalLinhas": 150652,
+  "totalBytesComprimidos": 15355344,
   "arquivos": [
     {
       "arquivo": "marketPrice/2026-04.csv.gz",
@@ -357,15 +357,15 @@
     },
     {
       "arquivo": "kalshiPreco/2026-11.csv.gz",
-      "linhas": 90,
-      "sha256": "9637faa1ad2250b0",
-      "bytesGz": 7570
+      "linhas": 120,
+      "sha256": "87ddb96e06098b93",
+      "bytesGz": 9693
     },
     {
       "arquivo": "kalshiCaptura/2026-11.csv.gz",
-      "linhas": 10,
-      "sha256": "f753d3cb94e0f39d",
-      "bytesGz": 553
+      "linhas": 11,
+      "sha256": "fea83597ae696181",
+      "bytesGz": 591
     }
   ]
 }
