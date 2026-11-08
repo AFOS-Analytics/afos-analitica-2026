@@ -99,6 +99,16 @@ export const ELECTION_REGISTRY: ElectionRegistryEntry[] = [
 
   // ── France ────────────────────────────
   { slug: 'french-election-called-by', iso3: 'FRA', countryName: 'France', flag: 'fr', electionDate: '2027-04-10', electionType: 'Election Timeline', isPrimary: true, enabled: true },
+  // 🇫🇷 Presidencial 2027 — COLETA ligada em 08/Nov/2026, para a série do painel
+  // da França começar já (decisão do André: coletar já, mostrar depois). Todos
+  // `isPrimary: false`: o mapa global segue mostrando o contrato acima.
+  // `isDistribution` só onde os contratos são mutuamente exclusivos e a SOMA é
+  // medida (vencedor e mais votado no 1º turno). No "quem vai ao 2º turno" a
+  // soma dá ~200 e na "cédula" os contratos não se excluem: sem o flag.
+  { slug: 'next-french-presidential-election', iso3: 'FRA', countryName: 'France', flag: 'fr', electionDate: '2027-05-02', electionType: 'Presidential', isPrimary: false, enabled: true, isDistribution: true },
+  { slug: 'french-presidential-election-first-round-winner', iso3: 'FRA', countryName: 'France', flag: 'fr', electionDate: '2027-04-18', electionType: 'Presidential 1st Round Winner', isPrimary: false, enabled: true, isDistribution: true },
+  { slug: 'next-french-presidential-election-who-will-advance-to-the-2nd-round', iso3: 'FRA', countryName: 'France', flag: 'fr', electionDate: '2027-04-18', electionType: 'Presidential 2nd Round Qualifiers', isPrimary: false, enabled: true },
+  { slug: '2027-french-presidential-election-who-will-be-on-the-ballot', iso3: 'FRA', countryName: 'France', flag: 'fr', electionDate: '2027-04-18', electionType: 'Presidential Ballot', isPrimary: false, enabled: true },
 
   // ── United Kingdom ────────────────────
   { slug: 'uk-election-called-by', iso3: 'GBR', countryName: 'United Kingdom', flag: 'gb', electionDate: '2029-01-01', electionType: 'Election Timeline', isPrimary: true, enabled: true },

@@ -86,6 +86,9 @@ const PUBLICAVEL: Record<string, string> = {
   analysisReport: 'relatórios editoriais, conteúdo já público no site',
   crossSignalLink: 'ligações entre sinais',
   forecastSnapshot: 'snapshots de previsão',
+  // 🇫🇷 08/Nov/2026: o segundo livro de mercado, painel da França.
+  kalshiPreco: 'série de preços da Kalshi, acumulada a cada 30 min, INSUBSTITUÍVEL',
+  kalshiCaptura: 'diário de capturas da Kalshi, com defeitos; prova dos 14 dias limpos',
 }
 
 /**

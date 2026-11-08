@@ -81,6 +81,22 @@ const PISO_RELEVANCIA_PCT = 0.5
  */
 const BOOKS_BR = ['presidential', 'secondPlace', 'thirdPlace', 'stf', 'senate'] as const
 const BOOKS_US = ['house', 'senate', 'asScheduled'] as const
+// 🇫🇷 08/Nov/2026. As chaves de `lib/fr-market/mercados.ts`. `calledBy` (eleição
+// antecipada) fica de fora: é contexto, não o preço da eleição.
+const BOOKS_FRA = ['winner', 'secondRound', 'firstRoundWinner', 'onBallot'] as const
+
+/**
+ * País da trava, LISTA FECHADA (08/Nov/2026). Antes era
+ * `=== 'us' ? 'us' : 'br'`, e `--pais=fra` rodaria a trava do BRASIL e
+ * imprimiria APROVADO sobre o país errado. Sem `--pais` segue o Brasil, como
+ * sempre; `--pais` desconhecido LANÇA.
+ */
+const TRAVA_POR_PAIS: Record<string, { rotulo: string; country: string | null; books: readonly string[] }> = {
+  br: { rotulo: 'br', country: null, books: BOOKS_BR },
+  us: { rotulo: 'us', country: 'us', books: BOOKS_US },
+  fra: { rotulo: 'fra', country: 'fra', books: BOOKS_FRA },
+  fr: { rotulo: 'fra', country: 'fra', books: BOOKS_FRA },
+}
 
 interface Leitura {
   precos: Map<string, number>
@@ -206,9 +222,14 @@ async function main() {
   // ⚠️ O padrão continua sendo o Brasil, sem parâmetro nenhum. Quem já chama
   // esta trava (o /atualizar-brz e quem a roda à mão) não pode mudar de
   // comportamento por causa da chegada dos EUA.
-  const pais = args.find(a => a.startsWith('--pais='))?.split('=')[1] === 'us' ? 'us' : 'br'
-  const proxy = pais === 'us' ? `${PROXY_BASE}&country=us` : PROXY_BASE
-  const books: readonly string[] = pais === 'us' ? BOOKS_US : BOOKS_BR
+  const pedido = args.find(a => a.startsWith('--pais='))?.split('=')[1] ?? 'br'
+  const trava = TRAVA_POR_PAIS[pedido.trim().toLowerCase()]
+  if (!trava) {
+    throw new Error(`--pais=${pedido} desconhecido. Aceitos: ${Object.keys(TRAVA_POR_PAIS).join(', ')}. Nunca um país por padrão.`)
+  }
+  const pais = trava.rotulo
+  const proxy = trava.country ? `${PROXY_BASE}&country=${trava.country}` : PROXY_BASE
+  const books: readonly string[] = trava.books
 
   const motivos: string[] = []
 

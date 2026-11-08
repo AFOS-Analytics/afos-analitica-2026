@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 
+import { KEYS_FRA, SLUGS_FRA } from '@/lib/fr-market/mercados';
 import { KEYS_US, SLUGS_US } from '@/lib/us-market/mercados';
 
 // Sem `export const revalidate`: com ele a rota virava ISR e o Cache-Control
@@ -45,6 +46,35 @@ const keys = ['presidential', 'secondPlace', 'thirdPlace', 'stf', 'senate', 'inf
 // `scripts/testar-mercados-us.ts` trava a lista literal.
 const slugsUs = SLUGS_US;
 const keysUs = KEYS_US;
+
+// ── País é LISTA FECHADA. Acrescentado 08/Nov/2026, com a França ────────────
+//
+// 🔴 Até aqui a regra era `country === 'us' ? 'us' : 'br'`: QUALQUER outro valor
+// (`fra`, `fr`, um erro de digitação) recebia o Brasil, bem-formado, com 200.
+// É o defeito do fallback que entrega o outro país, e a França seria a primeira
+// vítima. Agora:
+//   - sem `country`     → Brasil, byte por byte igual (painel BR, cron, trava)
+//   - `br` / `us`       → como antes
+//   - `fra` (ou `fr`)   → França, presidencial 2027
+//   - qualquer outro    → HTTP 400, nunca um país por padrão
+// `fr` é aceito porque as rotas do site usam o código de 2 letras (br, us);
+// `fra` é o nome dos comandos (/atualizar-fra). Os dois são EXPLÍCITOS e caem
+// no mesmo registro, então não há duas listas para divergir.
+type PaisMercado = 'br' | 'us' | 'fra';
+
+const CONJUNTOS: Record<PaisMercado, { slugs: readonly string[]; keys: readonly string[] }> = {
+  br: { slugs, keys },
+  us: { slugs: slugsUs, keys: keysUs },
+  fra: { slugs: SLUGS_FRA, keys: KEYS_FRA },
+};
+
+const ALIAS_PAIS: Record<string, PaisMercado> = { br: 'br', us: 'us', fra: 'fra', fr: 'fra' };
+
+/** `null` = país pedido e desconhecido. Ausente = Brasil (contrato antigo). */
+function resolverPais(valor: string | null): PaisMercado | null {
+  if (valor === null) return 'br';
+  return ALIAS_PAIS[valor.trim().toLowerCase()] ?? null;
+}
 
 function isValidSlug(slug: string): boolean {
   return /^[a-z0-9-]+$/.test(slug);
@@ -128,15 +158,16 @@ async function fetchEvent(slug: string, fresh = false) {
   }
 }
 
-async function fetchFromProdProxy(country: string) {
+async function fetchFromProdProxy(country: PaisMercado) {
   try {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 15000);
 
     // O país precisa ir junto, senão o dev de `?country=us` recebe o Brasil.
-    const url = country === 'us'
-      ? 'https://www.afos-analytics.com/api/polymarket?country=us'
-      : 'https://www.afos-analytics.com/api/polymarket';
+    // Brasil segue sem parâmetro (contrato antigo); os demais vão explícitos.
+    const url = country === 'br'
+      ? 'https://www.afos-analytics.com/api/polymarket'
+      : `https://www.afos-analytics.com/api/polymarket?country=${country}`;
     const res = await fetch(url, {
       next: { revalidate: 7200 },
       signal: controller.signal,
@@ -155,12 +186,20 @@ export async function GET(request: Request) {
   const params = new URL(request.url).searchParams;
   const fresh = params.has('fresh');
 
-  // ⚠️ SEM `?country=us` a resposta é a do Brasil, byte por byte igual à de
+  // ⚠️ SEM `?country` a resposta é a do Brasil, byte por byte igual à de
   // antes. Não é detalhe: esta rota é consumida pelo painel do Brasil, pela
   // trava de captura e pelo cron de coleta. Mudar o padrão mexeria nos três.
-  const country = params.get('country') === 'us' ? 'us' : 'br';
-  const listaSlugs = country === 'us' ? slugsUs : slugs;
-  const listaKeys: readonly string[] = country === 'us' ? keysUs : keys;
+  // Com `?country` DESCONHECIDO, erro: nunca o Brasil calado (ver CONJUNTOS).
+  const pedido = params.get('country');
+  const country = resolverPais(pedido);
+  if (country === null) {
+    return NextResponse.json(
+      { error: `país desconhecido: "${pedido}". Aceitos: ${Object.keys(ALIAS_PAIS).join(', ')}.` },
+      { status: 400, headers: { 'Cache-Control': 'no-store' } },
+    );
+  }
+  const listaSlugs = CONJUNTOS[country].slugs;
+  const listaKeys = CONJUNTOS[country].keys;
 
   if (process.env.NODE_ENV === 'development') {
     const proxied = await fetchFromProdProxy(country);

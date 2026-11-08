@@ -15,14 +15,24 @@ import {
   isVisibleInProduction,
   tradeoffExists,
   getAdjacentDates,
+  type PaisTradeoff,
 } from '../../../../../lib/afos-tradeoff/loader'
 import { buildArticleSchema, buildBreadcrumbSchema, getOgImageUrl, parseUpdatedAt } from '../../../../../lib/afos-tradeoff/schema'
 import { feedPath, type FeedLocale, type FeedCountry } from '../../../../../lib/feeds/rss'
 
 /** 🏷️ Assunto do cartão social, POR PAÍS. Ver comentário no bloco openGraph. */
-const TAGS_POR_PAIS: Record<string, string[]> = {
+// 🔒 08/Nov/2026: tipado por `PaisTradeoff`. Um país novo em PAISES_TRADEOFF
+// (a França) sem a sua linha aqui NÃO COMPILA, em vez de cair calado nas
+// etiquetas do Brasil, como fazia o `?? TAGS_POR_PAIS.br`.
+const TAGS_POR_PAIS: Record<PaisTradeoff, string[]> = {
   br: ['Brazil 2026 election', 'prediction markets', 'electoral polls', 'political risk', 'weekly analysis'],
   us: ['US 2026 midterms', 'prediction markets', 'electoral polls', 'political risk', 'weekly analysis'],
+}
+
+/** 🔒 08/Nov/2026: era `pais === 'br' ? '' : ' US'`, e QUALQUER terceiro país sairia "US". */
+const SUFIXO_FEED_POR_PAIS: Record<PaisTradeoff, string> = {
+  br: '',
+  us: ' US',
 }
 
 interface PageProps {
@@ -84,7 +94,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
         'application/rss+xml': [
           {
             url: `https://www.afos-analytics.com${feedPath('tradeoff', params.locale as FeedLocale, pais as FeedCountry)}`,
-            title: `AFOS Tradeoff${pais === 'br' ? '' : ' US'}, RSS feed`,
+            title: `AFOS Tradeoff${SUFIXO_FEED_POR_PAIS[pais]}, RSS feed`,
           },
         ],
       },
@@ -104,7 +114,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
       // americana, dizendo ao scraper social que a peça era sobre outra eleição.
       // Corrigido em 03/Ago/2026, no mesmo dia em que o cartão do Weekly foi
       // pego anunciando o Brasil num link das midterms.
-      tags: TAGS_POR_PAIS[pais] ?? TAGS_POR_PAIS.br,
+      tags: TAGS_POR_PAIS[pais],
       images: [
         {
           url: ogImage,

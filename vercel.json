@@ -18,6 +18,10 @@
       "schedule": "0 5 * * *"
     },
     {
+      "path": "/api/cron/refresh-kalshi",
+      "schedule": "15,45 * * * *"
+    },
+    {
       "path": "/api/cron/refresh-us-polls",
       "schedule": "10 7 * * *"
     },

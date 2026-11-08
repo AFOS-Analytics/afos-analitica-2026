@@ -340,6 +340,68 @@ model ForecastSnapshot {
   @@schema("market")
 }
 
+// ─── KALSHI, o segundo livro de mercado (08/Nov/2026, painel da França) ─────
+//
+// 🔒 TABELAS PRÓPRIAS, de propósito, e não uma coluna nova nas tabelas da
+// Polymarket. As tabelas `market_*` são lidas por nome de candidato e por slug
+// em vários lugares (history, série do contrato, trava, backup, HF). Uma linha
+// da Kalshi ali dentro com "Marine Le Pen" se misturaria calada na série da
+// Polymarket em qualquer leitor que não filtrasse a plataforma: é o defeito do
+// país que se mistura, agora entre livros. Separado, nenhum leitor antigo muda.
+// A coluna que diz de qual livro veio o preço existe na visão
+// `market.precos_por_livro` (migração 20261108180000), que junta os dois.
+//
+// Preço em PONTOS (0 a 100), igual a `market_prices.price`.
+// Volume em CONTRATOS, nunca dólares: a Kalshi não informa o valor negociado.
+
+/// Uma rodada de captura, gravada SEMPRE, com ou sem defeito. É o que permite
+/// dizer "14 dias de captura sem defeito" (lib/kalshi/prontidao.ts).
+model KalshiCaptura {
+  id           String        @id @default(uuid()) @db.Uuid
+  startedAt    DateTime      @map("started_at") @db.Timestamptz(6)
+  finishedAt   DateTime?     @map("finished_at") @db.Timestamptz(6)
+  pais         String
+  eventTicker  String        @map("event_ticker")
+  ok           Boolean
+  defeitos     String[]      @default([])
+  avisos       String[]      @default([])
+  contratos    Int           @default(0)
+  gravados     Int           @default(0)
+  somaPrecos   Float?        @map("soma_precos")
+  origem       String        @default("cron")
+  precos       KalshiPreco[]
+
+  @@index([startedAt])
+  @@index([pais, startedAt])
+  @@map("kalshi_capturas")
+  @@schema("market")
+}
+
+/// Um preço de um contrato numa captura. Só grava quando algum contrato andou
+/// 0,5pp, quando aparece contrato novo ou a cada 4h (mesma regra da Polymarket).
+model KalshiPreco {
+  id                  String        @id @default(uuid()) @db.Uuid
+  capturaId           String        @map("captura_id") @db.Uuid
+  captura             KalshiCaptura @relation(fields: [capturaId], references: [id], onDelete: Cascade)
+  eventTicker         String        @map("event_ticker")
+  ticker              String
+  candidato           String
+  preco               Float
+  compra              Float?
+  venda               Float?
+  volumeContratos     Float?        @map("volume_contratos")
+  contratosEmAberto   Float?        @map("contratos_em_aberto")
+  ultimaNegociacaoEm  DateTime?     @map("ultima_negociacao_em") @db.Timestamptz(6)
+  snapshotAt          DateTime      @map("snapshot_at") @db.Timestamptz(6)
+  dedupHash           String        @unique @map("dedup_hash")
+
+  @@index([ticker, snapshotAt])
+  @@index([eventTicker, snapshotAt])
+  @@index([snapshotAt])
+  @@map("kalshi_precos")
+  @@schema("market")
+}
+
 // ═══════════════════════════════════════════════════════════
 // GOVERNANCE — Audit trail, deletion requests
 // ═══════════════════════════════════════════════════════════
