@@ -11,10 +11,10 @@
  *                                        ficha oficial) e `fr-press-*` (imprensa, 1 por dia)
  *   public/fr/institutos.json            tabela de institutos que a tela mostra
  *
- * ⛔ A KALSHI NÃO ENTRA (08/Nov/2026). O Kalshi Developer Agreement v1.1, §3 e
- * §3.1, limita o uso da API à negociação do próprio membro e proíbe compartilhar
- * o dado com terceiros sem autorização escrita da Kalshi. Republicar a série num
- * dataset aberto é exatamente isso. Sem autorização, fica fora.
+ * 📒 KALSHI ENTRA desde a v1.1.0, por decisão do André em 08/Nov/2026, tomada
+ * sabendo que o Kalshi Developer Agreement v1.1, §3.1, pede autorização escrita
+ * para compartilhar dado da API (memory/reference_kalshi_termos_proibem_compartilhar_dado_da_api.md).
+ * Livro próprio, arquivos próprios, NUNCA somado nem tirado média com a Polymarket.
  *
  * 🧹 A série da Polymarket começa em 2026-11-08T19:30Z. A captura das 18:30 foi
  * descartada (contratos de enchimento "Candidate A" e rótulos de emergência), e
@@ -113,6 +113,22 @@ function motivoEn(p) {
   return ''
 }
 
+// ── 1b. KALSHI: livro próprio, com o diário de capturas ao lado ──────────────
+const capturasK = carregaTabela('kalshiCaptura').filter((c) => c.pais === 'fra').sort((a, b) => a.startedAt.localeCompare(b.startedAt))
+const idsK = new Set(capturasK.map((c) => c.id))
+const precosK = carregaTabela('kalshiPreco').filter((k) => idsK.has(k.capturaId))
+  .sort((a, b) => a.snapshotAt.localeCompare(b.snapshotAt) || a.candidato.localeCompare(b.candidato))
+writeFileSync(join(OUT, 'data', 'kalshi-winner.csv'), toCSV(
+  ['snapshot_at_utc', 'event_ticker', 'ticker', 'candidate', 'last_price_pct', 'bid_pct', 'ask_pct', 'volume_contracts', 'open_interest_contracts', 'last_trade_at_utc'],
+  precosK.map((k) => [k.snapshotAt, k.eventTicker, k.ticker, k.candidato, k.preco, k.compra, k.venda, k.volumeContratos, k.contratosEmAberto, k.ultimaNegociacaoEm])))
+writeFileSync(join(OUT, 'data', 'kalshi-captures.csv'), toCSV(
+  ['started_at_utc', 'finished_at_utc', 'event_ticker', 'contracts_read', 'rows_stored', 'sum_of_prices', 'passed_check', 'defects', 'warnings', 'origin'],
+  capturasK.map((c) => [c.startedAt, c.finishedAt, c.eventTicker, c.contratos, c.gravados, c.somaPrecos, c.ok, c.defeitos, c.avisos, c.origem])))
+const resumoKalshi = { source: 'Kalshi', event: 'KXFRENCHPRES-27', file: 'data/kalshi-winner.csv', captures_file: 'data/kalshi-captures.csv',
+  rows: precosK.length, snapshots: new Set(precosK.map((k) => k.snapshotAt)).size, captures: capturasK.length,
+  captures_passing_check: capturasK.filter((c) => c.ok === 'true').length,
+  from: precosK[0]?.snapshotAt ?? null, to: precosK.at(-1)?.snapshotAt ?? null }
+
 // ── 2. PESQUISAS: o registro fr-polls mais recente (ele é cumulativo) ──────────
 const relatorios = carregaTabela('analysisReport')
 const ultimoDe = (prefixo) => relatorios.filter((r) => r.slug?.startsWith(prefixo)).sort((a, b) => a.publishedAt.localeCompare(b.publishedAt))
@@ -156,6 +172,7 @@ const resumo = {
   election: { first_round: '2027-04-18', runoff: '2027-05-02' },
   status: 'pre-electoral',
   official_result_available: false,
+  kalshi: resumoKalshi,
   markets: { source: 'Polymarket', series_starts_utc: `${INICIO_SERIE}:00Z`, books: resumoMercado,
     dropped_rows: { before_series_start: descartesAntes, placeholder_contracts: descartesEnchimento } },
   polls: {
@@ -177,6 +194,7 @@ writeFileSync(join(OUT, 'CHECKSUMS.txt'), arquivos.map((f) =>
   `${createHash('sha256').update(readFileSync(join(OUT, f))).digest('hex')}  ${f.replace(/\\/g, '/')}`).join('\n') + '\n')
 
 console.log('staging:', OUT)
+console.log(`  kalshi ${resumoKalshi.rows} linhas, ${resumoKalshi.snapshots} instantes, ${resumoKalshi.captures} capturas (${resumoKalshi.captures_passing_check} ok), ${resumoKalshi.from} a ${resumoKalshi.to}`)
 for (const m of resumoMercado) console.log(`  mercado ${m.file.padEnd(28)} ${String(m.rows).padStart(6)} linhas, ${m.snapshots} instantes, ${m.from ?? '-'} a ${m.to ?? '-'}`)
 console.log(`  descartes: ${descartesAntes} antes de ${INICIO_SERIE}Z, ${descartesEnchimento} de enchimento`)
 console.log(`  pesquisas: ${pesquisas.length} listas (${pub.length} publicáveis, ${resumo.polls.pollsters} institutos), campo ${resumo.polls.fieldwork_from} a ${resumo.polls.fieldwork_to}`)

@@ -15,7 +15,9 @@ import { createHash } from 'crypto'
 const ROOT = process.cwd()
 const OUT = process.env.FR2027_OUT || join(ROOT, '.cache', 'fr2027-dataset')
 const R = JSON.parse(readFileSync(join(OUT, 'data', 'fr-2027-case-summary.json'), 'utf-8'))
-const VERSAO = '1.0.0'
+// 1.1.0 (08/Nov/2026): entra a Kalshi, livro próprio
+const VERSAO = '1.1.0'
+const K = R.kalshi
 const REPO = 'AFOS-Analytics1/france-2027-presidential-divergence'
 const P = R.polls
 
@@ -28,13 +30,16 @@ const yaml = `---
 license: cc-by-4.0
 language:
 - en
+- pt
+- es
 - fr
-pretty_name: AFOS France 2027 Presidential, prediction market and polls side by side
+pretty_name: AFOS France 2027 Presidential, prediction markets and polls side by side
 tags:
 - elections
 - france
 - prediction-markets
 - polymarket
+- kalshi
 - opinion-polls
 - political-risk
 - forecasting
@@ -49,6 +54,8 @@ configs:
   data_files: data/first-round-winner.csv
 - config_name: on_the_ballot
   data_files: data/on-the-ballot.csv
+- config_name: kalshi_winner
+  data_files: data/kalshi-winner.csv
 - config_name: voting_intentions
   data_files: polls/fr-voting-intentions.csv
 - config_name: press
@@ -56,7 +63,11 @@ configs:
 ---
 `
 
-const corpo = `# AFOS France 2027 Presidential: prediction market and polls, side by side
+const corpo = `![AFOS France 2027 Presidential Electoral Divergence](banner.png)
+
+# AFOS France 2027 Presidential: prediction markets and polls, side by side
+
+**English** · [Português](#português) · [Español](#español)
 
 Every price and every poll in this bundle was recorded **before the vote**. The first round is on **18 April 2027** and the runoff on **2 May 2027**. The official result lands in a later version, so anyone can check both instruments against it without taking our word for anything.
 
@@ -66,7 +77,8 @@ Live panel: [afos-analytics.com/en/dashboard/fr](https://www.afos-analytics.com/
 
 | part | content |
 |---|---|
-| **Market** | ${totalMercado} price observations from Polymarket in 4 books, from ${R.markets.series_starts_utc.slice(0, 16)} UTC |
+| **Market, Polymarket** | ${totalMercado} price observations in 4 books, from ${R.markets.series_starts_utc.slice(0, 16)} UTC |
+| **Market, Kalshi** | ${K.rows} price observations in the win book (\`${K.event}\`), from ${K.from?.slice(0, 16)} UTC, plus the log of all ${K.captures} captures |
 | **Polls** | ${P.lists} voting-intention lists; ${P.publishable_lists} of them pass the official-notice check, from ${P.pollsters} pollsters, fieldwork ${P.fieldwork_from} to ${P.fieldwork_to}: ${P.first_round_lists} first-round lists and ${P.runoff_matchups} runoff matchups |
 | **Press** | ${R.press.rows} headlines from a fixed list of ${R.press.outlets_on_list} French outlets, in ${R.press.daily_records} daily ${R.press.daily_records === 1 ? "record" : "records"} |
 | **Reference** | pollster table: 2022 first-round error against the official result, and formal actions by the Commission des sondages |
@@ -82,6 +94,16 @@ ${R.markets.books.map(linhaMercado).join('\n')}
 - \`price_pct\` is the implied probability in points from 0 to 100. \`volume_usd\` is cumulative traded volume of the contract since it opened, not money at stake today.
 - A snapshot is stored when any contract of the book moves 0.5 points or more (checked at most once an hour), with a forced snapshot every 4 hours. A book that does not move has few snapshots, and that is a measurement too.
 - Placeholder contracts listed by the exchange before a candidate exists ("Candidate A") are not prices and are left out.
+
+### Kalshi book
+
+\`data/kalshi-winner.csv\` is the same question as the Polymarket win book, priced on a second exchange. The two books are **never added or averaged**: fees, liquidity and the people trading differ, and the distance between them is a measurement of its own.
+
+- \`last_price_pct\`, \`bid_pct\`, \`ask_pct\` are in points from 0 to 100 (cents per contract). \`volume_contracts\` and \`open_interest_contracts\` are counted in **contracts, not dollars**.
+- \`last_trade_at_utc\` is the time of the last trade, read from the trades endpoint. It is the freshness of the price; the contract's own update stamp is not.
+- Each capture runs every 30 minutes. A row is stored when a contract moves 0.5 points or more, when a new contract appears, or every 4 hours. \`data/kalshi-captures.csv\` logs **every** capture, stored or not, with its check: prices must sum to 85 to 120 and the leader must have a bid and an ask (\`passed_check\`, \`defects\`, \`warnings\`).
+
+Source: Kalshi (kalshi.com), market \`${K.event}\`.
 
 ### Polls
 
@@ -99,9 +121,41 @@ Poll figures come from the open dataset [MieuxVoter/presidentielle2027](https://
 - It does not average polls from an aggregator. The panel shows a simple average per candidate with the number of lists behind it; this bundle gives the lists themselves.
 - It does not filter what fails a check: it flags it and says why.
 
+## Português
+
+Todo preço e toda pesquisa deste pacote foram registrados **antes da urna**. O 1º turno é em **18 de abril de 2027** e o 2º turno em **2 de maio de 2027**. O resultado oficial entra numa versão posterior, e aí qualquer pessoa confere os dois instrumentos contra ele sem precisar confiar na nossa palavra.
+
+| parte | conteúdo |
+|---|---|
+| **Mercado, Polymarket** | ${totalMercado} observações de preço em 4 livros (vencer, mais votado no 1º turno, vai ao 2º turno, estará na cédula), desde ${R.markets.series_starts_utc.slice(0, 16)} UTC |
+| **Mercado, Kalshi** | ${K.rows} observações de preço no livro de vitória, desde ${K.from?.slice(0, 16)} UTC, mais o diário das ${K.captures} capturas |
+| **Pesquisas** | ${P.lists} listas de intenção de voto; ${P.publishable_lists} delas passam na conferência com a ficha oficial da Commission des sondages, de ${P.pollsters} institutos, campo de ${P.fieldwork_from} a ${P.fieldwork_to} |
+| **Imprensa** | ${R.press.rows} manchetes de uma lista fixa de ${R.press.outlets_on_list} veículos franceses |
+
+- Os dois livros de mercado **nunca são somados nem tirados em média**: taxas, liquidez e quem negocia são diferentes, e a distância entre eles é uma medição própria. O volume da Kalshi é contado em contratos, não em dólares.
+- O pacote **não subtrai** preço de pesquisa. O mercado paga **vencer a eleição**; a pesquisa mede **intenção de voto no 1º turno**. São grandezas diferentes, e a diferença não teria unidade.
+- Lista que não passa na conferência fica no arquivo, marcada com o motivo.
+- Pesquisas da base aberta da [Mieux Voter](https://github.com/MieuxVoter/presidentielle2027) (licença MIT). Dados sob CC BY 4.0. Nada aqui é convite a apostar.
+
+## Español
+
+Todo precio y toda encuesta de este paquete se registraron **antes de la votación**. La 1ª vuelta es el **18 de abril de 2027** y la 2ª vuelta el **2 de mayo de 2027**. El resultado oficial entra en una versión posterior, y entonces cualquiera puede cotejar los dos instrumentos con él sin tener que confiar en nuestra palabra.
+
+| parte | contenido |
+|---|---|
+| **Mercado, Polymarket** | ${totalMercado} observaciones de precio en 4 libros (ganar, más votado en la 1ª vuelta, pasa a la 2ª vuelta, estará en la papeleta), desde ${R.markets.series_starts_utc.slice(0, 16)} UTC |
+| **Mercado, Kalshi** | ${K.rows} observaciones de precio en el libro de victoria, desde ${K.from?.slice(0, 16)} UTC, más el registro de las ${K.captures} capturas |
+| **Encuestas** | ${P.lists} listas de intención de voto; ${P.publishable_lists} de ellas pasan el cotejo con la ficha oficial de la Commission des sondages, de ${P.pollsters} encuestadoras, campo de ${P.fieldwork_from} a ${P.fieldwork_to} |
+| **Prensa** | ${R.press.rows} titulares de una lista fija de ${R.press.outlets_on_list} medios franceses |
+
+- Los dos libros de mercado **nunca se suman ni se promedian**: comisiones, liquidez y quién negocia son distintos, y la distancia entre ellos es una medición en sí. El volumen de Kalshi se cuenta en contratos, no en dólares.
+- El paquete **no resta** precio de encuesta. El mercado paga **ganar la elección**; la encuesta mide **intención de voto en la 1ª vuelta**. Son magnitudes distintas, y la diferencia no tendría unidad.
+- La lista que no pasa el cotejo queda en el archivo, marcada con el motivo.
+- Encuestas de la base abierta de [Mieux Voter](https://github.com/MieuxVoter/presidentielle2027) (licencia MIT). Datos bajo CC BY 4.0. Nada aquí es una invitación a apostar.
+
 ## Files
 
-- \`data/*.csv\` market series · \`data/fr-2027-case-summary.json\` counts of this build
+- \`data/*.csv\` market series (Polymarket books and \`kalshi-*.csv\`) · \`data/fr-2027-case-summary.json\` counts of this build
 - \`polls/\` voting intentions, notice checks, pending notices, MIT notice
 - \`press/\` headline timeline and the outlet list
 - \`raw/\` the records exactly as AFOS stored them (field names in Portuguese)
@@ -119,7 +173,7 @@ Data: **CC BY 4.0**. Poll figures: MIT, from Mieux Voter (see above). Code in th
 ## Citation
 
 \`\`\`
-AFOS Analytics (2026). AFOS France 2027 Presidential: prediction market and polls, side by side (v${VERSAO}).
+AFOS Analytics (2026). AFOS France 2027 Presidential: prediction markets and polls, side by side (v${VERSAO}).
 Hugging Face. https://huggingface.co/datasets/${REPO}
 \`\`\`
 `
@@ -131,9 +185,9 @@ writeFileSync(join(OUT, 'DATASHEET.md'), `# Datasheet: AFOS France 2027 Presiden
 
 **Creator.** AFOS Analytics (afos-analytics.com).
 
-**Composition.** ${totalMercado} Polymarket price observations in 4 books; ${P.lists} poll lists (${P.publishable_lists} publishable) from ${P.pollsters} pollsters; ${R.press.rows} press headlines from ${R.press.outlets_on_list} outlets. Election: first round 2027-04-18, runoff 2027-05-02. Official result: not yet available (status: ${R.status}).
+**Composition.** ${totalMercado} Polymarket price observations in 4 books; ${K.rows} Kalshi price observations in the win book, with a log of ${K.captures} captures; ${P.lists} poll lists (${P.publishable_lists} publishable) from ${P.pollsters} pollsters; ${R.press.rows} press headlines from ${R.press.outlets_on_list} outlets. Election: first round 2027-04-18, runoff 2027-05-02. Official result: not yet available (status: ${R.status}).
 
-**Collection.** Polymarket public prices read every 30 minutes by the AFOS server, stored on movement of 0.5 points or a 4-hour heartbeat. Polls collected twice a day from the Mieux Voter open dataset and checked list by list against the Commission des sondages notice listing. Press collected three times a day from RSS feeds of a fixed outlet list.
+**Collection.** Polymarket public prices read every 30 minutes by the AFOS server, stored on movement of 0.5 points or a 4-hour heartbeat. Kalshi public market data read every 30 minutes, same storage rule, every capture logged with its check. Polls collected twice a day from the Mieux Voter open dataset and checked list by list against the Commission des sondages notice listing. Press collected three times a day from RSS feeds of a fixed outlet list.
 
 **Preprocessing.** Placeholder contracts removed; market series starts ${R.markets.series_starts_utc}. Poll lists failing the notice check are kept and flagged. Column names and check labels translated to English; raw records kept as stored.
 
@@ -145,7 +199,7 @@ writeFileSync(join(OUT, 'DATASHEET.md'), `# Datasheet: AFOS France 2027 Presiden
 `)
 
 writeFileSync(join(OUT, 'CITATION.cff'), `cff-version: 1.2.0
-title: "AFOS France 2027 Presidential: prediction market and polls, side by side"
+title: "AFOS France 2027 Presidential: prediction markets and polls, side by side"
 version: "${VERSAO}"
 type: dataset
 authors:
