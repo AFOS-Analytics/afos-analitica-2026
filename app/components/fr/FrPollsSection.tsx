@@ -223,7 +223,13 @@ export function FrPollsSection({ v }: { v: FrPollsView }) {
                     <span className="text-gray-400"> × </span>
                     <span className="tabular-nums font-medium">{fmtDecimal(d.b.pct, locale, 1)}</span> {d.b.candidato}
                   </span>
-                  <span className="text-[11px] text-gray-500">{d.instituto} · {dm(d.fim, locale)}</span>
+                  <span className="text-[11px] text-gray-500">
+                    {d.instituto} · {dm(d.fim, locale)}
+                    {/* Procedência por duelo, como nas listas do 1º turno: a ficha oficial na Commission. */}
+                    {d.ficha.numero && d.ficha.url ? (
+                      <> · <a href={d.ficha.url} target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-dotted underline-offset-2 hover:decoration-solid">{t.ficha(d.ficha.numero)}</a></>
+                    ) : null}
+                  </span>
                 </li>
               ))}
             </ul>
