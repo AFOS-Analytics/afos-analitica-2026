@@ -26,6 +26,14 @@
       "schedule": "10 7 * * *"
     },
     {
+      "path": "/api/cron/refresh-fr-polls",
+      "schedule": "40 7,19 * * *"
+    },
+    {
+      "path": "/api/cron/refresh-fr-press",
+      "schedule": "25 6,12,18 * * *"
+    },
+    {
       "path": "/api/cron/refresh-us-press",
       "schedule": "20 7,13,19 * * *"
     },

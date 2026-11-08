@@ -1,12 +1,20 @@
 import { deriveDateSlug, truncate } from './date-slug'
 import type { PrismaClient } from '@prisma/client'
 
-export type AnalysisType = 'analysis-cards' | 'analysis-criteriosa' | 'afos-hoje' | 'afos-daily' | 'afos-tradeoff' | 'afos-weekly' | 'us-generic-ballot' | 'us-press'
+export type AnalysisType = 'analysis-cards' | 'analysis-criteriosa' | 'afos-hoje' | 'afos-daily' | 'afos-tradeoff' | 'afos-weekly' | 'us-generic-ballot' | 'us-press' | 'fr-press' | 'fr-polls'
 
 export function buildSummary(type: AnalysisType, data: Record<string, unknown>): string {
   if (type === 'us-press') {
     const q = data.qualidade as { publicados?: number; lidos?: number; foraDaLista?: number; veiculosRepresentados?: number } | undefined
     return `Imprensa EUA: ${q?.publicados ?? 0} matérias de ${q?.veiculosRepresentados ?? 0} veículos | ${q?.lidos ?? 0} lidos, ${q?.foraDaLista ?? 0} fora da lista`
+  }
+  if (type === 'fr-polls') {
+    const q = data.qualidade as { pesquisas?: number; publicaveis?: number; fichaDiverge?: number; pendentes?: number } | undefined
+    return `Pesquisas França: ${q?.publicaveis ?? 0} de ${q?.pesquisas ?? 0} conferidas na ficha oficial | ${q?.fichaDiverge ?? 0} divergem | ${q?.pendentes ?? 0} fichas novas sem dado`
+  }
+  if (type === 'fr-press') {
+    const q = data.qualidade as { publicados?: number; naLista?: number; foraDaLista?: number; veiculosRepresentados?: number } | undefined
+    return `Imprensa França: ${q?.publicados ?? 0} matérias de ${q?.veiculosRepresentados ?? 0} veículos | ${q?.naLista ?? 0} na lista, ${q?.foraDaLista ?? 0} fora da lista`
   }
   if (type === 'us-generic-ballot') {
     const m = data.mediaAfos as { dem?: number; rep?: number; vantagemDem?: number; nPesquisas?: number; nInstitutos?: number } | null
@@ -36,6 +44,8 @@ export function buildSummary(type: AnalysisType, data: Record<string, unknown>):
 export function buildTitle(type: AnalysisType, updatedAtLabel: string): string {
   if (type === 'us-generic-ballot') return `US generic ballot — ${updatedAtLabel}`
   if (type === 'us-press') return `Imprensa EUA — ${updatedAtLabel}`
+  if (type === 'fr-press') return `Imprensa França — ${updatedAtLabel}`
+  if (type === 'fr-polls') return `Pesquisas França — ${updatedAtLabel}`
   if (type === 'analysis-cards') return `Análise Cards — ${updatedAtLabel}`
   if (type === 'afos-hoje') return `AFOS Hoje — ${updatedAtLabel}`
   if (type === 'afos-daily') return `AFOS Daily — ${updatedAtLabel}`
