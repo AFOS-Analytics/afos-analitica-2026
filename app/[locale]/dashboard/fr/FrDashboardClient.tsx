@@ -15,10 +15,12 @@ import { StructuralContext } from '../../../components/StructuralContext'
 import type { CountryContext, CountryDivergence } from '../../../../lib/country-data'
 import { useTranslation } from '../../../i18n/context'
 import { FrAnaliseSection, type FrAnalise } from '../../../components/fr/FrAnaliseSection'
-import { FrMarketSection, type KalshiFra, type PolyFra } from '../../../components/fr/FrMarketSection'
+import { FrMarketSection, type EventoPoly, type KalshiFra, type PolyFra } from '../../../components/fr/FrMarketSection'
 import { FrPollsSection, type FrPollsView } from '../../../components/fr/FrPollsSection'
 import { FrPressSection } from '../../../components/fr/FrPressSection'
 import { FrSilencioBanner } from '../../../components/fr/FrSilencioBanner'
+import { FrCandidatosSection, type FrCandidatos } from '../../../components/fr/FrCandidatosSection'
+import { montarMedidas, type EstatCandidato } from '../../../../lib/fr/candidatos'
 import { emSilencioEleitoral } from '../../../../lib/fr/silencio-eleitoral'
 import type { FrPressData } from '../../../../lib/fr/painel'
 
@@ -42,6 +44,10 @@ export interface FrDashboardProps {
   kalshiProntoEm: string | null
   /** WGI e WDI do Banco Mundial, do MESMO arquivo do caso França 2024 (lib/country-data/france.json). */
   context: CountryContext | null
+  /** perfis, grade oficial e textos opcionais (public/fr/candidatos.{locale}.json) */
+  candidatos: FrCandidatos | null
+  /** contagens de listas e duelos por candidato, feitas no servidor */
+  estat: EstatCandidato[]
 }
 
 function Conteudo(props: FrDashboardProps) {
@@ -84,6 +90,30 @@ function Conteudo(props: FrDashboardProps) {
     }
     return () => { vivo = false }
   }, [silencio.silencio, props.kalshiPronto])
+
+  /** Mercado por nome, num contrato. Só contrato aberto e com negócio (enchimento fora). */
+  const precoPorNome = (ev: EventoPoly | undefined, re: RegExp) => {
+    const m = new Map<string, number>()
+    for (const k of ev?.markets ?? []) {
+      const nome = k.question?.match(re)?.[1]?.trim()
+      const p = Number(k.outcomePrices?.[0])
+      if (nome && !k.closed && Number(k.volumeNum) > 0 && Number.isFinite(p)) m.set(nome, p * 100)
+    }
+    return m
+  }
+  const medidas = useMemo(() => montarMedidas(
+    props.polls.medias,
+    precoPorNome(poly?.winner, /^Will (.+?) win /),
+    precoPorNome(poly?.secondRound, /^Will (.+?) advance /),
+    precoPorNome(poly?.onBallot, /^Will (.+?) be on /),
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  ), [poly, props.polls.medias])
+  const kalshiPorNome = useMemo(() => {
+    if (!props.kalshiPronto) return null
+    const m = new Map<string, number>()
+    for (const c of kalshi?.winner?.contratos ?? []) if (c.ultimo !== null) m.set(c.candidato, c.ultimo)
+    return m
+  }, [kalshi, props.kalshiPronto])
 
   const L = (pt: string, en: string, es: string) => (locale === 'en' ? en : locale === 'es' ? es : pt)
 
@@ -216,6 +246,12 @@ function Conteudo(props: FrDashboardProps) {
               <SectionErrorBoundary locale={locale} name="Pesquisas"><FrPollsSection v={props.polls} /></SectionErrorBoundary>
             </div>
           </>
+        )}
+
+        {!silencio.silencio && !polyLoading && (
+          <SectionErrorBoundary locale={locale} name="Candidatos">
+            <FrCandidatosSection dados={props.candidatos} medidas={medidas} estat={props.estat} kalshi={kalshiPorNome} agora={new Date()} />
+          </SectionErrorBoundary>
         )}
 
         {!silencio.silencio && divergencia && (

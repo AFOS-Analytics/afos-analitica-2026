@@ -18,7 +18,7 @@ import { fmtDecimal, fmtVolumeUsd } from '../../../lib/i18n/numero'
  */
 
 type MercadoPoly = { question?: string; outcomePrices?: (string | number)[]; volumeNum?: number; closed?: boolean }
-type EventoPoly = { title?: string; markets?: MercadoPoly[] } | null
+export type EventoPoly = { title?: string; markets?: MercadoPoly[] } | null
 export type PolyFra = { winner?: EventoPoly; secondRound?: EventoPoly; firstRoundWinner?: EventoPoly; onBallot?: EventoPoly; fetchedAt?: string | null; degraded?: boolean } | null
 type ContratoKalshi = { candidato: string; ultimo: number | null; compra: number | null; venda: number | null; volumeContratos: number | null; ultimaNegociacaoEm: string | null }
 export type KalshiFra = { winner?: { contratos: ContratoKalshi[]; avaliacao?: { ok: boolean } } | null; fetchedAt?: string | null } | null

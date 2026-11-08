@@ -1,0 +1,245 @@
+{
+  "updatedAt": "2026-11-08",
+  "grade": {
+    "nota": "Blocos da grade oficial do Ministério do Interior francês (circular de 02/02/2026, anexo 3), aplicada ao partido de cada candidato. O Conselho de Estado confirmou a grade em 27/02/2026 (decisão nº 512694). O AFOS não classifica candidato: reproduz a classificação oficial.",
+    "fontes": [
+      {
+        "rotulo": "Légifrance",
+        "url": "https://www.legifrance.gouv.fr/download/file/pdf/cir_45645/CIRC"
+      },
+      {
+        "rotulo": "Conseil d'État",
+        "url": "https://www.conseil-etat.fr/fr/arianeweb/CE/decision/2026-02-27/512694"
+      }
+    ],
+    "notaInferida": "Partido sem código próprio na grade: classificado como \"divers droite\" (DVD), do bloco direita."
+  },
+  "blocos": {
+    "EXG": "Extrema esquerda",
+    "GAU": "Esquerda",
+    "DIV": "Diversos",
+    "CENT": "Centro",
+    "DTE": "Direita",
+    "EXD": "Extrema direita"
+  },
+  "perfis": {
+    "Marine Le Pen": {
+      "partido": "Rassemblement national (RN)",
+      "nuance": "RN",
+      "bloco": "EXD",
+      "nuanceInferida": false,
+      "nascimento": "1968-08-05",
+      "cargo": "Candidata em 2012, 2017 e 2022",
+      "candidatura": "Declarada em 07/07/2026. O recurso dela na Cour de cassation contra a inelegibilidade deve ser julgado até o início de abril de 2027.",
+      "fontes": [
+        {
+          "rotulo": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Marine_Le_Pen"
+        },
+        {
+          "rotulo": "Toute l'Europe",
+          "url": "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-qui-sont-les-candidats-deja-declares/"
+        }
+      ]
+    },
+    "Jean-Luc Mélenchon": {
+      "partido": "La France insoumise (LFI)",
+      "nuance": "FI",
+      "bloco": "EXG",
+      "nuanceInferida": false,
+      "nascimento": "1951-08-19",
+      "cargo": "Fundador da LFI; candidato em 2012, 2017 e 2022",
+      "candidatura": "Declarado em 03/05/2026.",
+      "fontes": [
+        {
+          "rotulo": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Jean-Luc_M%C3%A9lenchon"
+        },
+        {
+          "rotulo": "Toute l'Europe",
+          "url": "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-qui-sont-les-candidats-deja-declares/"
+        }
+      ]
+    },
+    "David Lisnard": {
+      "partido": "Nouvelle Énergie",
+      "nuance": "DVD",
+      "bloco": "DTE",
+      "nuanceInferida": true,
+      "nascimento": "1969-02-02",
+      "cargo": "Prefeito de Cannes desde 2014 (reeleito em 2026); presidente da Associação dos Prefeitos da França",
+      "candidatura": "Declarado em 31/03/2026, quando deixou Les Républicains.",
+      "fontes": [
+        {
+          "rotulo": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/David_Lisnard"
+        },
+        {
+          "rotulo": "Toute l'Europe",
+          "url": "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-qui-sont-les-candidats-deja-declares/"
+        }
+      ]
+    },
+    "Raphaël Glucksmann": {
+      "partido": "Place publique",
+      "nuance": "PLP",
+      "bloco": "GAU",
+      "nuanceInferida": false,
+      "nascimento": "1979-10-15",
+      "cargo": "Eurodeputado; cofundador do Place publique",
+      "candidatura": "Venceu a primária \"Choisir 2027\" (PS, Place publique e aliados), de 09 a 11/10/2026, com 66,13%.",
+      "fontes": [
+        {
+          "rotulo": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Rapha%C3%ABl_Glucksmann"
+        },
+        {
+          "rotulo": "Toute l'Europe",
+          "url": "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-qui-sont-les-candidats-deja-declares/"
+        }
+      ]
+    },
+    "Édouard Philippe": {
+      "partido": "Horizons",
+      "nuance": "HOR",
+      "bloco": "CENT",
+      "nuanceInferida": false,
+      "nascimento": "1970-11-28",
+      "cargo": "Prefeito de Le Havre; primeiro-ministro de 2017 a 2020",
+      "candidatura": "Declarado.",
+      "fontes": [
+        {
+          "rotulo": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/%C3%89douard_Philippe"
+        },
+        {
+          "rotulo": "Toute l'Europe",
+          "url": "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-qui-sont-les-candidats-deja-declares/"
+        }
+      ]
+    },
+    "François Hollande": {
+      "partido": "Parti socialiste (PS)",
+      "nuance": "SOC",
+      "bloco": "GAU",
+      "nuanceInferida": false,
+      "nascimento": "1954-08-12",
+      "cargo": "Presidente da República de 2012 a 2017; deputado da Corrèze",
+      "candidatura": "Não declarado. Diz que decide em dezembro de 2026.",
+      "fontes": [
+        {
+          "rotulo": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Hollande"
+        }
+      ]
+    },
+    "Gabriel Attal": {
+      "partido": "Renaissance",
+      "nuance": "REN",
+      "bloco": "CENT",
+      "nuanceInferida": false,
+      "nascimento": "1989-03-16",
+      "cargo": "Primeiro-ministro em 2024; secretário-geral do Renaissance",
+      "candidatura": "Declarado em 22/05/2026.",
+      "fontes": [
+        {
+          "rotulo": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Gabriel_Attal"
+        },
+        {
+          "rotulo": "Toute l'Europe",
+          "url": "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-qui-sont-les-candidats-deja-declares/"
+        }
+      ]
+    },
+    "Bruno Retailleau": {
+      "partido": "Les Républicains (LR)",
+      "nuance": "LR",
+      "bloco": "DTE",
+      "nuanceInferida": false,
+      "nascimento": "1960-11-20",
+      "cargo": "Presidente do LR; ministro do Interior de 2024 a 2025",
+      "candidatura": "Escolhido pelos filiados do LR em 19/04/2026, com 73,8%.",
+      "fontes": [
+        {
+          "rotulo": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Bruno_Retailleau"
+        },
+        {
+          "rotulo": "Toute l'Europe",
+          "url": "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-qui-sont-les-candidats-deja-declares/"
+        }
+      ]
+    },
+    "Jordan Bardella": {
+      "partido": "Rassemblement national (RN)",
+      "nuance": "RN",
+      "bloco": "EXD",
+      "nuanceInferida": false,
+      "nascimento": "1995-09-13",
+      "cargo": "Presidente do RN",
+      "candidatura": "Não é candidato. É o substituto do RN se Marine Le Pen for impedida de concorrer.",
+      "fontes": [
+        {
+          "rotulo": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Jordan_Bardella"
+        }
+      ]
+    },
+    "Christine Lagarde": {
+      "partido": "",
+      "nuance": null,
+      "bloco": null,
+      "nuanceInferida": false,
+      "nascimento": "1956-01-01",
+      "cargo": "Presidente do Banco Central Europeu",
+      "candidatura": "Não é candidata declarada. Tem contrato no mercado, e nenhuma pesquisa a testa.",
+      "fontes": [
+        {
+          "rotulo": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Christine_Lagarde"
+        }
+      ]
+    },
+    "Éric Zemmour": {
+      "partido": "Reconquête (REC)",
+      "nuance": "REC",
+      "bloco": "EXD",
+      "nuanceInferida": false,
+      "nascimento": "1958-08-31",
+      "cargo": "Presidente do Reconquête; candidato em 2022",
+      "candidatura": "Anunciado em 17/09/2026.",
+      "fontes": [
+        {
+          "rotulo": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/%C3%89ric_Zemmour"
+        },
+        {
+          "rotulo": "Toute l'Europe",
+          "url": "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-qui-sont-les-candidats-deja-declares/"
+        }
+      ]
+    },
+    "Marine Tondelier": {
+      "partido": "Les Écologistes",
+      "nuance": "VEC",
+      "bloco": "GAU",
+      "nuanceInferida": false,
+      "nascimento": "1986-08-23",
+      "cargo": "Secretária nacional dos Écologistes",
+      "candidatura": "Candidata própria dos Écologistes.",
+      "fontes": [
+        {
+          "rotulo": "Wikipédia",
+          "url": "https://fr.wikipedia.org/wiki/Marine_Tondelier"
+        },
+        {
+          "rotulo": "Toute l'Europe",
+          "url": "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-qui-sont-les-candidats-deja-declares/"
+        }
+      ]
+    }
+  },
+  "leituras": {},
+  "clima": {}
+}

@@ -15,6 +15,8 @@ import {
   rodadaDe,
 } from '../../../../lib/fr/painel'
 import { emSilencioEleitoral } from '../../../../lib/fr/silencio-eleitoral'
+import { estatisticasPorCandidato, type EstatCandidato } from '../../../../lib/fr/candidatos'
+import type { FrCandidatos } from '../../../components/fr/FrCandidatosSection'
 import type { FrAnalise } from '../../../components/fr/FrAnaliseSection'
 import type { FrPollsView } from '../../../components/fr/FrPollsSection'
 // WGI e WDI vêm do caso validado França 2024: indicador é do PAÍS, não da eleição,
@@ -68,6 +70,19 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 // 30 min: o mesmo ritmo das coletas de pesquisa e de imprensa basta.
 export const revalidate = 1800
 
+function lerCandidatos(locale: string): FrCandidatos | null {
+  const loc = locale === 'en' || locale === 'es' ? locale : 'pt-BR'
+  for (const l of [loc, 'pt-BR']) {
+    try {
+      const p = join(process.cwd(), 'public', 'fr', `candidatos.${l}.json`)
+      if (existsSync(p)) return JSON.parse(readFileSync(p, 'utf-8')) as FrCandidatos
+    } catch (e) {
+      console.error('[fr] candidatos ilegível:', e)
+    }
+  }
+  return null
+}
+
 function lerAnalise(locale: string): FrAnalise | null {
   const loc = locale === 'en' || locale === 'es' ? locale : 'pt-BR'
   for (const l of [loc, 'pt-BR']) {
@@ -93,6 +108,7 @@ export default async function FrDashboardPage({ params }: { params: Promise<{ lo
     publicaveis: 0, total: 0, divergencias: [], pendentes: [], fetchedAt: null,
   }
   let polls = vazio
+  let estat: EstatCandidato[] = []
   // 🔇 Em silêncio eleitoral os números de pesquisa nem saem do servidor.
   if (pesq.estado === 'ok' && !silencio) {
     const d = pesq.data
@@ -117,6 +133,7 @@ export default async function FrDashboardPage({ params }: { params: Promise<{ lo
       pendentes: d.pendentes,
       fetchedAt: d.fetchedAt,
     }
+    estat = estatisticasPorCandidato(d.pesquisas, agora, DIAS_PRINCIPAL)
   }
 
   return (
@@ -126,6 +143,8 @@ export default async function FrDashboardPage({ params }: { params: Promise<{ lo
       press={press}
       kalshiPronto={prontidao.pronto}
       kalshiProntoEm={prontidao.prontoEm ? prontidao.prontoEm.toISOString() : null}
+      candidatos={lerCandidatos(locale)}
+      estat={estat}
       context={((franceCase as { context?: unknown }).context as CountryContext | undefined) ?? null}
     />
   )
