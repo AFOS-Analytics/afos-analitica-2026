@@ -40,6 +40,8 @@ Coletadas pelos crons (`refresh-fr-polls` às 07:40 e 19:40 UTC; `refresh-fr-pre
 
 Arquivos: `public/fr/analise.pt-BR.json` (ORIGEM, como no painel do Brasil), `.en.json`, `.es.json`. Formato: `{ updatedAt, titulo, paragrafos[] }`, negrito com `**...**` no início de cada parágrafo.
 
+🧮 **ATALHO, rodar ANTES de escrever** (criado 08/Nov/2026): `npx tsx scripts/medidas-fra.ts` (só leitura; precisa do `.env.local` no worktree). Numa chamada só: idade das coletas de pesquisa e imprensa, fichas pendentes, manchetes do dia, os dois livros, e por candidato a média (30 dias), listas, 1º lugar, top-2 e duelos (45 dias), com as MESMAS funções da tela. Termina com a **CONFERÊNCIA DO TEXTO**: os números do `analise.pt-BR.json` publicado que não aparecem na medição de agora. Data, ano e lei aparecem ali por natureza; preço ou contagem ali é número velho no texto. ⚠️ As contagens mudam SEM pesquisa nova: a janela de 45 dias anda um dia por dia.
+
 - **Descrever a medição, não defender tese.** Mercado e pesquisa lado a lado, nunca subtraídos (o mercado paga VENCER; a pesquisa mede intenção de voto no 1º turno).
 - 🔢 **Todo número do texto sai de uma medição desta rodada e é conferido antes de gravar.** "Todas as listas", "todos os duelos", "sempre" são superlativos: contar no dado (ex.: em 08/Nov, Le Pen em 1º em 60 de 60 listas dos últimos 45 dias e à frente em 28 de 28 duelos em que aparece). Superlativo sem contagem não entra.
 - 🏷️ Todo número diz de qual contrato e de qual livro é; toda média diz quantas listas e institutos.
