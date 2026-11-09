@@ -15,6 +15,14 @@ Cada lista da base é conferida contra a ficha que ela cita: o número existe na
 - 🔇 **Silêncio eleitoral:** nada de coleta comentada nem publicação de pesquisa no sábado e domingo dos turnos (`lib/fr/silencio-eleitoral.ts`).
 - 🧮 **A tela mostra (a) a lista principal de cada instituto e (b) a média por candidato** (decisão do André, 08/Nov/2026). A média sempre leva junto o número de listas e de institutos. Mudar o método é decisão dele.
 
+## ETAPA 0: Atalho (só leitura), SEMPRE primeiro
+
+```bash
+npx tsx scripts/pesquisas-fra.ts       # precisa de .env.local no worktree
+```
+
+Roda a coleta AO VIVO sem gravar e compara com o último `fr-polls` do Neon: diz se disparar o cron gravaria (assinatura igual = não grava), que listas entrariam ou sairiam da tela, a tabela de `qualidade` inteira, por que cada lista recente ficou fora (com **diagnóstico de renumeração** de ficha), as pendentes, a lista principal por instituto e a média como a tela vai mostrar. É a base das ETAPAS 2 e 3.
+
 ## ETAPA 1: Disparar a coleta (se a última tiver mais de 12h, ou se pedido)
 
 ```bash
@@ -31,7 +39,7 @@ O registro `fr-polls` mais recente do Neon traz `qualidade`:
 | Campo | O que fazer |
 |---|---|
 | `publicaveis` / `pesquisas` | proporção normal em 08/Nov: 352 de 369 |
-| `fichaDiverge` | a base cita ficha de OUTRA pesquisa. Em 08/Nov: 4 listas da Ifop de 27 a 29/Out citando a 10352 (ELABE; a certa é a 10351). Fica fora da tela; registrar, não corrigir à mão |
+| `fichaDiverge` | a base cita ficha de OUTRA pesquisa. Fica fora da tela; registrar, não corrigir à mão. Em 08/Nov: 4 listas da Ifop/LCI de 27 a 29/Out citando a 10352 (ELABE). **Causa medida em 09/Nov:** a Commission publicou o PDF da Ifop como `10352-pres-iv-ifop-lci-3-novembre.pdf` em 04/Nov 09:00 UTC e o republicou como `10351-...` em 05/Nov 15:11 (o arquivo velho segue no ar); o índice `MieuxVoter/sondages-commission-index` guardou o primeiro. O atalho mostra isso como `RENUMERAÇÃO`. A mesma pesquisa aparece então também em `pendentes` (a 10351 sem lista citando). Aviso: MieuxVoter/presidentielle2027#339 |
 | `fichaForaDaListagem` | ficha antiga, de outro tema da Commission (pesquisas de 2024). Normal |
 | `semNumero` | a base não cita ficha (barômetros Odoxa). Fica fora da tela |
 | `institutoSemMapa` | **instituto novo**: acrescentar ao mapa `INSTITUTOS` em `lib/fr-polls/collect.mjs`, com a grafia do rótulo da ficha |
