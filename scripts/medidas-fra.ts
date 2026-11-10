@@ -100,12 +100,15 @@ async function main() {
   linha('vencer', vencer, 8)
   linha('vai ao 2º turno', segundo, 8)
   linha('na cédula', cedula, 12)
+  // A conferência cobre TODO contrato, não só os impressos: em 10/Nov o texto citou
+  // Riner na cédula (25,00, 13º do livro) e o corte em 12 o acusava como número velho.
+  for (const m of [vencer, segundo, cedula]) for (const v of m.values()) anota(pt2(v))
 
   const kc: any[] = ka?.winner?.contratos ?? []
   const kalshi = new Map<string, number>(kc.filter((c) => c.ultimo !== null).map((c) => [c.candidato, c.ultimo]))
   console.log(`\n== KALSHI · ${ka.fetchedAt} · avaliacao ${JSON.stringify(ka?.winner?.avaliacao)}`)
   console.log('   vencer: ' + top(kalshi, 8).map(([c, v], i) => `${i + 1}º ${c} ${pt2(v)}`).join(' · '))
-  for (const [, v] of top(kalshi, 8)) anota(pt2(v))
+  for (const [, v] of kalshi) anota(pt2(v))
   for (const c of kc.slice().sort((a, b) => (b.ultimo ?? 0) - (a.ultimo ?? 0)).slice(0, 5)) {
     console.log(`   ${c.candidato}: compra ${c.compra} venda ${c.venda} anterior ${c.anterior} · última negociação ${c.ultimaNegociacaoEm ?? 'n/d'} · vol 24h ${Math.round(c.volume24hContratos)} contratos`)
   }
