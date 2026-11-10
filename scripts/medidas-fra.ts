@@ -161,6 +161,31 @@ async function main() {
   console.log(`\n== CONFERÊNCIA DO TEXTO (analise.pt-BR.json de ${txt.updatedAt}): ${nums.length} números, ${fora.length} distintos fora desta medição`)
   console.log(`   fora: ${fora.join(' · ') || '(nenhum)'}`)
   console.log('   (data, ano, lei e dia do turno aparecem aqui por natureza; preço ou contagem aqui = número velho no texto)')
+
+  // ── Conferência do PREÇO pela etiqueta ─────────────────────────────────────
+  // A conferência acima vê o NÚMERO, não de quem ele é. Em 10/Nov/2026 o texto
+  // dizia "Kalshi 49,00" para Le Pen, que já estava a 50,00, e passou calado:
+  // 49,00 era, na mesma medição, o preço de Jean Lassalle na cédula. Aqui cada
+  // preço do texto (2 casas) é procurado entre os contratos dos candidatos que
+  // o PRÓPRIO parágrafo cita, com o livro e o contrato impressos para leitura.
+  const etiquetas = new Map<string, string[]>()
+  const etiqueta = (livro: string, m: Map<string, number>) => {
+    for (const [c, v] of m) etiquetas.set(pt2(v), [...(etiquetas.get(pt2(v)) ?? []), `${livro} · ${c}`])
+  }
+  etiqueta('Polymarket vencer', vencer); etiqueta('Polymarket 2º turno', segundo)
+  etiqueta('Polymarket cédula', cedula); etiqueta('Kalshi vencer', kalshi)
+  const sobrenome = (c: string) => c.split(' ').slice(1).join(' ') || c
+  console.log('\n== CONFERÊNCIA DO PREÇO POR ETIQUETA (de quem é cada preço do texto nesta medição)')
+  let suspeitos = 0
+  txt.paragrafos.forEach((par, i) => {
+    for (const p of par.match(/\d+,\d{2}\b/g) ?? []) {
+      const donos = etiquetas.get(p) ?? []
+      const casa = donos.filter((d) => par.includes(sobrenome(d.split(' · ')[1])))
+      if (!casa.length) suspeitos++
+      console.log(`   §${i + 1} ${p.padStart(6)} ${casa.length ? '✓' : '⚠️'} ${(casa.length ? casa : donos).join(' | ') || 'não está nesta medição'}${casa.length ? '' : donos.length ? '  ← de ninguém que o parágrafo cita' : ''}`)
+    }
+  })
+  console.log(`   ${suspeitos ? `⚠️ ${suspeitos} preço(s) sem dono no parágrafo: número velho ou do candidato errado` : 'todo preço do texto é de um candidato citado no parágrafo; conferir o LIVRO e o CONTRATO acima'}`)
   await prisma.$disconnect()
 }
 

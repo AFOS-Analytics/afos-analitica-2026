@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08",
+  "updatedAt": "2026-11-10",
   "grade": {
     "nota": "Blocs from the official grid of the French Interior Ministry (circular of 02/02/2026, annex 3), applied to each candidate's party. The Conseil d'État upheld the grid on 02/27/2026 (decision no. 512694). AFOS does not classify candidates: it reproduces the official classification.",
     "fontes": [
@@ -193,11 +193,15 @@
       "nuanceInferida": false,
       "nascimento": "1956-01-01",
       "cargo": "President of the European Central Bank",
-      "candidatura": "Not a declared candidate. She has a market contract, and no poll tests her.",
+      "candidatura": "Not a declared candidate. On 10/29/2026, the European Central Bank announced that she will leave the bank's presidency on 02/07/2027. She has a market contract, and no poll tests her.",
       "fontes": [
         {
           "rotulo": "Wikipédia",
           "url": "https://fr.wikipedia.org/wiki/Christine_Lagarde"
+        },
+        {
+          "rotulo": "Toute l'Europe",
+          "url": "https://www.touteleurope.eu/institutions/christine-lagarde-quittera-la-presidence-de-la-banque-centrale-europeenne-le-7-fevrier-2027/"
         }
       ]
     },

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08",
+  "updatedAt": "2026-11-10",
   "grade": {
     "nota": "Blocos da grade oficial do Ministério do Interior francês (circular de 02/02/2026, anexo 3), aplicada ao partido de cada candidato. O Conselho de Estado confirmou a grade em 27/02/2026 (decisão nº 512694). O AFOS não classifica candidato: reproduz a classificação oficial.",
     "fontes": [
@@ -193,11 +193,15 @@
       "nuanceInferida": false,
       "nascimento": "1956-01-01",
       "cargo": "Presidente do Banco Central Europeu",
-      "candidatura": "Não é candidata declarada. Tem contrato no mercado, e nenhuma pesquisa a testa.",
+      "candidatura": "Não é candidata declarada. Em 29/10/2026, o Banco Central Europeu anunciou que ela deixa a presidência do banco em 07/02/2027. Tem contrato no mercado, e nenhuma pesquisa a testa.",
       "fontes": [
         {
           "rotulo": "Wikipédia",
           "url": "https://fr.wikipedia.org/wiki/Christine_Lagarde"
+        },
+        {
+          "rotulo": "Toute l'Europe",
+          "url": "https://www.touteleurope.eu/institutions/christine-lagarde-quittera-la-presidence-de-la-banque-centrale-europeenne-le-7-fevrier-2027/"
         }
       ]
     },
