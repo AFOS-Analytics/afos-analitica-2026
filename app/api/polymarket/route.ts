@@ -15,6 +15,19 @@ export const dynamic = 'force-dynamic';
 // promete ao leitor; antes eram 2h, ou seja, o texto público era falso.
 const REVALIDATE_S = 1800;
 
+// 🔴 FRANÇA, 10/Nov/2026: DOIS caches com stale-while-revalidate EMPILHADOS, o
+// de dados do Next (`next.revalidate` 1800 s, no fetch da gamma) e o da borda da
+// Vercel (s-maxage 1800, stale-while-revalidate 86400). Cada camada entrega o
+// velho e renova por trás, então o leitor via o dado de DUAS renovações atrás, e
+// o `fetchedAt` (hora do pedido) escondia isso. Medido: das 20:22 às 22:38 UTC a
+// tela mostrou o preço da captura das 12:30 (Lisnard 14,35, mercado a 12,85;
+// volume idêntico ao da série no Neon), e depois o das 20:30. A renovação da
+// camada de dados disparada pela renovação da BORDA não pegou (22:38).
+// Para a França: a gamma é lida sem cache de dados (o `fetchedAt` passa a ser a
+// hora do dado) e só a borda guarda, por pouco: no pior caso s-maxage + SWR.
+const BORDA_FRA_S = 300;
+const BORDA_FRA_SWR_S = 60;
+
 const slugs = [
   'brazil-presidential-election',
   'brazil-presidential-election-first-round-2nd-place',
@@ -208,7 +221,8 @@ export async function GET(request: Request) {
     }
   }
 
-  const results = await Promise.all(listaSlugs.map(slug => fetchEvent(slug, fresh)));
+  // França: sem cache de dados, sempre (ver BORDA_FRA_S). Brasil e EUA seguem como antes.
+  const results = await Promise.all(listaSlugs.map(slug => fetchEvent(slug, fresh || country === 'fra')));
   const data: Record<string, unknown> = {};
   listaKeys.forEach((key, i) => {
     data[key] = results[i];
@@ -229,9 +243,13 @@ export async function GET(request: Request) {
       headers: {
         'Cache-Control': fresh
           ? 'no-store'
-          : degraded
-            ? 'public, max-age=0, s-maxage=60, stale-while-revalidate=600'
-            : `public, max-age=0, s-maxage=${REVALIDATE_S}, stale-while-revalidate=86400`,
+          : country === 'fra'
+            ? degraded
+              ? `public, max-age=0, s-maxage=60, stale-while-revalidate=${BORDA_FRA_SWR_S}`
+              : `public, max-age=0, s-maxage=${BORDA_FRA_S}, stale-while-revalidate=${BORDA_FRA_SWR_S}`
+            : degraded
+              ? 'public, max-age=0, s-maxage=60, stale-while-revalidate=600'
+              : `public, max-age=0, s-maxage=${REVALIDATE_S}, stale-while-revalidate=86400`,
       },
     }
   );

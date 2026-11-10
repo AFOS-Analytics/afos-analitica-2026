@@ -70,6 +70,8 @@ npx vercel --prod --yes --cwd <worktree>         # conferir depois com vercel in
 
 **Depois do deploy, com navegador (playwright), nos 3 idiomas:** a página responde 200; o texto novo aparece; nenhuma palavra em português em EN/ES; o mercado carrega; a Kalshi segue oculta ou aparece conforme a prontidão; os links "fonte ↗" aparecem fora da França. Entrega visual se confere com navegador, não com grep.
 
+🕰️ **E o mercado da TELA é o de agora?** (atalho criado 10/Nov/2026) `node scripts/frescor-tela-fra.mjs`, só leitura: lê a rota como a tela lê, furando a borda e fresca, compara preço e VOLUME por candidato e data o dado da tela pela série do backup. `VEREDITO: TELA ATRASADA` = a tabela mostra outro momento que o texto. Em 10/Nov o texto saiu com a leitura das 20:16 e a tabela mostrou a das 12:30 por mais de 2h: dois caches com stale-while-revalidate empilhados, e o `fetchedAt` da rota é a hora do PEDIDO, não a do dado.
+
 ## ✅ A tela é PÚBLICA desde 08/Nov/2026
 
 O André decidiu publicar duas semanas antes da Weekly №1 (opção B). As 5 chaves foram viradas no mesmo commit; despublicar é desvirar as mesmas 5:

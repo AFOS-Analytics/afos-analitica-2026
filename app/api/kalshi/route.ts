@@ -37,7 +37,13 @@ import {
 
 export const dynamic = 'force-dynamic';
 
-const REVALIDATE_S = 1800;
+// 🔴 10/Nov/2026: o mesmo empilhamento da `/api/polymarket` da França (cache de
+// dados do Next + borda com stale-while-revalidate de 24h) fazia a tela mostrar
+// leitura de horas atrás com `fetchedAt` da hora do pedido. A Kalshi passa a ser
+// lida sem cache de dados, e só a borda guarda, por pouco (mesmos tempos da
+// Polymarket da França). As últimas negociações seguem só no caminho `fresh`.
+const BORDA_S = 300;
+const BORDA_SWR_S = 60;
 
 export async function GET(request: Request) {
   const params = new URL(request.url).searchParams;
@@ -56,7 +62,7 @@ export async function GET(request: Request) {
   const agora = new Date();
   const resultados = await Promise.all(
     eventos.map(async (e) => {
-      const ev = await lerEventoKalshi(e.eventTicker, { fresh, revalidateS: REVALIDATE_S });
+      const ev = await lerEventoKalshi(e.eventTicker, { fresh: true });
       // A leitura de negócios é uma chamada por contrato relevante: só no
       // caminho fresco (scripts e trava), nunca no cache da tela.
       if (ev && fresh) await preencherUltimasNegociacoes(ev);
@@ -87,8 +93,8 @@ export async function GET(request: Request) {
         'Cache-Control': fresh
           ? 'no-store'
           : degraded
-            ? 'public, max-age=0, s-maxage=60, stale-while-revalidate=600'
-            : `public, max-age=0, s-maxage=${REVALIDATE_S}, stale-while-revalidate=86400`,
+            ? `public, max-age=0, s-maxage=60, stale-while-revalidate=${BORDA_SWR_S}`
+            : `public, max-age=0, s-maxage=${BORDA_S}, stale-while-revalidate=${BORDA_SWR_S}`,
       },
     },
   );
