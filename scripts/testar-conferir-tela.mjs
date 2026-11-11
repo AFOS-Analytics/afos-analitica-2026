@@ -48,6 +48,15 @@ const CASOS = [
   // ── 4. borda: fim de linha e começo de texto contam como fronteira
   ['casa no fim do texto', 'o preço fechou em 49,50', '49.50', 'pt-BR', true],
   ['casa no começo do texto', '49,50 foi o fechamento', '49.50', 'pt-BR', true],
+
+  // ── 5. pontuação depois do número (10/Nov/2026: o painel da França foi acusado
+  //    de "FALTANDO 12.85" nos 3 idiomas com a frase "com 12,85, e tem" na tela)
+  ['vírgula de pontuação depois, pt-BR', 'Lisnard é o 3º, com 12,85, e tem 13,00', '12.85', 'pt-BR', true],
+  ['vírgula de pontuação depois, EN', 'Lisnard is 3rd, at 12.85, and at 13.00', '12.85', 'en', true],
+  ['ponto final depois, pt-BR', 'o preço fechou em 49,50.', '49.50', 'pt-BR', true],
+  ['ponto final depois, EN', 'the price closed at 49.50.', '49.50', 'en', true],
+  ['🔒 separador seguido de dígito segue barrando', 'volume 12,855 no dia', '12.85', 'pt-BR', false],
+  ['🔒 e o milhar antes também', 'giro de 1.849,50 no dia', '849.50', 'pt-BR', false],
 ]
 
 let falhas = 0

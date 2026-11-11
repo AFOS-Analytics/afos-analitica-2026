@@ -94,7 +94,11 @@ export function naConvencao(valor, locale) {
  */
 export function achou(texto, valor, locale) {
   const esc = naConvencao(valor, locale).replace(/[.,]/g, (c) => '\\' + c)
-  return new RegExp('(?<![\\d.,])' + esc + '(?![\\d.,])').test(texto)
+  // 10/Nov/2026: a fronteira barrava QUALQUER `.` ou `,` vizinho, e a vírgula de
+  // pontuação em "com 12,85, e tem" fez o painel da França dar FALTANDO 12.85
+  // nos 3 idiomas com o número na tela. Separador só barra quando é PARTE de
+  // número: seguido de dígito (depois) ou precedido de dígito (antes).
+  return new RegExp('(?<!\\d|\\d[.,])' + esc + '(?![.,]?\\d)').test(texto)
 }
 
 /**
