@@ -11,9 +11,9 @@ import { KEYS_US, SLUGS_US } from '@/lib/us-market/mercados';
 // Ler searchParams já torna a rota dinâmica, então o header abaixo passa a valer.
 export const dynamic = 'force-dynamic';
 
-// Janela de frescor do caminho normal. 30 min é o que a página /data-sources
-// promete ao leitor; antes eram 2h, ou seja, o texto público era falso.
-const REVALIDATE_S = 1800;
+// Janela de frescor: 30 min é o que a página /data-sources promete ao leitor.
+// Desde 12/Nov/2026 nenhum país passa perto dela: a borda guarda por 5 min
+// (ver BORDA_POR_PAIS), e o dado da gamma é lido sem cache de dados.
 
 // 🔴 FRANÇA, 10/Nov/2026: DOIS caches com stale-while-revalidate EMPILHADOS, o
 // de dados do Next (`next.revalidate` 1800 s, no fetch da gamma) e o da borda da
@@ -27,6 +27,18 @@ const REVALIDATE_S = 1800;
 // hora do dado) e só a borda guarda, por pouco: no pior caso s-maxage + SWR.
 const BORDA_FRA_S = 300;
 const BORDA_FRA_SWR_S = 60;
+
+// 12/Nov/2026 (EVAL): o mesmo conserto levado a Brasil e EUA, país por país.
+// Nos dois, o fetch ainda usava `next.revalidate` 1800 e a borda s-maxage 1800 +
+// SWR 86400, com `fetchedAt` da hora do pedido: o defeito medido na França.
+// Brasil está congelado desde 02/Nov e os livros dos EUA estão resolvidos, por
+// isso a diferença não aparecia; voltaria em qualquer livro vivo. A França fica
+// exatamente como estava.
+const BORDA_POR_PAIS: Record<PaisMercado, { s: number; swr: number }> = {
+  br: { s: BORDA_FRA_S, swr: BORDA_FRA_SWR_S },
+  us: { s: BORDA_FRA_S, swr: BORDA_FRA_SWR_S },
+  fra: { s: BORDA_FRA_S, swr: BORDA_FRA_SWR_S },
+};
 
 const slugs = [
   'brazil-presidential-election',
@@ -108,7 +120,9 @@ async function fetchEvent(slug: string, fresh = false) {
       // de DUAS leituras genuinamente independentes para decidir se o book está
       // estável. Sem isso a trava leria o mesmo cache duas vezes e aprovaria
       // qualquer snapshot, inclusive um capturado com spread largo.
-      ...(fresh ? { cache: 'no-store' as const } : { next: { revalidate: REVALIDATE_S } }),
+      // Desde 12/Nov/2026 todo país lê com `fresh` (ver BORDA_POR_PAIS): o
+      // ramo com `next.revalidate` fica só para quem chamar sem ele.
+      ...(fresh ? { cache: 'no-store' as const } : { next: { revalidate: 1800 } }),
       signal: controller.signal,
     });
     clearTimeout(timeout);
@@ -221,8 +235,8 @@ export async function GET(request: Request) {
     }
   }
 
-  // França: sem cache de dados, sempre (ver BORDA_FRA_S). Brasil e EUA seguem como antes.
-  const results = await Promise.all(listaSlugs.map(slug => fetchEvent(slug, fresh || country === 'fra')));
+  // Todo país: sem cache de dados, sempre (ver BORDA_FRA_S e BORDA_POR_PAIS).
+  const results = await Promise.all(listaSlugs.map(slug => fetchEvent(slug, true)));
   const data: Record<string, unknown> = {};
   listaKeys.forEach((key, i) => {
     data[key] = results[i];
@@ -243,13 +257,9 @@ export async function GET(request: Request) {
       headers: {
         'Cache-Control': fresh
           ? 'no-store'
-          : country === 'fra'
-            ? degraded
-              ? `public, max-age=0, s-maxage=60, stale-while-revalidate=${BORDA_FRA_SWR_S}`
-              : `public, max-age=0, s-maxage=${BORDA_FRA_S}, stale-while-revalidate=${BORDA_FRA_SWR_S}`
-            : degraded
-              ? 'public, max-age=0, s-maxage=60, stale-while-revalidate=600'
-              : `public, max-age=0, s-maxage=${REVALIDATE_S}, stale-while-revalidate=86400`,
+          : degraded
+            ? `public, max-age=0, s-maxage=60, stale-while-revalidate=${BORDA_POR_PAIS[country].swr}`
+            : `public, max-age=0, s-maxage=${BORDA_POR_PAIS[country].s}, stale-while-revalidate=${BORDA_POR_PAIS[country].swr}`,
       },
     }
   );
