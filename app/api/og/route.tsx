@@ -31,6 +31,18 @@ const COPY = {
 
 type Locale = keyof typeof COPY
 
+// Teto por parâmetro de texto no modo dataset (12/Nov/2026). A rota continua
+// aberta porque gera os banners do HF, mas sem teto qualquer um montava uma
+// imagem de qualquer tamanho com a marca no topo. Os tetos ficam bem acima
+// dos textos reais, então banner dentro do limite sai idêntico.
+const TETO = { title: 120, line: 200, tag: 60, chip: 40, chips: 6 } as const
+
+/** Corta em `max` caracteres (por ponto de código, sem partir emoji) com "…". */
+function corta(s: string, max: number): string {
+  const cps = Array.from(s)
+  return cps.length > max ? cps.slice(0, max - 1).join('').trimEnd() + '…' : s
+}
+
 export async function GET(request: NextRequest) {
   const sp = request.nextUrl.searchParams
   const localeParam = sp.get('locale')
@@ -38,12 +50,16 @@ export async function GET(request: NextRequest) {
   const copy = COPY[locale]
 
   // Dataset/open-data OG mode: /api/og?title=...&line=...&tag=...
-  const title = sp.get('title')
-  if (title) {
-    const line = sp.get('line') || 'Prediction market × polls — the spread is the signal.'
-    const tag = sp.get('tag') || 'Open dataset · CC BY 4.0'
-    const chips = (sp.get('chips') || 'Reproducible · EN · ES · PT').split('·').map((c) => c.trim())
-    const cc = (sp.get('cc') || '').replace(/[^a-z]/g, '') // 2-letter country code → /flags/{cc}.svg
+  const titleParam = sp.get('title')
+  if (titleParam) {
+    const title = corta(titleParam, TETO.title)
+    const line = corta(sp.get('line') || 'Prediction market × polls — the spread is the signal.', TETO.line)
+    const tag = corta(sp.get('tag') || 'Open dataset · CC BY 4.0', TETO.tag)
+    const chips = (sp.get('chips') || 'Reproducible · EN · ES · PT')
+      .split('·')
+      .map((c) => corta(c.trim(), TETO.chip))
+      .slice(0, TETO.chips)
+    const cc = (sp.get('cc') || '').replace(/[^a-z]/g, '').slice(0, 2) // 2-letter country code → /flags/{cc}.svg
     try {
       return new ImageResponse(
         (
