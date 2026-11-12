@@ -1,3 +1,4 @@
+import { caminhoDashboard } from '../paineis.mjs'
 import type { Metadata } from 'next'
 import { locales, isValidLocale, type Locale } from '../i18n/config'
 import { getRegionBySlug, getCountriesForRegion, ISO3_TO_CC, type RegionSEO } from './countries'
@@ -65,7 +66,7 @@ export function RegionPage(regionSlug: string) {
         <div className="max-w-5xl mx-auto px-4 py-12">
           <div className="flex items-center justify-between gap-3 mb-8">
             <a href={`/${loc}`} aria-label="AFOS Analytics, Home" className="text-base sm:text-lg font-extrabold tracking-tight text-primary">AFOS Analytics</a>
-            <a href={`/${loc}/dashboard/br`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">Dashboard</a>
+            <a href={caminhoDashboard(loc)} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">Dashboard</a>
           </div>
 
           <h1 className="text-3xl md:text-5xl font-extrabold text-dark mb-4">{m.h1}</h1>

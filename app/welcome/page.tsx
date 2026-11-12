@@ -6,7 +6,7 @@
  * gracefully to /en (no error page).
  *
  * UX: brand reinforcement + 3 language picker buttons (PT/EN/ES with flags).
- * Click → POST /api/lead/locale → redirect to /{locale}/dashboard/br.
+ * Click → POST /api/lead/locale → redirect to the live panel (lib/paineis.mjs).
  *
  * Dashboard + Daily CTAs kept above fold (user request).
  */

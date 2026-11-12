@@ -1,4 +1,5 @@
 'use client'
+import { caminhoDashboard } from '../../../lib/paineis.mjs'
 import { useEffect, useState } from 'react'
 
 // Shared theme key with AFOS Daily/Tradeoff/how-it-works so the reading
@@ -133,7 +134,7 @@ export function WhitePaperShell({ locale, c }: { locale: string; c: WhitePaperCo
             AFOS Analytics
           </a>
           <div className="flex items-center gap-3">
-            <a href={`/${locale}/dashboard/br`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${isBlue ? 'bg-white text-primary hover:bg-blue-50' : 'bg-primary text-white hover:bg-primary/90'}`}>
+            <a href={caminhoDashboard(locale)} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${isBlue ? 'bg-white text-primary hover:bg-blue-50' : 'bg-primary text-white hover:bg-primary/90'}`}>
               Dashboard
             </a>
             <LanguagePicker locale={locale} isBlue={isBlue} langAria={t.langAria} />

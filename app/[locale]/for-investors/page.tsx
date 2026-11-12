@@ -1,3 +1,4 @@
+import { caminhoDashboard } from '../../../lib/paineis.mjs'
 import type { Metadata } from 'next'
 import { locales, isValidLocale, type Locale } from '../../../lib/i18n/config'
 import { socialMeta } from '../../../lib/seo/metadata'
@@ -75,7 +76,7 @@ export default async function ForInvestorsPage({ params }: { params: Promise<{ l
             </div>
           ))}
         </div>
-        <a href={`/${loc}/dashboard/br`} className="inline-block bg-primary text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary-dark transition-colors">{c.cta}</a>
+        <a href={caminhoDashboard(loc)} className="inline-block bg-primary text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary-dark transition-colors">{c.cta}</a>
       </div>
     </div>
   )

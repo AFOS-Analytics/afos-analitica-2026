@@ -5,42 +5,24 @@ import { useTranslation } from '../i18n/context'
 /**
  * Seletor de país do painel.
  *
- * Navegação entre /[locale]/dashboard/br e /[locale]/dashboard/us sem passar por
+ * Navegação entre os painéis (/[locale]/dashboard/<país>) sem passar por
  * tela intermediária: painel é porta de entrada, e pôr escolha na frente de quem
  * quer ver dado é atrito puro (decisão de 27/Jul).
  *
- * ⚠️ UM LUGAR SÓ PARA LIGAR UM PAÍS: a flag `ready`. Enquanto for false, o item
- * aparece como "em breve" e NÃO é clicável, então ninguém é mandado para uma
- * página em construção. Os EUA foram ligados em 01/Ago/2026, junto com robots,
- * sitemap, llms.txt e IndexNow — a flag sozinha só resolve o caminho humano.
+ * 🧭 ORDEM E ESTADO vêm de `lib/paineis.mjs` (desde 12/Nov/2026, decisão do
+ * André): painel ao vivo primeiro; encerrado depois, visível e clicável, com selo
+ * "encerrado". País em montagem não entra no registro: a página dele não aparece
+ * nas outras, e ninguém é mandado para uma página em construção.
  */
 
-type CountryCode = 'br' | 'us' | 'fr'
+import { paineisOrdenados, type CodigoPainel } from '../../lib/paineis.mjs'
 
-interface CountryEntry {
-  code: CountryCode
-  ready: boolean
-  /**
-   * 🚧 `oculto`: o país NÃO aparece nem como "em breve" nas outras páginas.
-   * Só se mostra na própria página, para ela se marcar como a atual. Existe
-   * para a França (08/Nov/2026): "em breve" já anunciaria um painel que o
-   * André ainda não aprovou.
-   */
-  oculto?: boolean
-  label: { 'pt-BR': string; en: string; es: string }
-}
-
-const COUNTRIES: CountryEntry[] = [
-  { code: 'br', ready: true, label: { 'pt-BR': 'Brasil', en: 'Brazil', es: 'Brasil' } },
-  { code: 'us', ready: true, label: { 'pt-BR': 'Estados Unidos', en: 'United States', es: 'Estados Unidos' } },
-  // 🇫🇷 PUBLICADA em 08/Nov/2026 (decisão do André, opção B): as 5 chaves viradas juntas.
-  { code: 'fr', ready: true, label: { 'pt-BR': 'França', en: 'France', es: 'Francia' } },
-]
+type CountryCode = CodigoPainel
 
 const T = {
-  'pt-BR': { heading: 'Painel por país', soon: 'em breve' },
-  en: { heading: 'Panel by country', soon: 'coming soon' },
-  es: { heading: 'Panel por país', soon: 'próximamente' },
+  'pt-BR': { heading: 'Painel por país', live: 'ao vivo', closed: 'encerrado', closedTitle: 'Cobertura encerrada, com relatório final publicado' },
+  en: { heading: 'Panel by country', live: 'live', closed: 'closed', closedTitle: 'Coverage closed, final report published' },
+  es: { heading: 'Panel por país', live: 'en vivo', closed: 'cerrado', closedTitle: 'Cobertura cerrada, con informe final publicado' },
 }
 
 export function CountrySelector({ active }: { active: CountryCode }) {
@@ -58,9 +40,10 @@ export function CountrySelector({ active }: { active: CountryCode }) {
           {t.heading}
         </span>
 
-        {COUNTRIES.filter((c) => !c.oculto || c.code === active).map((c) => {
+        {paineisOrdenados().map((c) => {
           const name = c.label[tKey]
           const isActive = c.code === active
+          const encerrado = c.estado === 'encerrado'
           const flag = (
             // eslint-disable-next-line @next/next/no-img-element
             <img
@@ -71,27 +54,18 @@ export function CountrySelector({ active }: { active: CountryCode }) {
               height={12}
               loading="lazy"
               decoding="async"
-              className="rounded-sm object-cover"
+              className={`rounded-sm object-cover${encerrado && !isActive ? ' opacity-60' : ''}`}
               style={{ width: 18, height: 12 }}
             />
           )
-
-          // A ordem importa: a página do país sendo montado ainda tem `ready: false`,
-          // e mesmo assim precisa se marcar como a atual quando alguém a abre direto.
-          if (!c.ready && !isActive) {
-            return (
-              <span
-                key={c.code}
-                className="flex items-center gap-1.5 bg-light-bg border border-light-border rounded-lg px-3 py-1.5 text-xs font-medium text-gray-400 cursor-default select-none"
-              >
-                {flag}
-                {name}
-                <span className="text-[10px] uppercase tracking-wider text-gray-400">
-                  · {t.soon}
-                </span>
-              </span>
-            )
-          }
+          const selo = encerrado ? (
+            <span className={`text-[10px] uppercase tracking-wider ${isActive ? 'text-white/80' : 'text-gray-400'}`}>· {t.closed}</span>
+          ) : (
+            <span className={`flex items-center gap-1 text-[10px] uppercase tracking-wider ${isActive ? 'text-white/90' : 'text-red-600'}`}>
+              <span aria-hidden={true} className={`inline-block w-1.5 h-1.5 rounded-full ${isActive ? 'bg-white' : 'bg-red-600'}`} />
+              {t.live}
+            </span>
+          )
 
           if (isActive) {
             return (
@@ -102,6 +76,7 @@ export function CountrySelector({ active }: { active: CountryCode }) {
               >
                 {flag}
                 {name}
+                {selo}
               </span>
             )
           }
@@ -110,10 +85,12 @@ export function CountrySelector({ active }: { active: CountryCode }) {
             <a
               key={c.code}
               href={`/${tKey}/dashboard/${c.code}`}
-              className="flex items-center gap-1.5 bg-white border border-light-border rounded-lg px-3 py-1.5 text-xs font-medium text-dark hover:border-primary hover:text-primary transition-colors"
+              title={encerrado ? t.closedTitle : undefined}
+              className={`flex items-center gap-1.5 border rounded-lg px-3 py-1.5 text-xs font-medium hover:border-primary hover:text-primary transition-colors ${encerrado ? 'bg-light-bg border-light-border text-gray-500' : 'bg-white border-light-border text-dark'}`}
             >
               {flag}
               {name}
+              {selo}
             </a>
           )
         })}

@@ -1,3 +1,4 @@
+import { caminhoDashboard } from '../lib/paineis.mjs'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
@@ -56,7 +57,7 @@ export default async function NotFound() {
             {t.home}
           </Link>
           <Link
-            href={`/${locale}/dashboard/br`}
+            href={caminhoDashboard(locale)}
             className="px-5 py-2.5 rounded-lg border border-gray-200 text-dark text-sm font-semibold hover:bg-gray-50 transition-colors"
           >
             {t.dash}

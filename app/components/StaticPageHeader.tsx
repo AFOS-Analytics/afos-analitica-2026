@@ -1,5 +1,6 @@
 'use client';
 
+import { caminhoDashboard } from '../../lib/paineis.mjs';
 import Link from 'next/link';
 import { useTranslation } from '../i18n/context';
 import { LanguageSwitcher } from './layout/language-switcher';
@@ -31,7 +32,7 @@ export function StaticPageHeader() {
 
           <nav className="flex items-center gap-3 flex-wrap" aria-label="Navigation">
             <Link
-              href={`/${locale}/dashboard/br`}
+              href={caminhoDashboard(locale)}
               className="border border-white/30 hover:bg-white/10 focus:outline-2 focus:outline-offset-2 focus:outline-white text-white text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-lg transition-all duration-200"
             >
               Dashboard

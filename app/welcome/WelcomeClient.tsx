@@ -1,5 +1,6 @@
 'use client'
 
+import { caminhoDashboard } from '../../lib/paineis.mjs'
 import { useState } from 'react'
 
 interface Props {
@@ -34,7 +35,7 @@ export default function WelcomeClient({ email }: Props) {
       setError('Network error — redirecting anyway.')
     }
     // Redirect regardless: preference is best-effort, dashboard access is the priority.
-    window.location.href = `/${locale}/dashboard/br`
+    window.location.href = caminhoDashboard(locale)
   }
 
   return (

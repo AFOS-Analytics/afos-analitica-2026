@@ -1,5 +1,6 @@
 'use client';
 
+import { caminhoDashboard } from '../../lib/paineis.mjs';
 import { useTranslation, useLocale } from '../i18n/context';
 import { EMAIL_CONTACT, EMAIL_SUPPORT, EMAIL_SECURITY, EMAIL_FOUNDER } from '../lib/contacts';
 
@@ -81,7 +82,7 @@ export function Footer() {
   const byLen = (a: FooterLink, b: FooterLink) =>
     (a.label.length + (a.star ? 2 : 0)) - (b.label.length + (b.star ? 2 : 0));
   const navLinks: FooterLink[] = [
-    { href: `/${locale}/dashboard/br`, label: nav.dashboard },
+    { href: caminhoDashboard(locale), label: nav.dashboard },
     { href: `/${locale}/global`, label: nav.global },
     { href: `/${locale}/latam`, label: nav.latam },
     { href: `/${locale}/eu`, label: nav.eu },

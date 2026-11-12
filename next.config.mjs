@@ -1,3 +1,4 @@
+import { paisPadrao } from './lib/paineis.mjs';
 import bundleAnalyzer from '@next/bundle-analyzer';
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -73,7 +74,8 @@ const nextConfig = {
         permanent: false,
       },
       {
-        // Painel multi-país: /dashboard vira /dashboard/br. Nenhum link antigo quebra.
+        // 🧭 12/Nov/2026: o destino é o 1º painel AO VIVO de lib/paineis.mjs (hoje a França).
+        // Painel multi-país: /dashboard vira /dashboard/<país padrão>. Nenhum link antigo quebra.
         // O painel NÃO ganha tela de escolha na frente: é porta de entrada, e escolher
         // país antes de ver dado é atrito puro (decisão de 27/Jul).
         //
@@ -83,7 +85,7 @@ const nextConfig = {
         // indo para /br mesmo depois da mudança. Endereço de edição publicada (Tradeoff,
         // Daily) é outro caso: lá o destino é definitivo e o permanente é o certo.
         source: '/:locale(pt-BR|en|es)/dashboard',
-        destination: '/:locale/dashboard/br',
+        destination: `/:locale/dashboard/${paisPadrao()}`,
         permanent: false,
       },
     ];

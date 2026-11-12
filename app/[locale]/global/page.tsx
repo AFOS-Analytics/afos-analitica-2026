@@ -1,5 +1,6 @@
 'use client';
 
+import { caminhoDashboard } from '../../../lib/paineis.mjs';
 import { useEffect, useState, useRef } from 'react';
 import { useParams, useRouter, usePathname } from 'next/navigation';
 import { MOCK_ELECTIONS } from '../../lib/mock-elections';
@@ -159,7 +160,7 @@ export default function GlobalPage() {
               <span className="text-primary">Global</span>
             </div>
             <LangSwitcher current={locale} onSelect={handleLocaleChange} />
-            <a href={`/${locale}/dashboard/br`} className="text-[11px] sm:text-sm font-semibold px-3 sm:px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors">
+            <a href={caminhoDashboard(locale)} className="text-[11px] sm:text-sm font-semibold px-3 sm:px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors">
               Dashboard
             </a>
           </div>

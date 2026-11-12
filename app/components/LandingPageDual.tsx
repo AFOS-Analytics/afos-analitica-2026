@@ -1,5 +1,6 @@
 'use client';
 
+import { caminhoDashboard } from '../../lib/paineis.mjs';
 import { useState, useRef, useEffect } from 'react';
 
 /**
@@ -480,7 +481,7 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
   const featuresRef = useRef<HTMLElement>(null);
   const tk = useThemeTokens(theme);
 
-  const dashboardUrl = `/${locale}/dashboard/br`;
+  const dashboardUrl = caminhoDashboard(locale);
 
   useEffect(() => {
     setVisitorId(getOrCreateVisitorId());
