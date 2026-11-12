@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
+import { gravarIdioma } from '../../lib/i18n/config'
 
 // Shared with AfosTradeoffTemplate so the theme choice persists between the
 // edition reading view and this archive (pick Sapphire on one, both follow).
@@ -43,6 +44,7 @@ function LanguagePicker({ locale, isBlue, langAria, country }: { locale: string;
           {i > 0 && <span className={isBlue ? 'text-blue-400/50' : 'text-gray-300'}>·</span>}
           <a
             href={`/${loc}/tradeoff/${country}`}
+            onClick={() => gravarIdioma(loc)}
             aria-label={LANG_LABEL[loc]}
             className={
               loc === locale

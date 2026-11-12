@@ -186,6 +186,14 @@ export async function middleware(request: NextRequest) {
       response.headers.set('X-Frame-Options', 'DENY');
       return response;
     }
+    // /welcome fica sem prefixo, mas o texto principal dele é inglês. Sem o
+    // cabeçalho, o layout raiz caía em lang="pt-BR" e o leitor de tela lia o
+    // inglês com pronúncia de português.
+    if (pathname === '/welcome' || pathname.startsWith('/welcome/')) {
+      const requestHeaders = new Headers(request.headers);
+      requestHeaders.set('x-pathname-locale', 'en');
+      return NextResponse.next({ request: { headers: requestHeaders } });
+    }
     return NextResponse.next();
   }
 

@@ -2,6 +2,7 @@
 
 import { caminhoDashboard } from '../../lib/paineis.mjs'
 import { useState } from 'react'
+import { gravarIdioma, isValidLocale } from '../../lib/i18n/config'
 
 interface Props {
   email: string
@@ -35,6 +36,8 @@ export default function WelcomeClient({ email }: Props) {
       setError('Network error — redirecting anyway.')
     }
     // Redirect regardless: preference is best-effort, dashboard access is the priority.
+    // O cookie de idioma vai antes, para a raiz não desfazer a escolha na volta.
+    if (isValidLocale(locale)) gravarIdioma(locale)
     window.location.href = caminhoDashboard(locale)
   }
 

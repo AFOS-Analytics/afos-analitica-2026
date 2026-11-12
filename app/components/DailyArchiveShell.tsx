@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { DailyArchiveJump } from './DailyArchiveJump'
+import { gravarIdioma } from '../../lib/i18n/config'
 
 // Shared with AfosDailyTemplate so the theme choice persists between the
 // synthesis reading view and this archive (pick Sapphire on one, both follow).
@@ -44,6 +45,7 @@ function LanguagePicker({ locale, isBlue, langAria }: { locale: string; isBlue: 
           {i > 0 && <span className={isBlue ? 'text-blue-400/50' : 'text-gray-300'}>·</span>}
           <a
             href={`/${loc}/daily`}
+            onClick={() => gravarIdioma(loc)}
             aria-label={LANG_LABEL[loc]}
             className={
               loc === locale

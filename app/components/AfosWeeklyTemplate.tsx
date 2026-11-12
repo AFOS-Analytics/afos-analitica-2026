@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import type { AfosWeeklyData } from '../../lib/afos-weekly/loader'
 import { WeeklyMarkdown } from './WeeklyMarkdown'
+import { gravarIdioma } from '../../lib/i18n/config'
 import { InlineSubscribe } from './InlineSubscribe'
 
 /**
@@ -273,6 +274,7 @@ export function AfosWeeklyTemplate({ data, locale, country = 'us' }: { data: Afo
                 {i > 0 && <span className={isBlue ? 'text-blue-400/50' : 'text-gray-300'}>·</span>}
                 <a
                   href={`/${l}/weekly/${country}/${data.date}`}
+                  onClick={() => gravarIdioma(l)}
                   className={l === locale ? (isBlue ? 'font-bold text-white' : 'font-bold text-primary') : (isBlue ? 'text-blue-200 hover:text-white' : 'text-gray-500 hover:text-primary')}
                 >
                   {l === 'pt-BR' ? 'PT' : l.toUpperCase()}

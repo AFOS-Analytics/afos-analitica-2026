@@ -54,7 +54,7 @@ function readLocalized(base: string, locale?: string): unknown | null {
  * `updatedAt` e `lastUpdate` estão em FORA_DE_TRADUCAO, logo são cópia byte a
  * byte do pt-BR: comparar as duas strings basta, e é por isso que funciona.
  */
-function mesmoCarimbo(pt: unknown, traduzido: unknown): boolean {
+export function mesmoCarimbo(pt: unknown, traduzido: unknown): boolean {
   if (!pt || typeof pt !== 'object' || !traduzido || typeof traduzido !== 'object') return true
   const a = pt as Record<string, unknown>
   const b = traduzido as Record<string, unknown>

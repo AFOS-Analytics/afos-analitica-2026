@@ -12,6 +12,18 @@ export function isValidLocale(value: string): value is Locale {
   return (locales as readonly string[]).includes(value);
 }
 
+/**
+ * Grava a escolha de idioma do leitor no cookie que a raiz e o middleware
+ * respeitam. Só no navegador. Todo seletor de idioma chama esta função: um
+ * seletor que só troca o href deixava o cookie antigo de pé, e a raiz desfazia
+ * a escolha na visita seguinte.
+ */
+export function gravarIdioma(locale: Locale): void {
+  try {
+    document.cookie = `${COOKIE_NAME}=${locale};path=/;max-age=${365 * 24 * 60 * 60};SameSite=Lax;Secure`;
+  } catch {}
+}
+
 /** Case-insensitive: normaliza para locale válido ou retorna null */
 export function normalizeLocale(value: string): Locale | null {
   const lower = value.toLowerCase();
