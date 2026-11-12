@@ -26,15 +26,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const SEO: Record<Locale, { title: string; description: string }> = {
     'pt-BR': {
       title: 'Painel Estados Unidos, AFOS Analytics | Midterms 2026',
-      description: 'Painel das eleições de meio de mandato dos Estados Unidos de 3 de novembro de 2026: mercado de previsão e pesquisas lado a lado, sem subtrair grandezas diferentes.',
+      description: 'Painel das eleições de meio de mandato dos Estados Unidos de 3 de novembro de 2026: mercado de previsão e pesquisas lado a lado, sem subtrair grandezas diferentes. Cobertura encerrada em 09/11/2026, com relatório final.',
     },
     en: {
       title: 'United States panel, AFOS Analytics | 2026 Midterms',
-      description: 'Panel for the United States midterm elections of November 3, 2026: prediction market and polling side by side, without subtracting different quantities.',
+      description: 'Panel for the United States midterm elections of November 3, 2026: prediction market and polling side by side, without subtracting different quantities. Coverage closed on Nov 9, 2026, with a final report.',
     },
     es: {
       title: 'Panel Estados Unidos, AFOS Analytics | Midterms 2026',
-      description: 'Panel de las elecciones de medio término de Estados Unidos del 3 de noviembre de 2026: mercado de predicción y encuestas lado a lado, sin restar magnitudes distintas.',
+      description: 'Panel de las elecciones de medio término de Estados Unidos del 3 de noviembre de 2026: mercado de predicción y encuestas lado a lado, sin restar magnitudes distintas. Cobertura cerrada el 09/11/2026, con informe final.',
     },
   };
   // 🎨 Cartão próprio, e a cor dele vem do PAÍS (verde-azulado = EUA), nunca

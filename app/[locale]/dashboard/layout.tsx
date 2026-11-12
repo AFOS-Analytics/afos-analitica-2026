@@ -11,17 +11,20 @@ import type { Locale } from '../../../lib/i18n/config';
  * o próprio, com o país no caminho.
  */
 export const DASHBOARD_SEO: Record<Locale, { title: string; description: string }> = {
+  // 12/Nov/2026: o texto antigo ("notícias ao vivo", "17+ institutos", "cobertura
+  // de 15 países") descrevia o painel do Brasil de antes do congelamento. Só a
+  // página /dashboard/br usa este texto; EUA e França declaram o próprio.
   'pt-BR': {
-    title: 'Dashboard, AFOS Analytics | Inteligência de Risco Político Eleitoral Global',
-    description: 'Dashboard interativo: cruzamento de mercados de previsão (Polymarket) com pesquisas eleitorais de 17+ institutos, notícias ao vivo e análises estratégicas. Eleições Brasil 2026 e cobertura de 15 países.',
+    title: 'Painel Brasil, AFOS Analytics | Eleições 2026, cobertura encerrada',
+    description: 'Painel das eleições presidenciais do Brasil de 2026, encerrado em 01/11/2026: mercado de previsão (Polymarket), pesquisas registradas no TSE e imprensa lado a lado, com o resultado final do TSE, o relatório final e os dados no Harvard Dataverse.',
   },
   en: {
-    title: 'Dashboard, AFOS Analytics | Political Election Risk Intelligence',
-    description: 'Interactive dashboard: crossing prediction markets (Polymarket) with electoral polls from 17+ institutes, live news and strategic analysis. Brazil 2026 elections and 15-country coverage.',
+    title: 'Brazil panel, AFOS Analytics | 2026 Elections, coverage closed',
+    description: "Panel for Brazil's 2026 presidential elections, closed on Nov 1, 2026: prediction market (Polymarket), polls registered with the TSE and the press side by side, with the TSE final result, the final report and the data on Harvard Dataverse.",
   },
   es: {
-    title: 'Dashboard, AFOS Analytics | Inteligencia Global de Riesgo Político Electoral',
-    description: 'Dashboard interactivo: cruce de mercados de predicción (Polymarket) con encuestas electorales de 17+ institutos, noticias en vivo y análisis estratégicos. Elecciones Brasil 2026 y cobertura de 15 países.',
+    title: 'Panel Brasil, AFOS Analytics | Elecciones 2026, cobertura cerrada',
+    description: 'Panel de las elecciones presidenciales de Brasil de 2026, cerrado el 01/11/2026: mercado de predicción (Polymarket), encuestas registradas en el TSE y prensa lado a lado, con el resultado final del TSE, el informe final y los datos en Harvard Dataverse.',
   },
 };
 

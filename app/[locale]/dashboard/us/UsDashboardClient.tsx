@@ -19,6 +19,7 @@ import { UsIntroCard } from '../../../components/UsIntroCard';
 import { AfosTradeoffHeroCard } from '../../../components/AfosTradeoffHeroCard';
 import { AfosWeeklyHeroCard } from '../../../components/AfosWeeklyHeroCard';
 import { RelatorioFinalHeroCard } from '../../../components/RelatorioFinalHeroCard';
+import { CoberturaEncerradaBanner } from '../../../components/CoberturaEncerradaBanner';
 import type { UsPressLeitura } from '../../../../lib/dashboard/us-press-data';
 import { CountryGraph } from '../../../components/CountryGraph';
 import { SectionTitle } from '../../../components/ui';
@@ -306,6 +307,10 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
             EUA não existia; a Edição №1 destravou. O cartão de apresentação
             desceu uma posição e continua: ele diz o que o painel é, e isso o
             Tradeoff não diz. */}
+        {/* 🧭 Aviso de cobertura encerrada (12/11/2026, regra do painel ao vivo em
+            primeiro plano): acima do relatório, na mesma ordem do painel do Brasil. */}
+        <CoberturaEncerradaBanner pais="us" semContainer />
+
         {/* Relatório de fechamento EUA 2026 (06/11/2026): acima de tudo, como o do
             Brasil no painel do Brasil. */}
         <RelatorioFinalHeroCard pais="us" semContainer />
