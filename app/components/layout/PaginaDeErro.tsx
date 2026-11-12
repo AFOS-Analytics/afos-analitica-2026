@@ -3,7 +3,13 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { isValidLocale, defaultLocale } from '../lib/i18n/config'
+import { isValidLocale, defaultLocale } from '../../../lib/i18n/config'
+
+/**
+ * Corpo da página de erro, comum a app/[locale]/error.tsx, app/(raiz)/error.tsx e
+ * app/global-error.tsx. Cada layout raiz precisa da sua fronteira de erro desde
+ * que o site passou a ter dois layouts raiz (12/Nov/2026).
+ */
 
 // Textos por locale. pt-BR = cópia original preservada; en/es adicionados (aditivo).
 const T = {
@@ -33,7 +39,14 @@ const T = {
   },
 }
 
-export default function GlobalError({
+/** Idioma da rota pelo 1º segmento do caminho; fora de /[idioma], o padrão da casa. */
+export function useIdiomaDaRota() {
+  const pathname = usePathname()
+  const seg = (pathname || '').split('/')[1]
+  return isValidLocale(seg) ? seg : defaultLocale
+}
+
+export function PaginaDeErro({
   error,
   reset,
 }: {
@@ -45,9 +58,7 @@ export default function GlobalError({
     console.error('[afos-error-boundary]', error)
   }, [error])
 
-  const pathname = usePathname()
-  const seg = (pathname || '').split('/')[1]
-  const locale = isValidLocale(seg) ? seg : defaultLocale
+  const locale = useIdiomaDaRota()
   const t = T[locale]
 
   return (

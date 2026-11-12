@@ -1,8 +1,8 @@
 'use client'
 
-import { caminhoDashboard } from '../../lib/paineis.mjs'
+import { caminhoDashboard } from '../../../lib/paineis.mjs'
 import { useState } from 'react'
-import { gravarIdioma, isValidLocale } from '../../lib/i18n/config'
+import { gravarIdioma, isValidLocale } from '../../../lib/i18n/config'
 
 interface Props {
   email: string

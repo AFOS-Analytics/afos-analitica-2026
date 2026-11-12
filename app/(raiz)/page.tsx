@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
-import { COOKIE_NAME, isValidLocale } from '../lib/i18n/config';
-import { negotiateLocale } from '../lib/i18n/negotiate';
+import { COOKIE_NAME, isValidLocale } from '../../lib/i18n/config';
+import { negotiateLocale } from '../../lib/i18n/negotiate';
 
 // Bare-domain landing for `/`. Renders OG metadata (EN, the international face
 // of the project) so that LLM crawlers and IM clients that don't follow

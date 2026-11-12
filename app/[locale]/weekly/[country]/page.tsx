@@ -6,6 +6,8 @@ import {
   getLatestDate,
   isValidLocale,
   isValidCountry,
+  SUPPORTED_LOCALES,
+  PAISES_WEEKLY,
 } from '../../../../lib/afos-weekly/loader'
 
 /**
@@ -29,7 +31,14 @@ import {
  * André. O `noindex` do piloto saiu depois da Edição №4.
  */
 
-export const dynamic = 'force-dynamic'
+// ✅ 12/Nov/2026: SAIU o `force-dynamic`, que só existia porque o antigo
+// app/layout.tsx lia `headers()` e deixava o site inteiro sem cache. O arquivo
+// sai pronto do build para cada idioma e país e se renova a cada hora.
+export const revalidate = 3600
+
+export function generateStaticParams() {
+  return SUPPORTED_LOCALES.flatMap((locale) => PAISES_WEEKLY.map((country) => ({ locale, country })))
+}
 
 interface Props {
   params: Promise<{ locale: string; country: string }>

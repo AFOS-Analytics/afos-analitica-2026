@@ -10,6 +10,8 @@ import {
   weeklyExistsStrict,
   SUPPORTED_LOCALES,
   LOCALE_ORIGEM,
+  PAISES_WEEKLY,
+  listPublishedWeeklies,
 } from '../../../../../lib/afos-weekly/loader'
 import { buildWeeklyArticleSchema, buildWeeklyBreadcrumbSchema } from '../../../../../lib/afos-weekly/schema'
 import { JsonLd } from '../../../../components/JsonLd'
@@ -66,7 +68,20 @@ function getOgImageUrl(locale?: string, override?: string): string {
  * seguem `noindex`. Indexar página que não carregou seria pior que não indexar.
  */
 
-export const dynamic = 'force-dynamic'
+// ✅ 12/Nov/2026: SAIU o `force-dynamic`, que só existia porque o antigo
+// app/layout.tsx lia `headers()` e deixava o site inteiro sem cache. As edições
+// publicadas saem prontas do build; `dynamicParams = true` mantém o rascunho
+// abrindo no preview, sob demanda (em produção o portão abaixo dá 404); e
+// `revalidate` renova a página guardada a cada hora.
+export const dynamicParams = true
+export const revalidate = 3600
+
+export async function generateStaticParams() {
+  const edicoes = PAISES_WEEKLY.flatMap((country) =>
+    listPublishedWeeklies(country).map((date) => ({ country, date })),
+  )
+  return SUPPORTED_LOCALES.flatMap((locale) => edicoes.map(({ country, date }) => ({ locale, country, date })))
+}
 
 interface PageProps {
   params: Promise<{ locale: string; country: string; date: string }>

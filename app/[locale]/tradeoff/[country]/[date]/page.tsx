@@ -41,14 +41,17 @@ interface PageProps {
   params: Promise<{ locale: string; country: string; date: string }>
 }
 
-// Force dynamic rendering. With zero published Tradeoffs initially,
-// generateStaticParams returns [], which would make Next.js 15 attempt
-// static fallback rendering, but the page reads process.env.VERCEL_ENV
-// (a dynamic API), causing DYNAMIC_SERVER_USAGE crash. Forcing dynamic
-// makes every request go through SSR cleanly, no static fallback.
-// TODO post-launch: once Tradeoff has N≥2 published editions, switch
-// back to SSG fallback for better cache hit rate.
-export const dynamic = 'force-dynamic'
+// ✅ 12/Nov/2026: SAIU o `force-dynamic`. Ele nasceu quando não havia Tradeoff
+// publicado e a lista de generateStaticParams vinha vazia; hoje há dezenas.
+// `process.env.VERCEL_ENV` NÃO é API dinâmica (é lido no build e no servidor
+// do mesmo jeito, como em daily/[date]), e o que deixava o site inteiro sem
+// cache era o `headers()` do antigo app/layout.tsx. Agora:
+//   - as edições publicadas saem prontas do build (generateStaticParams);
+//   - `dynamicParams = true` mantém o rascunho abrindo no preview, renderizado
+//     sob demanda (em produção ele segue dando 404 pelo portão abaixo);
+//   - `revalidate` renova a página guardada a cada hora.
+export const dynamicParams = true
+export const revalidate = 3600
 
 export async function generateStaticParams() {
   const dates = PAISES_TRADEOFF.flatMap((c) => listPublishedTradeoffs(c).map((date) => ({ country: c, date })))
