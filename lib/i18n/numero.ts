@@ -51,6 +51,18 @@ export function fmtMilhar(n: number | null | undefined, locale: string | undefin
 }
 
 /**
+ * Sufixo de 10⁹ em notação compacta.
+ *
+ * 🔴 Em espanhol, "B" é billón = 10¹² (régua de tradução da casa), e o PIB já
+ * sai assim em `fmtUsdCompacto`. Por isso 10⁹ em espanhol é "mil M" (milhar de
+ * milhões, do CLDR espanhol), e não "B": senão a mesma letra vale 10⁹ no volume
+ * e 10¹² no PIB, na mesma página. PT-BR e EN seguem com "B".
+ */
+export function sufixoBilhao(locale: string | undefined): string {
+  return locale === 'es' ? ' mil M' : 'B'
+}
+
+/**
  * Volume em dólar, compacto (`$1,2M`, `$1,24B`), com a vírgula do idioma.
  *
  * O prefixo é sempre `$`, que é o que o Polymarket usa e o que o painel já
@@ -58,7 +70,7 @@ export function fmtMilhar(n: number | null | undefined, locale: string | undefin
  */
 export function fmtVolumeUsd(usd: number | null | undefined, locale: string | undefined): string {
   if (usd === null || usd === undefined || Number.isNaN(usd)) return '—'
-  if (usd >= 1_000_000_000) return `$${fmtDecimal(usd / 1_000_000_000, locale, 2)}B`
+  if (usd >= 1_000_000_000) return `$${fmtDecimal(usd / 1_000_000_000, locale, 2)}${sufixoBilhao(locale)}`
   if (usd >= 1_000_000) return `$${fmtDecimal(usd / 1_000_000, locale, 1)}M`
   if (usd >= 1_000) return `$${fmtDecimal(usd / 1_000, locale, 0)}K`
   return `$${Math.round(usd)}`
@@ -90,4 +102,34 @@ export function fmtUsdCompacto(v: number, tag: string): string {
   if (a >= 1e9) return `${n(v / 1e9)}\u00a0mil\u00a0M\u00a0US$`
   if (a >= 1e6) return `${n(v / 1e6)}\u00a0M\u00a0US$`
   return `${n(v)}\u00a0US$`
+}
+
+/**
+ * Dólar inteiro ("US$ 2.592", "$2,592", "2.592 US$").
+ *
+ * 🔑 O espanhol é escrito à mão pelo mesmo motivo de `fmtMilhar`: o ICU em
+ * es-ES não agrupa quatro dígitos e devolvia "2592 US$" ao lado de
+ * "84.534 US$" no mesmo quadro. O formato (número, espaço fixo, "US$") é o que
+ * o próprio ICU espanhol escreve; só o agrupamento muda.
+ */
+export function fmtUsdInteiro(v: number, tag: string): string {
+  if (tag !== 'es-ES') {
+    return new Intl.NumberFormat(tag, { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(v)
+  }
+  return `${fmtMilhar(Math.round(v), 'es')}\u00a0US$`
+}
+
+/**
+ * Contagem compacta (população: "1,5 bi", "1.5B", "1.450,9 M").
+ *
+ * 🔑 Em espanhol o ICU escreve milhões sem agrupar ("1450,9 M"), contra a
+ * régua da casa. De 10⁶ para cima, o espanhol é escrito à mão com o ponto de
+ * milhar; abaixo disso, e em PT-BR e EN, segue o Intl.
+ */
+export function fmtContagemCompacta(v: number, tag: string): string {
+  if (tag === 'es-ES' && Math.abs(v) >= 1e6) {
+    const n = new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 1 }).format(v / 1e6)
+    return `${n}\u00a0M`
+  }
+  return new Intl.NumberFormat(tag, { notation: 'compact', maximumFractionDigits: 1 }).format(v)
 }
