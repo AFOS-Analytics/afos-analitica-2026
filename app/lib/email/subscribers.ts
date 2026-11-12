@@ -59,7 +59,12 @@ export async function createSubscriber(
       where: { email: normalized },
       select: { status: true },
     })
-    const reativando = !!anterior && anterior.status !== 'active'
+    // 🔴 Só quem SE DESCADASTROU volta sozinho. 'bounced' (endereço que quicou)
+    // e 'complained' (marcou como spam) NÃO: o formulário é público, qualquer um
+    // digita o e-mail de outra pessoa, e reativar endereço que quicou ou
+    // reclamou estraga a reputação do domínio remetente. Esses ficam como estão
+    // e não recebem boas-vindas.
+    const reativando = !!anterior && anterior.status === 'unsubscribed'
 
     // Upsert, que resolve duplo-clique no caminho comum. O caso raro em que
     // ele não basta (dois CREATE simultâneos) é tratado no catch, por P2002.
@@ -114,28 +119,30 @@ export async function createSubscriber(
     if (isNew || reativando) {
 
       // Consentimento LGPD Art. 8 (IP/UA hasheados em consent.ts)
-      registerConsent({
-        email: normalized,
-        consentType: 'email_marketing',
-        granted: true,
-        policyVersion: '1.0',
-        source,
-        locale: meta?.locale,
-        ip: meta?.ip,
-        userAgent: meta?.userAgent,
-      })
-        .then((r) => {
-          // 🔴 `registerConsent` DEVOLVE `{ success: false }`, não lança. Só o
-          // `.catch()` deixava a falha de consentimento LGPD passar TOTALMENTE
-          // calada: lead criado, registro de consentimento ausente, e nada no
-          // log. Medido em 27/Ago/2026 ao auditar o cadastro.
-          if (!r?.success) {
-            console.error('[subscribers] consent NAO registrado (retorno):', normalized.slice(0, 3) + '***')
-          }
+      // 🔴 COM await. Era promessa solta, e numa função serverless a instância
+      // pode congelar depois da resposta, antes das duas idas ao banco que o
+      // registro faz. É a base legal do cadastro: espera-se por ela.
+      try {
+        const r = await registerConsent({
+          email: normalized,
+          consentType: 'email_marketing',
+          granted: true,
+          policyVersion: '1.0',
+          source,
+          locale: meta?.locale,
+          ip: meta?.ip,
+          userAgent: meta?.userAgent,
         })
-        .catch((err) => {
-          console.error('[subscribers] consent failed:', normalized.slice(0, 3) + '***', err)
-        })
+        // 🔴 `registerConsent` DEVOLVE `{ success: false }`, não lança. Só o
+        // `.catch()` deixava a falha de consentimento LGPD passar TOTALMENTE
+        // calada: lead criado, registro de consentimento ausente, e nada no
+        // log. Medido em 27/Ago/2026 ao auditar o cadastro.
+        if (!r?.success) {
+          console.error('[subscribers] consent NAO registrado (retorno):', normalized.slice(0, 3) + '***')
+        }
+      } catch (err) {
+        console.error('[subscribers] consent failed:', normalized.slice(0, 3) + '***', err)
+      }
     }
 
     return {
@@ -179,7 +186,39 @@ export async function createSubscriber(
   }
 }
 
-export async function unsubscribeByEmail(email: string): Promise<{ success: boolean; error?: string }> {
+/**
+ * O que acompanha toda saída da lista, além do status do lead:
+ * - o consentimento de e-mail marketing passa a ter `revokedAt` (sem isto a
+ *   exportação LGPD mostrava consentimento vigente para quem já tinha saído);
+ * - as linhas de visitante ligadas ao lead deixam de dizer "inscrito" e perdem
+ *   o vínculo, para entrarem na purga de anônimos como qualquer outra.
+ */
+function opsDeSaida(
+  prisma: NonNullable<ReturnType<typeof getPrisma>>,
+  leadId: string,
+  email: string,
+) {
+  return [
+    prisma.userConsent.updateMany({
+      where: { email, consentType: 'email_marketing', revokedAt: null },
+      data: { revokedAt: new Date() },
+    }),
+    prisma.visitorState.updateMany({
+      where: { leadId },
+      data: { subscribed: false, leadId: null },
+    }),
+  ]
+}
+
+/**
+ * Tira o e-mail da lista. `motivo` 'complained' vem do webhook (marcado como
+ * spam) e grava um status PRÓPRIO, para que um recadastro pelo formulário
+ * público não reative quem reclamou.
+ */
+export async function unsubscribeByEmail(
+  email: string,
+  motivo: 'unsubscribed' | 'complained' = 'unsubscribed',
+): Promise<{ success: boolean; error?: string }> {
   const prisma = getPrisma()
   if (!prisma) return { success: false, error: 'storage_unavailable' }
 
@@ -188,16 +227,20 @@ export async function unsubscribeByEmail(email: string): Promise<{ success: bool
     // LGPD Art.16: preserve original unsubscribedAt if already unsubscribed.
     const existing = await prisma.lead.findUnique({
       where: { email: normalized },
-      select: { unsubscribedAt: true },
+      select: { id: true, unsubscribedAt: true },
     })
-    await prisma.lead.update({
-      where: { email: normalized },
-      data: {
-        status: 'unsubscribed',
-        unsubscribedAt: existing?.unsubscribedAt ?? new Date(),
-      },
-    })
-    audit('lead_unsubscribed', 'crm.leads', normalized)
+    if (!existing) return { success: true }
+    await prisma.$transaction([
+      prisma.lead.update({
+        where: { id: existing.id },
+        data: {
+          status: motivo,
+          unsubscribedAt: existing.unsubscribedAt ?? new Date(),
+        },
+      }),
+      ...opsDeSaida(prisma, existing.id, normalized),
+    ])
+    audit(motivo === 'complained' ? 'lead_complained' : 'lead_unsubscribed', 'crm.leads', normalized)
     return { success: true }
   } catch (error) {
     if (error instanceof Error && 'code' in error && (error as { code: string }).code === 'P2025') {
@@ -208,7 +251,33 @@ export async function unsubscribeByEmail(email: string): Promise<{ success: bool
   }
 }
 
-export async function unsubscribeByToken(token: string): Promise<{ success: boolean; email?: string; error?: string }> {
+/**
+ * Só LÊ: confere o token e devolve o idioma do lead, sem gravar nada. É o que o
+ * GET do link de descadastro usa para montar a página de confirmação, porque
+ * varredor de link de e-mail abre todo link com GET.
+ */
+export async function findLeadByUnsubscribeToken(
+  token: string,
+): Promise<{ success: boolean; locale?: string; error?: string }> {
+  const prisma = getPrisma()
+  if (!prisma) return { success: false, error: 'storage_unavailable' }
+  if (!token || typeof token !== 'string' || token.length < 32) {
+    return { success: false, error: 'invalid_token' }
+  }
+  try {
+    const lead = await prisma.lead.findFirst({
+      where: { unsubscribeToken: token },
+      select: { preferredLocale: true, locale: true },
+    })
+    if (!lead) return { success: false, error: 'token_not_found' }
+    return { success: true, locale: lead.preferredLocale || lead.locale || undefined }
+  } catch (error) {
+    console.error('[subscribers] Erro ao ler token de unsubscribe:', error)
+    return { success: false, error: 'internal_error' }
+  }
+}
+
+export async function unsubscribeByToken(token: string): Promise<{ success: boolean; email?: string; locale?: string; error?: string }> {
   const prisma = getPrisma()
   if (!prisma) return { success: false, error: 'storage_unavailable' }
   if (!token || typeof token !== 'string' || token.length < 32) {
@@ -218,21 +287,26 @@ export async function unsubscribeByToken(token: string): Promise<{ success: bool
   try {
     const lead = await prisma.lead.findFirst({
       where: { unsubscribeToken: token },
-      select: { id: true, email: true, unsubscribedAt: true },
+      select: { id: true, email: true, status: true, unsubscribedAt: true, preferredLocale: true, locale: true },
     })
 
     if (!lead) return { success: false, error: 'token_not_found' }
 
     // LGPD Art.16: preserve original unsubscribedAt if already unsubscribed.
-    await prisma.lead.update({
-      where: { id: lead.id },
-      data: {
-        status: 'unsubscribed',
-        unsubscribedAt: lead.unsubscribedAt ?? new Date(),
-      },
-    })
+    // Quem já está fora por reclamação ou bounce mantém esse status, que é o
+    // que impede a reativação automática pelo formulário.
+    await prisma.$transaction([
+      prisma.lead.update({
+        where: { id: lead.id },
+        data: {
+          status: lead.status === 'complained' || lead.status === 'bounced' ? lead.status : 'unsubscribed',
+          unsubscribedAt: lead.unsubscribedAt ?? new Date(),
+        },
+      }),
+      ...opsDeSaida(prisma, lead.id, lead.email),
+    ])
     audit('lead_unsubscribed', 'crm.leads', lead.id)
-    return { success: true, email: lead.email }
+    return { success: true, email: lead.email, locale: lead.preferredLocale || lead.locale || undefined }
   } catch (error) {
     console.error('[subscribers] Erro ao unsubscribe by token:', error)
     return { success: false, error: 'internal_error' }
@@ -266,9 +340,9 @@ export async function markBouncedByEmail(email: string, reason?: string): Promis
 export async function incrementSoftBounce(
   email: string,
   threshold: number,
-): Promise<{ count: number; markedBounced: boolean }> {
+): Promise<{ count: number; markedBounced: boolean; erro?: boolean }> {
   const prisma = getPrisma()
-  if (!prisma) return { count: 0, markedBounced: false }
+  if (!prisma) return { count: 0, markedBounced: false, erro: true }
   const normalized = email.toLowerCase().trim()
   try {
     const updated = await prisma.lead.update({
@@ -289,7 +363,7 @@ export async function incrementSoftBounce(
       return { count: 0, markedBounced: false }
     }
     console.error('[subscribers] Erro ao increment soft bounce:', error)
-    return { count: 0, markedBounced: false }
+    return { count: 0, markedBounced: false, erro: true }
   }
 }
 

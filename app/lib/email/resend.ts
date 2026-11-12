@@ -1,5 +1,6 @@
+import { randomUUID } from 'crypto';
 import { Resend } from 'resend';
-import { welcomeTemplate, oddsAlertTemplate, dailySummaryTemplate, systemAlertTemplate } from './templates';
+import { WELCOME_TEXTOS, type EmailLocale, welcomeTemplate, oddsAlertTemplate, dailySummaryTemplate, systemAlertTemplate } from './templates';
 import { EMAIL_ALERTS, EMAIL_CONTACT } from '../contacts';
 
 const FROM = `AFOS Analytics <${EMAIL_ALERTS}>`;
@@ -59,19 +60,30 @@ function unsubHeaders(token: string | undefined): Record<string, string> | undef
   };
 }
 
-/** Envio único — todos os templates passam por aqui. */
+/**
+ * Envio único, todos os templates passam por aqui.
+ *
+ * 🔴 CHAVE DE IDEMPOTÊNCIA, a MESMA em todas as tentativas. `sendWithRetry`
+ * repete em falha de rede e em 5xx; se o Resend já tinha aceitado a primeira
+ * requisição e só a resposta se perdeu, a repetição sem chave criava OUTRO
+ * e-mail, e o assinante recebia a peça em dobro. Com a chave, o Resend
+ * reconhece a repetição e devolve o envio original. Sem chave do chamador,
+ * gera-se uma por chamada, que é o que basta para proteger as retentativas.
+ */
 async function send(opts: {
   to: string;
   subject: string;
   html: string;
   unsubscribeToken?: string;
   replyTo?: string;
+  idempotencyKey?: string;
 }): Promise<SendResult> {
   const resend = getResend();
   if (!resend) {
     console.warn('[resend] API key não configurada');
     return { ok: false, erro: 'RESEND_API_KEY ausente' };
   }
+  const idempotencyKey = opts.idempotencyKey ?? randomUUID();
   return sendWithRetry(
     () => resend.emails.send({
       from: FROM,
@@ -80,7 +92,7 @@ async function send(opts: {
       subject: opts.subject,
       html: opts.html,
       headers: unsubHeaders(opts.unsubscribeToken),
-    }),
+    }, { idempotencyKey }),
     `to ${opts.to.slice(0, 3)}***`,
   );
 }
@@ -92,11 +104,13 @@ async function send(opts: {
  */
 const soOk = (p: Promise<SendResult>): Promise<boolean> => p.then((r) => r.ok);
 
-export function sendWelcomeEmail(to: string, unsubscribeToken?: string): Promise<boolean> {
+/** Welcome no idioma do lead. Idioma fora da lista cai no português, o original. */
+export function sendWelcomeEmail(to: string, unsubscribeToken?: string, locale?: string): Promise<boolean> {
+  const l: EmailLocale = locale === 'en' || locale === 'es' ? locale : 'pt-BR';
   return soOk(send({
     to,
-    subject: 'Bem-vindo ao AFOS Analytics',
-    html: welcomeTemplate(unsubscribeToken),
+    subject: WELCOME_TEXTOS[l].assunto,
+    html: welcomeTemplate(unsubscribeToken, l),
     unsubscribeToken,
     replyTo: EMAIL_CONTACT,
   }));

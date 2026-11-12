@@ -7,7 +7,7 @@
  * Contrato de request/response inalterado para o EmailPopup.
  */
 
-import { NextResponse } from 'next/server'
+import { NextResponse, after } from 'next/server'
 import { Redis } from '@upstash/redis'
 import { randomBytes } from 'crypto'
 import { createSubscriber } from '../../lib/email/subscribers'
@@ -61,7 +61,7 @@ export async function POST(request: Request) {
 
     // Honeypot check — bots preenchem campos ocultos
     if (_hp) {
-      return NextResponse.json({ ok: true, isNew: false }, { status: 200 })
+      return NextResponse.json({ ok: true }, { status: 200 })
     }
 
     // Rate limit: 5 cadastros por IP por hora (Redis — efêmero)
@@ -95,7 +95,9 @@ export async function POST(request: Request) {
           await redis.expire(rateLimitKey, 3600)
         }
         if (attempts > 5) {
-          audit('rate_limited', 'api.subscribe', ip, { ip })
+          // entityId 'n/a': o IP vai so em detail.ip, que vira hash com segredo.
+          // Como entityId ele ficava gravado em claro, sem prazo.
+          audit('rate_limited', 'api.subscribe', 'n/a', { ip })
           return NextResponse.json({ ok: false, error: 'rate_limited' }, { status: 429 })
         }
       } catch (err) {
@@ -130,41 +132,56 @@ export async function POST(request: Request) {
       )
     }
 
-    // Welcome email apenas para novos leads, com token de unsubscribe one-click
+    // Welcome email apenas para novos leads, com token de unsubscribe one-click.
+    // 🔴 Dentro de `after()`: era promessa solta, e a funcao serverless pode
+    // congelar depois da resposta, levando junto o retry (1s/2s) e o log de
+    // falha. `after()` segura a instancia ate o envio terminar, sem atrasar a tela.
+    // O idioma e o do lead (o mesmo `locale` gravado no cadastro), nao mais
+    // portugues fixo.
     if (result.isNew || result.reativado) {
-      sendWelcomeEmail(email, result.unsubscribeToken)
-        .then((ok) => {
-          // 🔴 `sendWelcomeEmail` DEVOLVE boolean, nao lanca. So o `.catch()`
-          // deixava a falha passar calada, o MESMO defeito do consentimento.
-          // Medido em 27/Ago/2026.
-          if (!ok) console.error('[subscribe] Welcome email NAO enviado (retorno false):', email.slice(0, 3) + '***')
-        })
-        .catch((err) => {
-          console.error('[subscribe] Welcome email falhou:', err)
-        })
+      after(
+        sendWelcomeEmail(email, result.unsubscribeToken, locale)
+          .then((ok) => {
+            // 🔴 `sendWelcomeEmail` DEVOLVE boolean, nao lanca. So o `.catch()`
+            // deixava a falha passar calada, o MESMO defeito do consentimento.
+            // Medido em 27/Ago/2026.
+            if (!ok) console.error('[subscribe] Welcome email NAO enviado (retorno false):', email.slice(0, 3) + '***')
+          })
+          .catch((err) => {
+            console.error('[subscribe] Welcome email falhou:', err)
+          })
+      )
     }
 
-    // Vincular visitor_state ao lead (fire-and-forget)
+    // Vincular visitor_state ao lead, depois da resposta (em `after()`, que
+    // mantem a funcao viva ate a gravacao terminar)
     if (visitorId && result.leadId) {
       // getPrisma(), nao a constante: import dinamico da constante herda o
       // mesmo defeito, porque ela e a leitura do primeiro import do modulo.
       const { getPrisma } = await import('../../../lib/db')
       const db = getPrisma()
       if (db) {
-        db.visitorState.upsert({
-          where: { visitorId },
-          create: { visitorId, subscribed: true, subscribedAt: new Date(), leadId: result.leadId },
-          update: { subscribed: true, subscribedAt: new Date(), leadId: result.leadId },
-        }).catch((err) => {
-          console.error('[subscribe] visitor_state update failed:', err)
-        })
+        const leadId = result.leadId
+        after(
+          db.visitorState.upsert({
+            where: { visitorId },
+            create: { visitorId, subscribed: true, subscribedAt: new Date(), leadId },
+            update: { subscribed: true, subscribedAt: new Date(), leadId },
+          }).catch((err) => {
+            console.error('[subscribe] visitor_state update failed:', err)
+          })
+        )
       }
     }
 
     // Set signup session cookie — grants temporary access to /welcome screen
     // for locale capture (TTL 1h). Stored server-side in Redis with email payload.
+    // 🔴 So para quem ENTROU agora (novo ou reativado). A sessao autoriza trocar o
+    // idioma do lead em /api/lead/locale, e era emitida tambem para e-mail que
+    // ja estava ativo: bastava digitar o e-mail de outra pessoa para ganhar 1h
+    // de permissao sobre o lead dela. Sem sessao, /welcome manda para a home.
     let signupSessionId: string | null = null
-    if (redisUrl && redisToken && result.leadId) {
+    if (redisUrl && redisToken && result.leadId && (result.isNew || result.reativado)) {
       try {
         const redis = new Redis({ url: redisUrl, token: redisToken })
         signupSessionId = randomBytes(24).toString('hex')
@@ -179,7 +196,10 @@ export async function POST(request: Request) {
     }
 
     const response = NextResponse.json(
-      { ok: true, isNew: result.isNew },
+      // Sem `isNew`: a rota e publica, e dizer se o e-mail ja estava na base
+      // servia de oraculo para descobrir quem assina. A distincao novo/reativado
+      // ja vai para a auditoria (lead_created / lead_reactivated).
+      { ok: true },
       { status: 200, headers: { 'X-Content-Type-Options': 'nosniff' } }
     )
     if (signupSessionId) {

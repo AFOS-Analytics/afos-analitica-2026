@@ -139,7 +139,7 @@ async function main() {
   // mandar e-mail a quem se descadastrou.
   const alvo = process.argv.find(a => a.startsWith('--email='))?.split('=')[1]?.trim().toLowerCase()
 
-  const leads = await prisma.lead.findMany({
+  let leads = await prisma.lead.findMany({
     where: alvo ? { status: 'active', email: alvo } : { status: 'active' },
     select: { id: true, email: true, preferredLocale: true, locale: true, unsubscribeToken: true },
   })
@@ -151,6 +151,37 @@ async function main() {
       await prisma.$disconnect()
       process.exit(1)
     }
+  }
+
+  // 🔴 PULA QUEM JÁ RECEBEU ESTA EDIÇÃO, por padrão, inclusive no `--email=`.
+  // O script não tinha trava contra reenvio: uma queda no meio do disparo,
+  // seguida do mesmo comando, mandava a edição de novo a quem já tinha
+  // recebido. A trilha `broadcast_weekly_sent` (gravada por lote, abaixo) diz
+  // quem recebeu; aqui ela é lida, como no Tradeoff e no relatório final.
+  // `--incluir-ja-enviados` desliga a trava, para um reenvio DELIBERADO.
+  if (!process.argv.includes('--incluir-ja-enviados')) {
+    const eventos = await prisma.contactEvent.findMany({
+      where: { eventType: 'broadcast_weekly_sent', leadId: { in: leads.map((l) => l.id) } },
+      select: { leadId: true, eventPayload: true },
+    })
+    const jaRecebeu = new Set(
+      eventos
+        .filter((e) => {
+          const p = (e.eventPayload || {}) as { edicao?: string; pais?: string }
+          return p.edicao === date && p.pais === pais
+        })
+        .map((e) => e.leadId),
+    )
+    const antes = leads.length
+    leads = leads.filter((l) => !jaRecebeu.has(l.id))
+    console.log(`⏭️  Já receberam esta edição (${date}, ${pais}): ${antes - leads.length}. Restam ${leads.length}.`)
+    if (alvo && leads.length === 0) {
+      console.log(`   ${alvo} já recebeu esta edição. Nada enviado. Para reenviar de propósito: --incluir-ja-enviados`)
+      await prisma.$disconnect()
+      return
+    }
+  } else {
+    console.log('⚠️  --incluir-ja-enviados: a trava contra reenvio está DESLIGADA nesta execução.')
   }
   console.log(`📋 ${leads.length} assinante(s)${alvo ? ' (dirigido)' : ' ativos'}.\n`)
 

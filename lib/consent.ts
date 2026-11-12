@@ -1,9 +1,12 @@
-import { createHash } from 'crypto'
 import { getPrisma } from './db'
+import { hashComSegredo } from './audit'
 
-/** SHA-256 truncado em 16 chars hex (LGPD Art. 8 sem PII em claro). */
-const hashShort = (s: string | undefined) =>
-  s ? createHash('sha256').update(s).digest('hex').slice(0, 16) : undefined
+/**
+ * HMAC com segredo do servidor, truncado em 16 chars hex (LGPD Art. 8 sem PII
+ * em claro). Era SHA-256 puro, que devolve o IPv4 por enumeração. A regra é a
+ * MESMA de lib/audit.ts, e mora lá.
+ */
+const hashShort = (s: string | undefined) => hashComSegredo(s)
 
 /**
  * Registra consentimento LGPD. Upsert User por email + insert UserConsent
