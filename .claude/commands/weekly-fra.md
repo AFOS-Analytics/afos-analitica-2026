@@ -80,6 +80,7 @@ Conferir que a 1ª linha diz **`país = FR`**. Ele conta os blocos pelo loader, 
 3. Commit por nome (`git add public/afos-weekly/fr/AAAA-MM-DD*.md`), push, `npx vercel --yes --prod` **de um worktree de `origin/main`**, nunca da árvore principal.
 4. `npx tsx scripts/persist-afos-weekly.ts AAAA-MM-DD --pais=fr` → slug com qualificador `fr`, sem colidir com os EUA.
 5. **Broadcast:** `npx tsx scripts/broadcast-afos-weekly.ts AAAA-MM-DD --pais=fr --dry-run`, conferir contagem e idiomas; `curl` nos 3 links conferindo o **`og:title`** (307 e 200 são sucesso, código sozinho não prova país); só então o envio real.
+6. **IndexNow**, depois do deploy de produção: `node scripts/indexnow-ping.mjs --edicao=weekly/fr/AAAA-MM-DD --dry-run`, conferir a lista, e rodar sem `--dry-run`.
 
 ## 📅 Calendário
 
@@ -88,7 +89,7 @@ Conferir que a 1ª linha diz **`país = FR`**. Ele conta os blocos pelo loader, 
 ## Ainda não construído
 
 - Cartão social próprio da Weekly França (`scripts/build-og-card-us-weekly.mjs` é o molde). Sem ele a edição sai com o cartão padrão.
-- Entrada da França no `sitemap.ts` e no `llms-txt.ts`: entram no dia da №1, junto com a tela.
+- Entrada da França no `llms-txt.ts`: entra no dia da №1. O `sitemap.ts` já põe a edição e o índice `/weekly/fr` sozinho, a partir da primeira edição publicada (laço sobre `PAISES_WEEKLY`, 12/Nov).
 
 ## Memórias relacionadas
 
