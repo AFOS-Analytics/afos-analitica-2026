@@ -96,7 +96,7 @@ interface Lbl {
   college: string; collegeSub: string; popular: string; popularSub: string
   anchors: { debate: string; attempt: string; dropout: string; eve: string }
   dataset: string
-  legend: { div: string; conv: string; poll: string; hit: string; miss: string; press: string; hint: string; semDelta: string; dataset: string }
+  legend: { div: string; conv: string; poll: string; hit: string; miss: string; press: string; hint: string; semDelta: string; dataset: string; externo: string }
 }
 
 const LBL: Record<string, Lbl> = {
@@ -110,7 +110,7 @@ const LBL: Record<string, Lbl> = {
     college: 'Colégio eleitoral', collegeSub: '~US$ 3,7 bi · acertou', popular: 'Voto popular', popularSub: 'deu Harris ~74% · errou',
     anchors: { debate: 'Debate Biden×Trump (27/jun)', attempt: 'Atentado a Trump (13/jul)', dropout: 'Biden sai, Harris entra (21/jul)', eve: 'Véspera da eleição (04/nov)' },
     dataset: 'Dataset aberto',
-    legend: { div: 'divergência mercado × pesquisa (Δpp)', conv: 'convergência (Δ baixo)', poll: 'leitura de pesquisa', hit: 'mercado acertou', miss: 'mercado errou', press: 'imprensa (âncoras)', hint: 'arraste os nós · scroll para zoom', semDelta: 'sem Δ: grandezas diferentes', dataset: 'dataset aberto (clique abre o Hugging Face)' },
+    legend: { div: 'divergência mercado × pesquisa (Δpp)', conv: 'convergência (Δ baixo)', poll: 'leitura de pesquisa', hit: 'mercado acertou', miss: 'mercado errou', press: 'imprensa (âncoras)', hint: 'arraste os nós · scroll para zoom', semDelta: 'sem Δ: grandezas diferentes', dataset: 'dataset aberto (clique abre o Hugging Face)', externo: 'abre em nova aba' },
   },
   en: {
     market: 'Prediction markets', poll: 'Polls', pollsN: (n) => `${n} polls`, press: 'Press', pressSub: 'archived anchors (Wayback)', ctx: 'Structural context',
@@ -122,7 +122,7 @@ const LBL: Record<string, Lbl> = {
     college: 'Electoral college', collegeSub: '~US$3.7bn · correct', popular: 'Popular vote', popularSub: 'gave Harris ~74% · wrong',
     anchors: { debate: 'Biden×Trump debate (Jun 27)', attempt: 'Trump assassination attempt (Jul 13)', dropout: 'Biden drops out, Harris in (Jul 21)', eve: 'Election eve (Nov 4)' },
     dataset: 'Open dataset',
-    legend: { div: 'market × poll divergence (Δpp)', conv: 'convergence (low Δ)', poll: 'poll reading', hit: 'market correct', miss: 'market wrong', press: 'press (anchors)', hint: 'drag nodes · scroll to zoom', semDelta: 'no Δ: different quantities', dataset: 'open dataset (click opens Hugging Face)' },
+    legend: { div: 'market × poll divergence (Δpp)', conv: 'convergence (low Δ)', poll: 'poll reading', hit: 'market correct', miss: 'market wrong', press: 'press (anchors)', hint: 'drag nodes · scroll to zoom', semDelta: 'no Δ: different quantities', dataset: 'open dataset (click opens Hugging Face)', externo: 'opens in a new tab' },
   },
   es: {
     market: 'Mercados de predicción', poll: 'Encuestas', pollsN: (n) => `${n} encuestas`, press: 'Prensa', pressSub: 'anclas archivadas (Wayback)', ctx: 'Contexto estructural',
@@ -134,7 +134,7 @@ const LBL: Record<string, Lbl> = {
     college: 'Colegio electoral', collegeSub: '~US$ 3,7 mil M · acertó', popular: 'Voto popular', popularSub: 'dio a Harris ~74% · erró',
     anchors: { debate: 'Debate Biden×Trump (27 jun)', attempt: 'Atentado a Trump (13 jul)', dropout: 'Biden se retira, entra Harris (21 jul)', eve: 'Víspera electoral (4 nov)' },
     dataset: 'Dataset abierto',
-    legend: { div: 'divergencia mercado × encuesta (Δpp)', conv: 'convergencia (Δ baja)', poll: 'lectura de encuesta', hit: 'mercado acertó', miss: 'mercado erró', press: 'prensa (anclas)', hint: 'arrastra los nodos · scroll para zoom', semDelta: 'sin Δ: magnitudes distintas', dataset: 'dataset abierto (clic abre Hugging Face)' },
+    legend: { div: 'divergencia mercado × encuesta (Δpp)', conv: 'convergencia (Δ baja)', poll: 'lectura de encuesta', hit: 'mercado acertó', miss: 'mercado erró', press: 'prensa (anclas)', hint: 'arrastra los nodos · scroll para zoom', semDelta: 'sin Δ: magnitudes distintas', dataset: 'dataset abierto (clic abre Hugging Face)', externo: 'se abre en una pestaña nueva' },
   },
 }
 
@@ -363,7 +363,10 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
     nodeSel.filter((n) => !!(n.href || n.action))
       .attr('tabindex', 0)
       .attr('role', 'link')
-      .attr('aria-label', (n) => n.href && /^https?:\/\//.test(n.href) ? `${n.label} (${lbl.legend.dataset})` : n.label)
+      // O sufixo diz para ONDE o link leva: até 12/Nov/2026 todo link externo dizia
+      // "abre o Hugging Face", inclusive os do Harvard (DOI e coleção).
+      .attr('aria-label', (n) => !n.href || !/^https?:\/\//.test(n.href) ? n.label
+        : `${n.label} (${/^https?:\/\/huggingface\.co\//.test(n.href) ? lbl.legend.dataset : lbl.legend.externo})`)
       .on('keydown', (e: KeyboardEvent, n) => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); ativarNo(n) }
       })

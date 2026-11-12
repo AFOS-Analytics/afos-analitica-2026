@@ -26,6 +26,11 @@ import { montarMedidas, type EstatCandidato } from '../../../../lib/fr/candidato
 import { emSilencioEleitoral } from '../../../../lib/fr/silencio-eleitoral'
 import type { FrPressData } from '../../../../lib/fr/painel'
 
+// Dataset público da França 2027 no Hugging Face (publicado em 08/Nov/2026): os
+// preços dos dois livros, as listas de pesquisa conferidas com a ficha oficial e
+// a imprensa, registrados antes da urna. Mesmo padrão de BR_HF e US_HF.
+const FR_HF = 'https://huggingface.co/datasets/AFOS-Analytics1/france-2027-presidential-divergence'
+
 /**
  * Painel da FRANÇA, presidencial 2027. Criado 08/Nov/2026, na ordem do painel
  * do Brasil: texto, mercado, 1º turno, 2º turno, imprensa.
@@ -152,6 +157,10 @@ function Conteudo(props: FrDashboardProps) {
         { id: 'a_sobre', label: L('Sobre', 'About', 'Acerca de'), action: 'about' },
         { id: 'a_metas', label: L('Metas', 'Goals', 'Metas'), action: 'metas' },
       ] },
+      { id: 'nav_hf', label: 'Hugging Face', color: '#d97706', items: [
+        { id: 'hf_fr27', label: L('Dataset França 2027', 'France 2027 dataset', 'Dataset Francia 2027'), href: FR_HF },
+        { id: 'hf_dados', label: L('Arquivos de dados', 'Data files', 'Archivos de datos'), href: `${FR_HF}/tree/main/data` },
+      ] },
       { id: 'nav_harvard', label: 'Harvard Dataverse', color: '#A51C30', items: [
         { id: 'h_fr24', label: L('DOI França 2024', 'France 2024 DOI', 'DOI Francia 2024'), href: 'https://doi.org/10.7910/DVN/N51NQF' },
         { id: 'h_coll', label: L('Coleção AFOS', 'AFOS collection', 'Colección AFOS'), href: 'https://dataverse.harvard.edu/dataverse/afos-analytics' },
@@ -160,8 +169,14 @@ function Conteudo(props: FrDashboardProps) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [locale])
 
-  /** Nós de TIPO levam à seção da própria página. Dataset de 2027 ainda não existe: sem link de eleição. */
+  /**
+   * Nós de TIPO levam à seção da própria página; o nó da ELEIÇÃO leva ao dataset
+   * público no Hugging Face e os de CANDIDATO à pasta de dados (preços por livro),
+   * como nos EUA. Até 12/Nov/2026 o nó da eleição ficava sem link porque o
+   * dataset ainda não existia; ele existe desde 08/Nov.
+   */
   const dataLinks = useMemo<DataLinks>(() => ({
+    election: FR_HF, candidate: `${FR_HF}/tree/main/data`,
     market: '#sec-mercado', poll: '#sec-pesquisas', press: '#sec-imprensa', context: '#sec-contexto',
   }), [])
 
