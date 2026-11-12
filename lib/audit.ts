@@ -34,6 +34,37 @@ export function hashComSegredo(valor: string | undefined, tamanho = 16): string 
   return createHmac('sha256', segredo).update(valor).digest('hex').slice(0, tamanho)
 }
 
+/**
+ * 🔑 ESQUEMA `h1:` dos hashes de consentimento gravados ANTES de 12/Nov/2026.
+ *
+ * Até 12/Nov/2026, `iam.user_consents` gravava `sha256(valor)` em hex,
+ * cortado em 16 caracteres, SEM segredo: reversível por enumeração do espaço
+ * IPv4. Esses registros são prova de consentimento (LGPD, art. 8º, §2º), então
+ * não foram apagados: em 12/Nov/2026 (decisão do André) receberam um HMAC com o
+ * segredo do servidor POR CIMA do hash antigo, com o prefixo `h1:`. Sem o
+ * segredo, quem tiver só o banco não consegue mais testar IPs; com ele, um IP
+ * apresentado ainda pode ser conferido (`conferirHash`).
+ */
+const PREFIXO_H1 = 'h1:'
+const hashAntigoSemSegredo = (valor: string) => createHash('sha256').update(valor).digest('hex').slice(0, 16)
+
+/** Troca de chave de um hash ANTIGO (16 hex, sem segredo). `undefined` sem segredo. */
+export function rechavearHashAntigo(hashAntigo: string): string | undefined {
+  const segredo = segredoDoHash()
+  if (!segredo) return undefined
+  return PREFIXO_H1 + createHmac('sha256', segredo).update(hashAntigo).digest('hex').slice(0, 32)
+}
+
+/**
+ * Confere se `valor` (um IP ou user-agent apresentado) corresponde ao hash
+ * gravado, nos dois esquemas: `h1:` (consentimentos de antes de 12/Nov/2026) e
+ * o atual (`hashComSegredo`).
+ */
+export function conferirHash(valor: string, gravado: string): boolean {
+  if (gravado.startsWith(PREFIXO_H1)) return rechavearHashAntigo(hashAntigoSemSegredo(valor)) === gravado
+  return hashComSegredo(valor) === gravado
+}
+
 const PARECE_EMAIL = /^[^@\s]+@[^@\s]+\.[^@\s]+$/
 // IPv4 pontilhado ou IPv6 (só hexadecimal e dois-pontos, com pelo menos dois `:`).
 const PARECE_IP = /^(\d{1,3}\.){3}\d{1,3}$|^[0-9a-f]*:[0-9a-f:]*:[0-9a-f.:]*$/i
