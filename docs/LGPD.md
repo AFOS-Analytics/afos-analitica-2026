@@ -9,8 +9,11 @@
 | Email | `iam.user_consents` | Plaintext | Prova consentimento | Obrigação legal | Indefinido | Alta |
 | Email | `governance.deletion_requests` | Plaintext | Processar exclusão | Obrigação legal | Processamento + 5 anos | Alta |
 | Nome | `iam.users` | Plaintext | Identificação opcional | Consentimento | Junto com user | Média |
-| IP | `governance.audit_logs` | SHA256 hash (16 chars) | Correlação segurança | Interesse legítimo | 1 ano → delete | Baixa |
-| User-Agent | `governance.audit_logs` | SHA256 hash (16 chars) | Diagnóstico | Interesse legítimo | 1 ano → delete | Baixa |
+| IP | `governance.audit_logs` | HMAC-SHA256 com `AUDIT_HASH_SALT` (16 chars) desde 12/Nov/2026 | Correlação segurança | Interesse legítimo | 1 ano → delete | Baixa |
+| User-Agent | `governance.audit_logs` | HMAC-SHA256 com `AUDIT_HASH_SALT` (16 chars) desde 12/Nov/2026 | Diagnóstico | Interesse legítimo | 1 ano → delete | Baixa |
+| IP e User-Agent | `iam.user_consents` | HMAC com `AUDIT_HASH_SALT`; os anteriores a 12/Nov/2026 no esquema `h1:` (ver nota abaixo) | Prova acessória do consentimento | Obrigação legal | Junto com o consentimento | Baixa |
+
+> **Hashes antes de 12/Nov/2026.** Eram SHA-256 sem segredo, cortados em 16 caracteres: o espaço IPv4 se enumera em minutos, então devolviam o IP a quem tivesse o banco. Em 12/Nov/2026, os 69 de `governance.audit_logs` foram apagados (sem valor de prova) e os 44 de `iam.user_consents` receberam o esquema `h1:` = HMAC(`AUDIT_HASH_SALT`, hash antigo), que preserva a prova sem permitir enumeração a quem não tem o segredo. Para conferir um IP apresentado por titular ou autoridade: `conferirHash(ip, gravado)` em `lib/audit.ts`, que entende os dois esquemas.
 | Locale | `iam.user_preferences` | Plaintext | Personalização | Consentimento | Junto com user | Baixa |
 | IP em Redis | Redis keys | Plaintext | Anti-abuse | Interesse legítimo | 1h TTL (auto) | Baixa |
 
@@ -32,7 +35,8 @@
 | `iam.users` | 2 anos sem login/atividade | Anonimizar email + name | Manual ou cron futuro |
 | `iam.user_preferences` | Junto com user | CASCADE DELETE | Automático (FK) |
 | `iam.user_consents` | Indefinido | Manter (obrigação legal) | Nunca deletar |
-| `crm.leads` | 2 anos sem `lastSeenAt` update | Anonimizar email | Manual ou cron futuro |
+| `crm.leads` | 24 meses depois da última atividade (`lastSeenAt` ou `unsubscribedAt`), para status `unsubscribed`, `bounced` ou `complained` | Anonimizar via `anonymizeUser` (`purgarLeadsInativos`, `lib/governance/data-lifecycle.ts`) | Cron diário `purge-visitor-state`, lote de 200, desde 12/Nov/2026 |
+| `crm.visitor_states` | 12 meses sem atividade; as linhas do lead descadastrado são desligadas na hora | DELETE | Cron diário `purge-visitor-state` |
 | `crm.contact_events` | 1 ano após lead anonimizado | DELETE orphaned events | Manual |
 | `governance.audit_logs` | 5 anos | DELETE | Manual |
 | `governance.deletion_requests` | 5 anos após processamento | DELETE | Manual |
@@ -102,8 +106,10 @@ Response contém: user, preferences, consents, lead, events, deletion_requests.
 ```bash
 # Soft-delete do lead (para de receber emails)
 # Internamente: unsubscribe(email) → status = 'unsubscribed'
-# O consent original é mantido com grantedAt, mas sem novos envios.
+# O consent original é mantido com grantedAt e, desde 12/Nov/2026, ganha revokedAt na mesma transação.
 ```
+
+Desde 12/Nov/2026: o link de descadastro do e-mail (GET) só mostra uma página de confirmação, e o cancelamento acontece no POST do botão (varredor de link de e-mail não cancela mais a inscrição). O cancelamento de um clique do Gmail e do Outlook (RFC 8058, `List-Unsubscribe-Post`) segue direto. As páginas saem no idioma do lead. Reclamação de spam recebida pelo webhook grava o status `complained`; recadastro reativa só quem está `unsubscribed`, nunca `bounced` ou `complained`.
 
 ---
 
@@ -123,6 +129,7 @@ Response contém: user, preferences, consents, lead, events, deletion_requests.
 |--------|------|
 | `DATABASE_URL` | Neon Console → Roles → Reset password |
 | `CRON_SECRET` | `openssl rand -hex 32` → Vercel Env Vars |
+| `AUDIT_HASH_SALT` | `openssl rand -hex 32` → Vercel Env Vars (Production, não sensível, para poder conferir com `vercel env pull`). ⚠️ Trocar desliga o vínculo com TODOS os hashes já gravados, inclusive os `h1:` de consentimento |
 | `TRANSLATION_AUTH_TOKEN` | `openssl rand -hex 32` → Vercel Env Vars |
 | `RESEND_API_KEY` | Resend Dashboard → API Keys → Revoke + Create |
 | `UPSTASH_REDIS_REST_TOKEN` | Upstash Console → Database → Reset token |

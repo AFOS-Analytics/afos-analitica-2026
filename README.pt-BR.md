@@ -160,11 +160,13 @@ a resposta, e cada uma fecha uma classe de falha:
 | **O e-mail e higienizado ANTES de ser julgado** | A validacao rodava antes da limpeza, entao um espaco ou um caractere invisivel colado de uma pagina web produzia "e-mail invalido" num endereco visualmente perfeito, e o `trim()` do navegador nao remove zero-width |
 | **Cliente de banco que falha e RETENTADO, nunca guardado como morto** | O cliente era criado uma vez por instancia. Uma criacao falha servia erro pelo resto da vida daquela instancia, e e por isso que o leitor falhava em dois aparelhos enquanto chamadas diretas funcionavam |
 | **O limite de taxa falha ABERTO e repara a propria chave** | `INCR` cria a chave sem expiracao e o `EXPIRE` era uma segunda ida, entao um processo morrendo entre as duas bloqueava aquele IP permanentemente. E queda do Redis devolvia 500 a uma pessoa legitima, quando limite de taxa e anti-abuso, nao correcao |
-| **Cadastrar-se de novo e um ato de consentimento NOVO** | Reinscrever-se depois de sair mostrava sucesso e nao mudava nada: o status continuava `unsubscribed`, sem e-mail de boas-vindas, e a pessoa nunca mais tinha noticia. Agora reativa, registra consentimento outra vez e da as boas-vindas de volta |
+| **Cadastrar-se de novo e um ato de consentimento NOVO** | Reinscrever-se depois de sair mostrava sucesso e nao mudava nada: o status continuava `unsubscribed`, sem e-mail de boas-vindas, e a pessoa nunca mais tinha noticia. Agora reativa, registra consentimento outra vez e da as boas-vindas de volta. Desde 12/Nov/2026 só `unsubscribed` é reativado: `bounced` e `complained` (reclamação de spam, status próprio) não |
 | **O idioma do navegador casa por PREFIXO** | O navegador manda `en-US` e `es-ES`; a comparacao exata contra `pt-BR/en/es` so acertava o portugues. Medido: 31 de 31 leads com `pt-BR`, e dois deles tinham escolhido ingles a mao |
 | **A oferta falha LIGADA, a barreira falha ABERTA** | Quando o estado do visitante nao podia ser lido, o `DEFAULT_STATE` trazia `showPopup: false`, entao o popup e o portao simplesmente nao existiam e nenhum log dizia isso. Tres caminhos do cliente caiam ali, e quatro respostas distintas do servidor caiam num deles. Popup e oportunidade, entao passa a aparecer; portao bloqueia uma pessoa, entao fica aberto |
 | **Componente replicado para uma segunda superficie registra QUAL delas e** | Os dois paineis gravavam `popup` e as duas edicoes do Tradeoff gravavam `tradeoff`, entao nenhuma consulta separava o Brasil dos Estados Unidos |
 | **Falha que e RETORNADA precisa ser lida** | `registerConsent` e `sendWelcomeEmail` **devolvem** falha em vez de lancar, entao o `.catch()` dos dois nunca disparava e as duas falhavam em silencio completo. Guarda sobre funcao cujo retorno carrega `success` tem que conferir o RETORNO, nao so capturar excecao |
+
+**Acrescentado em 12/Nov/2026 (EVAL da plataforma):** o link de descadastro do e-mail (GET) só mostra uma página de confirmação, e o POST do botão é que cancela, então varredor de link de e-mail não cancela mais ninguém; o cancelamento de um clique do Gmail e do Outlook (RFC 8058) segue igual. Lead inativo (`unsubscribed`, `bounced`, `complained`) é anonimizado 24 meses depois da última atividade pelo cron diário de purga. Os hashes de IP e user-agent são HMAC com `AUDIT_HASH_SALT`; os 44 consentimentos gravados antes dessa data levam o esquema `h1:`, que os mantém como prova sem deixar quem tiver só o banco enumerar o IP (detalhes em `docs/LGPD.md`).
 
 ⛔ Duas coisas NAO ficaram mais permissivas, de proposito: `email` e `consent` seguem
 estritos. Higienizar entrada nao afrouxa base legal, e consentimento ausente ou falso
@@ -617,7 +619,7 @@ Organization, WebApplication, Dataset, WebSite, FAQPage, BreadcrumbList, Article
 
 ### Otimizacao para IA (GEO)
 
-- **`public/llms.txt`**, Descreve a plataforma para AI crawlers (ChatGPT, Perplexity, Claude, Gemini) seguindo padrao emergente da industria
+- **`llms.txt`** (`lib/llms/llms-txt.ts`), descreve a plataforma para AI crawlers (ChatGPT, Perplexity, Claude, Gemini) seguindo o padrão emergente da indústria. Desde 12/Nov/2026 o estado dos painéis vem de `lib/paineis.mjs` (ao vivo ou encerrado, nunca uma segunda cópia), os relatórios finais entram com a mesma regra do sitemap, e painéis, relatórios e dados abertos vêm antes do arquivo longo da Daily
 - **13 AI crawlers permitidos explicitamente** em `app/robots.ts`: GPTBot, anthropic-ai, ClaudeBot, Claude-Web, PerplexityBot, Perplexity-User, Google-Extended, CCBot, Bytespider, Applebot-Extended, cohere-ai, Meta-ExternalAgent, FacebookBot
 - **JSON-LD Article schema** em `/how-it-works` para atribuicao em citacoes de motores generativos
 - **Atribuicao transparente de IA**, analises geradas por inteligencia artificial a partir de dados publicos e auditaveis
@@ -833,7 +835,7 @@ O `.github/workflows/backup-neon.yml` roda todo dia as 15:00 UTC. Saida "0 alter
 | `/api/cron/refresh-polls` | Cron 3x/dia TSE (Brasil) |
 | `/api/cron/refresh-us-polls` | Cron diario 07:10 UTC, generic ballot da Camara dos EUA → Neon. **Recusa sobrescrever dado bom com leitura vazia** (502, nada gravado) |
 | `/api/cron/refresh-us-press` | Cron 3x/dia, imprensa dos EUA por lista fixa de veiculos → Neon. Mesmo portao de recusa. **Coleta hibrida desde 03/Ago/2026**: 16 dos 23 veiculos da lista sao lidos pelo RSS proprio, que entrega a URL canonica da materia; os outros 7 seguem pelo Google News, cujo link e um redirecionamento opaco. Medido em 03/Ago: Reuters e Associated Press descontinuaram RSS publico, USA TODAY nao devolve feed utilizavel, e Washington Examiner / Cook Political Report / Sabato's Crystal Ball respondem 403 a robo. **Nao forjamos user-agent de navegador para passar por esses tres**: e bloqueio deliberado do veiculo. Cada item registra sua `origem` (`feed` ou `google`) e o bloco de qualidade conta `publicadosComLinkCanonico` contra `publicadosViaGoogleNews`, para uma quebra silenciosa dos feeds aparecer como metrica em vez de passar por rodada normal |
-| `/api/cron/persist-analysis` | Cron 1x/dia, persiste JSONs de analise e markdown do AFOS Daily no Neon |
+| `/api/cron/persist-analysis` | Persiste JSONs de analise e markdown do AFOS Daily no Neon. **Cron desligado em 12/Nov/2026**: o painel do Brasil está congelado e a rodada diária reescrevia o `publishedAt` dos registros de 25/Out. A rota fica no código |
 | `/api/polymarket` | Odds BR |
 | `/api/polls` / `/api/polls/tse` | Pesquisas |
 | `/api/news` | Noticias |
