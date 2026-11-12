@@ -78,6 +78,7 @@ npx tsx scripts/publish-afos-tradeoff.ts AAAA-MM-DD --pais=fr --all-locales
 npx tsx scripts/persist-afos-tradeoff.ts AAAA-MM-DD --pais=fr
 npx tsx scripts/broadcast-afos-tradeoff.ts AAAA-MM-DD --pais=fr --dry-run   # OBRIGATÓRIO antes
 npx tsx scripts/broadcast-afos-tradeoff.ts AAAA-MM-DD --pais=fr
+node scripts/indexnow-ping.mjs --edicao=tradeoff/fr/AAAA-MM-DD --dry-run   # conferir, depois sem --dry-run
 ```
 
 Deploy de produção **de um worktree de `origin/main`**, nunca da árvore principal. Antes do envio, `curl` nos 3 links conferindo o **`og:title`** e o assunto "AFOS Tradeoff France".
@@ -89,7 +90,7 @@ Numeração própria da França, a partir da **№1 na quinta 26/Nov/2026** (sug
 ## Ainda não construído
 
 - Cartão social próprio do Tradeoff França (`scripts/build-og-card-us-tradeoff.mjs` é o molde).
-- Entrada da França no `sitemap.ts`: entra no dia da tela pública.
+- Entrada da França no `sitemap.ts`: já feita (12/Nov). A edição e o índice `/tradeoff/fr` entram sozinhos a partir da primeira edição publicada, pelo laço sobre `PAISES_TRADEOFF`.
 
 ## Memórias relacionadas
 

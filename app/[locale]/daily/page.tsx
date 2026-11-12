@@ -194,7 +194,8 @@ export default async function DailyArchivePage(props: Props) {
     description: t.metaDesc,
     url: `${BASE}/${loc}/daily`,
     inLanguage: loc,
-    isPartOf: { '@id': `${BASE}/#organization` },
+    isPartOf: { '@id': `${BASE}/#website` },
+    publisher: { '@id': `${BASE}/#organization` },
     mainEntity: {
       '@type': 'ItemList',
       itemListOrder: 'https://schema.org/ItemListOrderDescending',

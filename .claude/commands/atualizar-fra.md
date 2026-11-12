@@ -76,12 +76,12 @@ npx vercel --prod --yes --cwd <worktree>         # conferir depois com vercel in
 
 O André decidiu publicar duas semanas antes da Weekly №1 (opção B). As 5 chaves foram viradas no mesmo commit; despublicar é desvirar as mesmas 5:
 1. `robots` em `app/[locale]/dashboard/fr/page.tsx` (indexável);
-2. `app/sitemap.ts` (painel, e as edições de Weekly e Tradeoff da França);
+2. `app/sitemap.ts` (o painel entrou em 08/Nov; as edições de Weekly e Tradeoff da França e os índices `/weekly/fr` e `/tradeoff/fr` entram sozinhos desde 12/Nov, pelo laço sobre `PAISES_WEEKLY` e `PAISES_TRADEOFF`, quando houver a primeira edição publicada);
 3. `lib/llms/llms-txt.ts`;
 4. `scripts/indexnow-ping.mjs` depois do deploy;
 5. `CountrySelector`: `fr` com `ready: true`.
 
-Depois de cada deploy que mexe na tela, `node scripts/indexnow-ping.mjs` (a lista já inclui `/dashboard/fr` nos 3 idiomas).
+Depois de cada deploy que mexe na tela, `node scripts/indexnow-ping.mjs` (a lista sai de `lib/paineis.mjs`: só os painéis ao vivo, hoje `/dashboard/fr` nos 3 idiomas; a Daily só entra quando há Daily nova). `--dry-run` lista sem enviar.
 
 ## Memórias relacionadas
 

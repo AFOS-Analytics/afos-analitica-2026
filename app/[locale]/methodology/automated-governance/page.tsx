@@ -93,6 +93,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   }
 }
 
+/**
+ * Data da última mudança de TEXTO em content-*.tsx desta pasta. ⚠️ Subir no
+ * MESMO commit que mexe no texto. Não se deriva do git no build: o clone da
+ * Vercel pode ser raso.
+ */
+const REVISADO_EM = '2026-08-19T00:00:00Z'
+
 function articleSchema(loc: Locale) {
   const seo = SEO[loc] || SEO['en']
   return {
@@ -102,19 +109,16 @@ function articleSchema(loc: Locale) {
     description: seo.description,
     inLanguage: seo.htmlLocale,
     datePublished: '2026-04-21T22:00:00Z',
-    dateModified: '2026-04-21T23:00:00Z',
+    dateModified: REVISADO_EM,
     url: `${BASE_URL}/${loc}/${SLUG}`,
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': `${BASE_URL}/${loc}/${SLUG}`,
     },
     author: { '@type': 'Organization', name: 'AFOS Analytics', url: BASE_URL },
-    publisher: {
-      '@type': 'Organization',
-      name: 'AFOS Analytics',
-      url: BASE_URL,
-      logo: { '@type': 'ImageObject', url: `${BASE_URL}/brand/logo-icon-512.png`, width: 512, height: 512 },
-    },
+    // Referência ao nó Organization do layout, que já declara o logo com o
+    // tamanho real do arquivo (1024x1024). A cópia daqui dizia 512x512.
+    publisher: { '@id': `${BASE_URL}/#organization` },
   }
 }
 

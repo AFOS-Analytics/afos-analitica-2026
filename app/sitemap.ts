@@ -2,17 +2,32 @@ import type { MetadataRoute } from 'next'
 import { COUNTRIES_SEO } from '../lib/seo/countries'
 import { RELATORIO_LOCALES, relatorioExiste } from '../lib/relatorio-final/loader'
 import { listPublishedDailies, dailyExists } from '../lib/afos-daily/loader'
-import { listPublishedTradeoffs, tradeoffExists } from '../lib/afos-tradeoff/loader'
-import { listPublishedWeeklies, weeklyExistsStrict } from '../lib/afos-weekly/loader'
+import { listPublishedTradeoffs, tradeoffExists, PAISES_TRADEOFF, PAIS_PADRAO } from '../lib/afos-tradeoff/loader'
+import { listPublishedWeeklies, weeklyExistsStrict, PAISES_WEEKLY } from '../lib/afos-weekly/loader'
+import { paineisOrdenados } from '../lib/paineis.mjs'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.afos-analytics.com'
   const locales = ['pt-BR', 'en', 'es']
-  // dynamic: páginas com cron a cada 30min (landing, dashboard, global, daily index)
+  // dynamic: páginas com cron a cada 30min (landing, painel ao vivo, global)
   const dynamicLastMod = new Date()
-  // static: páginas institucionais sem mudança frequente. Atualizar manualmente
-  // quando houver redesign/conteúdo novo. Evita rebanhar tudo a cada deploy.
+  // static: data padrão das páginas sem mudança de conteúdo desde 03/Mai/2026.
   const staticLastMod = new Date('2026-05-03T00:00:00-03:00')
+  // Data da ÚLTIMA mudança de conteúdo de cada página estática. ⚠️ Subir a data
+  // daqui no MESMO commit que mexe no texto da página; página fora do mapa usa
+  // `staticLastMod`. Datas conferidas no `git log` em 12/Nov/2026.
+  const STATIC_LASTMOD: Record<string, string> = {
+    'white-paper': '2026-08-23',
+    country: '2026-08-19',
+    'data-sources': '2026-08-19',
+    'methodology/automated-governance': '2026-08-19',
+    'how-it-works': '2026-11-12',
+    glossary: '2026-11-12',
+    privacy: '2026-06-21',
+    chat: '2026-06-20',
+  }
+  const lastModDe = (page: string) =>
+    STATIC_LASTMOD[page] ? new Date(`${STATIC_LASTMOD[page]}T00:00:00-03:00`) : staticLastMod
   const entries: MetadataRoute.Sitemap = []
 
   // Hoisted: drive the /daily and /tradeoff index lastmod from the latest edition
@@ -20,7 +35,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const dailyDates = listPublishedDailies()
   const latestDate = dailyDates.length ? dailyDates[dailyDates.length - 1] : null
   const tradeoffDates = listPublishedTradeoffs()
-  const tradeoffDatesUs = listPublishedTradeoffs('us')
   const latestTradeoff = tradeoffDates.length ? tradeoffDates[tradeoffDates.length - 1] : null
   const dailyIndexLastMod = latestDate ? new Date(`${latestDate}T00:00:00-03:00`) : dynamicLastMod
   const tradeoffIndexLastMod = latestTradeoff ? new Date(`${latestTradeoff}T00:00:00-03:00`) : dynamicLastMod
@@ -58,39 +72,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   }
 
-  // Dashboard por país: /pt-BR/dashboard/br e /pt-BR/dashboard/us
-  // O endereço canônico passou a ter país. O /dashboard sem país continua vivo por
+  // Dashboard por país: /[idioma]/dashboard/{br,us,fr}
+  // O endereço canônico tem país. O /dashboard sem país continua vivo por
   // redirecionamento, mas NÃO entra no sitemap: sitemap lista destino final, não atalho.
-  // O Brasil vem primeiro e com prioridade maior porque tem urna em 2026 e cron de
-  // 30min; o dos EUA atualiza em ritmo diário até as midterms de 03/11/2026.
-  for (const loc of locales) {
-    entries.push({
-      url: `${baseUrl}/${loc}/dashboard/br`,
-      lastModified: dynamicLastMod,
-      changeFrequency: 'hourly',
-      priority: 0.95,
-      alternates: { languages: hreflang((l) => `/${l}/dashboard/br`) },
-    })
-  }
-  for (const loc of locales) {
-    entries.push({
-      url: `${baseUrl}/${loc}/dashboard/us`,
-      lastModified: dynamicLastMod,
-      changeFrequency: 'daily',
-      priority: 0.9,
-      alternates: { languages: hreflang((l) => `/${l}/dashboard/us`) },
-    })
-  }
-  // 🇫🇷 Painel da França, presidencial 2027. Publicado em 08/Nov/2026; coleta de
-  // mercado a cada 30 min, pesquisas 2x e imprensa 3x ao dia.
-  for (const loc of locales) {
-    entries.push({
-      url: `${baseUrl}/${loc}/dashboard/fr`,
-      lastModified: dynamicLastMod,
-      changeFrequency: 'daily',
-      priority: 0.9,
-      alternates: { languages: hreflang((l) => `/${l}/dashboard/fr`) },
-    })
+  // Estado, ordem e peso saem de `lib/paineis.mjs` (lugar único desde 12/Nov/2026):
+  // painel AO VIVO tem coleta a cada 30 min, então lastmod de agora, 'hourly' e 0.95;
+  // painel ENCERRADO tem lastmod na data de encerramento, 'monthly' e 0.7.
+  for (const painel of paineisOrdenados()) {
+    const vivo = painel.estado === 'ao-vivo'
+    const lastModified = !vivo && painel.encerradoEm
+      ? new Date(`${painel.encerradoEm}T00:00:00-03:00`)
+      : dynamicLastMod
+    for (const loc of locales) {
+      entries.push({
+        url: `${baseUrl}/${loc}/dashboard/${painel.code}`,
+        lastModified,
+        changeFrequency: vivo ? 'hourly' : 'monthly',
+        priority: vivo ? 0.95 : 0.7,
+        alternates: { languages: hreflang((l) => `/${l}/dashboard/${painel.code}`) },
+      })
+    }
   }
 
   // Global map: /pt-BR/global (dynamic — cron 30min)
@@ -109,7 +110,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const loc of locales) {
       entries.push({
         url: `${baseUrl}/${loc}/country/${country.slug[loc]}`,
-        lastModified: staticLastMod,
+        lastModified: lastModDe('country'),
         changeFrequency: 'daily',
         priority: 0.8,
         alternates: { languages: hreflang((l) => `/${l}/country/${country.slug[l]}`) },
@@ -118,15 +119,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // Election pages: /[locale]/election/[slug]
-  // Active elections marcam como dynamic (mudam frequentemente); outras static.
+  // Eleição 'active' com data por vir é dynamic. Eleição com data já passada não é
+  // dynamic, mesmo marcada 'active' em countries.ts (o campo vira selo visível, por
+  // isso não se mexe nele aqui): lastmod na data da eleição e 'monthly'. Demais, static.
+  const hoje = new Date().toISOString().slice(0, 10)
   for (const country of COUNTRIES_SEO) {
     for (const election of country.elections) {
-      const isActive = election.status === 'active'
+      const passou = election.date < hoje
+      const isActive = election.status === 'active' && !passou
+      const dataEleicao = new Date(`${election.date}T00:00:00-03:00`)
+      const lastModified = isActive
+        ? dynamicLastMod
+        : passou && election.status === 'active' && dataEleicao > staticLastMod
+          ? dataEleicao
+          : staticLastMod
       for (const loc of locales) {
         entries.push({
           url: `${baseUrl}/${loc}/election/${election.slug}`,
-          lastModified: isActive ? dynamicLastMod : staticLastMod,
-          changeFrequency: isActive ? 'hourly' : 'daily',
+          lastModified,
+          changeFrequency: isActive ? 'hourly' : passou ? 'monthly' : 'daily',
           priority: isActive ? 0.9 : 0.7,
           alternates: { languages: hreflang((l) => `/${l}/election/${election.slug}`) },
         })
@@ -154,7 +165,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const loc of locales) {
       entries.push({
         url: `${baseUrl}/${loc}/${page}`,
-        lastModified: staticLastMod,
+        lastModified: lastModDe(page),
         changeFrequency: 'weekly',
         priority: 0.8,
         alternates: { languages: hreflang((l) => `/${l}/${page}`) },
@@ -166,7 +177,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const loc of locales) {
     entries.push({
       url: `${baseUrl}/${loc}/how-it-works`,
-      lastModified: staticLastMod,
+      lastModified: lastModDe('how-it-works'),
       changeFrequency: 'weekly',
       priority: 0.85,
       alternates: { languages: hreflang((l) => `/${l}/how-it-works`) },
@@ -177,7 +188,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const loc of locales) {
     entries.push({
       url: `${baseUrl}/${loc}/methodology/automated-governance`,
-      lastModified: staticLastMod,
+      lastModified: lastModDe('methodology/automated-governance'),
       changeFrequency: 'monthly',
       priority: 0.75,
       alternates: { languages: hreflang((l) => `/${l}/methodology/automated-governance`) },
@@ -188,7 +199,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const loc of locales) {
     entries.push({
       url: `${baseUrl}/${loc}/white-paper`,
-      lastModified: staticLastMod,
+      lastModified: lastModDe('white-paper'),
       changeFrequency: 'monthly',
       priority: 0.85,
       alternates: { languages: hreflang((l) => `/${l}/white-paper`) },
@@ -238,7 +249,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const loc of locales) {
     entries.push({
       url: `${baseUrl}/${loc}/glossary`,
-      lastModified: staticLastMod,
+      lastModified: lastModDe('glossary'),
       changeFrequency: 'weekly',
       priority: 0.8,
       alternates: { languages: hreflang((l) => `/${l}/glossary`) },
@@ -260,7 +271,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const loc of locales) {
     entries.push({
       url: `${baseUrl}/${loc}/chat`,
-      lastModified: staticLastMod,
+      lastModified: lastModDe('chat'),
       changeFrequency: 'monthly',
       priority: 0.6,
       alternates: { languages: hreflang((l) => `/${l}/chat`) },
@@ -272,7 +283,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const loc of locales) {
       entries.push({
         url: `${baseUrl}/${loc}/${page}`,
-        lastModified: staticLastMod,
+        lastModified: lastModDe(page),
         changeFrequency: 'yearly',
         priority: 0.3,
         alternates: { languages: hreflang((l) => `/${l}/${page}`) },
@@ -308,57 +319,64 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   }
 
-  // AFOS Tradeoff — permalinks per edition (3 locales × N editions)
-  // Latest edition gets higher priority. Published-only filter.
-  // Tradeoff dos EUA. Entrou no sitemap em 31/Jul, junto com a publicação da
-  // Edição №1. O índice `/tradeoff/us` e cada edição, com hreflang só para os
-  // idiomas que existem em disco.
-  for (const loc of locales) {
-    entries.push({
-      url: `${baseUrl}/${loc}/tradeoff/us`,
-      lastModified: tradeoffDatesUs.length ? new Date(`${tradeoffDatesUs[tradeoffDatesUs.length - 1]}T00:00:00-03:00`) : dynamicLastMod,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-      alternates: { languages: hreflang((l) => `/${l}/tradeoff/us`) },
-    })
-  }
-  for (const date of tradeoffDatesUs) {
+  // AFOS Tradeoff dos demais países (EUA desde 31/Jul; França a partir da №1).
+  // Laço sobre PAISES_TRADEOFF: país novo no loader entra aqui sem editar este
+  // arquivo. O índice `/tradeoff/{país}` só entra quando há ao menos uma edição
+  // publicada; cada edição leva hreflang só dos idiomas que existem em disco.
+  for (const pais of PAISES_TRADEOFF) {
+    if (pais === PAIS_PADRAO) continue // Brasil: blocos próprios, acima e abaixo
+    const datas = listPublishedTradeoffs(pais)
+    if (!datas.length) continue
     for (const loc of locales) {
       entries.push({
-        url: `${baseUrl}/${loc}/tradeoff/us/${date}`,
-        lastModified: new Date(`${date}T00:00:00-03:00`),
-        changeFrequency: 'monthly',
-        priority: 0.6,
-        alternates: { languages: hreflangIf((l) => `/${l}/tradeoff/us/${date}`, (loc) => tradeoffExists(date, loc, 'us')) },
+        url: `${baseUrl}/${loc}/tradeoff/${pais}`,
+        lastModified: new Date(`${datas[datas.length - 1]}T00:00:00-03:00`),
+        changeFrequency: 'weekly',
+        priority: 0.7,
+        alternates: { languages: hreflang((l) => `/${l}/tradeoff/${pais}`) },
       })
+    }
+    for (const date of datas) {
+      for (const loc of locales) {
+        entries.push({
+          url: `${baseUrl}/${loc}/tradeoff/${pais}/${date}`,
+          lastModified: new Date(`${date}T00:00:00-03:00`),
+          changeFrequency: 'monthly',
+          priority: 0.6,
+          alternates: { languages: hreflangIf((l) => `/${l}/tradeoff/${pais}/${date}`, (loc) => tradeoffExists(date, loc, pais)) },
+        })
+      }
     }
   }
 
-  // AFOS Weekly — índice e permalinks por edição, EUA.
-  // Entrou no sitemap em 27/Ago/2026, junto com a saída do `noindex`: o piloto
-  // previa indexar depois das duas primeiras edições e a №4 já saiu.
+  // AFOS Weekly: índice e permalinks por edição, para cada país de PAISES_WEEKLY.
+  // EUA entrou em 27/Ago/2026, junto com a saída do `noindex`. O índice
+  // `/weekly/{país}` só entra quando há ao menos uma edição publicada.
   // 🔴 hreflang por `weeklyExistsStrict`, NUNCA por `weeklyExists`: o segundo
   // devolve `true` sempre, por causa da cascata para o inglês, e o sitemap
   // declararia traduções que não existem em disco.
-  const weeklyDatesUs = listPublishedWeeklies('us')
-  for (const loc of locales) {
-    entries.push({
-      url: `${baseUrl}/${loc}/weekly/us`,
-      lastModified: weeklyDatesUs.length ? new Date(`${weeklyDatesUs[weeklyDatesUs.length - 1]}T00:00:00-03:00`) : dynamicLastMod,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-      alternates: { languages: hreflang((l) => `/${l}/weekly/us`) },
-    })
-  }
-  for (const date of weeklyDatesUs) {
+  for (const pais of PAISES_WEEKLY) {
+    const datas = listPublishedWeeklies(pais)
+    if (!datas.length) continue
     for (const loc of locales) {
       entries.push({
-        url: `${baseUrl}/${loc}/weekly/us/${date}`,
-        lastModified: new Date(`${date}T00:00:00-03:00`),
-        changeFrequency: 'monthly',
-        priority: 0.6,
-        alternates: { languages: hreflangIf((l) => `/${l}/weekly/us/${date}`, (loc) => weeklyExistsStrict(date, loc, 'us')) },
+        url: `${baseUrl}/${loc}/weekly/${pais}`,
+        lastModified: new Date(`${datas[datas.length - 1]}T00:00:00-03:00`),
+        changeFrequency: 'weekly',
+        priority: 0.7,
+        alternates: { languages: hreflang((l) => `/${l}/weekly/${pais}`) },
       })
+    }
+    for (const date of datas) {
+      for (const loc of locales) {
+        entries.push({
+          url: `${baseUrl}/${loc}/weekly/${pais}/${date}`,
+          lastModified: new Date(`${date}T00:00:00-03:00`),
+          changeFrequency: 'monthly',
+          priority: 0.6,
+          alternates: { languages: hreflangIf((l) => `/${l}/weekly/${pais}/${date}`, (loc) => weeklyExistsStrict(date, loc, pais)) },
+        })
+      }
     }
   }
 

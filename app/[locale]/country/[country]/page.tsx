@@ -3,7 +3,7 @@ import { JsonLd } from '../../../components/JsonLd'
 import { redirect, notFound } from 'next/navigation'
 import { locales, isValidLocale, type Locale } from '../../../../lib/i18n/config'
 import { getCountryBySlug, COUNTRIES_SEO } from '../../../../lib/seo/countries'
-import { breadcrumbSchema, countryDatasetSchema } from '../../../../lib/seo/schema'
+import { breadcrumbSchema, countryDatasetSchema, coberturaTemporal } from '../../../../lib/seo/schema'
 import { getCountryDivergence } from '../../../../lib/country-data'
 import { CountryPageContent } from '../../../components/CountryPageContent'
 import { socialMeta } from '../../../../lib/seo/metadata'
@@ -85,7 +85,7 @@ export default async function CountryPage({ params }: { params: Promise<{ locale
   return (
     <>
       <JsonLd data={breadcrumb} />
-      {div?.hf && <JsonLd data={countryDatasetSchema(name, div.hf, country.iso3, loc, `${BASE_URL}/${loc}/country/${country.slug[loc]}`)} />}
+      {div?.hf && <JsonLd data={countryDatasetSchema(name, div.hf, country.iso3, loc, `${BASE_URL}/${loc}/country/${country.slug[loc]}`, coberturaTemporal(div))} />}
       <CountryPageContent locale={loc} country={country} div={div} />
     </>
   )

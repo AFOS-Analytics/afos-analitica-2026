@@ -80,6 +80,28 @@ const T = {
   },
 } as const
 
+/**
+ * Título e descrição do head por país. Os dos EUA são os de `T`, byte a byte;
+ * os demais países ganham os seus aqui, para o arquivo da França não anunciar
+ * as midterms. Só metadado: nada disso aparece no corpo da página.
+ */
+const META_POR_PAIS: Record<string, Record<keyof typeof T, { metaTitle: string; metaDesc: string }>> = {
+  fr: {
+    en: {
+      metaTitle: 'AFOS Weekly archive: France | AFOS Analytics',
+      metaDesc: 'Every AFOS Weekly edition on the 2027 French presidential election: where the prediction market, the polls and the press disagree, and what each one measures.',
+    },
+    'pt-BR': {
+      metaTitle: 'Arquivo do AFOS Weekly: França | AFOS Analytics',
+      metaDesc: 'Todas as edições do AFOS Weekly sobre a eleição presidencial da França de 2027: onde o mercado de previsão, as pesquisas e a imprensa discordam, e o que cada um mede.',
+    },
+    es: {
+      metaTitle: 'Archivo del AFOS Weekly: Francia | AFOS Analytics',
+      metaDesc: 'Todas las ediciones del AFOS Weekly sobre la elección presidencial de Francia de 2027: dónde discrepan el mercado de predicción, las encuestas y la prensa, y qué mide cada uno.',
+    },
+  },
+}
+
 function chave(locale: string): keyof typeof T {
   return locale === 'en' || locale === 'es' ? locale : 'pt-BR'
 }
@@ -96,11 +118,15 @@ function limpa(s: string, max = 190): string {
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const p = await props.params
-  const t = T[chave(p.locale)]
+  const t = META_POR_PAIS[p.country]?.[chave(p.locale)] ?? T[chave(p.locale)]
+  // Arquivo de país válido mas ainda sem edição publicada é página vazia:
+  // `noindex` até a primeira edição, `follow` para não cortar os links.
+  const semEdicao = isValidCountry(p.country) && !getLatestDate(p.country)
   return {
     title: t.metaTitle,
     description: t.metaDesc,
-    // ✅ Sem `robots` aqui: indexável desde 27/Ago/2026, igual à página da edição.
+    // ✅ Indexável desde 27/Ago/2026, igual à página da edição, desde que haja edição.
+    ...(semEdicao ? { robots: { index: false, follow: true } } : {}),
     // 🔴 Canonical PRÓPRIO. Sem esta linha a página herdava o canonical do
     // layout de idioma, que aponta para a HOME: o arquivo do Weekly declarava
     // ser a página inicial do site, nos três idiomas.
