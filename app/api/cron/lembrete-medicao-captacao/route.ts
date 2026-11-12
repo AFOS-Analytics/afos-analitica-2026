@@ -1,4 +1,9 @@
 /**
+ * ⏸️ CRON DESLIGADO em 12/Nov/2026: a entrada saiu do vercel.json, a rota fica
+ * no código. Motivo: o lembrete era de disparo único (01/Set/2026), mas o
+ * agendamento `0 12 1 9 *` é anual, e a trava do Redis tem a data no nome, então
+ * em 01/Set/2027 o mesmo e-mail sairia de novo com os números de 2026.
+ *
  * Cron de LEMBRETE ÚNICO: remedir a captação de e-mail por superfície.
  *
  * O André pediu em 28/Ago/2026 para ser lembrado "na virada de setembro". O

@@ -6,10 +6,6 @@
       "schedule": "*/30 * * * *"
     },
     {
-      "path": "/api/cron/persist-analysis",
-      "schedule": "0 14 * * *"
-    },
-    {
       "path": "/api/cron/purge-visitor-state",
       "schedule": "0 4 * * *"
     },
@@ -36,10 +32,6 @@
     {
       "path": "/api/cron/refresh-us-press",
       "schedule": "20 7,13,19 * * *"
-    },
-    {
-      "path": "/api/cron/lembrete-medicao-captacao",
-      "schedule": "0 12 1 9 *"
     }
   ]
 }

@@ -1,3 +1,10 @@
+/**
+ * ⏸️ CRON DESLIGADO em 12/Nov/2026: a entrada saiu do vercel.json, a rota fica
+ * para uso manual. Motivo: o Brasil está congelado desde 02/Nov e os arquivos
+ * lidos aqui (analysis-data.json, analysis-criteriosa.json) não mudam desde
+ * 25/Out. Mesmo assim o upsert diário regravava `publishedAt` com a data do
+ * dia, e a data de publicação do registro histórico mudava sozinha.
+ */
 import { NextResponse } from 'next/server'
 import { readFileSync } from 'fs'
 import { join } from 'path'
