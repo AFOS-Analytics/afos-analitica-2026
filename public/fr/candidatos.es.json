@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-10",
+  "updatedAt": "2026-11-12",
   "grade": {
     "nota": "Bloques de la grilla oficial del Ministerio del Interior francés (circular del 02/02/2026, anexo 3), aplicada al partido de cada candidato. El Consejo de Estado confirmó la grilla el 27/02/2026 (decisión nº 512694). El AFOS no clasifica candidatos: reproduce la clasificación oficial.",
     "fontes": [
@@ -193,7 +193,7 @@
       "nuanceInferida": false,
       "nascimento": "1956-01-01",
       "cargo": "Presidenta del Banco Central Europeo",
-      "candidatura": "No es candidata declarada. El 29/10/2026, el Banco Central Europeo anunció que deja la presidencia del banco el 07/02/2027. Tiene contrato en el mercado, y ninguna encuesta la mide.",
+      "candidatura": "No es candidata declarada. El 29/10/2026, el Banco Central Europeo anunció que deja la presidencia del banco el 07/02/2027. Tiene contrato en el mercado. La primera encuesta que la mide es de Cluster17 para Politico, con trabajo de campo el 9 y el 10/11/2026.",
       "fontes": [
         {
           "rotulo": "Wikipédia",
@@ -202,6 +202,10 @@
         {
           "rotulo": "Toute l'Europe",
           "url": "https://www.touteleurope.eu/institutions/christine-lagarde-quittera-la-presidence-de-la-banque-centrale-europeenne-le-7-fevrier-2027/"
+        },
+        {
+          "rotulo": "Cluster17",
+          "url": "https://cluster17.com/sondage-exclusif-pour-politico-presidentielle-2027-le-bloc-central-toujours-en-quete-dun-candidat/"
         }
       ]
     },
