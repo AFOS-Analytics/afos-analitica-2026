@@ -17,13 +17,14 @@
  */
 
 import {
-  UA_NAVEGADOR,
+  UA_AFOS,
   extrairAtributos,
   extrairUrlDoVeiculo,
   montarPayload,
 } from '../wayback-archive.ts'
 
-export { UA_NAVEGADOR }
+// ⛔ UA institucional, nunca de navegador (regra permanente, 12/Nov/2026).
+export { UA_AFOS }
 
 /**
  * 🔑 Link que NÃO é do Google News já é a URL do veículo e não tem o que
@@ -48,16 +49,26 @@ export function jaEhPrimaria(url) {
 export async function resolverGoogleNews(url) {
   if (jaEhPrimaria(url)) return url
   const pagina = await fetch(url, {
-    headers: { 'User-Agent': UA_NAVEGADOR },
+    headers: { 'User-Agent': UA_AFOS },
     signal: AbortSignal.timeout(25000),
   })
+  // Falha DECLARADA: se o Google recusar o UA institucional, o terminal diz isso.
+  if (!pagina.ok) {
+    throw new Error(`Google News recusou o invólucro (HTTP ${pagina.status}) com o User-Agent institucional AFOS`)
+  }
   const attrs = extrairAtributos(await pagina.text())
-  if (!attrs) return null
+  if (!attrs) {
+    console.warn('⚠️ Google News não devolveu os atributos do invólucro ao User-Agent institucional AFOS.')
+    return null
+  }
   const res = await fetch('https://news.google.com/_/DotsSplashUi/data/batchexecute', {
     method: 'POST',
-    headers: { 'User-Agent': UA_NAVEGADOR, 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+    headers: { 'User-Agent': UA_AFOS, 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
     body: 'f.req=' + encodeURIComponent(montarPayload(attrs)),
     signal: AbortSignal.timeout(25000),
   })
+  if (!res.ok) {
+    throw new Error(`batchexecute do Google News recusou a chamada (HTTP ${res.status}) com o User-Agent institucional AFOS`)
+  }
   return extrairUrlDoVeiculo(await res.text())
 }

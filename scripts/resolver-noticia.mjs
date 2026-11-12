@@ -76,7 +76,10 @@ console.log(`\n🔗 RESOLVER NOTÍCIA · ${alvos.length} candidato(s), resolvend
 let resolvidos = 0
 let falhas = 0
 for (const t of alvos.slice(0, max)) {
-  const url = await resolver(t.link).catch(() => null)
+  const url = await resolver(t.link).catch((e) => {
+    console.warn(`   ⚠️ ${e instanceof Error ? e.message : String(e)}`)
+    return null
+  })
   if (url) resolvidos++
   else falhas++
   console.log(`[${(t.sourceName || '?').slice(0, 20)}] ${t.title.slice(0, 78)}`)
