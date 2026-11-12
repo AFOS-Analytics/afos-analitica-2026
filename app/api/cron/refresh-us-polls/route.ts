@@ -11,6 +11,10 @@ import { medirExposicao } from '../../../../lib/us-polls/exposicao.mjs'
 import { avisarAtrasoDaFonte, avisarCasaCalada } from '../../../../lib/cron/alerta'
 import { redigirSegredo } from '../../../../lib/cron/redigir'
 import { avisarFalhaDeCron } from '../../../../lib/cron/alerta'
+import { avisarComTrava } from '../../../lib/cron/health-alerts'
+
+// O cron roda 1x ao dia; a trava só segura uma rodada manual repetida.
+const TRAVA_AVISO_S = 20 * 60 * 60
 
 /**
  * Coleta diária do generic ballot dos EUA.
@@ -52,6 +56,14 @@ export async function GET(request: Request) {
     // substituta do índice.
     const portao = avaliarGravacao(dados)
     if (!portao.gravar) {
+      // Portão reprovado devolvia 502 em silêncio: `lidas 0` todo dia, sem e-mail.
+      await avisarComTrava('refresh-us-polls:portao', TRAVA_AVISO_S, () =>
+        avisarFalhaDeCron(
+          'refresh-us-polls',
+          `portao de gravacao reprovou; nada gravado (${portao.motivo})`,
+          `lidas ${portao.lidas}, publicadas ${portao.publicadas}, curadas ${portao.curadas}`,
+        ),
+      )
       return NextResponse.json(
         {
           ok: false,
@@ -73,6 +85,9 @@ export async function GET(request: Request) {
 
     const prisma = getPrisma()
     if (!prisma) {
+      await avisarComTrava('refresh-us-polls:sem-banco', TRAVA_AVISO_S, () =>
+        avisarFalhaDeCron('refresh-us-polls', 'banco indisponivel; nada gravado'),
+      )
       return NextResponse.json(
         { ok: false, motivo: 'banco indisponível', ms: Date.now() - t0 },
         { status: 503, headers: { 'Cache-Control': 'no-store' } },
@@ -107,7 +122,7 @@ export async function GET(request: Request) {
       // `>=` dispararia todo dia a partir do primeiro. Alerta que chega todo
       // dia é alerta que alguém aprende a ignorar.
       if (cruzouMarco(atraso.atrasoDias)) {
-        void avisarAtrasoDaFonte(atraso.atrasoDias, atraso.campoMaisRecente)
+        await avisarAtrasoDaFonte(atraso.atrasoDias, atraso.campoMaisRecente)
       }
     }
 
@@ -178,7 +193,7 @@ export async function GET(request: Request) {
         // O email leva TODAS as sinalizadas, não só a que disparou. Quem
         // decide se ele sai é `alertar`; o que ele mostra é o quadro inteiro,
         // senão o corpo listaria duas casas e o assunto uma só.
-        void avisarCasaCalada(
+        await avisarCasaCalada(
           cadencia.atrasadas,
           fora?.resultados ?? null,
           exposicao,
@@ -209,7 +224,7 @@ export async function GET(request: Request) {
   } catch (e) {
     // Alerta por email. Este cron falhava em SILENCIO: dos sete declarados,
     // so `persist-analysis` avisava alguem. Nao bloqueia nem derruba nada.
-    void avisarFalhaDeCron('refresh-us-polls', 'excecao nao tratada', e)
+    await avisarFalhaDeCron('refresh-us-polls', 'excecao nao tratada', e)
     // Redação antes de ir para o CORPO da resposta. Regra única em
     // lib/cron/redigir.ts: esta rota devolvia a mensagem crua, e mensagem de
     // driver de banco carrega a string de conexão inteira.

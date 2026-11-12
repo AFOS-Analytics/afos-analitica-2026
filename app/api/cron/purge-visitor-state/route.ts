@@ -54,7 +54,7 @@ export async function GET(request: Request) {
   } catch (error) {
     // Alerta por email. Este cron falhava em SILENCIO: dos sete declarados,
     // so `persist-analysis` avisava alguem. Nao bloqueia nem derruba nada.
-    void avisarFalhaDeCron('purge-visitor-state', 'excecao nao tratada', error)
+    await avisarFalhaDeCron('purge-visitor-state', 'excecao nao tratada', error)
     console.error('[purge-visitor-state] Error:', error)
     return NextResponse.json({ error: 'purge_failed' }, { status: 500 })
   }

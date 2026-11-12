@@ -6,6 +6,10 @@ import { requireCronAuth } from '../../../../lib/cron/auth'
 import { coletarImprensaFr } from '../../../../lib/fr-press/collect.mjs'
 import { redigirSegredo } from '../../../../lib/cron/redigir'
 import { avisarFalhaDeCron } from '../../../../lib/cron/alerta'
+import { avisarComTrava } from '../../../lib/cron/health-alerts'
+
+// Um aviso por dia, no máximo, para a mesma quebra: a rota roda 3x ao dia.
+const TRAVA_AVISO_S = 20 * 60 * 60
 
 /**
  * Imprensa da presidencial francesa de 2027. Criado 08/Nov/2026, cópia da
@@ -34,6 +38,12 @@ export async function GET(request: Request) {
     // boa. Google News fora do ar ou mudança de formato chegam aqui como zero
     // itens, e sobrescrever apagaria a seção em silêncio.
     if (!dados?.itens?.length) {
+      // O 502 sozinho não avisa ninguém: o cron da Vercel não notifica status
+      // de erro e a rota exige CRON_SECRET. O e-mail é o único canal.
+      const falhas: string[] = dados?.qualidade?.consultasComFalha ?? []
+      await avisarComTrava('refresh-fr-press:vazia', TRAVA_AVISO_S, () =>
+        avisarFalhaDeCron('refresh-fr-press', 'nenhum item na lista; nada gravado', new Error(falhas.join(' | ') || 'zero itens')),
+      )
       return NextResponse.json(
         {
           ok: false,
@@ -48,6 +58,9 @@ export async function GET(request: Request) {
 
     const prisma = getPrisma()
     if (!prisma) {
+      await avisarComTrava('refresh-fr-press:sem-banco', TRAVA_AVISO_S, () =>
+        avisarFalhaDeCron('refresh-fr-press', 'banco indisponivel; nada gravado'),
+      )
       return NextResponse.json(
         { ok: false, motivo: 'banco indisponível', ms: Date.now() - t0 },
         { status: 503, headers: { 'Cache-Control': 'no-store' } },
@@ -66,7 +79,7 @@ export async function GET(request: Request) {
   } catch (e) {
     // Alerta por email. Este cron falhava em SILENCIO: dos sete declarados,
     // so `persist-analysis` avisava alguem. Nao bloqueia nem derruba nada.
-    void avisarFalhaDeCron('refresh-fr-press', 'excecao nao tratada', e)
+    await avisarFalhaDeCron('refresh-fr-press', 'excecao nao tratada', e)
     // Redação antes de ir para o CORPO da resposta. Regra única em
     // lib/cron/redigir.ts: esta rota devolvia a mensagem crua, e mensagem de
     // driver de banco carrega a string de conexão inteira.

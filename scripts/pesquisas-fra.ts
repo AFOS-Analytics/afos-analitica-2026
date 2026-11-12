@@ -24,7 +24,7 @@ import { config } from 'dotenv'
 config({ path: '.env.local' })
 config({ path: '.env' })
 
-import { coletarPesquisasFr } from '../lib/fr-polls/collect.mjs'
+import { coletarPesquisasFr, baixar, URL_LISTAGEM } from '../lib/fr-polls/collect.mjs'
 import { listaPrincipalPorInstituto, mediaPorCandidato, rodadaDe, type FrPollsData, type FrPesquisa } from '../lib/fr/painel'
 
 const agora = new Date()
@@ -59,9 +59,12 @@ async function main() {
     assinatura: string; qualidade: Record<string, unknown> & { falhas: string[] }
     divergencias: { pollId: string; instituto: string; fim: string; status: string; numero: string | null; motivo: string }[]
   }
-  const fichasHtml = await (await fetch('https://www.commission-des-sondages.fr/notices/medias/fichiers/bytag/14/2027-Presidentielle', {
-    headers: { 'User-Agent': 'AFOS-Analytics/1.0 (https://www.afos-analytics.com; pesquisa academica aberta)' }, signal: AbortSignal.timeout(20000),
-  })).text()
+  // `baixar` LANÇA em status fora de 2xx. Antes, uma página de erro (403, 503)
+  // virava HTML sem fichas, e a seção 4 dava para cada 'diverge' o laudo falso
+  // "sem ficha de mesmo nome na listagem".
+  const fichasHtml = await (baixar(URL_LISTAGEM) as Promise<string>).catch((e: unknown) => {
+    throw new Error(`listagem da Commission não pôde ser relida (${e instanceof Error ? e.message : String(e)}); diagnóstico abortado, nada concluído sobre renumeração`)
+  })
 
   // ── 1. Mudaria? ────────────────────────────────────────────────────────────
   console.log(`\n== NEON: ${r.slug} gravado ${r.publishedAt?.toISOString()} (${r.publishedAt ? horas(r.publishedAt) : 'n/d'})`)
@@ -93,7 +96,10 @@ async function main() {
     .map((m) => ({ rotulo: m[2].replace(/\s+/g, ' ').trim(), href: m[1] }))
   // O CSV cita o NOME DO ARQUIVO da ficha; a coleta guarda só o número. Lê de novo o CSV para o nome.
   const { lerCsv, URL_CSV } = await import('../lib/fr-polls/collect.mjs')
-  const linhasCsv = lerCsv(await (await fetch(URL_CSV, { signal: AbortSignal.timeout(20000) })).text()) as { poll_id: string; filename: string }[]
+  const csvTexto = await (baixar(URL_CSV) as Promise<string>).catch((e: unknown) => {
+    throw new Error(`CSV da MieuxVoter não pôde ser relido (${e instanceof Error ? e.message : String(e)}); diagnóstico abortado`)
+  })
+  const linhasCsv = lerCsv(csvTexto) as { poll_id: string; filename: string }[]
   const arquivoDaBase = new Map(linhasCsv.filter((l) => l.poll_id).map((l) => [l.poll_id, l.filename]))
   const corte = new Date(agora.getTime() - 45 * 864e5).toISOString().slice(0, 10)
   const fora = V.pesquisas.filter((p) => !p.publicavel && p.campo.fim >= corte)

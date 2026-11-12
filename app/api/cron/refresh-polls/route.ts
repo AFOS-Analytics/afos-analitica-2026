@@ -128,7 +128,7 @@ export async function GET(request: Request) {
   } catch (error) {
     // Alerta por email. Este cron falhava em SILENCIO: dos sete declarados,
     // so `persist-analysis` avisava alguem. Nao bloqueia nem derruba nada.
-    void avisarFalhaDeCron('refresh-polls', 'excecao nao tratada', error)
+    await avisarFalhaDeCron('refresh-polls', 'excecao nao tratada', error)
     /**
      * 🔑 O MOTIVO REAL VIAJA NA RESPOSTA, instalado em 19/Ago/2026.
      *

@@ -228,9 +228,11 @@ function makeDedupHash(marketDbId: string, candidateName: string, snapshotAt: Da
 
 export async function persistMarketData(
   countries: CountryAggregation[]
-): Promise<{ persisted: number; skipped: number; errors: number }> {
+): Promise<{ persisted: number; skipped: number; errors: number; semBanco?: true }> {
   const prisma = getPrisma()
-  if (!prisma) return { persisted: 0, skipped: 0, errors: 0 }
+  // Sinal EXPLICITO de banco ausente. Devolver so zeros fazia "sem DATABASE_URL"
+  // parecer "nada para gravar", e o cron respondia 200 com a serie parada.
+  if (!prisma) return { persisted: 0, skipped: 0, errors: 0, semBanco: true }
   // Referência não-nula fixada aqui: dentro dos closures do Promise.all abaixo o
   // TypeScript não consegue provar que a guarda acima já rodou.
   const db = prisma

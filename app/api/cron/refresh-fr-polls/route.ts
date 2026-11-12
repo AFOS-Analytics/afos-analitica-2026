@@ -5,6 +5,10 @@ import { requireCronAuth } from '../../../../lib/cron/auth'
 import { coletarPesquisasFr } from '../../../../lib/fr-polls/collect.mjs'
 import { redigirSegredo } from '../../../../lib/cron/redigir'
 import { avisarFalhaDeCron } from '../../../../lib/cron/alerta'
+import { avisarComTrava } from '../../../lib/cron/health-alerts'
+
+// Um aviso por dia, no máximo, para a mesma quebra: a rota roda 2x ao dia.
+const TRAVA_AVISO_S = 20 * 60 * 60
 
 /**
  * Pesquisas da presidencial francesa de 2027. Criado 08/Nov/2026.
@@ -33,13 +37,19 @@ export async function GET(request: Request) {
     const dados = await coletarPesquisasFr()
     const q = dados.qualidade
 
-    if (q.falhas.length || !q.pesquisas || !q.fichasNaListagem) {
-      void avisarFalhaDeCron('refresh-fr-polls', 'fonte indisponível; nada gravado', new Error(q.falhas.join(' | ') || 'zero pesquisas ou zero fichas'))
+    // `!q.publicaveis` (12/Nov/2026, EVAL): coluna renomeada no CSV deixa
+    // pesquisas e fichas acima de zero, mas nenhuma publicável. Gravar isso
+    // esvaziava a seção de pesquisas do painel, sem alerta.
+    if (q.falhas.length || !q.pesquisas || !q.fichasNaListagem || !q.publicaveis) {
+      await avisarFalhaDeCron('refresh-fr-polls', 'fonte indisponível; nada gravado', new Error(q.falhas.join(' | ') || (!q.publicaveis && q.pesquisas && q.fichasNaListagem ? 'zero pesquisas publicaveis' : 'zero pesquisas ou zero fichas')))
       return NextResponse.json({ ok: false, motivo: 'fonte indisponível; nada foi gravado', qualidade: q, ms: Date.now() - t0 }, { status: 502, headers: { 'Cache-Control': 'no-store' } })
     }
 
     const prisma = getPrisma()
     if (!prisma) {
+      await avisarComTrava('refresh-fr-polls:sem-banco', TRAVA_AVISO_S, () =>
+        avisarFalhaDeCron('refresh-fr-polls', 'banco indisponivel; nada gravado'),
+      )
       return NextResponse.json({ ok: false, motivo: 'banco indisponível', ms: Date.now() - t0 }, { status: 503, headers: { 'Cache-Control': 'no-store' } })
     }
 
@@ -49,10 +59,28 @@ export async function GET(request: Request) {
       select: { slug: true, bodyMarkdown: true },
     })
     let assinaturaAnterior: string | null = null
+    let publicaveisAntes: number | null = null
     try {
-      assinaturaAnterior = ultimo ? (JSON.parse(ultimo.bodyMarkdown) as { assinatura?: string }).assinatura ?? null : null
+      const anterior = ultimo
+        ? (JSON.parse(ultimo.bodyMarkdown) as { assinatura?: string; qualidade?: { publicaveis?: number } })
+        : null
+      assinaturaAnterior = anterior?.assinatura ?? null
+      publicaveisAntes = typeof anterior?.qualidade?.publicaveis === 'number' ? anterior.qualidade.publicaveis : null
     } catch {
       assinaturaAnterior = null
+    }
+    // Queda para menos da metade das publicáveis da última gravação: o mais
+    // provável é a fonte ter mudado de forma, não a eleição ter perdido
+    // pesquisas. Não grava por cima da leitura boa, e avisa.
+    if (publicaveisAntes !== null && q.publicaveis < publicaveisAntes / 2) {
+      await avisarComTrava('refresh-fr-polls:queda-publicaveis', TRAVA_AVISO_S, () =>
+        avisarFalhaDeCron(
+          'refresh-fr-polls',
+          'publicaveis caiu para menos da metade da ultima gravacao; nada gravado',
+          `agora ${q.publicaveis}, antes ${publicaveisAntes} (${ultimo?.slug})`,
+        ),
+      )
+      return NextResponse.json({ ok: false, motivo: `publicáveis caiu de ${publicaveisAntes} para ${q.publicaveis}; nada foi gravado`, qualidade: q, ms: Date.now() - t0 }, { status: 502, headers: { 'Cache-Control': 'no-store' } })
     }
     if (assinaturaAnterior === dados.assinatura) {
       return NextResponse.json({ ok: true, gravado: false, motivo: `sem mudança desde ${ultimo?.slug}`, qualidade: q, ms: Date.now() - t0 }, { headers: { 'Cache-Control': 'no-store' } })
@@ -65,7 +93,7 @@ export async function GET(request: Request) {
 
     return NextResponse.json({ ok: true, gravado: true, assinatura: dados.assinatura, qualidade: q, ms: Date.now() - t0 }, { headers: { 'Cache-Control': 'no-store' } })
   } catch (e) {
-    void avisarFalhaDeCron('refresh-fr-polls', 'excecao nao tratada', e)
+    await avisarFalhaDeCron('refresh-fr-polls', 'excecao nao tratada', e)
     const msg = redigirSegredo(e)
     console.error('[cron:refresh-fr-polls]', msg)
     return NextResponse.json({ ok: false, motivo: msg, ms: Date.now() - t0 }, { status: 500, headers: { 'Cache-Control': 'no-store' } })
