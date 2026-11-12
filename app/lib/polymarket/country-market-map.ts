@@ -44,6 +44,12 @@ export interface ElectionRegistryEntry {
    * GlobalCountryDrawer, que só passou a existir por causa desta mudança.
    */
   isDistribution?: boolean;
+  /**
+   * Teto de desfechos gravados na série por execução (persist.ts). Ausente,
+   * vale o padrão: 10, ou 20 em mercado `isDistribution`. Só se declara onde o
+   * livro inteiro não cabe no padrão.
+   */
+  maxOutcomes?: number;
 }
 
 // ─── Static Registry ────────────────────────────────────────────────
@@ -105,7 +111,10 @@ export const ELECTION_REGISTRY: ElectionRegistryEntry[] = [
   // `isDistribution` só onde os contratos são mutuamente exclusivos e a SOMA é
   // medida (vencedor e mais votado no 1º turno). No "quem vai ao 2º turno" a
   // soma dá ~200 e na "cédula" os contratos não se excluem: sem o flag.
-  { slug: 'next-french-presidential-election', iso3: 'FRA', countryName: 'France', flag: 'fr', electionDate: '2027-05-02', electionType: 'Presidential', isPrimary: false, enabled: true, isDistribution: true },
+  // maxOutcomes 80 desde 12/Nov/2026: o livro de vitória tinha 46 contratos
+  // reais acima do piso e o teto de 20 da distribuição descartava 26 (1,30pp
+  // da soma). 80 dá folga para contrato novo sem mexer no padrão dos outros.
+  { slug: 'next-french-presidential-election', iso3: 'FRA', countryName: 'France', flag: 'fr', electionDate: '2027-05-02', electionType: 'Presidential', isPrimary: false, enabled: true, isDistribution: true, maxOutcomes: 80 },
   { slug: 'french-presidential-election-first-round-winner', iso3: 'FRA', countryName: 'France', flag: 'fr', electionDate: '2027-04-18', electionType: 'Presidential 1st Round Winner', isPrimary: false, enabled: true, isDistribution: true },
   { slug: 'next-french-presidential-election-who-will-advance-to-the-2nd-round', iso3: 'FRA', countryName: 'France', flag: 'fr', electionDate: '2027-04-18', electionType: 'Presidential 2nd Round Qualifiers', isPrimary: false, enabled: true },
   { slug: '2027-french-presidential-election-who-will-be-on-the-ballot', iso3: 'FRA', countryName: 'France', flag: 'fr', electionDate: '2027-04-18', electionType: 'Presidential Ballot', isPrimary: false, enabled: true },

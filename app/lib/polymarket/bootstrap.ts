@@ -111,7 +111,10 @@ function extractCandidates(markets: ParsedMarket[], isDistribution = false): Can
 
     candidates.push({
       name: nome,
-      probability: Math.round(m.yesPrice * 1000) / 10, // e.g. 0.42 → 42.0
+      // 2 casas desde 12/Nov/2026 (era 1: `* 1000 / 10`), a mesma precisão do
+      // número publicado, da trava e da Kalshi. Pontos anteriores da série
+      // seguem quantizados em 0,1pp. e.g. 0.4237 → 42.37
+      probability: Math.round(m.yesPrice * 10000) / 100,
       volumeUsd: Math.round(m.volume),
     });
   }

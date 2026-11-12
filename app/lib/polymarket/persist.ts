@@ -251,7 +251,8 @@ export async function persistMarketData(
       // A MESMA fatia que será gravada é a que decide se grava. Assinar desfecho
       // que não entra no banco faria a trava vigiar o que ela não registra.
       const entradaReg = ELECTION_REGISTRY.find((e) => e.slug === mkt.slug)
-      const maxOutcomesMkt = entradaReg?.isDistribution ? MAX_OUTCOMES_DISTRIBUICAO : MAX_OUTCOMES_DEFAULT
+      const maxOutcomesMkt =
+        entradaReg?.maxOutcomes ?? (entradaReg?.isDistribution ? MAX_OUTCOMES_DISTRIBUICAO : MAX_OUTCOMES_DEFAULT)
       const candsVigiados = mkt.candidates.slice(0, maxOutcomesMkt)
 
       if (!(await shouldPersist(redis, mkt.slug, tier, candsVigiados))) {
