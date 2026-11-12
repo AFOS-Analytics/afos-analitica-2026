@@ -2,6 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState, type ReactNode } from 'react'
 import { MONTHS, type MonthsLocale } from '../../lib/i18n/months'
+import { gravarIdioma } from '../../lib/i18n/config'
 import { InlineSubscribe } from './InlineSubscribe'
 
 type Theme = 'light' | 'blue'
@@ -167,6 +168,7 @@ function LanguagePicker({ currentLocale, currentDate, isBlue }: { currentLocale:
           {i > 0 && <span className={isBlue ? 'text-blue-400/50' : 'text-gray-300'}>·</span>}
           <a
             href={`/${loc}/daily/${currentDate}`}
+            onClick={() => gravarIdioma(loc)}
             aria-label={`Idioma: ${LANG_LABEL[loc]}`}
             className={loc === currentLocale ? activeBase : linkBase}
           >

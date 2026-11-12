@@ -13,6 +13,7 @@ import type {
   AdditionalReadingBlock,
 } from '../../lib/afos-tradeoff/loader'
 import { MONTHS, type MonthsLocale } from '../../lib/i18n/months'
+import { gravarIdioma } from '../../lib/i18n/config'
 import { InlineSubscribe } from './InlineSubscribe'
 
 type Theme = 'light' | 'blue'
@@ -517,7 +518,7 @@ function LanguagePicker({ currentLocale, currentDate, isBlue, country }: { curre
       {locales.map((loc, i) => (
         <span key={loc} className="flex items-center gap-2">
           {i > 0 && <span className={isBlue ? 'text-blue-400/50' : 'text-gray-300'}>·</span>}
-          <a href={`/${loc}/tradeoff/${country}/${currentDate}`} className={loc === currentLocale ? activeBase : linkBase}>{LANG_LABEL[loc]}</a>
+          <a href={`/${loc}/tradeoff/${country}/${currentDate}`} onClick={() => gravarIdioma(loc)} className={loc === currentLocale ? activeBase : linkBase}>{LANG_LABEL[loc]}</a>
         </span>
       ))}
     </div>

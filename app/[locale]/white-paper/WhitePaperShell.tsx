@@ -1,6 +1,7 @@
 'use client'
 import { caminhoDashboard } from '../../../lib/paineis.mjs'
 import { useEffect, useState } from 'react'
+import { gravarIdioma } from '../../../lib/i18n/config'
 
 // Shared theme key with AFOS Daily/Tradeoff/how-it-works so the reading
 // preference (light / Sapphire Blue) persists across all reading surfaces.
@@ -41,6 +42,7 @@ function LanguagePicker({ locale, isBlue, langAria }: { locale: string; isBlue: 
           {i > 0 && <span className={isBlue ? 'text-blue-400/50' : 'text-gray-300'}>·</span>}
           <a
             href={`/${loc}/${SLUG}`}
+            onClick={() => gravarIdioma(loc)}
             hrefLang={loc}
             aria-current={loc === locale ? 'page' : undefined}
             aria-label={LANG_LABEL[loc]}

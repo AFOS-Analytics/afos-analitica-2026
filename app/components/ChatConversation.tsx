@@ -161,7 +161,9 @@ export function ChatConversation({ locale, compact = false }: { locale: Locale; 
 
         if (!res.ok || !res.body) {
           const data = await res.json().catch(() => null)
-          throw new Error(data?.message || s.errorGeneric)
+          // A mensagem do servidor (o 429) só existe em português: em EN e ES
+          // vale o erro genérico do próprio idioma.
+          throw new Error((locale === 'pt-BR' && data?.message) || s.errorGeneric)
         }
 
         const reader = res.body.getReader()

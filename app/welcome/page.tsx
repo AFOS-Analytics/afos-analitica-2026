@@ -13,7 +13,7 @@
 import type { Metadata } from 'next'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
-import { defaultLocale } from '../../lib/i18n/config'
+import { defaultLocale, COOKIE_NAME, isValidLocale } from '../../lib/i18n/config'
 import { Redis } from '@upstash/redis'
 import WelcomeClient from './WelcomeClient'
 
@@ -55,7 +55,10 @@ export default async function WelcomePage() {
     // gravado quando o Redis responde, entao um soluco do Redis fazia um
     // cadastro BEM-SUCEDIDO terminar numa landing em ingles, sem explicacao e
     // sem a escolha de idioma. Medido em 27/Ago/2026, com a base 100% pt-BR.
-    redirect(`/${defaultLocale}`)
+    // Antes do padrao, o idioma que o leitor ja escolheu (NEXT_LOCALE), como
+    // fazem a raiz e o middleware.
+    const salvo = cookieStore.get(COOKIE_NAME)?.value
+    redirect(`/${salvo && isValidLocale(salvo) ? salvo : defaultLocale}`)
   }
 
   return <WelcomeClient email={session.email} />

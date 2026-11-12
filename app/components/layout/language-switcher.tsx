@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
-import { locales, localeLabels, COOKIE_NAME, type Locale } from '../../../lib/i18n/config';
+import { locales, localeLabels, gravarIdioma, type Locale } from '../../../lib/i18n/config';
 import { useLocale } from '../../i18n/context';
 
 const localeFlags: Record<Locale, string> = {
@@ -27,9 +27,7 @@ export function LanguageSwitcher() {
   }, [open]);
 
   function switchLocale(newLocale: Locale) {
-    try {
-      document.cookie = `${COOKIE_NAME}=${newLocale};path=/;max-age=${365*24*60*60};SameSite=Lax;Secure`;
-    } catch {}
+    gravarIdioma(newLocale);
 
     const segments = pathname.split('/').filter(Boolean);
     if (segments.length > 0) {

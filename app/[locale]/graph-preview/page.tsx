@@ -1,7 +1,8 @@
 import { getCountryDivergence } from '../../../lib/country-data'
 import { CountryGraph } from '../../components/CountryGraph'
 
-export const dynamic = 'force-static'
+// Sem `dynamic = 'force-static'`, como em daily e tradeoff: o force-static
+// esvaziava o headers() do layout raiz e gravava lang="pt-BR" em /en e /es.
 
 // PREVIEW (não indexado): grafo estilo Obsidian do cruzamento AFOS, caso EUA 2024.
 // noindex explícito: página herda index:true do root layout se não sobrescrever.
