@@ -41,9 +41,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   // do produto. Antes daqui o painel e o AFOS Weekly apontavam para o MESMO
   // /brand/og-en-linkedin-1200x627.png, e dois posts no mesmo dia apareciam
   // com a imagem idêntica no feed.
-  // ⚠️ O cartão carrega PREÇO e leva carimbo de data dentro da arte. Quando o
-  // preço andar, regerar com scripts/build-og-cards-us.mjs e trocar a data.
-  return buildMetadata({ ...SEO[loc], path: 'dashboard/us', image: '/brand/og-us-senate-panel-1200x627.png' }, loc);
+  // 🧊 12/Nov/2026: com a cobertura encerrada, o cartão do Senado (preço e
+  // carimbo de 23/Ago dentro da arte) saiu. Fica a imagem genérica da marca,
+  // sem preço, que não envelhece. 1200x627, o tamanho que socialMeta declara.
+  return buildMetadata({ ...SEO[loc], path: 'dashboard/us', image: '/brand/og-featured-linkedin-1200x627.png' }, loc);
 }
 
 // O generic ballot é lido no SERVIDOR e passa como prop, igual ao painel do
