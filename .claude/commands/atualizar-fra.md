@@ -63,6 +63,7 @@ Desde 08/Nov/2026 (decisão do André) o cartão do painel é **permanente e sem
 ```bash
 npx tsc --noEmit -p .                           # o build type-checa scripts/
 npx tsx scripts/check-hardcoded-ptbr.ts
+npx tsx scripts/check-locale-json.ts              # EN/ES da França: mesmo updatedAt, perfis, parágrafos e números do pt-BR
 git add <arquivos por NOME>                      # nunca add -A
 git commit ...; git push origin HEAD:main
 npx vercel --prod --yes --cwd <worktree>         # conferir depois com vercel inspect: target production

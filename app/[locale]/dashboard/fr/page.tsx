@@ -5,6 +5,7 @@ import { FrDashboardClient } from './FrDashboardClient'
 import { SUPPORTED_LOCALES } from '../../../../lib/afos-daily/loader'
 import { buildMetadata } from '../../../../lib/seo/metadata'
 import type { Locale } from '../../../../lib/i18n/config'
+import { mesmoCarimbo } from '../../../../lib/dashboard/static-data'
 import {
   carregarImprensaFr,
   carregarPesquisasFr,
@@ -79,30 +80,36 @@ function lerInstitutos(): FrInstitutos | null {
   }
 }
 
-function lerCandidatos(locale: string): FrCandidatos | null {
-  const loc = locale === 'en' || locale === 'es' ? locale : 'pt-BR'
-  for (const l of [loc, 'pt-BR']) {
-    try {
-      const p = join(process.cwd(), 'public', 'fr', `candidatos.${l}.json`)
-      if (existsSync(p)) return JSON.parse(readFileSync(p, 'utf-8')) as FrCandidatos
-    } catch (e) {
-      console.error('[fr] candidatos ilegível:', e)
-    }
+function lerJsonFr(arquivo: string, rotulo: string): unknown | null {
+  try {
+    const p = join(process.cwd(), 'public', 'fr', arquivo)
+    return existsSync(p) ? JSON.parse(readFileSync(p, 'utf-8')) : null
+  } catch (e) {
+    console.error(`[fr] ${rotulo} ilegível:`, e)
+    return null
   }
-  return null
+}
+
+/**
+ * Variante do idioma só se for da MESMA rodada do pt-BR (mesmo `updatedAt`),
+ * como no painel do Brasil (lib/dashboard/static-data.ts). Senão vale o pt-BR:
+ * melhor servir português do que a análise da véspera sob a tela de hoje.
+ */
+function lerFrLocalizado(base: 'candidatos' | 'analise', rotulo: string, locale: string): unknown | null {
+  const pt = lerJsonFr(`${base}.pt-BR.json`, rotulo)
+  if (locale === 'en' || locale === 'es') {
+    const traduzido = lerJsonFr(`${base}.${locale}.json`, rotulo)
+    if (traduzido && mesmoCarimbo(pt, traduzido)) return traduzido
+  }
+  return pt
+}
+
+function lerCandidatos(locale: string): FrCandidatos | null {
+  return lerFrLocalizado('candidatos', 'candidatos', locale) as FrCandidatos | null
 }
 
 function lerAnalise(locale: string): FrAnalise | null {
-  const loc = locale === 'en' || locale === 'es' ? locale : 'pt-BR'
-  for (const l of [loc, 'pt-BR']) {
-    try {
-      const p = join(process.cwd(), 'public', 'fr', `analise.${l}.json`)
-      if (existsSync(p)) return JSON.parse(readFileSync(p, 'utf-8')) as FrAnalise
-    } catch (e) {
-      console.error('[fr] análise ilegível:', e)
-    }
-  }
-  return null
+  return lerFrLocalizado('analise', 'análise', locale) as FrAnalise | null
 }
 
 export default async function FrDashboardPage({ params }: { params: Promise<{ locale: string }> }) {
