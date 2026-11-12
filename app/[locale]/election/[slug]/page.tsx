@@ -6,7 +6,7 @@ import { getElectionBySlug, COUNTRIES_SEO, ISO3_TO_CC } from '../../../../lib/se
 import { getCountryDivergence } from '../../../../lib/country-data'
 import { ElectionPageContent } from '../../../components/ElectionPageContent'
 import { socialMeta } from '../../../../lib/seo/metadata'
-import { breadcrumbSchema, countryDatasetSchema } from '../../../../lib/seo/schema'
+import { breadcrumbSchema, countryDatasetSchema, coberturaTemporal } from '../../../../lib/seo/schema'
 
 const BASE_URL = 'https://www.afos-analytics.com'
 
@@ -86,6 +86,11 @@ export default async function ElectionPage({ params }: { params: Promise<{ local
   const name = country.name[loc] || country.name['en']
   const type = election.type[loc] || election.type['en']
   const div = getCountryDivergence(country.iso3)
+  // 🔴 O dataset do país é de UMA eleição (a do caso validado). Só se declara o
+  // Dataset quando o ano bate com o desta página: sem isso, /election/france-2027
+  // declarava o dataset das legislativas de 2024. Só JSON-LD; o `div` passado ao
+  // conteúdo visível não muda.
+  const datasetDaEleicao = div?.hf && election.year === Number(div.election.first_round.slice(0, 4)) ? div : null
   // JSON-LD: espelha /country (breadcrumb + dataset HF quando existir), antes ausente aqui.
   const breadcrumb = breadcrumbSchema(loc, [
     { name: 'AFOS Analytics', path: '' },
@@ -94,7 +99,7 @@ export default async function ElectionPage({ params }: { params: Promise<{ local
   return (
     <>
       <JsonLd data={breadcrumb} />
-      {div?.hf && <JsonLd data={countryDatasetSchema(name, div.hf)} />}
+      {datasetDaEleicao && <JsonLd data={countryDatasetSchema(name, datasetDaEleicao.hf, country.iso3, loc, undefined, coberturaTemporal(datasetDaEleicao))} />}
       <ElectionPageContent locale={loc} country={country} election={election} div={div} />
     </>
   )

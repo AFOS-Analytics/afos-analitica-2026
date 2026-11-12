@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation'
 import { Source_Sans_3, Source_Serif_4 } from 'next/font/google'
 import { RelatorioFinalTemplate } from '../../../components/RelatorioFinalTemplate'
 import { buildMetadata } from '../../../../lib/seo/metadata'
+import { relatorioSchema } from '../../../../lib/relatorio-final/schema'
+import { JsonLd } from '../../../components/JsonLd'
 import type { Locale } from '../../../../lib/i18n/config'
 import {
   RELATORIO_LOCALES, RELATORIO_PDF, HARVARD_BR2026_URL, carregarRelatorio, relatorioExiste, type RelatorioLocale,
@@ -57,14 +59,18 @@ export default async function RelatorioFinalPage(props: Props) {
   const rel = carregarRelatorio(locale)
   if (!rel) notFound()
   const idiomas = RELATORIO_LOCALES.filter((l) => relatorioExiste(l))
+  const s = SEO[locale]
   return (
-    <RelatorioFinalTemplate
-      locale={locale}
-      corpo={rel.corpo}
-      pdf={RELATORIO_PDF[locale]}
-      harvardUrl={HARVARD_BR2026_URL}
-      idiomas={[...idiomas]}
-      fontClass={`${sans.variable} ${serif.variable}`}
-    />
+    <>
+      <JsonLd data={relatorioSchema('brazil-2026', locale, s.title.replace(' | AFOS Analytics', ''), s.description)} />
+      <RelatorioFinalTemplate
+        locale={locale}
+        corpo={rel.corpo}
+        pdf={RELATORIO_PDF[locale]}
+        harvardUrl={HARVARD_BR2026_URL}
+        idiomas={[...idiomas]}
+        fontClass={`${sans.variable} ${serif.variable}`}
+      />
+    </>
   )
 }

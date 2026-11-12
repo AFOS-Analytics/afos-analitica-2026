@@ -168,8 +168,11 @@ export function datasetSchema() {
     // qualquer rota.
     '@id': `${BASE_URL}/#dataset-afos`,
     mainEntityOfPage: `${BASE_URL}/pt-BR/data-sources`,
-    name: 'AFOS Analytics Election Data',
-    description: 'Global electoral political risk intelligence dataset: real-time Polymarket odds, polls from 17+ institutes, and news cross-references across 15 countries.',
+    // 🔴 Nome, descrição e cobertura restritos ao BRASIL 2026 em 12/Nov/2026: o
+    // nó se dizia global, em 15 países, mas o único arquivo distribuído é o CSV
+    // do Brasil 2026. Os outros países têm o próprio Dataset na página de país.
+    name: 'AFOS Analytics, Brazil 2026 electoral divergence dataset',
+    description: 'Brazil 2026 presidential election: Polymarket odds, polls from 17+ institutes registered with the TSE, and press coverage, recorded side by side and checked against the official result. Open dataset, CC BY 4.0.',
     url: BASE_URL,
     // EVAL 06/Jun: licença estava MIT (errada, o dado é CC BY 4.0). distribution apontava
     // para /api/global-map (bloqueado no robots). Agora aponta para o dataset aberto real no
@@ -177,8 +180,9 @@ export function datasetSchema() {
     license: 'https://creativecommons.org/licenses/by/4.0/',
     sameAs: 'https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence',
     creator: { '@type': 'Organization', name: 'AFOS Analytics', url: BASE_URL },
-    temporalCoverage: '2025/..',
-    spatialCoverage: { '@type': 'Place', name: 'Global' },
+    // Dataset FECHADO: coleta diária de 04/Abr/2026 a 01/Nov/2026 (hf-assets/DATASHEET.md).
+    temporalCoverage: '2026-04-04/2026-11-01',
+    spatialCoverage: { '@type': 'Place', name: 'Brazil' },
     distribution: {
       '@type': 'DataDownload',
       encodingFormat: 'text/csv',
@@ -187,8 +191,26 @@ export function datasetSchema() {
   };
 }
 
+/**
+ * Intervalo fechado de cobertura de um caso validado, a partir do próprio dado:
+ * início na primeira data da série de mercado e fim no que vier depois, a última
+ * data da série ou o dia da eleição (2º turno quando houver). Sem série, devolve
+ * `undefined` e o nó sai sem `temporalCoverage`, em vez de um intervalo inventado.
+ */
+export function coberturaTemporal(div: {
+  election: { first_round: string; runoff: string }
+  market_trajectory?: { dates: string[] }
+}): string | undefined {
+  const datas = div.market_trajectory?.dates ?? []
+  if (!datas.length) return undefined
+  const eleicao = div.election.runoff || div.election.first_round
+  const ultima = datas[datas.length - 1]
+  const fim = eleicao && eleicao > ultima ? eleicao : ultima
+  return `${datas[0]}/${fim}`
+}
+
 /** Dataset por país, casos validados (Google Dataset Search / GEO) */
-export function countryDatasetSchema(countryName: string, hf: string, iso3?: string, loc?: string, paginaUrl?: string) {
+export function countryDatasetSchema(countryName: string, hf: string, iso3?: string, loc?: string, paginaUrl?: string, temporalCoverage?: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Dataset',
@@ -204,7 +226,9 @@ export function countryDatasetSchema(countryName: string, hf: string, iso3?: str
     isAccessibleForFree: true,
     creator: { '@type': 'Organization', name: 'AFOS Analytics', url: BASE_URL },
     publisher: { '@id': `${BASE_URL}/#organization` },
-    temporalCoverage: '2024/..',
+    // Intervalo FECHADO vindo do dado (ver `coberturaTemporal`); era '2024/..'
+    // fixo e aberto para todo país, inclusive eleições de 2025 e 2026 já encerradas.
+    ...(temporalCoverage ? { temporalCoverage } : {}),
     spatialCoverage: { '@type': 'Place', name: countryName },
     sameAs: hf,
     // 🏷️ A etiqueta do formato tem de dizer a verdade: `hf` é a PÁGINA do

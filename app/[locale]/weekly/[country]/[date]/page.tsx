@@ -11,6 +11,8 @@ import {
   SUPPORTED_LOCALES,
   LOCALE_ORIGEM,
 } from '../../../../../lib/afos-weekly/loader'
+import { buildWeeklyArticleSchema, buildWeeklyBreadcrumbSchema } from '../../../../../lib/afos-weekly/schema'
+import { JsonLd } from '../../../../components/JsonLd'
 
 /**
  * 🏷️ Assunto do cartão social, POR PAÍS.
@@ -147,8 +149,15 @@ export default async function WeeklyEditionPage(props: PageProps) {
   const data = loadWeekly(p.date, p.locale, p.country)
   if (!data) notFound()
 
+  // JSON-LD só no ramo com dado carregado; as saídas de erro acima são 404.
   return (
     <main className="min-h-screen bg-white">
+      <JsonLd
+        data={[
+          buildWeeklyArticleSchema(data, p.locale, p.country, getOgImageUrl(p.locale, data.ogImage)),
+          buildWeeklyBreadcrumbSchema(p.date, p.locale, p.country),
+        ]}
+      />
       <AfosWeeklyTemplate data={data} locale={p.locale} country={p.country} />
     </main>
   )
