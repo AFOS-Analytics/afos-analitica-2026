@@ -15,7 +15,11 @@ import { DASHBOARD_SEO } from '../layout';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const loc = (locale === 'en' || locale === 'es' ? locale : 'pt-BR') as Locale;
-  return buildMetadata({ ...DASHBOARD_SEO[loc], path: 'dashboard/br' }, loc);
+  // 🖼️ Painel ENCERRADO (lib/paineis.mjs): cartão do relatório final, por idioma,
+  // que traz o resultado oficial e nenhum preço de mercado. O genérico dizia
+  // "Notícias ao Vivo / Análises diárias" para um painel congelado desde 02/Nov.
+  const image = `/brand/og-relatorio-final-br-2026-${loc === 'pt-BR' ? 'pt' : loc}-1200x627.png`;
+  return buildMetadata({ ...DASHBOARD_SEO[loc], path: 'dashboard/br', image }, loc);
 }
 
 // Sem isto o Next nao sabe quais locales pre-renderizar e serve a pagina sob

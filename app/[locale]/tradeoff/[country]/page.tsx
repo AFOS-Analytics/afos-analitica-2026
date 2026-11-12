@@ -175,6 +175,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const ROTULO_PAIS: Record<string, Record<string, string>> = {
     br: { 'pt-BR': 'Brasil', en: 'Brazil', es: 'Brasil' },
     us: { 'pt-BR': 'EUA', en: 'US', es: 'EE. UU.' },
+    fr: { 'pt-BR': 'França', en: 'France', es: 'Francia' },
   }
   const rotulo = ROTULO_PAIS[pais]?.[loc] ?? ROTULO_PAIS[pais]?.['en'] ?? ''
   const title = rotulo ? t.metaTitle.replace(' | AFOS', ` · ${rotulo} | AFOS`) : t.metaTitle
@@ -182,7 +183,9 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   return {
     title,
     description,
-    robots: { index: true, follow: true },
+    // País válido ainda sem edição publicada é página vazia: `noindex` até a
+    // primeira edição, `follow` para não cortar os links.
+    robots: getLatestDate(pais) ? { index: true, follow: true } : { index: false, follow: true },
     alternates: {
       canonical,
       // ⚠️ COM O PAÍS. Sem ele o hreflang do arquivo dos EUA declarava que as
@@ -303,7 +306,8 @@ export default async function TradeoffArchivePage(props: Props) {
     description: t.metaDesc,
     url: `${BASE}/${loc}/tradeoff/${pais}`,
     inLanguage: loc,
-    isPartOf: { '@id': `${BASE}/#organization` },
+    isPartOf: { '@id': `${BASE}/#website` },
+    publisher: { '@id': `${BASE}/#organization` },
     mainEntity: {
       '@type': 'ItemList',
       itemListOrder: 'https://schema.org/ItemListOrderDescending',

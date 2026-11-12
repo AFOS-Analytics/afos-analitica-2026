@@ -121,7 +121,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
         {
           url: ogImage,
           width: 1200,
-          height: 630,
+          height: 627,
           alt: 'AFOS Analytics, Weekly Tradeoff',
         },
       ],
