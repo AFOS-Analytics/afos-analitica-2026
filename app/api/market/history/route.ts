@@ -63,8 +63,12 @@ export async function GET(request: Request) {
 
     const prices = await prisma.marketPrice.findMany({
       where: {
+        // `after` é ESTRITO (gt), como o cabeçalho promete. Com `gte`, paginar
+        // com `after=<windowEnd>` devolvia de novo todas as linhas do instante
+        // da fronteira (12/Nov/2026, EVAL). A perda do resto de um instante
+        // cortado pelo `take` é evitada abaixo, ao descartar esse instante.
         snapshotAt: {
-          gte: after && after > since ? after : since,
+          ...(after && after >= since ? { gt: after } : { gte: since }),
           ...(before ? { lt: before } : {}),
         },
         outcome: {
@@ -83,6 +87,20 @@ export async function GET(request: Request) {
       take: LIMITE,
     })
 
+    // Quando o `take` corta, o ÚLTIMO instante pode ter vindo pela metade (os
+    // outros desfechos do mesmo snapshotAt ficaram de fora). Ele é descartado,
+    // e `windowEnd` passa a ser o último instante COMPLETO: `after=<windowEnd>`
+    // então retoma exatamente onde parou, sem repetir nem perder linha. Se a
+    // página inteira for um instante só, não há o que descartar sem travar a
+    // paginação, e ela segue como veio.
+    const truncated = prices.length === LIMITE
+    if (truncated) {
+      const ultimo = prices[prices.length - 1].snapshotAt.getTime()
+      let corte = prices.length
+      while (corte > 0 && prices[corte - 1].snapshotAt.getTime() === ultimo) corte--
+      if (corte > 0) prices.length = corte
+    }
+
     return NextResponse.json(
       {
         candidate,
@@ -92,8 +110,9 @@ export async function GET(request: Request) {
         limit: LIMITE,
         // 🔑 `truncated: true` significa que EXISTEM pontos mais novos que
         // `windowEnd` dentro da janela pedida, e eles não vieram. Paginar com
-        // `after=<windowEnd>` para continuar de onde parou.
-        truncated: prices.length === LIMITE,
+        // `after=<windowEnd>` para continuar de onde parou: `windowEnd` é o
+        // último instante completo, e `after` é estrito.
+        truncated,
         windowStart: prices.length ? prices[0].snapshotAt : null,
         windowEnd: prices.length ? prices[prices.length - 1].snapshotAt : null,
         data: prices.map((p) => ({
