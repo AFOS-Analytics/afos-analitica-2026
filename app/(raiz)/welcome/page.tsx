@@ -13,7 +13,7 @@
 import type { Metadata } from 'next'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
-import { defaultLocale, COOKIE_NAME, isValidLocale } from '../../lib/i18n/config'
+import { defaultLocale, COOKIE_NAME, isValidLocale } from '../../../lib/i18n/config'
 import { Redis } from '@upstash/redis'
 import WelcomeClient from './WelcomeClient'
 

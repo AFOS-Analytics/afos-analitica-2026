@@ -158,15 +158,15 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Bare root `/` falls through to app/page.tsx, which renders OG metadata
+  // Bare root `/` falls through to app/(raiz)/page.tsx, which renders OG metadata
   // (EN copy) and dispatches a JS smart-redirect based on navigator.language.
   // Without this, middleware would 307 to /pt-BR before any HTML body renders,
   // leaving LLM crawlers and IM clients that don't follow redirects with empty
-  // OG. See app/page.tsx for the redirect logic.
+  // OG. See app/(raiz)/page.tsx for the redirect logic.
   if (pathname === '/') {
     // ⚠️ A RAIZ É ONDE O TRÁFEGO DE FORA CAI, incluindo a pílula do LinkedIn. Ela sai
     // daqui antes de qualquer redirecionamento, então a origem tem de ser gravada
-    // AQUI: o `app/page.tsx` despacha para /pt-BR ou /en sem carregar a query, e sem
+    // AQUI: o `app/(raiz)/page.tsx` despacha para /pt-BR ou /en sem carregar a query, e sem
     // este cookie o ?from=li morre em silêncio. O cookie é o transporte, não a URL.
     return ensureOriginCookie(request, ensureVisitorCookie(request, NextResponse.next()));
   }

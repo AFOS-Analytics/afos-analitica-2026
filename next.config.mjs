@@ -9,6 +9,13 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
 
+  // app/global-not-found.tsx: com dois layouts raiz (app/[locale] e app/(raiz)),
+  // não existe app/layout.tsx para embrulhar a 404 de quem não casa com rota
+  // nenhuma. Next 15.4+; a versão instalada é 15.5 (12/Nov/2026).
+  experimental: {
+    globalNotFound: true,
+  },
+
   async headers() {
     return [
       {

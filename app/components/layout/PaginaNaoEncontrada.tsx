@@ -1,10 +1,16 @@
-import { caminhoDashboard } from '../lib/paineis.mjs'
+import { caminhoDashboard } from '../../../lib/paineis.mjs'
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { headers } from 'next/headers'
-import { isValidLocale, defaultLocale } from '../lib/i18n/config'
+import type { Locale } from '../../../lib/i18n/config'
 
-export const metadata: Metadata = {
+/**
+ * Corpo da página 404, comum aos dois lugares que a servem:
+ *   - app/[locale]/not-found.tsx, para `notFound()` chamado por página de /[idioma];
+ *   - app/global-not-found.tsx, para endereço que não casa com rota nenhuma.
+ * O idioma vem de quem chama, para que nenhum dos dois precise ler cabeçalho
+ * dentro da árvore de /[idioma] (ler cabeçalho ali deixava o site todo dinâmico).
+ */
+export const metadataNaoEncontrada: Metadata = {
   title: 'Página não encontrada — AFOS Analytics',
   description: 'A página solicitada não existe.',
   robots: { index: false, follow: true },
@@ -32,11 +38,7 @@ const T = {
   },
 }
 
-export default async function NotFound() {
-  // O middleware propaga o locale da rota via header x-pathname-locale.
-  const h = await headers()
-  const seg = h.get('x-pathname-locale')
-  const locale = seg && isValidLocale(seg) ? seg : defaultLocale
+export function PaginaNaoEncontrada({ locale }: { locale: Locale }) {
   const t = T[locale]
 
   return (

@@ -2,9 +2,23 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { organizationSchema, webAppSchema } from '../lib/seo/schema';
-import { JsonLd } from './components/JsonLd';
-import "./globals.css";
+import { organizationSchema, webAppSchema } from '../../../lib/seo/schema';
+import { JsonLd } from '../JsonLd';
+import "../../globals.css";
+
+/**
+ * O DOCUMENTO (`<html>`, `<head>`, `<body>`) comum aos layouts raiz do site.
+ *
+ * 🔴 12/Nov/2026: até aqui havia UM layout raiz, app/layout.tsx, que lia o idioma
+ * com `await headers()`. Só isso tornava o site INTEIRO dinâmico: nenhuma página
+ * de /[idioma] cacheava, `revalidate` e `generateStaticParams` não tinham efeito
+ * e toda visita respondia `no-store`. Agora há dois layouts raiz:
+ *   - app/[locale]/layout.tsx, que tira o idioma de `params` (estático);
+ *   - app/(raiz)/layout.tsx, para `/` e `/welcome`, que já eram dinâmicas.
+ * Os dois montam o documento por aqui, para não haver duas cópias da `<head>`.
+ * Trocar de um layout raiz para o outro recarrega a página inteira, e isso só
+ * acontece entre a raiz e as páginas com idioma.
+ */
 
 // Real Inter from Google Fonts (subsetted, self-hosted by Next). Replaces
 // the prior placeholder `{ className: 'font-sans antialiased' }` which fell
@@ -15,13 +29,13 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
-export const viewport: Viewport = {
+export const viewportRaiz: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
 };
 
-export const metadata: Metadata = {
+export const metadataRaiz: Metadata = {
   metadataBase: new URL('https://www.afos-analytics.com'),
   title: "AFOS Analytics, Inteligência de Risco Político Eleitoral Global, Open-Source",
   description: "Inteligência de risco político eleitoral global em tempo real: cruzamento entre Polymarket, +17 institutos brasileiros e cobertura jornalística. Open-source, fontes públicas auditáveis. Brasil 2026 e 15 países.",
@@ -65,22 +79,9 @@ export const metadata: Metadata = {
   // geo tags moved to lib/seo/metadata.ts buildMetadata() per locale
 };
 
-// Read locale from middleware-injected header so <html lang> matches the
-// route. Defaults to pt-BR for routes that don't pass through the locale
-// matcher (api, _next, static).
-import { headers } from 'next/headers';
-
-export default async function RootLayout(
-  {
-    children,
-  }: Readonly<{
-    children: React.ReactNode;
-  }>
-) {
-  const headersList = await headers();
-  const localeFromMiddleware = headersList.get('x-pathname-locale') || 'pt-BR';
+export function DocumentoRaiz({ lang, children }: { lang: string; children: React.ReactNode }) {
   return (
-    <html lang={localeFromMiddleware}>
+    <html lang={lang}>
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
         <link rel="shortcut icon" href="/favicon.svg?v=2" />
