@@ -71,8 +71,14 @@ async function resolveRedirect(url: string): Promise<string> {
   return url
 }
 
-export const UA_NAVEGADOR =
-  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36'
+/**
+ * User-Agent INSTITUCIONAL, o mesmo do resto da casa. Até 12/Nov/2026 aqui
+ * havia um UA de navegador (Chrome/120 em Windows), o que contraria a regra
+ * permanente: não se forja User-Agent. Se o Google recusar a chamada com este
+ * UA, a resolução falha DECLARADA (mensagem no terminal) e o arquivador cai
+ * para a URL original. Não se troca por outro disfarce.
+ */
+export const UA_AFOS = 'AFOS-Analytics/1.0 (https://www.afos-analytics.com; pesquisa academica aberta)'
 
 /** Os três atributos que o endpoint exige. Sem os três, não há o que pedir. */
 export function extrairAtributos(html: string): { sg: string; ts: string; id: string } | null {
@@ -114,17 +120,31 @@ export function montarPayload(a: { sg: string; ts: string; id: string }): string
 
 async function resolverGoogleNews(url: string): Promise<string | null> {
   try {
-    const pagina = await fetch(url, { headers: { 'User-Agent': UA_NAVEGADOR }, signal: AbortSignal.timeout(25000) })
+    const pagina = await fetch(url, { headers: { 'User-Agent': UA_AFOS }, signal: AbortSignal.timeout(25000) })
+    if (!pagina.ok) {
+      console.warn(`  ⚠️ Google News recusou o invólucro (HTTP ${pagina.status}) com o User-Agent institucional; arquivando a URL original.`)
+      return null
+    }
     const attrs = extrairAtributos(await pagina.text())
-    if (!attrs) return null
+    if (!attrs) {
+      console.warn('  ⚠️ Google News não devolveu os atributos do invólucro ao User-Agent institucional; arquivando a URL original.')
+      return null
+    }
     const res = await fetch('https://news.google.com/_/DotsSplashUi/data/batchexecute', {
       method: 'POST',
-      headers: { 'User-Agent': UA_NAVEGADOR, 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+      headers: { 'User-Agent': UA_AFOS, 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
       body: 'f.req=' + encodeURIComponent(montarPayload(attrs)),
       signal: AbortSignal.timeout(25000),
     })
-    return extrairUrlDoVeiculo(await res.text())
-  } catch {
+    if (!res.ok) {
+      console.warn(`  ⚠️ batchexecute do Google News recusou a chamada (HTTP ${res.status}); arquivando a URL original.`)
+      return null
+    }
+    const veiculo = extrairUrlDoVeiculo(await res.text())
+    if (!veiculo) console.warn('  ⚠️ batchexecute não devolveu URL de veículo; arquivando a URL original.')
+    return veiculo
+  } catch (e) {
+    console.warn(`  ⚠️ resolução do Google News falhou (${e instanceof Error ? e.message : String(e)}); arquivando a URL original.`)
     return null
   }
 }

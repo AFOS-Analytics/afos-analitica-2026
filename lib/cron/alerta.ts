@@ -22,10 +22,15 @@ export async function avisarFalhaDeCron(
   rota: string,
   motivo: string,
   detalhe?: unknown
-): Promise<void> {
+): Promise<boolean> {
+  // Devolve true quando o e-mail saiu. Quem usa trava (avisarComTrava) precisa
+  // disso para liberar a trava quando o aviso não saiu.
   const destino = process.env.ALERT_EMAIL || 'alerts@afos-analytics.com'
   try {
-    await sendSystemAlert(destino, {
+    // sendSystemAlert NAO lanca quando o envio falha: devolve false (chave do
+    // Resend ausente, ou as 3 tentativas falharam). Sem ler o retorno, o catch
+    // abaixo nunca roda nesses casos e nenhum log diz que o alerta calou.
+    const ok = await sendSystemAlert(destino, {
       type: `cron-falhou:${rota}`,
       message: `O cron ${rota} não completou: ${motivo}`,
       // Redação antes de sair, porque alerta é email e email circula.
@@ -38,8 +43,11 @@ export async function avisarFalhaDeCron(
         .filter(Boolean)
         .join('\n'),
     })
+    if (!ok) console.error(`[cron/${rota}] o próprio alerta falhou (envio devolveu false). Motivo do cron: ${motivo}`)
+    return ok
   } catch (e) {
     console.error(`[cron/${rota}] o próprio alerta falhou:`, e)
+    return false
   }
 }
 
@@ -67,7 +75,7 @@ export async function avisarAtrasoDaFonte(
 ): Promise<void> {
   const destino = process.env.ALERT_EMAIL || 'alerts@afos-analytics.com'
   try {
-    await sendSystemAlert(destino, {
+    const ok = await sendSystemAlert(destino, {
       type: `fonte-congelada:us-generic-ballot (${atrasoDias}d)`,
       message: `A tabela do generic ballot dos EUA nao recebe linha nova ha ${atrasoDias} dias.`,
       details: [
@@ -88,6 +96,7 @@ export async function avisarAtrasoDaFonte(
         `quando: ${new Date().toISOString()}`,
       ].join('\n'),
     })
+    if (!ok) console.error(`[cron/refresh-us-polls] o proprio alerta de atraso falhou (envio devolveu false, ${atrasoDias}d)`)
   } catch (e) {
     console.error('[cron/refresh-us-polls] o proprio alerta de atraso falhou:', e)
   }
@@ -202,7 +211,7 @@ export async function avisarCasaCalada(
   }
 
   try {
-    await sendSystemAlert(destino, {
+    const ok = await sendSystemAlert(destino, {
       type: `casa-calada:us-generic-ballot (${casas.map((c) => c.instituto).join(', ')})`,
       message: `${casas.length} casa(s) de pesquisa fora da propria cadencia no generic ballot dos EUA.`,
       details: [
@@ -234,6 +243,7 @@ export async function avisarCasaCalada(
         `quando: ${new Date().toISOString()}`,
       ].join('\n'),
     })
+    if (!ok) console.error('[cron/refresh-us-polls] o proprio alerta de casa calada falhou (envio devolveu false)')
   } catch (e) {
     console.error('[cron/refresh-us-polls] o proprio alerta de casa calada falhou:', e)
   }

@@ -119,15 +119,30 @@ async function fetchWithTimeout(url: string, timeoutMs: number = DEFAULT_TIMEOUT
   }
 }
 
-async function fetchWithRetry(url: string, retries: number = MAX_RETRIES): Promise<Response | null> {
+/** Tempo que resta até o prazo, ou o timeout padrão quando não há prazo. */
+function restante(deadline?: number): number {
+  return deadline === undefined ? DEFAULT_TIMEOUT_MS : deadline - Date.now();
+}
+
+async function fetchWithRetry(
+  url: string,
+  retries: number = MAX_RETRIES,
+  deadline?: number,
+): Promise<Response | null> {
   if (!checkCircuit()) {
     console.warn('[polymarket-client] Circuit OPEN — skipping request:', url);
     return null;
   }
 
   for (let attempt = 0; attempt <= retries; attempt++) {
+    // Com prazo, o timeout da tentativa nunca passa do que resta dele.
+    const timeoutMs = Math.min(DEFAULT_TIMEOUT_MS, restante(deadline));
+    if (timeoutMs < 1_000) {
+      console.warn(`[polymarket-client] Prazo da rodada esgotado, sem nova tentativa: ${url}`);
+      return null;
+    }
     try {
-      const res = await fetchWithTimeout(url);
+      const res = await fetchWithTimeout(url, timeoutMs);
 
       if (res.status === 429) {
         console.warn('[polymarket-client] Rate limited (429), circuit opening');
@@ -141,7 +156,7 @@ async function fetchWithRetry(url: string, retries: number = MAX_RETRIES): Promi
       }
 
       // 5xx: retry
-      if (res.status >= 500 && attempt < retries) {
+      if (res.status >= 500 && attempt < retries && restante(deadline) > RETRY_DELAY_MS * (attempt + 1) + 1_000) {
         console.warn(`[polymarket-client] Server error ${res.status}, retry ${attempt + 1}/${retries}`);
         await sleep(RETRY_DELAY_MS * (attempt + 1));
         continue;
@@ -155,12 +170,12 @@ async function fetchWithRetry(url: string, retries: number = MAX_RETRIES): Promi
       const msg = error instanceof Error ? error.message : String(error);
 
       if (msg.includes('aborted')) {
-        console.error(`[polymarket-client] Timeout (${DEFAULT_TIMEOUT_MS}ms): ${url}`);
+        console.error(`[polymarket-client] Timeout (${timeoutMs}ms): ${url}`);
       } else {
         console.error(`[polymarket-client] Network error: ${msg}`);
       }
 
-      if (attempt < retries) {
+      if (attempt < retries && restante(deadline) > RETRY_DELAY_MS * (attempt + 1) + 1_000) {
         await sleep(RETRY_DELAY_MS * (attempt + 1));
         continue;
       }
@@ -225,14 +240,14 @@ function parseEvent(raw: PolymarketRawEvent): ParsedEvent {
  * Fetch a single event by slug.
  * Returns null if not found or on error.
  */
-export async function fetchEventBySlug(slug: string): Promise<ParsedEvent | null> {
+export async function fetchEventBySlug(slug: string, deadline?: number): Promise<ParsedEvent | null> {
   if (!/^[a-z0-9-]+$/.test(slug) || slug.length > 150) {
     console.error(`[polymarket-client] Invalid slug: "${slug}"`);
     return null;
   }
 
   const url = `${BASE_URL}/events?slug=${encodeURIComponent(slug)}&limit=1`;
-  const res = await fetchWithRetry(url);
+  const res = await fetchWithRetry(url, MAX_RETRIES, deadline);
   if (!res) return null;
 
   try {
@@ -249,20 +264,39 @@ export async function fetchEventBySlug(slug: string): Promise<ParsedEvent | null
 }
 
 /**
+ * Orçamento total da leitura em série. O cron refresh-elections tem
+ * maxDuration = 60 s, e cada slug pendurado custa até 22 s (10 s de timeout,
+ * 2 s de espera, 10 s da retentativa). Três pendurados passavam de 60 s e a
+ * plataforma matava a função antes do KV, do Neon e do alerta. Com o prazo, o
+ * laço para e devolve o que leu, e o ramo de falha parcial, a gravação e o
+ * aviso rodam dentro do tempo.
+ */
+const ORCAMENTO_LEITURA_MS = 35_000;
+
+/**
  * Fetch multiple events by slugs in sequence (respects rate limits).
  * Returns a Map of slug → ParsedEvent.
  */
-export async function fetchEventsBySlugs(slugs: string[]): Promise<Map<string, ParsedEvent>> {
+export async function fetchEventsBySlugs(
+  slugs: string[],
+  orcamentoMs: number = ORCAMENTO_LEITURA_MS,
+): Promise<Map<string, ParsedEvent>> {
   const results = new Map<string, ParsedEvent>();
   const BATCH_DELAY_MS = 200; // 200ms between requests to be respectful
+  const deadline = Date.now() + orcamentoMs;
 
-  for (const slug of slugs) {
-    const event = await fetchEventBySlug(slug);
+  for (const [i, slug] of slugs.entries()) {
+    if (Date.now() >= deadline - 1_000) {
+      const faltaram = slugs.slice(i);
+      console.warn(`[polymarket-client] Orçamento de ${orcamentoMs}ms esgotado; ${faltaram.length} slug(s) não lidos: ${faltaram.join(', ')}`);
+      break;
+    }
+    const event = await fetchEventBySlug(slug, deadline);
     if (event) {
       results.set(slug, event);
     }
     // Small delay between requests
-    if (slugs.indexOf(slug) < slugs.length - 1) {
+    if (i < slugs.length - 1) {
       await sleep(BATCH_DELAY_MS);
     }
   }

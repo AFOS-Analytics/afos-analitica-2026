@@ -40,14 +40,14 @@ export async function GET(request: Request) {
     })
     if (!ok && anterior?.ok !== false) {
       const resumo = capturas.filter((c) => !c.ok).map((c) => `${c.eventTicker}: ${c.defeitos.join('; ')}`).join(' | ')
-      void avisarFalhaDeCron('refresh-kalshi', 'captura com defeito', new Error(resumo))
+      await avisarFalhaDeCron('refresh-kalshi', 'captura com defeito', new Error(resumo))
     }
     return NextResponse.json(
       { ok, pais: 'fra', capturas, elapsed: Date.now() - t0 },
       { status: ok ? 200 : 503, headers: { 'Cache-Control': 'no-store' } },
     )
   } catch (error) {
-    void avisarFalhaDeCron('refresh-kalshi', 'excecao nao tratada', error)
+    await avisarFalhaDeCron('refresh-kalshi', 'excecao nao tratada', error)
     console.error('[cron kalshi] erro fatal:', error)
     return NextResponse.json(
       { ok: false, error: 'internal', elapsed: Date.now() - t0 },

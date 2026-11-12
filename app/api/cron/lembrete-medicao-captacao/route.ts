@@ -91,5 +91,15 @@ export async function GET(request: Request) {
     details: CORPO,
   })
 
-  return NextResponse.json({ ok, enviado: ok, destino: EMAIL_FOUNDER })
+  // sendSystemAlert devolve false sem lançar (chave do Resend ausente, ou as 3
+  // tentativas falharam). Antes a rota respondia 200 e nenhum log dizia que o
+  // lembrete não saiu. Agora registra, libera a trava do dia e responde 502.
+  if (!ok) {
+    console.error('[cron/lembrete-medicao-captacao] o próprio lembrete falhou (envio devolveu false)')
+    if (url && token) {
+      await new Redis({ url, token }).del(chaveDoDia()).catch(() => {})
+    }
+  }
+
+  return NextResponse.json({ ok, enviado: ok, destino: EMAIL_FOUNDER }, { status: ok ? 200 : 502 })
 }

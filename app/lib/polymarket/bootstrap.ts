@@ -11,6 +11,7 @@
 import type { ParsedEvent, ParsedMarket } from './client';
 import { extractOutcomeLabel } from './outcome-label';
 import { fetchEventsBySlugs } from './client';
+import { ehEnchimento } from './enchimento';
 import {
   ELECTION_REGISTRY,
   getTrackedCountries,
@@ -88,8 +89,8 @@ export function extractCandidateName(question: string): string {
 const PISO_RUIDO_CANDIDATO = 0.005;
 const PISO_RUIDO_DISTRIBUICAO = 0.0005;
 
-/** Nome de contrato reservado pela Polymarket para um candidato futuro. */
-const ENCHIMENTO = /^(?:Candidate|Person|Player|Option) [A-Z]$/;
+// Nome de contrato reservado pela Polymarket para um candidato futuro: a regra
+// mora em `enchimento.ts`, compartilhada com a trava de captura.
 
 function extractCandidates(markets: ParsedMarket[], isDistribution = false): CandidateSummary[] {
   const candidates: CandidateSummary[] = [];
@@ -106,7 +107,7 @@ function extractCandidates(markets: ParsedMarket[], isDistribution = false): Can
     // INSTANTE INTEIRO, com os preços reais junto. Só sai o que é enchimento E
     // não tem negócio: contrato novo de verdade, mesmo sem volume, continua.
     const nome = extractCandidateName(m.question);
-    if (ENCHIMENTO.test(nome) && !(m.volume > 0)) continue;
+    if (ehEnchimento(nome, m.volume)) continue;
 
     candidates.push({
       name: nome,

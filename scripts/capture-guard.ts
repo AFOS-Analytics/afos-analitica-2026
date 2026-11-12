@@ -55,6 +55,7 @@ import { baseDeLeitura } from './lib/base-afos.mjs'
 //    MESMA, e duas cópias da mesma regra é o defeito que a casa persegue.
 import { TOLERANCIA_PP } from './lib/tolerancia-de-preco.mjs'
 import { classificarLivros, leituraVazia, vereditoDaTrava } from '../lib/us-market/livros-da-trava'
+import { ehEnchimento } from '../app/lib/polymarket/enchimento'
 const PROXY_BASE = `${baseDeLeitura()}/api/polymarket?fresh=1`
 
 /**
@@ -188,7 +189,14 @@ async function lerUmaVez(proxy: string, books: readonly string[]): Promise<Leitu
       }
       const p = Number(m?.outcomePrices?.[0])
       if (!Number.isFinite(p)) continue
-      const chave = `${book}:${limpaNome(m.question)}`
+      // 🧱 CONTRATO DE ENCHIMENTO não é preço (12/Nov/2026, EVAL): o mesmo
+      // filtro da coleta (app/lib/polymarket/enchimento.ts). Sem ele, os
+      // "Candidate A".."Candidate Z" a 0,50 do firstRoundWinner da França saíam
+      // CERTIFICADOS, e a troca de um deles por nome real entre as duas
+      // leituras bloqueava o livro sem preço real nenhum ter andado.
+      const nomeLimpo = limpaNome(m.question)
+      if (ehEnchimento(nomeLimpo, m?.volumeNum)) continue
+      const chave = `${book}:${nomeLimpo}`
       precos.set(chave, Number((p * 100).toFixed(2)))
       const v = Number(m?.volumeNum)
       if (Number.isFinite(v)) volumes.set(chave, v)
@@ -327,6 +335,12 @@ async function main() {
     if (Math.max(p1, p2) < PISO_RELEVANCIA_PCT) continue
     const d = Math.abs(p2 - p1)
     if (d > TOLERANCIA_PP) divergencias.push({ nome, p1, p2, d })
+  }
+  // Laço SIMÉTRICO (12/Nov/2026, EVAL): contrato que só existe na 2a leitura
+  // foi medido uma vez só. O instantâneo grava `b.precos`, então sem isto ele
+  // entrava como certificado sem confirmação.
+  for (const nome of b.precos.keys()) {
+    if (!a.precos.has(nome)) motivos.push(`${nome}: ausente na 1a leitura e presente na 2a.`)
   }
 
   for (const { nome, p1, p2, d } of divergencias.sort((x, y) => y.d - x.d)) {

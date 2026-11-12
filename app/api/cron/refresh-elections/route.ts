@@ -30,7 +30,7 @@ export async function GET(request: Request) {
       console.warn('[cron] ZERO mercados — KV e Neon não atualizados');
       // 503 garante alerta no monitoring/UptimeRobot (200 seria silencioso).
       const { sendCronFailureAlert } = await import('../../../lib/cron/health-alerts')
-      sendCronFailureAlert('refresh-elections', 'zero-markets', Date.now() - startTime).catch(() => {})
+      await sendCronFailureAlert('refresh-elections', 'zero-markets', Date.now() - startTime).catch(() => {})
       return NextResponse.json(
         { ok: false, reason: 'zero-markets', elapsed: Date.now() - startTime },
         { status: 503, headers: buildNoCacheHeaders() }
@@ -61,22 +61,40 @@ export async function GET(request: Request) {
     // O caminho quente do usuário já foi escrito no KV ACIMA, logo esperar aqui não
     // atrasa ninguém. Se a gravação falhar ou estourar o tempo, aparece na resposta
     // em vez de sumir.
-    const persist = await persistMarketData(result.countries).catch((err) => {
-      console.warn('[cron] Neon persist failed:', err instanceof Error ? err.message : err);
-      return { persisted: 0, skipped: 0, errors: -1 };
-    });
+    const persist: { persisted: number; skipped: number; errors: number; semBanco?: true } =
+      await persistMarketData(result.countries).catch((err) => {
+        console.warn('[cron] Neon persist failed:', err instanceof Error ? err.message : err);
+        return { persisted: 0, skipped: 0, errors: -1 };
+      });
+
+    // A série do Neon é a única coisa do banco que não se reconstrói. Antes, o
+    // status dependia só do KV: banco fora do ar ou DATABASE_URL ausente saíam
+    // como 200 e ok:true, e o buraco na série só aparecia na conferência manual.
+    // O aviso usa a trava de 1h do Redis (chave própria), para não mandar 48 por dia.
+    const neonOk = !persist.semBanco && persist.errors === 0;
+    if (!neonOk) {
+      const motivoNeon = persist.semBanco
+        ? 'banco indisponivel (getPrisma devolveu null)'
+        : persist.errors === -1
+          ? 'gravacao Neon lancou excecao'
+          : `gravacao Neon falhou em ${persist.errors} mercado(s)`;
+      const { sendCronFailureAlert } = await import('../../../lib/cron/health-alerts');
+      await sendCronFailureAlert('refresh-elections:neon', motivoNeon, Date.now() - startTime).catch(() => {});
+    }
 
     const elapsed = Date.now() - startTime;
-    const status = kvSuccess ? 'OK' : 'FAIL';
+    const ok = kvSuccess && neonOk;
+    const status = ok ? 'OK' : 'FAIL';
     console.log(`[cron] Refresh ${status} — ${result.fetchedMarkets}/${result.totalMarkets} mercados, ${elapsed}ms`);
 
-    // HTTP 500 quando KV falha: monitoring (Vercel/UptimeRobot) captura.
+    // HTTP 500 quando KV ou Neon falham: monitoring (Vercel/UptimeRobot) captura.
     // Usuários cairão no fallback Polymarket direto até KV se recuperar.
-    const httpStatus = kvSuccess ? 200 : 500;
+    const httpStatus = ok ? 200 : 500;
     return NextResponse.json(
       {
-        ok: kvSuccess,
+        ok,
         ...(kvSuccess ? {} : { reason: 'kv-write-failed' }),
+        ...(kvSuccess && !neonOk ? { reason: 'neon-write-failed' } : {}),
         markets: `${result.fetchedMarkets}/${result.totalMarkets}`,
         countries: result.countries.length,
         kv: kvSuccess,
@@ -90,7 +108,7 @@ export async function GET(request: Request) {
   } catch (error) {
     // Alerta por email. Este cron falhava em SILENCIO: dos sete declarados,
     // so `persist-analysis` avisava alguem. Nao bloqueia nem derruba nada.
-    void avisarFalhaDeCron('refresh-elections', 'excecao nao tratada', error)
+    await avisarFalhaDeCron('refresh-elections', 'excecao nao tratada', error)
     console.error('[cron] Erro fatal:', error);
     return NextResponse.json(
       { ok: false, error: 'internal', elapsed: Date.now() - startTime },

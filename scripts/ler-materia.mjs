@@ -30,7 +30,7 @@
  */
 
 import { readFileSync } from 'node:fs'
-import { UA_NAVEGADOR, resolverGoogleNews } from './lib/resolver-gnews.mjs'
+import { UA_AFOS, resolverGoogleNews } from './lib/resolver-gnews.mjs'
 import { baseDeLeitura } from './lib/base-afos.mjs'
 import { bordaDaResposta, tetoDaResposta, urlApiPolls } from './lib/tse-api-polls.mjs'
 import { dataCivilBrasil } from './lib/data-civil-brz.mjs'
@@ -79,10 +79,11 @@ async function baixar(url) {
   const alvo = await resolverGoogleNews(url)
   if (!alvo) throw new Error('invólucro do Google News não resolveu para URL de veículo')
   const r = await fetch(alvo, {
-    headers: { 'User-Agent': UA_NAVEGADOR },
+    headers: { 'User-Agent': UA_AFOS },
     signal: AbortSignal.timeout(30000),
   })
-  if (!r.ok) throw new Error(`HTTP ${r.status}`)
+  // Sem disfarce de navegador: veículo que recusa o UA institucional falha aqui, declarado.
+  if (!r.ok) throw new Error(`HTTP ${r.status} em ${alvo} (User-Agent institucional AFOS; veículo pode recusar robô)`)
   return { url: alvo, html: await r.text() }
 }
 
