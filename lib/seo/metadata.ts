@@ -88,18 +88,21 @@ export const PAGE_SEO: Record<string, Record<Locale, PageSeo>> = {
   home: {
     'pt-BR': {
       // Title 60 chars (mobile-safe). Description 155 chars (Google snippet).
-      title: 'Eleições Brasil 2026: Polymarket × Pesquisas | AFOS',
-      description: 'Eleições Brasil 2026 ao vivo: Polymarket, pesquisas TSE de 17+ institutos (Quaest, AtlasIntel, Datafolha) e notícias cruzadas. Open-source.',
+      // 12/Nov/2026: saiu "Brasil 2026 ao vivo". O Brasil está encerrado desde
+      // 01/Nov e os EUA desde 09/Nov, ambos com relatório final; ao vivo só a
+      // França 2027. O texto descreve a plataforma, não um país.
+      title: 'Mercados de Previsão × Pesquisas × Imprensa | AFOS',
+      description: 'Mercados de previsão lado a lado com pesquisas e imprensa. França 2027 ao vivo. Brasil 2026 e EUA 2026 encerrados, com relatório final. Open-source.',
       path: '',
     },
     en: {
-      title: 'Brazil 2026 Elections: Polymarket × Polls | AFOS',
-      description: 'Brazil 2026 elections live: Polymarket odds, polls from 17+ institutes (Quaest, AtlasIntel, Datafolha) and news cross-referenced. Open-source.',
+      title: 'Prediction Markets × Polls × Press | AFOS',
+      description: 'Prediction markets side by side with polls and press. France 2027 live. Brazil 2026 and US 2026 closed, with final reports. Open-source.',
       path: '',
     },
     es: {
-      title: 'Elecciones Brasil 2026: Polymarket × Encuestas | AFOS',
-      description: 'Elecciones Brasil 2026 en vivo: Polymarket, encuestas de 17+ institutos (Quaest, AtlasIntel, Datafolha) y noticias cruzadas. Open-source.',
+      title: 'Mercados de Predicción × Encuestas × Prensa | AFOS',
+      description: 'Mercados de predicción junto a encuestas y prensa. Francia 2027 en vivo. Brasil 2026 y EE. UU. 2026 cerrados, con informe final. Open-source.',
       path: '',
     },
   },
