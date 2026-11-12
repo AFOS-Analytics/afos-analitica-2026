@@ -236,28 +236,57 @@ function useClickOutside(ref: React.RefObject<HTMLDivElement | null>, onClose: (
 type Locale = 'pt-BR' | 'en' | 'es';
 const LOCALE_LABELS: Record<Locale, string> = { 'pt-BR': 'BR', en: 'EN', es: 'ES' };
 
+// Nomes acessíveis (aria-label) dos dois seletores. Não aparecem na tela.
+const SWITCHER_A11Y: Record<Locale, { language: string; theme: string; light: string; blue: string }> = {
+  'pt-BR': { language: 'Idioma', theme: 'Tema', light: 'Branco', blue: 'Azul' },
+  en: { language: 'Language', theme: 'Theme', light: 'White', blue: 'Blue' },
+  es: { language: 'Idioma', theme: 'Tema', light: 'Blanco', blue: 'Azul' },
+};
+
+// Zera o visual padrão do <button> para ele ficar igual ao <div> que era antes.
+const BUTTON_RESET: React.CSSProperties = { border: 'none', background: 'transparent', font: 'inherit', margin: 0 };
+
+/** Escape fecha o menu aberto e devolve o foco ao gatilho. */
+function useEscapeToClose(open: boolean, setOpen: (v: boolean) => void, triggerRef: React.RefObject<HTMLButtonElement | null>) {
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') { setOpen(false); triggerRef.current?.focus(); }
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [open, setOpen, triggerRef]);
+}
+
 function LangSwitcher({ current, onSelect, isBlue }: { current: Locale; onSelect: (l: Locale) => void; isBlue: boolean }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
   useClickOutside(ref, () => setOpen(false));
+  useEscapeToClose(open, setOpen, triggerRef);
 
   const color = isBlue ? '#ffffff' : '#1a1a1a';
   const hoverBg = isBlue ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.05)';
 
   return (
     <div ref={ref} style={{ position: 'relative', flexShrink: 0 }}>
-      <div
+      <button
+        type="button"
+        ref={triggerRef}
+        aria-expanded={open}
+        aria-haspopup="true"
+        aria-label={`${SWITCHER_A11Y[current].language}: ${LOCALE_LABELS[current]}`}
         onClick={() => setOpen(!open)}
-        style={{ display: 'flex', alignItems: 'center', gap: 4, cursor: 'pointer', padding: '6px 8px', borderRadius: 8 }}
+        style={{ ...BUTTON_RESET, display: 'flex', alignItems: 'center', gap: 4, cursor: 'pointer', padding: '6px 8px', borderRadius: 8 }}
         onMouseEnter={(e) => (e.currentTarget.style.background = hoverBg)}
         onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
       >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" aria-hidden="true">
           <circle cx="12" cy="12" r="9" />
           <path d="M3 12h18M12 3c2.5 2.5 4 5.5 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.5-4-9s1.5-6.5 4-9z" />
         </svg>
         <span style={{ fontSize: 13, fontWeight: 700, color, letterSpacing: 0.5 }}>{LOCALE_LABELS[current]}</span>
-      </div>
+      </button>
 
       {open && (
         <div style={{
@@ -268,10 +297,13 @@ function LangSwitcher({ current, onSelect, isBlue }: { current: Locale; onSelect
           boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
         }}>
           {(['pt-BR', 'en', 'es'] as Locale[]).map((loc) => (
-            <div
+            <button
+              type="button"
               key={loc}
+              aria-pressed={current === loc}
               onClick={() => { onSelect(loc); setOpen(false); }}
               style={{
+                ...BUTTON_RESET, width: '100%', textAlign: 'left',
                 padding: '8px 12px', cursor: 'pointer', borderRadius: 7, fontSize: 13, fontWeight: 600,
                 color: current === loc ? (isBlue ? '#ffffff' : '#0F52BA') : (isBlue ? 'rgba(255,255,255,0.6)' : '#64748b'),
                 background: current === loc ? (isBlue ? 'rgba(255,255,255,0.12)' : 'rgba(15,82,186,0.08)') : 'transparent',
@@ -284,7 +316,7 @@ function LangSwitcher({ current, onSelect, isBlue }: { current: Locale; onSelect
               <span style={{ fontWeight: 400, fontSize: 11, opacity: 0.6 }}>
                 {loc === 'pt-BR' ? 'Português' : loc === 'en' ? 'English' : 'Español'}
               </span>
-            </div>
+            </button>
           ))}
         </div>
       )}
@@ -294,27 +326,35 @@ function LangSwitcher({ current, onSelect, isBlue }: { current: Locale; onSelect
 
 // ─── Seletor de Tema (Sol) ──────────────────────────────────────────
 
-function ThemeSwitcher({ current, onSelect, isBlue }: { current: Theme; onSelect: (t: Theme) => void; isBlue: boolean }) {
+function ThemeSwitcher({ current, onSelect, isBlue, locale }: { current: Theme; onSelect: (t: Theme) => void; isBlue: boolean; locale: Locale }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
   useClickOutside(ref, () => setOpen(false));
+  useEscapeToClose(open, setOpen, triggerRef);
+  const a11y = SWITCHER_A11Y[locale] ?? SWITCHER_A11Y.en;
 
   const color = isBlue ? '#ffffff' : '#1a1a1a';
   const hoverBg = isBlue ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.05)';
 
   return (
     <div ref={ref} style={{ position: 'relative', flexShrink: 0 }}>
-      <div
+      <button
+        type="button"
+        ref={triggerRef}
+        aria-expanded={open}
+        aria-haspopup="true"
+        aria-label={a11y.theme}
         onClick={() => setOpen(!open)}
-        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 36, height: 36, cursor: 'pointer', borderRadius: 8 }}
+        style={{ ...BUTTON_RESET, padding: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', width: 36, height: 36, cursor: 'pointer', borderRadius: 8 }}
         onMouseEnter={(e) => (e.currentTarget.style.background = hoverBg)}
         onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
       >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" aria-hidden="true">
           <circle cx="12" cy="12" r="4" />
           <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
         </svg>
-      </div>
+      </button>
 
       {open && (
         <div style={{
@@ -326,9 +366,13 @@ function ThemeSwitcher({ current, onSelect, isBlue }: { current: Theme; onSelect
           display: 'flex', gap: 6,
         }}>
           {/* Branco */}
-          <div
+          <button
+            type="button"
+            aria-pressed={current === 'light'}
+            aria-label={a11y.light}
             onClick={() => { onSelect('light'); setOpen(false); }}
             style={{
+              ...BUTTON_RESET, padding: 0,
               width: 34, height: 34, borderRadius: 8, cursor: 'pointer',
               background: '#ffffff',
               border: current === 'light' ? '2.5px solid #0F52BA' : (isBlue ? '1.5px solid rgba(255,255,255,0.25)' : '1.5px solid #e2e8f0'),
@@ -340,11 +384,15 @@ function ThemeSwitcher({ current, onSelect, isBlue }: { current: Theme; onSelect
                 <path d="M5 13l4 4L19 7" />
               </svg>
             )}
-          </div>
+          </button>
           {/* Azul */}
-          <div
+          <button
+            type="button"
+            aria-pressed={current === 'blue'}
+            aria-label={a11y.blue}
             onClick={() => { onSelect('blue'); setOpen(false); }}
             style={{
+              ...BUTTON_RESET, padding: 0,
               width: 34, height: 34, borderRadius: 8, cursor: 'pointer',
               background: '#0F52BA',
               border: current === 'blue' ? '2.5px solid #ffffff' : '1.5px solid rgba(15,82,186,0.3)',
@@ -356,7 +404,7 @@ function ThemeSwitcher({ current, onSelect, isBlue }: { current: Theme; onSelect
                 <path d="M5 13l4 4L19 7" />
               </svg>
             )}
-          </div>
+          </button>
         </div>
       )}
     </div>
@@ -517,7 +565,7 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
           <span className={`font-extrabold text-sm sm:text-lg tracking-tight transition-colors duration-500 ${tk.logo}`}>AFOS Analytics</span>
           <div className="flex items-center gap-1.5 sm:gap-3">
             <LangSwitcher current={locale} onSelect={setLocale} isBlue={isBlueTheme} />
-            <ThemeSwitcher current={theme} onSelect={setTheme} isBlue={isBlueTheme} />
+            <ThemeSwitcher current={theme} onSelect={setTheme} isBlue={isBlueTheme} locale={locale} />
             <a href={dashboardUrl} className={`text-[11px] sm:text-sm font-semibold px-3 sm:px-4 py-2 rounded-lg transition-colors duration-500 ${tk.navBtn}`}>
               {t.nav.dashboard}
             </a>

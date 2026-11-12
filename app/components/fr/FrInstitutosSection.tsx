@@ -122,16 +122,16 @@ export function FrInstitutosSection({ dados, estat }: { dados: FrInstitutos | nu
                     <td className="py-2 px-2 tabular-nums text-gray-600">{dm(e.ultimoCampo, locale)}</td>
                     <td className="py-2 px-2 text-[12px] text-gray-600">{e.clientes.join(', ')}</td>
                     {anos.length === 0 ? (
-                      <td colSpan={3} className="py-2 px-2 text-right text-[12px] text-gray-400">{t.sem2022}</td>
+                      <td colSpan={3} className="py-2 px-2 text-right text-[12px] text-gray-600">{t.sem2022}</td>
                     ) : (
                       <>
-                        <td className="py-2 px-2 text-right tabular-nums">{anos.map((a) => <div key={a.nome}>{anos.length > 1 ? <span className="text-[11px] text-gray-400">{a.nome} </span> : null}{fmtDecimal(a.erroMedio, locale, 2)}</div>)}</td>
+                        <td className="py-2 px-2 text-right tabular-nums">{anos.map((a) => <div key={a.nome}>{anos.length > 1 ? <span className="text-[11px] text-gray-600">{a.nome} </span> : null}{fmtDecimal(a.erroMedio, locale, 2)}</div>)}</td>
                         <td className="py-2 px-2 text-right tabular-nums">{anos.map((a) => <div key={a.nome}>{sinal(a.erroLePen)}</div>)}</td>
                         <td className="py-2 px-2 text-right tabular-nums">{anos.map((a) => <div key={a.nome}>{sinal(a.erroMelenchon)}</div>)}</td>
                       </>
                     )}
                     <td className="py-2 pl-2 text-[12px]">
-                      {acoes.length === 0 ? <span className="text-gray-400">{t.nenhuma}</span> : acoes.map((a) => (
+                      {acoes.length === 0 ? <span className="text-gray-600">{t.nenhuma}</span> : acoes.map((a) => (
                         <div key={a.url}>
                           <a href={a.url} target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-dotted underline-offset-2">
                             {a.tipo === 'miseAuPoint' ? t.mise : t.avert} {dm(a.data, locale)} ↗

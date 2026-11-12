@@ -59,7 +59,7 @@ export function CountrySelector({ active }: { active: CountryCode }) {
             />
           )
           const selo = encerrado ? (
-            <span className={`text-[10px] uppercase tracking-wider ${isActive ? 'text-white/80' : 'text-gray-400'}`}>· {t.closed}</span>
+            <span className={`text-[10px] uppercase tracking-wider ${isActive ? 'text-white/80' : 'text-gray-600'}`}>· {t.closed}</span>
           ) : (
             <span className={`flex items-center gap-1 text-[10px] uppercase tracking-wider ${isActive ? 'text-white/90' : 'text-red-600'}`}>
               <span aria-hidden={true} className={`inline-block w-1.5 h-1.5 rounded-full ${isActive ? 'bg-white' : 'bg-red-600'}`} />

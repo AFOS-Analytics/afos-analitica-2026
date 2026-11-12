@@ -4,6 +4,9 @@ import { fmtDecimal } from '../../lib/i18n/numero'
 
 // Paleta viva e legível em AMBOS os temas (fundo branco e fundo Sapphire). Evita azuis escuros que somem no azul.
 const PALETTE = ['#FF5C8A', '#3FA9F5', '#FFA63D', '#34D399', '#B98BFF', '#FBBF24']
+// Tracejado por série, para a linha não depender só da cor (daltonismo, impressão
+// em P&B). O mesmo padrão vai no quadradinho da legenda.
+const DASHES = ['', '8 4', '2 4', '10 4 2 4', '4 4', '14 4']
 
 const L: Record<string, { caption: string; vol: string }> = {
   'pt-BR': { caption: 'Probabilidade implícita (Polymarket)', vol: 'volume total' },
@@ -27,7 +30,7 @@ export function OddsTrajectoryChart({ trajectory, volume, locale, isBlue }: {
   const Y = (p: number) => M.t + (1 - Math.max(0, Math.min(100, p)) / 100) * plotH
 
   const grid = isBlue ? 'rgba(147,197,253,0.16)' : '#eceef3'
-  const axisText = isBlue ? 'rgba(191,219,254,0.7)' : '#9aa3b2'
+  const axisText = isBlue ? 'rgba(191,219,254,0.7)' : '#6b7280'
   const lab = L[locale] || L['en']
   const fmtVol = 'US$ ' + (volume >= 1e9 ? fmtDecimal(volume / 1e9, locale, 1) + 'B' : fmtDecimal(volume / 1e6, locale, volume >= 1e8 ? 0 : 1) + 'M')
   const fmtPct = (p: number) => (p < 1 ? '<1%' : Math.min(99, Math.round(p)) + '%')
@@ -35,12 +38,17 @@ export function OddsTrajectoryChart({ trajectory, volume, locale, isBlue }: {
     try { return new Date(d + 'T00:00:00Z').toLocaleDateString(locale === 'pt-BR' ? 'pt-BR' : locale, { month: 'short', year: '2-digit', timeZone: 'UTC' }) } catch { return d }
   }
 
+  // Nome acessível com o dado, não só a legenda: período e, por série, o primeiro
+  // e o último valor. Usa só nomes, números e datas que já estão na tela.
+  const ariaLabel = `${lab.caption}, ${fmtDate(dates[0])} → ${fmtDate(dates[dates.length - 1])}: ` +
+    series.map((s) => `${s.name} ${fmtPct(s.pct[0] ?? 0)} → ${fmtPct(s.pct[s.pct.length - 1] ?? 0)}`).join('; ')
+
   return (
     <div className="mt-5">
       <p className={`text-[11px] uppercase tracking-wide mb-1.5 ${isBlue ? 'text-blue-300/70' : 'text-gray-500'}`}>
         {lab.caption} · {lab.vol} <strong className={`font-extrabold ${isBlue ? 'text-blue-100' : 'text-primary'}`}>{fmtVol}</strong>
       </p>
-      <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" preserveAspectRatio="xMidYMid meet" role="img" aria-label={lab.caption}>
+      <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" preserveAspectRatio="xMidYMid meet" role="img" aria-label={ariaLabel}>
         {[0, 25, 50, 75, 100].map((p) => (
           <g key={p}>
             <line x1={M.l} y1={Y(p)} x2={W - M.r} y2={Y(p)} stroke={grid} strokeWidth={1} />
@@ -53,6 +61,7 @@ export function OddsTrajectoryChart({ trajectory, volume, locale, isBlue }: {
             fill="none"
             stroke={PALETTE[i % PALETTE.length]}
             strokeWidth={2}
+            strokeDasharray={DASHES[i % DASHES.length] || undefined}
             strokeLinejoin="round"
             strokeLinecap="round"
             points={dates.map((d, j) => `${X(d).toFixed(1)},${Y(s.pct[j] ?? 0).toFixed(1)}`).join(' ')}
@@ -64,7 +73,9 @@ export function OddsTrajectoryChart({ trajectory, volume, locale, isBlue }: {
       <div className="flex flex-wrap gap-x-4 gap-y-1.5 mt-2">
         {series.map((s, i) => (
           <span key={s.name} className={`inline-flex items-center gap-1.5 text-xs ${isBlue ? 'text-blue-100/90' : 'text-gray-600'}`}>
-            <span className="inline-block h-1.5 w-3.5 rounded-sm" style={{ backgroundColor: PALETTE[i % PALETTE.length] }} />
+            <svg width={22} height={6} aria-hidden="true" className="inline-block">
+              <line x1={1} y1={3} x2={21} y2={3} stroke={PALETTE[i % PALETTE.length]} strokeWidth={3} strokeLinecap="round" strokeDasharray={DASHES[i % DASHES.length] || undefined} />
+            </svg>
             {s.name} <strong className="font-semibold">{fmtPct(s.pct[s.pct.length - 1] ?? 0)}</strong>
           </span>
         ))}

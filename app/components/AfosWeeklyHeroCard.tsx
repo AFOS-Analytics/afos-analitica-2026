@@ -118,17 +118,40 @@ export function AfosWeeklyHeroCard({ country = 'us', semContainer = false }: { c
   const cor = COR_POR_PAIS[country]
   const t = T?.[k]
   const [meta, setMeta] = useState<WeeklyMeta | null>(null)
+  // false enquanto a ida à API não terminou. Serve para reservar a altura do
+  // cartão (evita CLS) e, se a API falhar, sumir em vez de deixar o esqueleto.
+  const [terminou, setTerminou] = useState(false)
 
   useEffect(() => {
     const ctrl = new AbortController()
+    setTerminou(false)
     fetch(`/api/afos-weekly/latest?locale=${k}&country=${country}`, { signal: ctrl.signal })
       .then(r => (r.ok ? r.json() : null))
       .then(j => { if (j?.ok) setMeta(j) })
       .catch(() => {})
+      .finally(() => { if (!ctrl.signal.aborted) setTerminou(true) })
     return () => ctrl.abort()
   }, [k, country])
 
-  if (!meta || !t || !cor) return null
+  if (!t || !cor) return null
+
+  // Esqueleto com a mesma moldura e altura mínima do AfosTradeoffHeroCard,
+  // sem texto, enquanto o fetch não volta.
+  if (!meta && !terminou) {
+    const esqueleto = (
+      <div aria-hidden="true">
+        <div className={`min-h-[140px] sm:min-h-[116px] rounded-xl border p-4 md:p-5 animate-pulse ${cor.caixa}`}>
+          <div className={`mb-3 h-4 w-2/5 rounded ${cor.pilula}`} />
+          <div className={`mb-1.5 h-3 w-full rounded ${cor.pilula}`} />
+          <div className={`h-3 w-4/6 rounded ${cor.pilula}`} />
+        </div>
+      </div>
+    )
+    if (semContainer) return esqueleto
+    return <div className="mx-auto w-full max-w-6xl px-3 sm:px-4 md:px-8">{esqueleto}</div>
+  }
+
+  if (!meta) return null
 
   const href = meta.hasEdition ? `/${locale}/weekly/${meta.country ?? country}/${meta.date}` : null
 

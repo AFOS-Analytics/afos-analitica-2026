@@ -434,7 +434,7 @@ function Distribuicao({
               ao lado de "variou de 102,3% a 164,4%", ou seja, o número mostrado
               ficava FORA da própria faixa. Medido no preview de 10/Ago. */}
           {faixa24h && (
-            <> <span className="text-gray-400">{t.amplitude24h(fmt(faixa24h.min, locale, 1), fmt(faixa24h.max, locale, 1))}</span></>
+            <> <span className="text-gray-600">{t.amplitude24h(fmt(faixa24h.min, locale, 1), fmt(faixa24h.max, locale, 1))}</span></>
           )}
           {soForma && <> · <span className="font-semibold text-gray-600">{t.soForma}</span></>}
         </span>

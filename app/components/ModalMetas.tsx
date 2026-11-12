@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslation } from '../i18n/context';
+import { useFocusTrap } from '../hooks/useFocusTrap';
 
 interface ModalMetasProps {
   show: boolean;
@@ -9,6 +10,9 @@ interface ModalMetasProps {
 
 export function ModalMetas({ show, onClose }: ModalMetasProps) {
   const { t, tList } = useTranslation();
+  // Foco inicial, Tab preso e Escape fecham o modal. Chamado ANTES do return
+  // antecipado por causa da regra dos hooks.
+  const dialogRef = useFocusTrap(show, onClose);
   if (!show) return null;
 
   const centralThesisLines = tList('metas.centralThesisLines');
@@ -30,7 +34,7 @@ export function ModalMetas({ show, onClose }: ModalMetasProps) {
 
   return (
     <div className="fixed inset-0 bg-black/60 z-50 flex items-start justify-center p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-label={t('metas.title')} onClick={onClose}>
-      <div className="bg-white rounded-2xl max-w-3xl w-full my-8 shadow-2xl" onClick={e => e.stopPropagation()}>
+      <div ref={dialogRef} className="bg-white rounded-2xl max-w-3xl w-full my-8 shadow-2xl" onClick={e => e.stopPropagation()}>
         <div className="bg-primary text-white p-6 rounded-t-2xl flex justify-between items-center">
           <h2 className="text-xl font-bold">{t('modal.metasTitle')}</h2>
           <button onClick={onClose} className="text-white/70 hover:text-white text-2xl leading-none focus:outline-2 focus:outline-white" aria-label={t('common.close')}>✕</button>

@@ -269,10 +269,10 @@ function AntiAvg({ block, isBlue, footer, rightDetails }: { block: AntiAvgBlock;
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div className={`p-5 ${isBlue ? 'bg-blue-950/60 md:border-r border-blue-400/30' : 'bg-stone-50 md:border-r border-slate-200'}`}>
-          <div className={`text-[10px] font-bold tracking-wider uppercase mb-2.5 ${isBlue ? 'text-blue-300' : 'text-slate-400'}`}>
+          <div className={`text-[10px] font-bold tracking-wider uppercase mb-2.5 ${isBlue ? 'text-blue-300' : 'text-slate-500'}`}>
             {block.leftLabel}
           </div>
-          <div className={`text-[28px] font-extrabold leading-none mb-2 line-through decoration-red-600 decoration-2 ${isBlue ? 'text-blue-300' : 'text-slate-400'}`}>
+          <div className={`text-[28px] font-extrabold leading-none mb-2 line-through decoration-red-600 decoration-2 ${isBlue ? 'text-blue-300' : 'text-slate-500'}`}>
             {stripMdLinks(block.leftValue)}{block.leftUnit && <span className="text-sm">{block.leftUnit}</span>}
           </div>
           {block.leftDetails.map((d, i) => (
@@ -366,7 +366,7 @@ function Liquidity({ block, totalSuffix, anomalyLabel, isBlue, anomaly, footer }
     <>
       <div className={`my-4 rounded-lg p-5 ${isBlue ? 'bg-blue-900/40 border border-blue-400/30' : 'bg-slate-50 border border-slate-200'}`}>
         <div className={`flex flex-col md:flex-row md:items-baseline gap-2 md:gap-3 mb-3.5 pb-3 ${isBlue ? 'border-b border-blue-400/30' : 'border-b border-slate-200'}`}>
-          <span className={`text-[11px] font-bold tracking-wider uppercase ${isBlue ? 'text-blue-300' : 'text-slate-400'}`}>
+          <span className={`text-[11px] font-bold tracking-wider uppercase ${isBlue ? 'text-blue-300' : 'text-slate-500'}`}>
             {block.totalLink ? (
               <a href={block.totalLink} target="_blank" rel="noopener noreferrer" className={linkColor}>{block.totalLabel}</a>
             ) : block.totalLabel}
@@ -377,7 +377,7 @@ function Liquidity({ block, totalSuffix, anomalyLabel, isBlue, anomaly, footer }
         <div className="space-y-2">
           {block.rows.map((row, i) => (
             <div key={i} className="flex items-center gap-2.5">
-              <span className={`w-6 font-bold text-xs ${isBlue ? 'text-blue-300' : 'text-slate-400'}`}>{row.rank}</span>
+              <span className={`w-6 font-bold text-xs ${isBlue ? 'text-blue-300' : 'text-slate-500'}`}>{row.rank}</span>
               <span className={`flex-1 text-[13px] font-semibold ${isBlue ? 'text-white' : 'text-slate-900'}`}>
                 {row.name}
                 <small className={`ml-1.5 font-normal ${isBlue ? 'text-blue-200' : 'text-slate-500'}`}>{row.probability}</small>
@@ -480,7 +480,7 @@ function AdditionalReading({ block, paywallLabel, isBlue, intro, footer }: { blo
               </>
             )}
             {item.paywall && (
-              <span className={`ml-1.5 ${isBlue ? 'text-blue-300/70' : 'text-slate-400'}`}>{paywallLabel}</span>
+              <span className={`ml-1.5 ${isBlue ? 'text-blue-300/70' : 'text-slate-500'}`}>{paywallLabel}</span>
             )}
             {', '}
             <a href={item.link} target="_blank" rel="noopener noreferrer" className={linkColor}>{item.link.replace(/^https?:\/\//, '')}</a>
@@ -488,7 +488,7 @@ function AdditionalReading({ block, paywallLabel, isBlue, intro, footer }: { blo
         ))}
       </ul>
       {block.footer && (
-        <div className={`mt-3 text-xs italic ${isBlue ? 'text-blue-200/70' : 'text-slate-400'}`}>
+        <div className={`mt-3 text-xs italic ${isBlue ? 'text-blue-200/70' : 'text-slate-500'}`}>
           {footer}
         </div>
       )}
@@ -628,7 +628,7 @@ export function AfosTradeoffTemplate({ data, nav, md, country = 'br' }: Props) {
               {(HARVARD_POR_PAIS[country] ?? { rotulo: 'Harvard Dataverse · collection' }).rotulo}
             </a>
           </div>
-          <div className={`flex flex-wrap gap-2.5 justify-center items-center text-xs uppercase tracking-wide ${isBlue ? 'text-blue-300/80' : 'text-slate-400'}`}>
+          <div className={`flex flex-wrap gap-2.5 justify-center items-center text-xs uppercase tracking-wide ${isBlue ? 'text-blue-300/80' : 'text-slate-500'}`}>
             <span className="inline-flex items-center gap-1.5 font-semibold">
               <img
                 src={`/flags/${country}.svg`}

@@ -148,6 +148,7 @@ export function UsPollsSection({ data }: { data: UsPollsData | null }) {
 
   const m = data.mediaAfos
   const mostradas = verTodas ? data.polls.slice(0, 60) : data.polls.slice(0, 12)
+  const total = data.nPolls ?? data.polls.length
 
   return (
     <section>
@@ -273,13 +274,13 @@ export function UsPollsSection({ data }: { data: UsPollsData | null }) {
 
         <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
           <p className="text-[11px] text-gray-500">{t.tipos}</p>
-          {data.polls.length > 12 && (
+          {total > 12 && (
             <button
               type="button"
               onClick={() => setVerTodas((v) => !v)}
               className="text-xs font-semibold text-primary underline"
             >
-              {verTodas ? '−' : '+'} {data.polls.length > 60 && !verTodas ? 60 : data.polls.length}
+              {verTodas ? '−' : '+'} {total > 60 && !verTodas ? 60 : total}
             </button>
           )}
         </div>
