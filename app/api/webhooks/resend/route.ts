@@ -82,13 +82,27 @@ export async function POST(request: Request) {
   // without dedup, audit log gets polluted and Prisma updates re-run unnecessarily.
   const redisUrl = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL
   const redisToken = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN
-  if (redisUrl && redisToken) {
-    const redis = new Redis({ url: redisUrl, token: redisToken })
+  const dedupKey = `afos:svix-dedup:${svixId}`
+  const redis = redisUrl && redisToken ? new Redis({ url: redisUrl, token: redisToken }) : null
+  if (redis) {
     // SET NX with 24h TTL — returns 'OK' if first time, null if already seen.
-    const firstTime = await redis.set(`afos:svix-dedup:${svixId}`, '1', { ex: 86400, nx: true })
+    const firstTime = await redis.set(dedupKey, '1', { ex: 86400, nx: true })
     if (!firstTime) {
       return NextResponse.json({ ok: true, dedup: true })
     }
+  }
+
+  // 🔴 FALHA DEVOLVE 500 E SOLTA O DEDUP. Antes, os helpers engoliam o erro do
+  // banco ({ success: false }), a rota respondia 200 e o Resend nunca reenviava;
+  // e se algo lançasse, a retentativa caía no dedup de 24h. Nos dois casos o
+  // bounce ou a reclamação se perdia e o lead seguia 'active'. Agora a chave de
+  // dedup é apagada e o 500 faz o Resend tentar de novo.
+  const falhar = async (motivo: string) => {
+    console.error('[resend-webhook] Evento NAO aplicado, pedindo retentativa:', motivo)
+    if (redis) {
+      try { await redis.del(dedupKey) } catch (err) { console.error('[resend-webhook] dedup nao liberado:', err) }
+    }
+    return NextResponse.json({ error: 'processing_failed' }, { status: 500 })
   }
 
   let event: ResendEvent
@@ -107,13 +121,15 @@ export async function POST(request: Request) {
     if (event.type === 'email.bounced') {
       const bounceType = (event.data.bounce?.type || 'unknown').toLowerCase()
       if (bounceType === 'hard' || bounceType === 'permanent') {
-        await markBouncedByEmail(recipient, bounceType)
+        const r = await markBouncedByEmail(recipient, bounceType)
+        if (!r.success) return await falhar('mark_bounced')
         audit('email_hard_bounce', 'crm.leads', recipient, { actorType: 'resend' })
         return NextResponse.json({ ok: true, type: bounceType })
       }
       // D+7 hardening: soft bounce tracking. Increment counter; mark as bounced
       // after 5 consecutive soft bounces. A successful delivery resets the counter.
       const result = await incrementSoftBounce(recipient, SOFT_BOUNCE_THRESHOLD)
+      if (result.erro) return await falhar('soft_bounce')
       audit('email_soft_bounce', 'crm.leads', recipient, { actorType: 'resend', actorId: `count=${result.count}` })
       if (result.markedBounced) {
         audit('email_bounced_threshold', 'crm.leads', recipient, { actorType: 'system' })
@@ -123,12 +139,15 @@ export async function POST(request: Request) {
 
     if (event.type === 'email.delivered') {
       // D+7 hardening: reset soft bounce counter on successful delivery.
-      await resetSoftBounce(recipient)
+      const r = await resetSoftBounce(recipient)
+      if (!r.success) return await falhar('reset_soft_bounce')
       return NextResponse.json({ ok: true, type: 'delivered' })
     }
 
     if (event.type === 'email.complained') {
-      await unsubscribeByEmail(recipient)
+      // Status PRÓPRIO ('complained'), para o formulário público não reativar.
+      const r = await unsubscribeByEmail(recipient, 'complained')
+      if (!r.success) return await falhar('complaint')
       audit('email_complaint', 'crm.leads', recipient, { actorType: 'resend' })
       return NextResponse.json({ ok: true })
     }
@@ -136,6 +155,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true, ignored: event.type })
   } catch (error) {
     console.error('[resend-webhook] Erro processando evento:', error)
-    return NextResponse.json({ error: 'processing_failed' }, { status: 500 })
+    return await falhar('excecao')
   }
 }

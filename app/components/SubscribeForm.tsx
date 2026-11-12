@@ -113,7 +113,7 @@ export function SubscribeForm({ visitorId, captureSource, onSuccess, variant = '
       }
 
       setStatus('success');
-      trackEvent(successEventName, { source: captureSource, isNew: data.isNew ?? false });
+      trackEvent(successEventName, { source: captureSource });
       onSuccess?.();
       // After signup success → redirect to /welcome for intentional locale capture.
       // /welcome validates signup_session_id cookie (set by /api/subscribe) before rendering.

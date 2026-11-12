@@ -7,6 +7,8 @@ import { NextResponse } from 'next/server'
 import { getPrisma } from '../../../../lib/db'
 import { visitorSessionSchema } from '../../../../lib/validations'
 import { computeEligible, shouldShowPopup, SESSION_MIN_DURATION_MS, SESSION_DEDUP_TTL } from '../../../../lib/visitor/constants'
+import { isRateLimited } from '../../../../lib/rate-limit'
+import { clientIp } from '../../../../lib/net/client-ip'
 
 async function tryClaimSession(visitorId: string): Promise<boolean> {
   const url = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL
@@ -43,6 +45,14 @@ export async function POST(request: Request) {
   if (!parsed.success) return NextResponse.json({ ok: false, error: 'invalid_data' }, { status: 400 })
 
   const { visitorId, durationMs, hasInteraction } = parsed.data
+
+  // 🔴 Freio POR IP, além do por visitorId. O visitorId vem do corpo e o
+  // cliente escolhe: com um UUID novo a cada chamada o contador por visitorId
+  // fica sempre em 1 e não freia nada. A chave é a mesma nas quatro rotas de
+  // visitante (state, migrate, dismiss, session).
+  if (await isRateLimited(`afos:ratelimit:visitor:ip:${clientIp(request.headers)}`, 60, 60)) {
+    return NextResponse.json({ ok: false, error: 'rate_limited' }, { status: 429 })
+  }
 
   if (durationMs < SESSION_MIN_DURATION_MS || !hasInteraction) {
     return NextResponse.json({ ok: true, counted: false, reason: 'not_qualified' })

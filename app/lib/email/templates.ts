@@ -22,21 +22,55 @@ const BRAND = {
   tagline: 'Plataforma Global de Inteligencia Eleitoral',
 };
 
-function unsubscribeFooter(unsubscribeToken?: string): string {
+export type EmailLocale = 'pt-BR' | 'en' | 'es';
+
+/**
+ * Textos da moldura (cabecalho e rodape) por idioma. O portugues e o original;
+ * en e es foram feitos fieis a ele quando o welcome passou a sair no idioma do
+ * lead (12/Nov/2026). Acentos do espanhol vao como entidade HTML, para manter
+ * o template em ASCII, como pede a nota do topo.
+ */
+const MOLDURA: Record<EmailLocale, { tagline: string; sep: string; semToken: string; pergunta: string; link: string }> = {
+  'pt-BR': {
+    tagline: BRAND.tagline,
+    sep: ' &mdash; ',
+    semToken: 'Para cancelar o recebimento, responda este email com &quot;cancelar&quot;.',
+    pergunta: 'Voce nao quer mais receber? ',
+    link: 'Cancelar inscricao com 1 clique',
+  },
+  en: {
+    tagline: 'Global Electoral Intelligence Platform',
+    sep: ' &middot; ',
+    semToken: 'To stop receiving these emails, reply to this email with &quot;unsubscribe&quot;.',
+    pergunta: 'No longer want to receive these? ',
+    link: 'Unsubscribe in 1 click',
+  },
+  es: {
+    tagline: 'Plataforma Global de Inteligencia Electoral',
+    sep: ' &middot; ',
+    semToken: 'Para dejar de recibir estos correos, responda este correo con &quot;cancelar&quot;.',
+    pergunta: '&iquest;Ya no quiere recibirlos? ',
+    link: 'Cancelar suscripci&oacute;n con 1 clic',
+  },
+};
+
+function unsubscribeFooter(unsubscribeToken?: string, locale: EmailLocale = 'pt-BR'): string {
+  const M = MOLDURA[locale];
   if (!unsubscribeToken) {
-    return 'Para cancelar o recebimento, responda este email com &quot;cancelar&quot;.';
+    return M.semToken;
   }
   const url = BRAND.url + '/api/unsubscribe?token=' + encodeURIComponent(unsubscribeToken);
   return [
-    'Voce nao quer mais receber? ',
-    '<a href="' + url + '" style="color:' + BRAND.color + ';text-decoration:underline;">Cancelar inscricao com 1 clique</a>',
+    M.pergunta,
+    '<a href="' + url + '" style="color:' + BRAND.color + ';text-decoration:underline;">' + M.link + '</a>',
   ].join('');
 }
 
-function layout(content: string, unsubscribeToken?: string): string {
+function layout(content: string, unsubscribeToken?: string, locale: EmailLocale = 'pt-BR'): string {
+  const M = MOLDURA[locale];
   return [
     '<!DOCTYPE html>',
-    '<html lang="pt-BR">',
+    '<html lang="' + locale + '">',
     '<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>',
     '<body style="margin:0;padding:0;background:#f4f6f9;font-family:Arial,Helvetica,sans-serif;">',
     '<table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f6f9;padding:32px 16px;">',
@@ -44,16 +78,16 @@ function layout(content: string, unsubscribeToken?: string): string {
     '<table width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);">',
     '<tr><td style="background:' + BRAND.color + ';padding:24px 32px;">',
     '<h1 style="margin:0;color:#ffffff;font-size:20px;font-weight:700;">' + BRAND.name + '</h1>',
-    '<p style="margin:4px 0 0;color:rgba(255,255,255,0.7);font-size:12px;">' + BRAND.tagline + '</p>',
+    '<p style="margin:4px 0 0;color:rgba(255,255,255,0.7);font-size:12px;">' + M.tagline + '</p>',
     '</td></tr>',
     '<tr><td style="padding:32px;">',
     content,
     '</td></tr>',
     '<tr><td style="padding:20px 32px;border-top:1px solid #eee;">',
     '<p style="margin:0;color:#666;font-size:11px;line-height:1.6;">',
-    BRAND.name + ' &mdash; ' + BRAND.tagline + '<br>',
+    BRAND.name + M.sep + M.tagline + '<br>',
     '<a href="' + BRAND.url + '" style="color:' + BRAND.color + ';text-decoration:none;">' + BRAND.url + '</a><br><br>',
-    unsubscribeFooter(unsubscribeToken),
+    unsubscribeFooter(unsubscribeToken, locale),
     '</p>',
     '</td></tr>',
     '</table>',
@@ -65,34 +99,69 @@ function layout(content: string, unsubscribeToken?: string): string {
 }
 
 /**
- * Template: Welcome (novo subscriber)
+ * Textos do welcome por idioma. O portugues e o original, intacto; en e es
+ * sao traducoes fieis a ele (12/Nov/2026). O assunto do e-mail sai daqui.
  */
-export function welcomeTemplate(unsubscribeToken?: string): string {
+export const WELCOME_TEXTOS: Record<EmailLocale, { assunto: string; titulo: string; intro: string; itens: string[]; cta: string }> = {
+  'pt-BR': {
+    assunto: 'Bem-vindo ao AFOS Analytics',
+    titulo: 'Bem-vindo ao AFOS Analytics',
+    intro: 'Obrigado por se cadastrar. A partir de agora, voce recebera:',
+    itens: [
+      'Alertas de mudancas significativas nas odds',
+      'Resumo diario das eleicoes',
+      'Notificacoes de eventos criticos',
+      'Novidades da plataforma',
+    ],
+    cta: 'Acessar o Dashboard',
+  },
+  en: {
+    assunto: 'Welcome to AFOS Analytics',
+    titulo: 'Welcome to AFOS Analytics',
+    intro: 'Thank you for signing up. From now on, you will receive:',
+    itens: [
+      'Alerts on significant changes in the odds',
+      'Daily election summary',
+      'Notifications of critical events',
+      'Platform updates',
+    ],
+    cta: 'Go to the Dashboard',
+  },
+  es: {
+    assunto: 'Bienvenido a AFOS Analytics',
+    titulo: 'Bienvenido a AFOS Analytics',
+    intro: 'Gracias por registrarse. A partir de ahora, recibir&aacute;:',
+    itens: [
+      'Alertas de cambios significativos en las probabilidades',
+      'Resumen diario de las elecciones',
+      'Notificaciones de eventos cr&iacute;ticos',
+      'Novedades de la plataforma',
+    ],
+    cta: 'Acceder al Dashboard',
+  },
+};
+
+/**
+ * Template: Welcome (novo subscriber), no idioma do lead.
+ */
+export function welcomeTemplate(unsubscribeToken?: string, locale: EmailLocale = 'pt-BR'): string {
+  const W = WELCOME_TEXTOS[locale];
+  const item = (texto: string, ultimo: boolean) => [
+    '<tr><td style="padding:10px 0;' + (ultimo ? '' : 'border-bottom:1px solid #f0f0f0;') + '">',
+    '<span style="color:' + BRAND.color + ';font-weight:700;">&#9679;</span>',
+    '<span style="color:#333;font-size:14px;margin-left:8px;">' + texto + '</span>',
+    '</td></tr>',
+  ].join('');
   return layout([
-    '<h2 style="margin:0 0 16px;color:#1a1a1a;font-size:18px;">Bem-vindo ao AFOS Analytics</h2>',
+    '<h2 style="margin:0 0 16px;color:#1a1a1a;font-size:18px;">' + W.titulo + '</h2>',
     '<p style="color:#333;font-size:14px;line-height:1.7;margin:0 0 16px;">',
-    'Obrigado por se cadastrar. A partir de agora, voce recebera:</p>',
+    W.intro + '</p>',
     '<table width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 20px;">',
-    '<tr><td style="padding:10px 0;border-bottom:1px solid #f0f0f0;">',
-    '<span style="color:' + BRAND.color + ';font-weight:700;">&#9679;</span>',
-    '<span style="color:#333;font-size:14px;margin-left:8px;">Alertas de mudancas significativas nas odds</span>',
-    '</td></tr>',
-    '<tr><td style="padding:10px 0;border-bottom:1px solid #f0f0f0;">',
-    '<span style="color:' + BRAND.color + ';font-weight:700;">&#9679;</span>',
-    '<span style="color:#333;font-size:14px;margin-left:8px;">Resumo diario das eleicoes</span>',
-    '</td></tr>',
-    '<tr><td style="padding:10px 0;border-bottom:1px solid #f0f0f0;">',
-    '<span style="color:' + BRAND.color + ';font-weight:700;">&#9679;</span>',
-    '<span style="color:#333;font-size:14px;margin-left:8px;">Notificacoes de eventos criticos</span>',
-    '</td></tr>',
-    '<tr><td style="padding:10px 0;">',
-    '<span style="color:' + BRAND.color + ';font-weight:700;">&#9679;</span>',
-    '<span style="color:#333;font-size:14px;margin-left:8px;">Novidades da plataforma</span>',
-    '</td></tr>',
+    W.itens.map((t, i) => item(t, i === W.itens.length - 1)).join(''),
     '</table>',
     '<a href="' + BRAND.url + '" style="display:inline-block;background:' + BRAND.color + ';color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;">',
-    'Acessar o Dashboard</a>',
-  ].join(''), unsubscribeToken);
+    W.cta + '</a>',
+  ].join(''), unsubscribeToken, locale);
 }
 
 /**

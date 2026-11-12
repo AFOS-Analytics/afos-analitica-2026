@@ -54,7 +54,7 @@ export async function POST(request: Request) {
     const attempts = await redis.incr(key)
     if (attempts === 1) await redis.expire(key, 60)
     if (attempts > 30) {
-      audit('rate_limited', 'api.admin.data-request', ip, { ip })
+      audit('rate_limited', 'api.admin.data-request', 'n/a', { ip })
       return NextResponse.json({ error: 'rate_limited' }, { status: 429 })
     }
   }
@@ -81,9 +81,13 @@ export async function POST(request: Request) {
 
   // ─── Create deletion request ─────────────────────────────────
   if (type === 'deletion') {
-    // Idempotente: se já existe pending/completed, retorna sucesso
+    // Idempotente: se já existe pedido PENDENTE, retorna o mesmo.
+    // 🔴 O concluído não guarda mais o e-mail em claro (fica o HMAC dele), e
+    // não bloqueia pedido novo: quem foi excluído e voltou a assinar tem
+    // cadastro NOVO, e um pedido novo tem que alcançá-lo. Antes, o pedido
+    // concluído antigo respondia "accepted" e o cadastro novo nunca era apagado.
     const existing = await prisma.deletionRequest.findFirst({
-      where: { email, status: { in: ['pending', 'completed'] } },
+      where: { email, status: 'pending' },
       select: { id: true, status: true },
     })
 

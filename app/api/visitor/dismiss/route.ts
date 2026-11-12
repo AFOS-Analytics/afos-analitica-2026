@@ -8,6 +8,7 @@ import { getPrisma } from '../../../../lib/db'
 import { visitorDismissSchema } from '../../../../lib/validations'
 import { MAX_POPUP_DISMISSALS } from '../../../../lib/visitor/constants'
 import { isRateLimited } from '../../../../lib/rate-limit'
+import { clientIp } from '../../../../lib/net/client-ip'
 
 export async function POST(request: Request) {
   const prisma = getPrisma()
@@ -20,6 +21,14 @@ export async function POST(request: Request) {
 
   const parsed = visitorDismissSchema.safeParse(body)
   if (!parsed.success) return NextResponse.json({ ok: false, error: 'invalid_visitor_id' }, { status: 400 })
+
+  // 🔴 Freio POR IP, além do por visitorId. O visitorId vem do corpo e o
+  // cliente escolhe: com um UUID novo a cada chamada o contador por visitorId
+  // fica sempre em 1 e não freia nada. A chave é a mesma nas quatro rotas de
+  // visitante (state, migrate, dismiss, session).
+  if (await isRateLimited(`afos:ratelimit:visitor:ip:${clientIp(request.headers)}`, 60, 60)) {
+    return NextResponse.json({ ok: false, error: 'rate_limited' }, { status: 429 })
+  }
 
   // Rate limit: 10 dismiss calls per minute per visitorId (D+7 hardening).
   if (await isRateLimited(`afos:ratelimit:dismiss:${parsed.data.visitorId}`, 10, 60)) {
