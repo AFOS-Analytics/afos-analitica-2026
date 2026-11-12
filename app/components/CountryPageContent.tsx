@@ -60,6 +60,8 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
   const l = LABELS[loc] || LABELS['en']
   const t = TEXTS(name)[loc] || TEXTS(name)['en']
   const ds = DTEXTS[loc] || DTEXTS['en']
+  // Troca só o separador decimal, sem fixar casas: o dado traz 43, 37.2 e -6.35.
+  const sepDec = (v: number) => (loc === 'en' ? String(v) : String(v).replace('.', ','))
   // foto do mercado (barras "Quem vence?") embutida no card de divergência
   const snap = div?.market_snapshot?.candidates?.length ? div.market_snapshot : null
   const snapMax = snap ? Math.max(...snap.candidates.map((c) => c.market_pct || 0), 1) : 1
@@ -183,9 +185,9 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
                           <span className={`block text-[11px] font-normal italic ${textMuted} mt-0.5 max-w-xs leading-snug`}>⚠ {r.note[loc] || r.note['en']}</span>
                         )}
                       </td>
-                      <td className={`text-right tabular-nums px-2 ${tdNum}`}>{r.poll_pct}%</td>
+                      <td className={`text-right tabular-nums px-2 ${tdNum}`}>{sepDec(r.poll_pct)}%</td>
                       <td className={`text-right tabular-nums px-2 ${tdNum}`}>{fmtDecimal(r.market_pct, loc, 1)}%{r.note ? '*' : ''}</td>
-                      <td className={`text-right tabular-nums font-semibold pl-2 ${r.divergence_pp > 0 ? pos : r.divergence_pp < 0 ? neg : textMuted}`}>{r.divergence_pp > 0 ? '+' : ''}{r.divergence_pp}pp{r.note ? '*' : ''}</td>
+                      <td className={`text-right tabular-nums font-semibold pl-2 ${r.divergence_pp > 0 ? pos : r.divergence_pp < 0 ? neg : textMuted}`}>{r.divergence_pp > 0 ? '+' : ''}{sepDec(r.divergence_pp)}pp{r.note ? '*' : ''}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -209,9 +211,9 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
                       {div.rows_runoff.candidates.map((r, i) => (
                         <tr key={r.candidate} className={`border-b ${tdRow}`}>
                           <td className={`py-2 font-medium ${textMain}`}>{r.candidate}</td>
-                          <td className={`text-right tabular-nums px-2 ${tdNum}`}>{r.poll_pct}%</td>
-                          <td className={`text-right tabular-nums px-2 ${tdNum}`}>{r.market_pct}%</td>
-                          <td className={`text-right tabular-nums font-semibold pl-2 ${i === 0 ? (isBlue ? 'text-blue-200' : 'text-primary') : textMain}`}>{r.result_pct}%</td>
+                          <td className={`text-right tabular-nums px-2 ${tdNum}`}>{sepDec(r.poll_pct)}%</td>
+                          <td className={`text-right tabular-nums px-2 ${tdNum}`}>{sepDec(r.market_pct)}%</td>
+                          <td className={`text-right tabular-nums font-semibold pl-2 ${i === 0 ? (isBlue ? 'text-blue-200' : 'text-primary') : textMain}`}>{sepDec(r.result_pct)}%</td>
                         </tr>
                       ))}
                     </tbody>

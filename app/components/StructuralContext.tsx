@@ -1,5 +1,5 @@
 import type { CountryContext } from '../../lib/country-data'
-import { fmtUsdCompacto } from '../../lib/i18n/numero'
+import { fmtUsdCompacto, fmtUsdInteiro, fmtContagemCompacta } from '../../lib/i18n/numero'
 import { LogicLink } from './LogicLink'
 
 // Bloco "Contexto estrutural" (World Bank WGI + WDI), reutilizado nas páginas de país
@@ -30,9 +30,9 @@ const CTEXTS: Record<string, { title: string; gov: string; eco: string; edu: str
 
 // Regra única em lib/i18n/numero.ts (o espanhol tem formatação própria: ver lá).
 const fmtUsdCompact = (v: number, tag: string) => fmtUsdCompacto(v, tag)
-function fmtUsd(v: number, tag: string) { return new Intl.NumberFormat(tag, { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(v) }
+const fmtUsd = (v: number, tag: string) => fmtUsdInteiro(v, tag)
 function fmtPct(v: number, tag: string) { return new Intl.NumberFormat(tag, { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(v) + '%' }
-function fmtCountCompact(v: number, tag: string) { return new Intl.NumberFormat(tag, { notation: 'compact', maximumFractionDigits: 1 }).format(v) }
+const fmtCountCompact = (v: number, tag: string) => fmtContagemCompacta(v, tag)
 
 export function StructuralContext({ context, locale, isBlue = false, className = '', logicAnchor }: { context: CountryContext; locale: string; isBlue?: boolean; className?: string; logicAnchor?: string }) {
   const ctx = context

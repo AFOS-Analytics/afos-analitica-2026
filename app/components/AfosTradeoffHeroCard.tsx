@@ -78,8 +78,10 @@ function formatWeekRange(start: string, end: string, locale: 'pt-BR' | 'en' | 'e
   const [, m1, d1] = p1
   const [, m2, d2] = p2
   const month = MONTHS[locale][m2 - 1]
-  if (m1 === m2) return `${d1}-${d2} ${month}`
   const month1 = MONTHS[locale][m1 - 1]
+  // EN em ordem americana, igual à edição e ao Weekly ("November 2-8").
+  if (locale === 'en') return m1 === m2 ? `${month} ${d1}-${d2}` : `${month1} ${d1} - ${month} ${d2}`
+  if (m1 === m2) return `${d1}-${d2} ${month}`
   return `${d1} ${month1} - ${d2} ${month}`
 }
 

@@ -26,6 +26,14 @@ interface HeaderProps {
  * O `suppressHydrationWarning` logo acima escondia justamente esse desencontro.
  */
 const FUSO_BRT = { timeZone: 'America/Sao_Paulo' } as const
+/**
+ * Sigla do fuso escrita como DADO, e nao pedida ao Intl: o `timeZoneName` muda
+ * entre versoes do ICU ("BRT" num, "GMT-3" noutro) e o servidor e o navegador
+ * desenhariam textos diferentes. Sem a sigla, o leitor de Paris ou de Nova York
+ * lia a hora de Brasilia como hora local. Brasilia nao tem horario de verao
+ * desde 2019, entao a sigla e fixa.
+ */
+const SIGLA_FUSO = 'BRT'
 
 export function Header({ fetchedAt, onShowSobre, onShowMetas }: HeaderProps) {
   const { t, locale } = useTranslation();
@@ -80,7 +88,7 @@ export function Header({ fetchedAt, onShowSobre, onShowMetas }: HeaderProps) {
               {HOW_IT_WORKS_LABEL[locale] ?? HOW_IT_WORKS_LABEL['pt-BR']}
             </Link>
             {' · '}
-            {t('header.updated')}: {new Date(fetchedAt ?? Date.now()).toLocaleString(dateLocale, FUSO_BRT)}
+            {t('header.updated')}: {new Date(fetchedAt ?? Date.now()).toLocaleString(dateLocale, FUSO_BRT)} {SIGLA_FUSO}
           </p>
         </div>
       </header>

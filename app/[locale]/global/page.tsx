@@ -1,6 +1,8 @@
 'use client';
 
 import { caminhoDashboard } from '../../../lib/paineis.mjs';
+import { fmtVolumeUsd } from '../../../lib/i18n/numero';
+import { gravarIdioma } from '../../../lib/i18n/config';
 import { useEffect, useState, useRef } from 'react';
 import { useParams, useRouter, usePathname } from 'next/navigation';
 import { MOCK_ELECTIONS } from '../../lib/mock-elections';
@@ -100,6 +102,7 @@ export default function GlobalPage() {
 
   const handleLocaleChange = (next: Locale) => {
     if (next === locale) return;
+    gravarIdioma(next);
     const newPath = pathname.replace(/^\/(pt-BR|en|es)/, `/${next}`) || `/${next}/global`;
     router.push(newPath);
   };
@@ -139,10 +142,7 @@ export default function GlobalPage() {
 
   const liveCount = countries.filter(c => c.status === 'live').length;
   const totalVolume = countries.reduce((s, c) => s + (c.volumeUsd || 0), 0);
-  const volStr =
-    totalVolume >= 1e9 ? `$${(totalVolume / 1e9).toFixed(2)}B`
-    : totalVolume >= 1e6 ? `$${(totalVolume / 1e6).toFixed(1)}M`
-    : `$${(totalVolume / 1e3).toFixed(0)}K`;
+  const volStr = fmtVolumeUsd(totalVolume, locale);
 
   return (
     <div className="min-h-screen bg-white">
