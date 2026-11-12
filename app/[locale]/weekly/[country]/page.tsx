@@ -102,6 +102,19 @@ const META_POR_PAIS: Record<string, Record<keyof typeof T, { metaTitle: string; 
   },
 }
 
+/**
+ * Rótulo do link de volta por país. Os EUA usam o `back` de `T`, como sempre.
+ * O link vai ao painel DO PRÓPRIO país (antes era /dashboard/us fixo, e o
+ * arquivo da França mandava o leitor ao painel dos EUA). Decisão de 12/Nov/2026.
+ */
+const VOLTAR_POR_PAIS: Record<string, Record<keyof typeof T, string>> = {
+  fr: {
+    en: 'Back to the France panel',
+    'pt-BR': 'Voltar ao painel da França',
+    es: 'Volver al panel de Francia',
+  },
+}
+
 function chave(locale: string): keyof typeof T {
   return locale === 'en' || locale === 'es' ? locale : 'pt-BR'
 }
@@ -171,6 +184,8 @@ export default async function WeeklyArchivePage(props: Props) {
 
   const t = T[chave(p.locale)]
   const latest = getLatestDate(p.country)
+  const voltarHref = `/${p.locale}/dashboard/${p.country}`
+  const voltarRotulo = VOLTAR_POR_PAIS[p.country]?.[chave(p.locale)] ?? t.back
 
   // País válido e ainda sem edição publicada. O estado vazio diz a verdade em
   // vez de redirecionar para outro produto, que seria resposta errada.
@@ -180,8 +195,8 @@ export default async function WeeklyArchivePage(props: Props) {
         <p className="mb-1 text-xs font-bold uppercase tracking-wider text-teal-700">{t.eyebrow}</p>
         <h1 className="mb-3 text-2xl font-bold text-primary">{t.title}</h1>
         <p className="text-sm text-gray-700">{t.empty}</p>
-        <a href={`/${p.locale}/dashboard/us`} className="mt-4 inline-block text-sm font-semibold text-primary hover:underline">
-          {t.back} →
+        <a href={voltarHref} className="mt-4 inline-block text-sm font-semibold text-primary hover:underline">
+          {voltarRotulo} →
         </a>
       </main>
     )
@@ -247,8 +262,8 @@ export default async function WeeklyArchivePage(props: Props) {
         ))}
       </ol>
 
-      <a href={`/${p.locale}/dashboard/us`} className="mt-8 inline-block text-sm font-semibold text-primary hover:underline">
-        {t.back} →
+      <a href={voltarHref} className="mt-8 inline-block text-sm font-semibold text-primary hover:underline">
+        {voltarRotulo} →
       </a>
     </main>
   )
