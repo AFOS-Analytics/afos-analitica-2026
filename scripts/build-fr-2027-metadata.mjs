@@ -17,7 +17,8 @@ const OUT = process.env.FR2027_OUT || join(ROOT, '.cache', 'fr2027-dataset')
 const R = JSON.parse(readFileSync(join(OUT, 'data', 'fr-2027-case-summary.json'), 'utf-8'))
 // 1.1.0 (08/Nov/2026): entra a Kalshi, livro próprio
 // 1.2.0 (10/Nov/2026): séries até 10/Nov e nota da ficha da Ifop renumerada pela Commission
-const VERSAO = '1.2.0'
+// 1.3.0 (12/Nov/2026): séries até 12/Nov; preço da Polymarket com 2 casas e livro de vitória inteiro (até 80 contratos) desde 12/Nov
+const VERSAO = '1.3.0'
 const K = R.kalshi
 const REPO = 'AFOS-Analytics1/france-2027-presidential-divergence'
 const P = R.polls
@@ -95,6 +96,7 @@ ${R.markets.books.map(linhaMercado).join('\n')}
 - \`price_pct\` is the implied probability in points from 0 to 100. \`volume_usd\` is cumulative traded volume of the contract since it opened, not money at stake today.
 - A snapshot is stored when any contract of the book moves 0.5 points or more (checked at most once an hour), with a forced snapshot every 4 hours. A book that does not move has few snapshots, and that is a measurement too.
 - Placeholder contracts listed by the exchange before a candidate exists ("Candidate A") are not prices and are left out.
+- From 12 Nov 2026, about 15:50 UTC, \`price_pct\` is stored with 2 decimals (0.01 point); earlier rows are in steps of 0.1 point. From the same time, the win book stores up to 80 contracts; before, it stored the 20 highest, so the smallest contracts of that book are missing from earlier snapshots.
 
 ### Kalshi book
 
@@ -137,6 +139,7 @@ Todo preço e toda pesquisa deste pacote foram registrados **antes da urna**. O 
 
 - Os dois livros de mercado **nunca são somados nem tirados em média**: taxas, liquidez e quem negocia são diferentes, e a distância entre eles é uma medição própria. O volume da Kalshi é contado em contratos, não em dólares.
 - O pacote **não subtrai** preço de pesquisa. O mercado paga **vencer a eleição**; a pesquisa mede **intenção de voto no 1º turno**. São grandezas diferentes, e a diferença não teria unidade.
+- Desde 12/11/2026, por volta das 15:50 UTC, o preço da Polymarket é gravado com 2 casas decimais (antes, de 0,1 em 0,1 ponto), e o livro de vitória guarda até 80 contratos (antes, os 20 maiores).
 - Lista que não passa na conferência fica no arquivo, marcada com o motivo.
 - Pesquisas da base aberta da [Mieux Voter](https://github.com/MieuxVoter/presidentielle2027) (licença MIT). Dados sob CC BY 4.0. Nada aqui é convite a apostar.
 
@@ -153,6 +156,7 @@ Todo precio y toda encuesta de este paquete se registraron **antes de la votaci�
 
 - Los dos libros de mercado **nunca se suman ni se promedian**: comisiones, liquidez y quién negocia son distintos, y la distancia entre ellos es una medición en sí. El volumen de Kalshi se cuenta en contratos, no en dólares.
 - El paquete **no resta** precio de encuesta. El mercado paga **ganar la elección**; la encuesta mide **intención de voto en la 1ª vuelta**. Son magnitudes distintas, y la diferencia no tendría unidad.
+- Desde el 12/11/2026, hacia las 15:50 UTC, el precio de Polymarket se guarda con 2 decimales (antes, de 0,1 en 0,1 punto), y el libro de victoria guarda hasta 80 contratos (antes, los 20 mayores).
 - La lista que no pasa el cotejo queda en el archivo, marcada con el motivo.
 - Encuestas de la base abierta de [Mieux Voter](https://github.com/MieuxVoter/presidentielle2027) (licencia MIT). Datos bajo CC BY 4.0. Nada aquí es una invitación a apostar.
 

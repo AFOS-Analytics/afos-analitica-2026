@@ -36,13 +36,17 @@ def criar_se_preciso() -> None:
 if __name__ == "__main__":
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     modo = args[0] if args else "conferir"
+    # Encolhimento DECLARADO, mesmo mecanismo do portao dos EUA (desde 12/Nov/2026):
+    # a lista de fichas pendentes encolhe quando a base estrutura uma pesquisa.
+    decl_arg = next((a[len("--declarado="):] for a in sys.argv[1:] if a.startswith("--declarado=")), None)
+    declarados, motivo = hf.ler_declarados(decl_arg)
     if modo == "conferir":
-        sys.exit(0 if hf.conferir(exato="--exato" in sys.argv[1:]) else 1)
+        sys.exit(0 if hf.conferir(declarados, motivo, exato="--exato" in sys.argv[1:]) else 1)
     elif modo == "criar":
         criar_se_preciso()
         print("  repositorio pronto: https://huggingface.co/datasets/%s" % hf.REPO)
     elif modo == "subir":
         criar_se_preciso()
-        hf.subir(args[1] if len(args) > 1 else "Atualiza o bundle France 2027")
+        hf.subir(args[1] if len(args) > 1 else "Atualiza o bundle France 2027", declarados, motivo)
     else:
         sys.exit("modo desconhecido: %s (use criar, conferir ou subir)" % modo)

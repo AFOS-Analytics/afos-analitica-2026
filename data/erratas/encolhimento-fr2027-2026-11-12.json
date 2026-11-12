@@ -1,0 +1,8 @@
+{
+  "motivo": "fichas pendentes sairam da lista porque a base MieuxVoter estruturou as pesquisas delas; a lista de pendentes e um retrato do dia, nao uma serie",
+  "trilha": "lib/fr-polls/collect.mjs",
+  "explicacao": "Na v1.2.0 (10/Nov/2026) havia 3 fichas pendentes: 10362 (Toluna Harris), 10351 (IFOP/LCI) e 10339 (Cluster17/Politico). Em 11/Nov a base estruturou as listas da 10362 e da 10339, que passaram a polls/fr-voting-intentions.csv como publicaveis. Em 12/Nov entrou a 10368 (Cluster17/Politico, campo 9-10/11). Pendentes agora: 10368 e 10351. Delta liquido: 3 - 2 + 1 = 2, ou seja -1.",
+  "arquivos": {
+    "polls/fr-pending-notices.csv": -1
+  }
+}
