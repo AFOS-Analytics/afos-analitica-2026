@@ -116,6 +116,60 @@ export async function anonymizeUser(email: string): Promise<{ success: boolean; 
   }
 }
 
+// ─── Retenção de leads fora da lista ───────────────────────────────
+
+/**
+ * Prazo de guarda do e-mail de quem SAIU da lista: 24 meses desde a última
+ * atualização do lead. Vale para os status 'unsubscribed' (pediu para sair),
+ * 'bounced' (o endereço quicou) e 'complained' (marcou como spam). Depois
+ * disso o lead é anonimizado pela MESMA regra do pedido de exclusão
+ * (anonymizeUser), sem segunda regra. Decisão do André em 12/Nov/2026.
+ *
+ * O lead não tem `updatedAt`. A última atualização é a mais recente entre
+ * `lastSeenAt` (cadastro ou recadastro) e `unsubscribedAt` (saída). O bounce
+ * não grava data própria, então nele vale o `lastSeenAt`.
+ */
+export const RETENCAO_LEAD_INATIVO_MESES = 24
+const STATUS_FORA_DA_LISTA = ['unsubscribed', 'bounced', 'complained']
+
+export async function purgarLeadsInativos(opts: { limite: number; prazoMs?: number }): Promise<{
+  encontrados: number
+  anonimizados: number
+  falhas: number
+  cutoff: string
+}> {
+  const prisma = getPrisma()
+  if (!prisma) throw new Error('database_unavailable')
+
+  const cutoff = new Date()
+  cutoff.setUTCMonth(cutoff.getUTCMonth() - RETENCAO_LEAD_INATIVO_MESES)
+
+  const leads = await prisma.lead.findMany({
+    where: {
+      status: { in: STATUS_FORA_DA_LISTA },
+      lastSeenAt: { lt: cutoff },
+      OR: [{ unsubscribedAt: null }, { unsubscribedAt: { lt: cutoff } }],
+    },
+    select: { email: true },
+    orderBy: { lastSeenAt: 'asc' },
+    take: opts.limite,
+  })
+
+  const inicio = Date.now()
+  let anonimizados = 0
+  let falhas = 0
+  for (const lead of leads) {
+    // Folga para a função não estourar o maxDuration: o que sobrar fica para
+    // a execução de amanhã.
+    if (opts.prazoMs && Date.now() - inicio > opts.prazoMs) break
+    const r = await anonymizeUser(lead.email)
+    if (r.success) anonimizados++
+    else falhas++
+  }
+
+  return { encontrados: leads.length, anonimizados, falhas, cutoff: cutoff.toISOString() }
+}
+
 // ─── Export ────────────────────────────────────────────────────────
 
 export async function exportUserData(email: string): Promise<{ success: boolean; data?: Record<string, unknown>; error?: string }> {
