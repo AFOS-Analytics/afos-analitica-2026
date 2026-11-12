@@ -251,7 +251,8 @@ export function UsPollsSection({ data }: { data: UsPollsData | null }) {
                     {fmt(Math.abs(p.vantagemDem), locale, 0)}
                   </td>
                   <td className="py-2">
-                    {p.fontePrimaria ? (
+                    {/* Segunda trava: só http(s) vira link (o coletor já filtra). */}
+                    {p.fontePrimaria && /^https?:\/\//i.test(p.fontePrimaria) ? (
                       <a
                         href={p.fontePrimaria}
                         target="_blank"
