@@ -79,6 +79,10 @@ export interface UsPollsData {
     semFontePrimaria: number
   }
   polls: UsPoll[]
+  // Total de pesquisas no arquivo quando `polls` chega CORTADO na prop (a tela
+  // mostra no máximo 60, então o servidor só serializa essas). Ausente quando
+  // `polls` vem inteiro.
+  nPolls?: number
 }
 
 /**

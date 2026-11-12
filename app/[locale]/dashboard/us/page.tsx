@@ -56,10 +56,16 @@ export const revalidate = 7200;
 // indicadores DO PAÍS, não da eleição, então manter duas cópias só criaria
 // chance de divergirem. Mesma safra do contexto do Brasil: WGI, população, PIB
 // e inflação em 2024.
+// A tela mostra no máximo 60 pesquisas, então só essas viajam no payload RSC.
+// `nPolls` guarda o total para o botão continuar mostrando o mesmo número.
 export default async function UsDashboardPage() {
+  const d = await loadUsPollsDataFresh();
+  const pollsData = d && Array.isArray(d.polls)
+    ? { ...d, polls: d.polls.slice(0, 60), nPolls: d.polls.length }
+    : d;
   return (
     <UsDashboardClient
-      pollsData={await loadUsPollsDataFresh()}
+      pollsData={pollsData}
       pressData={await loadUsPressData()}
       context={(usaCase as { context?: unknown }).context as CountryContext | undefined}
     />

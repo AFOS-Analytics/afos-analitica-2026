@@ -39,9 +39,10 @@ export function useDashboardData({ initialPolls, initialAc, initialCrit }: Initi
     const fetchWithTimeout = (url: string, ms: number = 15000) => {
       const controller = new AbortController();
       const timer = setTimeout(() => controller.abort(), ms);
-      // cache: 'no-store' bypassa Vercel edge cache + browser cache; cada
-      // load busca odds/notícias frescas. (Estáticos já vêm do SSR.)
-      return fetch(url, { signal: controller.signal, cache: 'no-store' })
+      // Sem `cache: 'no-store'` desde o congelamento: os dois caminhos abaixo são
+      // arquivos fixos em public/, que nunca mudam, então o cache do navegador e
+      // da borda pode servi-los. O no-store era de quando o dado era ao vivo.
+      return fetch(url, { signal: controller.signal })
         .then(r => { clearTimeout(timer); return r.ok ? r.json() : null; })
         .catch(() => { clearTimeout(timer); return null; });
     };
