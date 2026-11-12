@@ -7,6 +7,7 @@ import { getPrisma } from '../../../../lib/db'
 import { visitorStateSchema } from '../../../../lib/validations'
 import { computeEligible, shouldShowPopup } from '../../../../lib/visitor/constants'
 import { isRateLimited } from '../../../../lib/rate-limit'
+import { clientIp } from '../../../../lib/net/client-ip'
 
 export async function POST(request: Request) {
   const prisma = getPrisma()
@@ -24,6 +25,14 @@ export async function POST(request: Request) {
   // `migrate` limitam por visitorId; esta CRIA linha no banco para qualquer UUID
   // que chegue, e era a única das três sem freio. Assimetria de proteção entre
   // rotas irmãs é o defeito, não a ausência em si.
+  // 🔴 Freio POR IP, além do por visitorId. O visitorId vem do corpo e o
+  // cliente escolhe: com um UUID novo a cada chamada o contador por visitorId
+  // fica sempre em 1 e não freia nada. A chave é a mesma nas quatro rotas de
+  // visitante (state, migrate, dismiss, session).
+  if (await isRateLimited(`afos:ratelimit:visitor:ip:${clientIp(request.headers)}`, 60, 60)) {
+    return NextResponse.json({ ok: false, error: 'rate_limited' }, { status: 429 })
+  }
+
   if (await isRateLimited(`afos:ratelimit:state:${parsed.data.visitorId}`, 30, 60)) {
     return NextResponse.json({ ok: false, error: 'rate_limited' }, { status: 429 })
   }
