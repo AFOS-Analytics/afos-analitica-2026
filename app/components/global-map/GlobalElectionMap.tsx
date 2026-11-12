@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, useCallback, memo } from 'react';
-import { useLocale } from '../../i18n/context';
+import { useLocale, useTranslation } from '../../i18n/context';
 import type { CountryMarketSummary, MapTooltipData } from '../../types/global-map';
 import { NUMERIC_TO_ISO3 } from '../../types/global-map';
 import { MAP_TOKENS, getCountryColor, getCountryOpacity } from '../../lib/map-colors';
@@ -20,6 +20,7 @@ export const GlobalElectionMap = memo(function GlobalElectionMap({ countries }: 
   const [selectedCountry, setSelectedCountry] = useState<CountryMarketSummary | null>(null);
   const [mapReady, setMapReady] = useState(false);
   const locale = useLocale();
+  const { t } = useTranslation();
   const loadingLabel = locale === 'pt-BR' ? 'Carregando mapa...' : locale === 'es' ? 'Cargando mapa...' : 'Loading map...';
 
   // Build lookup: ISO3 → country data
@@ -49,20 +50,30 @@ export const GlobalElectionMap = memo(function GlobalElectionMap({ countries }: 
     const svg = svgRef.current;
     if (!svg) return;
 
-    let d3Module: typeof import('d3');
-    let topoModule: typeof import('topojson-client');
+    let selectFn: typeof import('d3-selection').select | undefined;
 
     const renderMap = async () => {
-      // Dynamic imports, only loaded on client, never in server bundle
-      const [d3, topojson] = await Promise.all([
-        import('d3'),
+      // Dynamic imports, only loaded on client, never in server bundle.
+      // Só os submódulos usados, e não o pacote `d3` inteiro: import dinâmico
+      // consumido como objeto não permite tree-shaking. `d3-transition` entra
+      // pelo efeito colateral: é ele que dá `.transition()` à seleção (pulso).
+      const [d3Selection, d3Geo, d3Zoom, topojson] = await Promise.all([
+        import('d3-selection'),
+        import('d3-geo'),
+        import('d3-zoom'),
         import('topojson-client'),
+        import('d3-transition'),
       ]);
-      d3Module = d3;
-      topoModule = topojson;
+      const d3 = {
+        select: d3Selection.select,
+        geoNaturalEarth1: d3Geo.geoNaturalEarth1,
+        geoPath: d3Geo.geoPath,
+        zoom: d3Zoom.zoom,
+      };
+      selectFn = d3Selection.select;
 
       // Load TopoJSON
-      const worldData = await d3.json('/geo/world-110m.json') as any;
+      const worldData = await fetch('/geo/world-110m.json').then(r => (r.ok ? r.json() : null)) as any;
       if (!worldData?.objects?.countries) return;
 
       const countriesGeo = topojson.feature(worldData, worldData.objects.countries) as any;
@@ -218,6 +229,9 @@ export const GlobalElectionMap = memo(function GlobalElectionMap({ countries }: 
           .attr('opacity', 0.6)
           .style('pointer-events', 'none');
 
+        // Quem pede movimento reduzido vê o anel parado, sem o pulso infinito.
+        if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
+
         function pulse() {
           ring
             .attr('r', 3)
@@ -243,8 +257,8 @@ export const GlobalElectionMap = memo(function GlobalElectionMap({ countries }: 
 
     // Cleanup
     return () => {
-      if (d3Module && svg) {
-        d3Module.select(svg).selectAll('*').remove();
+      if (selectFn && svg) {
+        selectFn(svg).selectAll('*').remove();
       }
     };
   }, [countries, handleCountryHover, handleCountryClick]);
@@ -264,6 +278,8 @@ export const GlobalElectionMap = memo(function GlobalElectionMap({ countries }: 
       {/* SVG Map */}
       <svg
         ref={svgRef}
+        role="img"
+        aria-label={t('modal.globalTitle')}
         className="w-full h-full"
         style={{ background: MAP_TOKENS.bg, opacity: mapReady ? 1 : 0, transition: 'opacity 0.5s ease' }}
       />

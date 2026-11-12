@@ -101,7 +101,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
               </div>
             ))}
           </div>
-          <p className="text-[10px] text-gray-400 mt-2">{polls?.polymarketComparison?.sources ? `${pl.sources}: ${polls.polymarketComparison.sources}` : `${pl.sources}: ${pl.defaultSources}`}</p>
+          <p className="text-[10px] text-gray-600 mt-2">{polls?.polymarketComparison?.sources ? `${pl.sources}: ${polls.polymarketComparison.sources}` : `${pl.sources}: ${pl.defaultSources}`}</p>
         </Card>
       )}
 
@@ -114,11 +114,11 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
               <div key={inst.name} className="flex items-center gap-2 text-xs py-1 border-b border-gray-50">
                 <Stars count={inst.reliability} />
                 <span className="font-semibold text-dark">{inst.name}</span>
-                <span className="text-gray-400 text-[10px]">({inst.type})</span>
+                <span className="text-gray-600 text-[10px]">({inst.type})</span>
               </div>
             ))}
           </div>
-          <div className="text-[10px] text-gray-400 mt-3 space-y-1">
+          <div className="text-[10px] text-gray-600 mt-3 space-y-1">
             <div className="flex flex-wrap gap-x-4 gap-y-1">
               <span><span className="text-primary">★★★★★</span> {pl.rel[0]}</span>
               <span><span className="text-primary">★★★★</span><span className="text-gray-300">★</span> {pl.rel[1]}</span>
@@ -201,7 +201,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
         <span>👥 {fmtMilhar(poll.sample, locale)} {pl.respondents}</span>
         <span>± {fmtDecimal(poll.margin, locale, 2).replace(/[.,]00$/, '')}pp</span>
         <span><Stars count={poll.reliability} /></span>
-        <span className="text-xs text-gray-400">{poll.method}</span>
+        <span className="text-xs text-gray-600">{poll.method}</span>
       </div>
 
       <div className="grid md:grid-cols-2 gap-4 mb-6">

@@ -353,10 +353,20 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
 
     const nodeSel = root.append('g').selectAll<SVGGElement, GNode>('g').data(nodes).join('g')
       .style('cursor', (n) => n.href || n.action ? 'pointer' : 'grab')
-    nodeSel.on('click', (_e, n) => {
+    const ativarNo = (n: GNode) => {
       if (n.href) { if (/^https?:\/\//.test(n.href)) window.open(n.href, '_blank', 'noopener'); else window.location.href = n.href }
       else if (n.action) { onNav?.(n.action) }
-    })
+    }
+    nodeSel.on('click', (_e, n) => ativarNo(n))
+    // Teclado: os nós que levam a algum lugar (dataset, DOI, atalho de seção)
+    // entram no Tab como link e abrem com Enter ou Espaço, igual ao clique.
+    nodeSel.filter((n) => !!(n.href || n.action))
+      .attr('tabindex', 0)
+      .attr('role', 'link')
+      .attr('aria-label', (n) => n.href && /^https?:\/\//.test(n.href) ? `${n.label} (${lbl.legend.dataset})` : n.label)
+      .on('keydown', (e: KeyboardEvent, n) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); ativarNo(n) }
+      })
 
     nodeSel.append('circle')
       .attr('r', (n) => n.r)
@@ -503,7 +513,7 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
   const lbl = LBL[locale] || LBL['en']
   return (
     <div className={`w-full rounded-xl border shadow-sm overflow-hidden ${isBlue ? 'border-blue-400/30 bg-blue-900/40' : dim ? 'border-slate-200 bg-slate-100' : 'border-light-border bg-white'}`}>
-      <svg ref={ref} role="img" aria-label={electionLabel} viewBox={`0 0 ${W} ${H}`} className="w-full" style={{ height: 'auto', maxHeight: '74vh', display: 'block', margin: '0 auto', background: isBlue ? '#0b327a' : (dim ? '#edf1f6' : '#f8fafc') }} />
+      <svg ref={ref} role="group" aria-label={electionLabel} viewBox={`0 0 ${W} ${H}`} className="w-full" style={{ height: 'auto', maxHeight: '74vh', display: 'block', margin: '0 auto', background: isBlue ? '#0b327a' : (dim ? '#edf1f6' : '#f8fafc') }} />
       <div className={`flex flex-wrap gap-x-4 gap-y-1 px-4 py-3 text-[11px] border-t ${isBlue ? 'text-blue-100/80 border-blue-400/20' : 'text-gray-600 border-light-border'}`}>
         {divergenciaMuda ? (
           /* Uma entrada só, e ela diz o que a aresta NÃO afirma. Manter as duas
@@ -546,7 +556,7 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
             {lbl.legend.dataset}
           </span>
         )}
-        <span className={`ml-auto ${isBlue ? 'text-blue-300/60' : 'text-gray-400'}`}>{lbl.legend.hint}</span>
+        <span className={`ml-auto ${isBlue ? 'text-blue-300/60' : 'text-gray-600'}`}>{lbl.legend.hint}</span>
       </div>
     </div>
   )

@@ -3,6 +3,7 @@
 import type { CountryMarketSummary } from '../../types/global-map';
 import { MAP_TOKENS, formatVolume } from '../../lib/map-colors';
 import { useLocale } from '../../i18n/context';
+import { useFocusTrap } from '../../hooks/useFocusTrap';
 import { fmtDecimal } from '../../../lib/i18n/numero';
 
 const DRAWER_L: Record<string, { close: string; live: string; upcoming: string; closed: string; candidates: string; noData: string; scheduledFor: string; source: string; sumMarkets: (n: number) => string }> = {
@@ -19,6 +20,9 @@ interface Props {
 export function GlobalCountryDrawer({ country, onClose }: Props) {
   const locale = useLocale();
   const L = DRAWER_L[locale] || DRAWER_L['en'];
+  // Foco inicial, Tab preso e Escape fecham a gaveta. Antes do return antecipado
+  // por causa da regra dos hooks.
+  const drawerRef = useFocusTrap(!!country, onClose);
   if (!country) return null;
 
   const c = country;
@@ -32,6 +36,10 @@ export function GlobalCountryDrawer({ country, onClose }: Props) {
 
       {/* Drawer */}
       <div
+        ref={drawerRef}
+        role="dialog"
+        aria-modal="true"
+        aria-label={c.countryName}
         className="absolute right-0 top-0 h-full w-full sm:w-[420px] overflow-y-auto"
         style={{ background: MAP_TOKENS.bg }}
         onClick={e => e.stopPropagation()}

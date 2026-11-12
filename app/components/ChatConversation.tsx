@@ -240,8 +240,11 @@ export function ChatConversation({ locale, compact = false }: { locale: Locale; 
 
   return (
     <div className="flex flex-col h-full min-h-0 w-full">
-      {/* Histórico */}
-      <div ref={scrollRef} className="flex-1 min-h-0 overflow-y-auto py-4 px-4 space-y-4">
+      {/* Estado "pensando" para leitor de tela, com a mesma string da tela. */}
+      <span className="sr-only" role="status">{busy ? s.thinking : ''}</span>
+      {/* Histórico. role="log" anuncia a resposta nova ao leitor de tela, e
+          aria-busy segura o anúncio enquanto ela ainda chega em pedaços. */}
+      <div ref={scrollRef} role="log" aria-live="polite" aria-busy={busy} className="flex-1 min-h-0 overflow-y-auto py-4 px-4 space-y-4">
         {messages.length === 0 && (
           <div className="text-center mt-2">
             <p className="text-gray-600 dark:text-gray-300 mb-5 text-sm">{s.subtitle}</p>
@@ -321,6 +324,7 @@ export function ChatConversation({ locale, compact = false }: { locale: Locale; 
             }}
             rows={1}
             placeholder={s.placeholder}
+            aria-label={s.placeholder}
             disabled={busy}
             className="flex-1 resize-none rounded-xl border border-light-border dark:border-dark-secondary bg-white dark:bg-dark px-4 py-2.5 text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary/40 max-h-32"
           />

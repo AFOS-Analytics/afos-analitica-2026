@@ -51,12 +51,12 @@ export function GlobalContent({ mapData, expandedElection, setExpandedElection, 
         <h3 className="text-sm font-bold text-primary mb-3">{t('modal.calendarTitle')}</h3>
         <div className="flex flex-wrap gap-2">
           {mapData.map((c, i) => (
-            <div key={i} className="bg-light-bg border border-light-border rounded-lg px-3 py-2 text-xs cursor-pointer hover:border-primary hover:bg-blue-50 transition-all flex items-center gap-1.5"
+            <button type="button" key={i} aria-expanded={expandedElection === i} className="bg-light-bg border border-light-border rounded-lg px-3 py-2 text-xs cursor-pointer hover:border-primary hover:bg-blue-50 transition-all flex items-center gap-1.5"
               onClick={() => setExpandedElection(expandedElection === i ? null : i)}>
               <img src={`/flags/${c.flag}.svg`} alt={c.countryName} width={20} height={14} loading="lazy" decoding="async" className="rounded-sm object-cover" style={{ width: 20, height: 14 }} />
               <span className="font-semibold">{c.countryName}</span>
-              <span className="text-gray-400">,  {c.electionDate}</span>
-            </div>
+              <span className="text-gray-600">,  {c.electionDate}</span>
+            </button>
           ))}
         </div>
       </div>
@@ -125,11 +125,13 @@ export function GlobalContent({ mapData, expandedElection, setExpandedElection, 
                 })}
               </div>
 
+              {/* Botões SEM onClick próprio: o clique sobe até o cartão, que já
+                  alterna. Eles existem para o teclado alcançar a expansão. */}
               {!isExpanded && visiveis > 3 && (
-                <div className="text-[10px] text-primary text-center mt-2 font-medium">{t('modal.clickToSee')} {visiveis} {t('modal.candidates')} ▼</div>
+                <button type="button" aria-expanded={false} className="block w-full text-[10px] text-primary text-center mt-2 font-medium">{t('modal.clickToSee')} {visiveis} {t('modal.candidates')} ▼</button>
               )}
               {isExpanded && (
-                <div className="text-[10px] text-gray-400 text-center mt-2">{t('modal.totalVol')}: {volStr} | {visiveis} {t('modal.candidates')} ▲</div>
+                <button type="button" aria-expanded={true} className="block w-full text-[10px] text-gray-600 text-center mt-2">{t('modal.totalVol')}: {volStr} | {visiveis} {t('modal.candidates')} ▲</button>
               )}
               {slugFor(c.iso3) && (
                 <a href={`/${locale}/country/${slugFor(c.iso3)}`} onClick={(e) => e.stopPropagation()} className="mt-2 block text-center text-[11px] font-semibold text-primary hover:underline">{viewLabel}</a>

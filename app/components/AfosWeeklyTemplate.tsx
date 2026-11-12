@@ -311,7 +311,7 @@ export function AfosWeeklyTemplate({ data, locale, country = 'us' }: { data: Afo
               {(HARVARD_POR_PAIS[country] ?? { rotulo: 'Harvard Dataverse · collection' }).rotulo}
             </a>
           </div>
-          <div className={`flex flex-wrap items-center justify-center gap-2.5 text-xs uppercase tracking-wide ${isBlue ? 'text-blue-300/80' : 'text-slate-400'}`}>
+          <div className={`flex flex-wrap items-center justify-center gap-2.5 text-xs uppercase tracking-wide ${isBlue ? 'text-blue-300/80' : 'text-slate-500'}`}>
             <span className="inline-flex items-center gap-1.5 font-semibold">
               <img
                 src={`/flags/${country}.svg`}
