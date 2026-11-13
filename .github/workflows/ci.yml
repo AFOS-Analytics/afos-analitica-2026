@@ -189,6 +189,13 @@ jobs:
       - name: Segredo x nome publico (trava do backup)
         run: node scripts/testar-parece-segredo.mjs
 
+      # O primeiro teste da Franca no CI (13/Nov/2026). Nesse dia uma manchete
+      # de futebol ("Coupe du monde 2027") entrou na secao de imprensa do painel
+      # como noticia da eleicao: o "2027" solto abria a porta e o veto so
+      # conhecia orcamento. Casos dos dois lados, com as manchetes reais do dia.
+      - name: Trilho da imprensa da Franca
+        run: node scripts/testar-trilho-imprensa-fr.mjs
+
       # A regra que decide se um superlativo pode ser escrito, e o par binario
       # cru e normalizado, nos dois paises. Puro, sem rede nem backup. Ficou
       # fora do CI ate 15/Set, quando ganhou a escolha da certificada ANTERIOR.
