@@ -5,7 +5,7 @@
   "rules": { "no-undef": "error" },
   "overrides": [
     {
-      "files": ["scripts/conferir-tela.mjs", "scripts/build-og-card-br-tradeoff.mjs"],
+      "files": ["scripts/conferir-tela.mjs", "scripts/build-og-card-br-tradeoff.mjs", "scripts/build-og-card-relatorio-final.mjs"],
       "env": { "browser": true }
     }
   ]
