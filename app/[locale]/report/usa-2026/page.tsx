@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { Source_Sans_3, Source_Serif_4 } from 'next/font/google'
+import { relatorioSans as sans, relatorioSerif as serif } from '../../../fonts/relatorio'
 import { RelatorioFinalTemplate } from '../../../components/RelatorioFinalTemplate'
 import { buildMetadata } from '../../../../lib/seo/metadata'
 import { relatorioSchema } from '../../../../lib/relatorio-final/schema'
@@ -13,8 +13,7 @@ const SLUG = 'usa-2026' as const
 const DEF = RELATORIOS[SLUG]
 
 // As mesmas famílias do PDF, servidas pelo próprio site (o CSP só aceita fonte de 'self').
-const sans = Source_Sans_3({ subsets: ['latin'], weight: ['400', '600', '700'], variable: '--rel-sans', display: 'swap' })
-const serif = Source_Serif_4({ subsets: ['latin'], weight: ['400', '600', '700'], variable: '--rel-serif', display: 'swap' })
+// Arquivos no repositório desde 13/Nov/2026: ver app/fonts/relatorio.ts.
 
 // Só os idiomas cujo HTML existe: idioma sem tradução é 404, nunca o português
 // servido com o rótulo de outro idioma.
