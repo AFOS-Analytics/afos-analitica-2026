@@ -38,11 +38,19 @@ for (const t of [
   'Budget 2027 : le Sénat adopte la première partie',
   'PLF 2027 : ce qui change pour les retraités',
   'Projet de loi de finances 2027 : le gouvernement recule',
+  // 14/Nov/2026: o ano sozinho não diz eleição (manchetes reais do dia)
+  'Une hausse des tarifs des assurances de "3 à 8%" prévue pour la MAAF, MMA et GMF en 2027',
+  'Pourquoi les épreuves du bac 2027 ne sont-elles pas reportées ou aménagées ?',
+  'Smic : ce qui change au 1er janvier 2027',
 ]) conferir(t, null)
 
 console.log('🟢 o "2027" que É a eleição continua entrando')
 for (const t of [
   '2027 : la gauche cherche son candidat',
+  'Élection de 2027 : le calendrier des parrainages se précise',
+  '2027 : le scrutin vu par les maires de France',
+  'Présidentielle 2027 : Gérard Larcher invite les candidats de la droite et du centre à une réunion pour arrêter une « méthode de départage »',
+  'Smic, «made in France», présidentielle 2027 : les cinq infos économiques à retenir',
   'Présidentielle 2027 : Nicolas Sarkozy se dit favorable à une primaire « large » à droite et au centre',
   'Présidentielle 2027 : «Teddy Riner va voler l\'aspect "nouveauté" à David Lisnard», observe Florian Gérard-Mercier',
   'Candidats à la présidentielle : que veulent-ils faire des fonctionnaires ?',
