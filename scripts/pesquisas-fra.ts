@@ -16,15 +16,20 @@
  *     a Commission publicou o PDF como 10352 em 04/Nov e o republicou como
  *     10351 em 05/Nov; a base guardou o primeiro. O diagnóstico NÃO muda o que
  *     é publicável (regra do comando: registrar, não corrigir); só diz a causa.
- *  6. as fichas pendentes e a tela como está (lista principal e média).
+ *  6. as fichas pendentes e a tela como está (lista principal e média);
+ *  7. PENDENTES PELO TEXTO (17/Nov/2026): fichas recentes SEM selo de intenção
+ *     no rótulo e sem lista na base cuja ficha traz a PERGUNTA de intenção de
+ *     voto. Ver `pendentesPeloTexto`.
  *
- * ⛔ País fixo: França. Nada aqui grava, nem lê o Brasil ou os EUA.
+ * ⛔ País fixo: França. Nada aqui grava no banco, nem lê o Brasil ou os EUA.
+ *    O único arquivo escrito é o cache local `.cache/fr-fichas-texto.json`.
  */
 import { config } from 'dotenv'
 config({ path: '.env.local' })
 config({ path: '.env' })
 
-import { coletarPesquisasFr, baixar, URL_LISTAGEM } from '../lib/fr-polls/collect.mjs'
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { coletarPesquisasFr, baixar, lerListagem, URL_LISTAGEM } from '../lib/fr-polls/collect.mjs'
 import { listaPrincipalPorInstituto, mediaPorCandidato, rodadaDe, type FrPollsData, type FrPesquisa } from '../lib/fr/painel'
 
 const agora = new Date()
@@ -123,6 +128,7 @@ async function main() {
   // ── 6. Pendentes e a tela ──────────────────────────────────────────────────
   console.log(`\n== PENDENTES (ficha oficial sem lista na base): ${V.pendentes.length}`)
   for (const f of V.pendentes) console.log(`   ⏳ ${f.rotulo} · ${f.url}`)
+  await pendentesPeloTexto(V, fichasHtml)
 
   console.log('\n== LISTA PRINCIPAL POR INSTITUTO (como a tela vai mostrar com a coleta ao vivo)')
   for (const l of listaPrincipalPorInstituto(V.pesquisas, agora)) {
@@ -133,6 +139,95 @@ async function main() {
   for (const m of mediaPorCandidato(V.pesquisas, agora).slice(0, 10)) {
     console.log(`   ${m.candidato.padEnd(22)} ${m.media.toFixed(1)} (${m.listas} listas, ${m.institutos} institutos, ${m.minimo} a ${m.maximo})`)
   }
+}
+
+/**
+ * 🔎 7. PENDENTES QUE O RÓTULO NÃO ACUSA (criado 17/Nov/2026).
+ *
+ * `pendentes` da coleta só lê o RÓTULO da ficha (IV, Présitrack, baromètre
+ * élection). Medido em 17/Nov/2026 nas fichas de setembro a novembro: 6 das 26
+ * fichas de intenção de voto NÃO têm selo no rótulo (10262 enquête électorale
+ * Ipsos BVA, 10264 OpinionWay, 10277 Toluna Harris, 10292 Ifop vote blanc,
+ * 10314 Ifop climat politique, 10325 Cluster17 focus droite et centre). A base
+ * já tinha as seis; se atrasasse, o atalho diria "nada pendente" com pesquisa
+ * nova publicada.
+ *
+ * Aqui se lê o TEXTO de cada ficha recente sem selo e sem lista na base, no
+ * índice MieuxVoter/sondages-commission-index (arquiva o texto 1x por dia), e
+ * se procura a PERGUNTA de intenção de voto. Medido nas 114 fichas arquivadas
+ * de set-nov/2026: acusou 26 de 26 citadas pela base e, das 88 não citadas, só
+ * as 2 pendentes reais (10375 Elabe, 10372 Présitrack). ⛔ "pour lequel des
+ * candidats" NÃO entra no detector: é a pergunta do voto de 2022 que toda
+ * ficha da CSA traz (20 falsos positivos na primeira medição).
+ *
+ * 🧪 Controle positivo: o mesmo detector roda em fichas CITADAS da mesma
+ * janela. Se não acusar nenhuma, a seção diz que está CEGA em vez de "nada".
+ */
+const DETECTOR_IV = /plus de chances? que vous votiez|exprime(?:e|es)? une intention de vote|intentions? de vote (?:au|du|pour le) (?:premier|1er) tour|intentions? de vote (?:a|pour) l'election presidentielle(?: de)? 2027|questions d'intentions? de vote/
+const URL_INDICE_TXT = 'https://raw.githubusercontent.com/MieuxVoter/sondages-commission-index/main/archives_txt/'
+const CACHE_TEXTO = '.cache/fr-fichas-texto.json'
+const UA_FICHA = 'AFOS-Analytics/1.0 (https://www.afos-analytics.com; pesquisa academica aberta)'
+type Lida = { arquivo: string; intencao: boolean; trecho: string }
+type Leitura = Lida | { semTexto: string } | { erro: string }
+
+/**
+ * Ficha → texto arquivado → detector. O cache é por ARQUIVO (a Commission já trocou o PDF de número uma vez).
+ * O CONTROLE lê sem cache: lido do cache, ele passaria com o detector quebrado.
+ */
+async function lerFicha(url: string, cache: Record<string, Lida>, usarCache = true): Promise<Leitura> {
+  try {
+    const r = await fetch(url, { redirect: 'manual', headers: { 'User-Agent': UA_FICHA }, signal: AbortSignal.timeout(20_000) })
+    const caminho = (r.headers.get('location') ?? '').match(/\/notices\/files\/notices\/(\d{4}\/[^/]+\/[^/]+)\.pdf$/i)?.[1]
+    if (!caminho) return { erro: `a ficha não aponta para um PDF (HTTP ${r.status})` }
+    if (usarCache && cache[caminho]) return cache[caminho]
+    const t = await fetch(URL_INDICE_TXT + caminho + '.txt', { signal: AbortSignal.timeout(20_000) })
+    if (t.status === 404) return { semTexto: caminho }
+    if (!t.ok) return { erro: `índice HTTP ${t.status}` }
+    const texto = (await t.text()).normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[’`]/g, "'").replace(/\s+/g, ' ').toLowerCase()
+    const m = texto.match(DETECTOR_IV)
+    return (cache[caminho] = { arquivo: caminho, intencao: !!m, trecho: m?.[0] ?? '' })
+  } catch (e) { return { erro: e instanceof Error ? e.message : String(e) } }
+}
+
+async function pendentesPeloTexto(V: FrPollsData, fichasHtml: string) {
+  const fichas = lerListagem(fichasHtml) as { numero: string; rotulo: string; url: string; intencao: boolean }[]
+  const citadas = new Set(V.pesquisas.map((p) => p.ficha.numero).filter((n): n is string => !!n))
+  // MESMO universo de `pendentes` na coleta: ficha acima da menor citada por lista com campo nos últimos 45 dias.
+  const limite = new Date(agora.getTime() - 45 * 864e5).toISOString().slice(0, 10)
+  const recentes = V.pesquisas.filter((p) => p.campo.fim >= limite && p.ficha.numero)
+  const piso = recentes.length ? Math.min(...recentes.map((p) => parseInt(p.ficha.numero as string, 10))) : Infinity
+  const naJanela = fichas.filter((f) => parseInt(f.numero, 10) >= piso)
+  const alvo = naJanela.filter((f) => !f.intencao && !citadas.has(f.numero))
+  // Controle: até 3 fichas CITADAS da janela, as sem selo primeiro (o caso difícil).
+  const controle = [...naJanela.filter((f) => citadas.has(f.numero) && !f.intencao), ...naJanela.filter((f) => citadas.has(f.numero) && f.intencao)].slice(0, 3)
+
+  // O cache leva o detector junto: detector mudado (ou mutado num teste) descarta os vereditos velhos.
+  let cache: Record<string, Lida> = {}
+  try {
+    const c = JSON.parse(readFileSync(CACHE_TEXTO, 'utf8')) as { detector?: string; fichas?: Record<string, Lida> }
+    if (c.detector === DETECTOR_IV.source && c.fichas) cache = c.fichas
+  } catch { /* primeira rodada */ }
+  const fila = [...controle, ...alvo]
+  const res = new Map<string, Leitura>()
+  let i = 0
+  await Promise.all(Array.from({ length: 4 }, async () => {
+    while (i < fila.length) { const f = fila[i++]; res.set(f.numero, await lerFicha(f.url, cache, !controle.includes(f))) }
+  }))
+  try { mkdirSync('.cache', { recursive: true }); writeFileSync(CACHE_TEXTO, JSON.stringify({ detector: DETECTOR_IV.source, fichas: cache }, null, 1)) } catch { /* cache é conveniência */ }
+
+  console.log(`\n== PENDENTES PELO TEXTO (fichas desde a ${piso} sem selo de intenção no rótulo e sem lista na base): ${alvo.length}`)
+  const lidasControle = controle.map((f) => res.get(f.numero)).filter((r): r is Lida => !!r && 'intencao' in r)
+  const acusadas = lidasControle.filter((r) => r.intencao).length
+  if (!lidasControle.length) console.log('   ⚠️ controle positivo indisponível (nenhuma ficha citada com texto arquivado): a seção não sabe se enxerga')
+  else console.log(`   controle positivo: ${acusadas} de ${lidasControle.length} fichas CITADAS acusadas (${controle.map((f) => f.numero).join(' ')})` +
+    (acusadas === 0 ? '  ⛔ DETECTOR CEGO: o formato do texto mudou? NADA abaixo vale como "sem pendente"' : acusadas < lidasControle.length ? '  ⚠️ o detector perdeu uma citada: ler à mão as fichas abaixo' : ''))
+  const de = (tipo: 'intencao' | 'semTexto' | 'erro') => alvo.filter((f) => { const r = res.get(f.numero); return !!r && tipo in r && (tipo !== 'intencao' || (r as Lida).intencao) })
+  const achou = de('intencao'), semTexto = de('semTexto'), erro = de('erro')
+  for (const f of achou) console.log(`   ⚠️ INTENÇÃO DE VOTO NO TEXTO, sem selo no rótulo: ${f.rotulo} · ${f.url} · "${(res.get(f.numero) as Lida).trecho}" → pendente que o rótulo não acusa: listar ao André`)
+  for (const f of semTexto) console.log(`   ⏳ texto ainda não arquivado no índice (roda 1x por dia), ler o PDF: ${f.rotulo} · ${f.url}`)
+  for (const f of erro) console.log(`   ⛔ não lida: ${f.rotulo} · ${(res.get(f.numero) as { erro: string }).erro}`)
+  const lidas = alvo.length - semTexto.length - erro.length
+  if (!achou.length) console.log(`   nenhuma das ${lidas} lidas traz a pergunta de intenção de voto`)
 }
 
 main().catch((e) => { console.error(e); process.exit(1) })

@@ -23,6 +23,11 @@ npx tsx scripts/pesquisas-fra.ts       # precisa de .env.local no worktree
 
 Roda a coleta AO VIVO sem gravar e compara com o último `fr-polls` do Neon: diz se disparar o cron gravaria (assinatura igual = não grava), que listas entrariam ou sairiam da tela, a tabela de `qualidade` inteira, por que cada lista recente ficou fora (com **diagnóstico de renumeração** de ficha), as pendentes, a lista principal por instituto e a média como a tela vai mostrar. É a base das ETAPAS 2 e 3.
 
+🔎 **PENDENTES PELO TEXTO** (seção do atalho criada em 17/Nov/2026): `pendentes` só lê o RÓTULO da ficha, e 6 das 26 fichas de intenção de voto de setembro a novembro de 2026 vieram sem selo no rótulo (ex.: 10314 Ifop "climat politique post primaire", 10325 Cluster17 "Focus droite et centre"). A seção lê o texto de cada ficha recente sem selo e sem lista na base (índice `MieuxVoter/sondages-commission-index`, que arquiva 1x por dia) e procura a PERGUNTA de intenção de voto, depois de um controle positivo em fichas citadas. Medido nas 114 fichas arquivadas de setembro a novembro: 26 de 26 citadas acusadas, e das não citadas só as 2 pendentes reais. Como ler:
+- `⚠️ INTENÇÃO DE VOTO NO TEXTO` = pendente que o rótulo não acusa: listar ao André junto com as outras;
+- `⏳ texto ainda não arquivado` = ler o PDF da ficha (`pdftotext -layout`) antes de dizer que não há pendente;
+- `⛔ DETECTOR CEGO` = nada daquela seção vale como "sem pendente".
+
 ## ETAPA 1: Disparar a coleta (se a última tiver mais de 12h, ou se pedido)
 
 ```bash
@@ -51,7 +56,7 @@ O registro `fr-polls` mais recente do Neon traz `qualidade`:
 Em português simples:
 - pesquisas novas que entraram na tela (instituto, cliente, campo, ficha);
 - as que ficaram fora e por quê;
-- fichas pendentes;
+- fichas pendentes (as do rótulo e as que só o texto acusa);
 - a média por candidato e a lista principal de cada instituto como estão na tela agora.
 
 Não interpretar a disputa: descrever a medição.
