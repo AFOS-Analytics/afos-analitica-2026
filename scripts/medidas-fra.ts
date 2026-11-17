@@ -130,7 +130,14 @@ async function main() {
   const medias = mediaPorCandidato(pub, agora, 30)
   const estat = new Map(estatisticasPorCandidato(pub, agora, 45).map((e) => [e.candidato, e]))
   console.log(`\n== POR CANDIDATO (média = 30 dias; listas, 1º, top-2 e duelos = 45 dias)`)
-  for (const m of medias.slice(0, 10)) {
+  // Os 10 primeiros da média E quem está entre os 8 primeiros do contrato de vitória
+  // em qualquer livro: em 16/Nov/2026 o texto citava Teddy Riner (7º na Polymarket,
+  // 2 listas) e o corte em 10 da média o deixava sem contagem nenhuma aqui.
+  const semMedia = (c: string) => ({ candidato: c, media: NaN, listas: 0, institutos: 0, minimo: NaN, maximo: NaN })
+  const doMercado = [...top(vencer, 8), ...top(kalshi, 8)].map(([c]) => c)
+  const daMedia = medias.slice(0, 10).map((m) => m.candidato)
+  const nomes = [...new Set([...daMedia, ...doMercado])]
+  for (const m of nomes.map((c) => medias.find((x) => x.candidato === c) ?? semMedia(c))) {
     const e = estat.get(m.candidato)
     const pcts = l45.flatMap((p) => p.intencoes.filter((i) => i.candidato === m.candidato).map((i) => i.pct))
     const duelos = d45.filter((p) => p.intencoes.some((i) => i.candidato === m.candidato))
@@ -138,7 +145,8 @@ async function main() {
     const venceu = duelos.filter((p) => { const [a, b] = p.intencoes; return (a.candidato === m.candidato ? a.pct > b.pct : b.pct > a.pct) }).length
     const faixa = pcts.length ? `${Math.min(...pcts)}% a ${Math.max(...pcts)}%` : 'n/d'
     const dfaixa = dpct.length ? `${Math.min(...dpct)}% a ${Math.max(...dpct)}%` : 'n/d'
-    console.log(`   ${m.candidato.padEnd(22)} média ${pt1(m.media)} (${m.listas} listas, ${m.institutos} inst., ${m.minimo}-${m.maximo})` +
+    const rotMedia = m.listas ? `média ${pt1(m.media)} (${m.listas} listas, ${m.institutos} inst., ${m.minimo}-${m.maximo})` : 'sem lista em 30 dias'
+    console.log(`   ${m.candidato.padEnd(22)} ${rotMedia}` +
       ` | 45d: ${e?.listas ?? 0} listas, 1º em ${e?.primeiro ?? 0}, top-2 em ${e?.top2 ?? 0}, faixa ${faixa}` +
       ` | duelos ${venceu}/${duelos.length} vencidos, faixa ${dfaixa}`)
     anota(pt1(m.media), m.listas, m.institutos, m.minimo, m.maximo, e?.listas ?? 0, e?.primeiro ?? 0, e?.top2 ?? 0, duelos.length, venceu)
