@@ -18,7 +18,8 @@ const R = JSON.parse(readFileSync(join(OUT, 'data', 'fr-2027-case-summary.json')
 // 1.1.0 (08/Nov/2026): entra a Kalshi, livro próprio
 // 1.2.0 (10/Nov/2026): séries até 10/Nov e nota da ficha da Ifop renumerada pela Commission
 // 1.3.0 (12/Nov/2026): séries até 12/Nov; preço da Polymarket com 2 casas e livro de vitória inteiro (até 80 contratos) desde 12/Nov
-const VERSAO = '1.3.0'
+// 1.4.0 (17/Nov/2026): IFOP/LCI 27-29/Out passa a citar a 10351 na fonte (PR #347); manchetes passam pelo classificador atual
+const VERSAO = '1.4.0'
 const K = R.kalshi
 const REPO = 'AFOS-Analytics1/france-2027-presidential-divergence'
 const P = R.polls
@@ -112,13 +113,13 @@ Source: Kalshi (kalshi.com), market \`${K.event}\`.
 
 \`polls/fr-voting-intentions.csv\` has one row per candidate per list. Each list is checked against the official notice listing of the **Commission des sondages** (tag 2027-Présidentielle): the notice number must exist and name the same pollster. \`notice_check\` says the outcome (\`matches\`, \`mismatch\`, \`no-notice-cited\`, \`not-on-2027-listing\`), and \`publishable\` is true only when the notice matches and the list sums to 97 to 103. Lists that fail stay in the file, flagged, and are listed with the reason in \`polls/fr-notice-mismatches.csv\`. \`polls/fr-pending-notices.csv\` lists official notices with voting intentions that the source has not structured yet.
 
-Known case (checked 09 Nov 2026): the four IFOP/LCI lists with fieldwork 27 to 29 Oct cite notice 10352. The Commission first posted that notice as the file \`10352-pres-iv-ifop-lci-3-novembre.pdf\` on 04 Nov and republished it as \`10351-pres-iv-ifop-lci-3-novembre.pdf\` on 05 Nov; on the listing, 10352 is now a different survey. The four lists stay flagged \`mismatch\` until the source cites 10351 (reported upstream in MieuxVoter/presidentielle2027#339), and notice 10351 shows in the pending file meanwhile.
+Resolved case: the four IFOP/LCI lists with fieldwork 27 to 29 Oct cited notice 10352 until 16 Nov 2026. The Commission first posted that notice as the file \`10352-pres-iv-ifop-lci-3-novembre.pdf\` on 04 Nov and republished it as \`10351-pres-iv-ifop-lci-3-novembre.pdf\` on 05 Nov; on the listing, 10352 is a different survey. Since 16 Nov 2026 the source cites 10351 (MieuxVoter/presidentielle2027#347), and the four lists are checked and publishable. Earlier versions of this bundle flag them \`mismatch\`.
 
 Poll figures come from the open dataset [MieuxVoter/presidentielle2027](https://github.com/MieuxVoter/presidentielle2027) (MIT License, copyright 2025 Mieux Voter; the notice is in \`polls/LICENSE-MieuxVoter.txt\`). AFOS adds the notice check and the English columns; no poll number is typed by hand.
 
 ### Press
 
-\`press/fr-press-timeline.csv\` holds headline, outlet, publication time and link, nothing else. The outlet list is fixed (\`press/fr-outlet-list.csv\`) and carries no political label.
+\`press/fr-press-timeline.csv\` holds headline, outlet, publication time and link, nothing else. The outlet list is fixed (\`press/fr-outlet-list.csv\`) and carries no political label. Each headline is classified again by the current collector rules when the bundle is built, so a headline that an earlier version of the rules let in is left out of the timeline (${R.press.dropped_by_current_classifier ?? 0} in this version); \`raw/fr-press-archive.json\` keeps every daily record as it was stored.
 
 ## What this bundle does not do
 

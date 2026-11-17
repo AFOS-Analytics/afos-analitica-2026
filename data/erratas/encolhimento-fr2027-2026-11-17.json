@@ -1,0 +1,8 @@
+{
+  "motivo": "as 4 listas IFOP/LCI de 27-29/Out deixaram de divergir da ficha: a base MieuxVoter passou a citar a ficha 10351 (PR #347, aceito em 16/Nov/2026)",
+  "trilha": "lib/fr-polls/collect.mjs",
+  "explicacao": "Na v1.3.0 (12/Nov/2026) as listas 20261027_1029_if_A a _D citavam a ficha 10352, que a Commission republicou como 10351, e ficavam em polls/fr-notice-mismatches.csv. Em 16/Nov a base trocou a citacao para 10351; as 4 listas conferem com a ficha e passaram a publicaveis em polls/fr-voting-intentions.csv. Conferido por diff de poll_id entre o arquivo no HF e o novo: saem exatamente essas 4, nenhuma entra.",
+  "arquivos": {
+    "polls/fr-notice-mismatches.csv": -4
+  }
+}

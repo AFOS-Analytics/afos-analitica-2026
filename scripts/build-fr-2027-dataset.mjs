@@ -27,6 +27,7 @@ import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync, rmSync
 import { join } from 'path'
 import { gunzipSync } from 'zlib'
 import { createHash } from 'crypto'
+import { trilhoDaMateria } from '../lib/fr-press/collect.mjs'
 
 const ROOT = process.cwd()
 const OUT = process.env.FR2027_OUT || join(ROOT, '.cache', 'fr2027-dataset')
@@ -148,10 +149,19 @@ writeFileSync(join(OUT, 'polls', 'fr-pending-notices.csv'), toCSV(['notice_numbe
 
 // ── 3. IMPRENSA: um registro fr-press por dia ──────────────────────────────────
 const regsPress = ultimoDe('fr-press-')
+// O classificador do CÓDIGO ATUAL é reaplicado a cada manchete: o registro guarda o
+// que o classificador da época aceitou, e em 14/Nov/2026 o último registro do dia
+// (18:25 UTC) ainda trazia 2 manchetes fora da eleição, de antes da correção bae54f4f
+// (seguros "en 2027" e "bac 2027"). O arquivo bruto (raw/) segue com o registro inteiro.
 const press = []
+const pressFora = []
 for (const r of regsPress) {
   const j = JSON.parse(r.bodyMarkdown)
-  for (const it of j.itens || []) press.push([j.fetchedAt, it.casa, it.titulo, it.publicadoEm || '', it.origem || '', it.trilho || '', it.url])
+  for (const it of j.itens || []) {
+    const trilho = trilhoDaMateria(it.titulo)
+    if (!trilho) { pressFora.push([j.fetchedAt, it.casa, it.titulo]); continue }
+    press.push([j.fetchedAt, it.casa, it.titulo, it.publicadoEm || '', it.origem || '', trilho, it.url])
+  }
 }
 writeFileSync(join(OUT, 'press', 'fr-press-timeline.csv'),
   toCSV(['collected_at_utc', 'outlet', 'headline', 'published_at', 'link_origin', 'track', 'url'], press))
@@ -182,7 +192,7 @@ const resumo = {
     fieldwork_from: campos[0] ?? null, fieldwork_to: campos.at(-1) ?? null,
     lists_failing_notice_check: pesquisas.filter((p) => p.ficha.status !== 'confere').length, pending_notices: (P.pendentes || []).length,
   },
-  press: { rows: press.length, daily_records: regsPress.length, outlets_on_list: veiculos.length },
+  press: { rows: press.length, daily_records: regsPress.length, outlets_on_list: veiculos.length, dropped_by_current_classifier: pressFora.length },
 }
 writeFileSync(join(OUT, 'data', 'fr-2027-case-summary.json'), JSON.stringify(resumo, null, 2))
 
@@ -199,4 +209,5 @@ for (const m of resumoMercado) console.log(`  mercado ${m.file.padEnd(28)} ${Str
 console.log(`  descartes: ${descartesAntes} antes de ${INICIO_SERIE}Z, ${descartesEnchimento} de enchimento`)
 console.log(`  pesquisas: ${pesquisas.length} listas (${pub.length} publicáveis, ${resumo.polls.pollsters} institutos), campo ${resumo.polls.fieldwork_from} a ${resumo.polls.fieldwork_to}`)
 console.log(`  imprensa: ${press.length} manchetes em ${regsPress.length} registro(s) diário(s), ${veiculos.length} veículos na lista`)
+for (const f of pressFora) console.log(`    fora pelo classificador atual: ${f.join(' · ')}`)
 console.log('  arquivos:', arquivos.length)
