@@ -19,7 +19,8 @@ const R = JSON.parse(readFileSync(join(OUT, 'data', 'fr-2027-case-summary.json')
 // 1.2.0 (10/Nov/2026): séries até 10/Nov e nota da ficha da Ifop renumerada pela Commission
 // 1.3.0 (12/Nov/2026): séries até 12/Nov; preço da Polymarket com 2 casas e livro de vitória inteiro (até 80 contratos) desde 12/Nov
 // 1.4.0 (17/Nov/2026): IFOP/LCI 27-29/Out passa a citar a 10351 na fonte (PR #347); manchetes passam pelo classificador atual
-const VERSAO = '1.4.0'
+// 1.4.1 (18/Nov/2026): séries até 18/Nov, sem mudança de método
+const VERSAO = '1.4.1'
 const K = R.kalshi
 const REPO = 'AFOS-Analytics1/france-2027-presidential-divergence'
 const P = R.polls
