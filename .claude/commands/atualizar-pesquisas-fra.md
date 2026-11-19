@@ -21,12 +21,18 @@ Cada lista da base é conferida contra a ficha que ela cita: o número existe na
 npx tsx scripts/pesquisas-fra.ts       # precisa de .env.local no worktree
 ```
 
-Roda a coleta AO VIVO sem gravar e compara com o último `fr-polls` do Neon: diz se disparar o cron gravaria (assinatura igual = não grava), que listas entrariam ou sairiam da tela, a tabela de `qualidade` inteira, por que cada lista recente ficou fora (com **diagnóstico de renumeração** de ficha), as pendentes, a lista principal por instituto e a média como a tela vai mostrar. É a base das ETAPAS 2 e 3.
+Roda a coleta AO VIVO sem gravar e compara com o último `fr-polls` do Neon: diz se disparar o cron gravaria (assinatura igual = não grava), **o que a última gravação mudou na tela** (seção `DESDE O REGISTRO ANTERIOR`, desde 19/Nov/2026: rodadas novas com instituto, cliente, campo, amostra e ficha; listas que saíram; e listas EDITADAS, mesmo pollId com conteúdo diferente, que a comparação só por pollId deixaria passar; é a fonte do item "pesquisas novas" da ETAPA 3 quando o cron já gravou antes da rodada), que listas entrariam ou sairiam da tela, a tabela de `qualidade` inteira, por que cada lista recente ficou fora (com **diagnóstico de renumeração** de ficha), as pendentes, a lista principal por instituto e a média como a tela vai mostrar. É a base das ETAPAS 2 e 3.
 
 🔎 **PENDENTES PELO TEXTO** (seção do atalho criada em 17/Nov/2026): `pendentes` só lê o RÓTULO da ficha, e 6 das 26 fichas de intenção de voto de setembro a novembro de 2026 vieram sem selo no rótulo (ex.: 10314 Ifop "climat politique post primaire", 10325 Cluster17 "Focus droite et centre"). A seção lê o texto de cada ficha recente sem selo e sem lista na base (índice `MieuxVoter/sondages-commission-index`, que arquiva 1x por dia) e procura a PERGUNTA de intenção de voto, depois de um controle positivo em fichas citadas. Medido nas 114 fichas arquivadas de setembro a novembro: 26 de 26 citadas acusadas, e das não citadas só as 2 pendentes reais. Como ler:
 - `⚠️ INTENÇÃO DE VOTO NO TEXTO` = pendente que o rótulo não acusa: listar ao André junto com as outras;
-- `⏳ texto ainda não arquivado` = ler o PDF da ficha (`pdftotext -layout`) antes de dizer que não há pendente;
+- ficha do dia, ainda sem texto no índice: desde 19/Nov/2026 o atalho lê o PDF da Commission sozinho (`pdftotext -layout`, MiKTeX) com o mesmo detector, e marca `[lida do PDF]`. O caminho do PDF tem controle positivo próprio (`controle do PDF`: uma ficha citada lida pelo PDF); se ele falhar, as lidas pelo PDF saem `SEM VALOR` e se leem à mão. Mutação conferida: detector cego no PDF dá `CEGO`; PDF com intenção de voto no lugar do alvo dá `⚠️ INTENÇÃO DE VOTO NO TEXTO`;
+- `⏳ texto ainda não arquivado no índice e PDF não lido` = ler o PDF à mão antes de dizer que não há pendente;
 - `⛔ DETECTOR CEGO` = nada daquela seção vale como "sem pendente".
+
+🔢 **VALORES DA BASE NA FICHA** (seção criada em 19/Nov/2026): a coleta confere número e instituto da ficha, nunca as porcentagens. A seção procura cada (sobrenome, porcentagem) das listas publicáveis dos últimos 45 dias numa linha da ficha com o sobrenome, e a lista INTEIRA num mesmo bloco de linhas (pega hipótese trocada, que passaria no teste por valor). Quando o texto do índice não fecha, refaz pelo PDF: em 19/Nov o índice da 10318 OpinionWay trazia "Marine Le Pen 4%" e "Eric Zemmour 35%" na hipótese 1, e o PDF traz Zemmour 4% e Le Pen 35%, como a base. Medido em 19/Nov: 873 de 879 valores achados nas 18 fichas com tabela, os 6 restantes por convenção ("<1%" vira 0,5 na base; "-" vira 0), 108 de 108 listas em bloco; a Odoxa 10310 traz só o questionário e sai como não conferível. Mutação conferida: valor trocado, hipótese trocada e leitura cega dão alarme. Como ler:
+- `✓` = todos os valores na ficha, todas as listas em bloco;
+- `↳ VALOR NÃO ACHADO NA FICHA` ou `lista sem bloco único` = conferir à mão no PDF; se a ficha diverge da base, registrar ao André (não corrigir: nenhum número de pesquisa é digitado à mão);
+- `⛔ CONFERÊNCIA CEGA` = nada da seção vale como "confere".
 
 ## ETAPA 1: Disparar a coleta (se a última tiver mais de 12h, ou se pedido)
 

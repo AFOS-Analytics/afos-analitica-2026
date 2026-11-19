@@ -7,6 +7,9 @@
  *
  * Responde, antes de disparar o cron:
  *  1. a coleta ao vivo mudaria o registro? (assinatura igual = disparar não grava)
+ *  1b. o que a ÚLTIMA gravação mudou na tela (19/Nov/2026): listas novas, que
+ *     saíram e EDITADAS (mesmo pollId, conteúdo diferente), registro anterior →
+ *     último. Sem ela, a rodada que chega depois do cron vê "entrariam 0";
  *  2. que listas entrariam ou sairiam da tela;
  *  3. a tabela de `qualidade` inteira, com o que fazer em cada campo;
  *  4. por que cada lista ficou fora, agrupado por rodada;
@@ -19,7 +22,11 @@
  *  6. as fichas pendentes e a tela como está (lista principal e média);
  *  7. PENDENTES PELO TEXTO (17/Nov/2026): fichas recentes SEM selo de intenção
  *     no rótulo e sem lista na base cuja ficha traz a PERGUNTA de intenção de
- *     voto. Ver `pendentesPeloTexto`.
+ *     voto. Ver `pendentesPeloTexto`. Ficha do dia sem texto no índice: lê o
+ *     PDF (19/Nov/2026), com controle positivo próprio.
+ *  8. VALORES DA BASE NA FICHA (19/Nov/2026): cada porcentagem das listas da
+ *     janela de 45 dias procurada no texto da ficha, e a lista inteira num
+ *     mesmo bloco. Ver `valoresNaFicha`.
  *
  * ⛔ País fixo: França. Nada aqui grava no banco, nem lê o Brasil ou os EUA.
  *    O único arquivo escrito é o cache local `.cache/fr-fichas-texto.json`.
@@ -28,6 +35,7 @@ import { config } from 'dotenv'
 config({ path: '.env.local' })
 config({ path: '.env' })
 
+import { execFileSync } from 'node:child_process'
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { coletarPesquisasFr, baixar, lerListagem, URL_LISTAGEM } from '../lib/fr-polls/collect.mjs'
 import { listaPrincipalPorInstituto, mediaPorCandidato, rodadaDe, type FrPollsData, type FrPesquisa } from '../lib/fr/painel'
@@ -56,6 +64,13 @@ async function main() {
     where: { slug: { startsWith: 'fr-polls-' } }, orderBy: { publishedAt: 'desc' },
     select: { slug: true, bodyMarkdown: true, publishedAt: true },
   })
+  // O registro ANTERIOR ao último (outro dia, porque o cron regrava o do mesmo
+  // dia): a seção 1b diz o que a ÚLTIMA gravação mudou na tela. Sem isso, uma
+  // rodada que chega depois do cron vê "entrariam 0" e não sabe o que entrou.
+  const rAnt = r ? await prisma.analysisReport.findFirst({
+    where: { slug: { startsWith: 'fr-polls-', not: r.slug } }, orderBy: { publishedAt: 'desc' },
+    select: { slug: true, bodyMarkdown: true, publishedAt: true },
+  }) : null
   await prisma.$disconnect()
   if (!r) throw new Error('nenhum registro fr-polls no Neon')
   const N = JSON.parse(r.bodyMarkdown) as FrPollsData & { assinatura?: string; qualidade: Record<string, unknown> }
@@ -77,8 +92,43 @@ async function main() {
   const igual = N.assinatura === V.assinatura
   console.log(`   assinatura Neon ${N.assinatura} · ao vivo ${V.assinatura} → ${igual ? 'IGUAL: disparar o cron NÃO grava' : 'MUDOU: disparar o cron GRAVA conteúdo novo'}`)
 
-  // ── 2. Entra / sai da tela ─────────────────────────────────────────────────
   const pub = (d: FrPollsData) => new Map(d.pesquisas.filter((p) => p.publicavel).map((p) => [p.pollId, p]))
+
+  // ── 1b. O que a última gravação mudou (registro anterior → último) ─────────
+  // Compara também o CONTEÚDO de cada lista que segue na tela: a base pode
+  // editar uma lista antiga (candidato, porcentagem, campo, ficha) sem mudar
+  // o pollId, e a comparação só por pollId deixaria isso passar calado.
+  if (rAnt) {
+    const A = JSON.parse(rAnt.bodyMarkdown) as FrPollsData
+    const pa = pub(A), pu = pub(N)
+    const novas = [...pu.values()].filter((p) => !pa.has(p.pollId))
+    const saidas = [...pa.values()].filter((p) => !pu.has(p.pollId))
+    const chave = (p: FrPesquisa) => JSON.stringify([p.campo, p.amostra, p.turno, p.hipotese, p.ficha.numero, p.instituto, p.cliente,
+      [...p.intencoes].sort((x, y) => x.candidato.localeCompare(y.candidato)).map((i) => [i.candidato, i.pct])])
+    const editadas = [...pu.values()].filter((p) => pa.has(p.pollId) && chave(p) !== chave(pa.get(p.pollId)!))
+    console.log(`\n== DESDE O REGISTRO ANTERIOR (${rAnt.slug}, gravado ${rAnt.publishedAt?.toISOString()}): publicáveis ${pa.size} → ${pu.size} · novas ${novas.length} · saíram ${saidas.length} · editadas ${editadas.length}`)
+    const porRod = (ps: FrPesquisa[]) => {
+      const m = new Map<string, FrPesquisa[]>()
+      for (const p of ps) m.set(rodadaDe(p.pollId), [...(m.get(rodadaDe(p.pollId)) ?? []), p])
+      return m
+    }
+    for (const [rod, ps] of porRod(novas)) {
+      const p = ps[0], t1 = ps.filter((x) => x.turno === 1).length
+      console.log(`   + ${rod}: ${p.instituto}/${p.cliente} · campo ${p.campo.inicio}..${p.campo.fim} · n=${p.amostra ?? 'n/d'} · ficha ${p.ficha.numero} · ${t1} lista(s) de 1º turno, ${ps.length - t1} duelo(s)`)
+    }
+    for (const [rod, ps] of porRod(saidas)) console.log(`   - ${rod}: ${ps[0].instituto}/${ps[0].cliente} · ${ps.length} lista(s) SAÍRAM da tela`)
+    for (const p of editadas) {
+      const a = pa.get(p.pollId)!
+      const ia = new Map(a.intencoes.map((i) => [i.candidato, i.pct])), iu = new Map(p.intencoes.map((i) => [i.candidato, i.pct]))
+      const dif = [...new Set([...ia.keys(), ...iu.keys()])].filter((c) => ia.get(c) !== iu.get(c)).map((c) => `${c} ${ia.get(c) ?? '∅'}→${iu.get(c) ?? '∅'}`)
+      const outros = (['campo', 'amostra', 'turno', 'hipotese', 'instituto', 'cliente'] as const).filter((k) => JSON.stringify(a[k]) !== JSON.stringify(p[k]))
+      if (a.ficha.numero !== p.ficha.numero) outros.push('ficha' as never)
+      const mostra = (k: string) => k === 'ficha' ? `ficha ${a.ficha.numero}→${p.ficha.numero}` : `${k} ${JSON.stringify(a[k as keyof FrPesquisa])}→${JSON.stringify(p[k as keyof FrPesquisa])}`
+      console.log(`   ~ ${p.pollId} ${p.instituto}/${p.cliente}: ${[...dif, ...outros.map(mostra)].join(' · ')}`)
+    }
+  } else console.log('\n== DESDE O REGISTRO ANTERIOR: não há registro anterior no Neon')
+
+  // ── 2. Entra / sai da tela ─────────────────────────────────────────────────
   const pn = pub(N), pv = pub(V)
   const entra = [...pv.values()].filter((p) => !pn.has(p.pollId))
   const sai = [...pn.values()].filter((p) => !pv.has(p.pollId))
@@ -129,6 +179,7 @@ async function main() {
   console.log(`\n== PENDENTES (ficha oficial sem lista na base): ${V.pendentes.length}`)
   for (const f of V.pendentes) console.log(`   ⏳ ${f.rotulo} · ${f.url}`)
   await pendentesPeloTexto(V, fichasHtml)
+  await valoresNaFicha(V)
 
   console.log('\n== LISTA PRINCIPAL POR INSTITUTO (como a tela vai mostrar com a coleta ao vivo)')
   for (const l of listaPrincipalPorInstituto(V.pesquisas, agora)) {
@@ -183,10 +234,154 @@ async function lerFicha(url: string, cache: Record<string, Lida>, usarCache = tr
     const t = await fetch(URL_INDICE_TXT + caminho + '.txt', { signal: AbortSignal.timeout(20_000) })
     if (t.status === 404) return { semTexto: caminho }
     if (!t.ok) return { erro: `índice HTTP ${t.status}` }
-    const texto = (await t.text()).normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[’`]/g, "'").replace(/\s+/g, ' ').toLowerCase()
-    const m = texto.match(DETECTOR_IV)
+    const m = normalizaTexto(await t.text()).match(DETECTOR_IV)
     return (cache[caminho] = { arquivo: caminho, intencao: !!m, trecho: m?.[0] ?? '' })
   } catch (e) { return { erro: e instanceof Error ? e.message : String(e) } }
+}
+
+const normalizaTexto = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[’`]/g, "'").replace(/\s+/g, ' ').toLowerCase()
+
+/**
+ * Ficha do DIA ainda sem texto no índice (19/Nov/2026): lê o PDF da própria
+ * Commission com `pdftotext -layout` e roda o MESMO detector. Antes, a seção
+ * só dizia "ler o PDF" e a leitura era à mão em toda rodada no dia da ficha.
+ * Sem cache: quando o índice arquivar, a leitura passa a ser a do índice.
+ * O caminho do PDF tem controle positivo próprio (uma ficha CITADA lida também
+ * pelo PDF), porque o texto do pdftotext não é o texto do índice.
+ */
+async function lerPdf(caminho: string): Promise<Leitura> {
+  const t = await textoDoPdf(caminho)
+  if (typeof t !== 'string') return t
+  const m = normalizaTexto(t).match(DETECTOR_IV)
+  return { arquivo: caminho, intencao: !!m, trecho: m?.[0] ?? '' }
+}
+
+/** PDF da Commission → texto (`pdftotext -layout`), ou o motivo de não ter lido. */
+async function textoDoPdf(caminho: string): Promise<string | { erro: string }> {
+  try {
+    const r = await fetch(`https://www.commission-des-sondages.fr/notices/files/notices/${caminho}.pdf`, { headers: { 'User-Agent': UA_FICHA }, signal: AbortSignal.timeout(30_000) })
+    if (!r.ok) return { erro: `PDF HTTP ${r.status}` }
+    const buf = Buffer.from(await r.arrayBuffer())
+    if (buf.subarray(0, 5).toString('latin1') !== '%PDF-') return { erro: 'a resposta não é um PDF' }
+    mkdirSync('.cache/fr-fichas-pdf', { recursive: true })
+    const arq = `.cache/fr-fichas-pdf/${caminho.replace(/[^A-Za-z0-9._-]+/g, '_')}.pdf`
+    writeFileSync(arq, buf)
+    const texto = execFileSync('pdftotext', ['-layout', '-enc', 'UTF-8', arq, '-'], { encoding: 'utf8', timeout: 60_000, stdio: ['ignore', 'pipe', 'ignore'] })
+    if (texto.replace(/\s/g, '').length < 200) return { erro: 'PDF sem camada de texto (imagem?): ler à mão' }
+    return texto
+  } catch (e) { return { erro: `pdftotext: ${e instanceof Error ? e.message.split('\n')[0] : String(e)}` } }
+}
+
+/** Ficha → texto inteiro: o do índice, ou o do PDF quando o índice ainda não arquivou. */
+async function textoDaFicha(url: string): Promise<{ texto: string; origem: 'índice' | 'PDF'; caminho: string } | { erro: string }> {
+  try {
+    const r = await fetch(url, { redirect: 'manual', headers: { 'User-Agent': UA_FICHA }, signal: AbortSignal.timeout(20_000) })
+    const caminho = (r.headers.get('location') ?? '').match(/\/notices\/files\/notices\/(\d{4}\/[^/]+\/[^/]+)\.pdf$/i)?.[1]
+    if (!caminho) return { erro: `a ficha não aponta para um PDF (HTTP ${r.status})` }
+    const t = await fetch(URL_INDICE_TXT + caminho + '.txt', { signal: AbortSignal.timeout(20_000) })
+    if (t.ok) return { texto: await t.text(), origem: 'índice', caminho }
+    if (t.status !== 404) return { erro: `índice HTTP ${t.status}` }
+    const p = await textoDoPdf(caminho)
+    return typeof p === 'string' ? { texto: p, origem: 'PDF', caminho } : p
+  } catch (e) { return { erro: e instanceof Error ? e.message : String(e) } }
+}
+
+type Conferencia = { valores: number; achados: number; convencao: number; emBloco: number; falhas: string[]; foraDoBloco: string[] }
+const sobrenomeDe = (c: string) => semAcento(c).split(/\s+/).filter((w) => !['de', 'du', 'le', 'la'].includes(w)).slice(-1)[0] ?? ''
+const numerosDa = (linha: string) => (linha.match(/\d+(?:[.,]\d+)?/g) ?? []).map((v) => Number(v.replace(',', '.')))
+const ehConvencao = (pct: number, linhas: string[]) =>
+  (pct === 0.5 && linhas.some((x) => /<\s*1\s*%?/.test(x))) || (pct === 0 && linhas.some((x) => /(^|\s)[-–]($|\s)/.test(x)))
+
+/** As listas de uma ficha contra o texto dela: valor por linha do sobrenome, e a lista inteira num bloco. */
+function conferirNoTexto(texto: string, ls: FrPesquisa[]): Conferencia {
+  const linhas = semAcento(texto).split(/\r?\n/)
+  const c: Conferencia = { valores: 0, achados: 0, convencao: 0, emBloco: 0, falhas: [], foraDoBloco: [] }
+  for (const l of ls) {
+    const ondeAcha: number[][] = []
+    for (const it of l.intencoes) {
+      c.valores++
+      const s = sobrenomeDe(it.candidato)
+      const idx = linhas.map((x, k) => (x.includes(s) ? k : -1)).filter((k) => k >= 0)
+      const comValor = idx.filter((k) => numerosDa(linhas[k]).includes(it.pct))
+      if (comValor.length) { c.achados++; ondeAcha.push(comValor) }
+      else if (ehConvencao(it.pct, idx.map((k) => linhas[k]))) { c.convencao++; ondeAcha.push(idx) }
+      else { c.falhas.push(`${l.pollId} ${it.candidato} ${it.pct}`); ondeAcha.push([]) }
+    }
+    // Bloco: uma janela de linhas que contém TODOS os candidatos da lista com o seu valor.
+    const W = Math.max(25, Math.ceil(l.intencoes.length * 2.5))
+    const inicios = new Set(ondeAcha.flat())
+    if (ondeAcha.every((a) => a.length) && [...inicios].some((s0) => ondeAcha.every((a) => a.some((k) => k >= s0 && k < s0 + W)))) c.emBloco++
+    else c.foraDoBloco.push(l.pollId)
+  }
+  return c
+}
+
+/**
+ * 🔢 8. VALORES DA BASE CONFERIDOS NA FICHA (criado 19/Nov/2026).
+ *
+ * A coleta confere que a lista cita uma ficha que existe e é do mesmo
+ * instituto; NUNCA conferiu as porcentagens. Aqui, para cada lista publicável
+ * com campo nos últimos 45 dias, cada (sobrenome, porcentagem) da base é
+ * procurado numa linha da ficha que traz o sobrenome; e a lista INTEIRA é
+ * procurada num mesmo BLOCO de linhas (uma hipótese trocada com outra passaria
+ * no teste por valor, porque os números das duas hipóteses estão na ficha).
+ * Medido em 19/Nov/2026: 873 de 903 valores achados; os 30 restantes eram
+ * convenção (a ficha escreve "<1%" e a base 0,5; a ficha "-" e a base 0) ou a
+ * ficha da Odoxa 10310, que traz só o questionário, sem tabela de resultado.
+ * O controle positivo é o próprio conjunto: se nenhuma lista for achada em
+ * bloco, a seção diz CEGA em vez de "tudo confere".
+ */
+async function valoresNaFicha(V: FrPollsData) {
+  const corte = new Date(agora.getTime() - 45 * 864e5).toISOString().slice(0, 10)
+  const listas = V.pesquisas.filter((p) => p.publicavel && p.campo.fim >= corte && p.ficha.numero)
+  const porFicha = new Map<string, FrPesquisa[]>()
+  for (const l of listas) porFicha.set(l.ficha.numero!, [...(porFicha.get(l.ficha.numero!) ?? []), l])
+  type Veredito = ({ num: string; rotulo: string; origem: string; listas: number } & Conferencia) | { num: string; rotulo: string; erro: string }
+  const fila = [...porFicha.keys()].sort()
+  const res: Veredito[] = []
+  let i = 0
+  await Promise.all(Array.from({ length: 4 }, async () => {
+    while (i < fila.length) {
+      const num = fila[i++], ls = porFicha.get(num)!
+      const rotulo = `${num} ${ls[0].instituto}/${ls[0].cliente}`
+      const url = ls[0].ficha.url
+      if (!url) { res.push({ num, rotulo, erro: 'lista sem URL de ficha' }); continue }
+      const tx = await textoDaFicha(url)
+      if ('erro' in tx) { res.push({ num, rotulo, erro: tx.erro }); continue }
+      let c = conferirNoTexto(tx.texto, ls), origem: string = tx.origem
+      // O texto do ÍNDICE pode desalinhar rótulo e linha da tabela (10318 OpinionWay,
+      // hipótese 1: "Marine Le Pen 4%" e "Eric Zemmour 35%" no índice; o PDF lido
+      // aqui traz Zemmour 4% e Le Pen 35%, como a base). Não fechou → refaz pelo PDF.
+      if (tx.origem === 'índice' && c.achados > 0 && (c.falhas.length || c.foraDoBloco.length)) {
+        const p = await textoDoPdf(tx.caminho)
+        if (typeof p === 'string') {
+          const cp = conferirNoTexto(p, ls)
+          if (cp.falhas.length + cp.foraDoBloco.length < c.falhas.length + c.foraDoBloco.length) { c = cp; origem = 'PDF, o texto do índice não fechou' }
+        }
+      }
+      res.push({ num, rotulo, origem, listas: ls.length, ...c })
+    }
+  }))
+  res.sort((a, b) => a.num.localeCompare(b.num))
+
+  // Ficha sem tabela legível (nenhum valor achado, ex.: Odoxa só com o questionário) não entra na conta.
+  const lidas = res.filter((r): r is Extract<Veredito, { valores: number }> => 'valores' in r && r.achados > 0)
+  const tot = lidas.reduce((s, r) => s + r.valores, 0), ach = lidas.reduce((s, r) => s + r.achados, 0)
+  const conv = lidas.reduce((s, r) => s + r.convencao, 0)
+  const blocoTot = lidas.reduce((s, r) => s + r.emBloco, 0), listasTot = lidas.reduce((s, r) => s + r.listas, 0)
+  const semTabela = res.filter((r) => 'valores' in r && r.achados === 0).length
+  console.log(`\n== VALORES DA BASE NA FICHA (listas publicáveis, campo nos últimos 45 dias), nas ${lidas.length} fichas com tabela legível: ${ach} de ${tot} valores achados, ${conv} por convenção ("<1%"→0,5, "-"→0) · ${blocoTot} de ${listasTot} listas inteiras num mesmo bloco` +
+    (semTabela ? ` · ${semTabela} ficha(s) sem tabela, não conferíveis` : ''))
+  if (!blocoTot) console.log('   ⛔ CONFERÊNCIA CEGA: nenhuma lista achada em bloco. O formato do texto mudou? NADA abaixo vale como "confere"')
+  for (const r of res) {
+    if ('erro' in r) { console.log(`   ⛔ ${r.rotulo}: não lida (${r.erro})`); continue }
+    if (r.achados === 0) { console.log(`   · ${r.rotulo} (${r.origem}): ficha sem tabela de resultado legível, ${r.valores} valores NÃO conferíveis${blocoTot ? ' (não é divergência)' : ''}`); continue }
+    const ok = r.falhas.length === 0 && r.emBloco === r.listas
+    console.log(`   ${ok ? '✓' : '⚠️'} ${r.rotulo} (${r.origem}): ${r.achados + r.convencao}/${r.valores} valores · ${r.emBloco}/${r.listas} listas em bloco`)
+    for (const f of r.falhas.slice(0, 10)) console.log(`      ↳ VALOR NÃO ACHADO NA FICHA: ${f} → conferir à mão; se a ficha diverge da base, registrar (não corrigir aqui)`)
+    if (r.falhas.length === 0 && r.foraDoBloco.length) console.log(`      ↳ lista sem bloco único na ficha: ${r.foraDoBloco.join(" ")} (valores todos achados, mas espalhados: conferir se a hipótese é a mesma)`)
+    if (r.falhas.length > 10) console.log(`      ↳ e mais ${r.falhas.length - 10}`)
+  }
 }
 
 async function pendentesPeloTexto(V: FrPollsData, fichasHtml: string) {
@@ -215,6 +410,21 @@ async function pendentesPeloTexto(V: FrPollsData, fichasHtml: string) {
   }))
   try { mkdirSync('.cache', { recursive: true }); writeFileSync(CACHE_TEXTO, JSON.stringify({ detector: DETECTOR_IV.source, fichas: cache }, null, 1)) } catch { /* cache é conveniência */ }
 
+  // Sem texto no índice → PDF, com controle positivo do caminho do PDF numa citada.
+  const viaPdf = new Set<string>()
+  let controlePdf: { numero: string; leitura: Leitura } | null = null
+  const semIndice = alvo.filter((f) => { const r = res.get(f.numero); return !!r && 'semTexto' in r })
+  if (semIndice.length) {
+    const citadaLida = controle.find((f) => { const r = res.get(f.numero); return !!r && 'intencao' in r })
+    if (citadaLida) controlePdf = { numero: citadaLida.numero, leitura: await lerPdf((res.get(citadaLida.numero) as Lida).arquivo) }
+    for (const f of semIndice) {
+      const r = await lerPdf((res.get(f.numero) as { semTexto: string }).semTexto)
+      if (!('erro' in r)) { res.set(f.numero, r); viaPdf.add(f.numero) }
+      else res.set(f.numero, { semTexto: `${(res.get(f.numero) as { semTexto: string }).semTexto} (${r.erro})` })
+    }
+  }
+  const pdfEnxerga = !!controlePdf && 'intencao' in controlePdf.leitura && controlePdf.leitura.intencao
+
   console.log(`\n== PENDENTES PELO TEXTO (fichas desde a ${piso} sem selo de intenção no rótulo e sem lista na base): ${alvo.length}`)
   const lidasControle = controle.map((f) => res.get(f.numero)).filter((r): r is Lida => !!r && 'intencao' in r)
   const acusadas = lidasControle.filter((r) => r.intencao).length
@@ -223,11 +433,20 @@ async function pendentesPeloTexto(V: FrPollsData, fichasHtml: string) {
     (acusadas === 0 ? '  ⛔ DETECTOR CEGO: o formato do texto mudou? NADA abaixo vale como "sem pendente"' : acusadas < lidasControle.length ? '  ⚠️ o detector perdeu uma citada: ler à mão as fichas abaixo' : ''))
   const de = (tipo: 'intencao' | 'semTexto' | 'erro') => alvo.filter((f) => { const r = res.get(f.numero); return !!r && tipo in r && (tipo !== 'intencao' || (r as Lida).intencao) })
   const achou = de('intencao'), semTexto = de('semTexto'), erro = de('erro')
-  for (const f of achou) console.log(`   ⚠️ INTENÇÃO DE VOTO NO TEXTO, sem selo no rótulo: ${f.rotulo} · ${f.url} · "${(res.get(f.numero) as Lida).trecho}" → pendente que o rótulo não acusa: listar ao André`)
-  for (const f of semTexto) console.log(`   ⏳ texto ainda não arquivado no índice (roda 1x por dia), ler o PDF: ${f.rotulo} · ${f.url}`)
+  if (viaPdf.size) {
+    const c = controlePdf?.leitura
+    const veredito = !c ? 'indisponível (nenhuma citada lida)' : 'intencao' in c ? (c.intencao ? 'acusada' : 'NÃO acusada') : `não lida (${'erro' in c ? c.erro : c.semTexto})`
+    console.log(`   controle do PDF: citada ${controlePdf?.numero ?? 'n/d'} lida pelo PDF → ${veredito}` +
+      (pdfEnxerga ? '' : '  ⛔ o caminho do PDF está CEGO: as fichas lidas pelo PDF abaixo NÃO valem como "sem pendente", ler à mão'))
+  }
+  const origem = (n: string) => (viaPdf.has(n) ? ' [lida do PDF]' : '')
+  for (const f of achou) console.log(`   ⚠️ INTENÇÃO DE VOTO NO TEXTO, sem selo no rótulo: ${f.rotulo} · ${f.url} · "${(res.get(f.numero) as Lida).trecho}"${origem(f.numero)} → pendente que o rótulo não acusa: listar ao André`)
+  for (const f of semTexto) console.log(`   ⏳ texto ainda não arquivado no índice e PDF não lido, ler à mão: ${f.rotulo} · ${f.url} · ${(res.get(f.numero) as { semTexto: string }).semTexto}`)
   for (const f of erro) console.log(`   ⛔ não lida: ${f.rotulo} · ${(res.get(f.numero) as { erro: string }).erro}`)
   const lidas = alvo.length - semTexto.length - erro.length
-  if (!achou.length) console.log(`   nenhuma das ${lidas} lidas traz a pergunta de intenção de voto`)
+  const lidasPdf = alvo.filter((f) => viaPdf.has(f.numero) && !(res.get(f.numero) as Lida).intencao)
+  if (!achou.length) console.log(`   nenhuma das ${lidas} lidas traz a pergunta de intenção de voto` +
+    (lidasPdf.length ? ` (${lidasPdf.length} pelo PDF: ${lidasPdf.map((f) => f.numero).join(' ')}${pdfEnxerga ? '' : ', SEM VALOR: controle do PDF falhou'})` : ''))
 }
 
 main().catch((e) => { console.error(e); process.exit(1) })
