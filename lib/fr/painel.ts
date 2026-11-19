@@ -10,8 +10,8 @@
  * junta listas diferentes de candidatos e vem rotulada assim na tela; ela não é
  * previsão nem "a" intenção de voto, é o centro do que as listas mediram.
  *
- * Só entra pesquisa `publicavel` (ficha oficial confere e a lista soma 97 a 103,
- * ver `lib/fr-polls/collect.mjs`).
+ * Só entra pesquisa `publicavel` (ficha oficial confere, a lista soma 97 a 103
+ * e tem a forma da presidencial, ver `lib/fr-polls/collect.mjs`).
  */
 
 import { avaliarProntidao, type Prontidao } from '../kalshi/prontidao'

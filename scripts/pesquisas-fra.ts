@@ -19,11 +19,15 @@
  *     a Commission publicou o PDF como 10352 em 04/Nov e o republicou como
  *     10351 em 05/Nov; a base guardou o primeiro. O diagnóstico NÃO muda o que
  *     é publicável (regra do comando: registrar, não corrigir); só diz a causa.
+ *  5b. PRIMÁRIA (19/Nov/2026): lista da base que cita ficha de primária
+ *     (rótulo "primaire"). A coleta já tira da tela lista sem a forma da
+ *     presidencial (`formaDaLista`); esta seção pega a que tem a forma;
  *  6. as fichas pendentes e a tela como está (lista principal e média);
  *  7. PENDENTES PELO TEXTO (17/Nov/2026): fichas recentes SEM selo de intenção
  *     no rótulo e sem lista na base cuja ficha traz a PERGUNTA de intenção de
  *     voto. Ver `pendentesPeloTexto`. Ficha do dia sem texto no índice: lê o
- *     PDF (19/Nov/2026), com controle positivo próprio.
+ *     PDF (19/Nov/2026), com controle positivo próprio. Pergunta que é toda
+ *     sobre uma PRIMÁRIA sai com selo próprio (19/Nov/2026, `detectar`).
  *  8. VALORES DA BASE NA FICHA (19/Nov/2026): cada porcentagem das listas da
  *     janela de 45 dias procurada no texto da ficha, e a lista inteira num
  *     mesmo bloco. Ver `valoresNaFicha`.
@@ -37,7 +41,7 @@ config({ path: '.env' })
 
 import { execFileSync } from 'node:child_process'
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
-import { coletarPesquisasFr, baixar, lerListagem, URL_LISTAGEM } from '../lib/fr-polls/collect.mjs'
+import { coletarPesquisasFr, baixar, lerListagem, formaDaLista, URL_LISTAGEM } from '../lib/fr-polls/collect.mjs'
 import { listaPrincipalPorInstituto, mediaPorCandidato, rodadaDe, type FrPollsData, type FrPesquisa } from '../lib/fr/painel'
 
 const agora = new Date()
@@ -52,6 +56,7 @@ const O_QUE_FAZER: Record<string, string> = {
   semNumero: 'a base não cita ficha (barômetros Odoxa): fica fora',
   institutoSemMapa: '⚠️ INSTITUTO NOVO: acrescentar ao mapa INSTITUTOS em lib/fr-polls/collect.mjs',
   somaForaDaFaixa: 'lista não soma 97 a 103: candidato faltando ou linha duplicada; fica fora',
+  listaForaDaForma: '⚠️ lista sem a forma da presidencial (turno desconhecido, 1º turno com menos de 6 nomes, duelo sem 2): fica fora; ver FORA DA TELA e PRIMÁRIA',
   pendentes: 'ficha de intenção de voto ainda sem dado na base: listar ao André',
 }
 
@@ -143,7 +148,8 @@ async function main() {
     if (k === 'falhas') continue
     const a = N.qualidade[k], b = V.qualidade[k]
     const nota = O_QUE_FAZER[k] && Number(b) > 0 ? `  · ${O_QUE_FAZER[k]}` : ''
-    console.log(`   ${k.padEnd(20)} ${String(a).padStart(5)} → ${String(b).padStart(5)}${a !== b ? '  (mudou)' : ''}${nota}`)
+    const mudou = a === undefined ? '  (campo novo, o registro do Neon não o tem)' : a !== b ? '  (mudou)' : ''
+    console.log(`   ${k.padEnd(20)} ${String(a ?? '—').padStart(5)} → ${String(b).padStart(5)}${mudou}${nota}`)
   }
 
   // ── 4 e 5. Por que ficou fora, e renumeração ───────────────────────────────
@@ -163,7 +169,12 @@ async function main() {
   for (const p of fora) porRodada.set(rodadaDe(p.pollId), [...(porRodada.get(rodadaDe(p.pollId)) ?? []), p])
   for (const [rod, ps] of porRodada) {
     const p = ps[0] as FrPesquisa & { ficha: { status: string; motivo?: string; numero: string | null }; somaConfere?: boolean; soma?: number }
-    const porque = p.ficha.status !== 'confere' ? `${p.ficha.status}: ${p.ficha.motivo}` : `soma ${p.soma} fora de 97 a 103`
+    const forma = formaDaLista(p)
+    const porque = [
+      p.ficha.status !== 'confere' ? `${p.ficha.status}: ${p.ficha.motivo}` : '',
+      p.somaConfere === false ? `soma ${p.soma} fora de 97 a 103` : '',
+      forma ? `forma: ${forma}` : '',
+    ].filter(Boolean).join(' · ') || 'motivo não identificado (conferir à mão)'
     console.log(`   ${rod} (${ps.length} lista${ps.length > 1 ? 's' : ''}) ${p.instituto}/${p.cliente} ${p.campo.inicio}..${p.campo.fim}: ${porque}`)
     if (p.ficha.status === 'diverge') {
       const arquivo = arquivoDaBase.get(p.pollId) ?? ''
@@ -174,6 +185,20 @@ async function main() {
       } else console.log(`      ↳ sem ficha de mesmo nome na listagem (a base cita "${arquivo}")`)
     }
   }
+
+  // ── 5b. Primária (19/Nov/2026) ─────────────────────────────────────────────
+  // A trava de forma (`formaDaLista`) segura lista curta; uma primária com 6 ou
+  // mais nomes passaria por ela. Aqui, pelo RÓTULO: lista da base que cita
+  // ficha de primária ("primaire", fora "post primaire", que na 10314 é a
+  // presidencial depois da primária). Contar as fichas de primária da listagem
+  // é o controle: com zero, o filtro não foi exercitado.
+  const ehPrimaria = (r: string) => /primaire/i.test(r) && !/post.?primaire/i.test(r)
+  const fichasPrim = (lerListagem(fichasHtml) as { numero: string; rotulo: string }[]).filter((f) => ehPrimaria(f.rotulo))
+  const numsPrim = new Set(fichasPrim.map((f) => f.numero))
+  const citaPrim = V.pesquisas.filter((p) => p.ficha.numero && numsPrim.has(p.ficha.numero))
+  const pubPrim = citaPrim.filter((p) => p.publicavel)
+  console.log(`\n== PRIMÁRIA: ${fichasPrim.length} ficha(s) de primária na listagem${fichasPrim.length ? ` (${fichasPrim.map((f) => f.numero).join(' ')})` : ', o filtro NÃO foi exercitado'} · listas da base citando uma delas: ${pubPrim.length} publicável(is), ${citaPrim.length - pubPrim.length} fora`)
+  for (const p of pubPrim) console.log(`   ⚠️ PUBLICÁVEL citando ficha de primária: ${p.pollId} ${p.instituto}/${p.cliente} ficha ${p.ficha.numero} T${p.turno} ${p.intencoes.length} nomes → conferir no PDF se a lista é da PRESIDENCIAL; se for da primária, ela está na tela: avisar o André`)
 
   // ── 6. Pendentes e a tela ──────────────────────────────────────────────────
   console.log(`\n== PENDENTES (ficha oficial sem lista na base): ${V.pendentes.length}`)
@@ -218,7 +243,24 @@ const DETECTOR_IV = /plus de chances? que vous votiez|exprime(?:e|es)? une inten
 const URL_INDICE_TXT = 'https://raw.githubusercontent.com/MieuxVoter/sondages-commission-index/main/archives_txt/'
 const CACHE_TEXTO = '.cache/fr-fichas-texto.json'
 const UA_FICHA = 'AFOS-Analytics/1.0 (https://www.afos-analytics.com; pesquisa academica aberta)'
-type Lida = { arquivo: string; intencao: boolean; trecho: string }
+/**
+ * 🗳️ De que eleição é a pergunta (19/Nov/2026). A 10387 (Ifop para Le Figaro)
+ * pergunta "le plus de chances que vous votiez" sobre o "premier tour de cette
+ * primaire de la droite et du centre": o detector acusa com razão, mas a tela
+ * mostra só a presidencial. Só é PRIMÁRIA quando TODA ocorrência do detector
+ * tem a primária nos 200 caracteres antes; ficha com UMA pergunta da
+ * presidencial segue ⚠️. A primária não some: sai listada com outro selo.
+ */
+const CONTEXTO_PRIMARIA = /(?:tour|vote|voter|votiez|participer) (?:de|a) (?:cette|la|une) (?:eventuelle )?primaire/
+const CHAVE_DETECTOR = `${DETECTOR_IV.source} | ${CONTEXTO_PRIMARIA.source}`
+function detectar(texto: string): { intencao: boolean; trecho: string; primaria: boolean } {
+  const n = normalizaTexto(texto)
+  const ms = [...n.matchAll(new RegExp(DETECTOR_IV.source, 'g'))]
+  if (!ms.length) return { intencao: false, trecho: '', primaria: false }
+  const primaria = ms.every((m) => CONTEXTO_PRIMARIA.test(n.slice(Math.max(0, (m.index ?? 0) - 200), m.index)))
+  return { intencao: true, trecho: ms[0][0], primaria }
+}
+type Lida = { arquivo: string; intencao: boolean; trecho: string; primaria?: boolean }
 type Leitura = Lida | { semTexto: string } | { erro: string }
 
 /**
@@ -234,8 +276,7 @@ async function lerFicha(url: string, cache: Record<string, Lida>, usarCache = tr
     const t = await fetch(URL_INDICE_TXT + caminho + '.txt', { signal: AbortSignal.timeout(20_000) })
     if (t.status === 404) return { semTexto: caminho }
     if (!t.ok) return { erro: `índice HTTP ${t.status}` }
-    const m = normalizaTexto(await t.text()).match(DETECTOR_IV)
-    return (cache[caminho] = { arquivo: caminho, intencao: !!m, trecho: m?.[0] ?? '' })
+    return (cache[caminho] = { arquivo: caminho, ...detectar(await t.text()) })
   } catch (e) { return { erro: e instanceof Error ? e.message : String(e) } }
 }
 
@@ -252,8 +293,7 @@ const normalizaTexto = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '')
 async function lerPdf(caminho: string): Promise<Leitura> {
   const t = await textoDoPdf(caminho)
   if (typeof t !== 'string') return t
-  const m = normalizaTexto(t).match(DETECTOR_IV)
-  return { arquivo: caminho, intencao: !!m, trecho: m?.[0] ?? '' }
+  return { arquivo: caminho, ...detectar(t) }
 }
 
 /** PDF da Commission → texto (`pdftotext -layout`), ou o motivo de não ter lido. */
@@ -400,7 +440,7 @@ async function pendentesPeloTexto(V: FrPollsData, fichasHtml: string) {
   let cache: Record<string, Lida> = {}
   try {
     const c = JSON.parse(readFileSync(CACHE_TEXTO, 'utf8')) as { detector?: string; fichas?: Record<string, Lida> }
-    if (c.detector === DETECTOR_IV.source && c.fichas) cache = c.fichas
+    if (c.detector === CHAVE_DETECTOR && c.fichas) cache = c.fichas
   } catch { /* primeira rodada */ }
   const fila = [...controle, ...alvo]
   const res = new Map<string, Leitura>()
@@ -408,7 +448,7 @@ async function pendentesPeloTexto(V: FrPollsData, fichasHtml: string) {
   await Promise.all(Array.from({ length: 4 }, async () => {
     while (i < fila.length) { const f = fila[i++]; res.set(f.numero, await lerFicha(f.url, cache, !controle.includes(f))) }
   }))
-  try { mkdirSync('.cache', { recursive: true }); writeFileSync(CACHE_TEXTO, JSON.stringify({ detector: DETECTOR_IV.source, fichas: cache }, null, 1)) } catch { /* cache é conveniência */ }
+  try { mkdirSync('.cache', { recursive: true }); writeFileSync(CACHE_TEXTO, JSON.stringify({ detector: CHAVE_DETECTOR, fichas: cache }, null, 1)) } catch { /* cache é conveniência */ }
 
   // Sem texto no índice → PDF, com controle positivo do caminho do PDF numa citada.
   const viaPdf = new Set<string>()
@@ -431,6 +471,10 @@ async function pendentesPeloTexto(V: FrPollsData, fichasHtml: string) {
   if (!lidasControle.length) console.log('   ⚠️ controle positivo indisponível (nenhuma ficha citada com texto arquivado): a seção não sabe se enxerga')
   else console.log(`   controle positivo: ${acusadas} de ${lidasControle.length} fichas CITADAS acusadas (${controle.map((f) => f.numero).join(' ')})` +
     (acusadas === 0 ? '  ⛔ DETECTOR CEGO: o formato do texto mudou? NADA abaixo vale como "sem pendente"' : acusadas < lidasControle.length ? '  ⚠️ o detector perdeu uma citada: ler à mão as fichas abaixo' : ''))
+  // Controle NEGATIVO da primária: as citadas são da presidencial; marcada como primária = classificador largo demais.
+  const controlePrim = lidasControle.filter((r) => r.primaria).length
+  if (lidasControle.length) console.log(`   controle da primária: ${controlePrim} de ${lidasControle.length} citadas (presidencial) marcadas como primária` +
+    (controlePrim ? '  ⚠️ CLASSIFICADOR LARGO: as marcadas como primária abaixo se leem à mão como possíveis pendentes' : ''))
   const de = (tipo: 'intencao' | 'semTexto' | 'erro') => alvo.filter((f) => { const r = res.get(f.numero); return !!r && tipo in r && (tipo !== 'intencao' || (r as Lida).intencao) })
   const achou = de('intencao'), semTexto = de('semTexto'), erro = de('erro')
   if (viaPdf.size) {
@@ -440,7 +484,8 @@ async function pendentesPeloTexto(V: FrPollsData, fichasHtml: string) {
       (pdfEnxerga ? '' : '  ⛔ o caminho do PDF está CEGO: as fichas lidas pelo PDF abaixo NÃO valem como "sem pendente", ler à mão'))
   }
   const origem = (n: string) => (viaPdf.has(n) ? ' [lida do PDF]' : '')
-  for (const f of achou) console.log(`   ⚠️ INTENÇÃO DE VOTO NO TEXTO, sem selo no rótulo: ${f.rotulo} · ${f.url} · "${(res.get(f.numero) as Lida).trecho}"${origem(f.numero)} → pendente que o rótulo não acusa: listar ao André`)
+  for (const f of achou.filter((f) => !(res.get(f.numero) as Lida).primaria)) console.log(`   ⚠️ INTENÇÃO DE VOTO NO TEXTO, sem selo no rótulo: ${f.rotulo} · ${f.url} · "${(res.get(f.numero) as Lida).trecho}"${origem(f.numero)} → pendente que o rótulo não acusa: listar ao André`)
+  for (const f of achou.filter((f) => (res.get(f.numero) as Lida).primaria)) console.log(`   🗳️ INTENÇÃO DE VOTO EM PRIMÁRIA no texto (toda ocorrência do detector é sobre a primária): ${f.rotulo} · ${f.url} · "${(res.get(f.numero) as Lida).trecho}"${origem(f.numero)} → fora do universo da tela (1º e 2º turno da presidencial): listar ao André como primária${controlePrim ? '; ⚠️ controle da primária falhou, ler à mão' : ''}`)
   for (const f of semTexto) console.log(`   ⏳ texto ainda não arquivado no índice e PDF não lido, ler à mão: ${f.rotulo} · ${f.url} · ${(res.get(f.numero) as { semTexto: string }).semTexto}`)
   for (const f of erro) console.log(`   ⛔ não lida: ${f.rotulo} · ${(res.get(f.numero) as { erro: string }).erro}`)
   const lidas = alvo.length - semTexto.length - erro.length
