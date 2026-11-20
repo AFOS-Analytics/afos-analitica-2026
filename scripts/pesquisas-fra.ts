@@ -111,7 +111,12 @@ async function main() {
     const chave = (p: FrPesquisa) => JSON.stringify([p.campo, p.amostra, p.turno, p.hipotese, p.ficha.numero, p.instituto, p.cliente,
       [...p.intencoes].sort((x, y) => x.candidato.localeCompare(y.candidato)).map((i) => [i.candidato, i.pct])])
     const editadas = [...pu.values()].filter((p) => pa.has(p.pollId) && chave(p) !== chave(pa.get(p.pollId)!))
-    console.log(`\n== DESDE O REGISTRO ANTERIOR (${rAnt.slug}, gravado ${rAnt.publishedAt?.toISOString()}): publicáveis ${pa.size} → ${pu.size} · novas ${novas.length} · saíram ${saidas.length} · editadas ${editadas.length}`)
+    // Pendentes também mudam a assinatura: em 20/Nov/2026 o registro novo veio
+    // só pela 10392, e a linha dizia "novas 0 · saíram 0 · editadas 0" sem
+    // dizer por que houve gravação.
+    const numsA = new Set((A.pendentes ?? []).map((f) => f.numero)), numsU = new Set((N.pendentes ?? []).map((f) => f.numero))
+    const pendDif = [...[...numsU].filter((n) => !numsA.has(n)).map((n) => `+${n}`), ...[...numsA].filter((n) => !numsU.has(n)).map((n) => `-${n}`)]
+    console.log(`\n== DESDE O REGISTRO ANTERIOR (${rAnt.slug}, gravado ${rAnt.publishedAt?.toISOString()}): publicáveis ${pa.size} → ${pu.size} · novas ${novas.length} · saíram ${saidas.length} · editadas ${editadas.length} · pendentes ${numsA.size} → ${numsU.size}${pendDif.length ? ` (${pendDif.join(' ')})` : ''}`)
     const porRod = (ps: FrPesquisa[]) => {
       const m = new Map<string, FrPesquisa[]>()
       for (const p of ps) m.set(rodadaDe(p.pollId), [...(m.get(rodadaDe(p.pollId)) ?? []), p])
@@ -203,6 +208,7 @@ async function main() {
   // ── 6. Pendentes e a tela ──────────────────────────────────────────────────
   console.log(`\n== PENDENTES (ficha oficial sem lista na base): ${V.pendentes.length}`)
   for (const f of V.pendentes) console.log(`   ⏳ ${f.rotulo} · ${f.url}`)
+  await oQueAPendenteDiz(V)
   await pendentesPeloTexto(V, fichasHtml)
   await valoresNaFicha(V)
 
@@ -324,6 +330,83 @@ async function textoDaFicha(url: string): Promise<{ texto: string; origem: 'índ
     const p = await textoDoPdf(caminho)
     return typeof p === 'string' ? { texto: p, origem: 'PDF', caminho } : p
   } catch (e) { return { erro: e instanceof Error ? e.message : String(e) } }
+}
+
+/**
+ * 📄 O QUE A FICHA PENDENTE DIZ (criado 20/Nov/2026). Antes, a pendente saía só
+ * com o rótulo, e campo, amostra e o lugar na tela se liam à mão no PDF (20/Nov:
+ * a 10392 Ifop/Sud Radio, publicada em 20/11, tem campo de 2 a 4/11, ANTERIOR à
+ * rodada da Ifop que a tela já mostra). Aqui se lê a ficha (índice ou PDF), se
+ * tira o campo e as amostras citadas, e se diz onde as listas entrariam quando
+ * a base as estruturar. Nada daqui vai para a tela: nenhum número de pesquisa é
+ * digitado à mão.
+ *
+ * 📏 Medido em 20/Nov/2026 nas 24 fichas citadas de 60 dias: o fim do campo saiu
+ * em 20 e bateu com a base nas 20; nas outras 4 (Harris, cujo texto intercala
+ * "du 3 au 5" e "novembre 2026" com a amostra) não sai nada, e a linha manda ler
+ * à mão. A amostra da base está entre as citadas em 24 de 24. Contar perguntas
+ * NÃO entra: YouGov e Elabe não usam a frase da Ifop e da Harris.
+ *
+ * 🧪 Controle positivo: o MESMO extrator roda nas 5 fichas citadas mais
+ * recentes. Fim de campo extraído diferente do da base, ou amostra da base fora
+ * das citadas, deixa a extração das pendentes SEM VALOR.
+ */
+const MESES: Record<string, string> = { janvier: '01', fevrier: '02', mars: '03', avril: '04', mai: '05', juin: '06', juillet: '07', aout: '08', septembre: '09', octobre: '10', novembre: '11', decembre: '12' }
+type Extraido = { campo: string | null; fim: string | null; amostras: number[] }
+function extrairFicha(texto: string): Extraido {
+  const n = normalizaTexto(texto)
+  const c = n.match(/(?:du|entre le) (\d{1,2})(?:er)?(?: (\w+))?(?: (\d{4}))?(?: a partir de \d{1,2}h)? (?:au|et le) (\d{1,2})(?:er)? (\w+) (\d{4})/)
+    ?? n.match(/les (\d{1,2})(?:er)?()() et (\d{1,2})(?:er)? (\w+) (\d{4})/)
+  const fim = c && MESES[c[5]] ? `${c[6]}-${MESES[c[5]]}-${c[4].padStart(2, '0')}` : null
+  // "N personnes", fora dos exemplos da tabela de margem ("1 100 personnes, si le pourcentage").
+  const amostras = [...new Set([...n.matchAll(/(\d[\d  .]{1,7}\d) (?:personnes|individus|francais)(?!, si le pourcentage)/g)].map((m) => Number(m[1].replace(/[^\d]/g, ''))).filter((x) => x >= 300))]
+  return { campo: c ? c[0] : null, fim, amostras }
+}
+const descreve = (e: Extraido) => `campo ${e.campo ? `"${e.campo}" (fim ${e.fim})` : 'NÃO extraído, ler à mão'} · amostras citadas (as 3 primeiras): ${e.amostras.slice(0, 3).join(', ') || 'nenhuma'}`
+async function oQueAPendenteDiz(V: FrPollsData) {
+  if (!V.pendentes.length) return
+  // Controle: as 5 fichas citadas mais recentes, lidas pelo mesmo caminho.
+  const porFicha = new Map<string, FrPesquisa>()
+  for (const p of V.pesquisas.filter((x) => x.publicavel && x.ficha.url && x.ficha.numero).sort((a, b) => b.campo.fim.localeCompare(a.campo.fim))) {
+    if (!porFicha.has(p.ficha.numero as string)) porFicha.set(p.ficha.numero as string, p)
+  }
+  const falhas: string[] = []
+  let lidas = 0, comFim = 0
+  for (const p of [...porFicha.values()].slice(0, 5)) {
+    const t = await textoDaFicha(p.ficha.url as string)
+    if ('erro' in t) { falhas.push(`${p.ficha.numero} não lida (${t.erro})`); continue }
+    const e = extrairFicha(t.texto)
+    lidas++
+    if (e.fim) { comFim++; if (e.fim !== p.campo.fim) falhas.push(`${p.ficha.numero}: fim ${e.fim} na ficha, ${p.campo.fim} na base`) }
+    if (p.amostra != null && !e.amostras.includes(p.amostra)) falhas.push(`${p.ficha.numero}: amostra da base ${p.amostra} fora das citadas (${e.amostras.join(', ')})`)
+  }
+  const controleOk = lidas > 0 && comFim > 0 && !falhas.length
+  console.log(`   controle do extrator (5 fichas citadas mais recentes): ${lidas} lidas, fim do campo extraído em ${comFim} e igual ao da base em ${comFim - falhas.filter((f) => f.includes(' fim ')).length}${falhas.length ? ` · ⛔ ${falhas.join(' · ')}` : ''} → ${controleOk ? 'CONFERE' : '⛔ extração das pendentes SEM VALOR, ler à mão'}`)
+  const ultimaPorInst = new Map<string, string>()
+  for (const p of V.pesquisas.filter((x) => x.publicavel && x.turno === 1)) {
+    const k = semAcento(p.instituto).split(/\s+/)[0] // "harris interactive" → "harris", "ipsos bva" → "ipsos"
+    if ((ultimaPorInst.get(k) ?? '') < p.campo.fim) ultimaPorInst.set(k, p.campo.fim)
+  }  for (const f of V.pendentes as { numero: string; rotulo: string; url: string }[]) {
+    const t = await textoDaFicha(f.url)
+    if ('erro' in t) { console.log(`   📄 ${f.numero}: ficha NÃO lida (${t.erro}) → ler o PDF à mão`); continue }
+    const e = extrairFicha(t.texto)
+    console.log(`   📄 ${f.numero} (${t.origem}${controleOk ? '' : ', SEM VALOR'}): ${descreve(e)}`)
+    const inst = [...ultimaPorInst.keys()].find((k) => semAcento(f.rotulo).includes(k))
+    if (e.fim) {
+      const ate = (d: number) => new Date(new Date(e.fim + 'T00:00:00Z').getTime() + d * 864e5).toISOString().slice(0, 10)
+      const lugar = !inst ? 'instituto sem rodada na tela: entraria como lista principal NOVA'
+        : e.fim === ultimaPorInst.get(inst) ? `campo termina no MESMO dia da rodada da tela (${inst}): a lista principal sai da ordem dos pollIds, conferir na tela`
+        : e.fim > (ultimaPorInst.get(inst) as string) ? `campo mais recente que a rodada da tela (${inst}, fim ${ultimaPorInst.get(inst)}): passaria a ser a lista principal do instituto`
+        : `campo ANTERIOR à rodada da tela (${inst}, fim ${ultimaPorInst.get(inst)}): NÃO muda a lista principal, entra só na média e nas contagens`
+      console.log(`      ↳ ${lugar} · na média de 30 dias até ${ate(30)}, nas contagens de 45 dias até ${ate(45)}`)
+    }
+    try {
+      const r = await fetch(`https://api.github.com/search/issues?q=repo:MieuxVoter/presidentielle2027+${f.numero}`, { headers: { 'User-Agent': UA_FICHA, Accept: 'application/vnd.github+json' }, signal: AbortSignal.timeout(15_000) })
+      const j = r.ok ? (await r.json()) as { items: { number: number; state: string; title: string; pull_request?: unknown; created_at: string }[] } : null
+      const itens = (j?.items ?? []).map((i) => `${i.pull_request ? 'PR' : 'issue'} #${i.number} ${i.state} ${i.created_at.slice(0, 16)}Z "${i.title.slice(0, 70)}"`)
+      console.log(`      ↳ base MieuxVoter: ${j ? (itens.length ? itens.join(' · ') : 'nada menciona a ficha ainda') : `busca HTTP ${r.status}`}`)
+    } catch (err) { console.log(`      ↳ base MieuxVoter: busca falhou (${err instanceof Error ? err.message : String(err)})`) }
+  }
 }
 
 type Conferencia = { valores: number; achados: number; convencao: number; emBloco: number; falhas: string[]; foraDoBloco: string[] }
