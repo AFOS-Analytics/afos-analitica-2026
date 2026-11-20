@@ -1,0 +1,8 @@
+{
+  "motivo": "ficha pendente saiu da lista porque a base MieuxVoter estruturou a pesquisa dela; a lista de pendentes e um retrato do dia, nao uma serie",
+  "trilha": "lib/fr-polls/collect.mjs",
+  "explicacao": "Na v1.4.2 (19/Nov/2026) havia 1 ficha pendente: 10384 (Ifop-Fiducial para TF1-LCI, Le Figaro e Sud Radio, campo 13-16/11). Em 19/Nov a base estruturou a 10384 e a 10382 (YouGov/Le HuffPost, campo 12-17/11) (MieuxVoter PR #362), que passaram a polls/fr-voting-intentions.csv como publicaveis. Nenhuma ficha nova de intencao de voto presidencial ficou pendente (a 10387, Ifop/Le Figaro, e intencao de voto numa primaria e fica fora do universo). Pendentes agora: 0. Delta: -1.",
+  "arquivos": {
+    "polls/fr-pending-notices.csv": -1
+  }
+}
