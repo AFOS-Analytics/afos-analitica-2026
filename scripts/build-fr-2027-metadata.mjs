@@ -22,7 +22,8 @@ const R = JSON.parse(readFileSync(join(OUT, 'data', 'fr-2027-case-summary.json')
 // 1.4.1 (18/Nov/2026): séries até 18/Nov, sem mudança de método
 // 1.4.2 (19/Nov/2026): séries até 19/Nov; pesquisas 409 listas (392 publicáveis), entram Elabe 10375 e Présitrack 10372; sem mudança de método
 // 1.5.0 (20/Nov/2026): séries até 20/Nov; entram YouGov 10382 e Ifop 10384; publicável passa a exigir a forma de lista da presidencial (1º turno com 6 nomes ou mais, 2º turno com 2), regra que nesta versão não tira nenhuma lista
-const VERSAO = '1.5.0'
+// 1.5.1 (20/Nov/2026, noite): séries até 20/Nov; ficha pendente 10392 (Ifop-Fiducial/Sud Radio); manchetes do dia; sem mudança de método
+const VERSAO = '1.5.1'
 const K = R.kalshi
 const REPO = 'AFOS-Analytics1/france-2027-presidential-divergence'
 const P = R.polls
