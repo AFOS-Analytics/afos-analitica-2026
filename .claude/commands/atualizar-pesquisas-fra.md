@@ -39,6 +39,11 @@ Roda a coleta AO VIVO sem gravar e compara com o último `fr-polls` do Neon: diz
 - `↳ VALOR NÃO ACHADO NA FICHA` ou `lista sem bloco único` = conferir à mão no PDF; se a ficha diverge da base, registrar ao André (não corrigir: nenhum número de pesquisa é digitado à mão);
 - `⛔ CONFERÊNCIA CEGA` = nada da seção vale como "confere".
 
+🗓️ **A JANELA ANDA SEM PESQUISA NOVA** (última seção do atalho, criada em 21/Nov/2026): a média da tela é de 30 dias e as contagens (listas principais, 1º lugar, top-2, duelos) são de 45, cortadas pela data UTC de agora. À meia-noite UTC uma rodada antiga sai e a tela muda sem pesquisa nova; o texto do painel, que diz "nos últimos 30 dias", envelhece calado. Em 21/Nov o texto de 20/11 dizia "18,1 de média em 47 listas" para Mélenchon e a tela já contava 42: a Harris 10332 (campo até 21/10) saiu à meia-noite. A seção mostra:
+- `DESDE O TEXTO DO PAINEL`: o registro `fr-polls` do dia do `analise.pt-BR.json` contra a tela de agora, rodada a rodada e candidato a candidato; `[no texto]` = o valor que deixou de valer está entre os números do texto publicado (pode ser coincidência, conferir a frase). Com `⚠️`, o texto está velho: dizer ao André; reescrever é `/atualizar-fra`, só se ele pedir;
+- `PRÓXIMOS 7 DIAS`: com os dados de agora e nenhuma pesquisa nova, em que meia-noite UTC cada rodada sai da média (fim do campo + 31 dias) e das contagens (+ 46), e o que muda. A tela é ISR de 30 min: a mudança aparece até meia hora depois. Serve para a Weekly (segunda) e a Tradeoff (quinta) saberem o que a janela tira no dia da edição;
+- dois controles: a conta direta tem de tirar as mesmas listas que a simulação, e por candidato as listas e os duelos da seção têm de ser os que `mediaPorCandidato` e `estatisticasPorCandidato` (as funções da tela) contam. Se um falhar, `SEM VALOR`. Mutação conferida: corte da seção em 31 dias derruba os dois; corte da TELA em 31 dias derruba a coerência.
+
 ## ETAPA 1: Disparar a coleta (se a última tiver mais de 12h, ou se pedido)
 
 ```bash
@@ -69,7 +74,8 @@ Em português simples:
 - pesquisas novas que entraram na tela (instituto, cliente, campo, ficha);
 - as que ficaram fora e por quê;
 - fichas pendentes (as do rótulo e as que só o texto acusa);
-- a média por candidato e a lista principal de cada instituto como estão na tela agora.
+- a média por candidato e a lista principal de cada instituto como estão na tela agora;
+- o que a janela já tirou desde o texto do painel e o que tira nos próximos dias (seção `A JANELA ANDA`), com a data UTC.
 
 Não interpretar a disputa: descrever a medição.
 

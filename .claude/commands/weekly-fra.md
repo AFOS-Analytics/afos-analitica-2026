@@ -27,7 +27,7 @@ Todo script desta skill recebe `--pais=fr` (ou `country=fra` na API). **Sem o pa
 1. **`/atualizar-fra` rodado nas últimas horas**, com a trava de captura aprovada: `npx tsx scripts/capture-guard.ts --pais=fra` → ler a ÚLTIMA linha, `VEREDITO: APROVADO`, ou, se BLOQUEADO, publicar só o que a certificação por livro e por contrato liberar.
 
    🎯 **Certificação (decisão do André, 08/Nov/2026):** vencer e 1º colocado são livros de resultado exclusivo e se certificam **por livro** (`CERTIFICAÇÃO POR LIVRO`). Vai ao 2º turno e estará na cédula são contratos independentes e se certificam **por contrato** (`CERTIFICAÇÃO POR CONTRATO`): com o livro bloqueado, publica-se só o contrato listado como certificado, com o valor da 2ª leitura (`.cache/capture-guard/ultima-fra.json`, campo `contratosOk`). Nada que não esteja em uma das duas listas entra no texto.
-2. **Pesquisas do dia** coletadas (cron `refresh-fr-polls`, 07:40 e 19:40 UTC) ou `/atualizar-pesquisas-fra`.
+2. **Pesquisas do dia** coletadas (cron `refresh-fr-polls`, 07:40 e 19:40 UTC) ou `/atualizar-pesquisas-fra`. A média (30 dias) e as contagens (45 dias) andam à meia-noite UTC sem pesquisa nova: a seção `A JANELA ANDA` do `scripts/pesquisas-fra.ts` diz o que sai no dia da edição. Medir no dia em que se escreve, não na véspera.
 3. **Imprensa do dia** coletada (cron `refresh-fr-press`, 3x ao dia).
 
 Faltando qualquer um, PARAR e pedir primeiro.

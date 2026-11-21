@@ -31,6 +31,9 @@
  *  8. VALORES DA BASE NA FICHA (19/Nov/2026): cada porcentagem das listas da
  *     janela de 45 dias procurada no texto da ficha, e a lista inteira num
  *     mesmo bloco. Ver `valoresNaFicha`.
+ *  9. A JANELA ANDA SEM PESQUISA NOVA (21/Nov/2026): o que saiu da média e das
+ *     contagens desde o dia do texto do painel e o que sai nos próximos 7 dias,
+ *     com as funções da tela. Ver `aJanelaAnda`.
  *
  * ⛔ País fixo: França. Nada aqui grava no banco, nem lê o Brasil ou os EUA.
  *    O único arquivo escrito é o cache local `.cache/fr-fichas-texto.json`.
@@ -42,7 +45,8 @@ config({ path: '.env' })
 import { execFileSync } from 'node:child_process'
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { coletarPesquisasFr, baixar, lerListagem, formaDaLista, URL_LISTAGEM } from '../lib/fr-polls/collect.mjs'
-import { listaPrincipalPorInstituto, mediaPorCandidato, rodadaDe, type FrPollsData, type FrPesquisa } from '../lib/fr/painel'
+import { listaPrincipalPorInstituto, mediaPorCandidato, duelosSegundoTurno, rodadaDe, type FrPollsData, type FrPesquisa, type MediaCandidato } from '../lib/fr/painel'
+import { estatisticasPorCandidato, type EstatCandidato } from '../lib/fr/candidatos'
 
 const agora = new Date()
 const horas = (iso: string | Date) => ((agora.getTime() - new Date(iso).getTime()) / 36e5).toFixed(1) + 'h'
@@ -76,6 +80,12 @@ async function main() {
     where: { slug: { startsWith: 'fr-polls-', not: r.slug } }, orderBy: { publishedAt: 'desc' },
     select: { slug: true, bodyMarkdown: true, publishedAt: true },
   }) : null
+  // Seção 9: o registro que a tela mostrava no dia do texto do painel.
+  const txt = JSON.parse(readFileSync('public/fr/analise.pt-BR.json', 'utf8')) as { updatedAt: string; paragrafos: string[] }
+  const rTexto = await prisma.analysisReport.findFirst({
+    where: { slug: { startsWith: 'fr-polls-' }, publishedAt: { lte: new Date(`${txt.updatedAt.slice(0, 10)}T23:59:59.999Z`) } }, orderBy: { publishedAt: 'desc' },
+    select: { slug: true, bodyMarkdown: true, publishedAt: true },
+  })
   await prisma.$disconnect()
   if (!r) throw new Error('nenhum registro fr-polls no Neon')
   const N = JSON.parse(r.bodyMarkdown) as FrPollsData & { assinatura?: string; qualidade: Record<string, unknown> }
@@ -220,6 +230,161 @@ async function main() {
   console.log('\n== MÉDIA POR CANDIDATO (30 dias, como a tela)')
   for (const m of mediaPorCandidato(V.pesquisas, agora).slice(0, 10)) {
     console.log(`   ${m.candidato.padEnd(22)} ${m.media.toFixed(1)} (${m.listas} listas, ${m.institutos} institutos, ${m.minimo} a ${m.maximo})`)
+  }
+  aJanelaAnda(V, txt, rTexto)
+}
+
+/**
+ * 🗓️ 9. A JANELA ANDA SEM PESQUISA NOVA (criado 21/Nov/2026).
+ *
+ * A média da tela é de 30 dias; listas principais, 1º lugar, top-2 e duelos são
+ * de 45. Os dois cortes saem da data UTC de AGORA (`recentes` em
+ * lib/fr/painel.ts), então à meia-noite UTC uma rodada antiga sai da tela sem
+ * pesquisa nova nenhuma, e o texto do painel envelhece calado. Em 21/Nov/2026 o
+ * texto de 20/11 dizia "18,1 de média em 47 listas de 7 institutos" para
+ * Mélenchon e a tela já contava 42 listas. O medidor do texto (`medidas-fra.ts`)
+ * só roda no /atualizar-fra; aqui, a cada rodada de pesquisas:
+ *  (a) DESDE O TEXTO: o registro `fr-polls` que a tela mostrava no dia do texto
+ *      (`updatedAt` de analise.pt-BR.json, estado do dia UTC), contra a tela de
+ *      agora. Mostra o que saiu pela janela e o que entrou por pesquisa nova;
+ *  (b) PRÓXIMOS 7 DIAS, com os dados de agora e sem pesquisa nova: em que
+ *      meia-noite UTC cada rodada sai e o que muda na média e nas contagens.
+ * `[no texto]` = o valor que deixa de valer está entre os números do texto
+ * publicado (pode ser coincidência; conferir a frase).
+ * 🧪 Dois controles. (1) As listas que a simulação tira em cada dia têm de ser
+ * as que a conta direta tira (fim do campo + 31 dias na média, + 46 nas
+ * contagens). (2) Coerência com a tela: por candidato, as listas e os duelos da
+ * janela daqui têm de ser os que `mediaPorCandidato` e
+ * `estatisticasPorCandidato` contam. Se um falhar, a seção sai SEM VALOR.
+ * Mutação conferida: corte da média em 31 dias aqui dá NÃO CONFERE nos dois.
+ * A tela é ISR de 30 min: a mudança aparece até meia hora depois da meia-noite.
+ */
+const DIA = 864e5
+const corteEm = (d: Date, dias: number) => new Date(d.getTime() - dias * DIA).toISOString().slice(0, 10)
+const maisDias = (iso: string, n: number) => new Date(new Date(`${iso}T00:00:00Z`).getTime() + n * DIA).toISOString().slice(0, 10)
+const chaveInst = (p: { instituto: string }) => p.instituto.trim().toLowerCase()
+const nPt = (v: number) => String(v).replace('.', ',')
+const SEMANA = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb']
+interface Estado {
+  media: Map<string, MediaCandidato>; est: Map<string, EstatCandidato>; faixa: Map<string, [number, number]>
+  r30: Map<string, FrPesquisa[]>; r45: Map<string, FrPesquisa[]>; ids30: Set<string>; ids45: Set<string>
+  rodadas30: number; inst30: number; l45: number; inst45: number; d45: number; principais: Set<string>; duelosTela: number
+  /** a janela daqui conta, por candidato, as mesmas listas e duelos que as funções da tela */
+  coerente: boolean
+}
+function estadoEm(pesquisas: readonly FrPesquisa[], d: Date): Estado {
+  const pub = pesquisas.filter((p) => p.publicavel)
+  const c30 = corteEm(d, 30), c45 = corteEm(d, 45)
+  const agrupa = (ps: FrPesquisa[]) => {
+    const m = new Map<string, FrPesquisa[]>()
+    for (const p of ps) m.set(rodadaDe(p.pollId), [...(m.get(rodadaDe(p.pollId)) ?? []), p])
+    return m
+  }
+  const l30 = pub.filter((p) => p.turno === 1 && p.campo.fim >= c30)
+  const j45 = pub.filter((p) => p.campo.fim >= c45)
+  const l45 = j45.filter((p) => p.turno === 1)
+  const d45 = j45.filter((p) => p.turno === 2 && p.intencoes.length === 2)
+  const faixa = new Map<string, [number, number]>()
+  for (const p of l45) for (const i of p.intencoes) {
+    const f = faixa.get(i.candidato)
+    faixa.set(i.candidato, f ? [Math.min(f[0], i.pct), Math.max(f[1], i.pct)] : [i.pct, i.pct])
+  }
+  const media = new Map(mediaPorCandidato(pesquisas, d, 30).map((m) => [m.candidato, m]))
+  const est = new Map(estatisticasPorCandidato(pesquisas, d, 45).map((e) => [e.candidato, e]))
+  // Coerência com a TELA: os cortes daqui são uma cópia dos de `recentes`; se a
+  // tela mudar o corte, a contagem por candidato deixa de bater e a seção acusa.
+  const conta = (ps: FrPesquisa[]) => { const m = new Map<string, number>(); for (const p of ps) for (const i of p.intencoes) m.set(i.candidato, (m.get(i.candidato) ?? 0) + 1); return m }
+  const bate = (x: Map<string, number>, y: Map<string, number>) => x.size === y.size && [...x].every(([c, n]) => y.get(c) === n)
+  const coerente = bate(conta(l30), new Map([...media].map(([c, m]) => [c, m.listas])))
+    && bate(conta(l45), new Map([...est].filter(([, e]) => e.listas > 0).map(([c, e]) => [c, e.listas])))
+    && bate(conta(d45), new Map([...est].filter(([, e]) => e.duelos > 0).map(([c, e]) => [c, e.duelos])))
+  return {
+    media, est, coerente,
+    faixa, r30: agrupa(l30), r45: agrupa(j45),
+    ids30: new Set(l30.map((p) => p.pollId)), ids45: new Set(j45.map((p) => p.pollId)),
+    rodadas30: agrupa(l30).size, inst30: new Set(l30.map(chaveInst)).size,
+    l45: l45.length, inst45: new Set(l45.map(chaveInst)).size, d45: d45.length,
+    principais: new Set(listaPrincipalPorInstituto(pesquisas, d, 45).map(chaveInst)),
+    duelosTela: duelosSegundoTurno(pesquisas, d, 45).length,
+  }
+}
+/** O que muda de `a` para `b`: rodadas que saem/entram, totais e, por candidato, cada contagem. */
+function mudancas(a: Estado, b: Estado, noTexto: Set<string>): string[] {
+  const marca = (velho: string) => (noTexto.has(velho) ? ' [no texto]' : '')
+  const rod = (ps: FrPesquisa[]) => {
+    const t1 = ps.filter((p) => p.turno === 1).length, t2 = ps.length - t1
+    return `${ps[0].instituto}/${ps[0].cliente} (campo até ${ps[0].campo.fim}, ficha ${ps[0].ficha.numero}, ${t1} lista(s)${t2 ? `, ${t2} duelo(s)` : ''})`
+  }
+  const dif = (x: Map<string, FrPesquisa[]>, y: Map<string, FrPesquisa[]>) => [...x].filter(([k]) => !y.has(k)).map(([, ps]) => rod(ps))
+  const out: string[] = []
+  const s30 = dif(a.r30, b.r30), s45 = dif(a.r45, b.r45), e30 = dif(b.r30, a.r30), e45 = dif(b.r45, a.r45)
+  if (s30.length) out.push(`sai da média de 30 dias: ${s30.join(' · ')}`)
+  if (s45.length) out.push(`sai das contagens de 45 dias: ${s45.join(' · ')}`)
+  if (e30.length || e45.length) out.push(`entrou por pesquisa nova: ${[...new Set([...e45, ...e30])].join(' · ')}`)
+  for (const k of a.principais) if (!b.principais.has(k)) out.push(`↳ a lista principal de "${k}" SAI da tela (nenhuma rodada dele em 45 dias)`)
+  for (const k of b.principais) if (!a.principais.has(k)) out.push(`↳ a lista principal de "${k}" ENTRA na tela`)
+  const tot: string[] = []
+  const t = (rot: string, x: number, y: number) => { if (x !== y) tot.push(`${rot} ${x}→${y}${marca(nPt(x))}`) }
+  t('rodadas na média', a.rodadas30, b.rodadas30); t('institutos na média', a.inst30, b.inst30)
+  t('listas de 1º turno em 45 dias', a.l45, b.l45); t('institutos em 45 dias', a.inst45, b.inst45)
+  t('duelos em 45 dias', a.d45, b.d45); t('listas principais', a.principais.size, b.principais.size); t('duelos na tela', a.duelosTela, b.duelosTela)
+  if (tot.length) out.push(`totais: ${tot.join(' · ')}`)
+  const topo = (e: Estado) => [...e.media.values()].slice(0, 12).map((m) => m.candidato)
+  for (const c of [...new Set([...topo(a), ...topo(b)])]) {
+    const ma = a.media.get(c), mb = b.media.get(c), ea = a.est.get(c), eb = b.est.get(c), fa = a.faixa.get(c), fb = b.faixa.get(c)
+    const campos: string[] = []
+    const p = (rot: string, x: string, y: string) => { if (x !== y) campos.push(`${rot} ${x}→${y}${marca(x)}`) }
+    p('média', ma ? ma.media.toFixed(1).replace('.', ',') : 'sem lista', mb ? mb.media.toFixed(1).replace('.', ',') : 'sem lista')
+    p('listas 30d', nPt(ma?.listas ?? 0), nPt(mb?.listas ?? 0)); p('inst. 30d', nPt(ma?.institutos ?? 0), nPt(mb?.institutos ?? 0))
+    p('mín 30d', ma ? nPt(ma.minimo) : '-', mb ? nPt(mb.minimo) : '-'); p('máx 30d', ma ? nPt(ma.maximo) : '-', mb ? nPt(mb.maximo) : '-')
+    p('listas 45d', nPt(ea?.listas ?? 0), nPt(eb?.listas ?? 0)); p('1º lugar', nPt(ea?.primeiro ?? 0), nPt(eb?.primeiro ?? 0)); p('top-2', nPt(ea?.top2 ?? 0), nPt(eb?.top2 ?? 0))
+    p('mín 45d', fa ? nPt(fa[0]) : '-', fb ? nPt(fb[0]) : '-'); p('máx 45d', fa ? nPt(fa[1]) : '-', fb ? nPt(fb[1]) : '-')
+    p('duelos', nPt(ea?.duelos ?? 0), nPt(eb?.duelos ?? 0)); p('duelos vencidos', nPt(ea?.duelosVencidos ?? 0), nPt(eb?.duelosVencidos ?? 0))
+    if (campos.length) out.push(`${c}: ${campos.join(' · ')}`)
+  }
+  return out
+}
+function aJanelaAnda(V: FrPollsData, txt: { updatedAt: string; paragrafos: string[] }, rTexto: { slug: string; bodyMarkdown: string; publishedAt: Date | null } | null) {
+  const noTexto = new Set(txt.paragrafos.join(' ').replace(/\d+[ºª]/g, '').match(/\d+(?:,\d+)?/g) ?? [])
+  const agoraEst = estadoEm(V.pesquisas, agora)
+  let coerente = agoraEst.coerente
+  console.log('\n== A JANELA ANDA SEM PESQUISA NOVA (cortes da tela: média 30 dias, contagens 45 dias, pela data UTC; a tela muda até 30 min depois da meia-noite UTC)')
+
+  // (a) desde o texto
+  const diaTexto = txt.updatedAt.slice(0, 10)
+  const D = rTexto ? (JSON.parse(rTexto.bodyMarkdown) as FrPollsData) : V
+  const doTexto = estadoEm(D.pesquisas, new Date(`${diaTexto}T12:00:00Z`))
+  coerente &&= doTexto.coerente
+  const linhasTexto = mudancas(doTexto, agoraEst, noTexto)
+  console.log(`   DESDE O TEXTO DO PAINEL (analise.pt-BR.json de ${diaTexto}; tela daquele dia = ${rTexto ? `${rTexto.slug}, gravado ${rTexto.publishedAt?.toISOString()}` : 'SEM registro do dia no Neon, refeita com os dados de agora'}):` +
+    (linhasTexto.length ? '' : ' nada mudou'))
+  for (const l of linhasTexto) console.log(`      ${l}`)
+  if (linhasTexto.some((l) => l.includes('[no texto]'))) console.log('      ⚠️ o texto do painel cita valor que a tela de agora já não mostra: rodar /atualizar-fra se o André pedir (o medidor do texto é o medidas-fra.ts)')
+
+  // (b) próximos 7 dias
+  const hoje0 = new Date(`${agora.toISOString().slice(0, 10)}T00:00:00Z`)
+  let controleOk = true
+  const dias: { d: Date; linhas: string[] }[] = []
+  for (let k = 1; k <= 7; k++) {
+    const d = new Date(hoje0.getTime() + k * DIA)
+    const antes = estadoEm(V.pesquisas, new Date(d.getTime() - 1)), depois = estadoEm(V.pesquisas, d)
+    coerente &&= antes.coerente && depois.coerente
+    // Controle: a conta direta (fim + 31 na média, fim + 46 nas contagens) tem de dar as mesmas listas.
+    const iso = d.toISOString().slice(0, 10)
+    const pub = V.pesquisas.filter((p) => p.publicavel)
+    const conta30 = new Set(pub.filter((p) => antes.ids30.has(p.pollId) && maisDias(p.campo.fim, 31) === iso).map((p) => p.pollId))
+    const conta45 = new Set(pub.filter((p) => antes.ids45.has(p.pollId) && maisDias(p.campo.fim, 46) === iso).map((p) => p.pollId))
+    const sim30 = new Set([...antes.ids30].filter((x) => !depois.ids30.has(x))), sim45 = new Set([...antes.ids45].filter((x) => !depois.ids45.has(x)))
+    const igual = (x: Set<string>, y: Set<string>) => x.size === y.size && [...x].every((v) => y.has(v))
+    if (!igual(conta30, sim30) || !igual(conta45, sim45)) controleOk = false
+    const linhas = mudancas(antes, depois, noTexto)
+    if (linhas.length) dias.push({ d, linhas })
+  }
+  const saidas = dias.length
+  console.log(`   PRÓXIMOS 7 DIAS (dados de agora, nenhuma pesquisa nova): ${saidas ? `${saidas} meia(s)-noite(s) mudam a tela` : 'nada sai da tela'} · controle (conta direta fim+31 e fim+46 = simulação) → ${controleOk ? 'CONFERE' : '⛔ NÃO CONFERE'} · coerência (listas e duelos por candidato = funções da tela) → ${coerente ? 'CONFERE' : '⛔ NÃO CONFERE'}${controleOk && coerente ? '' : ': esta seção inteira está SEM VALOR'}`)
+  for (const { d, linhas } of dias) {
+    console.log(`   em ${d.toISOString().slice(0, 10)} 00:00 UTC (${SEMANA[d.getUTCDay()]}):`)
+    for (const l of linhas) console.log(`      ${l}`)
   }
 }
 
