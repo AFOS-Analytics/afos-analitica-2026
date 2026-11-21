@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-11-20T22:00:35.066Z",
+  "geradoEm": "2026-11-21T20:15:17.814Z",
   "observacao": "geradoEm usa o registro mais recente do banco, nao o relogio da maquina, para o backup ser reproduzivel e o diff ficar vazio quando nada mudou",
   "repositorioPublico": true,
   "tabelasExcluidasPorConterDadoPessoal": {
@@ -16,8 +16,8 @@
     "llmRun": "pode conter prompt com dado de usuário",
     "modelOutput": "pode conter resposta sobre dado de usuário"
   },
-  "totalLinhas": 174903,
-  "totalBytesComprimidos": 16986243,
+  "totalLinhas": 176542,
+  "totalBytesComprimidos": 17088681,
   "arquivos": [
     {
       "arquivo": "marketPrice/2026-04.csv.gz",
@@ -63,39 +63,39 @@
     },
     {
       "arquivo": "marketPrice/2026-11.csv.gz",
-      "linhas": 24715,
-      "sha256": "1850b647d8ae25fd",
-      "bytesGz": 1287589
+      "linhas": 25842,
+      "sha256": "5c6a18c0e38e1251",
+      "bytesGz": 1351587
     },
     {
       "arquivo": "marketOutcome/2026-04.csv.gz",
       "linhas": 171,
-      "sha256": "4148ce525c6645b7",
-      "bytesGz": 8685
+      "sha256": "90c09d8ad3d49447",
+      "bytesGz": 8687
     },
     {
       "arquivo": "marketOutcome/2026-05.csv.gz",
       "linhas": 5,
-      "sha256": "d405d458c57f0920",
-      "bytesGz": 473
+      "sha256": "0dfffcbe24c15b91",
+      "bytesGz": 475
     },
     {
       "arquivo": "marketOutcome/2026-06.csv.gz",
       "linhas": 8,
-      "sha256": "c10b1c27574c3c08",
+      "sha256": "ecb0bfe3340d4408",
       "bytesGz": 790
     },
     {
       "arquivo": "marketOutcome/2026-07.csv.gz",
       "linhas": 60,
-      "sha256": "59e42bbaedda01d3",
-      "bytesGz": 2608
+      "sha256": "c2f20d5c5cf8c04b",
+      "bytesGz": 2615
     },
     {
       "arquivo": "marketOutcome/2026-08.csv.gz",
       "linhas": 9,
-      "sha256": "1543e82b9c81f37e",
-      "bytesGz": 731
+      "sha256": "373f67025ab678f1",
+      "bytesGz": 733
     },
     {
       "arquivo": "marketOutcome/2026-09.csv.gz",
@@ -106,20 +106,20 @@
     {
       "arquivo": "marketOutcome/2026-10.csv.gz",
       "linhas": 4,
-      "sha256": "846522d79401bdbd",
-      "bytesGz": 411
+      "sha256": "227e220ef8c18599",
+      "bytesGz": 414
     },
     {
       "arquivo": "marketOutcome/2026-11.csv.gz",
       "linhas": 119,
-      "sha256": "9fa4df8ca1245510",
-      "bytesGz": 4901
+      "sha256": "30cd2de8edaa8a7b",
+      "bytesGz": 4898
     },
     {
       "arquivo": "market/2026-04.csv.gz",
       "linhas": 18,
-      "sha256": "a03b3a7b87ad8879",
-      "bytesGz": 1821
+      "sha256": "ba711dee3bb39c4f",
+      "bytesGz": 1826
     },
     {
       "arquivo": "market/2026-06.csv.gz",
@@ -130,20 +130,20 @@
     {
       "arquivo": "market/2026-07.csv.gz",
       "linhas": 7,
-      "sha256": "74318ed872fa84e7",
-      "bytesGz": 897
+      "sha256": "1b246786af3c91f7",
+      "bytesGz": 901
     },
     {
       "arquivo": "market/2026-11.csv.gz",
       "linhas": 4,
-      "sha256": "3156c362bc0adbe3",
-      "bytesGz": 584
+      "sha256": "1e7097d0ff387f42",
+      "bytesGz": 576
     },
     {
       "arquivo": "marketEvent/2026-04.csv.gz",
       "linhas": 8,
-      "sha256": "36a4ce284e29cbf7",
-      "bytesGz": 706
+      "sha256": "03ca0e76db2ba0ed",
+      "bytesGz": 703
     },
     {
       "arquivo": "marketEvent/2026-06.csv.gz",
@@ -154,14 +154,14 @@
     {
       "arquivo": "marketEvent/2026-07.csv.gz",
       "linhas": 15,
-      "sha256": "e13257a6c2e29fc2",
-      "bytesGz": 1178
+      "sha256": "30449f65e976eac6",
+      "bytesGz": 1181
     },
     {
       "arquivo": "marketEvent/2026-11.csv.gz",
       "linhas": 4,
-      "sha256": "937e701d90c89d8e",
-      "bytesGz": 435
+      "sha256": "2b7b0295f99c9003",
+      "bytesGz": 428
     },
     {
       "arquivo": "source/2026-04.csv.gz",
@@ -339,9 +339,9 @@
     },
     {
       "arquivo": "analysisReport/2026-11.csv.gz",
-      "linhas": 55,
-      "sha256": "48e629faae439c3d",
-      "bytesGz": 498305
+      "linhas": 57,
+      "sha256": "5ac81c669cc5e64f",
+      "bytesGz": 503645
     },
     {
       "arquivo": "crossSignalLink.csv.gz",
@@ -357,15 +357,15 @@
     },
     {
       "arquivo": "kalshiPreco/2026-11.csv.gz",
-      "linhas": 7078,
-      "sha256": "9b11fb2643b15a06",
-      "bytesGz": 483925
+      "linhas": 7543,
+      "sha256": "893493ea7915545d",
+      "bytesGz": 515446
     },
     {
       "arquivo": "kalshiCaptura/2026-11.csv.gz",
-      "linhas": 584,
-      "sha256": "f1e17341761e24a1",
-      "bytesGz": 20869
+      "linhas": 629,
+      "sha256": "75b1ebbadc7b6e8e",
+      "bytesGz": 22441
     }
   ]
 }
