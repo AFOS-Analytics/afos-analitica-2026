@@ -34,6 +34,9 @@
  *  9. A JANELA ANDA SEM PESQUISA NOVA (21/Nov/2026): o que saiu da média e das
  *     contagens desde o dia do texto do painel e o que sai nos próximos 7 dias,
  *     com as funções da tela. Ver `aJanelaAnda`.
+ * 10. PUBLICADA SEM FICHA (22/Nov/2026): pesquisa que já está na imprensa (pela
+ *     Wikipedia EN e FR, só como detector) e ainda não tem ficha na Commission
+ *     nem lista na base. Ver `publicadaSemFicha`.
  *
  * ⛔ País fixo: França. Nada aqui grava no banco, nem lê o Brasil ou os EUA.
  *    O único arquivo escrito é o cache local `.cache/fr-fichas-texto.json`.
@@ -220,6 +223,7 @@ async function main() {
   for (const f of V.pendentes) console.log(`   ⏳ ${f.rotulo} · ${f.url}`)
   await oQueAPendenteDiz(V)
   await pendentesPeloTexto(V, fichasHtml)
+  await publicadaSemFicha(V)
   await valoresNaFicha(V)
 
   console.log('\n== LISTA PRINCIPAL POR INSTITUTO (como a tela vai mostrar com a coleta ao vivo)')
@@ -740,6 +744,154 @@ async function pendentesPeloTexto(V: FrPollsData, fichasHtml: string) {
   const lidasPdf = alvo.filter((f) => viaPdf.has(f.numero) && !(res.get(f.numero) as Lida).intencao)
   if (!achou.length) console.log(`   nenhuma das ${lidas} lidas traz a pergunta de intenção de voto` +
     (lidasPdf.length ? ` (${lidasPdf.length} pelo PDF: ${lidasPdf.map((f) => f.numero).join(' ')}${pdfEnxerga ? '' : ', SEM VALOR: controle do PDF falhou'})` : ''))
+}
+
+/**
+ * 📰 10. PUBLICADA SEM FICHA (criado 22/Nov/2026).
+ *
+ * As seções acima só enxergam pesquisa que JÁ tem ficha na Commission. Em
+ * 22/Nov/2026 (domingo, véspera da Weekly №1) a vaga 10 da Toluna Harris
+ * Interactive para M6, RTL e L'Express (campo 18-19/11, 2.088 inscritos) já
+ * estava no PDF da Toluna e na Wikipedia EN, e a listagem da Commission parava
+ * na 10392: o atalho dizia "1 pendente" e não via a pesquisa nova.
+ *
+ * Aqui as tabelas de 1º turno da Wikipedia EN e FR servem SÓ de detector de
+ * existência (instituto, fim do campo, amostra, link). Nenhum número delas vai
+ * para lugar nenhum: a Wikipedia tem erros, e nenhum número de pesquisa é
+ * digitado à mão. Cada rodada com campo nos últimos 21 dias é casada com a
+ * base (mesmo instituto, fim do campo a até 1 dia) e, se não está nela, com as
+ * fichas pendentes (mesmo instituto, fim do campo lido da ficha). Sobrou:
+ * `📰 PUBLICADA SEM FICHA NEM LISTA NA BASE` = listar ao André; entra na tela
+ * sozinha quando a Commission publicar a ficha e a base estruturar.
+ * 🧪 Controle positivo por fonte: as rodadas de 1º turno publicáveis da base
+ * nos mesmos 21 dias têm de ser achadas na tabela. Fonte que não acha nenhuma
+ * sai `CEGA` e não conta; as duas cegas = nada da seção vale.
+ */
+const URL_WIKI: Record<'EN' | 'FR', string> = {
+  EN: 'https://en.wikipedia.org/w/index.php?title=Opinion_polling_for_the_2027_French_presidential_election&action=raw',
+  FR: 'https://fr.wikipedia.org/w/index.php?title=Liste_de_sondages_sur_l%27%C3%A9lection_pr%C3%A9sidentielle_fran%C3%A7aise_de_2027&action=raw',
+}
+const MES_EN: Record<string, string> = { jan: '01', feb: '02', mar: '03', apr: '04', may: '05', jun: '06', jul: '07', aug: '08', sep: '09', oct: '10', nov: '11', dec: '12' }
+type LinhaWiki = { fonte: 'EN' | 'FR'; inst: string; nome: string; fim: string; amostra: number | null; link: string }
+/** "Toluna Harris Interactive" → "harris", "Ipsos BVA" → "ipsos", "IFOP-Fiducial" → "ifop", "Cluster 17" → "cluster17". */
+const chaveInstituto = (s: string) => {
+  const t = semAcento(s).replace(/cluster\s+17/g, 'cluster17').replace(/\btoluna\b/g, ' ').split(/[^a-z0-9]+/).filter(Boolean)[0] ?? ''
+  return t === 'bva' ? 'ipsos' : t
+}
+/** Instituto pelo RÓTULO da ficha ("10392 Pres IV IFOP Sud Radio 20 novembre" → "ifop"), procurando as grafias conhecidas. */
+const GRAFIAS_ROTULO: [RegExp, string][] = [[/\bifop\b/, 'ifop'], [/\b(?:toluna|harris)\b/, 'harris'], [/\belabe\b/, 'elabe'], [/\b(?:ipsos|bva)\b/, 'ipsos'], [/\bopinionway\b/, 'opinionway'], [/\bcluster\s?17\b/, 'cluster17'], [/\byougov\b/, 'yougov'], [/\bodoxa\b/, 'odoxa'], [/\bverian\b/, 'verian'], [/\bcsa\b/, 'csa'], [/\bviavoice\b/, 'viavoice']]
+const instDoRotulo = (r: string) => GRAFIAS_ROTULO.find(([re]) => re.test(semAcento(r)))?.[1] ?? ''
+const diasEntre = (a: string, b: string) => Math.round(Math.abs(new Date(`${a}T00:00:00Z`).getTime() - new Date(`${b}T00:00:00Z`).getTime()) / DIA)
+const amostraDe = (s: string | undefined) => {
+  const m = (s ?? '').replace(/\{\{[Ff]ormatnum[:|]/, '').match(/(\d[\d,.  ]*\d)/)
+  const n = m ? Number(m[1].replace(/[^\d]/g, '')) : NaN
+  return Number.isFinite(n) && n >= 300 ? n : null
+}
+/**
+ * Lê as linhas de instituto da tabela do 1º turno. Linha de instituto = célula
+ * com link `[http… Nome]` (EN: `style="background…"`; FR: `{{Sondeur|…}}`);
+ * a célula seguinte é o campo, a outra a amostra. EN: `{{Opdrts|d1|d2|Mon|aaaa|year}}`
+ * (ou `|d1|Mon1|d2|Mon2|aaaa|`); FR: "12-17 novembre", ano do título da seção.
+ */
+function lerWiki(fonte: 'EN' | 'FR', texto: string): LinhaWiki[] {
+  const [ini, fim] = fonte === 'EN' ? ['== First round ==', '== Second round =='] : ['== Sondages concernant le premier tour ==', '== Sondages concernant le second tour ==']
+  const a = texto.indexOf(ini), b = texto.indexOf(fim, a + 1)
+  if (a < 0 || b < 0) return []
+  const ls = texto.slice(a, b).split('\n')
+  const out: LinhaWiki[] = []
+  let ano: string | null = null
+  for (let i = 0; i < ls.length; i++) {
+    const l = ls[i]
+    const h = l.match(/^=+[^=]*?(\d{4})[^=]*=+\s*$/)
+    if (h) { ano = h[1]; continue }
+    if (!/^\|/.test(l) || !(fonte === 'EN' ? /background/.test(l) : /Sondeur\|/.test(l))) continue
+    const lk = l.match(/\[(https?:\/\/\S+)\s+([^\]]+)\]/)
+    if (!lk) continue
+    let fimCampo: string | null = null
+    const d = ls[i + 1] ?? ''
+    if (fonte === 'EN') {
+      const o = d.match(/\{\{[Oo]pdrts\|([^}]*)\}\}/)
+      const p = o ? o[1].split('|').map((x) => x.trim()) : []
+      // |d1|d2|Mon|aaaa|year (mesmo mês) ou |d1|Mon1|d2|Mon2|aaaa|year
+      const [dia, mes, aaaa] = p.length >= 6 && /^\D/.test(p[1]) ? [p[2], p[3], p[4]] : [p[1], p[2], p[3]]
+      const mm = mes ? MES_EN[mes.slice(0, 3).toLowerCase()] : undefined
+      if (mm && /^\d{4}$/.test(aaaa ?? '') && /^\d{1,2}$/.test(dia ?? '')) fimCampo = `${aaaa}-${mm}-${dia.padStart(2, '0')}`
+    } else {
+      const ds = [...semAcento(d.replace(/^.*\|/, '')).matchAll(/(\d{1,2})(?:er)?\s+([a-z]+)/g)]
+      const u = ds[ds.length - 1]
+      if (u && MESES[u[2]] && ano) fimCampo = `${ano}-${MESES[u[2]]}-${u[1].padStart(2, '0')}`
+    }
+    if (!fimCampo) continue
+    out.push({ fonte, inst: chaveInstituto(lk[2]), nome: lk[2].trim(), fim: fimCampo, amostra: amostraDe((ls[i + 2] ?? '').replace(/^.*\|/, '')), link: lk[1] })
+  }
+  return out
+}
+
+async function publicadaSemFicha(V: FrPollsData) {
+  const desde = corteEm(agora, 21)
+  const lidas: LinhaWiki[] = [], falhas: string[] = []
+  for (const fonte of ['EN', 'FR'] as const) {
+    try {
+      const r = await fetch(URL_WIKI[fonte], { headers: { 'User-Agent': UA_FICHA }, signal: AbortSignal.timeout(30_000) })
+      if (!r.ok) throw new Error(`HTTP ${r.status}`)
+      const ls = lerWiki(fonte, await r.text())
+      if (!ls.length) throw new Error('nenhuma linha de instituto lida (a tabela mudou de forma?)')
+      lidas.push(...ls)
+    } catch (e) { falhas.push(`${fonte}: ${e instanceof Error ? e.message : String(e)}`) }
+  }
+  // Rodadas de 1º turno publicáveis da base nos 21 dias: o controle positivo.
+  const rodBase = new Map<string, { inst: string; fim: string; nome: string }>()
+  for (const p of V.pesquisas.filter((x) => x.publicavel && x.turno === 1 && x.campo.fim >= desde)) {
+    rodBase.set(`${chaveInstituto(p.instituto)}|${p.campo.fim}`, { inst: chaveInstituto(p.instituto), fim: p.campo.fim, nome: p.instituto })
+  }
+  const naBase = (inst: string, fim: string, tol: number) => V.pesquisas.find((p) => chaveInstituto(p.instituto) === inst && diasEntre(p.campo.fim, fim) <= tol)
+  const fontes = (['EN', 'FR'] as const).map((f) => {
+    const ls = lidas.filter((l) => l.fonte === f)
+    const achadas = [...rodBase.values()].filter((rb) => ls.some((l) => l.inst === rb.inst && diasEntre(l.fim, rb.fim) <= 1))
+    return { f, ls, achadas, cega: !ls.length || (rodBase.size > 0 && !achadas.length) }
+  })
+  const vivas = fontes.filter((x) => !x.cega)
+  const recentes = new Map<string, LinhaWiki[]>()
+  for (const x of vivas) for (const l of x.ls.filter((l) => l.fim >= desde)) recentes.set(`${l.inst}|${l.fim}`, [...(recentes.get(`${l.inst}|${l.fim}`) ?? []), l])
+  console.log(`\n== PUBLICADA SEM FICHA (tabelas do 1º turno da Wikipedia EN e FR, só como detector de existência; campo desde ${desde}): ${recentes.size} rodada(s) na Wikipedia`)
+  for (const x of fontes) {
+    const falta = [...rodBase.values()].filter((rb) => !x.achadas.includes(rb))
+    console.log(`   controle ${x.f}: ${x.ls.length} linha(s) de instituto lidas · ${x.achadas.length} de ${rodBase.size} rodadas publicáveis da base achadas` +
+      (falta.length && !x.cega ? ` (sem: ${falta.map((rb) => `${rb.nome} fim ${rb.fim}`).join(', ')}; Wikipedia atrasada ou com outra data)` : '') +
+      (x.cega ? ' → ⛔ CEGA: esta fonte não vale' : ' → CONFERE'))
+  }
+  for (const f of falhas) console.log(`   ⛔ ${f}`)
+  if (!vivas.length) { console.log('   ⛔ LEITURA CEGA nas duas fontes: nada desta seção vale como "nenhuma publicada sem ficha"; procurar à mão'); return }
+  // Fim do campo de cada ficha pendente, lido da própria ficha.
+  const pend: { numero: string; rotulo: string; inst: string; fim: string | null }[] = []
+  for (const f of V.pendentes as { numero: string; rotulo: string; url: string }[]) {
+    const t = await textoDaFicha(f.url)
+    pend.push({ numero: f.numero, rotulo: f.rotulo, inst: instDoRotulo(f.rotulo), fim: 'erro' in t ? null : extrairFicha(t.texto).fim })
+  }
+  const ultimaPorInst = new Map<string, string>()
+  for (const p of V.pesquisas.filter((x) => x.publicavel && x.turno === 1)) {
+    const k = chaveInstituto(p.instituto)
+    if ((ultimaPorInst.get(k) ?? '') < p.campo.fim) ultimaPorInst.set(k, p.campo.fim)
+  }
+  let casadas = 0
+  for (const [, ls] of [...recentes].sort((x, y) => y[1][0].fim.localeCompare(x[1][0].fim))) {
+    const l = ls[0], quem = `${l.nome} · campo até ${l.fim} · n=${ls.find((x) => x.amostra)?.amostra ?? 'n/d'} · Wikipedia ${[...new Set(ls.map((x) => x.fonte))].join('+')}`
+    const b = naBase(l.inst, l.fim, 1)
+    if (b) { casadas++; continue }
+    const perto = naBase(l.inst, l.fim, 3)
+    if (perto) { console.log(`   ≈ ${quem}: na base com fim do campo ${perto.campo.fim} (ficha ${perto.ficha.numero ?? 'sem número'}); data diferente entre as fontes, conferir`); continue }
+    const pf = pend.find((p) => p.inst === l.inst && p.fim && diasEntre(p.fim, l.fim) <= 1)
+    if (pf) { console.log(`   ⏳ ${quem}: é a ficha pendente ${pf.numero} ("${pf.rotulo}", fim do campo na ficha ${pf.fim}): aguarda a base`); continue }
+    const pi = pend.find((p) => p.inst === l.inst)
+    const ult = ultimaPorInst.get(l.inst)
+    const ate = (d: number) => maisDias(l.fim, d)
+    const lugar = !ult ? 'instituto sem rodada na tela: entraria como lista principal NOVA'
+      : l.fim > ult ? `campo mais recente que a rodada da tela (fim ${ult}): passaria a ser a lista principal do instituto`
+      : `campo não é mais recente que a rodada da tela (fim ${ult}): entraria só na média e nas contagens`
+    console.log(`   📰 PUBLICADA SEM FICHA NEM LISTA NA BASE: ${quem} · ${l.link}`)
+    console.log(`      ↳ ${pi ? `há ficha pendente do mesmo instituto (${pi.numero}, fim ${pi.fim ?? 'não lido'}) com OUTRO campo: não é ela · ` : ''}aguarda a ficha da Commission e a lista da base; nenhum número entra à mão · quando entrar: ${lugar} · na média de 30 dias até ${ate(30)}, nas contagens de 45 dias até ${ate(45)} → listar ao André`)
+  }
+  console.log(`   ${casadas} rodada(s) da Wikipedia já estão na base`)
 }
 
 main().catch((e) => { console.error(e); process.exit(1) })

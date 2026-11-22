@@ -44,6 +44,12 @@ Roda a coleta AO VIVO sem gravar e compara com o último `fr-polls` do Neon: diz
 - `PRÓXIMOS 7 DIAS`: com os dados de agora e nenhuma pesquisa nova, em que meia-noite UTC cada rodada sai da média (fim do campo + 31 dias) e das contagens (+ 46), e o que muda. A tela é ISR de 30 min: a mudança aparece até meia hora depois. Serve para a Weekly (segunda) e a Tradeoff (quinta) saberem o que a janela tira no dia da edição;
 - dois controles: a conta direta tem de tirar as mesmas listas que a simulação, e por candidato as listas e os duelos da seção têm de ser os que `mediaPorCandidato` e `estatisticasPorCandidato` (as funções da tela) contam. Se um falhar, `SEM VALOR`. Mutação conferida: corte da seção em 31 dias derruba os dois; corte da TELA em 31 dias derruba a coerência.
 
+📰 **PUBLICADA SEM FICHA** (seção criada em 22/Nov/2026, logo depois de `PENDENTES PELO TEXTO`): as outras seções só enxergam pesquisa que JÁ tem ficha na Commission. Em 22/Nov (domingo, véspera da Weekly №1) a vaga 10 da Toluna Harris Interactive para M6, RTL e L'Express (campo 18-19/11, 2.088 inscritos) já estava no PDF da Toluna e na Wikipedia EN, a listagem da Commission parava na 10392 e o atalho dizia "1 pendente". A seção lê as tabelas de 1º turno da Wikipedia EN e FR **só como detector de existência** (instituto, fim do campo, amostra, link; nenhum número delas vai para lugar nenhum) e casa cada rodada com campo nos últimos 21 dias com a base (mesmo instituto, fim do campo a até 1 dia) e, se não está nela, com as fichas pendentes (fim do campo lido da própria ficha). Como ler:
+- `📰 PUBLICADA SEM FICHA NEM LISTA NA BASE` = listar ao André (instituto, campo, amostra, link). Entra na tela sozinha quando a Commission publicar a ficha e a base estruturar; nenhum número entra à mão. A linha diz se ela passaria a ser a lista principal do instituto e até quando fica na média e nas contagens;
+- `⏳ … é a ficha pendente N` = a mesma pesquisa da seção PENDENTES, vista também pela imprensa;
+- `≈ … na base com fim do campo X` = a Wikipedia e a base dão datas diferentes (2 a 3 dias): conferir;
+- controle positivo por fonte: as rodadas de 1º turno publicáveis da base nos mesmos 21 dias têm de ser achadas na tabela. Fonte que não acha nenhuma sai `⛔ CEGA`; as duas cegas = `LEITURA CEGA`, nada da seção vale como "nenhuma publicada sem ficha". Medido em 22/Nov: EN 7 de 7, FR 7 de 7. Mutações conferidas: leitor cego dá `CEGA` nas duas; rodada tirada da base vira `📰`; ficha pendente com outro campo não é casada.
+
 ## ETAPA 1: Disparar a coleta (se a última tiver mais de 12h, ou se pedido)
 
 ```bash
@@ -74,6 +80,7 @@ Em português simples:
 - pesquisas novas que entraram na tela (instituto, cliente, campo, ficha);
 - as que ficaram fora e por quê;
 - fichas pendentes (as do rótulo e as que só o texto acusa);
+- pesquisas já na imprensa sem ficha nem lista na base (seção `PUBLICADA SEM FICHA`), sem número delas;
 - a média por candidato e a lista principal de cada instituto como estão na tela agora;
 - o que a janela já tirou desde o texto do painel e o que tira nos próximos dias (seção `A JANELA ANDA`), com a data UTC.
 
