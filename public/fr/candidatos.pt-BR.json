@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12",
+  "updatedAt": "2026-11-22",
   "grade": {
     "nota": "Blocos da grade oficial do Ministério do Interior francês (circular de 02/02/2026, anexo 3), aplicada ao partido de cada candidato. O Conselho de Estado confirmou a grade em 27/02/2026 (decisão nº 512694). O AFOS não classifica candidato: reproduz a classificação oficial.",
     "fontes": [
@@ -125,11 +125,15 @@
       "nuanceInferida": false,
       "nascimento": "1954-08-12",
       "cargo": "Presidente da República de 2012 a 2017; deputado da Corrèze",
-      "candidatura": "Não declarado. Diz que decide em dezembro de 2026.",
+      "candidatura": "Não declarado. Segundo a Europe 1, em 21/11/2026, adiou a decisão para o fim de janeiro ou o início de fevereiro de 2027 e não irá ao lançamento da campanha de Raphaël Glucksmann, em 06/12.",
       "fontes": [
         {
           "rotulo": "Wikipédia",
           "url": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Hollande"
+        },
+        {
+          "rotulo": "Europe 1",
+          "url": "https://europe1.fr/politique/presidentielle-pierre-jouvet-se-dit-certain-que-francois-hollande-soutiendra-raphael-glucksmann-1241659"
         }
       ]
     },

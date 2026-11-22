@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12",
+  "updatedAt": "2026-11-22",
   "grade": {
     "nota": "Blocs from the official grid of the French Interior Ministry (circular of 02/02/2026, annex 3), applied to each candidate's party. The Conseil d'État upheld the grid on 02/27/2026 (decision no. 512694). AFOS does not classify candidates: it reproduces the official classification.",
     "fontes": [
@@ -125,11 +125,15 @@
       "nuanceInferida": false,
       "nascimento": "1954-08-12",
       "cargo": "President of the Republic from 2012 to 2017; deputy for Corrèze",
-      "candidatura": "Not declared. Says he will decide in December 2026.",
+      "candidatura": "Not declared. According to Europe 1, on 21/11/2026, he has postponed his decision to late January or early February 2027 and will not attend the launch of Raphaël Glucksmann's campaign on 06/12.",
       "fontes": [
         {
           "rotulo": "Wikipédia",
           "url": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Hollande"
+        },
+        {
+          "rotulo": "Europe 1",
+          "url": "https://europe1.fr/politique/presidentielle-pierre-jouvet-se-dit-certain-que-francois-hollande-soutiendra-raphael-glucksmann-1241659"
         }
       ]
     },

@@ -26,7 +26,7 @@ curl -s "https://www.afos-analytics.com/api/kalshi?country=fra&fresh=1"   # entr
 - Polymarket: volume é **giro acumulado** (inflado por candidatos a 0.05), nunca "dinheiro em jogo".
 - ⛔ Contratos de enchimento ("Candidate A") não são preço. A coleta já os descarta (`app/lib/polymarket/bootstrap.ts`).
 
-**Série da semana:** `node scripts/semana-do-contrato.mjs --pais=fr --de=... --ate=...` (lê o backup do Neon). A série da Polymarket da França começa em **08/Nov/2026, 19:30 UTC** (a captura das 18:30 foi descartada pela quarentena por causa dos contratos de enchimento); a da Kalshi em **08/Nov/2026, 18:25 UTC**. Superlativo é "desde" essas datas.
+**Série da semana:** `node scripts/semana-do-contrato.mjs --pais=fr --de=... --ate=...` (lê o backup do Neon). A série da Polymarket da França começa em **08/Nov/2026, 19:30 UTC** (a captura das 18:30 foi descartada pela quarentena por causa dos contratos de enchimento); a da Kalshi em **08/Nov/2026, 18:25 UTC**. Superlativo é "desde" essas datas. A semana da **Kalshi** (desde 22/Nov/2026, quando a prontidão passou a PRONTO): `npx tsx scripts/semana-kalshi.ts --pais=fra --de=... --ate=...`, que lê o Neon direto (sem a cauda cega do backup), com fechamento por dia, piso e topo contra a série, contratos negociados e controle positivo contra a rota ao vivo (`semana-do-contrato.mjs` só lê a Polymarket).
 
 ## ETAPA 2: Pesquisas e imprensa (coletas automáticas)
 

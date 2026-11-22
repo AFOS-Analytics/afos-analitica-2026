@@ -40,7 +40,7 @@ Sem `--pais=fr`, publish, persist e broadcast do Tradeoff caem no **Brasil** (pa
    🎯 **Certificação (decisão do André, 08/Nov/2026):** vencer e 1º colocado são livros de resultado exclusivo e se certificam **por livro** (`CERTIFICAÇÃO POR LIVRO`). Vai ao 2º turno e estará na cédula são contratos independentes e se certificam **por contrato** (`CERTIFICAÇÃO POR CONTRATO`): com o livro bloqueado, publica-se só o contrato listado como certificado, com o valor da 2ª leitura (`.cache/capture-guard/ultima-fra.json`, campo `contratosOk`). Nada que não esteja em uma das duas listas entra no texto.
 3. **Kalshi:** 🔁 **Regra desde 08/Nov/2026 (decisão do André):** a Kalshi entra com o PREÇO DA HORA sempre que a leitura passa na avaliação (`avaliacao.ok` na resposta da rota: soma 85 a 120, líder com oferta de compra e de venda). A prontidão de 14 dias (`npx tsx scripts/kalshi-prontidao.ts --pais=fra`) passou a valer só para a SÉRIE: antes de `PRONTO`, nada de variação semanal nem superlativo da Kalshi, e qualquer "desde" diz "desde 08/11/2026".
 4. **Pesquisas:** registro `fr-polls` do Neon, só `publicavel: true`.
-5. **Δ da semana:** `node scripts/semana-do-contrato.mjs --pais=fr --de=... --ate=...` (lê o backup; série desde 08/Nov/2026).
+5. **Δ da semana:** `node scripts/semana-do-contrato.mjs --pais=fr --de=... --ate=...` (lê o backup; série desde 08/Nov/2026). Kalshi: `npx tsx scripts/semana-kalshi.ts --pais=fra --de=AAAA-MM-DD --ate=AAAA-MM-DD` (Neon direto; série vale desde 22/Nov/2026, superlativo "desde 08/11/2026").
 
 ## As 4 trocas em relação ao template do Brasil
 
