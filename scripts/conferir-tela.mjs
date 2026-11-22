@@ -41,7 +41,7 @@ import { baseDeLeitura } from './lib/base-afos.mjs'
 
 /**
  * 🌎 O PAÍS É PARÂMETRO desde 07/Set/2026, e antes disso a rota era fixa em
- * .
+ * `/dashboard/us`.
  *
  * ⚠️ O buraco que isso deixava era o pior possível: a passada do BRASIL é a que
  * publica PROSA EDITORIAL em três idiomas, e era justamente ela que não tinha
@@ -50,11 +50,17 @@ import { baseDeLeitura } from './lib/base-afos.mjs'
  * outro país nunca alcança, e foi a terceira vez que esse padrão apareceu no
  * mesmo dia.
  *
- * O padrão continua , para não mudar o comportamento de quem já chamava.
+ * ⛔ Desde 22/Nov/2026 o país é OBRIGATÓRIO, numa lista fechada (us, br, fr).
+ * Até ali, sem `--pais` ele caía em `us` calado: a passada de outro país que
+ * esquecesse o argumento recebia a tela dos EUA conferida e um verde que não
+ * era dela (o padrão "fallback silencioso entrega o outro"). Sem país, ou com
+ * país fora da lista, ele para antes de abrir o navegador.
  */
 import { CONTRATOS, conferirRegistro } from './lib/rotulos-do-painel-us.mjs'
 
-const PAIS = process.argv.find((a) => a.startsWith('--pais='))?.slice(7) ?? 'us'
+const PAIS = process.argv.find((a) => a.startsWith('--pais='))?.slice(7)
+/** Painéis com rota `/dashboard/<pais>`. O da França tem conferidor próprio, mais completo. */
+export const PAISES_DA_TELA = ['us', 'br', 'fr']
 
 const arg = (nome, padrao) => {
   const achado = process.argv.find((a) => a.startsWith(`--${nome}=`))
@@ -168,6 +174,13 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
   const LOCALES = arg('locales', 'pt-BR,en,es').split(',').filter(Boolean)
   const ESPERADO = arg('esperado', '').split(',').map((s) => s.trim()).filter(Boolean)
   const FOLGA_MS = Number(arg('folga', '4000'))
+
+  if (!PAIS || !PAISES_DA_TELA.includes(PAIS)) {
+    console.error(`❌ --pais ${PAIS ? `"${PAIS}" fora da lista` : 'é obrigatório'}: use ${PAISES_DA_TELA.map((p) => `--pais=${p}`).join(', ')}.`)
+    console.error('   Sem país não há padrão: conferir a tela de outro país daria um verde que não é desta passada.')
+    if (PAIS === 'fr' || !PAIS) console.error('   França: prefira node scripts/conferir-tela-fra.mjs (título de cada parágrafo, português em EN/ES, Kalshi).')
+    process.exit(1)
+  }
 
   if (!ESPERADO.length) {
     console.error('❌ nada a conferir. Passe --esperado=valor1,valor2,...')

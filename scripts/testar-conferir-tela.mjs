@@ -341,6 +341,18 @@ e('🔒 e o valor exato casa', achou(TELA, '8.50', 'pt-BR') === true)
   e('⛔ valor sob o rótulo ERRADO segue reprovando', sob('camara-dem', '8.50').ok === false)
 }
 
+// ── 🌎 País obrigatório (22/Nov/2026): sem --pais, ou com país fora da lista, o
+//    conferidor para ANTES de abrir o navegador. Antes, sem --pais ele conferia os EUA.
+{
+  const { spawnSync } = await import('node:child_process')
+  const roda = (...a) => spawnSync(process.execPath, ['scripts/conferir-tela.mjs', '--esperado=1', ...a], { encoding: 'utf8', timeout: 30_000 })
+  const sem = roda()
+  e('🌎 sem --pais, o conferidor SAI 1 e diz que é obrigatório', sem.status === 1 && /é obrigatório/.test(sem.stderr))
+  const fora = roda('--pais=xx')
+  e('🌎 com --pais fora da lista, SAI 1 e nomeia o país', fora.status === 1 && /"xx" fora da lista/.test(fora.stderr))
+  e('🌎 e nenhum dos dois chegou ao navegador', !/TELA DO PAINEL/.test(sem.stdout + fora.stdout))
+}
+
 for (const [rot, ok] of etq) {
   if (!ok) falhas++
   console.log(`${ok ? '✅' : '❌'} ${rot}`)
