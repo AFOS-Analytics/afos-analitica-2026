@@ -26,13 +26,42 @@ export const EDICOES = {
     cardL: (q) => `first-round poll lists in which${q ? ' ' : '<br>'}Édouard Philippe leads Lisnard`,
     cardS: 'fieldwork ending Oct 9 to Nov 17',
     tese: (q) => `Both markets moved Lisnard up and Philippe down.${q ? ' ' : '<br>'}The polls in our base answer a different question.`,
+    // 🌐 23/Nov/2026: cartão por idioma (pedido do André, envio por WhatsApp).
+    // Decimal com PONTO nos três, como no corpo da Weekly.
+    'pt-BR': {
+      contrato: 'Contrato de vitória, Polymarket e Kalshi lado a lado',
+      semana: 'semana de 16 a 23 de novembro de 2026',
+      big: '20.75',
+      bigSub: (q) => `David Lisnard na Polymarket, alta de 4.60,${q ? ' ' : '<br>'}e 20.00 na Kalshi, alta de 6.00:${q ? ' ' : '<br>'}as máximas dele desde 8 de novembro`,
+      cardN: '25 de 29',
+      cardL: (q) => `listas de 1º turno em que${q ? ' ' : '<br>'}Édouard Philippe está à frente de Lisnard`,
+      cardS: 'campo encerrado de 9/out a 17/nov',
+      tese: (q) => `Os dois mercados subiram Lisnard e desceram Philippe.${q ? ' ' : '<br>'}As pesquisas da nossa base respondem a outra pergunta.`,
+    },
+    es: {
+      contrato: 'Contrato de victoria, Polymarket y Kalshi lado a lado',
+      semana: 'semana del 16 al 23 de noviembre de 2026',
+      big: '20.75',
+      bigSub: (q) => `David Lisnard en Polymarket, sube 4.60,${q ? ' ' : '<br>'}y 20.00 en Kalshi, sube 6.00:${q ? ' ' : '<br>'}sus máximos desde el 8 de noviembre`,
+      cardN: '25 de 29',
+      cardL: (q) => `listas de primera vuelta en las que${q ? ' ' : '<br>'}Édouard Philippe va por delante de Lisnard`,
+      cardS: 'campo terminado del 9/oct al 17/nov',
+      tese: (q) => `Los dos mercados subieron a Lisnard y bajaron a Philippe.${q ? ' ' : '<br>'}Las encuestas de nuestra base responden a otra pregunta.`,
+    },
   },
 }
 
-const formatos = (n) => [
-  { nome: `og-fr-weekly-${n}-1200x627.png`, W: 1200, H: 627, s: 1.0, quadrado: false },
-  { nome: `og-fr-weekly-${n}-1200x1200.png`, W: 1200, H: 1200, s: 1.18, quadrado: true },
-  { nome: `og-fr-weekly-${n}-1600x900.png`, W: 1600, H: 900, s: 1.34, quadrado: false },
+/** Rótulos fixos da arte, por idioma. */
+const UI = {
+  en: { pill: (n) => `AFOS WEEKLY &middot; FRANCE &middot; ISSUE No. ${n}`, prod: 'FRANCE 2027 PRESIDENTIAL', trio: 'Prediction markets &middot; Polls &middot; Press', sufixo: '' },
+  'pt-BR': { pill: (n) => `AFOS WEEKLY &middot; FRANÇA &middot; EDIÇÃO Nº ${n}`, prod: 'PRESIDENCIAL FRANÇA 2027', trio: 'Mercados de previsão &middot; Pesquisas &middot; Imprensa', sufixo: '-pt' },
+  es: { pill: (n) => `AFOS WEEKLY &middot; FRANCIA &middot; EDICIÓN Nº ${n}`, prod: 'PRESIDENCIAL FRANCIA 2027', trio: 'Mercados de predicción &middot; Encuestas &middot; Prensa', sufixo: '-es' },
+}
+
+const formatos = (n, suf) => [
+  { nome: `og-fr-weekly-${n}${suf}-1200x627.png`, W: 1200, H: 627, s: 1.0, quadrado: false },
+  { nome: `og-fr-weekly-${n}${suf}-1200x1200.png`, W: 1200, H: 1200, s: 1.18, quadrado: true },
+  { nome: `og-fr-weekly-${n}${suf}-1600x900.png`, W: 1600, H: 900, s: 1.34, quadrado: false },
 ]
 
 const px = (n, s) => `${(n * s).toFixed(1)}px`
@@ -78,8 +107,8 @@ body { width: ${W}px; height: ${H}px; margin: 0; }
 `
 }
 
-const corpo = (quadrado, n, e) => `
-  <div class="pill">AFOS WEEKLY &middot; FRANCE &middot; ISSUE No. ${n}</div>
+const corpo = (quadrado, n, e, u) => `
+  <div class="pill">${u.pill(n)}</div>
   <div class="split">
     <div class="left">
       <div class="big">${e.big}</div>
@@ -94,14 +123,14 @@ const corpo = (quadrado, n, e) => `
   <div class="thesis">${e.tese(quadrado)}</div>
   <div class="meta">${e.contrato} &middot; ${e.semana}</div>`
 
-const html = (f, n, e) => `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${css(f)}</style></head>
+const html = (f, n, e, u) => `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${css(f)}</style></head>
 <body><div class="og">
   <div class="head">
     <div class="mark">AFOS ANALYTICS</div>
-    <div class="pais"><img class="flag" src="${BANDEIRA}" alt=""><div class="prod">FRANCE 2027 PRESIDENTIAL</div></div>
+    <div class="pais"><img class="flag" src="${BANDEIRA}" alt=""><div class="prod">${u.prod}</div></div>
   </div>
-  <div class="body">${corpo(f.quadrado, n, e)}</div>
-  <div class="foot"><div class="url">afos-analytics.com</div><div class="trio">Prediction markets &middot; Polls &middot; Press</div></div>
+  <div class="body">${corpo(f.quadrado, n, e, u)}</div>
+  <div class="foot"><div class="url">afos-analytics.com</div><div class="trio">${u.trio}</div></div>
 </div></body></html>`
 
 const N = process.argv.find((a) => a.startsWith('--edicao='))?.split('=')[1]
@@ -118,10 +147,15 @@ if (!E.contrato) {
 const browser = await chromium.launch()
 const DEST = process.argv.slice(2).find((a) => !a.startsWith('--')) || 'public/brand'
 console.log(`AFOS Weekly FR, edicao no ${N} - ${E.semana}`)
-for (const f of formatos(N)) {
+// O inglês é a raiz do objeto da edição; pt-BR e ES, quando declarados, saem com sufixo.
+for (const idioma of ['en', 'pt-BR', 'es'].filter((i) => i === 'en' || E[i])) {
+  const e = idioma === 'en' ? E : E[idioma]
+  if (!e.contrato) { console.error(`Edicao ${N} (${idioma}) nao declara "contrato".`); process.exitCode = 1; continue }
+  const u = UI[idioma]
+for (const f of formatos(N, u.sufixo)) {
   const ctx = await browser.newContext({ viewport: { width: f.W, height: f.H }, deviceScaleFactor: 1 })
   const page = await ctx.newPage()
-  await page.setContent(html(f, N, E), { waitUntil: 'load' })
+  await page.setContent(html(f, N, e, u), { waitUntil: 'load' })
   // O cartão não pode transbordar: rodapé fora da arte some sem erro nenhum.
   const transborda = await page.evaluate(() => { const o = document.querySelector('.og'); return o.scrollHeight > o.clientHeight + 1 })
   if (transborda) { console.error(`  ⛔ ${f.nome}: o conteúdo passa da altura do cartão (o rodapé some). Encurtar o texto.`); process.exitCode = 1 }
@@ -129,5 +163,6 @@ for (const f of formatos(N)) {
   writeFileSync(`${DEST}/${f.nome}`, buf)
   console.log(`  ${DEST}/${f.nome}  ${f.W}x${f.H}  ${(buf.length / 1024).toFixed(0)} KB${transborda ? '  ⛔ TRANSBORDA' : ''}`)
   await ctx.close()
+}
 }
 await browser.close()
