@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22",
+  "updatedAt": "2026-11-23",
   "grade": {
     "nota": "Blocos da grade oficial do Ministério do Interior francês (circular de 02/02/2026, anexo 3), aplicada ao partido de cada candidato. O Conselho de Estado confirmou a grade em 27/02/2026 (decisão nº 512694). O AFOS não classifica candidato: reproduz a classificação oficial.",
     "fontes": [
@@ -49,7 +49,7 @@
       "nuanceInferida": false,
       "nascimento": "1951-08-19",
       "cargo": "Fundador da LFI; candidato em 2012, 2017 e 2022",
-      "candidatura": "Declarado em 03/05/2026.",
+      "candidatura": "Declarado em 03/05/2026. Em 23/11/2026, o partido Génération·s decidiu apoiá-lo, com 85% dos votos dos filiados.",
       "fontes": [
         {
           "rotulo": "Wikipédia",
@@ -58,6 +58,10 @@
         {
           "rotulo": "Toute l'Europe",
           "url": "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-qui-sont-les-candidats-deja-declares/"
+        },
+        {
+          "rotulo": "20 Minutes",
+          "url": "https://www.20minutes.fr/politique/4265178-20261123-presidentielle-2027-parti-generation-cree-benoit-hamon-rallie-candidature-melenchon"
         }
       ]
     },
@@ -68,7 +72,7 @@
       "nuanceInferida": true,
       "nascimento": "1969-02-02",
       "cargo": "Prefeito de Cannes desde 2014 (reeleito em 2026); presidente da Associação dos Prefeitos da França",
-      "candidatura": "Declarado em 31/03/2026, quando deixou Les Républicains.",
+      "candidatura": "Declarado em 31/03/2026, quando deixou Les Républicains. Candidato à reeleição na presidência da Associação dos Prefeitos da França, cujo congresso vai de 24 a 26/11/2026; segundo a BFMTV, continua candidato à Presidência da República mesmo se perder.",
       "fontes": [
         {
           "rotulo": "Wikipédia",
@@ -77,6 +81,10 @@
         {
           "rotulo": "Toute l'Europe",
           "url": "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-qui-sont-les-candidats-deja-declares/"
+        },
+        {
+          "rotulo": "BFMTV",
+          "url": "https://www.bfmtv.com/politique/elections/presidentielle/david-lisnard-restera-candidat-a-la-presidentielle-meme-s-il-n-est-pas-reelu-president-de-l-amf_AP-202611230593.html"
         }
       ]
     },

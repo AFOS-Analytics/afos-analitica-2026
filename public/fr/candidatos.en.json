@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-22",
+  "updatedAt": "2026-11-23",
   "grade": {
-    "nota": "Blocs from the official grid of the French Interior Ministry (circular of 02/02/2026, annex 3), applied to each candidate's party. The Conseil d'État upheld the grid on 02/27/2026 (decision no. 512694). AFOS does not classify candidates: it reproduces the official classification.",
+    "nota": "Blocs from the official grid of the French Interior Ministry (circular of 02/02/2026, annex 3), applied to each candidate's party. The Conseil d'État upheld the grid on 27/02/2026 (decision no. 512694). AFOS does not classify candidates: it reproduces the official classification.",
     "fontes": [
       {
         "rotulo": "Légifrance",
@@ -49,7 +49,7 @@
       "nuanceInferida": false,
       "nascimento": "1951-08-19",
       "cargo": "Founder of LFI; candidate in 2012, 2017 and 2022",
-      "candidatura": "Declared on 05/03/2026.",
+      "candidatura": "Declared on 03/05/2026. On 23/11/2026, the Génération·s party decided to back him, with 85% of its members' votes.",
       "fontes": [
         {
           "rotulo": "Wikipédia",
@@ -58,6 +58,10 @@
         {
           "rotulo": "Toute l'Europe",
           "url": "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-qui-sont-les-candidats-deja-declares/"
+        },
+        {
+          "rotulo": "20 Minutes",
+          "url": "https://www.20minutes.fr/politique/4265178-20261123-presidentielle-2027-parti-generation-cree-benoit-hamon-rallie-candidature-melenchon"
         }
       ]
     },
@@ -68,7 +72,7 @@
       "nuanceInferida": true,
       "nascimento": "1969-02-02",
       "cargo": "Mayor of Cannes since 2014 (re-elected in 2026); president of the Association of Mayors of France",
-      "candidatura": "Declared on 03/31/2026, when he left Les Républicains.",
+      "candidatura": "Declared on 31/03/2026, when he left Les Républicains. Running for re-election as president of the Association of Mayors of France, whose congress runs from 24 to 26/11/2026; according to BFMTV, he remains a presidential candidate even if he loses.",
       "fontes": [
         {
           "rotulo": "Wikipédia",
@@ -77,6 +81,10 @@
         {
           "rotulo": "Toute l'Europe",
           "url": "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-qui-sont-les-candidats-deja-declares/"
+        },
+        {
+          "rotulo": "BFMTV",
+          "url": "https://www.bfmtv.com/politique/elections/presidentielle/david-lisnard-restera-candidat-a-la-presidentielle-meme-s-il-n-est-pas-reelu-president-de-l-amf_AP-202611230593.html"
         }
       ]
     },
@@ -87,7 +95,7 @@
       "nuanceInferida": false,
       "nascimento": "1979-10-15",
       "cargo": "Member of the European Parliament; co-founder of Place publique",
-      "candidatura": "Won the \"Choisir 2027\" primary (PS, Place publique and allies), 10/09 to 10/11/2026, with 66.13%.",
+      "candidatura": "Won the \"Choisir 2027\" primary (PS, Place publique and allies), 09 to 11/10/2026, with 66.13%.",
       "fontes": [
         {
           "rotulo": "Wikipédia",
@@ -144,7 +152,7 @@
       "nuanceInferida": false,
       "nascimento": "1989-03-16",
       "cargo": "Prime minister in 2024; secretary-general of Renaissance",
-      "candidatura": "Declared on 05/22/2026.",
+      "candidatura": "Declared on 22/05/2026.",
       "fontes": [
         {
           "rotulo": "Wikipédia",
@@ -163,7 +171,7 @@
       "nuanceInferida": false,
       "nascimento": "1960-11-20",
       "cargo": "President of LR; interior minister from 2024 to 2025",
-      "candidatura": "Chosen by LR members on 04/19/2026, with 73.8%.",
+      "candidatura": "Chosen by LR members on 19/04/2026, with 73.8%.",
       "fontes": [
         {
           "rotulo": "Wikipédia",
@@ -197,7 +205,7 @@
       "nuanceInferida": false,
       "nascimento": "1956-01-01",
       "cargo": "President of the European Central Bank",
-      "candidatura": "Not a declared candidate. On 10/29/2026, the European Central Bank announced that she will leave the bank's presidency on 02/07/2027. She has a market contract. The first poll to test her is by Cluster17 for Politico, with fieldwork on 11/09 and 11/10/2026.",
+      "candidatura": "Not a declared candidate. On 29/10/2026, the European Central Bank announced that she will leave the bank's presidency on 07/02/2027. She has a market contract. The first poll to test her is by Cluster17 for Politico, with fieldwork on 9 and 10/11/2026.",
       "fontes": [
         {
           "rotulo": "Wikipédia",
@@ -220,7 +228,7 @@
       "nuanceInferida": false,
       "nascimento": "1958-08-31",
       "cargo": "President of Reconquête; candidate in 2022",
-      "candidatura": "Announced on 09/17/2026.",
+      "candidatura": "Announced on 17/09/2026.",
       "fontes": [
         {
           "rotulo": "Wikipédia",

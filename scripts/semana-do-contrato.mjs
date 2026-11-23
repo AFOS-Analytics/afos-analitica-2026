@@ -30,6 +30,7 @@
  *
  * Uso:
  *   node scripts/semana-do-contrato.mjs --pais=br --de=2026-08-31 --ate=2026-09-04
+ *   node scripts/semana-do-contrato.mjs --pais=fr --de=... --ate=... --neon   # Neon direto, sem cauda cega (desde --neon-desde, padrão 2026-11-08)
  *   node scripts/semana-do-contrato.mjs --slug=brazil-presidential-election --de=... --ate=...
  *   node scripts/semana-do-contrato.mjs --pais=br --de=... --ate=... --nomes=Lula,Flávio Bolsonaro
  *   node scripts/semana-do-contrato.mjs --pais=us --de=... --ate=... --distribuicoes
@@ -109,11 +110,40 @@ if (!de || !ate) {
   process.exit(1)
 }
 
-const mercados = lerCsvGz('market')
-const saidas = lerCsvGz('marketOutcome')
-const precos = lerCsvGz('marketPrice')
+/**
+ * 🗄️ --neon (23/Nov/2026): lê as MESMAS três tabelas direto do Neon, sem a
+ * cauda cega do backup, para o dia de hoje e para superlativo "desde" na França
+ * (série curta, desde 08/Nov/2026, longe do teto de 90 dias da rota). Carrega
+ * TODOS os preços desde `--neon-desde` (padrão 2026-11-08), de todos os países,
+ * para que a quarentena por instante (`instantesSuspeitos`) conte as mesmas
+ * linhas que contaria no backup. Controle: na janela que o backup cobre, os
+ * fechamentos têm de sair idênticos nos dois modos (rodar os dois e comparar).
+ * Só leitura.
+ */
+const DO_NEON = process.argv.includes('--neon')
+const NEON_DESDE = arg('neon-desde') ?? '2026-11-08'
+async function lerDoNeon() {
+  const { config } = await import('dotenv')
+  config({ path: '.env.local' })
+  config({ path: '.env' })
+  if (!process.env.DATABASE_URL) { console.error('❌ --neon sem DATABASE_URL (copiar .env.local para o worktree)'); process.exit(1) }
+  const { PrismaClient } = await import('@prisma/client')
+  const { PrismaNeon } = await import('@prisma/adapter-neon')
+  const prisma = new PrismaClient({ adapter: new PrismaNeon({ connectionString: process.env.DATABASE_URL }) })
+  try {
+    const desde = new Date(`${NEON_DESDE}T00:00:00Z`)
+    const ps = await prisma.marketPrice.findMany({ where: { snapshotAt: { gte: desde } }, select: { marketId: true, outcomeId: true, price: true, volume: true, snapshotAt: true } })
+    const ids = [...new Set(ps.map((p) => p.marketId))]
+    const ms = await prisma.market.findMany({ where: { id: { in: ids } }, select: { id: true, slug: true } })
+    const os = await prisma.marketOutcome.findMany({ where: { marketId: { in: ids } }, select: { id: true, marketId: true, outcomeName: true } })
+    return { mercados: ms, saidas: os, precos: ps.map((p) => ({ ...p, snapshotAt: p.snapshotAt.toISOString() })) }
+  } finally { await prisma.$disconnect() }
+}
+const { mercados, saidas, precos } = DO_NEON
+  ? await lerDoNeon()
+  : { mercados: lerCsvGz('market'), saidas: lerCsvGz('marketOutcome'), precos: lerCsvGz('marketPrice') }
 if (!precos.length) {
-  console.error(`❌ nenhum ponto lido em ${RAIZ}/marketPrice`)
+  console.error(`❌ nenhum ponto lido em ${DO_NEON ? `Neon (desde ${NEON_DESDE})` : `${RAIZ}/marketPrice`}`)
   process.exit(1)
 }
 
@@ -150,7 +180,7 @@ function vigenteEm(porDia, dia) {
 
 const HOJE = new Date().toISOString().slice(0, 10)
 console.log(`\n📆 SEMANA DO CONTRATO · ${de} a ${ate} · pais=${pais}${soSlug ? ` · slug=${soSlug}` : ''}`)
-console.log(`   fechamento = ÚLTIMO ponto do dia · lido no backup, não na API`)
+console.log(`   fechamento = ÚLTIMO ponto do dia · ${DO_NEON ? `lido DIRETO NO NEON (desde ${NEON_DESDE}, sem cauda cega; superlativo vale desde essa data), não na API` : 'lido no backup, não na API'} · ${precos.length} pontos, ${suspeitos.size} instante(s) em quarentena`)
 console.log(`   ⚠️  as três bordas abaixo dão números DIFERENTES: escolher uma e declarar qual\n`)
 
 /** Por livro, o que cada desfecho fez, para somar o par e a distribuição no fim. */
@@ -170,7 +200,7 @@ for (const [chave, pontos] of [...livros.entries()].sort()) {
 
   const d = (a, b) => (b === null || a === null ? null : +(b - a).toFixed(2))
   console.log(`   ${nome}  ·  ${slug}`)
-  console.log(`      fecha em ${fecha.dia}: ${Number(fecha.valor).toFixed(2)}${fecha.herdado ? ' (herdado)' : ''}${fecha.dia === HOJE ? '  ⚠️ dia de hoje, cauda cega' : ''}`)
+  console.log(`      fecha em ${fecha.dia}: ${Number(fecha.valor).toFixed(2)}${fecha.herdado ? ' (herdado)' : ''}${fecha.dia === HOJE && !DO_NEON ? '  ⚠️ dia de hoje, cauda cega' : ''}`)
   console.log(`      Δ desde o fechamento de ${de} .............. ${fmt(d(abreNoDia.valor, fecha.valor))}   (abre ${Number(abreNoDia.valor).toFixed(2)})`)
   console.log(`      Δ desde o fechamento ${ROTULO2}, ${abreNaVespera?.dia ?? 'n/d'} ... ${fmt(d(abreNaVespera?.valor ?? null, fecha.valor))}   (abre ${abreNaVespera ? Number(abreNaVespera.valor).toFixed(2) : 'n/d'})`)
 
