@@ -81,6 +81,12 @@ jobs:
       - name: Base de leitura e veredito de rede
         run: node scripts/testar-base-afos.mjs
 
+      # Imprensa da Franca: a mesma materia com e sem rubrica no titulo (feed
+      # proprio x Google News) entrava duas vezes. Em 23/Nov/2026 o L'Opinion
+      # ocupou 2 das 10 vagas com a mesma materia. Sem rede.
+      - name: Imprensa FR, mesma materia com e sem rubrica
+        run: node scripts/testar-imprensa-fr-rubrica.mjs
+
       # A tabela de variacao do Brasil. Em 16/Set ela comparou contra 04/Set sem
       # aviso, porque a base era a ultima linha anotada; agora a base e a
       # certificada anterior livro a livro, e o ranking de volume por livro mede
