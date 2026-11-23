@@ -37,6 +37,10 @@
  * 10. PUBLICADA SEM FICHA (22/Nov/2026): pesquisa que já está na imprensa (pela
  *     Wikipedia EN e FR, só como detector) e ainda não tem ficha na Commission
  *     nem lista na base. Ver `publicadaSemFicha`.
+ * 11. RECURSO DO CAMPO (23/Nov/2026): ficha cujo texto não dá o campo (Harris)
+ *     se relê em ordem de leitura, com controle positivo nas citadas; e "campo
+ *     não lido" deixou de virar "OUTRO campo" na seção 10 (a amostra casa, ou
+ *     sai "PODE SER ELA"). Ver `extrairComRecurso`.
  *
  * ⛔ País fixo: França. Nada aqui grava no banco, nem lê o Brasil ou os EUA.
  *    O único arquivo escrito é o cache local `.cache/fr-fichas-texto.json`.
@@ -471,8 +475,14 @@ async function lerPdf(caminho: string): Promise<Leitura> {
   return { arquivo: caminho, ...detectar(t) }
 }
 
-/** PDF da Commission → texto (`pdftotext -layout`), ou o motivo de não ter lido. */
-async function textoDoPdf(caminho: string): Promise<string | { erro: string }> {
+/**
+ * PDF da Commission → texto, ou o motivo de não ter lido. `layout` (padrão)
+ * guarda as colunas lado a lado, que é o que a conferência de valores precisa;
+ * `leitura` (pdftotext sem `-layout`) segue a ordem de leitura, que é o que o
+ * extrator do CAMPO precisa nas fichas da Harris (23/Nov/2026, 10393: em layout
+ * sai "du 18 au 19   Méthode des quotas…" numa linha e "novembre 2026." na outra).
+ */
+async function textoDoPdf(caminho: string, modo: 'layout' | 'leitura' = 'layout'): Promise<string | { erro: string }> {
   try {
     const r = await fetch(`https://www.commission-des-sondages.fr/notices/files/notices/${caminho}.pdf`, { headers: { 'User-Agent': UA_FICHA }, signal: AbortSignal.timeout(30_000) })
     if (!r.ok) return { erro: `PDF HTTP ${r.status}` }
@@ -481,7 +491,7 @@ async function textoDoPdf(caminho: string): Promise<string | { erro: string }> {
     mkdirSync('.cache/fr-fichas-pdf', { recursive: true })
     const arq = `.cache/fr-fichas-pdf/${caminho.replace(/[^A-Za-z0-9._-]+/g, '_')}.pdf`
     writeFileSync(arq, buf)
-    const texto = execFileSync('pdftotext', ['-layout', '-enc', 'UTF-8', arq, '-'], { encoding: 'utf8', timeout: 60_000, stdio: ['ignore', 'pipe', 'ignore'] })
+    const texto = execFileSync('pdftotext', [...(modo === 'layout' ? ['-layout'] : []), '-enc', 'UTF-8', arq, '-'], { encoding: 'utf8', timeout: 60_000, stdio: ['ignore', 'pipe', 'ignore'] })
     if (texto.replace(/\s/g, '').length < 200) return { erro: 'PDF sem camada de texto (imagem?): ler à mão' }
     return texto
   } catch (e) { return { erro: `pdftotext: ${e instanceof Error ? e.message.split('\n')[0] : String(e)}` } }
@@ -532,6 +542,59 @@ function extrairFicha(texto: string): Extraido {
   return { campo: c ? c[0] : null, fim, amostras }
 }
 const descreve = (e: Extraido) => `campo ${e.campo ? `"${e.campo}" (fim ${e.fim})` : 'NÃO extraído, ler à mão'} · amostras citadas (as 3 primeiras): ${e.amostras.slice(0, 3).join(', ') || 'nenhuma'}`
+
+/**
+ * 🔁 RECURSO DO CAMPO (criado 23/Nov/2026). Nas fichas da Harris o texto do
+ * índice e o do `pdftotext -layout` põem "du 18 au 19" numa linha e "novembre
+ * 2026." na outra, com a coluna vizinha no meio, e o extrator não acha o campo.
+ * Em 23/Nov isso levou a seção PUBLICADA SEM FICHA a dizer que a ficha 10393
+ * (Toluna Harris vaga 10, campo 18-19/11) tinha "OUTRO campo": era "campo não
+ * lido" virando "campo diferente". Aqui, sem campo no 1º texto, o PDF se relê
+ * em ORDEM DE LEITURA (pdftotext sem `-layout`), onde a frase sai inteira.
+ * Controle positivo: todas as fichas citadas de 60 dias que o 1º texto não
+ * resolve passam pelo recurso, e o fim tem de bater com a base em todas. Sem
+ * caso para controlar, ou com um que não bate, o campo vindo do recurso sai
+ * SEM VALOR (vale só a amostra).
+ */
+type ExtraidoVia = Extraido & { via: string }
+async function extrairComRecurso(t: { texto: string; origem: string; caminho: string }): Promise<ExtraidoVia> {
+  const e = extrairFicha(t.texto)
+  if (e.fim) return { ...e, via: t.origem }
+  const p = await textoDoPdf(t.caminho, 'leitura')
+  if (typeof p !== 'string') return { ...e, via: t.origem }
+  const e2 = extrairFicha(p)
+  return e2.fim ? { campo: e2.campo, fim: e2.fim, amostras: [...new Set([...e.amostras, ...e2.amostras])], via: 'PDF em ordem de leitura' } : { ...e, via: t.origem }
+}
+let controleRecurso: Promise<{ ok: boolean; linha: string }> | null = null
+function controleDoRecurso(V: FrPollsData) {
+  controleRecurso ??= (async () => {
+    const corte = corteEm(agora, 60)
+    const porFicha = new Map<string, FrPesquisa>()
+    for (const p of V.pesquisas.filter((x) => x.publicavel && x.ficha.url && x.ficha.numero && x.campo.fim >= corte)) {
+      if (!porFicha.has(p.ficha.numero as string)) porFicha.set(p.ficha.numero as string, p)
+    }
+    let casos = 0, batem = 0
+    const falhas: string[] = []
+    for (const p of porFicha.values()) {
+      const t = await textoDaFicha(p.ficha.url as string)
+      if ('erro' in t || extrairFicha(t.texto).fim) continue
+      casos++
+      const e = await extrairComRecurso(t)
+      if (e.fim === p.campo.fim) batem++
+      else falhas.push(`${p.ficha.numero}: ${e.fim ?? 'nada'} pelo recurso, ${p.campo.fim} na base`)
+    }
+    const ok = casos > 0 && batem === casos
+    return { ok, linha: `controle do recurso (fichas citadas de 60 dias sem campo no 1º texto, relidas em ordem de leitura): ${batem} de ${casos} com o fim da base${falhas.length ? ` · ⛔ ${falhas.join(' · ')}` : ''} → ${ok ? 'CONFERE' : casos ? '⛔ campo pelo recurso SEM VALOR' : 'sem caso para controlar: campo pelo recurso SEM VALOR'}` }
+  })()
+  return controleRecurso
+}
+/** Campo da ficha com o recurso, já sem valor se o controle do recurso não passou. */
+async function campoDaFicha(V: FrPollsData, t: { texto: string; origem: string; caminho: string }): Promise<ExtraidoVia & { recursoSemValor: boolean }> {
+  const e = await extrairComRecurso(t)
+  if (e.via !== 'PDF em ordem de leitura' || (await controleDoRecurso(V)).ok) return { ...e, recursoSemValor: false }
+  return { ...e, campo: null, fim: null, recursoSemValor: true }
+}
+
 async function oQueAPendenteDiz(V: FrPollsData) {
   if (!V.pendentes.length) return
   // Controle: as 5 fichas citadas mais recentes, lidas pelo mesmo caminho.
@@ -551,6 +614,7 @@ async function oQueAPendenteDiz(V: FrPollsData) {
   }
   const controleOk = lidas > 0 && comFim > 0 && !falhas.length
   console.log(`   controle do extrator (5 fichas citadas mais recentes): ${lidas} lidas, fim do campo extraído em ${comFim} e igual ao da base em ${comFim - falhas.filter((f) => f.includes(' fim ')).length}${falhas.length ? ` · ⛔ ${falhas.join(' · ')}` : ''} → ${controleOk ? 'CONFERE' : '⛔ extração das pendentes SEM VALOR, ler à mão'}`)
+  console.log(`   ${(await controleDoRecurso(V)).linha}`)
   const ultimaPorInst = new Map<string, string>()
   for (const p of V.pesquisas.filter((x) => x.publicavel && x.turno === 1)) {
     const k = semAcento(p.instituto).split(/\s+/)[0] // "harris interactive" → "harris", "ipsos bva" → "ipsos"
@@ -558,8 +622,8 @@ async function oQueAPendenteDiz(V: FrPollsData) {
   }  for (const f of V.pendentes as { numero: string; rotulo: string; url: string }[]) {
     const t = await textoDaFicha(f.url)
     if ('erro' in t) { console.log(`   📄 ${f.numero}: ficha NÃO lida (${t.erro}) → ler o PDF à mão`); continue }
-    const e = extrairFicha(t.texto)
-    console.log(`   📄 ${f.numero} (${t.origem}${controleOk ? '' : ', SEM VALOR'}): ${descreve(e)}`)
+    const e = await campoDaFicha(V, t)
+    console.log(`   📄 ${f.numero} (${e.via}${controleOk ? '' : ', SEM VALOR'}): ${descreve(e)}${e.recursoSemValor ? ' (o recurso achou um campo, mas o controle dele não passou)' : ''}`)
     const inst = [...ultimaPorInst.keys()].find((k) => semAcento(f.rotulo).includes(k))
     if (e.fim) {
       const ate = (d: number) => new Date(new Date(e.fim + 'T00:00:00Z').getTime() + d * 864e5).toISOString().slice(0, 10)
@@ -863,10 +927,13 @@ async function publicadaSemFicha(V: FrPollsData) {
   for (const f of falhas) console.log(`   ⛔ ${f}`)
   if (!vivas.length) { console.log('   ⛔ LEITURA CEGA nas duas fontes: nada desta seção vale como "nenhuma publicada sem ficha"; procurar à mão'); return }
   // Fim do campo de cada ficha pendente, lido da própria ficha.
-  const pend: { numero: string; rotulo: string; inst: string; fim: string | null }[] = []
+  // 23/Nov/2026: "fim não lido" NÃO é "outro campo". Sem o fim, a amostra decide
+  // (a da Wikipedia entre as citadas na ficha); sem as duas, "pode ser ela".
+  const pend: { numero: string; rotulo: string; inst: string; fim: string | null; amostras: number[] }[] = []
   for (const f of V.pendentes as { numero: string; rotulo: string; url: string }[]) {
     const t = await textoDaFicha(f.url)
-    pend.push({ numero: f.numero, rotulo: f.rotulo, inst: instDoRotulo(f.rotulo), fim: 'erro' in t ? null : extrairFicha(t.texto).fim })
+    const e = 'erro' in t ? null : await campoDaFicha(V, t)
+    pend.push({ numero: f.numero, rotulo: f.rotulo, inst: instDoRotulo(f.rotulo), fim: e?.fim ?? null, amostras: e?.amostras ?? [] })
   }
   const ultimaPorInst = new Map<string, string>()
   for (const p of V.pesquisas.filter((x) => x.publicavel && x.turno === 1)) {
@@ -882,6 +949,11 @@ async function publicadaSemFicha(V: FrPollsData) {
     if (perto) { console.log(`   ≈ ${quem}: na base com fim do campo ${perto.campo.fim} (ficha ${perto.ficha.numero ?? 'sem número'}); data diferente entre as fontes, conferir`); continue }
     const pf = pend.find((p) => p.inst === l.inst && p.fim && diasEntre(p.fim, l.fim) <= 1)
     if (pf) { console.log(`   ⏳ ${quem}: é a ficha pendente ${pf.numero} ("${pf.rotulo}", fim do campo na ficha ${pf.fim}): aguarda a base`); continue }
+    const amostraWiki = ls.find((x) => x.amostra)?.amostra ?? null
+    const pa = pend.find((p) => p.inst === l.inst && !p.fim && amostraWiki != null && p.amostras.includes(amostraWiki))
+    if (pa) { console.log(`   ⏳ ${quem}: é a ficha pendente ${pa.numero} ("${pa.rotulo}"), casada pela AMOSTRA ${amostraWiki} citada na ficha (fim do campo não lido nela): aguarda a base`); continue }
+    const semFim = pend.find((p) => p.inst === l.inst && !p.fim)
+    if (semFim) { console.log(`   ❓ ${quem}: há ficha pendente do mesmo instituto (${semFim.numero}, "${semFim.rotulo}") com o campo NÃO LIDO e sem a amostra ${amostraWiki ?? 'n/d'} entre as citadas: PODE SER ELA, ler o PDF à mão · ${l.link}`); continue }
     const pi = pend.find((p) => p.inst === l.inst)
     const ult = ultimaPorInst.get(l.inst)
     const ate = (d: number) => maisDias(l.fim, d)
@@ -889,7 +961,7 @@ async function publicadaSemFicha(V: FrPollsData) {
       : l.fim > ult ? `campo mais recente que a rodada da tela (fim ${ult}): passaria a ser a lista principal do instituto`
       : `campo não é mais recente que a rodada da tela (fim ${ult}): entraria só na média e nas contagens`
     console.log(`   📰 PUBLICADA SEM FICHA NEM LISTA NA BASE: ${quem} · ${l.link}`)
-    console.log(`      ↳ ${pi ? `há ficha pendente do mesmo instituto (${pi.numero}, fim ${pi.fim ?? 'não lido'}) com OUTRO campo: não é ela · ` : ''}aguarda a ficha da Commission e a lista da base; nenhum número entra à mão · quando entrar: ${lugar} · na média de 30 dias até ${ate(30)}, nas contagens de 45 dias até ${ate(45)} → listar ao André`)
+    console.log(`      ↳ ${pi ? `há ficha pendente do mesmo instituto (${pi.numero}, fim ${pi.fim} lido na ficha) com OUTRO campo: não é ela · ` : ''}aguarda a ficha da Commission e a lista da base; nenhum número entra à mão · quando entrar: ${lugar} · na média de 30 dias até ${ate(30)}, nas contagens de 45 dias até ${ate(45)} → listar ao André`)
   }
   console.log(`   ${casadas} rodada(s) da Wikipedia já estão na base`)
 }
