@@ -172,6 +172,17 @@ function ThemeToggle({ theme, onChoose, labels }: { theme: Theme; onChoose: (t: 
  * em piloto. O custo é manter dois mastheads parecidos; o risco evitado é
  * derrubar o Tradeoff ao mexer no Weekly.
  */
+/**
+ * 📅 Dia de publicação POR PAÍS (23/Nov/2026). O rótulo era um só, "published
+ * thursday 07:00 BRT", que é a cadência dos EUA, e a Weekly da França (SEGUNDAS,
+ * decisão do André de 08/Nov/2026) saía no preview da Nº 1 dizendo quinta. Para
+ * a França vai só o dia: hora de publicação não foi fixada, e escrever uma seria
+ * inventar. País fora do mapa usa o rótulo dos EUA.
+ */
+const PUBLICADO_POR_PAIS: Record<string, Record<'pt-BR' | 'en' | 'es', string>> = {
+  fr: { 'pt-BR': 'publicada às segundas', en: 'published on Mondays', es: 'publicada los lunes' },
+}
+
 const PAIS_EYEBROW: Record<string, string> = {
   us: 'AFOS Weekly · USA-2026 midterms Political Risk Weekly',
   fr: 'AFOS Weekly · France-2027 presidential Political Risk Weekly',
@@ -333,7 +344,7 @@ export function AfosWeeklyTemplate({ data, locale, country = 'us' }: { data: Afo
             {/* 🔴 QUINTA, não segunda. A cadência do Weekly é diferente da do
                 Tradeoff, e copiar o rótulo do outro produto publicaria um horário
                 falso. */}
-            <span className="font-semibold">{t.published}</span>
+            <span className="font-semibold">{PUBLICADO_POR_PAIS[country]?.[k] ?? t.published}</span>
           </div>
         </header>
 
@@ -614,7 +625,7 @@ export function AfosWeeklyTemplate({ data, locale, country = 'us' }: { data: Afo
           </div>
         </div>
 
-        <InlineSubscribe locale={k} isBlue={isBlue} product="weekly" />
+        <InlineSubscribe locale={k} isBlue={isBlue} product="weekly" country={country} />
 
         <nav className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm">
           <a href={`/${locale}/weekly/${country}`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${ctaBg}`}>

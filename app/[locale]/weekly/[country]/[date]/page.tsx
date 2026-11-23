@@ -30,6 +30,7 @@ import { JsonLd } from '../../../../components/JsonLd'
  */
 const TAGS_POR_PAIS: Record<string, string[]> = {
   us: ['US 2026 midterms', 'prediction markets', 'electoral polls', 'political risk', 'weekly analysis'],
+  fr: ['France 2027 presidential election', 'prediction markets', 'electoral polls', 'political risk', 'weekly analysis'],
 }
 
 /**

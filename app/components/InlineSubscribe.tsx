@@ -25,6 +25,8 @@ const T = {
     tradeoff: 'O AFOS Tradeoff é a leitura semanal de risco político do Brasil, para quem decide com base em dado, não em manchete.',
     relatorio: 'Este relatório fecha a cobertura da eleição presidencial do Brasil 2026. Para seguir as próximas leituras do AFOS sobre eleições de outros países, com mercado de previsão, pesquisas e imprensa lado a lado, receba por e-mail.',
     weekly: 'O AFOS Weekly acompanha as midterms dos EUA toda quinta, para o eleitor: onde o mercado de previsão, as pesquisas e a imprensa discordam, e o que cada um mede.',
+    weeklyFr: 'O AFOS Weekly França acompanha a eleição presidencial francesa de 2027 toda segunda, para o eleitor: onde os mercados de previsão, as pesquisas e a imprensa discordam, e o que cada um mede.',
+    tradeoffFr: 'O AFOS Tradeoff França é a leitura semanal de risco político da eleição presidencial francesa de 2027, para quem decide com base em dado, não em manchete.',
     langNote: 'Depois do cadastro você escolhe se quer receber em português, inglês ou espanhol.',
   },
   en: {
@@ -33,6 +35,8 @@ const T = {
     tradeoff: 'AFOS Tradeoff is the weekly read on Brazilian political risk, for people who decide on data rather than headlines.',
     relatorio: "This report closes the coverage of Brazil's 2026 presidential election. To follow the next AFOS readings on elections in other countries, with prediction markets, polls and the press side by side, get them by email.",
     weekly: 'AFOS Weekly follows the US midterms every Thursday, written for voters: where the prediction market, the polls and the press disagree, and what each one measures.',
+    weeklyFr: 'AFOS Weekly France follows the 2027 French presidential election every Monday, written for voters: where the prediction markets, the polls and the press disagree, and what each one measures.',
+    tradeoffFr: "AFOS Tradeoff France is the weekly read on political risk in France's 2027 presidential election, for people who decide on data rather than headlines.",
     langNote: 'After signing up you choose whether to receive it in English, Portuguese or Spanish.',
   },
   es: {
@@ -41,6 +45,8 @@ const T = {
     tradeoff: 'AFOS Tradeoff es la lectura semanal de riesgo político de Brasil, para quien decide con datos y no con titulares.',
     relatorio: 'Este informe cierra la cobertura de la elección presidencial de Brasil 2026. Para seguir las próximas lecturas de AFOS sobre elecciones de otros países, con mercado de predicción, encuestas y prensa lado a lado, recíbelas por correo.',
     weekly: 'AFOS Weekly sigue las midterms de EE. UU. cada jueves, escrito para el votante: dónde el mercado de predicción, las encuestas y la prensa discrepan, y qué mide cada uno.',
+    weeklyFr: 'AFOS Weekly Francia sigue la elección presidencial francesa de 2027 cada lunes, escrito para el votante: dónde los mercados de predicción, las encuestas y la prensa discrepan, y qué mide cada uno.',
+    tradeoffFr: 'AFOS Tradeoff Francia es la lectura semanal de riesgo político de la elección presidencial francesa de 2027, para quien decide con datos y no con titulares.',
     langNote: 'Después del registro eliges si quieres recibirlo en español, portugués o inglés.',
   },
 } as const
@@ -53,7 +59,7 @@ interface InlineSubscribeProps {
   isBlue: boolean
   /** Define a cópia e a origem registrada do cadastro. */
   product: 'daily' | 'tradeoff' | 'weekly' | 'relatorio'
-  /** País da edição. Só o Tradeoff precisa: ele roda BR e US no mesmo template. */
+  /** País da edição: qualifica a origem do Tradeoff (BR, US) e escolhe a cópia da França na Weekly e no Tradeoff. */
   country?: string
 }
 
@@ -84,7 +90,8 @@ export function InlineSubscribe({ locale, isBlue, product, country }: InlineSubs
         {t.eyebrow}
       </p>
       <p className={`text-sm leading-relaxed mb-6 max-w-[58ch] mx-auto ${bodyColor}`}>
-        {product === 'daily' ? t.daily : product === 'weekly' ? t.weekly : product === 'relatorio' ? t.relatorio : t.tradeoff}
+        {/* 🇫🇷 23/Nov/2026: a cópia era uma por produto, e a página da Weekly França dizia "midterms dos EUA toda quinta"; a Tradeoff França herdaria "risco político do Brasil". A ORIGEM do cadastro não muda. */}
+        {product === 'daily' ? t.daily : product === 'weekly' ? (country === 'fr' ? t.weeklyFr : t.weekly) : product === 'relatorio' ? t.relatorio : country === 'fr' ? t.tradeoffFr : t.tradeoff}
       </p>
 
       {/* Formulário centralizado; o rótulo de consentimento segue alinhado à

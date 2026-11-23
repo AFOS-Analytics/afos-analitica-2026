@@ -28,7 +28,8 @@
  *
  * Uso: npx tsx scripts/gate-weekly-us.ts 2026-09-17
  */
-import { existsSync } from 'fs'
+import { existsSync, readFileSync } from 'fs'
+import matter from 'gray-matter'
 import { loadWeekly } from '../lib/afos-weekly/loader'
 import { numerosComUnidade } from './lib/numeros-com-unidade.mjs'
 
@@ -65,9 +66,34 @@ const corpo = (d: any) =>
 // passou a usar a mesma em 19/Out/2026, e ele nunca tinha tido gate numerico.
 const numeros = numerosComUnidade
 
+/**
+ * 🔢 PREÇO SEM UNIDADE (23/Nov/2026). O gate acima só pega número seguido de
+ * %, pp, M ou USD. Na Weekly da França os preços são pontos puros ("**20.75**"),
+ * e a Nº 1 tinha 5 números com unidade contra dezenas de preços: uma tradução
+ * que trocasse 20.75 por 20.57 passava VERDE. Aqui entra todo decimal com
+ * PONTO e 1 ou 2 casas (o decimal é ponto nos três idiomas; o milhar de pt-BR
+ * e ES tem 3 dígitos depois do ponto e fica de fora), com o sinal.
+ */
+const decimais = (t: string) => [...t.matchAll(/(?<![\d.,])([+-]?\d{1,3}\.\d{1,2})(?![\d])/g)].map((m) => m[1].replace(/^\+/, '')).sort()
+
+/**
+ * 🧾 FONTES POR ITEM, não por grupo (23/Nov/2026). A régua do /weekly-usa já
+ * dizia que o contador de GRUPOS é cego por construção ao item que o loader
+ * descarta calado (item sem `link`), e este portão imprimia `fontes=3`. Agora
+ * conta os itens do YAML do arquivo servido e os que o loader entregou.
+ */
+const itensNoYaml = (loc: string): number | null => {
+  const arq = `public/afos-weekly/${PAIS}/${DATA}${loc === 'en' ? '' : `.${loc}`}.md`
+  if (!existsSync(arq)) return null
+  const fm: any = matter(readFileSync(arq, 'utf8')).data
+  return (fm.sources ?? []).reduce((a: number, g: any) => a + (g.items?.length ?? 0), 0)
+}
+
 let falhouTeto = false
 const locs = ['en', 'pt-BR', 'es']
 const por: Record<string, string[]> = {}
+const porDecimal: Record<string, string[]> = {}
+let falhouItens = false
 for (const loc of locs) {
   const d: any = loadWeekly(DATA, loc, PAIS)
   if (!d) {
@@ -75,6 +101,14 @@ for (const loc of locs) {
     process.exit(1)
   }
   por[loc] = numeros(corpo(d))
+  porDecimal[loc] = decimais(corpo(d))
+  const itensLoader = (d.sources ?? []).reduce((a: number, g: any) => a + (g.items?.length ?? 0), 0)
+  const itensYaml = itensNoYaml(loc)
+  if (itensYaml !== null && itensLoader !== itensYaml) {
+    falhouItens = true
+    console.log(`     🔴 ${loc}: fontes com ${itensYaml} itens no arquivo e ${itensLoader} no loader: item sem link é descartado calado`)
+  }
+  console.log(`     ${loc}: ${porDecimal[loc].length} decimais (preços e médias) · fontes ${itensLoader} itens em ${d.sources?.length} grupos${itensYaml === null ? ' (arquivo do idioma ausente: serve o inglês)' : ''}`)
   const palavras = corpo(d).replace(/\*\*/g, '').split(/\s+/).filter(Boolean).length
   // O teto é do INGLÊS. Na tradução ele vira referência, não portão.
   const teto = loc === 'en' ? (palavras > TETO ? ` ❌ ACIMA DO TETO de ${TETO}` : ` ✅ no teto de ${TETO}`) : ' (tradução, sem teto)'
@@ -100,7 +134,16 @@ for (const loc of locs.slice(1)) {
     if (sobra.length) console.log(`   só no ${loc}: ${[...new Set(sobra)].join(' ')}`)
   }
 }
-console.log(falhou ? '\n❌ GATE NUMÉRICO REPROVADO' : '\n✅ gate numérico: multiconjunto idêntico nos três idiomas')
+for (const loc of locs.slice(1)) {
+  const a = porDecimal.en, b = porDecimal[loc]
+  if (JSON.stringify(a) !== JSON.stringify(b)) {
+    falhou = true
+    const so = (x: string[], y: string[]) => [...new Set(x.filter((v) => x.filter((w) => w === v).length > y.filter((w) => w === v).length))]
+    console.log(`\n❌ ${loc}: DECIMAIS divergem do inglês · só no EN: ${so(a, b).join(' ') || '-'} · só no ${loc}: ${so(b, a).join(' ') || '-'}`)
+  }
+}
+if (falhouItens) falhou = true
+console.log(falhou ? '\n❌ GATE NUMÉRICO REPROVADO' : '\n✅ gate numérico: multiconjunto idêntico nos três idiomas (com unidade e decimais), fontes item a item')
 // 🖼️ ogImage DECLARADA tem de EXISTIR no disco. Régua de 25/Set/2026, e ela
 // nasceu de um 404 em produção: a edição nº 7 foi ao ar apontando para
 // /brand/og-us-weekly-7-1200x627.png, que nunca foi gerado, porque o script da
