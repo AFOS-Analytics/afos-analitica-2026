@@ -95,6 +95,24 @@ for (const { origem, prefixo, franca } of ALVOS) {
       if (CIRILICO.test(v)) acusa(`[cirílico] ${c}: homóglifo em "${v.slice(0, 60)}"`)
       if (INVISIVEL.test(v)) acusa(`[invisível] ${c}: caractere invisível em "${v.slice(0, 60)}"`)
 
+      // 6. França: data em DIA/MÊS, como o pt-BR (23/Nov/2026). O gate numérico
+      // compara números como conjunto, então "02/07/2027" passava contra
+      // "07/02/2027": no painel EN a Lagarde saía com 07/02/2027 no texto e
+      // 02/07/2027 no perfil, a mesma data escrita de dois jeitos na mesma tela.
+      // Acusa a data cuja ordem invertida é a do pt-BR no mesmo campo, e a que
+      // só existe como mês/dia (segundo número acima de 12).
+      if (franca) {
+        let vpt: any = pt
+        for (const p of partes) vpt = vpt?.[p]
+        const DATA = /\b(\d{1,2})\/(\d{1,2})(?:\/(\d{4}))?\b/g
+        const dPt = typeof vpt === 'string' ? [...vpt.matchAll(DATA)].map((m) => m[0]) : []
+        for (const m of v.matchAll(DATA)) {
+          const invertida = [m[2], m[1], m[3]].filter(Boolean).join('/')
+          if (!dPt.includes(m[0]) && dPt.includes(invertida)) acusa(`[data invertida] ${c}: ${m[0]} no ${loc}, ${invertida} no pt-BR`)
+          else if (Number(m[2]) > 12) acusa(`[data mês/dia] ${c}: ${m[0]} (o painel escreve dia/mês nos 3 idiomas)`)
+        }
+      }
+
       // 5. separador decimal
       const re = DECIMAL_ERRADO[loc]
       if (re.test(v)) {

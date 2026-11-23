@@ -20,6 +20,13 @@
  *     "em coleta; entra"), e o veredito diz qual dos dois a tela mostra;
  *  6. links de fonte: fora da França, o rótulo "fonte ↗" aparece (dentro da
  *     França ele some por causa da lei 2010-476; esta máquina está fora).
+ *  7. PERFIS (23/Nov/2026): quantos perfis de public/fr/candidatos.<idioma>.json
+ *     aparecem com o texto ATUAL de "candidatura"; com --velho, o perfil que
+ *     mudou desde aquele commit não pode mostrar o texto velho. Antes, a rodada
+ *     que mexia só em perfil passava com a tela velha;
+ *  8. IMPRENSA (23/Nov/2026): nenhuma manchete repetida com e sem rubrica na
+ *     seção (`mesmaMateriaComRubrica`, a regra da coleta). Em 23/11 o L'Opinion
+ *     ocupou 2 das 10 vagas com a mesma matéria, e este conferidor dizia CONFERE.
  * 🧪 Mutação conferida em 22/Nov/2026: `--esperar=46782cfc` (exige o texto de
  *    21/11, que já saiu da tela) reprova os 3 idiomas no item 2. Um leitor cego
  *    (página vazia, idioma errado) reprova no item 2 também, porque os títulos
@@ -29,6 +36,7 @@
 import { readFileSync } from 'node:fs'
 import { execFileSync } from 'node:child_process'
 import { chromium } from 'playwright'
+import { mesmaMateriaComRubrica } from '../lib/fr-press/collect.mjs'
 
 const arg = (n) => process.argv.find((a) => a.startsWith(`--${n}=`))?.slice(n.length + 3)
 const BASE = arg('base') ?? 'https://www.afos-analytics.com'
@@ -46,6 +54,9 @@ const ROTULO = {
 }
 // Marcas que só o português tem (EN e ES não podem trazer nenhuma).
 const MARCAS_PT = [' não ', 'pesquisas', 'eleição', 'Distância', 'contagens', ' também ', 'campo encerrado', 'ção ', 'ções', 'você']
+const lerPerfis = (loc, commit) => JSON.parse(commit
+  ? execFileSync('git', ['show', `${commit}:public/fr/candidatos.${loc}.json`], { encoding: 'utf8' })
+  : readFileSync(`public/fr/candidatos.${loc}.json`, 'utf8')).perfis
 const titulos = (txt) => txt.paragrafos.map((p) => (p.match(/^\*\*(.+?)\*\*/) ?? [])[1]).filter(Boolean)
 const norm = (s) => s.replace(/\s+/g, ' ').replace(/[’]/g, "'")
 
@@ -81,6 +92,32 @@ try {
     const temDist = corpo.includes(R.dist), espera = corpo.includes(R.espera)
     ok(temDist !== espera, `Kalshi: ${temDist ? `NA TABELA (coluna "${R.dist}")` : espera ? `em espera ("${R.espera}")` : 'nem coluna nem espera: a tabela não montou'}`)
     ok(corpo.includes(R.fonte), `link de fonte "${R.fonte}" aparece (esta máquina está fora da França)`)
+
+    // 7. Perfis: texto atual na tela, e o velho fora.
+    const perfis = lerPerfis(loc, ESPERAR)
+    const naTela = Object.entries(perfis).filter(([, p]) => corpo.includes(norm(p.candidatura)))
+    ok(naTela.length > 0, `perfis: ${naTela.length} com o texto atual na tela (${naTela.map(([n]) => n.split(' ').slice(-1)[0]).join(', ')})`)
+    if (VELHO) {
+      const velhos = lerPerfis(loc, VELHO)
+      for (const [n, p] of Object.entries(perfis)) {
+        const v = velhos[n]?.candidatura
+        if (!v || v === p.candidatura) continue
+        // Texto novo que só ACRESCENTA ao velho contém o velho: aí só se exige o novo.
+        const novoNaTela = corpo.includes(norm(p.candidatura)), velhoNaTela = !p.candidatura.includes(v) && corpo.includes(norm(v))
+        if (!novoNaTela && !velhoNaTela) { console.log(`   · perfil de ${n} mudou desde ${VELHO}, mas não está entre os exibidos`); continue }
+        ok(novoNaTela && !velhoNaTela, `perfil de ${n} mudou desde ${VELHO}: ${novoNaTela ? 'texto novo na tela' : 'texto novo AUSENTE'}${velhoNaTela ? ', texto VELHO ainda na tela' : ''}`)
+      }
+    }
+
+    // 8. Imprensa: nenhuma manchete repetida com e sem rubrica.
+    const manchetes = await page.evaluate(() => [...document.querySelectorAll('a[href^="http"]')]
+      .filter((a) => !/afos-analytics|commission-des-sondages|dataverse|huggingface|polymarket|kalshi|wikipedia|github/.test(a.href))
+      .map((a) => a.innerText.replace(/\s+/g, ' ').trim()).filter((t) => t.split(' ').length >= 6))
+    // Controle positivo da regra: o par real de 23/11 (L'Opinion, feed x Google News) tem de ser acusado.
+    ok(mesmaMateriaComRubrica('David Lisnard devance Edouard Philippe dans un sondage pour la première fois', 'Présidentielle 2027 : David Lisnard devance Edouard Philippe dans un sondage pour la première fois'), 'imprensa: a regra acusa o par real de 23/11 (controle positivo)')
+    const pares = []
+    for (let i = 0; i < manchetes.length; i++) for (let j = i + 1; j < manchetes.length; j++) if (mesmaMateriaComRubrica(manchetes[i], manchetes[j])) pares.push(`"${manchetes[j].slice(0, 50)}"`)
+    ok(manchetes.length > 0 && !pares.length, `imprensa: ${manchetes.length} manchete(s), ${pares.length ? `REPETIDAS com e sem rubrica: ${pares.join(' | ')}` : 'nenhuma repetida'}`)
     await page.close()
   }
 } finally { await browser.close() }
