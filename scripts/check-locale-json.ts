@@ -25,7 +25,8 @@ import { FORA_DE_TRADUCAO } from './build-locale-json'
  */
 const ALVOS: { origem: string; prefixo: string; franca?: boolean }[] = [
   ...(['analysis-data', 'analysis-criteriosa', 'polls-data'] as const).map((a) => ({ origem: `public/${a}.json`, prefixo: `public/${a}` })),
-  ...(['analise', 'candidatos'] as const).map((a) => ({ origem: `public/fr/${a}.pt-BR.json`, prefixo: `public/fr/${a}`, franca: true })),
+  // `analise` saiu da TELA em 23/Nov/2026 (os JSON ficam no repositório): fora do portão.
+  ...(['candidatos'] as const).map((a) => ({ origem: `public/fr/${a}.pt-BR.json`, prefixo: `public/fr/${a}`, franca: true })),
 ]
 const LOCALES = ['en', 'es'] as const
 
@@ -106,10 +107,18 @@ for (const { origem, prefixo, franca } of ALVOS) {
         for (const p of partes) vpt = vpt?.[p]
         const DATA = /\b(\d{1,2})\/(\d{1,2})(?:\/(\d{4}))?\b/g
         const dPt = typeof vpt === 'string' ? [...vpt.matchAll(DATA)].map((m) => m[0]) : []
+        // 24/Nov/2026, decisão do André: INGLÊS em MÊS/DIA (como os componentes
+        // da tela EN, en-US); pt-BR e espanhol em DIA/MÊS.
         for (const m of v.matchAll(DATA)) {
           const invertida = [m[2], m[1], m[3]].filter(Boolean).join('/')
-          if (!dPt.includes(m[0]) && dPt.includes(invertida)) acusa(`[data invertida] ${c}: ${m[0]} no ${loc}, ${invertida} no pt-BR`)
-          else if (Number(m[2]) > 12) acusa(`[data mês/dia] ${c}: ${m[0]} (o painel escreve dia/mês nos 3 idiomas)`)
+          const simetrica = m[1] === m[2]
+          if (loc === 'en') {
+            if (!simetrica && dPt.includes(m[0]) && !dPt.includes(invertida)) acusa(`[data dia/mês no EN] ${c}: ${m[0]} igual ao pt-BR; em inglês é ${invertida}`)
+            else if (Number(m[1]) > 12) acusa(`[data dia/mês no EN] ${c}: ${m[0]} (inglês escreve mês/dia)`)
+          } else {
+            if (!dPt.includes(m[0]) && dPt.includes(invertida)) acusa(`[data invertida] ${c}: ${m[0]} no ${loc}, ${invertida} no pt-BR`)
+            else if (Number(m[2]) > 12) acusa(`[data mês/dia] ${c}: ${m[0]} (${loc} escreve dia/mês, como o pt-BR)`)
+          }
         }
       }
 
