@@ -352,13 +352,26 @@ function mudancas(a: Estado, b: Estado, noTexto: Set<string>): string[] {
   }
   return out
 }
+/**
+ * 🧭 O texto diário do painel SAIU DA TELA em 23/Nov/2026 (decisão do André: no
+ * topo, os cartões das edições e um cartão de apresentação sem número). Sem
+ * texto na tela, (a) "desde o texto" e a marca `[no texto]` só dariam alarme
+ * falso de "texto velho". Ficam desligados; (b) continua, porque diz o que a
+ * janela muda na TELA no dia da Weekly (segunda) e do Tradeoff (quinta).
+ * Voltar o texto à tela = `true` aqui e `FrAnaliseSection` no FrDashboardClient.
+ */
+const TEXTO_DO_PAINEL_NA_TELA = false
+
 function aJanelaAnda(V: FrPollsData, txt: { updatedAt: string; paragrafos: string[] }, rTexto: { slug: string; bodyMarkdown: string; publishedAt: Date | null } | null) {
-  const noTexto = new Set(txt.paragrafos.join(' ').replace(/\d+[ºª]/g, '').match(/\d+(?:,\d+)?/g) ?? [])
+  const noTexto = TEXTO_DO_PAINEL_NA_TELA ? new Set(txt.paragrafos.join(' ').replace(/\d+[ºª]/g, '').match(/\d+(?:,\d+)?/g) ?? []) : new Set<string>()
   const agoraEst = estadoEm(V.pesquisas, agora)
   let coerente = agoraEst.coerente
   console.log('\n== A JANELA ANDA SEM PESQUISA NOVA (cortes da tela: média 30 dias, contagens 45 dias, pela data UTC; a tela muda até 30 min depois da meia-noite UTC)')
 
   // (a) desde o texto
+  if (!TEXTO_DO_PAINEL_NA_TELA) {
+    console.log('   DESDE O TEXTO DO PAINEL: o texto diário saiu da tela em 23/11/2026 (decisão do André); nada a reescrever. O que mudou desde o registro anterior está na seção DESDE O REGISTRO ANTERIOR.')
+  } else {
   const diaTexto = txt.updatedAt.slice(0, 10)
   const D = rTexto ? (JSON.parse(rTexto.bodyMarkdown) as FrPollsData) : V
   const doTexto = estadoEm(D.pesquisas, new Date(`${diaTexto}T12:00:00Z`))
@@ -368,6 +381,7 @@ function aJanelaAnda(V: FrPollsData, txt: { updatedAt: string; paragrafos: strin
     (linhasTexto.length ? '' : ' nada mudou'))
   for (const l of linhasTexto) console.log(`      ${l}`)
   if (linhasTexto.some((l) => l.includes('[no texto]'))) console.log('      ⚠️ o texto do painel cita valor que a tela de agora já não mostra: rodar /atualizar-fra se o André pedir (o medidor do texto é o medidas-fra.ts)')
+  }
 
   // (b) próximos 7 dias
   const hoje0 = new Date(`${agora.toISOString().slice(0, 10)}T00:00:00Z`)

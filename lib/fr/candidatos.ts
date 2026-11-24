@@ -31,9 +31,19 @@ export interface EstatCandidato {
   duelosVencidos: number
 }
 
-export function estatisticasPorCandidato(pesquisas: readonly FrPesquisa[], agora: Date, dias = 45): EstatCandidato[] {
+/**
+ * As listas publicáveis com campo encerrado na janela (padrão 45 dias, pela data
+ * UTC), as MESMAS que as contagens da tela usam. Exportada em 24/Nov/2026 para o
+ * atalho `scripts/frente-a-frente-fra.ts` contar sobre o mesmo universo, sem uma
+ * segunda cópia da regra do corte.
+ */
+export function listasNaJanela(pesquisas: readonly FrPesquisa[], agora: Date, dias = 45): FrPesquisa[] {
   const corte = new Date(agora.getTime() - dias * DIA).toISOString().slice(0, 10)
-  const ok = pesquisas.filter((p) => p.publicavel && p.campo.fim >= corte)
+  return pesquisas.filter((p) => p.publicavel && p.campo.fim >= corte)
+}
+
+export function estatisticasPorCandidato(pesquisas: readonly FrPesquisa[], agora: Date, dias = 45): EstatCandidato[] {
+  const ok = listasNaJanela(pesquisas, agora, dias)
   const m = new Map<string, EstatCandidato>()
   const de = (c: string) => {
     let e = m.get(c)
