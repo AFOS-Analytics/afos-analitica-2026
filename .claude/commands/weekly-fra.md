@@ -78,7 +78,7 @@ Conferir que a 1ª linha diz **`país = FR`**. Ele conta os blocos pelo loader, 
 ## ETAPA 5: Depois do "aprovado"
 
 1. **Traduzir EN → pt-BR e es NA SESSÃO** (nunca por API). Decimal: **ponto nos três idiomas**; milhar muda (EN vírgula, pt-BR/ES ponto). Ler as três versões INTEIRAS.
-2. `npx tsx scripts/publish-afos-weekly.ts AAAA-MM-DD --pais=fr --all-locales`
+2. `npx tsx scripts/publish-afos-weekly.ts AAAA-MM-DD --pais=fr --all-locales`  → desde 24/Nov/2026 roda SOZINHO o cartão (`build-og-card-fr-weekly.mjs`) antes de virar o status: gera os 9 cartões a partir do texto de cada idioma, grava o `ogImage`, não refaz cartão que já existe e, se reprovar (número da arte fora do texto, texto que não cabe), NADA é publicado. No commit, incluir os cartões novos `public/brand/og-fr-weekly-<N>*.png` por nome. `--sem-cartao` só em emergência.
 3. Commit por nome (`git add public/afos-weekly/fr/AAAA-MM-DD*.md`), push, `npx vercel --yes --prod` **de um worktree de `origin/main`**, nunca da árvore principal.
 4. `npx tsx scripts/persist-afos-weekly.ts AAAA-MM-DD --pais=fr` → slug com qualificador `fr`, sem colidir com os EUA.
 5. **Broadcast:** `npx tsx scripts/broadcast-afos-weekly.ts AAAA-MM-DD --pais=fr --dry-run`, conferir contagem e idiomas; `curl` nos 3 links conferindo o **`og:title`** (307 e 200 são sucesso, código sozinho não prova país); só então o envio real.
@@ -90,7 +90,7 @@ Conferir que a 1ª linha diz **`país = FR`**. Ele conta os blocos pelo loader, 
 
 ## Ainda não construído
 
-- Cartão social: FEITO (23/Nov/2026). `node scripts/build-og-card-fr-weekly.mjs --data=AAAA-MM-DD` monta os 9 cartões (3 idiomas x 3 tamanhos) a partir do próprio arquivo da edição, ANTES do preview; recusa número que não esteja no texto e não refaz cartão que já circulou sem `--refazer`. Ainda não é chamado pelo `publish-afos-weekly.ts`.
+- Cartão social: FEITO (23/Nov/2026). `node scripts/build-og-card-fr-weekly.mjs --data=AAAA-MM-DD` monta os 9 cartões (3 idiomas x 3 tamanhos) a partir do próprio arquivo da edição, ANTES do preview; recusa número que não esteja no texto e não refaz cartão que já circulou sem `--refazer`. Chamado sozinho pelo `publish-afos-weekly.ts --pais=fr` desde 24/Nov/2026 (rodar antes, no preview, continua valendo para o André ver o cartão).
 - `llms-txt.ts` e `sitemap.ts`: a edição entra sozinha (conferido na №1, 23/Nov).
 - 💵 **Dinheiro de fato pago, nos dois livros** (anotado em 23/Nov/2026, sem prazo): o volume publicado é o nocional (contratos x US$ 1). O dinheiro que mudou de mão sai negócio a negócio (preço pago pelo lado tomador x contratos): medido em 24/Nov na Kalshi, USD 3,72 mi contra 7,46 mi nocionais, com `/markets/trades` + `/historical/trades` (antes do corte de 24/09/2026), soma dos contratos igual ao `volume_fp` em 31 de 31. Na Polymarket, `data-api.polymarket.com/v2/trades?condition_id=` (a v1 foi aposentada). Só se o André pedir.
 

@@ -24,6 +24,7 @@
  * flip só tira o 404 da rota.
  */
 import { readFileSync, writeFileSync, existsSync } from 'fs'
+import { execFileSync } from 'child_process'
 import { join } from 'path'
 
 const RAIZ = join(process.cwd(), 'public', 'afos-weekly')
@@ -59,7 +60,7 @@ function main() {
   const args = process.argv.slice(2)
   const data = args.find((a) => /^\d{4}-\d{2}-\d{2}$/.test(a))
   if (!data) {
-    console.error('Uso: npx tsx scripts/publish-afos-weekly.ts YYYY-MM-DD [--pais=us] [--all-locales]')
+    console.error('Uso: npx tsx scripts/publish-afos-weekly.ts YYYY-MM-DD [--pais=us|fr] [--all-locales] [--sem-cartao]')
     process.exit(1)
   }
   const pais = args.find((a) => a.startsWith('--pais='))?.split('=')[1] ?? PAIS_PADRAO
@@ -67,6 +68,36 @@ function main() {
   const sufixos = todos ? LOCALES : ['']
 
   console.log(`\n🚦 status: draft → published · AFOS Weekly ${pais.toUpperCase()} ${data}${todos ? ' (todos os idiomas)' : ' (só a origem em inglês)'}\n`)
+
+  /**
+   * 🖼️ CARTÃO AUTOMÁTICO DA FRANÇA (24/Nov/2026, pedido do André): antes de
+   * virar o status, roda `build-og-card-fr-weekly.mjs`, que monta os cartões a
+   * partir do próprio arquivo de cada idioma e grava o `ogImage`. Ele não refaz
+   * cartão que já existe (o WhatsApp guarda a 1ª imagem) e reprova número da
+   * arte que não esteja no texto ou texto que não cabe. Se reprovar, NADA é
+   * publicado. Depois, confere que todo `ogImage` declarado existe no disco.
+   * `--sem-cartao` pula o passo (só para emergência; a edição sai com o cartão
+   * padrão).
+   */
+  if (pais === 'fr' && !args.includes('--sem-cartao')) {
+    console.log('🖼️  cartão automático da Weekly França:')
+    try {
+      execFileSync('node', ['scripts/build-og-card-fr-weekly.mjs', `--data=${data}`], { stdio: 'inherit' })
+    } catch {
+      console.error('\n⛔ o cartão reprovou: NADA foi publicado. Corrigir o texto (ou o cartão) e rodar de novo.')
+      process.exit(1)
+    }
+    let semArte = 0
+    for (const sufixo of sufixos) {
+      const arq = join(dirDoPais(pais), `${data}${sufixo}.md`)
+      if (!existsSync(arq)) continue
+      const og = readFileSync(arq, 'utf-8').match(/^ogImage:\s*"?([^"\n]+)"?\s*$/m)?.[1]
+      if (!og) { console.error(`⛔ ${data}${sufixo}.md sem ogImage depois do cartão`); semArte++; continue }
+      if (!existsSync(join(process.cwd(), 'public', og.split('?')[0]))) { console.error(`⛔ ${data}${sufixo}.md declara ${og}, que não existe no disco`); semArte++ }
+    }
+    if (semArte) { console.error('\n⛔ cartão incompleto: NADA foi publicado.'); process.exit(1) }
+    console.log('✅ cartão conferido em todos os idiomas\n')
+  }
 
   let virou = 0
   let problemas = 0
@@ -86,7 +117,7 @@ function main() {
 
   console.log(`\n${virou} arquivo(s) publicado(s).`)
   console.log('\n📋 Depois disto:')
-  console.log(`   1. git add public/afos-weekly/${pais}/${data}*.md`)
+  console.log(`   1. git add public/afos-weekly/${pais}/${data}*.md${pais === 'fr' ? ' + os cartões novos public/brand/og-fr-weekly-<N>*.png, por NOME' : ''}`)
   console.log('   2. git commit e push')
   console.log('   3. npx vercel --yes --prod')
   console.log('   📌 A edição publicada ENTRA EM BUSCA: index, follow, no sitemap e no llms.txt.')
