@@ -1,0 +1,8 @@
+{
+  "motivo": "ficha pendente saiu da lista porque a base MieuxVoter estruturou a pesquisa dela; a lista de pendentes e um retrato do dia, nao uma serie",
+  "trilha": "lib/fr-polls/collect.mjs",
+  "explicacao": "Na v1.5.4 (24/Nov/2026, 03:15 UTC) havia 2 fichas pendentes: 10392 (Ifop-Fiducial para Sud Radio, campo 2-4/11) e 10393 (Toluna Harris Interactive para M6, RTL e L'Express, vaga 10, campo 18-19/11). Em 24/Nov a base estruturou a 10393 (MieuxVoter PR #367, 3 listas de 1o turno e 1 duelo), que passou a polls/fr-voting-intentions.csv como publicavel (+42 linhas, 42 de 42 valores conferidos na ficha). A 10392 segue pendente (PR #366 aberta). Pendentes agora: 1. Delta: -1.",
+  "arquivos": {
+    "polls/fr-pending-notices.csv": -1
+  }
+}
