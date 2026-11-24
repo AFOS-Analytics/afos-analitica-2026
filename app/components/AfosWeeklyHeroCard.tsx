@@ -102,6 +102,27 @@ const T_FR: typeof T_US = {
   },
 }
 
+/**
+ * A semana por extenso (23/Nov/2026). Antes saía "2026-11-16 — 2026-11-23": data
+ * ISO e travessão no cartão, nos EUA e na França. Mesma régua do cartão do
+ * Tradeoff: EN com o mês antes do dia, como na edição.
+ */
+const MESES: Record<'pt-BR' | 'en' | 'es', string[]> = {
+  'pt-BR': ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+  en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+  es: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
+}
+function semanaPorExtenso(inicio: string, fim: string, loc: 'pt-BR' | 'en' | 'es'): string {
+  const a = inicio.split('-').map(Number)
+  const b = fim.split('-').map(Number)
+  if (a.length !== 3 || b.length !== 3 || [...a, ...b].some(Number.isNaN)) return `${inicio}, ${fim}`
+  const m1 = MESES[loc][a[1] - 1], m2 = MESES[loc][b[1] - 1]
+  if (!m1 || !m2) return `${inicio}, ${fim}`
+  if (loc === 'en') return a[1] === b[1] ? `${m2} ${a[2]}-${b[2]}` : `${m1} ${a[2]} to ${m2} ${b[2]}`
+  const ate = loc === 'es' ? 'al' : 'a'
+  return a[1] === b[1] ? `${a[2]} ${ate} ${b[2]} de ${m2}` : `${a[2]} de ${m1} ${ate} ${b[2]} de ${m2}`
+}
+
 const TEXTOS_POR_PAIS: Record<string, typeof T_US> = { us: T_US, fr: T_FR }
 
 /** Cor por país, a mesma do cartão do Tradeoff: EUA verde-azulado, França violeta. */
@@ -167,7 +188,7 @@ export function AfosWeeklyHeroCard({ country = 'us', semContainer = false }: { c
   const linhaMeta = meta.hasEdition ? (
     <>
       {t.issuePrefix} №{meta.issueNumber}
-      {meta.weekStart && meta.weekEnd && <> · {t.weekPrefix} {meta.weekStart} — {meta.weekEnd}</>}
+      {meta.weekStart && meta.weekEnd && <> · {t.weekPrefix} {semanaPorExtenso(meta.weekStart, meta.weekEnd, k)}</>}
     </>
   ) : null
 

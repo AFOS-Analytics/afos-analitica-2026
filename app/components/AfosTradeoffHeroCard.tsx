@@ -90,7 +90,7 @@ function formatWeekRange(start: string, end: string, locale: 'pt-BR' | 'en' | 'e
  * padrão é 'br' para que a landing e o painel do Brasil, que já usavam este
  * cartão, continuem funcionando sem alteração.
  */
-export function AfosTradeoffHeroCard({ country = 'br', semContainer = false }: { country?: string; semContainer?: boolean } = {}) {
+export function AfosTradeoffHeroCard({ country = 'br', semContainer = false, soComEdicao = false }: { country?: string; semContainer?: boolean; soComEdicao?: boolean } = {}) {
   const { locale } = useTranslation()
   const tKey = (locale === 'en' || locale === 'es' ? locale : 'pt-BR') as keyof typeof T
   const t = T[tKey]
@@ -144,6 +144,14 @@ export function AfosTradeoffHeroCard({ country = 'br', semContainer = false }: {
 
   // Placeholder reservando a altura (evita CLS quando o fetch client popula este
   // card no topo, logo abaixo do DailyHeroCard).
+  /**
+   * `soComEdicao` (23/Nov/2026, painel da França): o cartão só aparece quando há
+   * edição publicada. O estado de pré-lançamento da rota `latest` traz a data da
+   * №1 do BRASIL (25/05/2026, fixa na rota) e levaria a França a um link que dá
+   * 404. Com a flag, nada de esqueleto nem de pré-lançamento: sem edição, nada.
+   */
+  if (soComEdicao && (!meta || !meta.hasEdition)) return null
+
   if (!meta) return (
     <div className={embrulho} aria-hidden="true">
       <div className={`min-h-[140px] sm:min-h-[116px] rounded-xl border ${c.borda} ${c.fundoFraco} p-4 md:p-5 animate-pulse`}>

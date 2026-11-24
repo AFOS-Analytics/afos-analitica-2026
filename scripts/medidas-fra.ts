@@ -166,7 +166,7 @@ async function main() {
   const txt = JSON.parse(readFileSync('public/fr/analise.pt-BR.json', 'utf8')) as { updatedAt: string; paragrafos: string[] }
   const nums = (txt.paragrafos.join(' ').replace(/\d+[ºª]/g, '').match(/\d+(?:,\d+)?/g) ?? [])
   const fora = [...new Set(nums)].filter((n) => !medidos.has(n))
-  console.log(`\n== CONFERÊNCIA DO TEXTO (analise.pt-BR.json de ${txt.updatedAt}): ${nums.length} números, ${fora.length} distintos fora desta medição`)
+  console.log(`\n== CONFERÊNCIA DO TEXTO (analise.pt-BR.json de ${txt.updatedAt}; FORA DA TELA desde 23/11/2026, só referência): ${nums.length} números, ${fora.length} distintos fora desta medição`)
   console.log(`   fora: ${fora.join(' · ') || '(nenhum)'}`)
   console.log('   (data, ano, lei e dia do turno aparecem aqui por natureza; preço ou contagem aqui = número velho no texto)')
 

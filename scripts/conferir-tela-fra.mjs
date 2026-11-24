@@ -12,8 +12,12 @@
  * Lê o TEXTO RENDERIZADO (`innerText` depois de networkidle e folga), não o HTML.
  * Por idioma, confere:
  *  1. HTTP 200;
- *  2. o título em negrito de CADA parágrafo de public/fr/analise.<idioma>.json aparece;
- *  3. com --velho, o título do §2 daquele commit NÃO aparece (o texto velho saiu);
+ *  2. TOPO (desde 23/Nov/2026, decisão do André): o cartão da AFOS Weekly da
+ *     França (com "№") e o cartão de apresentação ("Painel França") aparecem,
+ *     e o texto diário do painel NÃO: nenhum título de parágrafo de
+ *     public/fr/analise.<idioma>.json na tela (o texto saiu da tela; os JSON
+ *     ficaram no repositório). Nenhum travessão (—) na página inteira;
+ *  3. (aposentado em 23/Nov/2026 com o texto: --velho vale só para os perfis);
  *  4. EN e ES: nenhuma marca de português na página inteira;
  *  5. mercado: a linha de Marine Le Pen aparece na tabela; a Kalshi aparece ou
  *     espera conforme a prontidão (a coluna "Distância/Gap/Distancia" e nenhum
@@ -27,10 +31,10 @@
  *  8. IMPRENSA (23/Nov/2026): nenhuma manchete repetida com e sem rubrica na
  *     seção (`mesmaMateriaComRubrica`, a regra da coleta). Em 23/11 o L'Opinion
  *     ocupou 2 das 10 vagas com a mesma matéria, e este conferidor dizia CONFERE.
- * 🧪 Mutação conferida em 22/Nov/2026: `--esperar=46782cfc` (exige o texto de
- *    21/11, que já saiu da tela) reprova os 3 idiomas no item 2. Um leitor cego
- *    (página vazia, idioma errado) reprova no item 2 também, porque os títulos
- *    exigidos são os do arquivo, não os da tela.
+ * 🧪 Mutação conferida em 23/Nov/2026: contra a PRODUÇÃO de antes da troca
+ *    (texto na tela, sem cartões) o item 2 reprova nos 3 idiomas; um leitor
+ *    cego (página vazia) reprova nos cartões, porque o item exige o que
+ *    APARECE, não só o que falta.
  * Sai 1 se algum item falhar.
  */
 import { readFileSync } from 'node:fs'
@@ -47,6 +51,7 @@ const lerTexto = (loc, commit) => JSON.parse(commit
   ? execFileSync('git', ['show', `${commit}:public/fr/analise.${loc}.json`], { encoding: 'utf8' })
   : readFileSync(`public/fr/analise.${loc}.json`, 'utf8'))
 const LOCALES = ['pt-BR', 'en', 'es']
+const R0 = { 'pt-BR': 'Painel França', en: 'France panel', es: 'Panel Francia' }
 const ROTULO = {
   'pt-BR': { dist: 'Distância', espera: 'em coleta; entra', fonte: 'fonte ↗' },
   en: { dist: 'Gap', espera: 'collecting; shown from', fonte: 'source ↗' },
@@ -74,15 +79,14 @@ try {
     const corpo = norm(await page.evaluate(() => document.body.innerText))
     console.log(`\n== ${loc} · HTTP ${r?.status()} · ${corpo.length} caracteres`)
     ok(r?.status() === 200, 'responde 200')
+    // 2. Topo: cartões das edições e apresentação; o texto diário fora da tela.
     const ts = titulos(txt)
-    const faltam = ts.filter((t) => !corpo.includes(norm(t)))
-    ok(ts.length > 0 && !faltam.length, `texto de ${txt.updatedAt}: ${ts.length - faltam.length} de ${ts.length} títulos de parágrafo na tela${faltam.length ? ` · faltam: ${faltam.map((t) => `"${t.slice(0, 60)}"`).join(' | ')}` : ''}`)
-    if (VELHO) {
-      const v = JSON.parse(execFileSync('git', ['show', `${VELHO}:public/fr/analise.${loc}.json`], { encoding: 'utf8' }))
-      const t2 = titulos(v)[1]
-      if (t2 && ts.includes(t2)) console.log(`   · título do §2 igual ao do commit ${VELHO}: item 3 não se aplica`)
-      else ok(!!t2 && !corpo.includes(norm(t2)), `texto velho (${v.updatedAt}) saiu: "${(t2 ?? '').slice(0, 60)}" ausente`)
-    }
+    const naTelaTxt = ts.filter((t) => corpo.includes(norm(t)))
+    ok(ts.length > 0 && !naTelaTxt.length, `texto diário fora da tela: ${naTelaTxt.length} de ${ts.length} títulos de parágrafo aparecem${naTelaTxt.length ? ` · na tela: ${naTelaTxt.map((t) => `"${t.slice(0, 60)}"`).join(' | ')}` : ''}`)
+    ok(/AFOS WEEKLY/i.test(corpo) && corpo.includes('№'), 'cartão da AFOS Weekly com edição no topo')
+    ok(corpo.includes(R0[loc]), `cartão de apresentação "${R0[loc]}"`)
+    const travessoes = corpo.split(/(?<=[.!?])\s/).filter((f) => f.includes('—'))
+    ok(!travessoes.length, `nenhum travessão${travessoes.length ? ` · ${travessoes.map((f) => `"${f.slice(0, 70)}"`).join(' | ')}` : ''}`)
     if (loc !== 'pt-BR') {
       const achadas = MARCAS_PT.filter((m) => corpo.includes(m))
       ok(!achadas.length, `nenhuma marca de português${achadas.length ? ` · achadas: ${achadas.map((m) => `"${m}"`).join(', ')}` : ''}`)

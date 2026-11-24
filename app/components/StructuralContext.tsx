@@ -10,19 +10,19 @@ const GOV_ORDER = ['political_stability', 'voice_accountability', 'rule_of_law',
 const CTEXTS: Record<string, { title: string; gov: string; eco: string; edu: string; note: string; gov_labels: Record<string, string>; pop: string; gdp: string; gdppc: string; infl: string; edu_spend: string; edu_schooling: string; edu_years: string; locale: string }> = {
   'pt-BR': {
     title: 'Contexto estrutural', gov: 'Governança (escala 0–100)', eco: 'Economia', edu: 'Educação', locale: 'pt-BR',
-    note: 'Fonte: World Bank — Worldwide Governance Indicators + World Development Indicators ({year}). Indicadores estruturais anuais que contextualizam o país; não preveem o resultado eleitoral.',
+    note: 'Fonte: World Bank, Worldwide Governance Indicators e World Development Indicators ({year}). Indicadores estruturais anuais que contextualizam o país; não preveem o resultado eleitoral.',
     pop: 'População', gdp: 'PIB', gdppc: 'PIB per capita', infl: 'Inflação', edu_spend: 'Gasto público em educação (% PIB)', edu_schooling: 'Expectativa de anos de escola', edu_years: 'anos',
     gov_labels: { political_stability: 'Estabilidade política', voice_accountability: 'Voz e democracia', rule_of_law: 'Estado de direito', government_effectiveness: 'Efetividade do governo', regulatory_quality: 'Qualidade regulatória', control_of_corruption: 'Controle de corrupção' },
   },
   en: {
     title: 'Structural context', gov: 'Governance (0–100 scale)', eco: 'Economy', edu: 'Education', locale: 'en-US',
-    note: 'Source: World Bank — Worldwide Governance Indicators + World Development Indicators ({year}). Annual structural indicators that contextualize the country; they do not predict the electoral outcome.',
+    note: 'Source: World Bank, Worldwide Governance Indicators and World Development Indicators ({year}). Annual structural indicators that contextualize the country; they do not predict the electoral outcome.',
     pop: 'Population', gdp: 'GDP', gdppc: 'GDP per capita', infl: 'Inflation', edu_spend: 'Public education spending (% GDP)', edu_schooling: 'Expected years of schooling', edu_years: 'years',
     gov_labels: { political_stability: 'Political stability', voice_accountability: 'Voice & accountability', rule_of_law: 'Rule of law', government_effectiveness: 'Government effectiveness', regulatory_quality: 'Regulatory quality', control_of_corruption: 'Control of corruption' },
   },
   es: {
     title: 'Contexto estructural', gov: 'Gobernanza (escala 0–100)', eco: 'Economía', edu: 'Educación', locale: 'es-ES',
-    note: 'Fuente: World Bank — Worldwide Governance Indicators + World Development Indicators ({year}). Indicadores estructurales anuales que contextualizan el país; no predicen el resultado electoral.',
+    note: 'Fuente: World Bank, Worldwide Governance Indicators y World Development Indicators ({year}). Indicadores estructurales anuales que contextualizan el país; no predicen el resultado electoral.',
     pop: 'Población', gdp: 'PIB', gdppc: 'PIB per cápita', infl: 'Inflación', edu_spend: 'Gasto público en educación (% PIB)', edu_schooling: 'Años esperados de escolaridad', edu_years: 'años',
     gov_labels: { political_stability: 'Estabilidad política', voice_accountability: 'Voz y rendición de cuentas', rule_of_law: 'Estado de derecho', government_effectiveness: 'Efectividad del gobierno', regulatory_quality: 'Calidad regulatoria', control_of_corruption: 'Control de corrupción' },
   },

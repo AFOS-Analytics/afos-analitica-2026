@@ -14,7 +14,10 @@ import { CountryGraph, type DataLinks, type NavGroup } from '../../../components
 import { StructuralContext } from '../../../components/StructuralContext'
 import type { CountryContext, CountryDivergence } from '../../../../lib/country-data'
 import { useTranslation } from '../../../i18n/context'
-import { FrAnaliseSection, type FrAnalise } from '../../../components/fr/FrAnaliseSection'
+import type { FrAnalise } from '../../../components/fr/FrAnaliseSection'
+import { FrIntroCard } from '../../../components/fr/FrIntroCard'
+import { AfosWeeklyHeroCard } from '../../../components/AfosWeeklyHeroCard'
+import { AfosTradeoffHeroCard } from '../../../components/AfosTradeoffHeroCard'
 import { FrMarketSection, type EventoPoly, type KalshiFra, type PolyFra } from '../../../components/fr/FrMarketSection'
 import { FrPollsSection, type FrPollsView } from '../../../components/fr/FrPollsSection'
 import { FrPressSection } from '../../../components/fr/FrPressSection'
@@ -255,7 +258,16 @@ function Conteudo(props: FrDashboardProps) {
       <CountrySelector active="fr" />
 
       <main id="main-content" className="w-full max-w-6xl mx-auto px-3 sm:px-4 md:px-8 py-6 sm:py-8 space-y-8 sm:space-y-12" role="main">
-        <SectionErrorBoundary locale={locale} name="Texto"><FrAnaliseSection analise={props.analise} /></SectionErrorBoundary>
+        {/* 23/Nov/2026 (decisão do André): no padrão dos painéis do Brasil e dos
+            EUA quando estavam ao vivo, os cartões das edições no topo e um cartão
+            de apresentação sem número. O texto diário (`FrAnaliseSection`, lido de
+            `public/fr/analise.*.json`) saiu da tela: envelhecia sozinho à
+            meia-noite UTC, e a leitura cruzada da semana é das edições. Os JSON
+            ficam no repositório; voltar é recolocar esta linha.
+            O Tradeoff só aparece com edição publicada (№1 em 26/11). */}
+        <AfosTradeoffHeroCard country="fr" semContainer soComEdicao />
+        <AfosWeeklyHeroCard country="fr" semContainer />
+        <FrIntroCard />
 
         {silencio.silencio && silencio.turno && silencio.ate ? (
           <FrSilencioBanner turno={silencio.turno} ate={silencio.ate} />

@@ -36,7 +36,9 @@ Coletadas pelos crons (`refresh-fr-polls` às 07:40 e 19:40 UTC; `refresh-fr-pre
 - **Imprensa:** a seção mostra o último registro `fr-press`. Se ele tiver mais de 8h, disparar a rota do cron (ver `/atualizar-pesquisas-fra`, mesmo método) com `refresh-fr-press`.
 - A lista de 24 veículos foi aprovada pelo André em 08/Nov/2026. Mudar a lista exige ordem dele.
 
-## ETAPA 3: Texto do painel (3 idiomas)
+## ETAPA 3: Texto do painel (3 idiomas), FORA DA TELA desde 23/Nov/2026
+
+⛔ **Esta etapa não roda mais** (decisão do André, 23/Nov/2026). O painel segue o padrão dos painéis do Brasil e dos EUA quando estavam ao vivo: no topo, o cartão do Tradeoff França (aparece sozinho a partir da №1, `soComEdicao`), o da AFOS Weekly França e o cartão fixo de apresentação `app/components/fr/FrIntroCard.tsx`, sem número, que não envelhece. O texto diário envelhecia sozinho à meia-noite UTC, e a leitura cruzada da semana é das edições. Os `analise.*.json` ficam no repositório; voltar é recolocar `FrAnaliseSection` no `FrDashboardClient.tsx`. O `medidas-fra.ts` continua sendo o atalho da rodada: ele mede o que vai para os PERFIS (ETAPA 4) e para a Weekly e o Tradeoff. O registro abaixo fica como histórico das regras.
 
 Arquivos: `public/fr/analise.pt-BR.json` (ORIGEM, como no painel do Brasil), `.en.json`, `.es.json`. Formato: `{ updatedAt, titulo, paragrafos[] }`, negrito com `**...**` no início de cada parágrafo.
 
@@ -69,7 +71,7 @@ git commit ...; git push origin HEAD:main
 npx vercel --prod --yes --cwd <worktree>         # conferir depois com vercel inspect: target production
 ```
 
-**Depois do deploy, com navegador (playwright), nos 3 idiomas** (atalho desde 22/Nov/2026: `node scripts/conferir-tela-fra.mjs --velho=<commit anterior>`, que confere os itens abaixo pelo texto renderizado e diz se a Kalshi está NA TABELA ou em espera; mutação conferida: `--esperar=<commit velho>` reprova): a página responde 200; o texto novo aparece; nenhuma palavra em português em EN/ES; o mercado carrega; a Kalshi segue oculta ou aparece conforme a prontidão; os links "fonte ↗" aparecem fora da França; desde 23/Nov/2026, também os PERFIS (quantos com o texto atual; com --velho, perfil que mudou não pode mostrar o texto velho) e a IMPRENSA (nenhuma manchete repetida com e sem rubrica, com controle positivo da regra). Entrega visual se confere com navegador, não com grep.
+**Depois do deploy, com navegador (playwright), nos 3 idiomas** (atalho desde 22/Nov/2026: `node scripts/conferir-tela-fra.mjs --velho=<commit anterior>`, que confere os itens abaixo pelo texto renderizado e diz se a Kalshi está NA TABELA ou em espera; mutação conferida: `--esperar=<commit velho>` reprova): a página responde 200; no topo, os cartões das edições e o de apresentação, e o texto diário FORA da tela (desde 23/Nov/2026), sem nenhum travessão; nenhuma palavra em português em EN/ES; o mercado carrega; a Kalshi segue oculta ou aparece conforme a prontidão; os links "fonte ↗" aparecem fora da França; desde 23/Nov/2026, também os PERFIS (quantos com o texto atual; com --velho, perfil que mudou não pode mostrar o texto velho) e a IMPRENSA (nenhuma manchete repetida com e sem rubrica, com controle positivo da regra). Entrega visual se confere com navegador, não com grep.
 
 📅 **Datas em DIA/MÊS nos 3 idiomas** (23/Nov/2026): o `check-locale-json` acusa `[data invertida]` (a data EN/ES é a do pt-BR com dia e mês trocados) e `[data mês/dia]` (segundo número acima de 12). Até 22/11 o perfil EN escrevia mês/dia e o texto EN dia/mês, e a mesma data da Lagarde saía de dois jeitos na tela. ⚠️ Os COMPONENTES da tela EN (datas de campo, data de atualização) ainda formatam em mês/dia (en-US): decisão de convenção pendente com o André.
 
