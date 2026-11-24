@@ -24,7 +24,7 @@ const R = JSON.parse(readFileSync(join(OUT, 'data', 'fr-2027-case-summary.json')
 // 1.5.0 (20/Nov/2026): séries até 20/Nov; entram YouGov 10382 e Ifop 10384; publicável passa a exigir a forma de lista da presidencial (1º turno com 6 nomes ou mais, 2º turno com 2), regra que nesta versão não tira nenhuma lista
 // 1.5.1 (20/Nov/2026, noite): séries até 20/Nov; ficha pendente 10392 (Ifop-Fiducial/Sud Radio); manchetes do dia; sem mudança de método
 // 1.5.2 (21/Nov/2026, noite): séries até 21/Nov; Ruffin retira a candidatura (manchetes); sem mudança de método
-const VERSAO = '1.5.3'
+const VERSAO = '1.5.4'
 const K = R.kalshi
 const REPO = 'AFOS-Analytics1/france-2027-presidential-divergence'
 const P = R.polls
@@ -99,7 +99,7 @@ ${R.markets.books.map(linhaMercado).join('\n')}
 
 - **mutually-exclusive**: only one outcome happens (who wins the election, who tops the first round).
 - **independent-binary**: each contract is its own yes/no question (who advances to the runoff, who is on the ballot); prices do not add up to 100.
-- \`price_pct\` is the implied probability in points from 0 to 100. \`volume_usd\` is cumulative traded volume of the contract since it opened, not money at stake today.
+- \`price_pct\` is the implied probability in points from 0 to 100. \`volume_usd\` is the cumulative **notional** volume of the contract since it opened, as Polymarket reports it: taker-side contracts traded x USD 1. It is not the cash that changed hands and not money at stake today (checked on 24/11/2026 against Polymarket's trade records: one contract showed 88,386 of volume for USD 88 paid).
 - A snapshot is stored when any contract of the book moves 0.5 points or more (checked at most once an hour), with a forced snapshot every 4 hours. A book that does not move has few snapshots, and that is a measurement too.
 - Placeholder contracts listed by the exchange before a candidate exists ("Candidate A") are not prices and are left out.
 - From 12 Nov 2026, about 15:50 UTC, \`price_pct\` is stored with 2 decimals (0.01 point); earlier rows are in steps of 0.1 point. From the same time, the win book stores up to 80 contracts; before, it stored the 20 highest, so the smallest contracts of that book are missing from earlier snapshots.
@@ -108,7 +108,7 @@ ${R.markets.books.map(linhaMercado).join('\n')}
 
 \`data/kalshi-winner.csv\` is the same question as the Polymarket win book, priced on a second exchange. The two books are **never added or averaged**: fees, liquidity and the people trading differ, and the distance between them is a measurement of its own.
 
-- \`last_price_pct\`, \`bid_pct\`, \`ask_pct\` are in points from 0 to 100 (cents per contract). \`volume_contracts\` and \`open_interest_contracts\` are counted in **contracts, not dollars**.
+- \`last_price_pct\`, \`bid_pct\`, \`ask_pct\` are in points from 0 to 100 (cents per contract). \`volume_contracts\` and \`open_interest_contracts\` are counted in **contracts**. At Kalshi's face value of USD 1 per contract, \`volume_contracts\` x 1 is notional USD, the same convention as Polymarket's \`volume_usd\`; AFOS shows the two side by side in dollars and never adds them up.
 - \`last_trade_at_utc\` is the time of the last trade, read from the trades endpoint. It is the freshness of the price; the contract's own update stamp is not.
 - Each capture runs every 30 minutes. A row is stored when a contract moves 0.5 points or more, when a new contract appears, or every 4 hours. \`data/kalshi-captures.csv\` logs **every** capture, stored or not, with its check: prices must sum to 85 to 120 and the leader must have a bid and an ask (\`passed_check\`, \`defects\`, \`warnings\`).
 
@@ -143,7 +143,7 @@ Todo preço e toda pesquisa deste pacote foram registrados **antes da urna**. O 
 | **Pesquisas** | ${P.lists} listas de intenção de voto; ${P.publishable_lists} delas passam na conferência com a ficha oficial da Commission des sondages, de ${P.pollsters} institutos, campo de ${P.fieldwork_from} a ${P.fieldwork_to} |
 | **Imprensa** | ${R.press.rows} manchetes de uma lista fixa de ${R.press.outlets_on_list} veículos franceses |
 
-- Os dois livros de mercado **nunca são somados nem tirados em média**: taxas, liquidez e quem negocia são diferentes, e a distância entre eles é uma medição própria. O volume da Kalshi é contado em contratos, não em dólares.
+- Os dois livros de mercado **nunca são somados nem tirados em média**: taxas, liquidez e quem negocia são diferentes, e a distância entre eles é uma medição própria. O volume da Kalshi é contado em contratos; ao valor de face de US$ 1 por contrato, vira volume nocional em dólares, a mesma convenção do \`volume_usd\` da Polymarket (contratos do lado tomador x US$ 1, não o dinheiro pago; conferido em 24/11/2026). Os dois aparecem lado a lado e nunca somados.
 - O pacote **não subtrai** preço de pesquisa. O mercado paga **vencer a eleição**; a pesquisa mede **intenção de voto no 1º turno**. São grandezas diferentes, e a diferença não teria unidade.
 - Desde 12/11/2026, por volta das 15:50 UTC, o preço da Polymarket é gravado com 2 casas decimais (antes, de 0,1 em 0,1 ponto), e o livro de vitória guarda até 80 contratos (antes, os 20 maiores).
 - Lista que não passa na conferência fica no arquivo, marcada com o motivo.
@@ -160,7 +160,7 @@ Todo precio y toda encuesta de este paquete se registraron **antes de la votaci�
 | **Encuestas** | ${P.lists} listas de intención de voto; ${P.publishable_lists} de ellas pasan el cotejo con la ficha oficial de la Commission des sondages, de ${P.pollsters} encuestadoras, campo de ${P.fieldwork_from} a ${P.fieldwork_to} |
 | **Prensa** | ${R.press.rows} titulares de una lista fija de ${R.press.outlets_on_list} medios franceses |
 
-- Los dos libros de mercado **nunca se suman ni se promedian**: comisiones, liquidez y quién negocia son distintos, y la distancia entre ellos es una medición en sí. El volumen de Kalshi se cuenta en contratos, no en dólares.
+- Los dos libros de mercado **nunca se suman ni se promedian**: comisiones, liquidez y quién negocia son distintos, y la distancia entre ellos es una medición en sí. El volumen de Kalshi se cuenta en contratos; al valor nominal de 1 USD por contrato, es volumen nocional en dólares, la misma convención del \`volume_usd\` de Polymarket (contratos del lado tomador x 1 USD, no el dinero pagado; verificado el 24/11/2026). Los dos aparecen lado a lado y nunca se suman.
 - El paquete **no resta** precio de encuesta. El mercado paga **ganar la elección**; la encuesta mide **intención de voto en la 1ª vuelta**. Son magnitudes distintas, y la diferencia no tendría unidad.
 - Desde el 12/11/2026, hacia las 15:50 UTC, el precio de Polymarket se guarda con 2 decimales (antes, de 0,1 en 0,1 punto), y el libro de victoria guarda hasta 80 contratos (antes, los 20 mayores).
 - La lista que no pasa el cotejo queda en el archivo, marcada con el motivo.
