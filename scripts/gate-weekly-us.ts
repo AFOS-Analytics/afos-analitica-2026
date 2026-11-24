@@ -32,6 +32,7 @@ import { existsSync, readFileSync } from 'fs'
 import matter from 'gray-matter'
 import { loadWeekly } from '../lib/afos-weekly/loader'
 import { numerosComUnidade } from './lib/numeros-com-unidade.mjs'
+import { VOLUME_OBRIGATORIO_DESDE, fraseDoVolumeAcumulado, controleDaRegra } from './lib/volume-acumulado-fr.mjs'
 
 const DATA = process.argv[2] ?? '2026-09-17'
 // 🇫🇷 08/Nov/2026: o portão serve à Weekly da França também. O país vem por
@@ -161,4 +162,16 @@ for (const loc of locs) {
 }
 if (!semArte) console.log('✅ ogImage: toda imagem declarada existe no disco')
 
-process.exit(falhou || falhouTeto || semArte ? 1 : 0)
+// 💰 Volume acumulado dos dois livros, obrigatório na França (André, 23/Nov/2026).
+let semVolume = false
+if (PAIS === 'fr' && DATA >= VOLUME_OBRIGATORIO_DESDE) {
+  if (!controleDaRegra()) { semVolume = true; console.log('⛔ volume acumulado: a regra falhou no próprio controle, conferência SEM VALOR') }
+  else for (const loc of locs) {
+    const d = loadWeekly(DATA, loc, PAIS) as any
+    const f = d ? fraseDoVolumeAcumulado(String(corpo(d))) : null
+    if (f) console.log(`✅ ${loc}: volume acumulado dos dois livros: "${f.slice(0, 110)}"`)
+    else { semVolume = true; console.log(`❌ ${loc}: falta a frase do VOLUME ACUMULADO (Polymarket e Kalshi, os dois em USD, lado a lado, nunca somados)`) }
+  }
+} else if (PAIS === 'fr') console.log(`· volume acumulado: regra vale a partir de ${VOLUME_OBRIGATORIO_DESDE}; esta edição é anterior`)
+
+process.exit(falhou || falhouTeto || semArte || semVolume ? 1 : 0)

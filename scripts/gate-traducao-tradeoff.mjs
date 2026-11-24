@@ -19,6 +19,7 @@
  *
  * Uso: node scripts/gate-traducao-tradeoff.mjs 2026-09-28 [--pais=br]
  */
+import { VOLUME_OBRIGATORIO_DESDE, fraseDoVolumeAcumulado, controleDaRegra } from './lib/volume-acumulado-fr.mjs'
 import { readFileSync, existsSync } from 'fs'
 import matter from 'gray-matter'
 
@@ -85,6 +86,15 @@ for (const [id, arq] of Object.entries(idiomas)) {
     const milPonto = [...txt.matchAll(/n=\d{1,3}\.\d{3}\b/g)].map((m) => m[0])
     if (milPonto.length) {
       console.log(`❌ en: milhar em PONTO: ${milPonto.join(' · ')}`)
+      falhou = true
+    }
+  }
+  // 💰 Volume acumulado dos dois livros, obrigatório na França (André, 23/Nov/2026).
+  if (pais === 'fr' && data >= VOLUME_OBRIGATORIO_DESDE) {
+    const f = controleDaRegra() ? fraseDoVolumeAcumulado(txt) : null
+    if (f) console.log(`✅ ${id}: volume acumulado dos dois livros: "${f.slice(0, 110)}"`)
+    else {
+      console.log(controleDaRegra() ? `❌ ${id}: falta a frase do VOLUME ACUMULADO (Polymarket e Kalshi, os dois em USD, lado a lado, nunca somados)` : '⛔ volume acumulado: a regra falhou no próprio controle, conferência SEM VALOR')
       falhou = true
     }
   }

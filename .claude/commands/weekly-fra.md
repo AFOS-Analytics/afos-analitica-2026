@@ -55,6 +55,7 @@ Arquivo `public/afos-weekly/fr/{data}.md`, **em inglês**, `status: draft`.
 - 🏷️ **Toda média de pesquisa diz de quantas listas e institutos ela saiu.** "Le Pen 34.7 de média" não basta: "34.7, média de 38 listas de 7 institutos nos últimos 30 dias". Listas diferentes de candidatos: a média é o centro do que foi medido, não previsão.
 - 🏷️ **Todo número diz de qual contrato ele é:** vencer a eleição, ir ao 2º turno, ser o mais votado no 1º turno, estar na cédula. Os quatro dão números muito diferentes para a mesma pessoa.
 - ⚖️ **Le Pen e a cédula:** o recurso na Cour de cassation (decisão "no mais tardar no início de abril de 2027") muda o que o mercado mede. Descrever o contrato da cédula ao lado do de vitória, sem dizer que um "explica" o outro.
+- 💰 **VOLUME ACUMULADO DOS DOIS LIVROS, EM DÓLARES, OBRIGATÓRIO** (decisão do André, 23/Nov/2026, refeita em 24/Nov: "a Kalshi também em dólares; número de contrato não significa nada para os usuários"; vale da edição de 24/11/2026 em diante; a Weekly №1 fica como foi publicada). Uma frase com o volume acumulado do contrato de vitória na Polymarket e na Kalshi, **os dois em USD**, LADO A LADO e **nunca somados**, e quanto andou na semana. Convenção: a das duas plataformas, volume NOCIONAL, contratos negociados x US$ 1 (medido em 24/Nov: o `volumeNum` da Polymarket é a soma dos contratos do lado tomador, não dinheiro; Sylvain Durif tinha 88.386 de volume e USD 88 pagos). A frase diz "a USD 1 por contrato negociado". **ATALHO:** `node scripts/volume-acumulado-fra.mjs --de=AAAA-MM-DD --ate=AAAA-MM-DD` dá os dois acumulados (rotas do AFOS na Vercel), o que andou na semana (Neon), a conferência com as duas fontes e a frase pronta em EN/PT/ES. A frase gasta cerca de 28 palavras do teto. O portão reprova a edição sem a frase em qualquer idioma (`scripts/lib/volume-acumulado-fr.mjs`: "acumulado/cumulative", os dois livros e pelo menos dois valores em USD; controle positivo e negativo; mutação conferida em 24/Nov, inclusive a forma antiga com a Kalshi em contratos).
 - ⛔ **Contratos de enchimento** ("Candidate A", "Person B", 0.50 sem negócio) não são preço. Nunca citar.
 
 ## ETAPA 3: Travas legais (só da França)
@@ -68,7 +69,7 @@ Arquivo `public/afos-weekly/fr/{data}.md`, **em inglês**, `status: draft`.
 npx tsx scripts/gate-weekly-us.ts AAAA-MM-DD --pais=fr
 ```
 
-Conferir que a 1ª linha diz **`país = FR`**. Ele conta os blocos pelo loader, mede o corpo contra o teto de 1.100 no inglês e roda o gate numérico dos três idiomas.
+Conferir que a 1ª linha diz **`país = FR`**. Ele conta os blocos pelo loader, mede o corpo contra o teto de 1.100 no inglês e roda o gate numérico dos três idiomas. Desde 23/Nov/2026, também exige a frase do **volume acumulado dos dois livros, em USD**, nos três idiomas.
 
 ## ETAPA 4: Preview, SEM prod
 
@@ -89,8 +90,9 @@ Conferir que a 1ª linha diz **`país = FR`**. Ele conta os blocos pelo loader, 
 
 ## Ainda não construído
 
-- Cartão social próprio da Weekly França (`scripts/build-og-card-us-weekly.mjs` é o molde). Sem ele a edição sai com o cartão padrão.
-- Entrada da França no `llms-txt.ts`: entra no dia da №1. O `sitemap.ts` já põe a edição e o índice `/weekly/fr` sozinho, a partir da primeira edição publicada (laço sobre `PAISES_WEEKLY`, 12/Nov).
+- Cartão social: FEITO (23/Nov/2026). `node scripts/build-og-card-fr-weekly.mjs --data=AAAA-MM-DD` monta os 9 cartões (3 idiomas x 3 tamanhos) a partir do próprio arquivo da edição, ANTES do preview; recusa número que não esteja no texto e não refaz cartão que já circulou sem `--refazer`. Ainda não é chamado pelo `publish-afos-weekly.ts`.
+- `llms-txt.ts` e `sitemap.ts`: a edição entra sozinha (conferido na №1, 23/Nov).
+- 💵 **Dinheiro de fato pago, nos dois livros** (anotado em 23/Nov/2026, sem prazo): o volume publicado é o nocional (contratos x US$ 1). O dinheiro que mudou de mão sai negócio a negócio (preço pago pelo lado tomador x contratos): medido em 24/Nov na Kalshi, USD 3,72 mi contra 7,46 mi nocionais, com `/markets/trades` + `/historical/trades` (antes do corte de 24/09/2026), soma dos contratos igual ao `volume_fp` em 31 de 31. Na Polymarket, `data-api.polymarket.com/v2/trades?condition_id=` (a v1 foi aposentada). Só se o André pedir.
 
 ## Memórias relacionadas
 

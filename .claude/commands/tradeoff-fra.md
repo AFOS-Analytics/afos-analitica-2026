@@ -65,14 +65,15 @@ Usar `sectionTitles` no frontmatter para os títulos não contradizerem o texto.
 
 - 🏷️ Todo número diz **de qual contrato e de qual livro** ele é.
 - 🏷️ Toda média de pesquisa diz **quantas listas e quantos institutos**.
-- Volume da Kalshi em **contratos**; volume da Polymarket é **giro acumulado**, não dinheiro em jogo (o contrato do vencedor somava US$ 168 mi em 08/Nov, inflado por candidatos a 0.05).
+- Volume dos dois livros em **USD nocional** (contratos x US$ 1, a convenção das plataformas), nunca "dinheiro em jogo": o contrato do vencedor somava US$ 168 mi em 08/Nov, inflado por candidatos a 0.05, cujo contrato conta US$ 1 mesmo comprado a 0.05.
+- 💰 **VOLUME ACUMULADO DOS DOIS LIVROS, EM DÓLARES, OBRIGATÓRIO** (decisão do André, 23/Nov/2026, refeita em 24/Nov: "a Kalshi também em dólares; número de contrato não significa nada para os usuários"; vale da edição de 24/11/2026 em diante; a Weekly №1 fica como foi publicada). Uma frase com o volume acumulado do contrato de vitória na Polymarket e na Kalshi, **os dois em USD**, LADO A LADO e **nunca somados**, e quanto andou na semana. Convenção: a das duas plataformas, volume NOCIONAL, contratos negociados x US$ 1 (medido em 24/Nov: o `volumeNum` da Polymarket é a soma dos contratos do lado tomador, não dinheiro; Sylvain Durif tinha 88.386 de volume e USD 88 pagos). A frase diz "a USD 1 por contrato negociado". **ATALHO:** `node scripts/volume-acumulado-fra.mjs --de=AAAA-MM-DD --ate=AAAA-MM-DD` dá os dois acumulados (rotas do AFOS na Vercel), o que andou na semana (Neon), a conferência com as duas fontes e a frase pronta em EN/PT/ES. A frase gasta cerca de 28 palavras do teto. O portão reprova a edição sem a frase em qualquer idioma (`scripts/lib/volume-acumulado-fr.mjs`: "acumulado/cumulative", os dois livros e pelo menos dois valores em USD; controle positivo e negativo; mutação conferida em 24/Nov, inclusive a forma antiga com a Kalshi em contratos).
 - ⛔ Contrato de enchimento ("Candidate A") não é preço.
 
 ## Portão e publicação
 
 ```bash
 npx tsx scripts/check-tradeoff-blocos.ts AAAA-MM-DD fr            # bloqueante, conta pelo loader
-node scripts/gate-traducao-tradeoff.mjs AAAA-MM-DD --pais=fr      # números idênticos nos 3 idiomas
+node scripts/gate-traducao-tradeoff.mjs AAAA-MM-DD --pais=fr      # números idênticos nos 3 idiomas + volume acumulado dos dois livros em USD (desde 23/Nov/2026)
 npx vercel --yes                                                  # preview, AGUARDAR aprovação
 npx tsx scripts/publish-afos-tradeoff.ts AAAA-MM-DD --pais=fr --all-locales
 npx tsx scripts/persist-afos-tradeoff.ts AAAA-MM-DD --pais=fr
@@ -91,6 +92,7 @@ Numeração própria da França, a partir da **№1 na quinta 26/Nov/2026** (sug
 
 - Cartão social próprio do Tradeoff França (`scripts/build-og-card-us-tradeoff.mjs` é o molde).
 - Entrada da França no `sitemap.ts`: já feita (12/Nov). A edição e o índice `/tradeoff/fr` entram sozinhos a partir da primeira edição publicada, pelo laço sobre `PAISES_TRADEOFF`.
+- 💵 **Dinheiro de fato pago, nos dois livros** (anotado em 23/Nov/2026, sem prazo): o volume publicado é o nocional (contratos x US$ 1). O dinheiro que mudou de mão sai negócio a negócio (preço pago pelo lado tomador x contratos): medido em 24/Nov na Kalshi, USD 3,72 mi contra 7,46 mi nocionais, com `/markets/trades` + `/historical/trades` (antes do corte de 24/09/2026), soma dos contratos igual ao `volume_fp` em 31 de 31. Na Polymarket, `data-api.polymarket.com/v2/trades?condition_id=` (a v1 foi aposentada). Só se o André pedir.
 
 ## Memórias relacionadas
 

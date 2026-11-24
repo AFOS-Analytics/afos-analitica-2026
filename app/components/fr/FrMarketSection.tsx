@@ -29,6 +29,8 @@ const T = {
     vencedor: 'Quem vence a eleição',
     colCand: 'Candidato',
     colDist: 'Distância',
+    unidade: 'Números em pontos de 0 a 100, não em dólares: é o preço de um contrato que paga US$ 1 se o candidato vencer. 50 pontos = o contrato custa 50 centavos de dólar = probabilidade implícita de 50%. Distância = Polymarket menos Kalshi, em pontos.',
+    unidadeOutras: 'As três tabelas abaixo usam a mesma unidade, pontos de 0 a 100, e são só da Polymarket.',
     segundo: 'Quem vai ao 2º turno',
     primeiro: 'Mais votado no 1º turno',
     cedula: 'Quem estará na cédula',
@@ -37,8 +39,10 @@ const T = {
     kalshiSemData: 'em coleta',
     nota: 'Preços em pontos de 0 a 100: a probabilidade implícita que o contrato paga. Dado de medição, não é convite a apostar. A Polymarket é bloqueada na França pela ANJ desde 17/07/2026 e a Kalshi também não é autorizada no país, então os preços são formados por quem negocia fora da França.',
     notaDist: 'Distância = Polymarket menos Kalshi, em pontos. Os dois livros nunca são somados nem tirados em média: taxas, liquidez e público são diferentes, e a distância é justamente o que se mede.',
-    notaKalshi: 'Kalshi lida desde 08/11/2026. O volume dela é contado em contratos, não em dólares.',
-    volume: (v: string) => `Giro acumulado do contrato principal na Polymarket: ${v}. É soma de negócios desde a abertura, não dinheiro em jogo hoje.`,
+    notaKalshi: 'Kalshi lida desde 08/11/2026.',
+    volTitulo: 'Volume acumulado · contrato de vitória',
+    volPoly: 'negociados desde a abertura',
+    volNota: 'Volume como as duas plataformas informam: contratos negociados desde a abertura, a US$ 1 cada, que é o que cada contrato paga se acertar. Não é o dinheiro que mudou de mão, que é menor: um contrato comprado a 5 centavos conta US$ 1. Os dois ficam lado a lado e não são somados.',
     confira: 'Confira o dado bruto que o AFOS leu:',
     brutoPoly: 'Polymarket (JSON) ↗',
     brutoKalshi: 'Kalshi (JSON) ↗',
@@ -55,6 +59,8 @@ const T = {
     vencedor: 'Who wins the election',
     colCand: 'Candidate',
     colDist: 'Gap',
+    unidade: 'Figures are points from 0 to 100, not dollars: the price of a contract that pays USD 1 if the candidate wins. 50 points = the contract costs 50 cents = an implied probability of 50%. Gap = Polymarket minus Kalshi, in points.',
+    unidadeOutras: 'The three tables below use the same unit, points from 0 to 100, and are Polymarket only.',
     segundo: 'Who advances to the runoff',
     primeiro: 'Most votes in the first round',
     cedula: 'Who will be on the ballot',
@@ -63,8 +69,10 @@ const T = {
     kalshiSemData: 'collecting',
     nota: 'Prices in points from 0 to 100: the implied probability the contract pays. This is measurement data, not an invitation to bet. Polymarket has been blocked in France by the ANJ since 07/17/2026 and Kalshi is not licensed there either, so prices are set by traders outside France.',
     notaDist: 'Gap = Polymarket minus Kalshi, in points. The two books are never added or averaged: fees, liquidity and users differ, and the gap is exactly what is being measured.',
-    notaKalshi: 'Kalshi read since 11/08/2026. Its volume is counted in contracts, not dollars.',
-    volume: (v: string) => `Cumulative turnover of the main Polymarket contract: ${v}. It is the sum of trades since opening, not money at stake today.`,
+    notaKalshi: 'Kalshi read since 11/08/2026.',
+    volTitulo: 'Cumulative volume · win contract',
+    volPoly: 'traded since opening',
+    volNota: 'Volume as both platforms report it: contracts traded since opening, at USD 1 each, which is what each contract pays if it is right. It is not the money that changed hands, which is smaller: a contract bought for 5 cents counts as USD 1. The two sit side by side and are never added up.',
     confira: 'Check the raw data AFOS read:',
     brutoPoly: 'Polymarket (JSON) ↗',
     brutoKalshi: 'Kalshi (JSON) ↗',
@@ -81,6 +89,8 @@ const T = {
     vencedor: 'Quién gana la elección',
     colCand: 'Candidato',
     colDist: 'Distancia',
+    unidade: 'Cifras en puntos de 0 a 100, no en dólares: es el precio de un contrato que paga 1 USD si el candidato gana. 50 puntos = el contrato cuesta 50 centavos de dólar = probabilidad implícita del 50%. Distancia = Polymarket menos Kalshi, en puntos.',
+    unidadeOutras: 'Las tres tablas de abajo usan la misma unidad, puntos de 0 a 100, y son solo de Polymarket.',
     segundo: 'Quién pasa a la 2ª vuelta',
     primeiro: 'Más votado en la 1ª vuelta',
     cedula: 'Quién estará en la papeleta',
@@ -89,8 +99,10 @@ const T = {
     kalshiSemData: 'en recolección',
     nota: 'Precios en puntos de 0 a 100: la probabilidad implícita que paga el contrato. Es un dato de medición, no una invitación a apostar. Polymarket está bloqueada en Francia por la ANJ desde el 17/07/2026 y Kalshi tampoco está autorizada en el país, así que los precios los forman quienes operan fuera de Francia.',
     notaDist: 'Distancia = Polymarket menos Kalshi, en puntos. Los dos libros nunca se suman ni se promedian: comisiones, liquidez y público son distintos, y la distancia es justamente lo que se mide.',
-    notaKalshi: 'Kalshi leída desde el 08/11/2026. Su volumen se cuenta en contratos, no en dólares.',
-    volume: (v: string) => `Volumen acumulado del contrato principal en Polymarket: ${v}. Es la suma de operaciones desde la apertura, no dinero en juego hoy.`,
+    notaKalshi: 'Kalshi leída desde el 08/11/2026.',
+    volTitulo: 'Volumen acumulado · contrato de victoria',
+    volPoly: 'negociados desde la apertura',
+    volNota: 'Volumen como lo informan las dos plataformas: contratos negociados desde la apertura, a 1 USD cada uno, que es lo que paga cada contrato si acierta. No es el dinero que cambió de manos, que es menor: un contrato comprado a 5 centavos cuenta 1 USD. Los dos quedan lado a lado y no se suman.',
     confira: 'Revise el dato bruto que leyó el AFOS:',
     brutoPoly: 'Polymarket (JSON) ↗',
     brutoKalshi: 'Kalshi (JSON) ↗',
@@ -234,14 +246,50 @@ export function FrMarketSection({
     for (const c of kalshi?.winner?.contratos ?? []) if (c.ultimo !== null) kalshiPorNome.set(chave(c.candidato), c.ultimo)
   }
   const volumeTotal = (poly.winner.markets ?? []).reduce((s, m) => s + (Number(m.volumeNum) || 0), 0)
+  /**
+   * 💰 VOLUME ACUMULADO DOS DOIS LIVROS, em DÓLARES (decisão do André, 23-24/Nov/2026:
+   * obrigatório no painel, na Weekly e no Tradeoff da França).
+   *
+   * Os dois na MESMA convenção, a que as duas plataformas mostram: volume
+   * NOCIONAL, contratos negociados x US$ 1 (valor de face na liquidação).
+   * Medido em 24/Nov/2026: o `volumeNum` da Polymarket é a soma dos contratos
+   * dos negócios do lado tomador, não dinheiro (Sylvain Durif: 88.386 de volume,
+   * 88.386 contratos, USD 88 pagos), e a Kalshi informa contratos
+   * (`notional_value_dollars` = 1.0000). Por isso Kalshi em USD = contratos x 1.
+   * O dinheiro de fato pago é bem menor (Kalshi: USD 3,72 mi contra 7,46 mi
+   * nocionais), e a nota da faixa diz isso. Lado a lado, nunca somados.
+   */
+  const kalshiUsd = (kalshi?.winner?.contratos ?? []).reduce((s, c) => s + (Number(c.volumeContratos) || 0), 0)
 
   return (
     <section>
       <SectionTitle>{t.titulo}</SectionTitle>
       <Card>
-        <h3 className="text-sm font-semibold text-dark mb-2">
+        <div className="mb-5 rounded-lg border border-light-border bg-light-bg p-4">
+          <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">{t.volTitulo}</p>
+          <div className="mt-2 grid gap-3 sm:grid-cols-2">
+            <div>
+              <p className="text-xs font-semibold text-gray-600">Polymarket</p>
+              <p className="text-2xl font-bold tabular-nums text-primary">{fmtVolumeUsd(volumeTotal, locale)}</p>
+              <p className="text-xs text-gray-600">{t.volPoly}</p>
+            </div>
+            {kalshiUsd > 0 && (
+              <div>
+                <p className="text-xs font-semibold text-gray-600">Kalshi</p>
+                <p className="text-2xl font-bold tabular-nums text-primary">{fmtVolumeUsd(kalshiUsd, locale)}</p>
+                <p className="text-xs text-gray-600">{t.volPoly}</p>
+              </div>
+            )}
+          </div>
+          <p className="mt-2 text-xs leading-snug text-gray-600">{t.volNota}</p>
+        </div>
+        <h3 className="text-sm font-semibold text-dark mb-1">
           {t.vencedor}
         </h3>
+        {/* 🔢 A UNIDADE NO TOPO (24/Nov/2026, André: "isso é referente a que
+            unidade? É preciso ser específico"). Antes só no rodapé, em letra
+            miúda. Exemplo fixo (50 pontos), que não envelhece com o preço. */}
+        <p className="mb-3 text-xs leading-snug text-gray-600">{t.unidade}</p>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
@@ -273,7 +321,8 @@ export function FrMarketSection({
           </table>
         </div>
 
-        <div className="mt-6 grid gap-6 md:grid-cols-3">
+        <p className="mt-6 text-xs leading-snug text-gray-600">{t.unidadeOutras}</p>
+        <div className="mt-3 grid gap-6 md:grid-cols-3">
           <Tabela titulo={t.segundo} linhas={linhasDe(poly.secondRound ?? null, t.outro)} max={6} locale={locale} fonte={comLinkDeFonte ? { href: FONTE.secondRound, rotulo: t.fonte } : undefined} />
           <Tabela titulo={t.primeiro} linhas={linhasDe(poly.firstRoundWinner ?? null, t.outro)} max={5} locale={locale} fonte={comLinkDeFonte ? { href: FONTE.firstRoundWinner, rotulo: t.fonte } : undefined} />
           <Tabela titulo={t.cedula} linhas={linhasDe(poly.onBallot ?? null, t.outro)} max={8} locale={locale} fonte={comLinkDeFonte ? { href: FONTE.onBallot, rotulo: t.fonte } : undefined} />
@@ -283,7 +332,6 @@ export function FrMarketSection({
           <p>{t.nota}</p>
           {kalshiPronto && <p>{t.notaDist}</p>}
           {kalshiPronto && <p>{t.notaKalshi}</p>}
-          <p>{t.volume(fmtVolumeUsd(volumeTotal, locale))}</p>
           {poly.fetchedAt && <p>{t.lido(fmtDataHora(poly.fetchedAt, locale))}</p>}
           {/* 🔎 Verificação pelo leitor: o JSON que a própria tela leu, servido pelo
               AFOS, para todos. A página do contrato na plataforma só para quem
