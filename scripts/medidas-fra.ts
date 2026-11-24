@@ -163,6 +163,16 @@ async function main() {
   console.log(`== ANÁLISE CRITERIOSA: ${sel.nomes.join(' · ')}  (só pesquisa: ${sel.soPesquisa.join(', ') || '-'}; só mercado: ${sel.soMercado.join(', ') || '-'})`)
 
   // ── Conferência do texto publicado ─────────────────────────────────────────
+  // 🧭 O texto diário SAIU DA TELA em 23/Nov/2026 (decisão do André). Sem texto
+  // na tela, as duas conferências abaixo só davam alarme falso de "preço velho"
+  // (24/Nov: 7 ⚠️ de um texto que ninguém vê). Ficam desligadas; voltar o texto
+  // à tela = `true` aqui (e no pesquisas-fra.ts, mesma constante).
+  const TEXTO_DO_PAINEL_NA_TELA = false
+  if (!TEXTO_DO_PAINEL_NA_TELA) {
+    console.log('\n== CONFERÊNCIA DO TEXTO: o texto diário do painel saiu da tela em 23/11/2026; nada a conferir. As medidas acima servem aos PERFIS e às edições (Weekly e Tradeoff).')
+    await prisma.$disconnect()
+    return
+  }
   const txt = JSON.parse(readFileSync('public/fr/analise.pt-BR.json', 'utf8')) as { updatedAt: string; paragrafos: string[] }
   const nums = (txt.paragrafos.join(' ').replace(/\d+[ºª]/g, '').match(/\d+(?:,\d+)?/g) ?? [])
   const fora = [...new Set(nums)].filter((n) => !medidos.has(n))
