@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23",
+  "updatedAt": "2026-11-26",
   "grade": {
     "nota": "Blocos da grade oficial do Ministério do Interior francês (circular de 02/02/2026, anexo 3), aplicada ao partido de cada candidato. O Conselho de Estado confirmou a grade em 27/02/2026 (decisão nº 512694). O AFOS não classifica candidato: reproduz a classificação oficial.",
     "fontes": [
@@ -72,7 +72,7 @@
       "nuanceInferida": true,
       "nascimento": "1969-02-02",
       "cargo": "Prefeito de Cannes desde 2014 (reeleito em 2026); presidente da Associação dos Prefeitos da França",
-      "candidatura": "Declarado em 31/03/2026, quando deixou Les Républicains. Candidato à reeleição na presidência da Associação dos Prefeitos da França, cujo congresso vai de 24 a 26/11/2026; segundo a BFMTV, continua candidato à Presidência da República mesmo se perder.",
+      "candidatura": "Declarado em 31/03/2026, quando deixou Les Républicains. Em 25/11/2026, foi reeleito presidente da Associação dos Prefeitos da França, com 72% dos votos, contra Philippe Laurent, prefeito de Sceaux.",
       "fontes": [
         {
           "rotulo": "Wikipédia",
@@ -83,8 +83,8 @@
           "url": "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-qui-sont-les-candidats-deja-declares/"
         },
         {
-          "rotulo": "BFMTV",
-          "url": "https://www.bfmtv.com/politique/elections/presidentielle/david-lisnard-restera-candidat-a-la-presidentielle-meme-s-il-n-est-pas-reelu-president-de-l-amf_AP-202611230593.html"
+          "rotulo": "Public Sénat",
+          "url": "https://www.publicsenat.fr/actualites/politique/david-lisnard-largement-reelu-a-la-tete-de-lassociation-des-maires-de-france"
         }
       ]
     },
@@ -114,7 +114,7 @@
       "nuanceInferida": false,
       "nascimento": "1970-11-28",
       "cargo": "Prefeito de Le Havre; primeiro-ministro de 2017 a 2020",
-      "candidatura": "Declarado.",
+      "candidatura": "Declarado em 03/09/2024, em entrevista à revista Le Point.",
       "fontes": [
         {
           "rotulo": "Wikipédia",
@@ -123,6 +123,10 @@
         {
           "rotulo": "Toute l'Europe",
           "url": "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-qui-sont-les-candidats-deja-declares/"
+        },
+        {
+          "rotulo": "Ouest-France",
+          "url": "https://www.ouest-france.fr/politique/edouard-philippe/edouard-philippe-annonce-sa-candidature-a-lelection-presidentielle-de-2027-fb60cd58-6a1d-11ef-87ff-6b83746dd621"
         }
       ]
     },
