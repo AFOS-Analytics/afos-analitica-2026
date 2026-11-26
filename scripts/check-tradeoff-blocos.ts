@@ -221,7 +221,15 @@ for (const pais of paises) {
     ? [dataArg]
     : [...new Set(readdirSync(pasta).filter((f) => /^\d{4}-\d{2}-\d{2}\.md$/.test(f)).map((f) => f.slice(0, 10)))].sort()
   for (const d of datas) {
-    if (!existsSync(arquivoDe(pais, d, 'pt-BR'))) continue
+    // 26/Nov/2026: a França nasce em INGLÊS, e com só o `.en.md` no disco este
+    // portão pulava a edição pedida e respondia ✅ com "0 edições em 0
+    // arquivos". Agora a edição PEDIDA pela data sem nenhum dos idiomas
+    // pedidos reprova; na varredura geral, edição sem pt-BR segue pulada.
+    const algum = LOCALES.some((l) => existsSync(arquivoDe(pais, d, l)))
+    if (!existsSync(arquivoDe(pais, d, 'pt-BR')) && !(dataArg && algum)) {
+      if (dataArg) { falhas++; console.log(`  ❌ ${pais}/${d}: nenhum arquivo de ${LOCALES.join(', ')} no disco`) }
+      continue
+    }
     conferidas++
     const p = conferir(pais, d)
     if (p.length) { falhas++; console.log(`  ❌ ${pais}/${d}`); p.forEach((x) => console.log(`      ${x}`)) }
@@ -236,4 +244,5 @@ console.log(
     ? `\n❌ check-tradeoff-blocos: ${falhas} de ${conferidas} edicao(oes) com problema. ${arquivosLidos} arquivo(s) de idioma lido(s).`
     : `\n✅ check-tradeoff-blocos: ${conferidas} edicao(oes) integras em ${arquivosLidos} arquivo(s) de idioma (${LOCALES.join(', ')}). Nenhum bloco descartado, nenhum enum coagido, nenhum campo de texto perdido.`,
 )
-process.exit(falhas ? 1 : 0)
+if (!falhas && conferidas === 0) console.log('❌ nenhuma edição conferida: portão SEM VALOR')
+process.exit(falhas || conferidas === 0 ? 1 : 0)

@@ -548,11 +548,34 @@ function LanguagePicker({ currentLocale, currentDate, isBlue, country }: { curre
 const PAIS_EYEBROW: Record<string, string> = {
   br: 'AFOS Tradeoff · Brazil Political Risk Weekly',
   us: 'AFOS Tradeoff · USA-2026 midterms Political Risk Weekly',
+  // 26/Nov/2026, Tradeoff França №1: sem esta linha a edição francesa caía no
+  // rótulo padrão, que é o do BRASIL.
+  fr: 'AFOS Tradeoff · France-2027 presidential Political Risk Weekly',
 }
 
 const PAIS_ROTULO: Record<string, Record<string, string>> = {
   br: { 'pt-BR': 'Brasil', en: 'Brazil', es: 'Brasil' },
   us: { 'pt-BR': 'Estados Unidos', en: 'United States', es: 'Estados Unidos' },
+  fr: { 'pt-BR': 'França', en: 'France', es: 'Francia' },
+}
+
+/**
+ * Aviso obrigatório por país (26/Nov/2026). O texto padrão fala de UM livro e
+ * da "jurisdição brasileira"; na França são dois livros, e a lei de 2010
+ * (art. 57) pune promover site de aposta não autorizado, então o aviso diz que
+ * o preço é medição e que a peça não aponta para página de negociação.
+ */
+/** O Tradeoff França sai às QUINTAS (decisão do André, 08/Nov/2026), não na segunda do Brasil e dos EUA. */
+const PUBLICADA_POR_PAIS: Record<string, Record<'pt-BR' | 'en' | 'es', string>> = {
+  fr: { 'pt-BR': 'Publicada às quintas', en: 'Published on Thursdays', es: 'Publicada los jueves' },
+}
+
+const DISCLAIMER_EXTRA_POR_PAIS:Record<string, Record<'pt-BR' | 'en' | 'es', string>> = {
+  fr: {
+    'pt-BR': 'Nenhuma posição é recomendada ou implícita. Polymarket e Kalshi são mercados denominados em USD; os preços aparecem aqui como medição, nunca como convite, e este brief não aponta para página de negociação de nenhuma das duas. Volumes mencionados são informativos, não orientativos. Decisões de portfólio são responsabilidade exclusiva do leitor e devem considerar análise independente, perfil de risco e regulamentação aplicável.',
+    en: 'No position is recommended or implied. Polymarket and Kalshi are USD-denominated markets; prices appear here as measurement, never as an invitation, and this brief points to no trading page of either. Volumes mentioned are informative, not orientative. Portfolio decisions are the sole responsibility of the reader and must consider independent analysis, risk profile, and applicable regulation.',
+    es: 'Ninguna posición es recomendada o implícita. Polymarket y Kalshi son mercados denominados en USD; los precios aparecen aquí como medición, nunca como invitación, y este brief no apunta a ninguna página de negociación de ninguno de los dos. Los volúmenes mencionados son informativos, no orientativos. Las decisiones de portafolio son responsabilidad exclusiva del lector.',
+  },
 }
 
 export function AfosTradeoffTemplate({ data, nav, md, country = 'br' }: Props) {
@@ -646,7 +669,7 @@ export function AfosTradeoffTemplate({ data, nav, md, country = 'br' }: Props) {
             <span>·</span>
             <span className="font-semibold">{t.weekLabel} {weekRange}</span>
             <span>·</span>
-            <span className="font-semibold">{t.publishedLabel}</span>
+            <span className="font-semibold">{PUBLICADA_POR_PAIS[country]?.[locale] ?? t.publishedLabel}</span>
           </div>
         </header>
 
@@ -777,7 +800,7 @@ export function AfosTradeoffTemplate({ data, nav, md, country = 'br' }: Props) {
 
         {/* Hard-coded disclaimer (NÃO-NEGOCIÁVEL) */}
         <div className={`mt-12 p-6 rounded-lg text-xs leading-relaxed ${isBlue ? 'bg-blue-950/60 border border-blue-400/30 text-blue-100' : 'bg-slate-50 border border-slate-200 text-slate-600'}`}>
-          <strong className={isBlue ? 'text-white' : 'text-slate-800'}>{t.disclaimerLabel}</strong> {t.disclaimerText} <strong className={isBlue ? 'text-white' : 'text-slate-800'}>{t.disclaimerNotRec}</strong> {t.disclaimerExtra}
+          <strong className={isBlue ? 'text-white' : 'text-slate-800'}>{t.disclaimerLabel}</strong> {t.disclaimerText} <strong className={isBlue ? 'text-white' : 'text-slate-800'}>{t.disclaimerNotRec}</strong> {DISCLAIMER_EXTRA_POR_PAIS[country]?.[locale] ?? t.disclaimerExtra}
         </div>
 
         {/* Signature */}
