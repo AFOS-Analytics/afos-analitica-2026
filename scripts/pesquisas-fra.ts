@@ -671,8 +671,19 @@ function conferirNoTexto(texto: string, ls: FrPesquisa[]): Conferencia {
     for (const it of l.intencoes) {
       c.valores++
       const s = sobrenomeDe(it.candidato)
-      const idx = linhas.map((x, k) => (x.includes(s) ? k : -1)).filter((k) => k >= 0)
-      const comValor = idx.filter((k) => numerosDa(linhas[k]).includes(it.pct))
+      // Sobrenome composto quebrado na tabela ("Nicolas Dupont-" / "Aignan", ficha
+      // 10392 da Ifop, 26/Nov/2026): também vale uma das partes com 4+ letras.
+      const partes = [s, ...s.split('-').filter((x) => x.length >= 4 && x !== s)]
+      const idx = linhas.map((x, k) => (partes.some((pt) => x.includes(pt)) ? k : -1)).filter((k) => k >= 0)
+      const mesmaLinha = idx.filter((k) => numerosDa(linhas[k]).includes(it.pct))
+      // NOME QUEBRADO EM DUAS LINHAS com o valor numa linha SÓ DE NÚMERO entre elas
+      // ("Jean-Luc" / "18" / "Melenchon", ficha 10392): a linha do valor, a até 2
+      // linhas do sobrenome, não pode ter letra nenhuma, então nunca é o valor de
+      // outro candidato (esses vêm na linha do próprio nome). Mutação conferida:
+      // Mélenchon e Glucksmann trocados na 10392 continuam VALOR NÃO ACHADO.
+      const soNumero = (k: number) => k >= 0 && k < linhas.length && !/[a-z]/.test(linhas[k]) && numerosDa(linhas[k]).includes(it.pct)
+      const quebrado = mesmaLinha.length ? [] : idx.flatMap((k) => [k - 1, k + 1, k - 2, k + 2].filter(soNumero))
+      const comValor = mesmaLinha.length ? mesmaLinha : quebrado
       if (comValor.length) { c.achados++; ondeAcha.push(comValor) }
       else if (ehConvencao(it.pct, idx.map((k) => linhas[k]))) { c.convencao++; ondeAcha.push(idx) }
       else { c.falhas.push(`${l.pollId} ${it.candidato} ${it.pct}`); ondeAcha.push([]) }
