@@ -41,6 +41,8 @@ Sem `--pais=fr`, publish, persist e broadcast do Tradeoff caem no **Brasil** (pa
 3. **Kalshi:** 🔁 **Regra desde 08/Nov/2026 (decisão do André):** a Kalshi entra com o PREÇO DA HORA sempre que a leitura passa na avaliação (`avaliacao.ok` na resposta da rota: soma 85 a 120, líder com oferta de compra e de venda). A prontidão de 14 dias (`npx tsx scripts/kalshi-prontidao.ts --pais=fra`) passou a valer só para a SÉRIE: antes de `PRONTO`, nada de variação semanal nem superlativo da Kalshi, e qualquer "desde" diz "desde 08/11/2026".
 4. **Pesquisas:** registro `fr-polls` do Neon, só `publicavel: true`.
 5. **Δ da semana:** `node scripts/semana-do-contrato.mjs --pais=fr --de=... --ate=...` (lê o backup; série desde 08/Nov/2026; `--neon` lê o Neon direto, sem a cauda cega, para o dia de hoje). Kalshi: `npx tsx scripts/semana-kalshi.ts --pais=fra --de=AAAA-MM-DD --ate=AAAA-MM-DD` (Neon direto; série vale desde 22/Nov/2026, superlativo "desde 08/11/2026").
+   📐 **Convenção do Δ (fixada na №1, 26/Nov/2026):** do ÚLTIMO ponto gravado na quinta anterior até a leitura CERTIFICADA da trava na quinta da edição, nos dois livros; a metodologia da edição declara isso. É o desenho da Weekly França, de quinta a quinta.
+6. **Pesquisas da semana:** `npx tsx scripts/semana-pesquisas-fra.ts --de=AAAA-MM-DD [--ate=AAAA-MM-DD]` (só leitura, criado 26/Nov/2026). Cada ponta é a TELA daquele momento (último `fr-polls` com publicação até 23:59:59Z do dia, ou agora), com as funções da tela: médias de 30 dias com listas e institutos, listas que entraram e saíram da janela de 45 dias e a lista principal por instituto (⟳ = rodada nova). Controle: `--de=2026-11-16 --ate=2026-11-23` reproduz a Weekly №1 exata. Frente a frente: `scripts/frente-a-frente-fra.ts` (ver `/atualizar-pesquisas-fra`).
 
 ## As 4 trocas em relação ao template do Brasil
 
@@ -72,7 +74,7 @@ Usar `sectionTitles` no frontmatter para os títulos não contradizerem o texto.
 ## Portão e publicação
 
 ```bash
-npx tsx scripts/check-tradeoff-blocos.ts AAAA-MM-DD fr            # bloqueante, conta pelo loader
+npx tsx scripts/check-tradeoff-blocos.ts AAAA-MM-DD fr            # bloqueante, conta pelo loader; desde 26/Nov/2026 reprova com ZERO edições conferidas (antes dava verde sobre nada quando só havia o .en.md)
 node scripts/gate-traducao-tradeoff.mjs AAAA-MM-DD --pais=fr      # números idênticos nos 3 idiomas + volume acumulado dos dois livros em USD (desde 23/Nov/2026)
 npx vercel --yes                                                  # preview, AGUARDAR aprovação
 npx tsx scripts/publish-afos-tradeoff.ts AAAA-MM-DD --pais=fr --all-locales
@@ -86,7 +88,7 @@ Deploy de produção **de um worktree de `origin/main`**, nunca da árvore princ
 
 ## Numeração e calendário
 
-Numeração própria da França, a partir da **№1 na quinta 26/Nov/2026** (confirmada pelo André em 25/Nov/2026, no horário de Brasília). ⏰ O dia é o do André (BRT): às 02:00 UTC ainda é quarta para ele, e a edição de quinta se escreve na quinta dele. Quintas até **29/Abr/2027**; a edição seguinte ao 2º turno é decisão a tomar.
+Numeração própria da França, a partir da **№1 na quinta 26/Nov/2026** (confirmada pelo André em 25/Nov/2026, no horário de Brasília; **PUBLICADA e ENVIADA 31/31 em 26/Nov/2026**, commit 030bdd17, Neon `afos-tradeoff-fr-26-11-2026`). O template já tem o que é da França: rótulo "France-2027 presidential Political Risk Weekly", "Publicada às quintas" e o aviso que cita os dois livros e o art. 57 (`PAIS_EYEBROW`, `PUBLICADA_POR_PAIS`, `DISCLAIMER_EXTRA_POR_PAIS` em `app/components/AfosTradeoffTemplate.tsx`); país novo precisa das três entradas, ou cai no texto do Brasil calado. ⏰ O dia é o do André (BRT): às 02:00 UTC ainda é quarta para ele, e a edição de quinta se escreve na quinta dele. Quintas até **29/Abr/2027**; a edição seguinte ao 2º turno é decisão a tomar.
 
 ## Ainda não construído
 
