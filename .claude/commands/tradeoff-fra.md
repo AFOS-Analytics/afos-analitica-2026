@@ -86,7 +86,7 @@ Deploy de produção **de um worktree de `origin/main`**, nunca da árvore princ
 
 ## Numeração e calendário
 
-Numeração própria da França, a partir da **№1 na quinta 26/Nov/2026** (sugestão de 08/Nov, aguardando confirmação do André). Quintas até **29/Abr/2027**; a edição seguinte ao 2º turno é decisão a tomar.
+Numeração própria da França, a partir da **№1 na quinta 26/Nov/2026** (confirmada pelo André em 25/Nov/2026, no horário de Brasília). ⏰ O dia é o do André (BRT): às 02:00 UTC ainda é quarta para ele, e a edição de quinta se escreve na quinta dele. Quintas até **29/Abr/2027**; a edição seguinte ao 2º turno é decisão a tomar.
 
 ## Ainda não construído
 
