@@ -833,6 +833,27 @@ async function pendentesPeloTexto(V: FrPollsData, fichasHtml: string) {
   const lidasPdf = alvo.filter((f) => viaPdf.has(f.numero) && !(res.get(f.numero) as Lida).intencao)
   if (!achou.length) console.log(`   nenhuma das ${lidas} lidas traz a pergunta de intenção de voto` +
     (lidasPdf.length ? ` (${lidasPdf.length} pelo PDF: ${lidasPdf.map((f) => f.numero).join(' ')}${pdfEnxerga ? '' : ', SEM VALOR: controle do PDF falhou'})` : ''))
+
+  /**
+   * 🆕 FICHAS NOVAS NA LISTAGEM (criado 26/Nov/2026). A seção acima só imprime a
+   * ficha que ACUSA; a que ela lê e descarta (barômetro, popularidade, primária)
+   * não aparecia em lugar nenhum. Em 24/Nov eu disse ao André que o barômetro
+   * Odoxa dos duelos de preferência "não tem ficha", e a 10395 já estava na
+   * listagem. Aqui, toda ficha mais nova que a última citada pela base sai com
+   * rótulo, link e veredito, para nenhuma ficha nova passar calada.
+   */
+  const maiorCitada = Math.max(...[...citadas].map((n) => parseInt(n, 10)).filter(Number.isFinite))
+  const novas = fichas.filter((f) => parseInt(f.numero, 10) > maiorCitada).sort((a, b) => parseInt(b.numero, 10) - parseInt(a.numero, 10))
+  console.log(`\n== FICHAS NOVAS NA LISTAGEM (acima da ${maiorCitada}, a mais nova citada pela base): ${novas.length}`)
+  for (const f of novas) {
+    const r = res.get(f.numero)
+    const v = f.intencao ? '⏳ SELO de intenção de voto no rótulo: pendente (seção PENDENTES)'
+      : !r ? 'fora da leitura (abaixo do piso da janela)'
+      : 'intencao' in r ? (r.intencao ? (r.primaria ? '🗳️ intenção de voto em PRIMÁRIA: fora do universo' : '⚠️ INTENÇÃO DE VOTO NO TEXTO: pendente') : `lida${origem(f.numero) || ' do índice'}, sem a pergunta de intenção de voto da presidencial${viaPdf.has(f.numero) && !pdfEnxerga ? ' (SEM VALOR: controle do PDF falhou)' : ''}`)
+      : 'semTexto' in r ? '⏳ não lida (sem texto no índice e PDF não lido): ler à mão'
+      : `⛔ não lida (${r.erro})`
+    console.log(`   ${f.rotulo} · ${f.url}\n      → ${v}`)
+  }
 }
 
 /**
