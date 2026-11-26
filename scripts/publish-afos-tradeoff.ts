@@ -105,12 +105,17 @@ function main() {
     process.exit(0)
   }
 
+  // 26/Nov/2026: os passos ignoravam o país (pasta raiz do Brasil, persist sem --pais),
+  // e quem os seguisse arquivaria a edição errada, calado.
+  const pastaRel = pais === PAIS_PADRAO ? 'public/afos-tradeoff' : `public/afos-tradeoff/${pais}`
+  const flagPais = pais === PAIS_PADRAO ? '' : ` --pais=${pais}`
   console.log('\n📋 Next steps:')
-  console.log(`   1. git add public/afos-tradeoff/${date}*.md`)
-  console.log(`   2. git commit -m "Publish AFOS Tradeoff Edição ${date}"`)
-  console.log(`   3. git push origin main`)
-  console.log(`   4. npx vercel --yes --prod`)
-  console.log(`   5. npx tsx scripts/persist-afos-tradeoff.ts ${date}`)
+  console.log(`   1. git add ${pastaRel}/${date}*.md   (por nome, nunca add -A)`)
+  console.log(`   2. git commit -m "Publish AFOS Tradeoff ${pais.toUpperCase()} ${date}"`)
+  console.log(`   3. git push origin HEAD:main`)
+  console.log(`   4. npx vercel --yes --prod   (de um worktree de origin/main)`)
+  console.log(`   5. npx tsx scripts/persist-afos-tradeoff.ts ${date}${flagPais}`)
+  console.log(`   6. npx tsx scripts/broadcast-afos-tradeoff.ts ${date}${flagPais} --dry-run`)
 }
 
 main()

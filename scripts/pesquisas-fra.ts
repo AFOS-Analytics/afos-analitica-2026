@@ -886,10 +886,28 @@ type LinhaWiki = { fonte: 'EN' | 'FR'; inst: string; nome: string; fim: string; 
 /** "Toluna Harris Interactive" → "harris", "Ipsos BVA" → "ipsos", "IFOP-Fiducial" → "ifop", "Cluster 17" → "cluster17". */
 const chaveInstituto = (s: string) => {
   const t = semAcento(s).replace(/cluster\s+17/g, 'cluster17').replace(/\btoluna\b/g, ' ').split(/[^a-z0-9]+/).filter(Boolean)[0] ?? ''
-  return t === 'bva' ? 'ipsos' : t
+  if (t === 'bva') return 'ipsos'
+  // 26/Nov/2026: a Wikipedia FR grafou "OpinonWay" e a rodada saiu como "instituto sem
+  // rodada na tela: lista principal NOVA", embora a OpinionWay tenha a 10371 na tela.
+  // Erro de digitação de 1 letra (Levenshtein ≤ 1) num nome conhecido de 5+ letras vira o nome conhecido.
+  if (t.length >= 5 && !INSTITUTOS_CONHECIDOS.includes(t)) {
+    const perto = INSTITUTOS_CONHECIDOS.find((k) => k.length >= 5 && distancia1(t, k))
+    if (perto) return perto
+  }
+  return t
+}
+/** true se a e b diferem por no máximo 1 inserção, remoção ou troca de letra. */
+const distancia1 = (a: string, b: string) => {
+  if (a === b) return true
+  if (Math.abs(a.length - b.length) > 1) return false
+  let i = 0
+  while (i < a.length && i < b.length && a[i] === b[i]) i++
+  if (a.length === b.length) return a.slice(i + 1) === b.slice(i + 1)
+  return a.length > b.length ? a.slice(i + 1) === b.slice(i) : a.slice(i) === b.slice(i + 1)
 }
 /** Instituto pelo RÓTULO da ficha ("10392 Pres IV IFOP Sud Radio 20 novembre" → "ifop"), procurando as grafias conhecidas. */
 const GRAFIAS_ROTULO: [RegExp, string][] = [[/\bifop\b/, 'ifop'], [/\b(?:toluna|harris)\b/, 'harris'], [/\belabe\b/, 'elabe'], [/\b(?:ipsos|bva)\b/, 'ipsos'], [/\bopinionway\b/, 'opinionway'], [/\bcluster\s?17\b/, 'cluster17'], [/\byougov\b/, 'yougov'], [/\bodoxa\b/, 'odoxa'], [/\bverian\b/, 'verian'], [/\bcsa\b/, 'csa'], [/\bviavoice\b/, 'viavoice']]
+const INSTITUTOS_CONHECIDOS = [...new Set(GRAFIAS_ROTULO.map(([, k]) => k))]
 const instDoRotulo = (r: string) => GRAFIAS_ROTULO.find(([re]) => re.test(semAcento(r)))?.[1] ?? ''
 const diasEntre = (a: string, b: string) => Math.round(Math.abs(new Date(`${a}T00:00:00Z`).getTime() - new Date(`${b}T00:00:00Z`).getTime()) / DIA)
 const amostraDe = (s: string | undefined) => {
