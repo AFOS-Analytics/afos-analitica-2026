@@ -12,8 +12,11 @@
  * Lê o TEXTO RENDERIZADO (`innerText` depois de networkidle e folga), não o HTML.
  * Por idioma, confere:
  *  1. HTTP 200;
- *  2. TOPO (desde 23/Nov/2026, decisão do André): o cartão da AFOS Weekly da
- *     França (com "№") e o cartão de apresentação ("Painel França") aparecem,
+ *  2. TOPO (desde 23/Nov/2026, decisão do André): os cartões da AFOS Weekly e
+ *     do AFOS Tradeoff da França apontam cada um para a ÚLTIMA edição publicada
+ *     do produto, lida do disco (desde 27/Nov/2026; antes bastava "AFOS WEEKLY"
+ *     e um "№" na página, e o Tradeoff não se conferia), o cartão de
+ *     apresentação ("Painel França") aparece,
  *     e o texto diário do painel NÃO: nenhum título de parágrafo de
  *     public/fr/analise.<idioma>.json na tela (o texto saiu da tela; os JSON
  *     ficaram no repositório). Nenhum travessão (—) na página inteira;
@@ -37,7 +40,7 @@
  *    APARECE, não só o que falta.
  * Sai 1 se algum item falhar.
  */
-import { readFileSync } from 'node:fs'
+import { readFileSync, readdirSync } from 'node:fs'
 import { execFileSync } from 'node:child_process'
 import { chromium } from 'playwright'
 import { mesmaMateriaComRubrica } from '../lib/fr-press/collect.mjs'
@@ -62,6 +65,13 @@ const MARCAS_PT = [' não ', 'pesquisas', 'eleição', 'Distância', 'contagens'
 const lerPerfis = (loc, commit) => JSON.parse(commit
   ? execFileSync('git', ['show', `${commit}:public/fr/candidatos.${loc}.json`], { encoding: 'utf8' })
   : readFileSync(`public/fr/candidatos.${loc}.json`, 'utf8')).perfis
+/** Data da última edição com `status: published` em public/afos-<produto>/fr (qualquer idioma). */
+const ultimaPublicada = (prod) => {
+  const dir = `public/afos-${prod}/fr`
+  const datas = readdirSync(dir).filter((f) => /^\d{4}-\d{2}-\d{2}(\.[a-zA-Z-]+)?\.md$/.test(f))
+    .filter((f) => /^status:\s*published\s*$/m.test(readFileSync(`${dir}/${f}`, 'utf8'))).map((f) => f.slice(0, 10)).sort()
+  return datas.at(-1) ?? null
+}
 const titulos = (txt) => txt.paragrafos.map((p) => (p.match(/^\*\*(.+?)\*\*/) ?? [])[1]).filter(Boolean)
 const norm = (s) => s.replace(/\s+/g, ' ').replace(/[’]/g, "'")
 
@@ -83,7 +93,15 @@ try {
     const ts = titulos(txt)
     const naTelaTxt = ts.filter((t) => corpo.includes(norm(t)))
     ok(ts.length > 0 && !naTelaTxt.length, `texto diário fora da tela: ${naTelaTxt.length} de ${ts.length} títulos de parágrafo aparecem${naTelaTxt.length ? ` · na tela: ${naTelaTxt.map((t) => `"${t.slice(0, 60)}"`).join(' | ')}` : ''}`)
-    ok(/AFOS WEEKLY/i.test(corpo) && corpo.includes('№'), 'cartão da AFOS Weekly com edição no topo')
+    // 27/Nov/2026: cada cartão de edição tem de apontar para a ÚLTIMA edição publicada
+    // daquele produto (lida do disco). Antes, o item exigia só "AFOS WEEKLY" e um "№"
+    // na página, e o "№" do cartão do Tradeoff bastava; o cartão do Tradeoff nem se conferia.
+    const links = new Set(await page.$$eval('a', (as) => as.map((a) => a.getAttribute('href') ?? '')))
+    for (const [prod, nome] of [['weekly', 'AFOS Weekly'], ['tradeoff', 'AFOS Tradeoff']]) {
+      const d = ultimaPublicada(prod)
+      const alvo = `/${loc}/${prod}/fr/${d}`
+      ok(d != null && links.has(alvo), d ? `cartão da ${nome} aponta para a última edição publicada (${alvo})${links.has(alvo) ? '' : ` · links de ${prod} na página: ${[...links].filter((h) => h.includes(`/${prod}/`)).join(', ') || 'nenhum'}`}` : `${nome}: nenhuma edição publicada em public/afos-${prod}/fr`)
+    }
     ok(corpo.includes(R0[loc]), `cartão de apresentação "${R0[loc]}"`)
     const travessoes = corpo.split(/(?<=[.!?])\s/).filter((f) => f.includes('—'))
     ok(!travessoes.length, `nenhum travessão${travessoes.length ? ` · ${travessoes.map((f) => `"${f.slice(0, 70)}"`).join(' | ')}` : ''}`)
